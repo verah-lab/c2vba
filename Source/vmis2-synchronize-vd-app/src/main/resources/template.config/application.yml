@@ -1,0 +1,201 @@
+de:
+  heuboe:
+    asfinag:
+      vmis2:
+        synchronize:
+          vd:
+            ################
+            # common props #
+            ################
+            # UZ/rVMZ name as String to query the ConfigService
+            centreId:
+            # UZ/rVMZ short name as String for topic names
+            centreTopic:
+            # If MQs have no roadId, the app could not handle them. Take this defaultRoadId 
+            # for those MQs: This field is nullable. If no defaultRoadId is set,
+            # MQs with empty roadId will be ignored.
+            defaultRoadId:
+            # road pattern to work for, default: .*
+            streets:
+            # boolean to indicate, if discarded data should be written or not, default: true
+            writeDiscarded:
+            # Indicate, if application should listen to single vehicle data, default: true
+            # If true, app listens to tlsSingleVehDataTopicTemplate & 
+            # tlsSingleVehCollectedDataTopicTemplate.
+            listenSingleVehicleData:
+            # fake/set infrastructure parameter(LVEBetriebsParam) for all lane ids.
+            # So that not a large part of the input values is discarded.
+            fakeInfraParams:
+            # name of instance used for reading parameter
+            instanceName:
+            # maximum numbers of retries to restart an actor before system.exit, default: 4
+            maxNrOfRestartRetries:
+            # time range (in minutes) for actor restarts before system.exit.
+            # 0=deactivate of system.exit cause of actor restarts, default: 5
+            restartsWithinTimeRange:
+            # true: writing results to files (for debugging), default: false
+            writeFileLog:
+            # path for debug files, default: data/
+            fileLogPath:
+            # data change types that do an infrastructure reinitialization. For possible 
+            # enum names, see: eu.vmis_ehe.vmis2.configservice.pojo.PConfigItemType
+            dataChangeType:
+            # Tls control sequence action to request a global time synchronization,
+            # default: 2002018
+            actionNrRequestGlobalTimeSync:
+            ############
+            # Topics   #
+            ############
+            # topic template to read data changes
+            dataChangeTopicTemplate:
+            # list of parameter topics which contains parameter per road
+            parameterRoadTopics:
+            # list of parameter topics which contains parameter per rVMZ
+            parameterSystemTopics:
+            # topic template to read TLS channel control
+            tlsChannelControlTopicTemplate:
+            # topic template to read TLS errors
+            tlsErrorTopicTemplate:
+            # topic template to read TLS operating parameter
+            tlsOperatingParamTopicTemplate:
+            # topic template to read road station errors
+            tlsSysErrorTopicTemplate:
+            # tls input data topic for option 0
+            tlsData0TopicTemplate:
+            # tls input data topic for option 1
+            tlsData1TopicTemplate:
+            # tls input data topic for option 2
+            tlsData2TopicTemplate:
+            # tls input data topic for option 3
+            tlsData3TopicTemplate:
+            # tls input data topic for option 4
+            tlsData4TopicTemplate:
+            # tls input data topic for option 5
+            tlsData5TopicTemplate:
+            # tls input data topic for option 6
+            tlsData6TopicTemplate:
+            # topic template to read parameters of lane traffic categories
+            tlsTrafficCategoriesParamTopicTemplate:
+            # Tls input data topic for single vehicle data
+            tlsSingleVehDataTopicTemplate:
+            # Tls input data topic for single vehicle data (collected)
+            tlsSingleVehCollectedDataTopicTemplate:
+            # topic template for publishing all collected lane data to kafka
+            collectedDataLaneTopicTemplate:
+            # topic template for publishing all collected lane traffic categories to kafka
+            collectedTrafficCategoriesLaneTopicTemplate:
+            # topic template for publishing all collected opc-ua lane data to kafka
+            colletedOpcUaDataLaneTopicTemplate:
+            # topic template for publishing discarded lane data
+            discardedDataLaneTopicTemplate:
+            # control sequence topic to request a global time synchronization
+            topicTmpltControlSequence:
+            # vehicle category of PKW, default: 32
+            categoryPkw:
+            # vehicle category of LKW, default: 33
+            categoryLkw:
+            # Default quality of the slowest vehicle data built on the basis of 
+            # single vehicle data, default 100
+            maxQualitySVDataInput:
+            # default quality of the slowest vehicle data built on the basis of 
+            # traffic categories (TLS version 4), default 80
+            maxQualityTCDataInput:
+            # default quality, if speed of slowest vehicle could not be determined
+            minQualityInputSlowV:
+    
+            ########################
+            # Parameter constants  #
+            ########################
+            algo:
+              param:
+                names:
+                  # parameter name of logical passivation parameter in
+                  # VRZ-Parameter-LogischePassivierungVDE
+                  logPassive:
+                  # Logical passivation definition set id
+                  # in VRZ-Parameter-LogischePassivierungVDE
+                  logPassiveDefSetId:
+                  # definition set id for time sync in VRZ-Parameter-Zeitsynchronisation
+                  timeSyncDefSetId:
+                  # parameter name of waiting time in seconds to resend time synchronization
+                  # in VRZ-Parameter-Zeitsynchronisation
+                  syncWaitSec:
+                  # parameter name of timelead in seconds
+                  # in VRZ-Parameter-Zeitsynchronisation
+                  timelead:
+                  # parameter name for lower threshold in seconds to trigger synchronization
+                  # for 15 seconds interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdLower15Sec:
+                  # parameter name for lower threshold in seconds to trigger synchronization
+                  # for 2 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdLower2Min:
+                  # parameter name for lower threshold in seconds to trigger synchronization
+                  # for 30 seconds interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdLower30Sec:
+                  # parameter name for lower threshold in seconds to trigger synchronization
+                  # for 3 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdLower3Min:
+                  # parameter name for lower threshold in seconds to trigger synchronization
+                  # for 4 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdLower4Min:
+                  # parameter name for lower threshold in seconds to trigger synchronization
+                  # for 5 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdLower5Min:
+                  # parameter name for lower threshold in seconds to trigger synchronization
+                  # for 60 seconds interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdLower60Sec:
+                  # parameter name for upper threshold in seconds to trigger synchronization
+                  # for 15 seconds interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdUpper15Sec:
+                  # parameter name for upper threshold in seconds to trigger synchronization
+                  # for 2 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdUpper2Min:
+                  # parameter name for upper threshold in seconds to trigger synchronization
+                  # for 30 seconds interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdUpper30Sec:
+                  # parameter name for upper threshold in seconds to trigger synchronization
+                  # for 3 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdUpper3Min:
+                  # parameter name for upper threshold in seconds to trigger synchronization
+                  # for 4 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdUpper4Min:
+                  # parameter name for upper threshold in seconds to trigger synchronization
+                  # for 5 minutes interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdUpper5Min:
+                  # parameter name for upper threshold in seconds to trigger synchronization
+                  # for 60 seconds interval, in VRZ-Parameter-Zeitsynchronisation
+                  thresholdUpper60Sec:
+                  # parameter name for 15 seconds timeout in 
+                  # VRZ-Parameter-Zeitsynchronisation
+                  timeout15Secs:
+                  # parameter name for 30 seconds timeout in 
+                  # VRZ-Parameter-Zeitsynchronisation
+                  timeout30Secs:
+                  # parameter name for 60 seconds timeout in
+                  # VRZ-Parameter-Zeitsynchronisation
+                  timeout60Secs:
+                  # parameter name for 2 minutes timeout in VRZ-Parameter-Zeitsynchronisation
+                  timeout2Min:
+                  # parameter name for 3 minutes timeout in VRZ-Parameter-Zeitsynchronisation
+                  timeout3Min:
+                  # parameter name for 4 minutes timeout in VRZ-Parameter-Zeitsynchronisation
+                  timeout4Min:
+                  # parameter name for 5 minutes timeout in VRZ-Parameter-Zeitsynchronisation
+                  timeout5Min:
+grpc:
+  client:
+    ConfigService:
+      # adress of config-service
+      address:
+      maxInboundMessageSize:
+      negotiationType:
+spring:
+  kafka:
+    # kafka server to connect to
+    bootstrap-servers:
+    # kafka client-id
+    client-id:
+    consumer:
+      # kafka consumer group id
+      group-id:
+

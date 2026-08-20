@@ -1,0 +1,10 @@
+# Maven-Projects:
+
+include:
+- project: VMIS2/base/vmis2-ci-templates
+  ref: JDK21
+  file:
+  - base.yml
+  - verify-commits.yml   #optional (run pipeline for each commit)
+#  - deploy-commits.yml
+  - build-releases.yml

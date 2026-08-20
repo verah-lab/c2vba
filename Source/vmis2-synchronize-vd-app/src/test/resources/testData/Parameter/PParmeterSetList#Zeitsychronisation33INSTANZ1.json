@@ -1,0 +1,147 @@
+{
+  "instanceId": "INSTANZ1",
+  "definitionSetId": "Zeitsynchronisation",
+  "roadId": "",
+  "values": [{
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "Zeitsynchronisation",
+    "target": {
+      "itemType": {
+        "type": "UZ",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN"
+      },
+      "itemId": "WIE"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "moeglicheVorlaufzeit",
+      "value": {
+        "intVal": 5
+      }
+    }, {
+      "parameterId": "Timeout15",
+      "value": {
+        "intVal": 12
+      }
+    }, {
+      "parameterId": "Timeout30",
+      "value": {
+        "intVal": 15
+      }
+    }, {
+      "parameterId": "Timeout60",
+      "value": {
+        "intVal": 33
+      }
+    }, {
+      "parameterId": "Timeout2m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "Timeout3m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "Timeout4m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "Timeout5m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "zeitsyncUnten15",
+      "value": {
+        "intVal": -11
+      }
+    }, {
+      "parameterId": "zeitsyncOben15",
+      "value": {
+        "intVal": 26
+      }
+    }, {
+      "parameterId": "zeitsyncUnten30",
+      "value": {
+        "intVal": -11
+      }
+    }, {
+      "parameterId": "zeitsyncOben30",
+      "value": {
+        "intVal": 26
+      }
+    }, {
+      "parameterId": "zeitsyncUnten60",
+      "value": {
+        "intVal": -11
+      }
+    }, {
+      "parameterId": "zeitsyncOben60",
+      "value": {
+        "intVal": 26
+      }
+    }, {
+      "parameterId": "zeitsyncUnten2m",
+      "value": {
+        "intVal": -50
+      }
+    }, {
+      "parameterId": "zeitsyncOben2m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "zeitsyncUnten3m",
+      "value": {
+        "intVal": -50
+      }
+    }, {
+      "parameterId": "zeitsyncOben3m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "zeitsyncUnten4m",
+      "value": {
+        "intVal": -50
+      }
+    }, {
+      "parameterId": "zeitsyncOben4m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "zeitsyncUnten5m",
+      "value": {
+        "intVal": -50
+      }
+    }, {
+      "parameterId": "zeitsyncOben5m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "AbstandZeitsync",
+      "value": {
+        "intVal": 40
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "Hugo",
+    "timestamp": "1585230209873",
+    "userId": "",
+    "reset": false,
+    "iid": "BLegdPzNaEkua5ZsSlOC6Q",
+    "previousIid": ""
+  }],
+  "iid": "tE8Gryf76s2gUy+0SyWrXg"
+}

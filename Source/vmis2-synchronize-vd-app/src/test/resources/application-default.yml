@@ -1,0 +1,141 @@
+de:
+    heuboe:
+        asfinag:
+            vmis2:
+                synchronize:
+                    vd:
+                        ################
+                        # common props #
+                        ################
+                        # UZ/rVMZ name as String to query the ConfigService
+                        centreId: WIE
+                        # UZ/rVMZ short name as String for topic names
+                        centreTopic: WIE
+                        # If MQs have no roadId, the app could not handle them. Take this defaultRoadId for those MQs:
+                        # This field is nullable. If no defaultRoadId is set, MQs with empty roadId will be ignored.
+                        defaultRoadId: NO_ROAD
+                        # road pattern to work for
+                        streets: 'A23_.*'
+                        # boolean to indicate, if discarded data should be written or not
+                        writeDiscarded: true
+                        # boolean to indicate, if application should listen to single vehicle data
+                        # if true, app listens to tlsSingleVehDataTopicTemplate & tlsSingleVehCollectedDataTopicTemplate
+                        listenSingleVehicleData: true
+                        # default error value of integers [app-default: -1]
+                        defaultErrorValue: -1
+                        # default error value of floats (e.g. tNetto) [app-default: -99999.0]
+                        defaultErrorValueFloat: -99999.0
+                        algoName: synchronize vehicle data
+                        algoShortName: SYNCVD-TEST
+                        # Fake infraParams from infrastructure
+                        fakeInfraParams: true
+                        testWithFewInitValues: true
+                        instanceName: INSTANZ1
+                        # maximum numbers of retries to restart an actor before system.exit
+                        maxNrOfRestartRetries: 4
+                        # time range (in minutes) for actor restarts before system.exit.
+                        # 0=deactivate of system.exit cause of actor restarts
+                        restartsWithinTimeRange: 5
+                        # data change types that do an infrastructure reinitialization. for possible enum names, see:
+                        # eu.vmis_ehe.vmis2.configservice.pojo.PConfigItemType
+                        dataChangeType: 
+                            - RST
+                            - VDE_SENSOR
+                        # tls code of PKW_AE category:
+                        categoryPkw: 32
+                        # tls code of PKW_AE category:
+                        categoryLkw: 33
+                        # Default quality of the slowest vehicle data built on the basis of single vehicle data
+                        maxQualitySVDataInput: 100
+                        # Default quality of the slowest vehicle data built on the basis of traffic categories (Vers. 4)
+                        maxQualityTCDataInput: 80
+                        # Default quality, if speed of slowest vehicle could not be determined
+                        minQualityInputSlowV: 0
+                        ############
+                        # Topics   #
+                        ############
+                        # topics IN
+                        dataChangeTopicTemplate: 'TEST-{centreTopic}-DataChange'
+                        parameterRoadTopics:
+                        - TEST-VRZ-Parameter-LogischePassivierungVDE
+                        parameterSystemTopics:
+                        - TEST-VRZ-Parameter-Zeitsynchronisation
+                        tlsChannelControlTopicTemplate: 'TEST-{centreTopic}-tlsin-LVEKanalsteuerung'
+                        tlsErrorTopicTemplate: 'TEST-{centreTopic}-tlsin-LVEDeFehler'
+                        tlsOperatingParamTopicTemplate: 'TEST-{centreTopic}-tlsin-LVEBetriebsparameter'
+                        tlsSysErrorTopicTemplate: 'TEST-{centreTopic}-tlsin-SYSFehlerDUE'
+                        tlsTrafficCategoriesParamTopicTemplate: VRZ-tlsout-LVEGeschwindigkeitsklassenKurzSoll
+                        tlsData0TopicTemplate: 'TEST-{centreTopic}-tlsin-LVEErgebnisVersion0'
+                        tlsData1TopicTemplate: 'TEST-{centreTopic}-tlsin-LVEErgebnisVersion1'
+                        tlsData2TopicTemplate: 'TEST-{centreTopic}-tlsin-LVEErgebnisVersion2'
+                        tlsData3TopicTemplate: 'TEST-{centreTopic}-tlsin-LVEErgebnisVersion3'
+                        tlsData4TopicTemplate: 'TEST-{centreTopic}-tlsin-LVEErgebnisVersion4'
+                        tlsData5TopicTemplate: 'TEST-{centreTopic}-tlsin-LVEErgebnisVersion5'
+                        tlsData6TopicTemplate: 'TEST-{centreTopic}-tlsin-LVEErgebnisVersion6'
+                        tlsSingleVehDataTopicTemplate: 'TEST-{centreTopic}-tlsin-LVEKfzEinzeldaten'
+                        tlsSingleVehCollectedDataTopicTemplate: 'TEST-{centreTopic}-tlsin-LVEKfzEinzeldatenSammelmeldung'
+                        # topics OUT
+                        collectedDataLaneTopicTemplate: 'TEST-{centreTopic}-ShortTermCollectedDataLane'
+                        collectedTrafficCategoriesLaneTopicTemplate: 'TEST-{centreTopic}-ShortTermCollectedTrafficCategoriesLane'
+                        colletedOpcUaDataLaneTopicTemplate: 'TEST-{centreTopic}-ShortTermCollectedOpcUaDataLane'
+                        discardedDataLaneTopicTemplate: 'TEST-{centreTopic}-DiscardedShortTermCollectedDataLane'
+                        topicTmpltControlSequence: VRZ-tlsout-SYSSteuerSequenz
+                        ########################
+                        # Parameter constants  #
+                        ########################
+                        algo:
+                            param:
+                                names:
+                                    # Logical passivation
+                                    logPassive: log_passiv
+                                    # Logical passivation definition set id
+                                    logPassiveDefSetId: LogischePassivierungVDE
+                                    # String for waiting time in seconds to resend time synchronization
+                                    syncWaitSec: AbstandZeitsync
+                                    # Strings for upper/lower threshold in seconds to trigger synchronization
+                                    thresholdLower15Sec: zeitsyncUnten15
+                                    thresholdLower2Min: zeitsyncUnten2m
+                                    thresholdLower30Sec: zeitsyncUnten30
+                                    thresholdLower3Min: zeitsyncUnten3m
+                                    thresholdLower4Min: zeitsyncUnten4m
+                                    thresholdLower5Min: zeitsyncUnten5m
+                                    thresholdLower60Sec: zeitsyncUnten60
+                                    thresholdUpper15Sec: zeitsyncOben15
+                                    thresholdUpper2Min: zeitsyncOben2m
+                                    thresholdUpper30Sec: zeitsyncOben30
+                                    thresholdUpper3Min: zeitsyncOben3m
+                                    thresholdUpper4Min: zeitsyncOben4m
+                                    thresholdUpper5Min: zeitsyncOben5m
+                                    thresholdUpper60Sec: zeitsyncOben60
+                                    # definition set id for time sync
+                                    timeSyncDefSetId: Zeitsynchronisation
+                                    # String for timelead in seconds.
+                                    timelead: moeglicheVorlaufzeit
+                                    # Strings timeout
+                                    timeout15Secs: Timeout15
+                                    timeout30Secs: Timeout30
+                                    timeout60Secs: Timeout60
+                                    timeout2Min: Timeout2m
+                                    timeout3Min: Timeout3m
+                                    timeout4Min: Timeout4m
+                                    timeout5Min: Timeout5m
+                test:
+                    infra:
+                        testInfraJson: src/main/resources/TestInfraRoadS1.json
+grpc:
+    client:
+        ConfigService:
+            address: dummy
+            maxInboundMessageSize: 25000000
+            negotiationType: PLAINTEXT
+server:
+    port: 0.0
+spring:
+    kafka:
+        bootstrap-servers: dummy
+        client-id: vmis2-synchronize-vd-app-TEST
+        consumer:
+            group-id: TEST-SYNCHRONIZE-VD-GROUP-WIE
+    config:
+        activate:
+            on-profile: "test"

@@ -1,0 +1,1013 @@
+{
+  "roads": [{
+    "id": "S01_1",
+    "name": "S01_1",
+    "validitySection": {
+      "logKmFrom": 0.0,
+      "logKmTo": 16.2,
+      "roadId": "S01_1",
+      "mapVersion": "test1"
+    },
+    "detectionSites": [{
+      "id": "2007299",
+      "name": "MQ_S01_1_000,150",
+      "validitySection": {
+        "logKmFrom": 0.0,
+        "logKmTo": 0.235,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 0.15,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007300",
+        "name": "MQ_S01_1_000,150_F1",
+        "lanePos": "LANE1",
+        "detId": "2007299"
+      }, {
+        "id": "2007301",
+        "name": "MQ_S01_1_000,150_F2",
+        "lanePos": "LANE2",
+        "detId": "2007299"
+      }]
+    }, {
+      "id": "2007376",
+      "name": "MQ_S01_1_000,320",
+      "validitySection": {
+        "logKmFrom": 0.235,
+        "logKmTo": 0.52125,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 0.32,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007377",
+        "name": "MQ_S01_1_000,320_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007376"
+      }, {
+        "id": "2007378",
+        "name": "MQ_S01_1_000,320_E1",
+        "lanePos": "LANE2",
+        "detId": "2007376"
+      }, {
+        "id": "2007379",
+        "name": "MQ_S01_1_000,320_E2",
+        "lanePos": "LANE3",
+        "detId": "2007376"
+      }, {
+        "id": "2007380",
+        "name": "MQ_S01_1_000,320_F2",
+        "lanePos": "LANE4",
+        "detId": "2007376"
+      }, {
+        "id": "2007381",
+        "name": "MQ_S01_1_000,320_F2",
+        "lanePos": "LANE5",
+        "detId": "2007376"
+      }]
+    }, {
+      "id": "2007390",
+      "name": "MQ_S01_1_001,125",
+      "validitySection": {
+        "logKmFrom": 0.52125,
+        "logKmTo": 1.3125,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 1.125,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007391",
+        "name": "MQ_S01_1_001,125_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007390"
+      }, {
+        "id": "2007392",
+        "name": "MQ_S01_1_001,125_F2",
+        "lanePos": "LANE2",
+        "detId": "2007390"
+      }, {
+        "id": "2007393",
+        "name": "MQ_S01_1_001,125_F2",
+        "lanePos": "LANE3",
+        "detId": "2007390"
+      }]
+    }, {
+      "id": "2007305",
+      "name": "MQ_S01_1_001,500",
+      "validitySection": {
+        "logKmFrom": 1.3125,
+        "logKmTo": 1.95,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 1.5,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007306",
+        "name": "MQ_S01_1_001,500_F1",
+        "lanePos": "LANE1",
+        "detId": "2007305"
+      }, {
+        "id": "2007307",
+        "name": "MQ_S01_1_001,500_F2",
+        "lanePos": "LANE2",
+        "detId": "2007305"
+      }]
+    }, {
+      "id": "2007311",
+      "name": "MQ_S01_1_002,400",
+      "validitySection": {
+        "logKmFrom": 1.95,
+        "logKmTo": 3.0975,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 2.4,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007312",
+        "name": "MQ_S01_1_002,400_F1",
+        "lanePos": "LANE1",
+        "detId": "2007311"
+      }, {
+        "id": "2007313",
+        "name": "MQ_S01_1_002,400_F2",
+        "lanePos": "LANE2",
+        "detId": "2007311"
+      }]
+    }, {
+      "id": "2048474",
+      "name": "MQ_S01_1_003,795",
+      "validitySection": {
+        "logKmFrom": 3.0975,
+        "logKmTo": 3.8775,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 3.795,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2048475",
+        "name": "MQ_S01_1_003,795_F1",
+        "lanePos": "LANE1",
+        "detId": "2048474"
+      }, {
+        "id": "2048476",
+        "name": "MQ_S01_1_003,795_F2",
+        "lanePos": "LANE2",
+        "detId": "2048474"
+      }]
+    }, {
+      "id": "2048477",
+      "name": "MQ_S01_1_003,960",
+      "validitySection": {
+        "logKmFrom": 3.8775,
+        "logKmTo": 4.4575,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 3.96,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2048478",
+        "name": "MQ_S01_1_003,960_F1",
+        "lanePos": "LANE1",
+        "detId": "2048477"
+      }, {
+        "id": "2048477",
+        "name": "MQ_S01_1_003,960_F2",
+        "lanePos": "LANE2",
+        "detId": "2048477"
+      }]
+    }, {
+      "id": "2007317",
+      "name": "MQ_S01_1_004,955",
+      "validitySection": {
+        "logKmFrom": 4.4575,
+        "logKmTo": 5.5575,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 4.955,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007318",
+        "name": "MQ_S01_1_004,955_F1",
+        "lanePos": "LANE1",
+        "detId": "2007317"
+      }, {
+        "id": "2007319",
+        "name": "MQ_S01_1_004,955_F2",
+        "lanePos": "LANE2",
+        "detId": "2007317"
+      }]
+    }, {
+      "id": "2007320",
+      "name": "MQ_S01_1_006,160",
+      "validitySection": {
+        "logKmFrom": 5.5575,
+        "logKmTo": 6.605,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 6.16,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007321",
+        "name": "MQ_S01_1_006,160_F1",
+        "lanePos": "LANE1",
+        "detId": "2007320"
+      }, {
+        "id": "2007322",
+        "name": "MQ_S01_1_006,160_F2",
+        "lanePos": "LANE2",
+        "detId": "2007320"
+      }]
+    }, {
+      "id": "2007323",
+      "name": "MQ_S01_1_007,050",
+      "validitySection": {
+        "logKmFrom": 6.605,
+        "logKmTo": 7.65,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 7.05,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007324",
+        "name": "MQ_S01_1_007,050_F1",
+        "lanePos": "LANE1",
+        "detId": "2007323"
+      }, {
+        "id": "2007325",
+        "name": "MQ_S01_1_007,050_F2",
+        "lanePos": "LANE2",
+        "detId": "2007323"
+      }]
+    }, {
+      "id": "2007326",
+      "name": "MQ_S01_1_008,250",
+      "validitySection": {
+        "logKmFrom": 7.65,
+        "logKmTo": 8.703,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 8.25,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes":  [{
+        "id": "2007327",
+        "name": "MQ_S01_1_008,250_F1",
+        "lanePos": "LANE1",
+        "detId": "2007326"
+      }, {
+        "id": "2007328",
+        "name": "MQ_S01_1_008,250_F2",
+        "lanePos": "LANE2",
+        "detId": "2007326"
+      }]
+    }, {
+      "id": "2007329",
+      "name": "MQ_S01_1_009,156",
+      "validitySection": {
+        "logKmFrom": 8.703,
+        "logKmTo": 9.638,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 9.156,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007330",
+        "name": "MQ_S01_1_009,156_F1",
+        "lanePos": "LANE1",
+        "detId": "2007329"
+      }, {
+        "id": "2007331",
+        "name": "MQ_S01_1_009,156_F2",
+        "lanePos": "LANE2",
+        "detId": "2007329"
+      }]
+    }, {
+      "id": "2007332",
+      "name": "MQ_S01_1_010,120",
+      "validitySection": {
+        "logKmFrom": 9.638,
+        "logKmTo": 10.4675,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 10.12,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007333",
+        "name": "MQ_S01_1_010,120_F1",
+        "lanePos": "LANE1",
+        "detId": "2007332"
+      }, {
+        "id": "2007334",
+        "name": "MQ_S01_1_010,120_F2",
+        "lanePos": "LANE2",
+        "detId": "2007332"
+      }]
+    }, {
+      "id": "2007398",
+      "name": "MQ_S01_1_010,815",
+      "validitySection": {
+        "logKmFrom": 10.4675,
+        "logKmTo": 11.2975,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 10.815,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007399",
+        "name": "MQ_S01_1_010,815_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007398"
+      }, {
+        "id": "2007400",
+        "name": "MQ_S01_1_010,815_F1",
+        "lanePos": "LANE2",
+        "detId": "2007398"
+      }, {
+        "id": "2007401",
+        "name": "MQ_S01_1_010,815_F2",
+        "lanePos": "LANE3",
+        "detId": "2007398"
+      }]
+    }, {
+      "id": "2007406",
+      "name": "MQ_S01_1_011,780",
+      "validitySection": {
+        "logKmFrom": 11.2975,
+        "logKmTo": 12.2325,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 11.78,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007407",
+        "name": "MQ_S01_1_011,780_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007406"
+      }, {
+        "id": "2007408",
+        "name": "MQ_S01_1_011,780_F1",
+        "lanePos": "LANE2",
+        "detId": "2007406"
+      }, {
+        "id": "2007409",
+        "name": "MQ_S01_1_011,780_F2",
+        "lanePos": "LANE3",
+        "detId": "2007406"
+      }]
+    }, {
+      "id": "2007414",
+      "name": "MQ_S01_1_012,685",
+      "validitySection": {
+        "logKmFrom": 12.2325,
+        "logKmTo": 12.7025,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 12.685,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007415",
+        "name": "MQ_S01_1_012,685_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007414"
+      }, {
+        "id": "2007416",
+        "name": "MQ_S01_1_012,685_F1",
+        "lanePos": "LANE2",
+        "detId": "2007414"
+      }, {
+        "id": "2007417",
+        "name": "MQ_S01_1_012,685_F2",
+        "lanePos": "LANE3",
+        "detId": "2007414"
+      }]
+    }, {
+      "id": "2056891",
+      "name": "MQ_S01_1_012,720",
+      "validitySection": {
+        "logKmFrom": 12.7025,
+        "logKmTo": 12.95,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 12.72,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2056892",
+        "name": "MQ_S01_1_012,720_F1",
+        "lanePos": "LANE1",
+        "detId": "2056891"
+      }, {
+        "id": "2056893",
+        "name": "MQ_S01_1_012,720_F2",
+        "lanePos": "LANE2",
+        "detId": "2056891"
+      }, {
+        "id": "2056894",
+        "name": "MQ_S01_1_012,720_F3",
+        "lanePos": "LANE3",
+        "detId": "2056891"
+      }]
+    }, {
+      "id": "2007335",
+      "name": "MQ_S01_1_013,180",
+      "validitySection": {
+        "logKmFrom": 12.95,
+        "logKmTo": 13.72,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 13.180,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007336",
+        "name": "MQ_S01_1_013,180_F1",
+        "lanePos": "LANE1",
+        "detId": "2007335"
+      }, {
+        "id": "2007337",
+        "name": "MQ_S01_1_013,180_F2",
+        "lanePos": "LANE2",
+        "detId": "2007335"
+      }]
+    }, {
+      "id": "2007338",
+      "name": "MQ_S01_1_014,260",
+      "validitySection": {
+        "logKmFrom": 13.72,
+        "logKmTo": 14.8025,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 14.260,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007339",
+        "name": "MQ_S01_1_014,260_F1",
+        "lanePos": "LANE1",
+        "detId": "2007338"
+      }, {
+        "id": "2007340",
+        "name": "MQ_S01_1_014,260_F2",
+        "lanePos": "LANE2",
+        "detId": "2007338"
+      }]
+    }, {
+      "id": "2007343",
+      "name": "MQ_S01_1_015,345",
+      "validitySection": {
+        "logKmFrom": 14.8025,
+        "logKmTo": 15.7725,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 15.345,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007344",
+        "name": "MQ_S01_1_015,345_F1",
+        "lanePos": "LANE1",
+        "detId": "2007343"
+      }, {
+        "id": "2007345",
+        "name": "MQ_S01_1_015,345_F2",
+        "lanePos": "LANE2",
+        "detId": "2007343"
+      }]
+    }, {
+      "id": "2007346",
+      "name": "MQ_S01_1_016,200",
+      "validitySection": {
+        "logKmFrom": 15.7725,
+        "logKmTo": 16.2,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 16.2,
+        "roadId": "S01_1",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007347",
+        "name": "MQ_S01_1_016,200_F1",
+        "lanePos": "LANE1",
+        "detId": "2007346"
+      }, {
+        "id": "2007348",
+        "name": "MQ_S01_1_016,200_F2",
+        "lanePos": "LANE2",
+        "detId": "2007346"
+      }]
+    }]
+  }, {
+    "id": "S01_2",
+    "name": "S01_2",
+    "validitySection": {
+      "logKmFrom": 0.0,
+      "logKmTo": 16.2,
+      "roadId": "S01_2",
+      "mapVersion": "test1"
+    },
+    "detectionSites": [{
+      "id": "2007349",
+      "name": "MQ_S01_2_015,200",
+      "validitySection": {
+        "logKmFrom": 0.5,
+        "logKmTo": 1.675,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 1.0,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007350",
+        "name": "MQ_S01_2_015,200_F1",
+        "lanePos": "LANE1",
+        "detId": "2007349"
+      }, {
+        "id": "2007351",
+        "name": "MQ_S01_2_015,200_F2",
+        "lanePos": "LANE2",
+        "detId": "2007349"
+      }]
+    }, {
+      "id": "2007352",
+      "name": "MQ_S01_2_013,850",
+      "validitySection": {
+        "logKmFrom": 1.675,
+        "logKmTo": 2.915,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 2.35,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007353",
+        "name": "MQ_S01_2_013,850_F1",
+        "lanePos": "LANE1",
+        "detId": "2007352"
+      }, {
+        "id": "2007354",
+        "name": "MQ_S01_2_013,850_F2",
+        "lanePos": "LANE2",
+        "detId": "2007352"
+      }]
+    }, {
+      "id": "2056888",
+      "name": "MQ_S01_2_012,720",
+      "validitySection": {
+        "logKmFrom": 2.915,
+        "logKmTo": 3.4975,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 3.48,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2056889",
+        "name": "MQ_S01_2_012,720_F1",
+        "lanePos": "LANE1",
+        "detId": "2056888"
+      }, {
+        "id": "2056890",
+        "name": "MQ_S01_2_012,720_F2",
+        "lanePos": "LANE2",
+        "detId": "2056888"
+      }]
+    }, {
+      "id": "2007418",
+      "name": "MQ_S01_2_012,685",
+      "validitySection": {
+        "logKmFrom": 3.4975,
+        "logKmTo": 3.9675,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 3.515,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007419",
+        "name": "MQ_S01_2_012,685_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007418"
+      }, {
+        "id": "2007420",
+        "name": "MQ_S01_2_012,685_F2",
+        "lanePos": "LANE2",
+        "detId": "2007418"
+      }, {
+        "id": "2007421",
+        "name": "MQ_S01_2_012,685_F2",
+        "lanePos": "LANE3",
+        "detId": "2007418"
+      }]
+    }, {
+      "id": "2007410",
+      "name": "MQ_S01_2_011,780",
+      "validitySection": {
+        "logKmFrom": 3.9675,
+        "logKmTo": 4.9025,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 4.42,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007411",
+        "name": "MQ_S01_2_011,780_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007410"
+      }, {
+        "id": "2007412",
+        "name": "MQ_S01_2_011,780_F2",
+        "lanePos": "LANE2",
+        "detId": "2007410"
+      }, {
+        "id": "2007413",
+        "name": "MQ_S01_2_011,780_F2",
+        "lanePos": "LANE3",
+        "detId": "2007410"
+      }]
+    }, {
+      "id": "2007402",
+      "name": "MQ_S01_2_010,815",
+      "validitySection": {
+        "logKmFrom": 4.9025,
+        "logKmTo": 5.7925,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 5.385,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007403",
+        "name": "MQ_S01_2_011,780_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007402"
+      }, {
+        "id": "2007404",
+        "name": "MQ_S01_2_011,780_F2",
+        "lanePos": "LANE2",
+        "detId": "2007402"
+      }, {
+        "id": "2007405",
+        "name": "MQ_S01_2_011,780_F2",
+        "lanePos": "LANE3",
+        "detId": "2007402"
+      }]
+    }, {
+      "id": "2007358",
+      "name": "MQ_S01_2_010,000",
+      "validitySection": {
+        "logKmFrom": 5.7925,
+        "logKmTo": 6.95,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 6.2,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007359",
+        "name": "MQ_S01_2_010,000_F1",
+        "lanePos": "LANE1",
+        "detId": "2007358"
+      }, {
+        "id": "2007360",
+        "name": "MQ_S01_2_010,000_F2",
+        "lanePos": "LANE2",
+        "detId": "2007358"
+      }]
+    }, {
+      "id": "2007361",
+      "name": "MQ_S01_2_008,500",
+      "validitySection": {
+        "logKmFrom": 6.95,
+        "logKmTo": 8.5075,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 7.7,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007362",
+        "name": "MQ_S01_2_008,500_F1",
+        "lanePos": "LANE1",
+        "detId": "2007361"
+      }, {
+        "id": "2007363",
+        "name": "MQ_S01_2_008,500_F2",
+        "lanePos": "LANE2",
+        "detId": "2007361"
+      }]
+    }, {
+      "id": "2007364",
+      "name": "MQ_S01_2_006,885",
+      "validitySection": {
+        "logKmFrom": 8.5075,
+        "logKmTo": 10.219,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 9.315,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007365",
+        "name": "MQ_S01_2_006,885_F1",
+        "lanePos": "LANE1",
+        "detId": "2007364"
+      }, {
+        "id": "2007366",
+        "name": "MQ_S01_2_006,885_F2",
+        "lanePos": "LANE2",
+        "detId": "2007364"
+      }]
+    }, {
+      "id": "2007367",
+      "name": "MQ_S01_2_005,077",
+      "validitySection": {
+        "logKmFrom": 10.219,
+        "logKmTo": 11.411,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 11.123,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007368",
+        "name": "MQ_S01_2_005,077_F1",
+        "lanePos": "LANE1",
+        "detId": "2007367"
+      }, {
+        "id": "2007369",
+        "name": "MQ_S01_2_005,077_F2",
+        "lanePos": "LANE2",
+        "detId": "2007367"
+      }]
+    }, {
+      "id": "2048480",
+      "name": "MQ_S01_2_004,501",
+      "validitySection": {
+        "logKmFrom": 11.411,
+        "logKmTo": 11.79,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 11.699,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2048481",
+        "name": "MQ_S01_2_004,501_F1",
+        "lanePos": "LANE1",
+        "detId": "2048480"
+      }, {
+        "id": "2048482",
+        "name": "MQ_S01_2_004,501_F2",
+        "lanePos": "LANE2",
+        "detId": "2048480"
+      }]
+    }, {
+      "id": "2048485",
+      "name": "MQ_S01_2_004,319",
+      "validitySection": {
+        "logKmFrom": 11.79,
+        "logKmTo": 12.678,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 11.881,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2048486",
+        "name": "MQ_S01_2_004,319_F1",
+        "lanePos": "LANE1",
+        "detId": "2048485"
+      }, {
+        "id": "2048487",
+        "name": "MQ_S01_2_004,319_F2",
+        "lanePos": "LANE2",
+        "detId": "2048485"
+      }]
+    }, {
+      "id": "2007373",
+      "name": "MQ_S01_2_002,725",
+      "validitySection": {
+        "logKmFrom": 12.678,
+        "logKmTo": 14.0625,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 13.475,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007374",
+        "name": "MQ_S01_2_002,725_F1",
+        "lanePos": "LANE1",
+        "detId": "2007373"
+      }, {
+        "id": "2007375",
+        "name": "MQ_S01_2_002,725_F2",
+        "lanePos": "LANE2",
+        "detId": "2007373"
+      }]
+    }, {
+      "id": "2007308",
+      "name": "MQ_S01_2_001,550",
+      "validitySection": {
+        "logKmFrom": 14.0625,
+        "logKmTo": 14.8625,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 14.65,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007309",
+        "name": "MQ_S01_2_001,550_F1",
+        "lanePos": "LANE1",
+        "detId": "2007308"
+      }, {
+        "id": "2007310",
+        "name": "MQ_S01_2_001,550_F2",
+        "lanePos": "LANE2",
+        "detId": "2007308"
+      }]
+    }, {
+      "id": "2007394",
+      "name": "MQ_S01_2_001,125",
+      "validitySection": {
+        "logKmFrom": 14.8625,
+        "logKmTo": 15.4625,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 15.075,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007395",
+        "name": "MQ_S01_2_001,125_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007394"
+      }, {
+        "id": "2007396",
+        "name": "MQ_S01_2_001,125_F2",
+        "lanePos": "LANE2",
+        "detId": "2007394"
+      }, {
+        "id": "2007397",
+        "name": "MQ_S01_2_001,125_F2",
+        "lanePos": "LANE3",
+        "detId": "2007394"
+      }]
+    }, {
+      "id": "2007382",
+      "name": "MQ_S01_2_000,350",
+      "validitySection": {
+        "logKmFrom": 15.4625,
+        "logKmTo": 16.2,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "logKm": {
+        "logKm": 15.85,
+        "roadId": "S01_2",
+        "mapVersion": "test1"
+      },
+      "lanes": [{
+        "id": "2007383",
+        "name": "MQ_S01_2_000,350_Ab",
+        "lanePos": "LANE1",
+        "detId": "2007382"
+      }, {
+        "id": "2007384",
+        "name": "MQ_S01_2_000,350_F2",
+        "lanePos": "LANE2",
+        "detId": "2007382"
+      }, {
+        "id": "2007385",
+        "name": "MQ_S01_2_000,350_F2",
+        "lanePos": "LANE3",
+        "detId": "2007382"
+      }]
+    }]
+  }]
+}

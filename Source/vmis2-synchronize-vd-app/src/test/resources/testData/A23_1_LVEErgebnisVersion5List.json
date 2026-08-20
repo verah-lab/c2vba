@@ -1,0 +1,29 @@
+{
+  "elementsList": [{
+    "id": "MQ_A23_2_720_F1",
+    "tlsTime": "2019-08-09T09:45:00Z",
+    "processTime": "2019-08-09T09:46:02.311Z",
+    "intervallArt": 1,
+    "intervalllaenge": 4,
+    "qKfz": 16,
+    "qPkwG": 6,
+    "qPkwA": 7,
+    "qLkw": 8,
+    "qLkwK": 9,
+    "qBus": 10,
+    "qnkKfz": 11,
+    "vPkwG": 12,
+    "vPkwA": 13,
+    "vLkw": 14,
+    "vLkwK": 15,
+    "vBus": 16,
+    "sPkwG": 17,
+    "sPkwA": 18,
+    "sLkw": 19,
+    "sLkwK": 20,
+    "sBus": 21,
+    "nettozeitluecke": 8.5,
+    "belegung": 5,
+    "vKfz": 50
+  }]
+}

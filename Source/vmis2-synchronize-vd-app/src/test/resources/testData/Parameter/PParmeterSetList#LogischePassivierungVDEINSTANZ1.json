@@ -1,0 +1,1957 @@
+{
+  "instanceId": "INSTANZ1",
+  "definitionSetId": "LogischePassivierungVDE",
+  "roadId": "A23_2",
+  "values": [{
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_750_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_740_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_750_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300163B002.B02"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_730_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300163B002.B01"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_805_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_884_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_740_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_730_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_580_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_884_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300129B002.B01"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_805_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_660_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300090B002.B01"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_730_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_805_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_710_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_710_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_590_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_665_F4"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_580_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": true
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_660_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_680_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_680_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_660_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_530_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_630_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_710_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300069B002.B01"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_530_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300129B002.B04"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300129B002.B02"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_630_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_670_A1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_630_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_005_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_680_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300129B002.B03"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_540_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_005_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_670_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_540_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300069B002.B03"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300069B002.B02"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300069B002.B04"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_530_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_670_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_670_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_610_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_590_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_610_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_610_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_832_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_590_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_832_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_849_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_849_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_665_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_665_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300003B002.B01"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300090B002.B02"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300090B002.B05"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_720_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_832_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300003B002.B03"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_580_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300090B002.B03"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300090B002.B04"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "_M502300003B002.B02"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_720_F2"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_720_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_750_F3"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "LogischePassivierungVDE",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN",
+        "wzgType": "UNKNOWN"
+      },
+      "itemId": "MQ_A23_2_665_F1"
+    },
+    "values": [{
+      "parameterId": "log_passiv",
+      "value": {
+        "booleanVal": false
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1613661529243",
+    "userId": "",
+    "reset": false,
+    "iid": "OP5xx6HTF4ehWkhCcOkSjA",
+    "previousIid": ""
+  }],
+  "iid": "lZRNPpvU4hsSD5BtRs+gCw"
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%highlight{%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} [%marker] - %msg%n}" disableAnsi="false" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="org.springframework" level="warn" />
+		<Logger name="org.springframework.kafka" level="warn" />
+		<Logger name="org.apache.kafka" level="warn" />
+		<Logger name="org.apache.zookeeper" level="warn" />
+		<Logger name="kafka" level="warn" />
+		<Logger name="de.heuboe" level="info" />
+		<Logger name="de.heuboe.asfinag.vmis2.synchronize.vd.core" level="warn" />
+        <Logger name="de.heuboe.asfinag.vmis2.synchronize.vd.schedule" level="warn" />
+        <Logger name="de.heuboe.asfinag.vmis2.synchronize.vd.actors" level="warn" />
+		<Logger name="de.heuboe.asfinag.vmis2.stateproritiy" level="warn"/>
+		<Logger name="net.devh" level="info" />
+		<Root level="info">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>

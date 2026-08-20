@@ -1,0 +1,15 @@
+/.classpath
+/.project
+/.settings/
+/target/
+*.iml
+/data/
+/pom.xml.releaseBackup
+/release.properties
+src/test/resources/testData/PShortTermCollectedDataLanes.json
+/.factorypath
+/application-default.yml
+/application-default-vmis2.properties
+/application-default-vmis2.yml
+/application.yml
+/application-default-ni.yml

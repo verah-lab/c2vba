@@ -1,0 +1,153 @@
+{
+	"vdeSensors": {
+		"sensors": [
+			{
+				"id": "MQ_A23_1_200_F1",
+				"name": "MQ_A23_1_014,229_F1",
+				"uzId": "WIE",
+				"lanePos": {
+					"description": "FS1",
+					"laneType": "MAIN",
+					"hIndex": 0,
+					"hSpan": 0,
+					"vIndex": 0,
+					"between": false
+				},
+				"heading": "ASCENDING",
+				"qId": "MQ_A23_1_200_F1.A01",
+				"type": "UNKNOWN",
+				"location": {
+					"latitude": 48.21802610216402,
+					"longitude": 16.447149997298407,
+					"roadId": "A23_1"
+				}
+			},
+			{
+				"id": "MQ_A23_1_200_F2",
+				"name": "MQ_A23_1_014,229_F2",
+				"uzId": "WIE",
+				"lanePos": {
+					"description": "FS2",
+					"laneType": "MAIN",
+					"hIndex": 1,
+					"hSpan": 0,
+					"vIndex": 0,
+					"between": false
+				},
+				"heading": "ASCENDING",
+				"qId": "MQ_A23_1_200_F1.A01",
+				"type": "UNKNOWN",
+				"location": {
+					"latitude": 48.21802610216402,
+					"longitude": 16.447149997298407,
+					"roadId": "A23_1"
+				}
+			},
+			{
+				"id": "MQ_A23_1_200_F3",
+				"name": "MQ_A23_1_014,229_F3",
+				"uzId": "WIE",
+				"lanePos": {
+					"description": "FS3",
+					"laneType": "MAIN",
+					"hIndex": 2,
+					"hSpan": 0,
+					"vIndex": 0,
+					"between": false
+				},
+				"heading": "ASCENDING",
+				"qId": "MQ_A23_1_200_F1.A01",
+				"type": "UNKNOWN",
+				"location": {
+					"latitude": 48.21802610216402,
+					"longitude": 16.447149997298407,
+					"roadId": "A23_1"
+				}
+			},
+			{
+				"id": "MQ_A23_1_194_A1",
+				"name": "MQ_A23_1_013,063_A1",
+				"uzId": "WIE",
+				"lanePos": {
+					"description": "FS1",
+					"laneType": "MAIN",
+					"hIndex": 0,
+					"hSpan": 0,
+					"vIndex": 0,
+					"between": false
+				},
+				"heading": "ASCENDING",
+				"qId": "MQ_A23_1_194_A1.A01",
+				"type": "UNKNOWN",
+				"location": {
+					"latitude": 48.20920602845063,
+					"longitude": 16.44022267193543,
+					"roadId": "A23_1"
+				}
+			},
+			{
+				"id": "MQ_A23_1_194_A2",
+				"name": "MQ_A23_1_013,063_A2",
+				"uzId": "WIE",
+				"lanePos": {
+					"description": "FS2",
+					"laneType": "MAIN",
+					"hIndex": 1,
+					"hSpan": 0,
+					"vIndex": 0,
+					"between": false
+				},
+				"heading": "ASCENDING",
+				"qId": "MQ_A23_1_194_A1.A01",
+				"type": "UNKNOWN",
+				"location": {
+					"latitude": 48.20920602845063,
+					"longitude": 16.44022267193543,
+					"roadId": "A23_1"
+				}
+			},
+			{
+				"id": "MQ_A23_1_194_F1",
+				"name": "MQ_A23_1_013,063_F1",
+				"uzId": "WIE",
+				"lanePos": {
+					"description": "FS1",
+					"laneType": "MAIN",
+					"hIndex": 0,
+					"hSpan": 0,
+					"vIndex": 0,
+					"between": false
+				},
+				"heading": "ASCENDING",
+				"qId": "MQ_A23_1_194_F1.A01",
+				"type": "UNKNOWN",
+				"location": {
+					"latitude": 48.20920602845063,
+					"longitude": 16.44022267193543,
+					"roadId": "A23_1"
+				}
+			},
+			{
+                "id": "Neuer_vorher_ungekannter_Sensor",
+                "name": "Neuer_vorher_ungekannter_Sensor",
+                "uzId": "WIE",
+                "lanePos": {
+                    "description": "FS1",
+                    "laneType": "MAIN",
+                    "hIndex": 0,
+                    "hSpan": 0,
+                    "vIndex": 0,
+                    "between": false
+                },
+                "heading": "ASCENDING",
+                "qId": "Neuer_vorher_ungekannter_MQ",
+                "type": "UNKNOWN",
+                "location": {
+                    "latitude": 666,
+                    "longitude": 777,
+                    "roadId": "A23_1"
+                }
+            }
+		]
+	}
+}
