@@ -1,0 +1,71 @@
+/************************************************************************/
+/* Specfile fuer Sequencer UZ Wien NordWest                                    */
+/************************************************************************/
+
+#include "spec.h"
+#include "seq-uz_allgemein.txt"
+
+
+/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen
+*/
+Bei Eingang von DaSYSFehlerDUE
+{
+  If (Fehlercode == 0) {
+
+    /* KRI_PPP_2B */
+    If ($Eaid == 2034032) {
+      Ea(2032232) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_PPP_EB_2C */
+    If ($Eaid == 2034033) {
+      Ea(2032239) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_PPP_KB_2C */
+    If ($Eaid == 2034034) {
+      Ea(2032242) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_TuKO_RFB1 */
+    If ($Eaid == 2034035) {
+      Ea(2032244) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_TuKO_RFB2 */
+    If ($Eaid == 2034036) {
+      Ea(2032246) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_PPP_VZE1_2B */
+    If ($Eaid == 2034037) {
+      Ea(2032248) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_PPP_VZE2_2B */
+    If ($Eaid == 2034038) {
+      Ea(2032254) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_PPP_VZE3_2B */
+    If ($Eaid == 2034039) {
+      Ea(2032260) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI_A01_AVS_Inzersdorf */
+    If ($Eaid == 2034040) {
+      Ea(2032266) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* I048_KRI_3 */
+    If ($Eaid == 2034041) {
+      Ea(2032270) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+  }
+}
+
+
+
+
+

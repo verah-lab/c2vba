@@ -1,0 +1,332 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.tls.received;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option (.heuboe.protobuf.interface_version) = "3.0.0";
+
+message SYSDeFehler { // Fg 254 | Id 1 | deTyp 1
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 fehlercode = 11;
+    sint32 hersteller = 12;
+}
+
+message SYSDeFehlerList { // Liste von SYSDeFehler
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSDeFehler elements = 2;
+}
+
+message SYSErgDeFehler { // Fg 254 | Id 1 | deTyp 14
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    bytes tls_fehlerbytes = 12;
+    bytes hersteller_fehlerbytes = 13;
+}
+
+message SYSErgDeFehlerList { // Liste von SYSErgDeFehler
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSErgDeFehler elements = 2;
+}
+
+message SYSNegativeQuittung { // Fg 254 | Id 2 | deTyp 16
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 fehlerursache = 11;
+    sint32 hersteller = 12;
+}
+
+message SYSNegativeQuittungList { // Liste von SYSNegativeQuittung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSNegativeQuittung elements = 2;
+}
+
+message SYSInitMeldung { // Fg 254 | Id 2 | deTyp 17
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 meldung = 11;
+}
+
+message SYSInitMeldungList { // Liste von SYSInitMeldung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSInitMeldung elements = 2;
+}
+
+message SYSZeitsynchronisation { // Fg 254 | Id 2 | deTyp 18
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    google.protobuf.Timestamp zeitstempel = 11;
+    sint32 wochentag = 12;
+}
+
+message SYSZeitsynchronisationList { // Liste von SYSZeitsynchronisation
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSZeitsynchronisation elements = 2;
+}
+
+message SYSKommunikationsstatus { // Fg 254 | Id 2 | deTyp 19
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 status = 11;
+}
+
+message SYSKommunikationsstatusList { // Liste von SYSKommunikationsstatus
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSKommunikationsstatus elements = 2;
+}
+
+message SYSPositiveQuittung { // Fg 254 | Id 3 | deTyp 28
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 quittung = 11;
+}
+
+message SYSPositiveQuittungList { // Liste von SYSPositiveQuittung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSPositiveQuittung elements = 2;
+}
+
+message SYSStatischeGeraetekenndaten { // Fg 254 | Id 3 | deTyp 32
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    bytes kenndaten = 12;
+}
+
+message SYSStatischeGeraetekenndatenList { // Liste von SYSStatischeGeraetekenndaten
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSStatischeGeraetekenndaten elements = 2;
+}
+
+message SYSDeZuordnung { // Fg 254 | Id 3 | deTyp 33
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    repeated Zuordnungsblock zuordnungsbloecke = 11;
+
+    message Zuordnungsblock {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 ea_kanal_nummer = 1;
+        sint32 fg = 2;
+        sint32 de_adresse = 3;
+    }
+}
+
+message SYSDeZuordnungList { // Liste von SYSDeZuordnung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSDeZuordnung elements = 2;
+}
+
+message SYSKonfigurationstabelle { // Fg 254 | Id 3 | deTyp 34
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    repeated Tabellenzeile tabellenzeilen = 11;
+
+    message Tabellenzeile {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 eak_adresse = 1;
+        sint32 ea_kanal_nummer = 2;
+        sint32 fg = 3;
+        sint32 de_adresse = 4;
+    }
+}
+
+message SYSKonfigurationstabelleList { // Liste von SYSKonfigurationstabelle
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSKonfigurationstabelle elements = 2;
+}
+
+message SYSOsi3Routing { // Fg 254 | Id 3 | deTyp 35
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    repeated RoutingBlock routing_bloecke = 11;
+
+    message RoutingBlock {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 routing_block_laenge = 1;
+        sint32 fg = 2;
+        repeated VermAbschnitt verm_abschnitte = 3;
+
+        message VermAbschnitt {
+            option (.heuboe.protobuf.stereotype) = DATATYPE;
+            sint32 adresse1 = 1;
+            sint32 adresse2 = 2;
+        }
+    }
+}
+
+message SYSOsi3RoutingList { // Liste von SYSOsi3Routing
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSOsi3Routing elements = 2;
+}
+
+message SYSGeoKenndaten { // Fg 254 | Id 3 | deTyp 36
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 landeskennung = 11;
+    sint32 strassenart = 12;
+    sint32 strassennummer = 13;
+    double kilometrierung = 14;
+    sint32 fahrtrichtung = 15;
+    sint32 reservebyte = 16;
+}
+
+message SYSGeoKenndatenList { // Liste von SYSGeoKenndaten
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSGeoKenndaten elements = 2;
+}
+
+message SYSKnotennummer { // Fg 254 | Id 3 | deTyp 37
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 knotennummer = 11;
+}
+
+message SYSKnotennummerList { // Liste von SYSKnotennummer
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSKnotennummer elements = 2;
+}
+
+message SYSErweiterteKonfigtabelle { // Fg 254 | Id 3 | deTyp 39
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    repeated Eak eaks = 11;
+
+    message Eak {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 eak_adresse = 1;
+        repeated Fg fgs = 2;
+
+        message Fg {
+            option (.heuboe.protobuf.stereotype) = DATATYPE;
+            sint32 fg = 1;
+            repeated De des = 2;
+
+            message De {
+                option (.heuboe.protobuf.stereotype) = DATATYPE;
+                sint32 ea_kanal_nummer = 1;
+                sint32 de_adresse = 2;
+            }
+        }
+    }
+}
+
+message SYSErweiterteKonfigtabelleList { // Liste von SYSErweiterteKonfigtabelle
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSErweiterteKonfigtabelle elements = 2;
+}
+
+message SYSDateiTransfer { // Fg 254 | Id 3 | deTyp 41
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 blocknummer = 11;
+    sint32 anzahl_datenbloecke = 12;
+    string bezeichner = 13;
+    bytes datenblock = 14;
+}
+
+message SYSDateiTransferList { // Liste von SYSDateiTransfer
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSDateiTransfer elements = 2;
+}
+
+message SYSZustandExterneSteuerung { // Fg 254 | Id 4 | deTyp 126
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 betriebsart = 11;
+    sint32 anforderungsnummer = 12;
+}
+
+message SYSZustandExterneSteuerungList { // Liste von SYSZustandExterneSteuerung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSZustandExterneSteuerung elements = 2;
+}
+
+message SYSKriKonfigtabelle { // Fg 254 | Id 3 | deTyp 127
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    repeated Adresse adressen = 11;
+
+    message Adresse {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 osi2_adresse = 1;
+        sint32 knotennummer = 2;
+    }
+}
+
+message SYSKriKonfigtabelleList { // Liste von SYSKriKonfigtabelle
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SYSKriKonfigtabelle elements = 2;
+}

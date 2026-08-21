@@ -1,0 +1,507 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.tls.received;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option (.heuboe.protobuf.interface_version) = "3.0.0";
+
+message WZGDeFehler { // Fg 4 | Id 1,33 | deTyp 1
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 fehlercode = 11;
+    sint32 hersteller = 12;
+}
+
+message WZGDeFehlerList { // Liste von WZGDeFehler
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGDeFehler elements = 2;
+}
+
+message WZGNichtDarstellbareWVZ { // Fg 4 | Id 1,33 | deTyp 2
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    bytes wvz_codes = 11;
+}
+
+message WZGNichtDarstellbareWVZList { // Liste von WZGNichtDarstellbareWVZ
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGNichtDarstellbareWVZ elements = 2;
+}
+
+message WZGDefekteLampen { // Fg 4 | Id 1 | deTyp 3
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    bytes statusbytes = 11;
+    sint32 anz_lampen_paare = 12;
+}
+
+message WZGDefekteLampenList { // Liste von WZGDefekteLampen
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGDefekteLampen elements = 2;
+}
+
+message WZGGestoerteTextpositionen { // Fg 4 | Id 1,33 | deTyp 4
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    bytes textpositionen = 11;
+}
+
+message WZGGestoerteTextpositionenList { // Liste von WZGGestoerteTextpositionen
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGGestoerteTextpositionen elements = 2;
+}
+
+message WZGDefekteLEDKetten { // Fg 4 | Id 1 | deTyp 5
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 anzeigeprinzip = 11;
+    sint32 ausfallschwere = 12;
+    sint32 anzahl_vorhandene_ketten = 13;
+    sint32 anzahl_uebertragene_ketten = 14;
+    bytes statusbytes = 15;
+}
+
+message WZGDefekteLEDKettenList { // Liste von WZGDefekteLEDKetten
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGDefekteLEDKetten elements = 2;
+}
+
+message WZGGestoertePixelspalten { // Fg 4 | Id 1,33 | deTyp 6
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    repeated Pixelspalte pixelspalten = 11;
+
+    message Pixelspalte {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 pixelspaltennummer = 1;
+        sint32 anzahl_fehlerhafter_pixel = 2;
+    }
+}
+
+message WZGGestoertePixelspaltenList { // Liste von WZGGestoertePixelspalten
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGGestoertePixelspalten elements = 2;
+}
+
+message WZGErgDeFehler { // Fg 4 | Id 1,33 | deTyp 14
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 hersteller = 11;
+    bytes tls_fehlerbytes = 12;
+    bytes hersteller_fehlerbytes = 13;
+}
+
+message WZGErgDeFehlerList { // Liste von WZGErgDeFehler
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGErgDeFehler elements = 2;
+}
+
+message WZGNegativeQuittung { // Fg 4 | Id 2 | deTyp 16
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 fehlerursache = 11;
+    sint32 hersteller = 12;
+}
+
+message WZGNegativeQuittungList { // Liste von WZGNegativeQuittung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGNegativeQuittung elements = 2;
+}
+
+message WZGBetriebsart { // Fg 4 | Id 2,34 | deTyp 17
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 betriebsart = 11;
+}
+
+message WZGBetriebsartList { // Liste von WZGBetriebsart
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGBetriebsart elements = 2;
+}
+
+message WZGKanalsteuerung { // Fg 4 | Id 2,34 | deTyp 29
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 kanalsteuerbyte = 11;
+}
+
+message WZGKanalsteuerungList { // Liste von WZGKanalsteuerung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGKanalsteuerung elements = 2;
+}
+
+message WVZGrundeinstellung32 { // Fg 4 | Id 3 | deTyp 32
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 stellzustand = 11;
+    sint32 funktionsbyte = 12;
+}
+
+message WVZGrundeinstellung32List { // Liste von WVZGrundeinstellung32
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WVZGrundeinstellung32 elements = 2;
+}
+
+message WZGGrundeinstellung33 { // Fg 4 | Id 3,35 | deTyp 33
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 anzeigeprinzip = 11;
+    sint32 stellcode = 12;
+    sint32 funktionsbyte = 13;
+    string textzeichen = 14;
+    repeated Prisma prismen = 15;
+
+    message Prisma {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 wvz_code = 1;
+        sint32 funktionsbyte = 2;
+    }
+}
+
+message WZGGrundeinstellung33List { // Liste von WZGGrundeinstellung33
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGGrundeinstellung33 elements = 2;
+}
+
+message WZGGeoKenndaten { // Fg 4 | Id 3 | deTyp 36
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 landeskennung = 11;
+    sint32 strassenart = 12;
+    sint32 strassennummer = 13;
+    double kilometrierung = 14;
+    sint32 fahrtrichtung = 15;
+    sint32 reservebyte = 16;
+}
+
+message WZGGeoKenndatenList { // Liste von WZGGeoKenndaten
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGGeoKenndaten elements = 2;
+}
+
+message WVZGrundprogramm { // Fg 4 | Id 3 | deTyp 42
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 grundprogrammnummer = 11;
+}
+
+message WVZGrundprogrammList { // Liste von WVZGrundprogramm
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WVZGrundprogramm elements = 2;
+}
+
+message WZGCodeliste { // Fg 4 | Id 3 | deTyp 43
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 anzeigeprinzip = 11;
+    bytes wvz_codes = 12;
+}
+
+message WZGCodelisteList { // Liste von WZGCodeliste
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGCodeliste elements = 2;
+}
+
+message WZGCodedefinition { // Fg 4 | Id 3,35 | deTyp 44
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 anzeigeprinzip = 11;
+    sint32 stellcode = 12;
+    bytes lampennummern = 13;
+    string textzeichen = 14;
+    repeated Prisma prismen = 15;
+    repeated Stellzustand stellzustaende = 16;
+
+    message Prisma {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 wvz_code = 1;
+        sint32 funktionsbyte = 2;
+    }
+
+    message Stellzustand {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 de_nummer = 1;
+        sint32 anzeigeprinzip = 2;
+        sint32 stellcode = 3;
+        sint32 funktionsbyte = 4;
+    }
+}
+
+message WZGCodedefinitionList { // Liste von WZGCodedefinition
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGCodedefinition elements = 2;
+}
+
+message WZGBilddefinition { // Fg 4 | Id 3,35 | deTyp 45
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 stellcode = 11;
+    string dateiname = 12;
+}
+
+message WZGBilddefinitionList { // Liste von WZGBilddefinition
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGBilddefinition elements = 2;
+}
+
+message WVZStellzustand48 { // Fg 4 | Id 5,37 | deTyp 48
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 stellzustand = 11;
+    sint32 funktionsbyte = 12;
+}
+
+message WVZStellzustand48List { // Liste von WVZStellzustand48
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WVZStellzustand48 elements = 2;
+}
+
+message WZGHelligkeit { // Fg 4 | Id 5,37 | deTyp 49
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 helligkeit = 11;
+    sint32 statusbyte = 12;
+}
+
+message WZGHelligkeitList { // Liste von WZGHelligkeit
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGHelligkeit elements = 2;
+}
+
+message WVZWechseltext { // Fg 4 | Id 5,37 | deTyp 50
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 funktionsbyte = 11;
+    bytes textzeichen = 12;
+}
+
+message WVZWechseltextList { // Liste von WVZWechseltext
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WVZWechseltext elements = 2;
+}
+
+message WZGStellzustand55 { // Fg 4 | Id 5,37 | deTyp 55
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 anzeigeprinzip = 11;
+    sint32 stellcode = 12;
+    sint32 funktionsbyte = 13;
+    string textzeichen = 14;
+    repeated Prisma prismen = 15;
+
+    message Prisma {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 wvz_code = 1;
+        sint32 funktionsbyte = 2;
+    }
+}
+
+message WZGStellzustand55List { // Liste von WZGStellzustand55
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGStellzustand55 elements = 2;
+}
+
+message WVZStellprogramm { // Fg 4 | Id 5,37 | deTyp 58
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 programmnummer = 11;
+    sint32 programmstatus = 12;
+}
+
+message WVZStellprogrammList { // Liste von WVZStellprogramm
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WVZStellprogramm elements = 2;
+}
+
+message WZGGrundeinstellung { // Fg 255 | Id 127 | deTyp 248
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 anzeigeprinzip = 11;
+    sint32 stellcode = 12;
+    sint32 funktionsbyte = 13;
+    string textzeichen = 14;
+    repeated Prisma prismen = 15;
+
+    message Prisma {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 wvz_code = 1;
+        sint32 funktionsbyte = 2;
+    }
+}
+
+message WZGGrundeinstellungList { // Liste von WZGGrundeinstellung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGGrundeinstellung elements = 2;
+}
+
+message WZGStellzustand { // Fg 255 | Id 127 | deTyp 249
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 anzeigeprinzip = 11;
+    sint32 stellcode = 12;
+    sint32 funktionsbyte = 13;
+    string textzeichen = 14;
+    repeated Prisma prismen = 15;
+
+    message Prisma {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        sint32 wvz_code = 1;
+        sint32 funktionsbyte = 2;
+    }
+}
+
+message WZGStellzustandList { // Liste von WZGStellzustand
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WZGStellzustand elements = 2;
+}
+
+message WVZGrundeinstellung { // Fg 255 | Id 127 | deTyp 250
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 stellzustand = 11;
+    sint32 funktionsbyte = 12;
+}
+
+message WVZGrundeinstellungList { // Liste von WVZGrundeinstellung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WVZGrundeinstellung elements = 2;
+}
+
+message WVZStellzustand { // Fg 255 | Id 127 | deTyp 251
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 folgenummer = 5;
+    sint32 stellzustand = 11;
+    sint32 funktionsbyte = 12;
+}
+
+message WVZStellzustandList { // Liste von WVZStellzustand
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated WVZStellzustand elements = 2;
+}

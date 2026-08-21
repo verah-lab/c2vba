@@ -1,0 +1,11 @@
+/.project
+/.classpath
+/.flattened-pom.xml
+/.project
+/.settings/
+/pom.xml.versionsBackup
+target/
+/release.properties
+.factorypath
+/pom.xml.releaseBackup
+*.iml

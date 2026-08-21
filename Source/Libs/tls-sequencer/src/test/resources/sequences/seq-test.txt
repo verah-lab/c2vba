@@ -1,0 +1,197 @@
+/* ========================================================================== */
+/* Converts incoming SYSKommunikationsstatus messages to SYSFehlerDUE         */
+/* messages with manufacturer HeuBoe.                                         */
+/* ========================================================================== */
+Bei Eingang von SYSKommunikationsstatus
+{
+    SYSFehlerDUE.fehlercode := status
+    SYSFehlerDUE.hersteller := 6
+}
+
+
+/* ========================================================================== */
+/* due2de and time sync initiation for every defined KRI                      */
+/* ========================================================================== */
+Bei Eingang von SYSFehlerDUE (self=true)
+{
+    If (fehlercode == 0) {
+        // due2de
+        If (
+            ($Eaid == "KRI_PPP_EB_2C") ||
+            ($Eaid == "KRI_PPP_2B")
+        ) {
+            DEs der KRI fg(1) in in.LVEDeFehler.fehlercode := 0
+            DEs der KRI fg(1) in in.LVEDeFehler.hersteller := 6
+
+            DEs der KRI fg(3) in in.UFDDeFehler.fehlercode := 0
+            DEs der KRI fg(3) in in.UFDDeFehler.hersteller := 6
+
+            DEs der KRI fg(4) in in.WZGDeFehler.fehlercode := 0
+            DEs der KRI fg(4) in in.WZGDeFehler.hersteller := 6
+
+            DEs der KRI fg(5) in in.WWWDeFehler.fehlercode := 0
+            DEs der KRI fg(5) in in.WWWDeFehler.hersteller := 6
+
+            DEs der KRI fg(6) in in.VLTDeFehler.fehlercode := 0
+            DEs der KRI fg(6) in in.VLTDeFehler.hersteller := 6
+        }
+
+        // time sync
+        If (isKri($Eaid)) {
+            Ea in SteuerSequenz.action via out.SYSSteuerSequenz := LOKALE_ZEITSYNCHRONISATION
+            Ea in SteuerSequenz.fg via out.SYSSteuerSequenz := 254
+        }
+    }
+}
+
+
+/* ========================================================================== */
+/* FG 4 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von WZGDeFehler
+{
+    if ((fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG) {
+        if (($DeNummer > 192) && ($DeNummer < 224)) {
+            // Clusterkanal
+            SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_BETRIEBSART
+            SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+        } else {
+            // normales WZG
+            SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_KANAL_STEUERUNG
+            SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+        }
+    }
+}
+
+
+/* ========================================================================== */
+/* FG 254 (Zeit Synchronisation)                                              */
+/* ========================================================================== */
+
+Bei Eingang von SYSZeitsynchronisation {
+    einmaliger retriggerbarer Monoflop ( 7, 15 ) {
+        SteuerSequenz.action via out.SYSSteuerSequenz := GLOBALE_ZEITSYNCHRONISATION
+        ErrorMessage ("ZeitSync durch {}", $Eaid)
+    }
+}
+
+
+/* ========================================================================== */
+/* Switch - Case                                                              */
+/* ========================================================================== */
+Bei Eingang von WZGHelligkeit
+{
+    Switch (helligkeit) {
+        case 10:
+            SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_HELLIGKEIT
+            SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+            break
+        case 11:
+            SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_GEO_KENN
+            SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+        case 12:
+            SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_BETRIEBSART
+            SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+    }
+}
+
+
+/* ========================================================================== */
+/* Copy object                                                                */
+/* ========================================================================== */
+Bei Eingang von WZGBilddefinition via out.WZGBilddefinition {
+    if (id == "MQ_S05_1_916_F2") {
+        WZGBilddefinition.dateiname := dateiname
+    }
+
+    if (id == "copy with tlsTime") {
+        copy to WZGBilddefinition via out.WZGBilddefinitionIst
+    }
+
+    if (id == "copy without tlsTime") {
+            copy to WZGBilddefinition via out.WZGBilddefinitionIst
+        }
+}
+
+
+/* ========================================================================== */
+/* Config change                                                              */
+/* ========================================================================== */
+Bei Eingang von SYSDeFehler {
+    If (fehlercode != 0) {
+        DEs des Knoten fg(4) in in.WZGDeFehler.fehlercode := 255
+        DEs des Knoten fg(4) in in.WZGDeFehler.hersteller := 6
+
+        DEs des Knoten fg(6) in in.VLTDeFehler.fehlercode := 255
+        DEs des Knoten fg(6) in in.VLTDeFehler.hersteller := 5
+    }
+}
+
+// just for parsing test
+Bei Eingang von SYSKommunikationsstatus
+{
+    if ((status != 0) || ((status == 0) && (SYSKommunikationsstatus*old.status != 0 ))) {
+        SYSFehlerDUE.fehlercode := status
+        SYSFehlerDUE.hersteller := 6
+    }
+}
+
+/* ========================================================================== */
+/* Time function                                                              */
+/* ========================================================================== */
+Bei Eingang von out.WZGStellzustandJob (autoFillTlsTime=true)
+{
+    // set the current time via function
+    if (id == "currentTime") {
+        WZGNegativeQuittung.tlsTime := dateTime()
+        WZGNegativeQuittung.fehlerursache := 0
+        WZGNegativeQuittung.hersteller := 42
+        WZGNegativeQuittung.jobnummer := jobnummer
+    }
+
+    // set a specific time via function
+    if (id == "specificTime") {
+        WZGDeFehler.tlsTime := dateTime("2024-11-07T10:00:00Z")
+        WZGDeFehler.folgenummer := 10
+        WZGDeFehler.fehlercode := 1
+        WZGDeFehler.hersteller := 42
+        WZGDeFehler.jobnummer := jobnummer
+    }
+
+    // function call with wrong time format
+    if (id == "wrongTimeFormat") {
+        WZGDeFehler.tlsTime := dateTime("2024-11-07 10:00:00")
+        WZGDeFehler.folgenummer := 10
+        WZGDeFehler.fehlercode := 1
+        WZGDeFehler.hersteller := 42
+        WZGDeFehler.jobnummer := jobnummer
+    }
+
+    // function call with wrong parameter count
+    if (id == "wrongParameterCount") {
+        WZGDeFehler.tlsTime := dateTime("2024-11-07T10:00:00Z", "1234")
+        WZGDeFehler.folgenummer := 10
+        WZGDeFehler.fehlercode := 1
+        WZGDeFehler.hersteller := 42
+        WZGDeFehler.jobnummer := jobnummer
+    }
+
+    // automatic creation of tlsTime and processTime in copy
+    if (id == "copy") {
+        copy to WZGStellzustand
+    }
+}
+
+
+/* ========================================================================== */
+/* Array element access                                                       */
+/* ========================================================================== */
+Bei Eingang von LVEErgebnisVersion4
+{
+            LVEDeFehler.fehlercode via out.LVEDeFehler := getAtIndex( vKlassenPkwAe, 0 )
+            LVEDeFehler.hersteller via out.LVEDeFehler := 6
+
+            // complete array assignment
+            LVEErgebnisVersion4.vKlassenLkwAe via out.LVEErgebnisVersion4 := vKlassenPkwAe
+}

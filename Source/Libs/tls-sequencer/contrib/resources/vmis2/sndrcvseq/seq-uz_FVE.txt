@@ -1,0 +1,8 @@
+/************************************************************************/
+/* Specfile fuer Sequencer UZ FVE                                        */
+/************************************************************************/
+
+#include "spec.h"
+#include "seq-uz_allgemein.txt"
+/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen*/Bei Eingang von DaSYSFehlerDUE{  If (Fehlercode == 0) {    /* devive-kri 2031217 KRI_FVE_ASFiNAG  ->  q-kri 2031194 KRI_FVE_ASFiNAG  */    If ($Eaid == 2031217) {      Ea(2031194) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION    }  }}
+

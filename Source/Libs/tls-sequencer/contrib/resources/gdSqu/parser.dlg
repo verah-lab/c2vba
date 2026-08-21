@@ -1,0 +1,891 @@
+<<
+/* parser.dlg -- DLG Description of scanner
+ *
+ * Generated from: v:\rn_mL-8-2\linkVobW\vmis\src\gdSqu\seq.g
+ *
+ * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999
+ * Purdue University Electrical Engineering
+ * With AHPCRC, University of Minnesota
+ * ANTLR Version 1.33MR22
+ */
+
+#define ANTLR_VERSION	13322
+#include "tokens.h"
+#include "AToken.h"
+
+#ifdef WIN32
+#pragma warning ( disable : 4102 )
+#endif
+#include <hbtimewrap.h>
+#include "SeqValue.h"
+#include "SeqOp.h"
+#include "StackTmpl.h"
+#include <rn_strtoul.h>
+#include <strtonum.h>
+#include "ParseIntern.h"
+#include <hbString.h>
+#include <db2c.h>
+#include <nkomm.h>
+#include <stdarg.h>
+
+extern ValueSeqInternal internalKnotenNummer;
+extern ValueSeqInternal internalDeNummer;
+extern ValueSeqInternal internalEaid;
+extern ValueSeqInternal internalEaindex;
+extern ValueSeqInternal internalAktuelleZeit;
+extern ValueSeqInternal internalAktuelleDa;
+extern ValueSeqInternal internalAutosendZeit;
+extern ValueSeqInternal internalAusloesezeitpunkt;
+extern ValueSeqInternal internalErsterAusloesezeitpunkt;
+extern unsigned short pDbgLevel;
+extern bool catchDataType( long );
+extern bool catchTriggerDataType( long, TransOp* );
+extern unsigned long getNumEa( long da );
+>>
+
+<<%%parserclass Sequencer>>
+
+
+%%START
+
+@
+	<<
+		return Eof;
+	>>
+
+\{
+	<<
+		return LCURLYBRACE;
+	>>
+
+\}
+	<<
+		return RCURLYBRACE;
+	>>
+
+\[
+	<<
+		return LSQUAREBRACKET;
+	>>
+
+\]
+	<<
+		return RSQUAREBRACKET;
+	>>
+
+\(
+	<<
+		return LPARENTHESIS;
+	>>
+
+\)
+	<<
+		return RPARENTHESIS;
+	>>
+
+,
+	<<
+		return COMMA;
+	>>
+
+\|\|
+	<<
+		return LOGOR;
+	>>
+
+&&
+	<<
+		return LOGAND;
+	>>
+
+\|
+	<<
+		return BITWISEOR;
+	>>
+
+^
+	<<
+		return BITWISEXOR;
+	>>
+
+&
+	<<
+		return AMPERSAND;
+	>>
+
+==
+	<<
+		return EQUAL;
+	>>
+
+!=
+	<<
+		return NOTEQUAL;
+	>>
+
+<
+	<<
+		return LESSTHAN;
+	>>
+
+\>
+	<<
+		return GREATERTHAN;
+	>>
+
+\<=
+	<<
+		return LESSTHANOREQUALTO;
+	>>
+
+\>=
+	<<
+		return GREATERTHANOREQUALTO;
+	>>
+
+\<\<
+	<<
+		return SHIFTLEFT;
+	>>
+
+\>\>
+	<<
+		return SHIFTRIGHT;
+	>>
+
+\+
+	<<
+		return PLUS;
+	>>
+
+\-
+	<<
+		return MINUS;
+	>>
+
+\*
+	<<
+		return STAR;
+	>>
+
+/
+	<<
+		return DIVIDE;
+	>>
+
+\%
+	<<
+		return MOD;
+	>>
+
+\~
+	<<
+		return ONESCOMPLEMENT;
+	>>
+
+!
+	<<
+		return LOGNOT;
+	>>
+
+.
+	<<
+		return DOT;
+	>>
+
+:
+	<<
+		return COLON;
+	>>
+
+\-\>
+	<<
+		return POINTERTO;
+	>>
+
+=
+	<<
+		return ASSIGNEQUAL;
+	>>
+
+&=
+	<<
+		return BITWISEANDEQUAL;
+	>>
+
+\|\=
+	<<
+		return BITWISEOREQUAL;
+	>>
+
+\^\=
+	<<
+		return BITWISEXOREQUAL;
+	>>
+
+/=
+	<<
+		return DIVIDEEQUAL;
+	>>
+
+...
+	<<
+		return ELLIPSIS;
+	>>
+
+\-=
+	<<
+		return MINUSEQUAL;
+	>>
+
+\-\-
+	<<
+		return MINUSMINUS;
+	>>
+
+\%=
+	<<
+		return MODEQUAL;
+	>>
+
+\+=
+	<<
+		return PLUSEQUAL;
+	>>
+
+\+\+
+	<<
+		return PLUSPLUS;
+	>>
+
+?
+	<<
+		return QUESTIONMARK;
+	>>
+
+\<\<=
+	<<
+		return SHIFTLEFTEQUAL;
+	>>
+
+\>\>=
+	<<
+		return SHIFTRIGHTEQUAL;
+	>>
+
+\*=
+	<<
+		return TIMESEQUAL;
+	>>
+
+Bei
+	<<
+		return Bei;
+	>>
+
+Break
+	<<
+		return Break;
+	>>
+
+Case
+	<<
+		return Case;
+	>>
+
+Clusters
+	<<
+		return Cluster;
+	>>
+
+DecLoop
+	<<
+		return DecLoop;
+	>>
+
+Default
+	<<
+		return Default;
+	>>
+
+Eingang
+	<<
+		return Eingang;
+	>>
+
+Else
+	<<
+		return Else;
+	>>
+
+ErrorMessage
+	<<
+		return ErrorMessage;
+	>>
+
+Exists
+	<<
+		return Exists;
+	>>
+
+Global
+	<<
+		return Global;
+	>>
+
+If
+	<<
+		return If;
+	>>
+
+IncLoop
+	<<
+		return IncLoop;
+	>>
+
+Knotens
+	<<
+		return Knoten;
+	>>
+
+New
+	<<
+		return New;
+	>>
+
+Old
+	<<
+		return Old;
+	>>
+
+RdsLoc
+	<<
+		return RdsLoc;
+	>>
+
+Write
+	<<
+		return Write;
+	>>
+
+Sequence
+	<<
+		return Sequence;
+	>>
+
+Switch
+	<<
+		return Switch;
+	>>
+
+Temporaer
+	<<
+		return Temporaer;
+	>>
+
+[Vv]on
+	<<
+		return Von;
+	>>
+
+des
+	<<
+		return DES;
+	>>
+
+Do
+	<<
+		return Do;
+	>>
+
+While
+	<<
+		return While;
+	>>
+
+Continue
+	<<
+		return Continue;
+	>>
+
+De
+	<<
+		return De;
+	>>
+
+DEs
+	<<
+		return DEs;
+	>>
+
+Ea
+	<<
+		return Ea;
+	>>
+
+\-New
+	<<
+		return DaNew;
+	>>
+
+\-Old
+	<<
+		return DaOld;
+	>>
+
+Cluster
+	<<
+		return Cluster;
+	>>
+
+Knoten
+	<<
+		return Knoten;
+	>>
+
+Monoflop
+	<<
+		return Monoflop;
+	>>
+
+retriggerbarer
+	<<
+		return Retriggerbarer;
+	>>
+
+eaweiser
+	<<
+		return Eaweiser;
+	>>
+
+einmaliger
+	<<
+		return Einmaliger;
+	>>
+
+knotenweiser
+	<<
+		return Knotenweiser;
+	>>
+
+clusterweiser
+	<<
+		return Clusterweiser;
+	>>
+
+in
+	<<
+		return In;
+	>>
+
+System
+	<<
+		return System;
+	>>
+
+AnzahlEas
+	<<
+		return NumEas;
+	>>
+
+;
+	<<
+		skip();   
+		return (ANTLRTokenType)87;
+	>>
+
+\:\=
+	<<
+		return Assign;
+	>>
+
+\=\=\>
+	<<
+		return SeqState;
+	>>
+
+\$
+	<<
+		return Dollar;
+	>>
+
+0[0-7]*
+	<<
+		return OCTALINT;
+	>>
+
+[1-9][0-9]*
+	<<
+		return DECIMALINT;
+	>>
+
+[0-9][0-9]*\-[0-9][0-9]*{\-[0-9][0-9]*}
+	<<
+		return RDSINT;
+	>>
+
+(0x|0X)[0-9a-fA-F]+
+	<<
+		return HEXADECIMALINT;
+	>>
+
+'
+	<<
+		mode(CHARACTERS); more ();   
+		return (ANTLRTokenType)95;
+	>>
+
+\"
+	<<
+		mode(STRINGS); more ();   
+		return (ANTLRTokenType)96;
+	>>
+
+[a-zA-Z_][a-zA-Z0-9_]*
+	<<
+		return IDENTIFIER;
+	>>
+
+\/\/(~[\n])*\n
+	<<
+		newline(); skip();   
+		return (ANTLRTokenType)98;
+	>>
+
+/\*
+	<<
+		mode (COMMENT); skip ();   
+		return (ANTLRTokenType)99;
+	>>
+
+[\t\ ]+
+	<<
+		skip();   
+		return (ANTLRTokenType)100;
+	>>
+
+\\\n
+	<<
+		newline(); skip();   
+		return (ANTLRTokenType)101;
+	>>
+
+\\\r
+	<<
+		newline(); skip();   
+		return (ANTLRTokenType)102;
+	>>
+
+[\n\r]
+	<<
+		newline(); skip();   
+		return (ANTLRTokenType)103;
+	>>
+
+#[\ \t]*{line}[\ \t]* [0-9]+[ ]*{[\ \t]* \"(~[\"])*\"{(~[\n])*}}\n
+	<<
+		
+		extern char *inputFileName;
+		extern int lastLine;
+		char *numstart = strpbrk( begexpr(), "0123456789" );
+		_line = atoi( numstart );
+		char *fnameStart = strchr( begexpr(), '"' );
+		if (fnameStart) {
+			free( inputFileName );
+			inputFileName = strdup( fnameStart+1 );
+			char *se = strchr( inputFileName, '"' );
+			*se = 0;
+			if (!strlen( inputFileName )) {
+				free( inputFileName );
+				inputFileName = strdup( "stdin" );
+			}
+		} else {
+			free( inputFileName );
+			inputFileName = strdup( "unknown filename" );
+		}
+		lastLine = _line;
+		//printf( "At line %d of file '%s'\n",
+		//	_line, inputFileName );
+		skip();
+		return (ANTLRTokenType)104;
+	>>
+
+
+%%COMMENT
+
+@
+	<<
+		return Eof;
+	>>
+
+[\n\r]
+	<<
+		skip(); newline();   
+		return (ANTLRTokenType)105;
+	>>
+
+\*/
+	<<
+		mode(START); skip();   
+		return (ANTLRTokenType)106;
+	>>
+
+\*~[/]
+	<<
+		skip();   
+		return (ANTLRTokenType)107;
+	>>
+
+~[\*\n\r]+
+	<<
+		skip();   
+		return (ANTLRTokenType)108;
+	>>
+
+
+%%STRINGS
+
+@
+	<<
+		return Eof;
+	>>
+
+\"
+	<<
+		mode(START);   
+		return STRING;
+	>>
+
+\\\n
+	<<
+		replstr(""); more();   
+		return (ANTLRTokenType)110;
+	>>
+
+\\\r
+	<<
+		replstr(""); more();   
+		return (ANTLRTokenType)111;
+	>>
+
+\\n
+	<<
+		replchar((char) 0x0A); more();   
+		return (ANTLRTokenType)112;
+	>>
+
+\\t
+	<<
+		replchar((char) 0x09); more();   
+		return (ANTLRTokenType)113;
+	>>
+
+\\v
+	<<
+		replchar((char) 0x0B); more();   
+		return (ANTLRTokenType)114;
+	>>
+
+\\b
+	<<
+		replchar((char) 0x08); more();   
+		return (ANTLRTokenType)115;
+	>>
+
+\\r
+	<<
+		replchar((char) 0x0D); more();   
+		return (ANTLRTokenType)116;
+	>>
+
+\\f
+	<<
+		replchar((char) 0x0C); more();   
+		return (ANTLRTokenType)117;
+	>>
+
+\\a
+	<<
+		replchar((char) 0x07); more();   
+		return (ANTLRTokenType)118;
+	>>
+
+\\\\
+	<<
+		replchar((char) 0x5C); more();   
+		return (ANTLRTokenType)119;
+	>>
+
+\\?
+	<<
+		replchar((char) 0x3F); more();   
+		return (ANTLRTokenType)120;
+	>>
+
+\\'
+	<<
+		replchar((char) 0x27); more();   
+		return (ANTLRTokenType)121;
+	>>
+
+\\\"
+	<<
+		replchar((char) 0x22); more();   
+		return (ANTLRTokenType)122;
+	>>
+
+\\0[0-7]*
+	<<
+		replchar((char) strtol (begexpr(), NULL, 8)); more();   
+		return (ANTLRTokenType)123;
+	>>
+
+\\[1-9][0-9]*
+	<<
+		replchar((char) strtol (begexpr(), NULL, 10)); more();   
+		return (ANTLRTokenType)124;
+	>>
+
+\\(0x|0X)[0-9a-fA-F]+
+	<<
+		replchar((char) strtol (begexpr(), NULL, 16)); more();   
+		return (ANTLRTokenType)125;
+	>>
+
+[\n\r]
+	<<
+		newline(); more();   
+		return (ANTLRTokenType)126;
+	>>
+
+~[\"\n\r\\]+
+	<<
+		more();   
+		return (ANTLRTokenType)127;
+	>>
+
+
+%%CHARACTERS
+
+@
+	<<
+		return Eof;
+	>>
+
+'
+	<<
+		mode(START);   
+		return CHARACTER;
+	>>
+
+\\n
+	<<
+		replchar((char) 0x0A); more();mode(DONE);   
+		return (ANTLRTokenType)129;
+	>>
+
+\\t
+	<<
+		replchar((char) 0x09); more();mode(DONE);   
+		return (ANTLRTokenType)130;
+	>>
+
+\\v
+	<<
+		replchar((char) 0x0B); more();mode(DONE);   
+		return (ANTLRTokenType)131;
+	>>
+
+\\b
+	<<
+		replchar((char) 0x08); more();mode(DONE);   
+		return (ANTLRTokenType)132;
+	>>
+
+\\r
+	<<
+		replchar((char) 0x0D); more();mode(DONE);   
+		return (ANTLRTokenType)133;
+	>>
+
+\\f
+	<<
+		replchar((char) 0x0C); more();mode(DONE);   
+		return (ANTLRTokenType)134;
+	>>
+
+\\a
+	<<
+		replchar((char) 0x07); more();mode(DONE);   
+		return (ANTLRTokenType)135;
+	>>
+
+\\\\
+	<<
+		replchar((char) 0x5C); more();mode(DONE);   
+		return (ANTLRTokenType)136;
+	>>
+
+\\?
+	<<
+		replchar((char) 0x3F); more();mode(DONE);   
+		return (ANTLRTokenType)137;
+	>>
+
+\\'
+	<<
+		replchar((char) 0x27); more();mode(DONE);   
+		return (ANTLRTokenType)138;
+	>>
+
+\\\"
+	<<
+		replchar((char) 0x22); more();mode(DONE);   
+		return (ANTLRTokenType)139;
+	>>
+
+\\0[0-7]*
+	<<
+		replchar((char) strtol (begexpr(), NULL, 8)); more();mode(DONE);   
+		return (ANTLRTokenType)140;
+	>>
+
+\\[1-9][0-9]*
+	<<
+		replchar((char) strtol (begexpr(), NULL, 10)); more();mode(DONE);   
+		return (ANTLRTokenType)141;
+	>>
+
+\\(0x|0X)[0-9a-fA-F]+
+	<<
+		replchar((char) strtol (begexpr(), NULL, 16)); more();mode(DONE);   
+		return (ANTLRTokenType)142;
+	>>
+
+[\n\r]
+	<<
+		newline(); more();   
+		return (ANTLRTokenType)143;
+	>>
+
+~['\n\r\\]
+	<<
+		more(); mode(DONE);   
+		return (ANTLRTokenType)144;
+	>>
+
+
+%%DONE
+
+@
+	<<
+		return Eof;
+	>>
+
+'
+	<<
+		mode(START);   
+		return CHARACTER;
+	>>
+
+%%

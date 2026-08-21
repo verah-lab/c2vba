@@ -1,0 +1,46 @@
+/************************************************************************/
+/* Specfile fuer Sequencer UZ Wels                                      */
+/************************************************************************/
+
+#include "spec.h"
+#include "seq-uz_allgemein.txt"
+
+/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen*/
+
+
+Bei Eingang von DaSYSFehlerDUE
+{  
+	If (Fehlercode == 0) {    
+
+		/* I038_KRI_1 */    
+		If ($Eaid == 2031062) {
+			Ea(2028992) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+
+		/* I038_KRI_2 */    
+		If ($Eaid == 2031063) {
+			Ea(2029000) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+
+		/* I038_KRI_3 */    
+		If ($Eaid == 2031064) {
+			Ea(2029002) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+
+		/* I038_KRI_4 */    
+		If ($Eaid == 2031065) {
+			Ea(2029004) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+
+		/* KRI_A23 */    
+		If ($Eaid == 2031983) {
+			Ea(2031716) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+
+		/* KRI_A23_WWW */    
+		If ($Eaid == 2031984) {
+			Ea(2031718) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+	}
+}

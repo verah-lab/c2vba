@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.now</groupId>
+        <artifactId>now-tls-resources</artifactId>
+        <version>3.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>now-tls-generator-proto</artifactId>
+    <description>Generates protobuf files based on the tls scripts.</description>
+
+    <properties>
+        <heuboe.pdb.changelogfile>${project.parent.basedir}/CHANGELOG.md</heuboe.pdb.changelogfile>
+
+        <!-- sonar properties -->
+        <sonar.exclusions>src/**/proto/**</sonar.exclusions>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-generator-proto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.now</groupId>
+            <artifactId>now-tls-scripts</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,10 @@
+/target/
+/TlsReceiver.ldb
+result
+/TlsReceiverCore/log
+.project
+/.settings/
+/*.iml
+/.flattened-pom.xml
+/pom.xml.versionsBackup
+/release.log

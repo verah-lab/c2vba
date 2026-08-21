@@ -1,0 +1,365 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.tls.received;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option (.heuboe.protobuf.interface_version) = "3.0.0";
+
+message LVEGeisterfahrer { // Fg 1 | Id 4 | deTyp 163
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 status = 12;
+    sint32 fahrzeugklasse = 13;
+    sint32 v_kfz = 14;
+    sint32 belegung = 15;
+    sint32 nettozeitluecke = 16;
+    sint32 fahrzeuglaenge = 17;
+}
+
+message LVEGeisterfahrerList { // Liste von LVEGeisterfahrer
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated LVEGeisterfahrer elements = 2;
+}
+
+message FVEUnbekannterTyp { // Fg 1 | Id 4 | deTyp 182
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+}
+
+message FVEUnbekannterTypList { // Liste von FVEUnbekannterTyp
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated FVEUnbekannterTyp elements = 2;
+}
+
+message LVEErgebnisAbstandswarnung { // Fg 1 | Id 4 | deTyp 190
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 fahrzeugtyp = 11;
+    sint32 geschwindigkeit = 12;
+    sint32 nettozeitluecke = 13;
+}
+
+message LVEErgebnisAbstandswarnungList { // Liste von LVEErgebnisAbstandswarnung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated LVEErgebnisAbstandswarnung elements = 2;
+}
+
+message LVEBetriebsparameterAbstandswarnung { // Fg 1 | Id 4 | deTyp 191
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 aktiv = 11;
+    sint32 nettozeitluecke = 12;
+}
+
+message LVEBetriebsparameterAbstandswarnungList { // Liste von LVEBetriebsparameterAbstandswarnung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated LVEBetriebsparameterAbstandswarnung elements = 2;
+}
+
+message UFDLaerm { // Fg 3 | Id 4 | deTyp 203
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    double messwert = 11;
+}
+
+message UFDLaermList { // Liste von UFDLaerm
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated UFDLaerm elements = 2;
+}
+
+message VLTVideoEncoder { // Fg 6 | Id 4 | deTyp 128
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTVideoEncoderList { // Liste von VLTVideoEncoder
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTVideoEncoder elements = 2;
+}
+
+message VLTLeistungsmodem { // Fg 6 | Id 4 | deTyp 129
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTLeistungsmodemList { // Liste von VLTLeistungsmodem
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTLeistungsmodem elements = 2;
+}
+
+message VLTNTVideoUSV { // Fg 6 | Id 4 | deTyp 130
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTNTVideoUSVList { // Liste von VLTNTVideoUSV
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTNTVideoUSV elements = 2;
+}
+
+message VLTErdschluss { // Fg 6 | Id 4 | deTyp 131
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTErdschlussList { // Liste von VLTErdschluss
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTErdschluss elements = 2;
+}
+
+message VLTHoehenkontrolle { // Fg 6 | Id 4 | deTyp 132
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTHoehenkontrolleList { // Liste von VLTHoehenkontrolle
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTHoehenkontrolle elements = 2;
+}
+
+message VLTBrandmeldung { // Fg 6 | Id 4 | deTyp 133
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTBrandmeldungList { // Liste von VLTBrandmeldung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTBrandmeldung elements = 2;
+}
+
+message VLTCO2WertUeberschreitung { // Fg 6 | Id 4 | deTyp 134
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTCO2WertUeberschreitungList { // Liste von VLTCO2WertUeberschreitung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTCO2WertUeberschreitung elements = 2;
+}
+
+message VLTSichttruebung { // Fg 6 | Id 4 | deTyp 135
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTSichttruebungList { // Liste von VLTSichttruebung
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTSichttruebung elements = 2;
+}
+
+message VLTNotfall { // Fg 6 | Id 4 | deTyp 136
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTNotfallList { // Liste von VLTNotfall
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTNotfall elements = 2;
+}
+
+message VLTZuVieleFahrzeuge { // Fg 6 | Id 4 | deTyp 137
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTZuVieleFahrzeugeList { // Liste von VLTZuVieleFahrzeuge
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTZuVieleFahrzeuge elements = 2;
+}
+
+message VLTRichtungsbetriebsart { // Fg 6 | Id 4 | deTyp 138
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTRichtungsbetriebsartList { // Liste von VLTRichtungsbetriebsart
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTRichtungsbetriebsart elements = 2;
+}
+
+message VLTUeBetrieb { // Fg 6 | Id 4 | deTyp 139
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTUeBetriebList { // Liste von VLTUeBetrieb
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTUeBetrieb elements = 2;
+}
+
+message VLTBatterieLadezustand { // Fg 6 | Id 4 | deTyp 182
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 autorencode = 11;
+    sint32 ladezustand = 12;
+}
+
+message VLTBatterieLadezustandList { // Liste von VLTBatterieLadezustand
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTBatterieLadezustand elements = 2;
+}
+
+message VLTBatterieDefekt { // Fg 6 | Id 4 | deTyp 183
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 autorencode = 11;
+    sint32 zustand = 12;
+}
+
+message VLTBatterieDefektList { // Liste von VLTBatterieDefekt
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTBatterieDefekt elements = 2;
+}
+
+message VLTSolarzellenDefekt { // Fg 6 | Id 4 | deTyp 184
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 autorencode = 11;
+    sint32 zustand = 12;
+}
+
+message VLTSolarzellenDefektList { // Liste von VLTSolarzellenDefekt
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTSolarzellenDefekt elements = 2;
+}
+
+message VLTSchluesselschalter { // Fg 6 | Id 4 | deTyp 222
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTSchluesselschalterList { // Liste von VLTSchluesselschalter
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTSchluesselschalter elements = 2;
+}
+
+message VLTBrandmelder { // Fg 6 | Id 4 | deTyp 223
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 hersteller = 11;
+    sint32 zustand = 12;
+}
+
+message VLTBrandmelderList { // Liste von VLTBrandmelder
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated VLTBrandmelder elements = 2;
+}

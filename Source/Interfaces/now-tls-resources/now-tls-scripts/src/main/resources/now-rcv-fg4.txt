@@ -1,0 +1,216 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 4 (base on TLS-2012)
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype WZGDeFehler                                    Fg 4 Id 129,161 Typ 1
+BYTE fehlercode
+BYTE hersteller
+SET #Puffer := #TlsId == 161
+
+Datatype WZGNichtDarstellbareWVZ                        Fg 4 Id 129,161 Typ 2
+BLOCK with size wvzCodes
+SET #Puffer := #TlsId == 161
+
+Datatype WZGDefekteLampen                               Fg 4 Id 129 Typ 3
+BYTE $anzLampenPaare
+SET $anzByte := ($anzLampenPaare+3)/4
+BLOCK with size ($anzByte) statusbytes
+SET anzLampenPaare := $anzLampenPaare
+
+Datatype WZGGestoerteTextpositionen                     Fg 4 Id 129,161 Typ 4
+BLOCK with size textpositionen
+SET #Puffer := #TlsId == 161
+
+Datatype WZGDefekteLEDKetten                            Fg 4 Id 129 Typ 5
+BYTE anzeigeprinzip
+BYTE ausfallschwere
+unsigned SHORT anzahlVorhandeneKetten
+unsigned SHORT anzahlUebertrageneKetten
+BLOCK to end statusbytes
+
+Datatype WZGGestoertePixelspalten                       Fg 4 Id 129,161 Typ 6
+ARRAY [
+    unsigned SHORT pixelspaltennummer
+    BYTE  anzahlFehlerhafterPixel
+] pixelspalten
+SET #Puffer := #TlsId == 161
+
+Datatype WZGErgDeFehler                                 Fg 4 Id 129,161 Typ 14
+BYTE hersteller
+BLOCK with size tlsFehlerbytes
+BLOCK with size herstellerFehlerbytes
+SET #Puffer := #TlsId == 161
+
+Datatype WZGNegativeQuittung                            Fg 4 Id 130 Typ 16
+BYTE fehlerursache
+BYTE hersteller
+
+Datatype WZGBetriebsart                                 Fg 4 Id 130,162 Typ 17
+BYTE betriebsart
+SET #Puffer := #TlsId == 162
+
+Datatype WZGKanalsteuerung                              Fg 4 Id 130,162 Typ 29
+BYTE kanalsteuerbyte
+SET #Puffer := #TlsId == 162
+
+// Zeitstempel Typ 30 is defined in "rcv-fg-header.txt"
+
+// Zeitstempel Typ 31 is defined in "rcv-fg-header.txt"
+
+Datatype WZGGrundeinstellung33                          Fg 4 Id 131,163 Typ 33
+BYTE $anzeigeprinzip SET anzeigeprinzip := $anzeigeprinzip
+BYTE stellcode
+BYTE funktionsbyte
+IF (#DeLen > 5) { // Langversion
+    IF (($anzeigeprinzip == 2) || ($anzeigeprinzip == 3)) {
+        STRING with size textzeichen
+    }
+    IF ($anzeigeprinzip == 4) {
+        ARRAY [
+            BYTE wvzCode
+            BYTE funktionsbyte
+        ] prismen
+    }
+}
+SET #Puffer := #TlsId == 163
+
+Datatype WZGGeoKenndaten                                Fg 4 Id 131 Typ 36
+BYTE landeskennung
+BYTE strassenart
+BCD 2 strassennummer
+BCD 3 $kilometrierung SET kilometrierung := $kilometrierung / 100 AS ( Kilometer )
+BYTE fahrtrichtung
+BYTE reservebyte
+
+Datatype WZGCodeliste                                   Fg 4 Id 131 Typ 43
+BYTE anzeigeprinzip
+BLOCK with size wvzCodes
+
+Datatype WZGCodedefinition                              Fg 4 Id 131,163 Typ 44
+BYTE $anzeigeprinzip SET anzeigeprinzip := $anzeigeprinzip
+BYTE stellcode
+IF (($anzeigeprinzip == 0) || ($anzeigeprinzip == 1)) {
+    BLOCK with size lampennummern
+}
+IF (($anzeigeprinzip == 2) || ($anzeigeprinzip == 3)) {
+    STRING with size textzeichen
+}
+IF ($anzeigeprinzip == 4) {
+    ARRAY [
+        BYTE wvzCode
+        BYTE funktionsbyte
+    ] prismen
+}
+IF ($anzeigeprinzip == 8) {
+    ARRAY [
+        BYTE deNummer
+        BYTE anzeigeprinzip
+        BYTE stellcode
+        BYTE funktionsbyte
+    ] stellzustaende
+}
+SET #Puffer := #TlsId == 163
+
+Datatype WZGBilddefinition                              Fg 4 Id 131,163 Typ 45
+BYTE stellcode
+STRING with size dateiname
+SET #Puffer := #TlsId == 163
+
+Datatype WZGHelligkeit                                  Fg 4 Id 133,165 Typ 49
+BYTE helligkeit AS ( Degree )
+BYTE statusbyte
+SET #Puffer := #TlsId == 165
+
+Datatype WZGStellzustand55                              Fg 4 Id 133,165 Typ 55
+BYTE $anzeigeprinzip SET anzeigeprinzip := $anzeigeprinzip
+BYTE $stellcode SET stellcode := $stellcode
+BYTE funktionsbyte
+IF (#DeLen > 5) { // Langversion
+    // Unabhängig vom Anzeigeprinzip, wird die Langversion des Telegrams (mit String oder Array) nur bei Stellcode 0 verwendet
+    IF (($stellcode == 0) && (($anzeigeprinzip == 2) || ($anzeigeprinzip == 3))) {
+        STRING with size textzeichen
+    }
+    IF (($stellcode == 0) && ($anzeigeprinzip == 4)) {
+        ARRAY [
+            BYTE wvzCode
+            BYTE funktionsbyte
+        ] prismen
+    }
+}
+SET #Puffer := #TlsId == 165
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Veraltete Telegramme laut TLS 2012
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// ersetzt durch Typ 33
+Datatype WVZGrundeinstellung32                          Fg 4 Id 131 Typ 32
+BYTE stellzustand
+BYTE funktionsbyte
+
+// ersetzt durch Typ 33
+Datatype WVZGrundprogramm                               Fg 4 Id 131 Typ 42
+BYTE grundprogrammnummer
+
+// ersetzt durch Typ 55
+Datatype WVZStellzustand48                              Fg 4 Id 133,165 Typ 48
+BYTE stellzustand
+BYTE funktionsbyte
+SET #Puffer := #TlsId == 165
+
+// ersetzt durch Typ 55
+Datatype WVZWechseltext                                 Fg 4 Id 133,165 Typ 50
+BYTE funktionsbyte
+BLOCK with size textzeichen
+SET #Puffer := #TlsId == 165
+
+// ersetzt durch Typ 55
+Datatype WVZStellprogramm                               Fg 4 Id 133,165 Typ 58
+BYTE programmnummer
+BYTE programmstatus
+SET #Puffer := #TlsId == 165
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Dummy Datenarten fuer NI34 Legacy Daten Konverter
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype WZGGrundeinstellung                            Fg 255 Id 255 Typ 248
+BYTE $anzeigeprinzip SET anzeigeprinzip := $anzeigeprinzip
+BYTE stellcode
+BYTE funktionsbyte
+IF (#DeLen > 5) { // Langversion
+    IF (($anzeigeprinzip == 2) || ($anzeigeprinzip == 3)) {
+        STRING with size textzeichen
+    }
+    IF ($anzeigeprinzip == 4) {
+        ARRAY [
+            BYTE wvzCode
+            BYTE funktionsbyte
+        ] prismen
+    }
+}
+
+Datatype WZGStellzustand                                Fg 255 Id 255 Typ 249
+BYTE $anzeigeprinzip SET anzeigeprinzip := $anzeigeprinzip
+BYTE $stellcode SET stellcode := $stellcode
+BYTE funktionsbyte
+IF (#DeLen > 5) { // Langversion
+    // Unabhängig vom Anzeigeprinzip, wird die Langversion des Telegrams (mit String oder Array) nur bei Stellcode 0 verwendet
+    IF (($stellcode == 0) && (($anzeigeprinzip == 2) || ($anzeigeprinzip == 3))) {
+        STRING with size textzeichen
+    }
+    IF (($stellcode == 0) && ($anzeigeprinzip == 4)) {
+        ARRAY [
+            BYTE wvzCode
+            BYTE funktionsbyte
+        ] prismen
+    }
+}
+
+Datatype WVZGrundeinstellung                            Fg 255 Id 255 Typ 250
+BYTE stellzustand
+BYTE funktionsbyte
+
+Datatype WVZStellzustand                                Fg 255 Id 255 Typ 251
+BYTE stellzustand
+BYTE funktionsbyte

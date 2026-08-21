@@ -1,0 +1,19 @@
+[ {
+  "id" : "WIE",
+  "name" : "rVMZ Wien"
+}, {
+  "id" : "UZ_Salzburg",
+  "name" : "UZ Salzburg"
+}, {
+  "id" : "UZ_1",
+  "name" : "UZ Tirol"
+}, {
+  "id" : "UZ_I018",
+  "name" : "UZ_I018"
+}, {
+  "id" : "UZ_Kaernten",
+  "name" : "UZ_Kärnten"
+}, {
+  "id" : "UZ_2",
+  "name" : "UZ_Oberösterreich"
+} ]

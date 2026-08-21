@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.tls.send;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option (.heuboe.protobuf.interface_version) = "3.0.0";
+
+message SteuerSequenz { // Fg 0 | Id 0 | deTyp 0
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    sint32 jobnummer = 2;
+    google.protobuf.Timestamp tls_time = 3; // Zeit die via TLS-Zeitstempel (DE-Nummer 255) mitgesendet wurde
+    google.protobuf.Timestamp process_time = 4; // Zeit, zu der die Daten im tls-receiver erstellt wurden.
+    sint32 action = 11;
+    sint32 fg = 12;
+}
+
+message SteuerSequenzList { // Liste von SteuerSequenz
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated SteuerSequenz elements = 2;
+}

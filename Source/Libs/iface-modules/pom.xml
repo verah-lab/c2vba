@@ -1,0 +1,242 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.heuboe.tls</groupId>
+		<artifactId>tls-parent-pom</artifactId>
+		<version>3.0.0</version>
+	</parent>
+
+	<artifactId>iface-parent-pom</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+    <description>Block building modules for tls interface processes. Parent POM.</description>
+	<name>${project.artifactId}</name>
+    <url>${urlCombined}</url>
+
+    <modules>
+        <module>IfaceInterfaces</module>
+        <module>IfaceLib</module>
+        <module>IfaceProtTlsOverIp</module>
+        <module>IfaceRoutingCsv</module>
+        <module>IfaceRoutingDdp</module>
+        <module>IfaceSysconDdp</module>
+        <module>IfaceSysconRmqIface</module>
+        <module>IfaceSysconRmqImpl</module>
+        <module>IfaceSysconSoapIface</module>
+        <module>IfaceSysconSoapImpl</module>
+    </modules>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/${urlmain}</url>
+        <connection>scm:git:git@${gitlab}:${urlmain}.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:${urlmain}.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <urlmain>Tls/iface-modules</urlmain>
+        <urlCombined>https://${gitlab}/${urlmain}</urlCombined>
+        <gitlab>gitlab.heuboe.hbintern</gitlab>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- HeuBoe dependency versions -->
+        <jddp.version>3.1.0</jddp.version>
+        <jhbBase.version>3.1.0</jhbBase.version>
+        <jhbCsv.version>1.2.4</jhbCsv.version>
+        <jhbDbf.version>1.2.0</jhbDbf.version>
+        <jhbGeo.version>1.1.0</jhbGeo.version>
+
+        <!-- 3rd party dependency versions -->
+        <ant-commons-net.version>1.8.1</ant-commons-net.version>
+        <bonecp.version>0.8.0.RELEASE</bonecp.version>
+        <commons-net.version>1.4.1</commons-net.version>
+        <cxf.version>3.5.0</cxf.version>
+        <jacorb.version>3.7</jacorb.version>
+        <jakarta.xml.bind-api.version>3.0.1</jakarta.xml.bind-api.version>
+        <jaxb.version>3.0</jaxb.version>
+        <jaxb2-plugin.version>0.9.4</jaxb2-plugin.version>
+        <jsr181-api.version>1.0-MR1</jsr181-api.version>
+        <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
+        <mibble.version>2.9.3</mibble.version>
+        <ojdbc.version>14</ojdbc.version>
+        <postgres.version>9.0-801.jdbc4</postgres.version>
+        <rabbitmq.version>4.0.0</rabbitmq.version>
+        <snmp4j.version>2.2.1</snmp4j.version>
+        <snmp4j-agent.version>2.0.7</snmp4j-agent.version>
+        <xerces.version>2.10.0</xerces.version>
+
+        <!-- test dependency versions -->
+        <tls-tele.version>2.0.0</tls-tele.version>
+
+        <!-- plugin versions -->
+        <maven-antrun.version>1.7</maven-antrun.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- IFACE Stuff -->
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>iface-interfaces</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>iface-lib</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-syscon-ddp</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-syscon-rmq-iface</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-syscon-rmq-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-syscon-soap-iface</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-syscon-soap-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-syscon-soap-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-prot-tls-over-ip</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-routing-csv</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>iface-routing-ddp</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- HB Stuff -->
+			<dependency>
+				<groupId>de.heuboe.base</groupId>
+				<artifactId>jddp</artifactId>
+				<version>${jddp.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.base</groupId>
+				<artifactId>jhbCsv</artifactId>
+				<version>${jhbCsv.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.base</groupId>
+				<artifactId>jhbBase</artifactId>
+				<version>${jhbBase.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.heuboe.base</groupId>
+				<artifactId>jhbDbf</artifactId>
+				<version>${jhbDbf.version}</version>
+			</dependency>
+
+			<!-- corba -->
+			<dependency>
+				<groupId>org.jacorb</groupId>
+				<artifactId>jacorb</artifactId>
+				<version>${jacorb.version}</version>
+			</dependency>
+
+			<!-- cxf -->
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-frontend-jaxws</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http-jetty</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-common-utilities</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-tools-common</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+
+			<!-- rabbitmq -->
+			<dependency>
+				<groupId>com.rabbitmq</groupId>
+				<artifactId>amqp-client</artifactId>
+				<version>${rabbitmq.version}</version>
+			</dependency>
+
+			<!-- xerces -->
+			<dependency>
+				<groupId>xerces</groupId>
+				<artifactId>xercesImpl</artifactId>
+				<version>${xerces.version}</version>
+			</dependency>
+
+			<!-- postgres -->
+			<dependency>
+				<groupId>postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgres.version}</version>
+			</dependency>
+
+			<!-- ojdbc -->
+			<dependency>
+				<groupId>ojdbc</groupId>
+				<artifactId>ojdbc</artifactId>
+				<version>${ojdbc.version}</version>
+			</dependency>
+
+			<!-- bonecp -->
+			<dependency>
+				<groupId>com.jolbox</groupId>
+				<artifactId>bonecp</artifactId>
+                <version>${bonecp.version}</version>
+            </dependency>
+
+            <!-- replacements for Java 11 deprecations -->
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>${jakarta.xml.bind-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.jws</groupId>
+                <artifactId>jsr181-api</artifactId>
+                <version>${jsr181-api.version}</version>
+            </dependency>
+
+        </dependencies>
+	</dependencyManagement>
+</project>

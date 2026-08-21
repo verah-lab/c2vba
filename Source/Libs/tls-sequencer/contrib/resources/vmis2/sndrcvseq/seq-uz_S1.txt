@@ -1,0 +1,65 @@
+/************************************************************************/
+/* Specfile fuer Sequencer UZ S1                                        */
+/************************************************************************/
+
+#include "spec.h"
+#include "seq-uz_allgemein.txt"
+
+
+/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen
+*/
+Bei Eingang von DaSYSFehlerDUE
+{
+  If (Fehlercode == 0) {
+    /*
+     * UZ S1
+     */
+    // KRI 2C VO sued FR 1
+    If ($Eaid == 2008219) {
+      Ea(2005673) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2C VO nord FR 2
+    If ($Eaid == 2008220) {
+      Ea(2005675) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2C RU FR 1
+    If ($Eaid == 2008221) {
+      Ea(2005677) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2C RU FR 2
+    If ($Eaid == 2008222) {
+      Ea(2005679) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2C RA west FR 1
+    If ($Eaid == 2008223) {
+      Ea(2005681) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2C RA ost FR 2
+    If ($Eaid == 2008224) {
+      Ea(2005683) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2C SW sued FR 1
+    If ($Eaid == 2008225) {
+      Ea(2005685) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2C SW sued FR 1
+    If ($Eaid == 2008226) {
+      Ea(2005687) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2B S1
+    If ($Eaid == 2008227) {
+      Ea(2005689) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI 2B ANDERE
+    If ($Eaid == 2008228) {
+      Ea(2005694) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    // KRI ZLT
+    If ($Eaid == 2008229) {
+      Ea(2005699) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+  }
+} 
+  
+  
+

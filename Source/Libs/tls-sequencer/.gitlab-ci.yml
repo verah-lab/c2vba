@@ -1,0 +1,26 @@
+include:
+  - project: HeuBoeCommons/hb-ci-templates
+    ref: JDK21
+    file:
+      - base.yml
+      - verify-commits.yml
+      - build-releases.yml
+      - run-renovate.yml
+
+variables:
+  DOCKER_HOST: "tcp://docker:2375"
+  TESTCONTAINERS_DOCKER_HOST_IP: "172.17.0.1"
+
+verify-commit:
+  services:
+    - name: heuboe/internal/docker-dind
+  tags:
+    - heuboe
+    - docker
+
+build-release:
+  services:
+    - name: heuboe/internal/docker-dind
+  tags:
+    - heuboe
+    - docker

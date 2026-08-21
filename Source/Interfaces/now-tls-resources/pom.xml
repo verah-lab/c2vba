@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.base</groupId>
+        <artifactId>heuboe-base-parent</artifactId>
+        <version>1.6.0</version>
+    </parent>
+
+    <groupId>de.heuboe.now</groupId>
+    <artifactId>now-tls-resources</artifactId>
+    <version>3.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>NOW Parent pom for tls scripts, protos and related generators.</description>
+    <url>https://www.heuboe.de</url>
+    <inceptionYear>2024</inceptionYear>
+
+
+    <organization>
+        <name>Heusch/Boesefeldt GmbH</name>
+        <url>https://www.heuboe.de</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>All rights reserved</name>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ASc</id>
+            <name>Alexander Schulze</name>
+            <email>alexander.schulze@heuboe.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/ni/entwicklung/tls/now-tls-resources</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:ni/entwicklung/tls/now-tls-resources.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:ni/entwicklung/tls/now-tls-resources.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <modules>
+        <module>now-tls-scripts</module>
+        <module>now-tls-generator-junit</module>
+        <module>now-tls-generator-proto</module>
+        <module>now-tls-proto-interface</module>
+        <module>now-tls-scripts-tests</module>
+    </modules>
+
+    <properties>
+        <heuboe.pdb.changelogfile>${basedir}/CHANGELOG.md</heuboe.pdb.changelogfile>
+
+        <!-- plugin versions -->
+        <vmis2-protoversion-maven-plugin.version>1.1.0</vmis2-protoversion-maven-plugin.version>
+
+        <!-- dependency versions -->
+        <tls-resources.version>5.1.0</tls-resources.version>
+
+        <!-- build plugin versions -->
+        <jprotoc.version>4.7.0</jprotoc.version>
+        <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>tls-generator</artifactId>
+                <version>${tls-resources.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>tls-generator-proto</artifactId>
+                <version>${tls-resources.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>tls-generator-junit</artifactId>
+                <version>${tls-resources.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>tls-resources</artifactId>
+                <version>${tls-resources.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>tls-scripts</artifactId>
+                <version>${tls-resources.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.tls</groupId>
+                <artifactId>tls-scripts-tests</artifactId>
+                <version>${tls-resources.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

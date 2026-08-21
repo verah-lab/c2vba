@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %date{HH:mm:ss,SSS} | %highlight{%5.5level | %25.25logger{1}} | %m%n
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.apache.kafka" level="WARN" />
+        <Logger name="org.apache.kafka.common.metrics" level="WARN" />
+        <Logger name="org.springframework.data.convert.CustomConversions" level="ERROR" />
+
+        <Root level="warn">
+            <AppenderRef ref="STDOUT" />
+        </Root>
+    </Loggers>
+
+</Configuration>

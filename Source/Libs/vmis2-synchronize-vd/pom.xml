@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.heuboe.asfinag</groupId>
+        <artifactId>vmis2-base-parent</artifactId>
+        <version>5.1.0</version>
+    </parent>
+
+    <artifactId>vmis2-synchronize-vd</artifactId>
+    <version>1.5.0</version>
+    <description>VMIS2 algorithm library for synchronization of incoming data.</description>
+    <url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+    <inceptionYear>2019</inceptionYear>
+
+    <organization>
+        <name>Heusch/Boesefeldt GmbH</name>
+        <url>http://www.heuboe.de</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Marion Keune</name>
+        </developer>
+        <developer>
+            <name>David Hermanns</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</connection>
+        <developerConnection>
+            scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <java.version>21</java.version>
+        <sonar.test.exclusions>src/test/**</sonar.test.exclusions>
+        <gitlab.path>VMIS2/data-receiving-and-processing/vmis2-synchronize-vd</gitlab.path>
+    </properties>
+
+    <name>VMIS2 Kern ${project.artifactId}</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-receiving-processing-datamodel</artifactId>
+            <version>1.1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-tls-proto-interface</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-infrastructure-base</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-configservice-interface</artifactId>
+            <version>1.16.27</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.vavr/vavr -->
+        <!-- Tuple and other functional stuff -->
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>0.9.2</version>
+        </dependency>
+        <!-- SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.statemachinesystems</groupId>
+            <artifactId>mock-clock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

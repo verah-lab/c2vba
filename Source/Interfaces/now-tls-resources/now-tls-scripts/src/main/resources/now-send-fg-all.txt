@@ -1,0 +1,1781 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Send script (base on TLS-2012)
+//
+// NOW specific version of standard send script send-fg-all
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+/* ======================================================================== */
+/* Hinweise zum Aufbau der 7 stelligen Makro Definitionen für Telegramme.   */
+/* Angaben beziehen sich auf die TLS Dokumentation.                         */
+/*                                                                          */
+/* 1. Stelle - Funktionscodes                                               */
+/* --------------------------                                               */
+/*   DE_ABRUF  ... 1                                                        */
+/*   SM_ABRUF  ... 2                                                        */
+/*   DE_SENDEN ... 3                                                        */
+/*   SM_SENDEN ... 4                                                        */
+/*                                                                          */
+/* 2 - 4. Stelle - TLS Id                                                   */
+/* ----------------------                                                   */
+/*   DE_ABRUF  ... ID in Abrufrichtung (R)                                  */
+/*   SM_ABRUF  ... ID in Abrufrichtung (R)                                  */
+/*   DE_SENDEN ... ID in Antwortrichtung (A) - R/A Definition mit selber ID */
+/*   SM_SENDEN ... ID in Antwortrichtung (A) - R/A Definition mit selber ID */
+/*                                                                          */
+/* 5 - 7. Stelle - Typ                                                      */
+/* -------------------                                                      */
+/*   Entsprechender Typ laut TLS Dokumentation                              */
+/*                                                                          */
+/* ======================================================================== */
+
+Legal Tags // additional Tags can be added in this comma seperated list
+{
+    SendProto       // Requires a protomessage in Send.proto
+}
+
+/* ======================================================================== */
+/* BEGINN der Makrodefinitionen                                             */
+/* ======================================================================== */
+
+#define DE_GUT_MELDUNG              0x00
+#define DE_STOER_BITS               0x03
+
+#define FEHLER_VOM_EAK_ERKANNT      0x01
+#define FEHLER_VOM_SM_ERKANNT       0x02
+#define FEHLER_PROJEKTIERUNG        0x04
+#define KANAL_PASSIV                0x08
+
+#define FEHLER_WEGEN_AUSFALL_SM     0xff
+#define HERSTELLER_HB               0x06
+
+//#define FOLGENUMMER_FEHLER(DA) DA !NFN 1
+
+#define AUTARKBETRIEB               0x04
+
+/* ======================================================================== */
+/* Steuerung der KRUZ / Telegramme der FG 254 / Globale Abfragen            */
+/* ======================================================================== */
+
+#define GLOBALE_ZEITSYNCHRONISATION     2002018
+#define LOKALE_ZEITSYNCHRONISATION      4002018
+
+/* ======================================================================== */
+/* FG 254 - Abruftelegramme an DE                                           */
+/* ======================================================================== */
+
+#define SYS_DE_ABRUF_DE_FEHLER                          1017001
+#define SYS_DE_ABRUF_ERG_DE_FEHLER                      1017014
+#define SYS_DE_ABRUF_ZEITSYNC                           1018018
+#define SYS_DE_ABRUF_DUE_STATUS                         1018019
+#define SYS_DE_ABRUF_STATISCHE_GERAETEKENNDATEN         1019032
+#define SYS_DE_ABRUF_DE_ZUORDNUNG                       1019033
+#define SYS_DE_ABRUF_KONFIG_TABELLE                     1019034
+#define SYS_DE_ABRUF_OSI3_ROUTINGFELD                   1019035
+#define SYS_DE_ABRUF_GEO_KENN                           1019036
+#define SYS_DE_ABRUF_KNOTENNUMMERN                      1019037
+#define SYS_DE_ABRUF_ERWEITERTE_KONFIG_TABELLE          1019039
+#define SYS_DE_ABRUF_ZUSTAND_EXTERNE_STEUERUNG          1020126
+#define SYS_DE_ABRUF_KONFTABKRI                         1019127
+
+/* ======================================================================== */
+/* FG 254 - Abruftelegramme an SM                                           */
+/* ======================================================================== */
+
+#define SYS_SM_ABRUF_DE_FEHLER                          2017001
+#define SYS_SM_ABRUF_ERG_DE_FEHLER                      2017014
+#define SYS_SM_ABRUF_ZEITSYNC                           2018018
+#define SYS_SM_ABRUF_DUE_STATUS                         2018019
+#define SYS_SM_ABRUF_STATISCHE_GERAETEKENNDATEN         2019032
+#define SYS_SM_ABRUF_DE_ZUORDNUNG                       2019033
+#define SYS_SM_ABRUF_KONFIG_TABELLE                     2019034
+#define SYS_SM_ABRUF_OSI3_ROUTINGFELD                   2019035
+#define SYS_SM_ABRUF_GEO_KENN                           2019036
+#define SYS_SM_ABRUF_KNOTENNUMMERN                      2019037
+#define SYS_SM_ABRUF_ERWEITERTE_KONFIG_TABELLE          2019039
+#define SYS_SM_ABRUF_ZUSTAND_EXTERNE_STEUERUNG          2020126
+#define SYS_SM_ABRUF_KONFTABKRI                         2019127
+
+/* ======================================================================== */
+/* FG 254 - Telegramme mit Daten senden (Wertreaktion) an DE                */
+/* ======================================================================== */
+
+#define SYS_DE_SENDEN_DUE_STATUS                        3002019
+#define SYS_DE_SENDEN_DE_ZUORDNUNG                      3003033
+#define SYS_DE_SENDEN_KONFIG_TABELLE                    3003034
+#define SYS_DE_SENDEN_OSI3_ROUTINGFELD                  3003035
+#define SYS_DE_SENDEN_GEO_KENN                          3003036
+#define SYS_DE_SENDEN_KNOTENNUMMERN                     3003037
+#define SYS_DE_SENDEN_ERWEITERTE_KONFIG_TABELLE         3003039
+#define SYS_DE_SENDEN_DATEI_TRANSFER                    3003041
+
+/* ======================================================================== */
+/* FG 254 - Telegramme mit Daten senden (Wertreaktion) an SM                */
+/* ======================================================================== */
+
+#define SYS_SM_SENDEN_DUE_STATUS                        4002019
+#define SYS_SM_SENDEN_DE_ZUORDNUNG                      4003033
+#define SYS_SM_SENDEN_KONFIG_TABELLE                    4003034
+#define SYS_SM_SENDEN_OSI3_ROUTINGFELD                  4003035
+#define SYS_SM_SENDEN_GEO_KENN                          4003036
+#define SYS_SM_SENDEN_KNOTENNUMMERN                     4003037
+#define SYS_SM_SENDEN_ERWEITERTE_KONFIG_TABELLE         4003039
+#define SYS_SM_SENDEN_DATEI_TRANSFER                    4003041
+
+/* ======================================================================== */
+/* FG 1 - Abruftelegramme an DE                                             */
+/* ======================================================================== */
+
+#define LVE_DE_ABRUF_DE_FEHLER                          1017001
+#define LVE_DE_ABRUF_ERG_DE_FEHLER                      1017014
+#define LVE_DE_ABRUF_KANAL_STEUERUNG                    1018029
+#define LVE_DE_ABRUF_LVE_BETRIEBSPARAMETER              1019032
+#define LVE_DE_ABRUF_EFZ_BETRIEBSPARAMETER              1019033
+#define LVE_DE_ABRUF_SVE_BETRIEBSPARAMETER              1019034
+#define LVE_DE_ABRUF_GEO_KENN                           1019036
+#define LVE_DE_ABRUF_VKLASSE_KURZ                       1019037
+#define LVE_DE_ABRUF_VKLASSE_LANG                       1019038
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_0                 1020049
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_1                 1020050
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_2                 1020051
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_3                 1020052
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_4                 1020053
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_5                 1020054
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_6                 1020055
+
+/* Ab hier Langzeitdaten */
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_10                1020065
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_11                1020066
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_12                1020067
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_13                1020068
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_14                1020069
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_15                1020070
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_16                1020071
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_17                1020072
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_18                1020073
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_19                1020074
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_20                1020075
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_21                1020076
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_22                1020077
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_23                1020078
+#define LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_24                1020079
+
+#define LVE_DE_ABRUF_SVE_ERGEBNIS_OPT_0                 1020096
+#define LVE_DE_ABRUF_SVE_ERGEBNIS_OPT_1                 1020097
+
+/* ======================================================================== */
+/* FG 1 - Abruftelegramme an SM                                             */
+/* ======================================================================== */
+
+#define LVE_SM_ABRUF_DE_FEHLER                          2017001
+#define LVE_SM_ABRUF_ERG_DE_FEHLER                      2017014
+#define LVE_SM_ABRUF_PUFFER_LANG                        2002020
+#define LVE_SM_ABRUF_KANAL_STEUERUNG                    2018029
+#define LVE_SM_ABRUF_LVE_BETRIEBSPARAMETER              2019032
+#define LVE_SM_ABRUF_EFZ_BETRIEBSPARAMETER              2019033
+#define LVE_SM_ABRUF_SVE_BETRIEBSPARAMETER              2019034
+#define LVE_SM_ABRUF_GEO_KENN                           2019036
+#define LVE_SM_ABRUF_VKLASSE_KURZ                       2019037
+#define LVE_SM_ABRUF_VKLASSE_LANG                       2019038
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_0                 2020049
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_1                 2020050
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_2                 2020051
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_3                 2020052
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_4                 2020053
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_5                 2020054
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_6                 2020055
+
+/* Ab hier Langzeitdaten */
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_10                2020065
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_11                2020066
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_12                2020067
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_13                2020068
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_14                2020069
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_15                2020070
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_16                2020071
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_17                2020072
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_18                2020073
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_19                2020074
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_20                2020075
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_21                2020076
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_22                2020077
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_23                2020078
+#define LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_24                2020079
+
+#define LVE_SM_ABRUF_SVE_ERGEBNIS_OPT_0                 2020096
+#define LVE_SM_ABRUF_SVE_ERGEBNIS_OPT_1                 2020097
+
+/* ======================================================================== */
+/* FG 1 - Telegramme mit Daten senden (Wertreaktion) an DE                  */
+/* ======================================================================== */
+
+#define LVE_DE_SENDEN_KANAL_STEUERUNG                   3002029
+#define LVE_DE_SENDEN_LVE_BETRIEBSPARAMETER             3003032
+#define LVE_DE_SENDEN_EFZ_BETRIEBSPARAMETER             3003033
+#define LVE_DE_SENDEN_SVE_BETRIEBSPARAMETER             3003034
+#define LVE_DE_SENDEN_GEO_KENN                          3003036
+#define LVE_DE_SENDEN_VKLASSE_KURZ                      3019037
+#define LVE_DE_SENDEN_VKLASSE_LANG                      3019038
+
+/* ======================================================================== */
+/* FG 1 - Telegramme mit Daten senden (Wertreaktion) an SM                  */
+/* ======================================================================== */
+
+#define LVE_SM_SENDEN_KANAL_STEUERUNG                   4002029
+#define LVE_SM_SENDEN_LVE_BETRIEBSPARAMETER             4003032
+#define LVE_SM_SENDEN_EFZ_BETRIEBSPARAMETER             4003033
+#define LVE_SM_SENDEN_SVE_BETRIEBSPARAMETER             4003034
+#define LVE_SM_SENDEN_GEO_KENN                          4003036
+#define LVE_SM_SENDEN_VKLASSE_KURZ                      4019037
+#define LVE_SM_SENDEN_VKLASSE_LANG                      4019038
+
+/* ======================================================================== */
+/* FG 2 - Abruftelegramme an DE                                             */
+/* ======================================================================== */
+
+#define AXL_DE_ABRUF_DE_FEHLER                          1017001
+#define AXL_DE_ABRUF_ERG_DE_FEHLER                      1017014
+#define AXL_DE_ABRUF_KANAL_STEUERUNG                    1018029
+#define AXL_DE_ABRUF_BETRIEBSPARAMETER                  1019032
+#define AXL_DE_ABRUF_GEO_KENN                           1019036
+#define AXL_DE_ABRUF_GRENZWERTE                         1019037
+#define AXL_DE_ABRUF_PARAMETER_5P1                      1019038
+#define AXL_DE_ABRUF_PARAMETER_8P1                      1019039
+#define AXL_DE_ABRUF_EINZEL_ERGEBNIS_OPT_1              1036060
+#define AXL_DE_ABRUF_EINZEL_ERGEBNIS_OPT_2              1036061
+#define AXL_DE_ABRUF_EINZEL_ERGEBNIS_OPT_3              1036062
+#define AXL_DE_ABRUF_OPTION10                           1012065
+#define AXL_DE_ABRUF_OPTION11                           1012066
+
+/* ======================================================================== */
+/* FG 2 - Abruftelegramme an SM                                             */
+/* ======================================================================== */
+
+#define AXL_SM_ABRUF_DE_FEHLER                          2017001
+#define AXL_SM_ABRUF_PUFFER_ERGEBNIS                    2002020
+#define AXL_SM_ABRUF_PUFFER_EINZEL_ERGEBNIS             2002021
+#define AXL_SM_ABRUF_ERG_DE_FEHLER                      2017014
+#define AXL_SM_ABRUF_KANAL_STEUERUNG                    2018029
+#define AXL_SM_ABRUF_BETRIEBSPARAMETER                  2019032
+#define AXL_SM_ABRUF_GEO_KENN                           2019036
+#define AXL_SM_ABRUF_GRENZWERTE                         2019037
+#define AXL_SM_ABRUF_PARAMETER_5P1                      2019038
+#define AXL_SM_ABRUF_PARAMETER_8P1                      2019039
+#define AXL_SM_ABRUF_EINZEL_ERGEBNIS_OPT_1              2036060
+#define AXL_SM_ABRUF_EINZEL_ERGEBNIS_OPT_2              2036061
+#define AXL_SM_ABRUF_EINZEL_ERGEBNIS_OPT_3              2036062
+#define AXL_SM_ABRUF_OPTION10                           2020065
+#define AXL_SM_ABRUF_OPTION11                           2012066
+
+/* ======================================================================== */
+/* FG 2 - Telegramme mit Daten senden (Wertreaktion) an DE                  */
+/* ======================================================================== */
+
+#define AXL_DE_SENDEN_KANAL_STEUERUNG                   3002029
+#define AXL_DE_SENDEN_BETRIEBSPARAMETER                 3003032
+#define AXL_DE_SENDEN_GEO_KENN                          3003036
+#define AXL_DE_SENDEN_GRENZWERTE                        3003037
+#define AXL_DE_SENDEN_PARAMETER_5P1                     3003038
+#define AXL_DE_SENDEN_PARAMETER_8P1                     3003039
+
+/* ======================================================================== */
+/* FG 2 - Telegramme mit Daten senden (Wertreaktion) an SM                  */
+/* ======================================================================== */
+
+#define AXL_SM_SENDEN_KANAL_STEUERUNG                   4002029
+#define AXL_SM_SENDEN_BETRIEBSPARAMETER                 4003032
+#define AXL_SM_SENDEN_GEO_KENN                          4003036
+#define AXL_SM_SENDEN_GRENZWERTE                        4003037
+#define AXL_SM_SENDEN_PARAMETER_5P1                     4003038
+#define AXL_SM_SENDEN_PARAMETER_8P1                     4003039
+
+/* ======================================================================== */
+/* FG 3 - Abruftelegramme an DE                                             */
+/* ======================================================================== */
+
+#define UFD_DE_ABRUF_DE_FEHLER                          1017001
+#define UFD_DE_ABRUF_ERG_DE_FEHLER                      1017014
+#define UFD_DE_ABRUF_KANAL_STEUERUNG                    1018029
+#define UFD_DE_ABRUF_UFD_BETRIEBSPARAMETER              1019032
+#define UFD_DE_ABRUF_BETRIEBSPARAMETER                  1019032
+#define UFD_DE_ABRUF_TREPPENFUNKTION                    1019035
+#define UFD_DE_ABRUF_GEO_KENN                           1019036
+#define UFD_DE_ABRUF_LUFT_TEMP                          1020048
+#define UFD_DE_ABRUF_FAHRBAHNOBERFLAECHEN_TEMP          1020049
+#define UFD_DE_ABRUF_FAHRBAHN_FEUCHTE                   1020050
+#define UFD_DE_ABRUF_FAHRBAHN_ZUSTAND                   1020051
+#define UFD_DE_ABRUF_RESTSALZGEHALT                     1020052
+#define UFD_DE_ABRUF_NIEDERSCHLAG                       1020053
+#define UFD_DE_ABRUF_LUFTDRUCK                          1020054
+#define UFD_DE_ABRUF_RELATIVE_LUFTFEUCHTE               1020055
+#define UFD_DE_ABRUF_WINDRICHTUNG                       1020056
+#define UFD_DE_ABRUF_WINDGESCHW_MITTEL                  1020057
+#define UFD_DE_ABRUF_SCHNEEHOHE                         1020058
+#define UFD_DE_ABRUF_FAHRBAHN_GLAETTE                   1020059
+#define UFD_DE_ABRUF_SICHTWEITE                         1020060
+#define UFD_DE_ABRUF_HELLIGKEIT                         1020061
+#define UFD_DE_ABRUF_NIEDERSCHLAGSMENGE                 1020062
+#define UFD_DE_ABRUF_NIEDERSCHLAGSART                   1020063
+#define UFD_DE_ABRUF_WINDGESCHW_MAX                     1020064
+#define UFD_DE_ABRUF_GEFRIER_TEMP                       1020065
+#define UFD_DE_ABRUF_TAUPUNKT_TEMP                      1020066
+#define UFD_DE_ABRUF_TIEFE1_TEMP                        1020067
+#define UFD_DE_ABRUF_TIEFE2_TEMP                        1020068
+#define UFD_DE_ABRUF_TIEFE3_TEMP                        1020069
+#define UFD_DE_ABRUF_FBZ                                1020070
+#define UFD_DE_ABRUF_NS                                 1020071
+#define UFD_DE_ABRUF_WFD                                1020072
+#define UFD_DE_ABRUF_TAUSTOFF_KONZENTRATION             1020073
+#define UFD_DE_ABRUF_TAUSTOFF_MENGE_PRO_QM              1020074
+#define UFD_DE_ABRUF_SCHNEEFILM_DICKE                   1020075
+#define UFD_DE_ABRUF_EISFILM_DICKE                      1020076
+#define UFD_DE_ABRUF_GRIFFIGKEIT                        1020077
+#define UFD_DE_ABRUF_GLOBAL_STRAHLUNG                   1020078
+#define UFD_DE_ABRUF_ZUSTAND_FAHRBAHNOBERFLAECHE        1020079
+#define UFD_DE_ABRUF_STICKSTOFF_MONOXID                 1020080
+#define UFD_DE_ABRUF_STICKSTOFF_DIOXID                  1020081
+#define UFD_DE_ABRUF_STICKOXIDE                         1020082
+#define UFD_DE_ABRUF_SCHADSTOFFE_PM10                   1020083
+#define UFD_DE_ABRUF_SCHADSTOFFE_PM2_5                  1020084
+#define UFD_DE_ABRUF_SCHADSTOFFE_PM1                    1020085
+#define UFD_DE_ABRUF_SCHALLDRUCK_PEGEL                  1020086
+#define UFD_DE_ABRUF_DAUERSCHALL_PEGEL                  1020087
+#define UFD_DE_ABRUF_BASIS_PEGEL                        1020088
+#define UFD_DE_ABRUF_MITTLERER_SPITZEN_PEGEL            1020089
+
+/* ======================================================================== */
+/* FG 3 - Abruftelegramme an SM                                             */
+/* ======================================================================== */
+
+#define UFD_SM_ABRUF_DE_FEHLER                          2017001
+#define UFD_SM_ABRUF_ERG_DE_FEHLER                      2017014
+#define UFD_SM_ABRUF_KANAL_STEUERUNG                    2018029
+#define UFD_SM_ABRUF_UFD_BETRIEBSPARAMETER              2019032
+#define UFD_SM_ABRUF_BETRIEBSPARAMETER                  2019032
+#define UFD_SM_ABRUF_TREPPENFUNKTION                    2019035
+#define UFD_SM_ABRUF_GEO_KENN                           2019036
+#define UFD_SM_ABRUF_LUFT_TEMP                          2020048
+#define UFD_SM_ABRUF_FAHRBAHNOBERFLAECHEN_TEMP          2020049
+#define UFD_SM_ABRUF_FAHRBAHN_FEUCHTE                   2020050
+#define UFD_SM_ABRUF_FAHRBAHN_ZUSTAND                   2020051
+#define UFD_SM_ABRUF_RESTSALZGEHALT                     2020052
+#define UFD_SM_ABRUF_NIEDERSCHLAG                       2020053
+#define UFD_SM_ABRUF_LUFTDRUCK                          2020054
+#define UFD_SM_ABRUF_RELATIVE_LUFTFEUCHTE               2020055
+#define UFD_SM_ABRUF_WINDRICHTUNG                       2020056
+#define UFD_SM_ABRUF_WINDGESCHW_MITTEL                  2020057
+#define UFD_SM_ABRUF_SCHNEEHOHE                         2020058
+#define UFD_SM_ABRUF_FAHRBAHN_GLAETTE                   2020059
+#define UFD_SM_ABRUF_SICHTWEITE                         2020060
+#define UFD_SM_ABRUF_HELLIGKEIT                         2020061
+#define UFD_SM_ABRUF_NIEDERSCHLAGSMENGE                 2020062
+#define UFD_SM_ABRUF_NIEDERSCHLAGSART                   2020063
+#define UFD_SM_ABRUF_WINDGESCHW_MAX                     2020064
+#define UFD_SM_ABRUF_GEFRIER_TEMP                       2020065
+#define UFD_SM_ABRUF_TAUPUNKT_TEMP                      2020066
+#define UFD_SM_ABRUF_TIEFE1_TEMP                        2020067
+#define UFD_SM_ABRUF_TIEFE2_TEMP                        2020068
+#define UFD_SM_ABRUF_TIEFE3_TEMP                        2020069
+#define UFD_SM_ABRUF_FBZ                                2020070
+#define UFD_SM_ABRUF_NS                                 2020071
+#define UFD_SM_ABRUF_WFD                                2020072
+#define UFD_SM_ABRUF_TAUSTOFF_KONZENTRATION             2020073
+#define UFD_SM_ABRUF_TAUSTOFF_MENGE_PRO_QM              2020074
+#define UFD_SM_ABRUF_SCHNEEFILM_DICKE                   2020075
+#define UFD_SM_ABRUF_EISFILM_DICKE                      2020076
+#define UFD_SM_ABRUF_GRIFFIGKEIT                        2020077
+#define UFD_SM_ABRUF_GLOBAL_STRAHLUNG                   2020078
+#define UFD_SM_ABRUF_ZUSTAND_FAHRBAHNOBERFLAECHE        2020079
+#define UFD_SM_ABRUF_STICKSTOFF_MONOXID                 2020080
+#define UFD_SM_ABRUF_STICKSTOFF_DIOXID                  2020081
+#define UFD_SM_ABRUF_STICKOXIDE                         2020082
+#define UFD_SM_ABRUF_SCHADSTOFFE_PM10                   2020083
+#define UFD_SM_ABRUF_SCHADSTOFFE_PM2_5                  2020084
+#define UFD_SM_ABRUF_SCHADSTOFFE_PM1                    2020085
+#define UFD_SM_ABRUF_SCHALLDRUCK_PEGEL                  2020086
+#define UFD_SM_ABRUF_DAUERSCHALL_PEGEL                  2020087
+#define UFD_SM_ABRUF_BASIS_PEGEL                        2020088
+#define UFD_SM_ABRUF_MITTLERER_SPITZEN_PEGEL            2020089
+
+/* ======================================================================== */
+/* FG 3 - Telegramme mit Daten senden (Wertreaktion) an DE                  */
+/* ======================================================================== */
+
+#define UFD_DE_SENDEN_KANAL_STEUERUNG                   3002029
+#define UFD_DE_SENDEN_BETRIEBSPARAMETER                 3003032
+#define UFD_DE_SENDEN_GEO_KENN                          3003036
+
+/* ======================================================================== */
+/* FG 3 - Telegramme mit Daten senden (Wertreaktion) an SM                  */
+/* ======================================================================== */
+
+#define UFD_SM_SENDEN_KANAL_STEUERUNG                   4002029
+#define UFD_SM_SENDEN_BETRIEBSPARAMETER                 4003032
+#define UFD_SM_SENDEN_GEO_KENN                          4003036
+
+/* ======================================================================== */
+/* FG 4 - Abruftelegramme an DE                                             */
+/* ======================================================================== */
+
+#define WZG_DE_ABRUF_DE_FEHLER                          1017001
+#define WZG_DE_ABRUF_NICHT_DARSTELLBARE_WVZ             1017002
+#define WZG_DE_ABRUF_DEFEKTE_LAMPEN                     1017003
+#define WZG_DE_ABRUF_GESTOERTE_TEXTPOS                  1017004
+#define WZG_DE_ABRUF_DEFEKTE_LED_KETTEN                 1017005
+#define WZG_DE_ABRUF_GESTOERTE_PIXEL_SPALTEN            1017006
+#define WZG_DE_ABRUF_ERG_DE_FEHLER                      1017014
+#define WZG_DE_ABRUF_BETRIEBSART                        1018017
+#define WZG_DE_ABRUF_KANAL_STEUERUNG                    1018029
+#define WZG_DE_ABRUF_GRUNDEINSTELLUNG                   1019033
+#define WZG_DE_ABRUF_GEO_KENN                           1019036
+#define WZG_DE_ABRUF_CODELISTE                          1019043
+#define WZG_DE_ABRUF_HELLIGKEIT                         1021049
+#define WZG_DE_ABRUF_STELLZUSTAND                       1021055
+#define WZG_DE_ABRUF_SLT_ZULAESSIGE_PRG                 1019120
+
+/* ======================================================================== */
+/* FG 4 - Abruftelegramme an SM                                             */
+/* ======================================================================== */
+
+#define WZG_SM_ABRUF_DE_FEHLER                          2017001
+#define WZG_SM_ABRUF_NICHT_DARSTELLBARE_WVZ             2017002
+#define WZG_SM_ABRUF_DEFEKTE_LAMPEN                     2017003
+#define WZG_SM_ABRUF_GESTOERTE_TEXTPOS                  2017004
+#define WZG_SM_ABRUF_DEFEKTE_LED_KETTEN                 2017005
+#define WZG_SM_ABRUF_GESTOERTE_PIXEL_SPALTEN            2017006
+#define WZG_SM_ABRUF_ERG_DE_FEHLER                      2017014
+#define WZG_SM_ABRUF_BETRIEBSART                        2018017
+#define WZG_SM_ABRUF_PUFFER                             2002020
+#define WZG_SM_ABRUF_CODEDEF                            2003021
+#define WZG_SM_ABRUF_BILDDEF                            2003022
+#define WZG_SM_ABRUF_KANAL_STEUERUNG                    2018029
+#define WZG_SM_ABRUF_GRUNDEINSTELLUNG                   2019033
+#define WZG_SM_ABRUF_GEO_KENN                           2019036
+#define WZG_SM_ABRUF_CODELISTE                          2019043
+#define WZG_SM_ABRUF_HELLIGKEIT                         2021049
+#define WZG_SM_ABRUF_STELLZUSTAND                       2021055
+#define WZG_SM_ABRUF_SLT_ZULAESSIGE_PRG                 2019120
+
+/* ======================================================================== */
+/* FG 4 - Telegramme mit Daten senden (Wertreaktion) an DE                  */
+/* ======================================================================== */
+
+#define WZG_DE_SENDEN_BETRIEBSART                       3002017
+#define WZG_DE_SENDEN_KANAL_STEUERUNG                   3002029
+#define WVZ_DE_SENDEN_GRUNDEINSTELLUNG_32               3003332 // Support for legacy devices
+// will not be handled by sender, only converted by legacy converter to WVZ_DE_SENDEN_GRUNDEINSTELLUNG_32 or
+// WZG_DE_SENDEN_GRUNDEINSTELLUNG_33
+#define WZG_DE_SENDEN_GRUNDEINSTELLUNG                  3003033
+#define WZG_DE_SENDEN_GRUNDEINSTELLUNG_33               3003333
+#define WZG_DE_SENDEN_GEO_KENN                          3003036
+#define WZG_DE_SENDEN_CODEDEF                           3003044
+#define WZG_DE_SENDEN_BILDDEF                           3003045
+#define WVZ_DE_SENDEN_STELLZUSTAND_48                   3005348 // Support for legacy devices
+#define WZG_DE_SENDEN_HELLIGKEIT                        3005049
+// will not be handled by sender, only converted by legacy converter to WVZ_DE_SENDEN_STELLZUSTAND_48 or
+// WZG_DE_SENDEN_STELLZUSTAND_55
+#define WZG_DE_SENDEN_STELLZUSTAND                      3005055
+#define WZG_DE_SENDEN_STELLZUSTAND_55                   3005355 // Special handling for NI34
+
+/* ======================================================================== */
+/* FG 4 - Telegramme mit Daten senden (Wertreaktion) an SM                  */
+/* ======================================================================== */
+
+#define WZG_SM_SENDEN_BETRIEBSART                       4002017
+#define WZG_SM_SENDEN_KANAL_STEUERUNG                   4002029
+#define WZG_SM_SENDEN_GRUNDEINSTELLUNG                  4003033
+#define WZG_SM_SENDEN_GEO_KENN                          4003036
+#define WZG_SM_SENDEN_CODEDEF                           4003044
+#define WZG_SM_SENDEN_BILDDEF                           4003045
+#define WZG_SM_SENDEN_HELLIGKEIT                        4005049
+#define WZG_SM_SENDEN_STELLZUSTAND                      4005055
+#define WZG_CLUSTER_ABRUF_PUFFER                        5018020
+
+/* ======================================================================== */
+/* FG 6 - Abruftelegramme an DE                                             */
+/* ======================================================================== */
+
+#define VLT_DE_ABRUF_DE_FEHLER                          1017001
+#define VLT_DE_ABRUF_ERG_DE_FEHLER                      1017014
+#define VLT_DE_ABRUF_KANAL_STEUERUNG                    1018029
+#define VLT_DE_ABRUF_BETRIEBSPARAMETER                  1019032
+#define VLT_DE_ABRUF_GEO_KENN                           1019036
+#define VLT_DE_ABRUF_TUER                               1020048
+#define VLT_DE_ABRUF_TEMPERATUR                         1020049
+#define VLT_DE_ABRUF_LICHT                              1020050
+#define VLT_DE_ABRUF_STROM                              1020051
+#define VLT_DE_ABRUF_HEIZUNG                            1020052
+#define VLT_DE_ABRUF_LUEFTUNG                           1020053
+#define VLT_DE_ABRUF_UEBERSPANNUNG                      1020054
+#define VLT_DE_ABRUF_DIEBSTAHL                          1020055
+#define VLT_DE_ABRUF_SOLARANLAGE                        1020056
+
+/* ======================================================================== */
+/* FG 6 - Abruftelegramme an SM                                             */
+/* ======================================================================== */
+
+#define VLT_SM_ABRUF_DE_FEHLER                          2017001
+#define VLT_SM_ABRUF_ERG_DE_FEHLER                      2017014
+#define VLT_SM_ABRUF_KANAL_STEUERUNG                    2018029
+#define VLT_SM_ABRUF_BETRIEBSPARAMETER                  2019032
+#define VLT_SM_ABRUF_GEO_KENN                           2019036
+#define VLT_SM_ABRUF_TUER                               2020048
+#define VLT_SM_ABRUF_TEMPERATUR                         2020049
+#define VLT_SM_ABRUF_LICHT                              2020050
+#define VLT_SM_ABRUF_STROM                              2020051
+#define VLT_SM_ABRUF_HEIZUNG                            2020052
+#define VLT_SM_ABRUF_LUEFTUNG                           2020053
+#define VLT_SM_ABRUF_UEBERSPANNUNG                      2020054
+#define VLT_SM_ABRUF_DIEBSTAHL                          2020055
+#define VLT_SM_ABRUF_SOLARANLAGE                        2020056
+
+/* ======================================================================== */
+/* FG 6 - Telegramme mit Daten senden (Wertreaktion) an DE                  */
+/* ======================================================================== */
+
+#define VLT_DE_SENDEN_KANAL_STEUERUNG                   3002029
+#define VLT_DE_SENDEN_BETRIEBSPARAMETER                 3003032
+#define VLT_DE_SENDEN_GEO_KENN                          3003036
+
+/* ======================================================================== */
+/* FG 6 - Telegramme mit Daten senden (Wertreaktion) an SM                  */
+/* ======================================================================== */
+
+#define VLT_SM_SENDEN_KANAL_STEUERUNG                   4002029
+#define VLT_SM_SENDEN_BETRIEBSPARAMETER                 4003032
+#define VLT_SM_SENDEN_GEO_KENN                          4003036
+
+/* ======================================================================== */
+/* FG 9 - Abruftelegramme an DE                                             */
+/* ======================================================================== */
+
+#define ZRA_DE_ABRUF_DE_FEHLER                          1017001
+#define ZRA_DE_ABRUF_ERG_DE_FEHLER                      1017014
+#define ZRA_DE_ABRUF_BETRIEBSART                        1018017
+#define ZRA_DE_ABRUF_KANAL_STEUERUNG                    1018029
+#define ZRA_DE_ABRUF_BETR_PARAM_ZUFLUSSREGELUNG         1019032
+#define ZRA_DE_ABRUF_BETR_PARAM_ALINEA_1                1019033
+#define ZRA_DE_ABRUF_BETR_PARAM_ROTFAHRZAEHLER          1019034
+#define ZRA_DE_ABRUF_BETR_PARAM_ALINEA_2                1019035
+#define ZRA_DE_ABRUF_GEO_KENN                           1019036
+#define ZRA_DE_ABRUF_SIGNALPLAN                         1021048
+#define ZRA_DE_ABRUF_HELLIGKEIT                         1021049
+#define ZRA_DE_ABRUF_ERGEBNIS_ROTFAHRZAEHLER            1020065
+#define ZRA_DE_ABRUF_ALINEA_SCHALTVORGAENGE             1020070
+
+/* ======================================================================== */
+/* FG 9 - Abruftelegramme an SM                                             */
+/* ======================================================================== */
+
+#define ZRA_SM_ABRUF_DE_FEHLER                          2017001
+#define ZRA_SM_ABRUF_ERG_DE_FEHLER                      2017014
+#define ZRA_SM_ABRUF_BETRIEBSART                        2018017
+#define ZRA_SM_ABRUF_PUFFER                             2002020
+#define ZRA_SM_ABRUF_KANAL_STEUERUNG                    2018029
+#define ZRA_SM_ABRUF_BETR_PARAM_ZUFLUSSREGELUNG         2019032
+#define ZRA_SM_ABRUF_BETR_PARAM_ALINEA_1                2019033
+#define ZRA_SM_ABRUF_BETR_PARAM_ROTFAHRZAEHLER          2019034
+#define ZRA_SM_ABRUF_BETR_PARAM_ALINEA_2                2019035
+#define ZRA_SM_ABRUF_GEO_KENN                           2019036
+#define ZRA_SM_ABRUF_SIGNALPLAN                         2021048
+#define ZRA_SM_ABRUF_HELLIGKEIT                         2021049
+#define ZRA_SM_ABRUF_ERGEBNIS_ROTFAHRZAEHLER            2020065
+#define ZRA_SM_ABRUF_ALINEA_SCHALTVORGAENGE             2020070
+
+/* ======================================================================== */
+/* FG 9 - Telegramme mit Daten senden (Wertreaktion) an DE                  */
+/* ======================================================================== */
+
+#define ZRA_DE_SENDEN_BETRIEBSART                       3002017
+#define ZRA_DE_SENDEN_KANAL_STEUERUNG                   3002029
+#define ZRA_DE_SENDEN_BETR_PARAM_ZUFLUSSREGELUNG        3003032
+#define ZRA_DE_SENDEN_BETR_PARAM_ALINEA_1               3003033
+#define ZRA_DE_SENDEN_BETR_PARAM_ROTFAHRZAEHLER         3003034
+#define ZRA_DE_SENDEN_BETR_PARAM_ALINEA_2               3003035
+#define ZRA_DE_SENDEN_GEO_KENN                          3003036
+#define ZRA_DE_SENDEN_SIGNALPLAN                        3005048
+#define ZRA_DE_SENDEN_HELLIGKEIT                        3005049
+
+/* ======================================================================== */
+/* FG 9 - Telegramme mit Daten senden (Wertreaktion) an SM                  */
+/* ======================================================================== */
+
+#define ZRA_SM_SENDEN_BETRIEBSART                       4002017
+#define ZRA_SM_SENDEN_KANAL_STEUERUNG                   4002029
+#define ZRA_SM_SENDEN_BETR_PARAM_ZUFLUSSREGELUNG        4003032
+#define ZRA_SM_SENDEN_BETR_PARAM_ALINEA_1               4003033
+#define ZRA_SM_SENDEN_BETR_PARAM_ROTFAHRZAEHLER         4003034
+#define ZRA_SM_SENDEN_BETR_PARAM_ALINEA_2               4003035
+#define ZRA_SM_SENDEN_GEO_KENN                          4003036
+#define ZRA_SM_SENDEN_SIGNALPLAN                        4005048
+#define ZRA_SM_SENDEN_HELLIGKEIT                        4005049
+
+/* ======================================================================== */
+/* ENDE der Makrodefinitionen                                               */
+/* ======================================================================== */
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 254
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//Fg 254 Id 2 Typ 18
+//SYSZeitsynchronisation via SYSZeitsynchronisationSoll
+//    lowByte(stunde)
+//    lowByte(minute)
+//    lowByte(sekunde)
+//    lowByte(tag)
+//    lowByte(monat)
+//    lowByte(jahr)
+//    lowByte(wochentag)
+//endBlock
+
+Fg 254 Id 2 Typ 18
+SYSZeitsynchronisation via SYSZeitsynchronisationSoll
+    hour(zeitstempel)
+    minute(zeitstempel)
+    second(zeitstempel)
+    day(zeitstempel)
+    month(zeitstempel)
+    yearInCentury(zeitstempel)
+    lowByte(wochentag)
+endBlock
+
+Fg 254 Id 2 Typ 19
+SYSKommunikationsstatus via SYSKommunikationsstatusSoll
+    lowByte(status)
+endBlock
+
+Fg 254 Id 3 Typ 33
+SYSDeZuordnung via SYSDeZuordnungSoll
+    size(zuordnungsbloecke)
+    COMP-ARRAY zuordnungsbloecke[
+        lowByte(eaKanalNummer)
+        lowByte(fg)
+        lowByte(deAdresse)
+    ]
+endBlock
+
+Fg 254 Id 3 Typ 34
+SYSKonfigurationstabelle via SYSKonfigurationstabelleSoll
+    size(tabellenzeilen)
+    COMP-ARRAY tabellenzeilen[
+        lowByte(eakAdresse)
+        lowByte(eaKanalNummer)
+        lowByte(fg)
+        lowByte(deAdresse)
+    ]
+endBlock
+
+Fg 254 Id 3 Typ 35
+SYSOsi3Routing via SYSOsi3RoutingSoll
+    size(routingBloecke)
+    COMP-ARRAY routingBloecke[
+        lowByte(routingBlockLaenge)
+        lowByte(fg)
+        COMP-ARRAY vermAbschnitte[
+            lowByte(adresse1)
+            lowByte(adresse2)
+        ]
+    ]
+endBlock
+
+Fg 254 Id 3 Typ 36
+SYSGeoKenndaten via SYSGeoKenndatenSoll
+    lowByte(landeskennung)
+    lowByte(strassenart)
+    bcdHigh(strassennummer)
+    bcdLow(strassennummer)
+    $kilometrierung := kilometrierung * 100
+    bcdVHigh($kilometrierung)
+    bcdHigh($kilometrierung)
+    bcdLow($kilometrierung)
+    lowByte(fahrtrichtung)
+    lowByte(reservebyte)
+endBlock
+
+Fg 254 Id 3 Typ 37
+SYSKnotennummer via SYSKnotennummerSoll
+    lowByte(knotennummer)
+    highByte(knotennummer)
+    vHighByte(knotennummer)
+endBlock
+
+Fg 254 Id 2 Typ 38 Tags(SendProto)
+SYSReset via SYSResetSoll
+    lowByte(grund)
+endBlock
+
+Fg 254 Id 3 Typ 39
+SYSErweiterteKonfigtabelle via SYSErweiterteKonfigtabelleSoll
+    size(eaks)
+    COMP-ARRAY eaks[
+        lowByte(eakAdresse)
+        size(fgs)
+        COMP-ARRAY fgs[
+            lowByte(fg)
+            size(des)
+            COMP-ARRAY des[
+                lowByte(eaKanalNummer)
+                lowByte(deAdresse)
+            ]
+        ]
+    ]
+endBlock
+
+Fg 254 Id 3 Typ 40 Tags(SendProto)
+SYSDateiAbruf via SYSDateiAbrufSoll
+    string(bezeichner)
+endBlock
+
+Fg 254 Id 3 Typ 41
+SYSDateiTransfer via SYSDateiTransferSoll
+    lowByte(blocknummer)
+    highByte(blocknummer)
+    IF (blocknummer != 0){
+        IF (blocknummer == 1){
+            lowByte(anzahlDatenbloecke)
+            highByte(anzahlDatenbloecke)
+            string(bezeichner)
+        } ELSE{
+            blockOfBytes(datenblock)
+        }
+    }
+endBlock
+
+Fg 254 Id 20 Typ 126
+SYSZustandExterneSteuerung via SYSZustandExterneSteuerungSoll
+    lowByte(betriebsart)
+    lowByte(anforderungsnummer)
+endBlock
+
+Fg 254 Id 19 Typ 127
+SYSKriKonfigtabelle via SYSKriKonfigtabelleSoll
+    size(adressen)
+    COMP-ARRAY adressen[
+        lowByte(osi2Adresse)
+        lowByte(knotennummer)
+        highByte(knotennummer)
+        vHighByte(knotennummer)
+    ]
+endBlock
+
+// Wertreaktionen Fg 254
+
+WertReaktion SteuerSequenz action via SYSSteuerSequenz
+
+bei GLOBALE_ZEITSYNCHRONISATION                   an GLOBAL FG 254 ID 2 TYP  18 laut SYSZeitsynchronisationSoll // dummy. Only fg/if/typ are relevant
+bei LOKALE_ZEITSYNCHRONISATION                    an SM     FG 254 ID 2 TYP  18 laut SYSZeitsynchronisationSoll // dummy. Only fg/if/typ are relevant
+
+bei SYS_DE_ABRUF_DE_FEHLER                        an DE FG 254 ID 17 TYP   1
+bei SYS_DE_ABRUF_ERG_DE_FEHLER                    an DE FG 254 ID 17 TYP  14
+bei SYS_DE_ABRUF_ZEITSYNC                         an DE FG 254 ID 18 TYP  18
+bei SYS_DE_ABRUF_DUE_STATUS                       an DE FG 254 ID 18 TYP  19
+bei SYS_DE_ABRUF_STATISCHE_GERAETEKENNDATEN       an DE FG 254 ID 19 TYP  32
+bei SYS_DE_ABRUF_DE_ZUORDNUNG                     an DE FG 254 ID 19 TYP  33
+bei SYS_DE_ABRUF_KONFIG_TABELLE                   an DE FG 254 ID 19 TYP  34
+bei SYS_DE_ABRUF_OSI3_ROUTINGFELD                 an DE FG 254 ID 19 TYP  35
+bei SYS_DE_ABRUF_GEO_KENN                         an DE FG 254 ID 19 TYP  36
+bei SYS_DE_ABRUF_KNOTENNUMMERN                    an DE FG 254 ID 19 TYP  37
+bei SYS_DE_ABRUF_ERWEITERTE_KONFIG_TABELLE        an DE FG 254 ID 19 TYP  39
+bei SYS_DE_ABRUF_ZUSTAND_EXTERNE_STEUERUNG        an DE FG 254 ID 20 TYP 126
+bei SYS_DE_ABRUF_KONFTABKRI                       an DE FG 254 ID 19 TYP 127
+
+bei SYS_SM_ABRUF_DE_FEHLER                        an SM FG 254 ID 17 TYP   1
+bei SYS_SM_ABRUF_ERG_DE_FEHLER                    an SM FG 254 ID 17 TYP  14
+bei SYS_SM_ABRUF_ZEITSYNC                         an SM FG 254 ID 18 TYP  18
+bei SYS_SM_ABRUF_DUE_STATUS                       an SM FG 254 ID 18 TYP  19
+bei SYS_SM_ABRUF_STATISCHE_GERAETEKENNDATEN       an SM FG 254 ID 19 TYP  32
+bei SYS_SM_ABRUF_DE_ZUORDNUNG                     an SM FG 254 ID 19 TYP  33
+bei SYS_SM_ABRUF_KONFIG_TABELLE                   an SM FG 254 ID 19 TYP  34
+bei SYS_SM_ABRUF_OSI3_ROUTINGFELD                 an SM FG 254 ID 19 TYP  35
+bei SYS_SM_ABRUF_GEO_KENN                         an SM FG 254 ID 19 TYP  36
+bei SYS_SM_ABRUF_KNOTENNUMMERN                    an SM FG 254 ID 19 TYP  37
+bei SYS_SM_ABRUF_ERWEITERTE_KONFIG_TABELLE        an SM FG 254 ID 19 TYP  39
+bei SYS_SM_ABRUF_ZUSTAND_EXTERNE_STEUERUNG        an SM FG 254 ID 20 TYP 126
+bei SYS_SM_ABRUF_KONFTABKRI                       an SM FG 254 ID 19 TYP 127
+
+bei SYS_DE_SENDEN_DUE_STATUS                      an DE FG 254 ID  2 TYP  19 laut SYSKommunikationsstatusSoll
+bei SYS_DE_SENDEN_DE_ZUORDNUNG                    an DE FG 254 ID  3 TYP  33 laut SYSDeZuordnungSoll
+bei SYS_DE_SENDEN_KONFIG_TABELLE                  an DE FG 254 ID  3 TYP  34 laut SYSKonfigurationstabelleSoll
+bei SYS_DE_SENDEN_OSI3_ROUTINGFELD                an DE FG 254 ID  3 TYP  35 laut SYSOsi3RoutingSoll
+bei SYS_DE_SENDEN_GEO_KENN                        an DE FG 254 ID  3 TYP  36 laut SYSGeoKenndatenSoll
+bei SYS_DE_SENDEN_KNOTENNUMMERN                   an DE FG 254 ID  3 TYP  37 laut SYSKnotennummerSoll
+bei SYS_DE_SENDEN_ERWEITERTE_KONFIG_TABELLE       an DE FG 254 ID  3 TYP  39 laut SYSErweiterteKonfigtabelleSoll
+bei SYS_DE_SENDEN_DATEI_TRANSFER                  an DE FG 254 ID  3 TYP  41 laut SYSDateiTransferSoll
+
+//bei SYS_DE_SENDEN_DUE_STATUS                      an DE FG 254 ID  2 TYP  19 laut SYSKommunikationsstatusSoll
+//bei SYS_DE_SENDEN_DE_ZUORDNUNG                    an DE FG 254 ID  3 TYP  33 laut SYSDeZuordnungSoll
+//bei SYS_DE_SENDEN_KONFIG_TABELLE                  an DE FG 254 ID  3 TYP  34 laut SYSKonfigurationstabelleSoll
+//bei SYS_DE_SENDEN_OSI3_ROUTINGFELD                an DE FG 254 ID  3 TYP  35 laut SYSOsi3RoutingSoll
+//bei SYS_DE_SENDEN_GEO_KENN                        an DE FG 254 ID  3 TYP  36 laut SYSGeoKenndatenSoll
+//bei SYS_DE_SENDEN_KNOTENNUMMERN                   an DE FG 254 ID  3 TYP  37 laut SYSKnotennummerSoll
+//bei SYS_DE_SENDEN_ERWEITERTE_KONFIG_TABELLE       an DE FG 254 ID  3 TYP  39 laut SYSErweiterteKonfigtabelleSoll
+//bei SYS_DE_SENDEN_DATEI_TRANSFER                  an DE FG 254 ID  3 TYP  41 laut SYSDateiTransferSoll
+
+endReaktion
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 1
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Fg 1 Id 2 Typ 20 Tags(SendProto)
+LVEAbrufPufferInhalt via LVEAbrufPufferInhaltSoll
+    lowByte(jahr)
+    lowByte(monat)
+    lowByte(tag)
+    lowByte(stunde)
+    lowByte(anzahlStunden)
+endBlock
+
+Fg 1 Id 2 Typ 29
+LVEKanalsteuerung via LVEKanalsteuerungSoll
+    lowByte(kanalsteuerbyte)
+endBlock
+
+Fg 1 Id 3 Typ 32
+LVEBetriebsparameter via LVEBetriebsparameterSoll
+    lowByte(datenversionKurz)
+    lowByte(erfassungsintervalldauerKurz)
+    lowByte(datenversionLang)
+    lowByte(erfassungsintervalldauerLang)
+    lowByte((alpha1 * 256) - 1)
+    lowByte((alpha2 * 256) - 1)
+    lowByte(laengengrenzwert - 400)
+    lowByte(((artMittelwertbildung << 7) & 0x80) + (startwertMittelwertbildung & 0x7F))
+endBlock
+
+Fg 1 Id 3 Typ 33
+EFZBetriebsparameter via EFZBetriebsparameterSoll
+    lowByte(maxPufferAnzahl)
+    lowByte(maxPufferDauer)
+    lowByte(vMin)
+    lowByte(vMax)
+    lowByte(fahrzeugklassencode)
+    lowByte(meldeoptionen)
+endBlock
+
+Fg 1 Id 3 Typ 34
+SVEBetriebsparameter via SVEBetriebsparameterSoll
+    lowByte(datenversion)
+    lowByte(erfassungsintervalldauer)
+endBlock
+
+Fg 1 Id 3 Typ 36
+LVEGeoKenndaten via LVEGeoKenndatenSoll
+    lowByte(landeskennung)
+    lowByte(strassenart)
+    bcdHigh(strassennummer)
+    bcdLow(strassennummer)
+    $kilometrierung := kilometrierung * 100
+    bcdVHigh($kilometrierung)
+    bcdHigh($kilometrierung)
+    bcdLow($kilometrierung)
+    lowByte(fahrtrichtung)
+    lowByte(reservebyte)
+endBlock
+
+Fg 1 Id 3 Typ 37
+LVEGeschwindigkeitsklassenKurz via LVEGeschwindigkeitsklassenKurzSoll
+    lowByte(fahrzeugklasse)
+    blockOfBytes(vGrenzen)
+endBlock
+
+Fg 1 Id 3 Typ 38
+LVEGeschwindigkeitsklassenLang via LVEGeschwindigkeitsklassenLangSoll
+    lowByte(fahrzeugklasse)
+    blockOfBytes(vGrenzen)
+endBlock
+
+// Wertreaktionen Fg 1
+
+WertReaktion SteuerSequenz action via LVESteuerSequenz
+
+bei LVE_DE_ABRUF_DE_FEHLER                          an DE FG 1 ID 17 TYP   1
+bei LVE_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 1 ID 17 TYP  14
+bei LVE_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 1 ID 18 TYP  29
+bei LVE_DE_ABRUF_LVE_BETRIEBSPARAMETER              an DE FG 1 ID 19 TYP  32
+bei LVE_DE_ABRUF_EFZ_BETRIEBSPARAMETER              an DE FG 1 ID 19 TYP  33
+bei LVE_DE_ABRUF_SVE_BETRIEBSPARAMETER              an DE FG 1 ID 19 TYP  34
+bei LVE_DE_ABRUF_GEO_KENN                           an DE FG 1 ID 19 TYP  36
+bei LVE_DE_ABRUF_VKLASSE_KURZ                       an DE FG 1 ID 19 TYP  37
+bei LVE_DE_ABRUF_VKLASSE_LANG                       an DE FG 1 ID 19 TYP  38
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_0                 an DE FG 1 ID 20 TYP  49
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_1                 an DE FG 1 ID 20 TYP  50
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_2                 an DE FG 1 ID 20 TYP  51
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_3                 an DE FG 1 ID 20 TYP  52
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_4                 an DE FG 1 ID 20 TYP  53
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_5                 an DE FG 1 ID 20 TYP  54
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_6                 an DE FG 1 ID 20 TYP  55
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_10                an DE FG 1 ID 20 TYP  65
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_11                an DE FG 1 ID 20 TYP  66
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_12                an DE FG 1 ID 20 TYP  67
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_13                an DE FG 1 ID 20 TYP  68
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_14                an DE FG 1 ID 20 TYP  69
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_15                an DE FG 1 ID 20 TYP  70
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_16                an DE FG 1 ID 20 TYP  71
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_17                an DE FG 1 ID 20 TYP  72
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_18                an DE FG 1 ID 20 TYP  73
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_19                an DE FG 1 ID 20 TYP  74
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_20                an DE FG 1 ID 20 TYP  75
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_21                an DE FG 1 ID 20 TYP  76
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_22                an DE FG 1 ID 20 TYP  77
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_23                an DE FG 1 ID 20 TYP  78
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_24                an DE FG 1 ID 20 TYP  79
+bei LVE_DE_ABRUF_SVE_ERGEBNIS_OPT_0                 an DE FG 1 ID 20 TYP  96
+bei LVE_DE_ABRUF_SVE_ERGEBNIS_OPT_1                 an DE FG 1 ID 20 TYP  97
+
+bei LVE_SM_ABRUF_DE_FEHLER                          an SM FG 1 ID 17 TYP   1
+bei LVE_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 1 ID 17 TYP  14
+bei LVE_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 1 ID 18 TYP  29
+bei LVE_SM_ABRUF_LVE_BETRIEBSPARAMETER              an SM FG 1 ID 19 TYP  32
+bei LVE_SM_ABRUF_EFZ_BETRIEBSPARAMETER              an SM FG 1 ID 19 TYP  33
+bei LVE_SM_ABRUF_SVE_BETRIEBSPARAMETER              an SM FG 1 ID 19 TYP  34
+bei LVE_SM_ABRUF_GEO_KENN                           an SM FG 1 ID 19 TYP  36
+bei LVE_SM_ABRUF_VKLASSE_KURZ                       an SM FG 1 ID 19 TYP  37
+bei LVE_SM_ABRUF_VKLASSE_LANG                       an SM FG 1 ID 19 TYP  38
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_0                 an SM FG 1 ID 20 TYP  49
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_1                 an SM FG 1 ID 20 TYP  50
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_2                 an SM FG 1 ID 20 TYP  51
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_3                 an SM FG 1 ID 20 TYP  52
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_4                 an SM FG 1 ID 20 TYP  53
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_5                 an SM FG 1 ID 20 TYP  54
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_6                 an SM FG 1 ID 20 TYP  55
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_10                an SM FG 1 ID 20 TYP  65
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_11                an SM FG 1 ID 20 TYP  66
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_12                an SM FG 1 ID 20 TYP  67
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_13                an SM FG 1 ID 20 TYP  68
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_14                an SM FG 1 ID 20 TYP  69
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_15                an SM FG 1 ID 20 TYP  70
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_16                an SM FG 1 ID 20 TYP  71
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_17                an SM FG 1 ID 20 TYP  72
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_18                an SM FG 1 ID 20 TYP  73
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_19                an SM FG 1 ID 20 TYP  74
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_20                an SM FG 1 ID 20 TYP  75
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_21                an SM FG 1 ID 20 TYP  76
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_22                an SM FG 1 ID 20 TYP  77
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_23                an SM FG 1 ID 20 TYP  78
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_24                an SM FG 1 ID 20 TYP  79
+bei LVE_SM_ABRUF_SVE_ERGEBNIS_OPT_0                 an SM FG 1 ID 20 TYP  96
+bei LVE_SM_ABRUF_SVE_ERGEBNIS_OPT_1                 an SM FG 1 ID 20 TYP  97
+
+bei LVE_SM_ABRUF_PUFFER_LANG                        an SM FG 1 ID  2 TYP  20 laut LVEAbrufPufferInhaltSoll
+
+bei LVE_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 1 ID  2 TYP  29 laut LVEKanalsteuerungSoll
+bei LVE_DE_SENDEN_LVE_BETRIEBSPARAMETER             an DE FG 1 ID  3 TYP  32 laut LVEBetriebsparameterSoll
+bei LVE_DE_SENDEN_EFZ_BETRIEBSPARAMETER             an DE FG 1 ID  3 TYP  33 laut EFZBetriebsparameterSoll
+bei LVE_DE_SENDEN_SVE_BETRIEBSPARAMETER             an DE FG 1 ID  3 TYP  34 laut SVEBetriebsparameterSoll
+bei LVE_DE_SENDEN_VKLASSE_KURZ                      an DE FG 1 ID  3 TYP  37 laut LVEGeschwindigkeitsklassenKurzSoll
+bei LVE_DE_SENDEN_VKLASSE_LANG                      an DE FG 1 ID  3 TYP  38 laut LVEGeschwindigkeitsklassenLangSoll
+
+// an mehrere DEs Senden könnte gefährlich sein
+//bei LVE_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 1 ID  2 TYP  29 laut LVEKanalsteuerungSoll
+//bei LVE_SM_SENDEN_LVE_BETRIEBSPARAMETER             an SM FG 1 ID  3 TYP  32 laut LVEBetriebsparameterSoll
+//bei LVE_SM_SENDEN_EFZ_BETRIEBSPARAMETER             an SM FG 1 ID  3 TYP  33 laut EFZBetriebsparameterSoll
+//bei LVE_SM_SENDEN_SVE_BETRIEBSPARAMETER             an SM FG 1 ID  3 TYP  34 laut SVEBetriebsparameterSoll
+//bei LVE_SM_SENDEN_VKLASSE_KURZ                      an SM FG 1 ID  3 TYP  37 laut LVEGeschwindigkeitsklassenKurzSoll
+//bei LVE_SM_SENDEN_VKLASSE_LANG                      an SM FG 1 ID  3 TYP  38 laut LVEGeschwindigkeitsklassenLangSoll
+
+endReaktion
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 2
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Fg 2 Id 2 Typ 20 Tags(SendProto)
+AXLAbrufPufferInhalt via AXLAbrufPufferInhaltSoll
+    yearInCentury(zeitstempel)
+    month(zeitstempel)
+    day(zeitstempel)
+    hour(zeitstempel)
+    minute(zeitstempel)
+    lowByte(anzahlDatensaetze)
+endBlock
+
+Fg 2 Id 2 Typ 21 Tags(SendProto)
+AXLAbrufPufferinhaltErgebnismeldung via AXLAbrufPufferinhaltErgebnismeldungSoll
+    yearLow(zeitstempel)
+    yearHigh(zeitstempel)
+    month(zeitstempel)
+    day(zeitstempel)
+    hour(zeitstempel)
+    minute(zeitstempel)
+    second(zeitstempel)
+    lowByte(hundertstelsekunden)
+    lowByte(anzahlDatensaetze)
+    highByte(anzahlDatensaetze)
+endBlock
+
+Fg 2 Id 2 Typ 29
+AXLKanalsteuerung via AXLKanalsteuerungSoll
+    lowByte(kanalsteuerbyte)
+endBlock
+
+Fg 2 Id 3 Typ 32
+AXLBetriebsparameter via AXLBetriebsparameterSoll
+    lowByte(0) // skip
+    lowByte(0) // skip
+    lowByte(datenversion)
+    lowByte(intervalldauer)
+    lowByte(0) // skip
+    lowByte(datenversionEinzel)
+    lowByte(speicherung)
+endBlock
+
+Fg 2 Id 3 Typ 36
+AXLGeoKenndaten via AXLGeoKenndatenSoll
+    lowByte(landeskennung)
+    lowByte(strassenart)
+    bcdHigh(strassennummer)
+    bcdLow(strassennummer)
+    $kilometrierung := kilometrierung * 100
+    bcdVHigh($kilometrierung)
+    bcdHigh($kilometrierung)
+    bcdLow($kilometrierung)
+    lowByte(fahrtrichtung)
+    lowByte(reservebyte)
+endBlock
+
+Fg 2 Id 3 Typ 37
+AXLParameterAchslastGrenzwerte via AXLParameterAchslastGrenzwerteSoll
+    lowByte(maxEinzelachslast1)
+    highByte(maxEinzelachslast1)
+    lowByte(maxEinzelachslast)
+    highByte(maxEinzelachslast)
+    lowByte(maxAbstandDoppelachse1)
+    lowByte(maxDoppelachslast1)
+    highByte(maxDoppelachslast1)
+    lowByte(maxAbstandDoppelachse2)
+    lowByte(maxDoppelachslast2)
+    highByte(maxDoppelachslast2)
+    lowByte(maxAbstandDoppelachse3)
+    lowByte(maxDoppelachslast3)
+    highByte(maxDoppelachslast3)
+    lowByte(maxAbstandDreifachachse1)
+    lowByte(maxDreifachachslast1)
+    highByte(maxDreifachachslast1)
+    lowByte(maxAbstandDreifachachse2)
+    lowByte(maxDreifachachslast2)
+    highByte(maxDreifachachslast2)
+    size(fahrzeugtypen)
+    COMP-ARRAY fahrzeugtypen[
+        lowByte(fahrzeugtypCode)
+        lowByte(maxGesamtgewicht)
+        highByte(maxGesamtgewicht)
+    ]
+endBlock
+
+Fg 2 Id 3 Typ 38
+AXLParameterAchslastklassen5P1 via AXLParameterAchslastklassen5P1Soll
+    PRIM-ARRAY einzelachslastklasseGrenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY doppelachslastklasseGrenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY dreifachachslastklasseGrenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY fahrzeugklasse3Grenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY fahrzeugklasse4Grenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY fahrzeugklasse5Grenzen [
+        lowByte()
+        highByte()
+    ]
+endBlock
+
+Fg 2 Id 3 Typ 39
+AXLParameterAchslastklassen8P1 via AXLParameterAchslastklassen8P1Soll
+    PRIM-ARRAY einzelachslastklasseGrenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY doppelachslastklasseGrenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY dreifachachslastklasseGrenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY fahrzeugklasse3Grenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY fahrzeugklasse5Grenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY fahrzeugklasse8Grenzen [
+        lowByte()
+        highByte()
+    ]
+    PRIM-ARRAY fahrzeugklasse9Grenzen [
+        lowByte()
+        highByte()
+    ]
+endBlock
+
+// Wertreaktionen Fg 2
+
+WertReaktion SteuerSequenz action via AXLSteuerSequenz
+
+bei AXL_DE_ABRUF_DE_FEHLER                          an DE FG 2 ID 17 TYP   1
+bei AXL_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 2 ID 17 TYP  14
+bei AXL_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 2 ID 18 TYP  29
+bei AXL_DE_ABRUF_BETRIEBSPARAMETER                  an DE FG 2 ID 19 TYP  32
+bei AXL_DE_ABRUF_GEO_KENN                           an DE FG 2 ID 19 TYP  36
+bei AXL_DE_ABRUF_GRENZWERTE                         an DE FG 2 ID 19 TYP  37
+bei AXL_DE_ABRUF_PARAMETER_5P1                      an DE FG 2 ID 19 TYP  38
+bei AXL_DE_ABRUF_PARAMETER_8P1                      an DE FG 2 ID 19 TYP  39
+bei AXL_DE_ABRUF_EINZEL_ERGEBNIS_OPT_1              an DE FG 2 ID 36 TYP  60
+bei AXL_DE_ABRUF_EINZEL_ERGEBNIS_OPT_2              an DE FG 2 ID 36 TYP  61
+bei AXL_DE_ABRUF_EINZEL_ERGEBNIS_OPT_3              an DE FG 2 ID 36 TYP  62
+bei AXL_DE_ABRUF_OPTION10                           an DE FG 2 ID 20 TYP  65
+bei AXL_DE_ABRUF_OPTION11                           an DE FG 2 ID 20 TYP  66
+
+bei AXL_SM_ABRUF_DE_FEHLER                          an SM FG 2 ID 17 TYP   1
+bei AXL_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 2 ID 17 TYP  14
+bei AXL_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 2 ID 18 TYP  29
+bei AXL_SM_ABRUF_BETRIEBSPARAMETER                  an SM FG 2 ID 19 TYP  32
+bei AXL_SM_ABRUF_GEO_KENN                           an SM FG 2 ID 19 TYP  36
+bei AXL_SM_ABRUF_GRENZWERTE                         an SM FG 2 ID 19 TYP  37
+bei AXL_SM_ABRUF_PARAMETER_5P1                      an SM FG 2 ID 19 TYP  38
+bei AXL_SM_ABRUF_PARAMETER_8P1                      an SM FG 2 ID 19 TYP  39
+bei AXL_SM_ABRUF_EINZEL_ERGEBNIS_OPT_1              an SM FG 2 ID 36 TYP  60
+bei AXL_SM_ABRUF_EINZEL_ERGEBNIS_OPT_2              an SM FG 2 ID 36 TYP  61
+bei AXL_SM_ABRUF_EINZEL_ERGEBNIS_OPT_3              an SM FG 2 ID 36 TYP  62
+bei AXL_SM_ABRUF_OPTION10                           an SM FG 2 ID 20 TYP  65
+bei AXL_SM_ABRUF_OPTION11                           an SM FG 2 ID 20 TYP  66
+
+bei AXL_SM_ABRUF_PUFFER_ERGEBNIS                    an SM FG 2 ID 20 TYP  20 laut AXLAbrufPufferInhaltSoll
+bei AXL_SM_ABRUF_PUFFER_EINZEL_ERGEBNIS             an SM FG 2 ID 20 TYP  21 laut AXLAbrufPufferinhaltErgebnismeldungSoll
+
+bei AXL_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 2 ID  2 TYP  29 laut AXLKanalsteuerungSoll
+bei AXL_DE_SENDEN_BETRIEBSPARAMETER                 an DE FG 2 ID  3 TYP  32 laut AXLBetriebsparameterSoll
+bei AXL_DE_SENDEN_GEO_KENN                          an DE FG 2 ID  3 TYP  36 laut AXLGeoKenndatenSoll
+bei AXL_DE_SENDEN_GRENZWERTE                        an DE FG 2 ID  3 TYP  37 laut AXLParameterAchslastGrenzwerteSoll
+bei AXL_DE_SENDEN_PARAMETER_5P1                     an DE FG 2 ID  3 TYP  38 laut AXLParameterAchslastklassen5P1Soll
+bei AXL_DE_SENDEN_PARAMETER_8P1                     an DE FG 2 ID  3 TYP  39 laut AXLParameterAchslastklassen8P1Soll
+
+// an mehrere DEs Senden könnte gefährlich sein
+//bei AXL_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 2 ID  2 TYP  29 laut AXLKanalsteuerungSoll
+//bei AXL_SM_SENDEN_BETRIEBSPARAMETER                 an SM FG 2 ID  3 TYP  32 laut AXLBetriebsparameterSoll
+//bei AXL_SM_SENDEN_GEO_KENN                          an SM FG 2 ID  3 TYP  36 laut AXLGeoKenndatenSoll
+//bei AXL_SM_SENDEN_GRENZWERTE                        an SM FG 2 ID  3 TYP  37 laut AXLParameterAchslastGrenzwerteSoll
+//bei AXL_SM_SENDEN_PARAMETER_5P1                     an SM FG 2 ID  3 TYP  38 laut AXLParameterAchslastklassen5P1Soll
+//bei AXL_SM_SENDEN_PARAMETER_8P1                     an SM FG 2 ID  3 TYP  39 laut AXLParameterAchslastklassen8P1Soll
+
+endReaktion
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 3
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Fg 3 Id 2 Typ 29
+UFDKanalsteuerung via UFDKanalsteuerungSoll
+    lowByte(kanalsteuerbyte)
+endBlock
+
+Fg 3 Id 3 Typ 32
+UFDBetriebsparameter via UFDBetriebsparameterSoll
+    lowByte(erfassungsperiodendauer)
+    highByte(erfassungsperiodendauer)
+    lowByte(uebertragungsverfahren)
+endBlock
+
+Fg 3 Id 3 Typ 36
+UFDGeoKenndaten via UFDGeoKenndatenSoll
+    lowByte(landeskennung)
+    lowByte(strassenart)
+    bcdHigh(strassennummer)
+    bcdLow(strassennummer)
+    $kilometrierung := kilometrierung * 100
+    bcdVHigh($kilometrierung)
+    bcdHigh($kilometrierung)
+    bcdLow($kilometrierung)
+    lowByte(fahrtrichtung)
+    lowByte(reservebyte)
+endBlock
+
+// Wertreaktionen Fg 3
+
+WertReaktion SteuerSequenz action via UFDSteuerSequenz
+
+bei UFD_DE_ABRUF_DE_FEHLER                          an DE FG 3 ID 17 TYP   1
+bei UFD_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 3 ID 17 TYP  14
+bei UFD_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 3 ID 18 TYP  29
+bei UFD_DE_ABRUF_UFD_BETRIEBSPARAMETER              an DE FG 3 ID 19 TYP  32
+bei UFD_DE_ABRUF_LUFT_TEMP                          an DE FG 3 ID 20 TYP  48
+bei UFD_DE_ABRUF_FAHRBAHNOBERFLAECHEN_TEMP          an DE FG 3 ID 20 TYP  49
+bei UFD_DE_ABRUF_FAHRBAHN_FEUCHTE                   an DE FG 3 ID 20 TYP  50
+bei UFD_DE_ABRUF_FAHRBAHN_ZUSTAND                   an DE FG 3 ID 20 TYP  51
+bei UFD_DE_ABRUF_RESTSALZGEHALT                     an DE FG 3 ID 20 TYP  52
+bei UFD_DE_ABRUF_NIEDERSCHLAG                       an DE FG 3 ID 20 TYP  53
+bei UFD_DE_ABRUF_LUFTDRUCK                          an DE FG 3 ID 20 TYP  54
+bei UFD_DE_ABRUF_RELATIVE_LUFTFEUCHTE               an DE FG 3 ID 20 TYP  55
+bei UFD_DE_ABRUF_WINDRICHTUNG                       an DE FG 3 ID 20 TYP  56
+bei UFD_DE_ABRUF_WINDGESCHW_MITTEL                  an DE FG 3 ID 20 TYP  57
+bei UFD_DE_ABRUF_SCHNEEHOHE                         an DE FG 3 ID 20 TYP  58
+bei UFD_DE_ABRUF_FAHRBAHN_GLAETTE                   an DE FG 3 ID 20 TYP  59
+bei UFD_DE_ABRUF_SICHTWEITE                         an DE FG 3 ID 20 TYP  60
+bei UFD_DE_ABRUF_HELLIGKEIT                         an DE FG 3 ID 20 TYP  61
+bei UFD_DE_ABRUF_NIEDERSCHLAGSMENGE                 an DE FG 3 ID 20 TYP  62
+bei UFD_DE_ABRUF_NIEDERSCHLAGSART                   an DE FG 3 ID 20 TYP  63
+bei UFD_DE_ABRUF_WINDGESCHW_MAX                     an DE FG 3 ID 20 TYP  64
+bei UFD_DE_ABRUF_GEFRIER_TEMP                       an DE FG 3 ID 20 TYP  65
+bei UFD_DE_ABRUF_TAUPUNKT_TEMP                      an DE FG 3 ID 20 TYP  66
+bei UFD_DE_ABRUF_TIEFE1_TEMP                        an DE FG 3 ID 20 TYP  67
+bei UFD_DE_ABRUF_TIEFE2_TEMP                        an DE FG 3 ID 20 TYP  68
+bei UFD_DE_ABRUF_TIEFE3_TEMP                        an DE FG 3 ID 20 TYP  69
+bei UFD_DE_ABRUF_FBZ                                an DE FG 3 ID 20 TYP  70
+bei UFD_DE_ABRUF_NS                                 an DE FG 3 ID 20 TYP  71
+bei UFD_DE_ABRUF_WFD                                an DE FG 3 ID 20 TYP  72
+bei UFD_DE_ABRUF_TAUSTOFF_KONZENTRATION             an DE FG 3 ID 20 TYP  73
+bei UFD_DE_ABRUF_TAUSTOFF_MENGE_PRO_QM              an DE FG 3 ID 20 TYP  74
+bei UFD_DE_ABRUF_SCHNEEFILM_DICKE                   an DE FG 3 ID 20 TYP  75
+bei UFD_DE_ABRUF_EISFILM_DICKE                      an DE FG 3 ID 20 TYP  76
+bei UFD_DE_ABRUF_GRIFFIGKEIT                        an DE FG 3 ID 20 TYP  77
+bei UFD_DE_ABRUF_GLOBAL_STRAHLUNG                   an DE FG 3 ID 20 TYP  78
+bei UFD_DE_ABRUF_ZUSTAND_FAHRBAHNOBERFLAECHE        an DE FG 3 ID 20 TYP  79
+bei UFD_DE_ABRUF_STICKSTOFF_MONOXID                 an DE FG 3 ID 20 TYP  80
+bei UFD_DE_ABRUF_STICKSTOFF_DIOXID                  an DE FG 3 ID 20 TYP  81
+bei UFD_DE_ABRUF_STICKOXIDE                         an DE FG 3 ID 20 TYP  82
+bei UFD_DE_ABRUF_SCHADSTOFFE_PM10                   an DE FG 3 ID 20 TYP  83
+bei UFD_DE_ABRUF_SCHADSTOFFE_PM2_5                  an DE FG 3 ID 20 TYP  84
+bei UFD_DE_ABRUF_SCHADSTOFFE_PM1                    an DE FG 3 ID 20 TYP  85
+bei UFD_DE_ABRUF_SCHALLDRUCK_PEGEL                  an DE FG 3 ID 20 TYP  86
+bei UFD_DE_ABRUF_DAUERSCHALL_PEGEL                  an DE FG 3 ID 20 TYP  87
+bei UFD_DE_ABRUF_BASIS_PEGEL                        an DE FG 3 ID 20 TYP  88
+bei UFD_DE_ABRUF_MITTLERER_SPITZEN_PEGEL            an DE FG 3 ID 20 TYP  89
+
+bei UFD_SM_ABRUF_DE_FEHLER                          an SM FG 3 ID 17 TYP   1
+bei UFD_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 3 ID 17 TYP  14
+bei UFD_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 3 ID 18 TYP  29
+bei UFD_SM_ABRUF_UFD_BETRIEBSPARAMETER              an SM FG 3 ID 19 TYP  32
+bei UFD_SM_ABRUF_TREPPENFUNKTION                    an SM FG 3 ID 19 TYP  35
+bei UFD_SM_ABRUF_GEO_KENN                           an SM FG 3 ID 19 TYP  36
+bei UFD_SM_ABRUF_LUFT_TEMP                          an SM FG 3 ID 20 TYP  48
+bei UFD_SM_ABRUF_FAHRBAHNOBERFLAECHEN_TEMP          an SM FG 3 ID 20 TYP  49
+bei UFD_SM_ABRUF_FAHRBAHN_FEUCHTE                   an SM FG 3 ID 20 TYP  50
+bei UFD_SM_ABRUF_FAHRBAHN_ZUSTAND                   an SM FG 3 ID 20 TYP  51
+bei UFD_SM_ABRUF_RESTSALZGEHALT                     an SM FG 3 ID 20 TYP  52
+bei UFD_SM_ABRUF_NIEDERSCHLAG                       an SM FG 3 ID 20 TYP  53
+bei UFD_SM_ABRUF_LUFTDRUCK                          an SM FG 3 ID 20 TYP  54
+bei UFD_SM_ABRUF_RELATIVE_LUFTFEUCHTE               an SM FG 3 ID 20 TYP  55
+bei UFD_SM_ABRUF_WINDRICHTUNG                       an SM FG 3 ID 20 TYP  56
+bei UFD_SM_ABRUF_WINDGESCHW_MITTEL                  an SM FG 3 ID 20 TYP  57
+bei UFD_SM_ABRUF_SCHNEEHOHE                         an SM FG 3 ID 20 TYP  58
+bei UFD_SM_ABRUF_FAHRBAHN_GLAETTE                   an SM FG 3 ID 20 TYP  59
+bei UFD_SM_ABRUF_SICHTWEITE                         an SM FG 3 ID 20 TYP  60
+bei UFD_SM_ABRUF_HELLIGKEIT                         an SM FG 3 ID 20 TYP  61
+bei UFD_SM_ABRUF_NIEDERSCHLAGSMENGE                 an SM FG 3 ID 20 TYP  62
+bei UFD_SM_ABRUF_NIEDERSCHLAGSART                   an SM FG 3 ID 20 TYP  63
+bei UFD_SM_ABRUF_WINDGESCHW_MAX                     an SM FG 3 ID 20 TYP  64
+bei UFD_SM_ABRUF_GEFRIER_TEMP                       an SM FG 3 ID 20 TYP  65
+bei UFD_SM_ABRUF_TAUPUNKT_TEMP                      an SM FG 3 ID 20 TYP  66
+bei UFD_SM_ABRUF_TIEFE1_TEMP                        an SM FG 3 ID 20 TYP  67
+bei UFD_SM_ABRUF_TIEFE2_TEMP                        an SM FG 3 ID 20 TYP  68
+bei UFD_SM_ABRUF_TIEFE3_TEMP                        an SM FG 3 ID 20 TYP  69
+bei UFD_SM_ABRUF_FBZ                                an SM FG 3 ID 20 TYP  70
+bei UFD_SM_ABRUF_NS                                 an SM FG 3 ID 20 TYP  71
+bei UFD_SM_ABRUF_WFD                                an SM FG 3 ID 20 TYP  72
+bei UFD_SM_ABRUF_TAUSTOFF_KONZENTRATION             an SM FG 3 ID 20 TYP  73
+bei UFD_SM_ABRUF_TAUSTOFF_MENGE_PRO_QM              an SM FG 3 ID 20 TYP  74
+bei UFD_SM_ABRUF_SCHNEEFILM_DICKE                   an SM FG 3 ID 20 TYP  75
+bei UFD_SM_ABRUF_EISFILM_DICKE                      an SM FG 3 ID 20 TYP  76
+bei UFD_SM_ABRUF_GRIFFIGKEIT                        an SM FG 3 ID 20 TYP  77
+bei UFD_SM_ABRUF_GLOBAL_STRAHLUNG                   an SM FG 3 ID 20 TYP  78
+bei UFD_SM_ABRUF_ZUSTAND_FAHRBAHNOBERFLAECHE        an SM FG 3 ID 20 TYP  79
+bei UFD_SM_ABRUF_STICKSTOFF_MONOXID                 an SM FG 3 ID 20 TYP  80
+bei UFD_SM_ABRUF_STICKSTOFF_DIOXID                  an SM FG 3 ID 20 TYP  81
+bei UFD_SM_ABRUF_STICKOXIDE                         an SM FG 3 ID 20 TYP  82
+bei UFD_SM_ABRUF_SCHADSTOFFE_PM10                   an SM FG 3 ID 20 TYP  83
+bei UFD_SM_ABRUF_SCHADSTOFFE_PM2_5                  an SM FG 3 ID 20 TYP  84
+bei UFD_SM_ABRUF_SCHADSTOFFE_PM1                    an SM FG 3 ID 20 TYP  85
+bei UFD_SM_ABRUF_SCHALLDRUCK_PEGEL                  an SM FG 3 ID 20 TYP  86
+bei UFD_SM_ABRUF_DAUERSCHALL_PEGEL                  an SM FG 3 ID 20 TYP  87
+bei UFD_SM_ABRUF_BASIS_PEGEL                        an SM FG 3 ID 20 TYP  88
+bei UFD_SM_ABRUF_MITTLERER_SPITZEN_PEGEL            an SM FG 3 ID 20 TYP  89
+
+bei UFD_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 3 ID  2 TYP  29 laut UFDKanalsteuerungSoll
+bei UFD_DE_SENDEN_BETRIEBSPARAMETER                 an DE FG 3 ID  3 TYP  32 laut UFDBetriebsparameterSoll
+bei UFD_DE_SENDEN_GEO_KENN                          an DE FG 3 ID  3 TYP  36 laut UFDGeoKenndatenSoll
+
+// an mehrere DEs Senden könnte gefährlich sein
+//bei UFD_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 3 ID  2 TYP  29 laut UFDKanalsteuerungSoll
+//bei UFD_SM_SENDEN_BETRIEBSPARAMETER                 an SM FG 3 ID  3 TYP  32 laut UFDBetriebsparameterSoll
+//bei UFD_SM_SENDEN_GEO_KENN                          an SM FG 3 ID  3 TYP  36 laut UFDGeoKenndatenSoll
+
+endReaktion
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 4
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Fg 4 Id 2 Typ 17
+WZGBetriebsart via WZGBetriebsartSoll
+    lowByte(betriebsart)
+endBlock
+
+Fg 4 Id 2 Typ 20 Tags(SendProto)
+WZGAbrufPufferInhalt via WZGAbrufPufferInhaltSoll
+    lowByte(folgenummer)
+    highByte(folgenummer)
+    lowByte(anzahlNachrichten)
+endBlock
+
+Fg 4 Id 3 Typ 21 Tags(SendProto)
+WZGAbrufCodedefinition via WZGAbrufCodedefinitionSoll
+    lowByte(stellcode)
+endBlock
+
+Fg 4 Id 3 Typ 22 Tags(SendProto)
+WZGAbrufBilddefinition via WZGAbrufBilddefinitionSoll
+    lowByte(stellcode)
+endBlock
+
+Fg 4 Id 2 Typ 29
+WZGKanalsteuerung via WZGKanalsteuerungSoll
+    lowByte(kanalsteuerbyte)
+endBlock
+
+// Support for legacy devices
+Fg 4 Id 3 Typ 32
+WVZGrundeinstellung32 via WVZGrundeinstellung32Soll
+    lowByte(stellzustand)
+    lowByte(funktionsbyte)
+endBlock
+
+Fg 4 Id 3 Typ 33
+WZGGrundeinstellung33 via WZGGrundeinstellung33Soll
+    lowByte(anzeigeprinzip)
+    lowByte(stellcode)
+    lowByte(funktionsbyte)
+    IF ((stellcode == 0) && ((anzeigeprinzip == 2) || (anzeigeprinzip == 3))) {
+        string(textzeichen)
+    }
+    IF ((stellcode == 0) && (anzeigeprinzip == 4)) {
+        size(prismen)
+        COMP-ARRAY prismen [
+            lowByte(wvzCode)
+            lowByte(funktionsbyte)
+        ]
+    }
+endBlock
+
+Fg 4 Id 3 Typ 36
+WZGGeoKenndaten via WZGGeoKenndatenSoll
+    lowByte(landeskennung)
+    lowByte(strassenart)
+    bcdHigh(strassennummer)
+    bcdLow(strassennummer)
+    $kilometrierung := kilometrierung * 100
+    bcdVHigh($kilometrierung)
+    bcdHigh($kilometrierung)
+    bcdLow($kilometrierung)
+    lowByte(fahrtrichtung)
+    lowByte(reservebyte)
+endBlock
+
+Fg 4 Id 3 Typ 44
+WZGCodedefinition via WZGCodedefinitionSoll
+    lowByte(anzeigeprinzip)
+    lowByte(stellcode)
+    IF ((anzeigeprinzip == 0) || (anzeigeprinzip == 1)) {
+        blockOfBytes(lampennummern)
+    }
+    IF ((anzeigeprinzip == 2) || (anzeigeprinzip == 3)) {
+        string(textzeichen)
+    }
+    IF (anzeigeprinzip == 4) {
+        size(prismen)
+        COMP-ARRAY prismen [
+            lowByte(wvzCode)
+            lowByte(funktionsbyte)
+        ]
+    }
+    IF (anzeigeprinzip == 8) {
+        size(stellzustaende)
+        COMP-ARRAY stellzustaende[
+            lowByte(deNummer)
+            lowByte(anzeigeprinzip)
+            lowByte(stellcode)
+            lowByte(funktionsbyte)
+        ]
+    }
+endBlock
+
+Fg 4 Id 3 Typ 45
+WZGBilddefinition via WZGBilddefinitionSoll
+    lowByte(stellcode)
+    string(dateiname)
+endBlock
+
+// Support for legacy devices
+Fg 4 Id 5 Typ 48
+WVZStellzustand48 via WVZStellzustand48Soll
+    lowByte(stellzustand)
+    lowByte(funktionsbyte)
+endBlock
+
+Fg 4 Id 5 Typ 49
+WZGHelligkeit via WZGHelligkeitSoll
+    lowByte(helligkeit)
+    lowByte(statusbyte)
+endBlock
+
+Fg 4 Id 5 Typ 55
+WZGStellzustand55 via WZGStellzustand55Soll
+    lowByte(anzeigeprinzip)
+    lowByte(stellcode)
+    lowByte(funktionsbyte)
+    // Unabhängig vom Anzeigeprinzip, wird die Langversion des Telegrams (mit String oder Array) nur bei Stellcode 0 verwendet
+    IF ((stellcode == 0) && ((anzeigeprinzip == 2) || (anzeigeprinzip == 3))) {
+        string(textzeichen)
+    }
+    IF ((stellcode == 0) && (anzeigeprinzip == 4)) {
+        size(prismen)
+        COMP-ARRAY prismen[
+            lowByte(wvzCode)
+            lowByte(funktionsbyte)
+        ]
+    }
+endBlock
+
+// Wertreaktionen Fg 4
+
+WertReaktion SteuerSequenz action via WZGSteuerSequenz
+
+bei WZG_DE_ABRUF_DE_FEHLER                          an DE FG 4 ID 17 TYP   1
+bei WZG_DE_ABRUF_NICHT_DARSTELLBARE_WVZ             an DE FG 4 ID 17 TYP   2
+bei WZG_DE_ABRUF_DEFEKTE_LAMPEN                     an DE FG 4 ID 17 TYP   3
+bei WZG_DE_ABRUF_GESTOERTE_TEXTPOS                  an DE FG 4 ID 17 TYP   4
+bei WZG_DE_ABRUF_DEFEKTE_LED_KETTEN                 an DE FG 4 ID 17 TYP   5
+bei WZG_DE_ABRUF_GESTOERTE_PIXEL_SPALTEN            an DE FG 4 ID 17 TYP   6
+bei WZG_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 4 ID 17 TYP  14
+bei WZG_DE_ABRUF_BETRIEBSART                        an DE FG 4 ID 18 TYP  17
+bei WZG_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 4 ID 18 TYP  29
+bei WZG_DE_ABRUF_GRUNDEINSTELLUNG                   an DE FG 4 ID 19 TYP  33
+bei WZG_DE_ABRUF_GEO_KENN                           an DE FG 4 ID 19 TYP  36
+bei WZG_DE_ABRUF_CODELISTE                          an DE FG 4 ID 19 TYP  43
+bei WZG_DE_ABRUF_HELLIGKEIT                         an DE FG 4 ID 21 TYP  49
+bei WZG_DE_ABRUF_STELLZUSTAND                       an DE FG 4 ID 21 TYP  55
+bei WZG_DE_ABRUF_SLT_ZULAESSIGE_PRG                 an DE FG 4 ID 19 TYP 120
+
+bei WZG_SM_ABRUF_DE_FEHLER                          an SM FG 4 ID 17 TYP   1
+bei WZG_SM_ABRUF_NICHT_DARSTELLBARE_WVZ             an SM FG 4 ID 17 TYP   2
+bei WZG_SM_ABRUF_DEFEKTE_LAMPEN                     an SM FG 4 ID 17 TYP   3
+bei WZG_SM_ABRUF_GESTOERTE_TEXTPOS                  an SM FG 4 ID 17 TYP   4
+bei WZG_SM_ABRUF_DEFEKTE_LED_KETTEN                 an SM FG 4 ID 17 TYP   5
+bei WZG_SM_ABRUF_GESTOERTE_PIXEL_SPALTEN            an SM FG 4 ID 17 TYP   6
+bei WZG_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 4 ID 17 TYP  14
+bei WZG_SM_ABRUF_BETRIEBSART                        an SM FG 4 ID 18 TYP  17
+bei WZG_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 4 ID 18 TYP  29
+bei WZG_SM_ABRUF_GRUNDEINSTELLUNG                   an SM FG 4 ID 19 TYP  33
+bei WZG_SM_ABRUF_GEO_KENN                           an SM FG 4 ID 19 TYP  36
+bei WZG_SM_ABRUF_CODELISTE                          an SM FG 4 ID 19 TYP  43
+bei WZG_SM_ABRUF_HELLIGKEIT                         an SM FG 4 ID 21 TYP  49
+bei WZG_SM_ABRUF_STELLZUSTAND                       an SM FG 4 ID 21 TYP  55
+bei WZG_SM_ABRUF_SLT_ZULAESSIGE_PRG                 an SM FG 4 ID 19 TYP 120
+
+bei WZG_SM_ABRUF_PUFFER                             an SM FG 4 ID  2 TYP  20 laut WZGAbrufPufferInhaltSoll
+bei WZG_SM_ABRUF_CODEDEF                            an SM FG 4 ID  3 TYP  21 laut WZGAbrufCodedefinitionSoll
+bei WZG_SM_ABRUF_BILDDEF                            an SM FG 4 ID  3 TYP  22 laut WZGAbrufBilddefinitionSoll
+
+bei WZG_DE_SENDEN_BETRIEBSART                       an DE FG 4 ID  2 TYP  17 laut WZGBetriebsartSoll
+bei WZG_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 4 ID  2 TYP  29 laut WZGKanalsteuerungSoll
+bei WVZ_DE_SENDEN_GRUNDEINSTELLUNG_32               an DE FG 4 ID  3 TYP  32 laut WVZGrundeinstellung32Soll // Support for legacy devices
+bei WZG_DE_SENDEN_GRUNDEINSTELLUNG_33               an DE FG 4 ID  3 TYP  33 laut WZGGrundeinstellung33Soll // Special handling for NI34
+bei WZG_DE_SENDEN_GEO_KENN                          an DE FG 4 ID  3 TYP  36 laut WZGGeoKenndatenSoll
+bei WZG_DE_SENDEN_CODEDEF                           an DE FG 4 ID  3 TYP  44 laut WZGCodedefinitionSoll
+bei WZG_DE_SENDEN_BILDDEF                           an DE FG 4 ID  3 TYP  45 laut WZGBilddefinitionSoll
+bei WVZ_DE_SENDEN_STELLZUSTAND_48                   an DE FG 4 ID  5 TYP  48 laut WVZStellzustand48Soll // Support for legacy devices
+bei WZG_DE_SENDEN_HELLIGKEIT                        an DE FG 4 ID  5 TYP  49 laut WZGHelligkeitSoll
+bei WZG_DE_SENDEN_STELLZUSTAND_55                   an DE FG 4 ID  5 TYP  55 laut WZGStellzustand55Soll // Special handling for NI34
+
+// an mehrere DEs Senden könnte gefährlich sein
+//bei WZG_SM_SENDEN_BETRIEBSART                       an SM FG 4 ID  2 TYP  17 laut WZGBetriebsartSoll
+//bei WZG_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 4 ID  2 TYP  29 laut WZGKanalsteuerungSoll
+//bei WZG_SM_SENDEN_GRUNDEINSTELLUNG                  an SM FG 4 ID  3 TYP  33 laut WZGGrundeinstellungSoll
+//bei WZG_SM_SENDEN_GEO_KENN                          an SM FG 4 ID  3 TYP  36 laut WZGGeoKenndatenSoll
+//bei WZG_SM_SENDEN_CODEDEF                           an SM FG 4 ID  3 TYP  44 laut WZGCodedefinitionSoll
+//bei WZG_SM_SENDEN_BILDDEF                           an SM FG 4 ID  3 TYP  45 laut WZGBilddefinitionSoll
+//bei WZG_SM_SENDEN_HELLIGKEIT                        an SM FG 4 ID  5 TYP  49 laut WZGHelligkeitSoll
+//bei WZG_SM_SENDEN_STELLZUSTAND                      an SM FG 4 ID  5 TYP  55 laut WZGStellzustandSoll
+
+endReaktion
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 6
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Fg 6 Id 2 Typ 29
+VLTKanalsteuerung via VLTKanalsteuerungSoll
+    lowByte(kanalsteuerbyte)
+endBlock
+
+Fg 6 Id 3 Typ 32
+VLTBetriebsparameter via VLTBetriebsparameterSoll
+    lowByte(erfassungsperiodendauer)
+    highByte(erfassungsperiodendauer)
+    lowByte(uebertragungsverfahren)
+endBlock
+
+Fg 6 Id 3 Typ 36
+VLTGeoKenndaten via VLTGeoKenndatenSoll
+    lowByte(landeskennung)
+    lowByte(strassenart)
+    bcdHigh(strassennummer)
+    bcdLow(strassennummer)
+    $kilometrierung := kilometrierung * 100
+    bcdVHigh($kilometrierung)
+    bcdHigh($kilometrierung)
+    bcdLow($kilometrierung)
+    lowByte(fahrtrichtung)
+    lowByte(reservebyte)
+endBlock
+
+// Wertreaktionen Fg 6
+
+WertReaktion SteuerSequenz action via VLTSteuerSequenz
+
+bei VLT_DE_ABRUF_DE_FEHLER                          an DE FG 6 ID 17 TYP   1
+bei VLT_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 6 ID 17 TYP  14
+bei VLT_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 6 ID 18 TYP  29
+bei VLT_DE_ABRUF_BETRIEBSPARAMETER                  an DE FG 6 ID 19 TYP  32
+bei VLT_DE_ABRUF_GEO_KENN                           an DE FG 6 ID 19 TYP  36
+bei VLT_DE_ABRUF_TUER                               an DE FG 6 ID 20 TYP  48
+bei VLT_DE_ABRUF_TEMPERATUR                         an DE FG 6 ID 20 TYP  49
+bei VLT_DE_ABRUF_LICHT                              an DE FG 6 ID 20 TYP  50
+bei VLT_DE_ABRUF_STROM                              an DE FG 6 ID 20 TYP  51
+bei VLT_DE_ABRUF_HEIZUNG                            an DE FG 6 ID 20 TYP  52
+bei VLT_DE_ABRUF_LUEFTUNG                           an DE FG 6 ID 20 TYP  53
+bei VLT_DE_ABRUF_UEBERSPANNUNG                      an DE FG 6 ID 20 TYP  54
+bei VLT_DE_ABRUF_DIEBSTAHL                          an DE FG 6 ID 20 TYP  55
+bei VLT_DE_ABRUF_SOLARANLAGE                        an DE FG 6 ID 20 TYP  56
+
+bei VLT_SM_ABRUF_DE_FEHLER                          an SM FG 6 ID 17 TYP   1
+bei VLT_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 6 ID 17 TYP  14
+bei VLT_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 6 ID 18 TYP  29
+bei VLT_SM_ABRUF_BETRIEBSPARAMETER                  an SM FG 6 ID 19 TYP  32
+bei VLT_SM_ABRUF_GEO_KENN                           an SM FG 6 ID 19 TYP  36
+bei VLT_SM_ABRUF_TUER                               an SM FG 6 ID 20 TYP  48
+bei VLT_SM_ABRUF_TEMPERATUR                         an SM FG 6 ID 20 TYP  49
+bei VLT_SM_ABRUF_LICHT                              an SM FG 6 ID 20 TYP  50
+bei VLT_SM_ABRUF_STROM                              an SM FG 6 ID 20 TYP  51
+bei VLT_SM_ABRUF_HEIZUNG                            an SM FG 6 ID 20 TYP  52
+bei VLT_SM_ABRUF_LUEFTUNG                           an SM FG 6 ID 20 TYP  53
+bei VLT_SM_ABRUF_UEBERSPANNUNG                      an SM FG 6 ID 20 TYP  54
+bei VLT_SM_ABRUF_DIEBSTAHL                          an SM FG 6 ID 20 TYP  55
+bei VLT_SM_ABRUF_SOLARANLAGE                        an SM FG 6 ID 20 TYP  56
+
+bei VLT_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 6 ID  2 TYP  29 laut VLTKanalsteuerungSoll
+bei VLT_DE_SENDEN_BETRIEBSPARAMETER                 an DE FG 6 ID  3 TYP  32 laut VLTBetriebsparameterSoll
+bei VLT_DE_SENDEN_GEO_KENN                          an DE FG 6 ID  3 TYP  36 laut VLTGeoKenndatenSoll
+
+// an mehrere DEs Senden könnte gefährlich sein
+//bei VLT_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 6 ID  2 TYP  29 laut VLTKanalsteuerungSoll
+//bei VLT_SM_SENDEN_BETRIEBSPARAMETER                 an SM FG 6 ID  3 TYP  32 laut VLTBetriebsparameterSoll
+//bei VLT_SM_SENDEN_GEO_KENN                          an SM FG 6 ID  3 TYP  36 laut VLTGeoKenndatenSoll
+
+endReaktion
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 9
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Fg 9 Id 2 Typ 17
+ZRABetriebsart via ZRABetriebsartSoll
+    lowByte(betriebsart)
+endBlock
+
+Fg 9 Id 2 Typ 20 Tags(SendProto)
+ZRAAbrufPufferInhalt via ZRAAbrufPufferInhaltSoll
+    lowByte(folgenummer)
+    highByte(folgenummer)
+    lowByte(anzahlNachrichten)
+endBlock
+
+Fg 9 Id 2 Typ 29
+ZRAKanalsteuerung via ZRAKanalsteuerungSoll
+    lowByte(kanalsteuerbyte)
+endBlock
+
+Fg 9 Id 3 Typ 32
+ZRABetriebsparameter via ZRABetriebsparameterSoll
+    lowByte(gelbzeit)
+    lowByte(rotgelbzeit)
+    lowByte(minGruenzeit)
+    lowByte(maxGruenzeit)
+    lowByte(maxBelegzeit)
+    lowByte(maxStoerungGruenzeit)
+    lowByte(steuerflags)
+endBlock
+
+Fg 9 Id 3 Typ 33
+ZRABetriebsparameterAlinea1 via ZRABetriebsparameterAlinea1Soll
+    lowByte(qEMin)
+    highByte(qEMin)
+    $korrekturfaktor := korrekturfaktor * 10
+    lowByte($korrekturfaktor)
+    highByte($korrekturfaktor)
+    lowByte(bOpt)
+    lowByte(berechnungBelegung)
+    lowByte(tMin)
+    lowByte(tAus)
+    lowByte(maxRotschaltzeit)
+    lowByte(schwachRotschaltzeit)
+    lowByte(0) // skip
+    lowByte(0) // skip
+    lowByte(0) // skip
+    size(programme)
+    COMP-ARRAY programme[
+        $tUEin := tUEin *10
+        lowByte($tUEin)
+        highByte($tUEin)
+        $tUAus := tUAus *10
+        lowByte($tUAus)
+        highByte($tUAus)
+        lowByte(rotschaltzeit)
+    ]
+endBlock
+
+Fg 9 Id 3 Typ 34
+ZRABetriebsparameterRotfahrer via ZRABetriebsparameterRotfahrerSoll
+    lowByte(erfassungsintervalldauer)
+    lowByte(uebertragungsverfahren)
+endBlock
+
+Fg 9 Id 3 Typ 35
+ZRABetriebsparameterAlinea2 via ZRABetriebsparameterAlinea2Soll
+    lowByte(vHFBStauEin)
+    lowByte(tHFBvStauEin)
+    lowByte(vHFBStauAus)
+    lowByte(tHFBvStauAus)
+    lowByte(bHFBStauEin)
+    lowByte(tHFBbStauEin)
+    lowByte(bHFBStauAus)
+    lowByte(tHFBbStauAus)
+    lowByte(bGelbAnSStauEin)
+    lowByte(tGelbAnSbStauEin)
+    lowByte(bGelbAnSStauAus)
+    lowByte(tGelbAnSbStauAus)
+    lowByte(bFGruenAnSStauEin)
+    lowByte(tFGruenAnSbStauEin)
+    lowByte(bFGruenAnSStauAus)
+    lowByte(tFGruenAnSbStauAus)
+    lowByte(bRStauSStauEin)
+    lowByte(tRStauSbStauEin)
+    lowByte(bRStauSStauAus)
+    lowByte(tRStauSbStauAus)
+    lowByte(bHBFmin)
+    lowByte(tRest)
+    lowByte(0) // skip
+    lowByte(0) // skip
+    lowByte(0) // skip
+    size(programmeFGruenAnS)
+    COMP-ARRAY programmeFGruenAnS[
+        lowByte(untereRotschaltzeit)
+        lowByte(obereRotschaltzeit)
+        lowByte(schwacheRotschaltzeit)
+    ]
+    size(programmeRStauS)
+    COMP-ARRAY programmeRStauS[
+        lowByte(untereRotschaltzeit)
+        lowByte(obereRotschaltzeit)
+        lowByte(schwacheRotschaltzeit)
+    ]
+endBlock
+
+Fg 9 Id 3 Typ 36
+ZRAGeoKenndaten via ZRAGeoKenndatenSoll
+    lowByte(landeskennung)
+    lowByte(strassenart)
+    bcdHigh(strassennummer)
+    bcdLow(strassennummer)
+    $kilometrierung := kilometrierung * 100
+    bcdVHigh($kilometrierung)
+    bcdHigh($kilometrierung)
+    bcdLow($kilometrierung)
+    lowByte(fahrtrichtung)
+    lowByte(reservebyte)
+endBlock
+
+Fg 9 Id 5 Typ 48
+ZRASignalplan via ZRASignalplanSoll
+    lowByte(signalplan)
+    lowByte(extraFahrzeuge)
+    lowByte(0)
+    lowByte(0)
+endBlock
+
+Fg 9 Id 5 Typ 49
+ZRAHelligkeit via ZRAHelligkeitSoll
+    lowByte(helligkeit)
+    lowByte(statusbyte)
+endBlock
+
+// Wertreaktionen Fg 9
+
+WertReaktion SteuerSequenz action via ZRASteuerSequenz
+
+bei ZRA_DE_ABRUF_DE_FEHLER                          an DE FG 9 ID 17 TYP   1
+bei ZRA_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 9 ID 17 TYP  14
+bei ZRA_DE_ABRUF_BETRIEBSART                        an DE FG 9 ID 18 TYP  17
+bei ZRA_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 9 ID 18 TYP  29
+bei ZRA_DE_ABRUF_BETR_PARAM_ZUFLUSSREGELUNG         an DE FG 9 ID 19 TYP  32
+bei ZRA_DE_ABRUF_BETR_PARAM_ALINEA_1                an DE FG 9 ID 19 TYP  33
+bei ZRA_DE_ABRUF_BETR_PARAM_ROTFAHRZAEHLER          an DE FG 9 ID 19 TYP  34
+bei ZRA_DE_ABRUF_BETR_PARAM_ALINEA_2                an DE FG 9 ID 19 TYP  35
+bei ZRA_DE_ABRUF_GEO_KENN                           an DE FG 9 ID 19 TYP  36
+bei ZRA_DE_ABRUF_SIGNALPLAN                         an DE FG 9 ID 21 TYP  48
+bei ZRA_DE_ABRUF_HELLIGKEIT                         an DE FG 9 ID 21 TYP  49
+bei ZRA_DE_ABRUF_ERGEBNIS_ROTFAHRZAEHLER            an DE FG 9 ID 20 TYP  65
+bei ZRA_DE_ABRUF_ALINEA_SCHALTVORGAENGE             an DE FG 9 ID 20 TYP  70
+
+bei ZRA_SM_ABRUF_DE_FEHLER                          an SM FG 9 ID 17 TYP   1
+bei ZRA_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 9 ID 17 TYP  14
+bei ZRA_SM_ABRUF_BETRIEBSART                        an SM FG 9 ID 18 TYP  17
+bei ZRA_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 9 ID 18 TYP  29
+bei ZRA_SM_ABRUF_BETR_PARAM_ZUFLUSSREGELUNG         an SM FG 9 ID 19 TYP  32
+bei ZRA_SM_ABRUF_BETR_PARAM_ALINEA_1                an SM FG 9 ID 19 TYP  33
+bei ZRA_SM_ABRUF_BETR_PARAM_ROTFAHRZAEHLER          an SM FG 9 ID 19 TYP  34
+bei ZRA_SM_ABRUF_BETR_PARAM_ALINEA_2                an SM FG 9 ID 19 TYP  35
+bei ZRA_SM_ABRUF_GEO_KENN                           an SM FG 9 ID 19 TYP  36
+bei ZRA_SM_ABRUF_SIGNALPLAN                         an SM FG 9 ID 21 TYP  48
+bei ZRA_SM_ABRUF_HELLIGKEIT                         an SM FG 9 ID 21 TYP  49
+bei ZRA_SM_ABRUF_ERGEBNIS_ROTFAHRZAEHLER            an SM FG 9 ID 20 TYP  65
+bei ZRA_SM_ABRUF_ALINEA_SCHALTVORGAENGE             an SM FG 9 ID 20 TYP  70
+
+bei ZRA_SM_ABRUF_PUFFER                             an SM FG 9 ID 20 TYP  20 laut ZRAAbrufPufferInhaltSoll
+
+bei ZRA_DE_SENDEN_BETRIEBSART                       an DE FG 9 ID  2 TYP  17 laut ZRABetriebsartSoll
+bei ZRA_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 9 ID  2 TYP  29 laut ZRAKanalsteuerungSoll
+bei ZRA_DE_SENDEN_BETR_PARAM_ZUFLUSSREGELUNG        an DE FG 9 ID  3 TYP  32 laut ZRABetriebsparameterSoll
+bei ZRA_DE_SENDEN_BETR_PARAM_ALINEA_1               an DE FG 9 ID  3 TYP  33 laut ZRABetriebsparameterAlinea1Soll
+bei ZRA_DE_SENDEN_BETR_PARAM_ROTFAHRZAEHLER         an DE FG 9 ID  3 TYP  34 laut ZRABetriebsparameterRotfahrerSoll
+bei ZRA_DE_SENDEN_BETR_PARAM_ALINEA_2               an DE FG 9 ID  3 TYP  35 laut ZRABetriebsparameterAlinea2Soll
+bei ZRA_DE_SENDEN_GEO_KENN                          an DE FG 9 ID  3 TYP  36 laut ZRAGeoKenndatenSoll
+bei ZRA_DE_SENDEN_SIGNALPLAN                        an DE FG 9 ID  5 TYP  48 laut ZRASignalplanSoll
+bei ZRA_DE_SENDEN_HELLIGKEIT                        an DE FG 9 ID  5 TYP  49 laut ZRAHelligkeitSoll
+
+// an mehrere DEs Senden könnte gefährlich sein
+//bei ZRA_SM_SENDEN_BETRIEBSART                       an SM FG 9 ID  2 TYP  17 laut ZRABetriebsartSoll
+//bei ZRA_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 9 ID  2 TYP  29 laut ZRAKanalsteuerungSoll
+//bei ZRA_SM_SENDEN_BETR_PARAM_ZUFLUSSREGELUNG        an SM FG 9 ID  3 TYP  32 laut ZRABetriebsparameterSoll
+//bei ZRA_SM_SENDEN_BETR_PARAM_ALINEA_1               an SM FG 9 ID  3 TYP  33 laut ZRABetriebsparameterAlinea1Soll
+//bei ZRA_SM_SENDEN_BETR_PARAM_ROTFAHRZAEHLER         an SM FG 9 ID  3 TYP  34 laut ZRABetriebsparameterRotfahrerSoll
+//bei ZRA_SM_SENDEN_BETR_PARAM_ALINEA_2               an SM FG 9 ID  3 TYP  35 laut ZRABetriebsparameterAlinea2Soll
+//bei ZRA_SM_SENDEN_GEO_KENN                          an SM FG 9 ID  3 TYP  36 laut ZRAGeoKenndatenSoll
+//bei ZRA_SM_SENDEN_SIGNALPLAN                        an SM FG 9 ID  5 TYP  48 laut ZRASignalplanSoll
+//bei ZRA_SM_SENDEN_HELLIGKEIT                        an SM FG 9 ID  5 TYP  49 laut ZRAHelligkeitSoll
+
+endReaktion

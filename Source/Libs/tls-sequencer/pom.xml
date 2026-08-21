@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.base</groupId>
+        <artifactId>heuboe-base-parent</artifactId>
+        <version>1.6.3</version>
+    </parent>
+
+    <groupId>de.heuboe.tls</groupId>
+    <artifactId>tls-sequencer</artifactId>
+    <version>4.3.2-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+    <description>Parse and execute special sequencer scripts to enable user defined conditional reactions.</description>
+    <url>https://www.heuboe.de</url>
+    <inceptionYear>2020</inceptionYear>
+
+    <organization>
+        <name>Heusch/Boesefeldt GmbH</name>
+        <url>https://www.heuboe.de</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>All rights reserved</name>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ASc</id>
+            <name>Alexander Schulze</name>
+            <email>alexander.schulze@heuboe.de</email>
+        </developer>
+        <developer>
+            <id>rn</id>
+            <name>Ronald Nikel</name>
+            <email>ronald.nikel@heuboe.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/Tls/tls-sequencer.git</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:Tls/tls-sequencer.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:Tls/tls-sequencer.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <!-- encoding properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- sonar properties -->
+        <sonar.exclusions>src/**/config/**,src/**/Main.java</sonar.exclusions>
+        <sonar.test.exclusions>src/test/**</sonar.test.exclusions>
+
+        <!-- path definition -->
+        <protobuf.input.directory>${project.basedir}/src/main/proto</protobuf.input.directory>
+        <protobuf.output.directory>${project.build.directory}/generated-sources</protobuf.output.directory>
+        <antlr-reference-directory>${project.build.directory}/generated-sources</antlr-reference-directory>
+        <antlr-tmp-root-directory>${project.build.directory}/tmp/antlr4</antlr-tmp-root-directory>
+        <antlr-package-directory>de/heuboe/tls/grammar/base/parser</antlr-package-directory>
+
+        <!-- heuboe dependency versions -->
+        <tls-cfglib.version>3.0.0</tls-cfglib.version>
+        <tls-grammar.version>3.1.0</tls-grammar.version>
+        <tls-kafka-operator.version>5.0.1</tls-kafka-operator.version>
+        <vmis2-kafka-protopojo-converter.version>2.0.0</vmis2-kafka-protopojo-converter.version>
+        <vmis2-tls-cfggetter.version>2.0.0</vmis2-tls-cfggetter.version>
+
+        <!-- 3rd party dependency versions -->
+        <protobuf-dynamic.version>1.0.1</protobuf-dynamic.version>
+        <antlr4.version>4.13.2</antlr4.version>
+
+        <!-- test dependency versions -->
+        <tls-proto-interface.version>5.1.0</tls-proto-interface.version>
+        <protobuf-java-format.version>1.4</protobuf-java-format.version>
+        <mockito-inline.version>5.2.0</mockito-inline.version>
+        <json-simple.version>1.1.1</json-simple.version>
+        <heuboe-kafka-test-utils.version>2.1.0</heuboe-kafka-test-utils.version>
+    </properties>
+
+    <dependencies>
+        <!-- heuboe dependencies -->
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-cfglib</artifactId>
+            <version>${tls-cfglib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-grammar-base</artifactId>
+            <version>${tls-grammar.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-kafka-operator</artifactId>
+            <version>${tls-kafka-operator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-kafka-protopojo-converter</artifactId>
+            <version>${vmis2-kafka-protopojo-converter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-tls-cfggetter</artifactId>
+            <version>${vmis2-tls-cfggetter.version}</version>
+        </dependency>
+
+        <!-- 3rd party dependencies -->
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr4.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.devh</groupId>
+            <artifactId>grpc-client-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- spring dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+        </dependency>
+
+        <!-- Spring-Metrics -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>de.heuboe.test</groupId>
+            <artifactId>heuboe-kafka-test-utils</artifactId>
+            <version>${heuboe-kafka-test-utils.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-proto-interface</artifactId>
+            <version>${tls-proto-interface.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.protobuf-java-format</groupId>
+            <artifactId>protobuf-java-format</artifactId>
+            <version>${protobuf-java-format.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>${mockito-inline.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>${json-simple.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <!-- Will build the ANTLR parser and lexer under usage of the imported grammar-base lib. -->
+        <profile>
+            <id>antlr</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>${maven-dependency-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>unpack</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>de.heuboe.tls</groupId>
+                                            <artifactId>tls-grammar-base</artifactId>
+                                            <version>${tls-grammar.version}</version>
+                                            <type>jar</type>
+                                            <outputDirectory>${antlr-tmp-root-directory}</outputDirectory>
+                                            <includes>**/*.g4</includes>
+                                        </artifactItem>
+                                    </artifactItems>
+                                    <overWriteSnapshots>true</overWriteSnapshots>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.antlr</groupId>
+                        <artifactId>antlr4-maven-plugin</artifactId>
+                        <version>${antlr4.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>antlr4</goal>
+                                </goals>
+                                <configuration>
+                                    <libDirectory>${antlr-tmp-root-directory}/${antlr-package-directory}</libDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- This profile is only useful for developing. It will copy the grammar file of the grammar-base to your
+             defined directory. This is useful if u use Intellij with the ANTLR plugin to evaluate rules on the fly. -->
+        <profile>
+            <id>extractReferenceGrammar</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>${maven-dependency-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>unpack</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>de.heuboe.tls</groupId>
+                                            <artifactId>tls-grammar-base</artifactId>
+                                            <version>${tls-grammar.version}</version>
+                                            <type>jar</type>
+                                            <outputDirectory>${antlr-tmp-root-directory}</outputDirectory>
+                                            <includes>**/*.g4</includes>
+                                        </artifactItem>
+                                    </artifactItems>
+                                    <overWriteSnapshots>true</overWriteSnapshots>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy grammar</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <target name="copy grammar">
+                                <copy todir="src/main/antlr4/de/heuboe/tls/grammar/sequencer/parser">
+                                    <fileset dir="${antlr-tmp-root-directory}/${antlr-package-directory}" />
+                                </copy>
+                            </target>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.git-commit-id</groupId>
+                <artifactId>git-commit-id-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>de.heuboe.maven.plugins</groupId>
+                <artifactId>pdb-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>de.heuboe.tls</groupId>
+                                    <artifactId>tls-grammar-base</artifactId>
+                                    <version>${tls-grammar.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${antlr-tmp-root-directory}</outputDirectory>
+                                    <includes>**/*.g4</includes>
+                                </artifactItem>
+                            </artifactItems>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>${antlr4.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                        <configuration>
+                            <libDirectory>${antlr-tmp-root-directory}/${antlr-package-directory}</libDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.now</groupId>
+        <artifactId>now-tls-resources</artifactId>
+        <version>3.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>now-tls-proto-interface</artifactId>
+    <description>NOW Library with protos for TLS.</description>
+
+    <properties>
+        <heuboe.pdb.changelogfile>${project.parent.basedir}/CHANGELOG.md</heuboe.pdb.changelogfile>
+        <protoDir>${project.parent.basedir}/now-tls-proto-interface/src/main/proto/</protoDir>
+    </properties>
+
+    <dependencies>
+        <!-- heuboe dependencies -->
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-jprotoc-transferinterface</artifactId>
+            <version>${jprotoc.version}</version>
+        </dependency>
+
+        <!-- 3rd party dependencies -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- optional dependencies (in case the proto files contain service definitions) -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>
