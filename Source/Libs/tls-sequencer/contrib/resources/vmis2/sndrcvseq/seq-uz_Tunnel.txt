@@ -1,8 +1,0 @@
-/************************************************************************/
-/* Specfile fuer Sequencer UZ Wels                                      */
-/************************************************************************/
-
-#include "spec.h"
-#include "seq-uz_allgemein.txt"
-
-/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen  FEHLT */

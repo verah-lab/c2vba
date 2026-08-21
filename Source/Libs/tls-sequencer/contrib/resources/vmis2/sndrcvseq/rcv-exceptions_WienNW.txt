@@ -1,4 +1,0 @@
-#define EA_VIR_LVE   _dies_ist_eine_fake_datei_
-
-Verdoppeln in DaLVEGeoKennIst
-2033409 auf 2033410

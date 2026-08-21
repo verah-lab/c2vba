@@ -1,1 +1,0 @@
--dbmsname=informix -db=vienna2 -server=vmistcp -user= -passwd= -env=vmis-int:5599:vmis_int -cpp_opt="-I..\gdSndRcvTlsLib\spec" -startCom -spec=..\gdSndRcvTlsLib\spec\seq-uz.txt
