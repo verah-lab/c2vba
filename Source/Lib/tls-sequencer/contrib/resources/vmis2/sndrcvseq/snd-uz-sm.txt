@@ -1,0 +1,838 @@
+
+#ifndef	SND_UZ_SM
+#define	SND_UZ_SM
+
+#include "spec.h"
+
+    Senden nach Unten an die 2. Stufe
+
+	bei	Inkarnation	nichts tun
+		Tot->Lebt	nichts tun
+		Lebt->Tot	nichts tun
+		Destruktion	nichts tun
+
+	ohne	Berechtigungsverwaltung
+	ohne	Benutzerverwaltung
+
+	Jobnummer	fortlaufend
+	Prioritaet	Niedrig
+	Reaktion	Write Area
+
+	Quellen	Eigenermittlung
+
+
+/* ========================================================================== */
+/* FG 254 - Telegramme mit Daten senden (Definition)                          */
+/* ========================================================================== */
+
+#ifdef BIST_DU_DES_WAHNSINNS
+
+/* Fg 254 Id   3 Typ  34 -------------------------- SYS-Konfigurationstabelle */
+Datatype DaSYSKonfigurationstabelleSoll ohne Zeit
+  Fill Low	(Zeilen)
+  IncLoop(i, 0, Laenge) {
+    Fill Low	(Daten[$i])
+  }
+
+/* Fg 254 Id   3 Typ  35 ---------------------------- SYS-OSI3 Routingtabelle */
+Datatype DaSYSOSI3RoutingSoll ohne Zeit
+  Fill Low	(Bloecke)
+  IncLoop(i, 0, Laenge) {
+    Fill Low	(Daten[$i])
+  }
+  
+/* Fg 254 Id   3 Typ  37 ----------------------------------- SYS-Knotennummer */
+Datatype DaSYSKnotennummerSoll ohne Zeit
+  Fill Low	(knotennummer)
+  Fill High	(knotennummer)
+  Fill vHigh(knotennummer)
+
+#endif
+
+/* Fg 254 Id   3 Typ  36 ------------------------ SYS-Geographische Kenndaten */
+Datatype DaSYSGeoKennSoll ohne Zeit
+  Fill Low	(Landeskennung)
+  Fill Low	(Strassenart)
+  Fill High	(StrassenNr)
+  Fill Low  (StrassenNr)
+  Fill vHigh(km)
+  Fill High	(km)
+  Fill Low	(km)
+  Fill Low	(Fahrtrichtung)
+  Fill Low	(Reserve)
+
+/* Fg 254 Id   2 Typ  38 ------------------------------------------ Reset SSt */
+Datatype DaSYSReset ohne Zeit
+  Meta Fg 254 Meta Id 2 Meta Typ 38
+  Fill Low	(Grund)
+
+
+/* ========================================================================== */
+/* FG 1 - Telegramme mit Daten senden (Definition)                            */
+/* ========================================================================== */
+
+/* Fg   1 Id   2 Typ  20 --------------- LVE Abfrage Langzeitdaten aus Puffer */
+Datatype DaLVELangPufferAbfrage ohne Zeit vorhalten
+  Fill Low  (jahr)
+  Fill Low  (monat)
+  Fill Low  (tag)
+  Fill Low  (std)
+  Fill Low  (anz)
+
+#if 1
+/* Fg   1 Id   2 Typ  29 ------------------------------------- Kanalsteuerung */
+Datatype DaLVEKanalSoll ohne Zeit
+  Fill Low	(Steuerbyte)
+#else
+// ACHTUNG: nur zu Demo-Zwecken!
+/* Fg   1 Id   2 Typ  29 ------------------------------------- Kanalsteuerung */
+Datatype DaLVEKanalSoll ohne Zeit
+  Meta FG 10 Meta Id 3 Meta Typ 129
+  Fill Low	(Steuerbyte)
+  Fill Low	(Steuerbyte)
+#endif
+
+/* Fg   1 Id   3 Typ  32 ------------------------------ LVE-Betriebsparameter */
+Datatype DaLVEBetriebsParamSoll ohne Zeit
+  Fill Low	(OptionKurz)
+  Fill Low	(IVLaengeKurz)
+  Fill Low	(OptionLang)
+  Fill Low	(IVLaengeLang)
+  Fill Low	(alpha1)
+  Fill Low	(alpha2)
+  Fill Low	(Laengengrenzwert)
+  Fill Low	(Mittelwert)
+
+/* Fg   1 Id   3 Typ  34 ------------------------------ SVE-Betriebsparameter */
+Datatype DaSVEBetriebsParamSoll ohne Zeit
+  Fill Low	(OptionSVE)
+  Fill Low	(IVLaengeSVE)
+  
+/* Fg   1 Id   3 Typ  36 ------------------------ LVE-Geographische Kenndaten */
+Datatype DaLVEGeoKennSoll ohne Zeit
+  Fill Low	(Landeskennung)
+  Fill Low	(Strassenart)
+  Fill High	(StrassenNr)
+  Fill Low  (StrassenNr)
+  Fill vHigh(km)
+  Fill High	(km)
+  Fill Low	(km)
+  Fill Low	(Fahrtrichtung)
+  Fill Low	(Reserve)
+
+
+/* Fg   1 Id   3 Typ  37 ------------------------ LVE-Geschwindigkeitsklassen */
+Datatype DaLVEvKlassenKurzSnd ohne Zeit
+  Fill Low	(FahrzeugKlasse)
+  Fill Low	(AnzKlassenGrenzen)
+  IncLoop(i, 0, AnzKlassenGrenzen) {
+    Fill Low	(KlassenGrenzen[$i])
+  }
+  
+/* Fg   1 Id   3 Typ  38 ------------------------ LVE-Geschwindigkeitsklassen */
+Datatype DaLVEvKlassenLangSnd ohne Zeit
+  Fill Low	(FahrzeugKlasse)
+  Fill Low	(AnzKlassenGrenzen)
+  IncLoop(i, 0, AnzKlassenGrenzen) {
+    Fill Low	(KlassenGrenzen[$i])
+  }
+
+/* Fg   1 Id   3 Typ 191 --------------------- Parametrierung Abstandswarnung */
+Datatype DaLVEBetrParamAbstandWarnSoll ohne Zeit
+  Meta Fg 1 Meta Id 3 Meta Typ 191
+  Fill Low	(aktiv)
+  Fill Low	(tNetto)
+
+
+/* ========================================================================== */
+/* FG 2 - Telegramme mit Daten senden (Definition)                            */
+/* ========================================================================== */
+
+/* Fg   2 Id   2 Typ  20 --------------- AXL Abfrage Puffer Ergebnismeldungen */
+Datatype DaAXLLangPufferAbfrage ohne Zeit vorhalten
+  Fill Low  (jahr)
+  Fill Low  (monat)
+  Fill Low  (tag) 
+  Fill Low  (std)
+  Fill Low  (minute)
+  Fill Low  (anz)
+
+/* Fg   2 Id   2 Typ  21 --------- AXL Abfrage Puffer Einzelergebnismeldungen */
+Datatype DaAXLEinzelPufferAbfrage ohne Zeit vorhalten
+  Fill Low  (jahr)
+  Fill Low  (monat)
+  Fill Low  (tag) 
+  Fill Low  (std)
+  Fill Low  (minute)
+  Fill Low  (sekunde)
+  Fill Low  (anz)
+
+/* Fg   2 Id   2 Typ  29 ------------------------------------- Kanalsteuerung */
+Datatype DaAXLKanalSoll ohne Zeit
+  Fill Low	(Steuerbyte)
+
+
+/* Fg   2 Id   3 Typ  32 ------------------------------ AXL-Betriebsparameter */
+Datatype DaAXLBetriebsParamSoll ohne Zeit
+  Fill Low	(0)
+  Fill Low	(0)
+  Fill Low	(VersionErgebnis)
+  Fill Low	(IVLaenge)
+  Fill Low	(0)
+  Fill Low	(VersionEinzel)
+  Fill Low	(SpeicherungVorOrt)
+
+/* Fg   2 Id   3 Typ  36 ------------------------ AXL-Geographische Kenndaten */
+Datatype DaAXLGeoKennSoll ohne Zeit
+  Fill Low	(Landeskennung)
+  Fill Low	(Strassenart)
+  Fill High	(StrassenNr)
+  Fill Low  (StrassenNr)
+  Fill vHigh(km)
+  Fill High	(km)
+  Fill Low	(km)
+  Fill Low	(Fahrtrichtung)
+  Fill Low	(Reserve)
+
+
+/* Fg   2 Id  3 Typ  37 ------------------------------------------ Grenzwerte */
+Datatype DaAXLGrenzwerteSoll ohne Zeit
+  Fill Low   (EinzelAchslast1)
+  Fill High  (EinzelAchslast1)
+  Fill Low   (EinzelAchslast)
+  Fill High  (EinzelAchslast)
+  Fill Low   (MaxAbstand1DoppelAchse)
+  Fill Low   (Abstand1Doppelachslast)
+  Fill High  (Abstand1Doppelachslast)
+  Fill Low   (MaxAbstand2DoppelAchse)
+  Fill Low   (Abstand2Doppelachslast)
+  Fill High  (Abstand2Doppelachslast)
+  Fill Low   (MaxAbstand3DoppelAchse)
+  Fill Low   (Abstand3Doppelachslast)
+  Fill High  (Abstand3Doppelachslast)
+  Fill Low   (MaxAbstand1DreifachAchse)
+  Fill Low   (Abstand1Dreifachachslast)
+  Fill High  (Abstand1Dreifachachslast)
+  Fill Low   (MaxAbstand2DreifachAchse)
+  Fill Low   (Abstand2Dreifachachslast)
+  Fill High  (Abstand2Dreifachachslast)
+  Fill Low   (AnzFahrzeugtypen)
+  IncLoop (i, 0, AnzFahrzeugtypen) {
+    Fill Low   (CodeFahrzeugtyp[$i])
+    Fill Low   (Gesamtgewicht[$i])
+    Fill High  (Gesamtgewicht[$i])
+  }
+
+
+/* Fg   2 Id  3 Typ  38 ------------------------------------------- Parameter */
+Datatype DaAXLGewichtsParameterSoll ohne Zeit
+  Fill Low   (AnzEinzelAchsKlassen)
+  IncLoop (i1, 0, AnzEinzelAchsKlassen) {
+    Fill Low   (EinzelAchsKlassenGrenzen[$i1])
+    Fill High  (EinzelAchsKlassenGrenzen[$i1])
+  }
+  Fill Low   (AnzDoppelAchsKlassen)
+  IncLoop (i2, 0, AnzDoppelAchsKlassen) {
+    Fill Low   (DoppelAchsKlassenGrenzen[$i2])
+    Fill High  (DoppelAchsKlassenGrenzen[$i2])
+  }
+  Fill Low   (AnzDreifachAchsKlassen)
+  IncLoop (i3, 0, AnzDreifachAchsKlassen) {
+    Fill Low   (DreifachAchsKlassenGrenzen[$i3])
+    Fill High  (DreifachAchsKlassenGrenzen[$i3])
+  }
+  Fill Low   (AnzFzgKl3Grenzen)
+  IncLoop (i4, 0, AnzFzgKl3Grenzen) {
+    Fill Low   (FzgKl3Grenzen[$i4])
+    Fill High  (FzgKl3Grenzen[$i4])
+  }
+  Fill Low   (AnzFzgKl4Grenzen)
+  IncLoop (i5, 0, AnzFzgKl4Grenzen) {
+    Fill Low   (FzgKl4Grenzen[$i5])
+    Fill High  (FzgKl4Grenzen[$i5])
+  }
+  Fill Low   (AnzFzgKl5Grenzen)
+  IncLoop (i6, 0, AnzFzgKl5Grenzen) {
+    Fill Low   (FzgKl5Grenzen[$i6])
+    Fill High  (FzgKl5Grenzen[$i6])
+  }
+
+
+/* ========================================================================== */
+/* FG 3 - Telegramme mit Daten senden (Definition)                            */
+/* ========================================================================== */
+
+
+/* Fg   3 Id   2 Typ  29 ------------------------------------- Kanalsteuerung */
+Datatype DaUFDKanalSoll ohne Zeit
+  Fill Low	(Steuerbyte)
+
+
+/* Fg   3 Id   3 Typ  32 ------------------------------ UFD-Betriebsparameter */
+Datatype DaUFDBetriebsParamSoll ohne Zeit
+  Fill Low	(ErfassPeriode)
+  Fill High	(ErfassPeriode)
+  Fill Low	(Uebertragung)
+
+
+/* Fg   3 Id   3 Typ  36 ------------------------ UFD-Geographische Kenndaten */
+Datatype DaUFDGeoKennSoll ohne Zeit
+  Fill Low	(Landeskennung)
+  Fill Low	(Strassenart)
+  Fill High	(StrassenNr)
+  Fill Low  (StrassenNr)
+  Fill vHigh(km)
+  Fill High	(km)
+  Fill Low	(km)
+  Fill Low	(Fahrtrichtung)
+  Fill Low	(Reserve)
+
+
+
+/* ========================================================================== */
+/* FG 4 - Telegramme mit Daten senden (Definition)                            */
+/* ========================================================================== */
+
+/* Fg   4 Id   2 Typ  17 ---------------------------------------- Betriebsart */
+Datatype DaWVZBetrArtPhysSoll	ohne Zeit
+  Fill Low	(WVZBetrArt)
+
+/* Fg   4 Id   2 Typ  20 ---------------------------------------- Folgenummer */
+Datatype DaWVZAbrufPuffer	ohne Zeit	vorhalten
+  Fill Low	(folgenummer)
+  Fill High	(folgenummer)
+  Fill Low	(anzahl)
+  
+/* Fg   4 Id   3 Typ  21 ---------------------------------------- Folgenummer */
+Datatype DaWVZAbrufCodeDef	ohne Zeit	vorhalten
+  Fill Low	(stellcode)
+
+/* Fg   4 Id   2 Typ  29 ------------------------------------- Kanalsteuerung */
+Datatype DaWVZKanalSoll		ohne Zeit
+  Fill Low	(Steuerbyte)
+
+/* Fg   4 Id   3 Typ  33 ------------------------------- WVZ-Grundeinstellung */
+Datatype DaWVZGrundEinSend	ohne Zeit Reaktion Write Area
+  Fill Low	(anzeigeprinzip)
+  Fill Low	(stellcode)
+  Fill Low	(funktionsbyte)
+  
+  If (anzahl > 0 && stellcode == 0) {
+	  Fill Low	(anzahl)	
+	  IncLoop (i, 0, anzahl) {
+	    Fill Low   (code[$i])
+	  }
+  }
+  
+/* Fg   4 Id   3 Typ  36 ------------------------ WVZ-Geographische Kenndaten */
+Datatype DaWVZGeoKennSoll 	ohne Zeit
+  //Meta Fg 4 Meta Id 3 Meta Typ 36
+  Fill Low	(Landeskennung)
+  Fill Low	(Strassenart)
+  Fill High	(StrassenNr)
+  Fill Low  (StrassenNr)
+  Fill vHigh(km)
+  Fill High	(km)
+  Fill Low	(km)
+  Fill Low	(Fahrtrichtung)
+  Fill Low	(Reserve)
+
+/* Fg   4 Id   3 Typ  44 --------------------------------- WVZ-Codedefinition */
+Datatype DaWVZCodedefSend	ohne Zeit Reaktion Write Area
+  Fill Low	(anzeigeprinzip)
+  Fill Low	(stellcode)
+  Fill Low	(anzahl)
+  
+  If (anzeigeprinzip == 4) {
+    IncLoop (i, 0, 2*anzahl) {
+      Fill Low   (code[$i])
+    }
+  } Else {
+    If (anzeigeprinzip == 8) {
+      IncLoop (i, 0, 4*anzahl) {
+        Fill Low   (code[$i])
+      }
+    } Else {
+    IncLoop (i, 0, anzahl) {
+      Fill Low   (code[$i])
+    }
+  }
+  }
+
+/* Fg   4 Id   3 Typ 172 --------------------------------- SLT-Programmdefinition */
+Datatype DaSLTPrgDefinitionSnd 	ohne Zeit Reaktion Write Area
+  Fill Low	(anzeigeprinzip)
+  Fill Low	(stellcode)
+  Fill Low	(anzahl)
+  IncLoop (i, 0, 5*anzahl) {
+      Fill Low   (code[$i])
+    }
+
+/* Fg   4 Id   6 Typ 120 --------------------------------- SLT-Programmanforderungen */
+Datatype DaSLTPrgAnforderungenSnd 	ohne Zeit Reaktion Write Area
+  Fill Low	(anzeigeprinzip)
+  Fill Low	(anzahl)
+  IncLoop (i, 0, 2*anzahl) {
+      Fill Low   (code[$i])
+    }
+	
+/* Fg   4 Id   3 Typ 149 --------------------------------  Abruf SLT-Programmdefinition  */
+Datatype DaSLTAbrufCodeDef	ohne Zeit	vorhalten
+  Fill Low	(stellcode)
+
+  
+/* Fg   4 Id   5 Typ  49 --------------------------------- Helligkeit AQ Soll */
+Datatype DaWVZHellAQSoll	ohne Zeit Reaktion Write Area
+  Fill Low	(WVZHell)
+  Fill Low	(WVZHellBetrArt)
+
+/* Fg   4 Id   5 Typ  55 ---------------------------------- Stellzustand Soll */
+Datatype DaWVZStellzustandSend	ohne Zeit Reaktion Write Area
+  Fill Low (anzeigeprinzip)
+  Fill Low (stellcode)
+  If (funktionsbyte == 1 && anzeigeprinzip == 1 && (stellcode == 61 || stellcode == 113 || stellcode == 114)) {
+    Fill Low (82)
+  } Else {
+  If ($LogischeAdresse == 32938-71 || $LogischeAdresse == 32939-0) {
+	If ($DeNummer == 113 && funktionsbyte == 1 && (stellcode == 202 || stellcode == 203)) {
+		Fill Low (162)
+	} Else {
+		Fill Low (funktionsbyte)
+	}
+  } Else {
+		Fill Low (funktionsbyte)
+	}
+  }
+  If (anzahl > 0 && stellcode == 0) {
+    Fill Low (anzahl)
+    If (anzeigeprinzip == 4) {
+  	  IncLoop(i, 0, anzahl) {
+        Fill Low	(code[$i*2])
+        Fill Low	(code[$i*2+1])
+  	  }
+    } Else {
+	  Fill Block code Offset 0 Size anzahl
+	}
+  }
+
+
+/* ========================================================================== */
+/* FG 6 - Telegramme mit Daten senden (Definition)                            */
+/* ========================================================================== */
+
+/* Fg   6 Id   2 Typ  29 ------------------------------------- Kanalsteuerung */
+Datatype DaVLTKanalSoll ohne Zeit
+  Fill Low	(Steuerbyte)
+
+/* Fg   6 Id   3 Typ  32 ------------------------------ LVE-Betriebsparameter */
+Datatype DaVLTBetriebsParamSoll ohne Zeit
+  Fill Low	(ErfassPeriode)
+  Fill High	(ErfassPeriode)
+  Fill Low	(Uebertragung)
+
+
+/* Fg   6 Id   3 Typ  36 ------------------------ VLT-Geographische Kenndaten */
+Datatype DaVLTGeoKennSoll ohne Zeit
+  Fill Low	(Landeskennung)
+  Fill Low	(Strassenart)
+  Fill High	(StrassenNr)
+  Fill Low  (StrassenNr)
+  Fill vHigh(km)
+  Fill High	(km)
+  Fill Low	(km)
+  Fill Low	(Fahrtrichtung)
+  Fill Low	(Reserve)
+
+
+/* ========================================================================== */
+/* FG 8 - Telegramme mit Daten senden (Definition)                            */
+/* ========================================================================== */
+
+/* Fg   8 Id   2 Typ  29 ------------------------------------- Kanalsteuerung */
+Datatype DaGSWKanalSoll ohne Zeit
+  Fill Low	(Steuerbyte)
+
+/* Fg   8 Id   3 Typ  32 --------------------------------- Betriebsart Kamera */
+Datatype DaGSWBetrParaKameraSoll ohne Zeit
+  Fill Low	(Uebertragungsverfahren)               
+  Fill Low	(Erfassungsperiode)           
+  Fill Low	(BetriebsartFront)
+  Fill Low	(BetriebsartHeck)
+
+/* Fg   8 Id   3 Typ  33 ------------------------ Betriebsart Messeinrichtung */
+Datatype DaGSWBetrParaMessSoll ohne Zeit
+  Fill Low	(LkwUeberholverbot)               
+  Fill Low	(VmaxPkw)
+  Fill Low	(VauslPkw)
+  Fill Low	(VmaxLkw)
+  Fill Low	(VauslLkw)
+  Fill Low	(VmaxBus)
+  Fill Low	(VauslBus)
+  Fill Low	(anzVausl)
+  IncLoop(i, 0, anzVausl) {
+	  Fill Low	(Vmax[$i])
+	  Fill Low	(Vausl[$i])
+  }
+
+/* Fg   8 Id   3 Typ  36 ------------------------ VLT-Geographische Kenndaten */
+Datatype DaGSWGeoKennSoll ohne Zeit
+  Fill Low	(Landeskennung)
+  Fill Low	(Strassenart)
+  Fill High	(StrassenNr)
+  Fill Low  (StrassenNr)
+  Fill vHigh(km)
+  Fill High	(km)
+  Fill Low	(km)
+  Fill Low	(Fahrtrichtung)
+  Fill Low	(Reserve)
+
+
+/* ========================================================================== */
+/* Wertreaktionen                                                             */
+/* ========================================================================== */
+
+WertReaktion DaSYSSteuerSequenz Aktion 
+         
+bei GLOBALE_ZEITSYNCHRONISATION an GLOBAL FG 254 ID 2 TYP 18 Prozess "zeit_synch"
+bei LOKALE_ZEITSYNCHRONISATION an SM FG 254 ID 2 TYP 18 Prozess "zeit_synch"
+
+bei SYS_DE_ABRUF_DE_FEHLER                        an DE FG 254 ID 17 TYP   1 
+bei SYS_DE_ABRUF_ERG_DE_FEHLER                    an DE FG 254 ID 17 TYP  14 
+bei SYS_DE_ABRUF_STATISCHE_GERAETEKENNDATEN       an DE FG 254 ID 19 TYP  32 
+bei SYS_DE_ABRUF_KONFIG_TABELLE                   an DE FG 254 ID 19 TYP  34
+bei SYS_DE_ABRUF_OSI3_ROUTINGFELD                 an DE FG 254 ID 19 TYP  35
+bei SYS_DE_ABRUF_GEO_KENN                         an DE FG 254 ID 19 TYP  36
+bei SYS_DE_ABRUF_KNOTENNUMMERN                    an DE FG 254 ID 19 TYP  37
+
+bei SYS_SM_ABRUF_DE_FEHLER                        an SM FG 254 ID 17 TYP   1 
+bei SYS_SM_ABRUF_ERG_DE_FEHLER                    an SM FG 254 ID 17 TYP  14 
+bei SYS_SM_ABRUF_STATISCHE_GERAETEKENNDATEN       an SM FG 254 ID 19 TYP  32 
+bei SYS_SM_ABRUF_KONFIG_TABELLE                   an SM FG 254 ID 19 TYP  34
+bei SYS_SM_ABRUF_OSI3_ROUTINGFELD                 an SM FG 254 ID 19 TYP  35
+bei SYS_SM_ABRUF_GEO_KENN                         an SM FG 254 ID 19 TYP  36
+bei SYS_SM_ABRUF_KNOTENNUMMERN                    an SM FG 254 ID 19 TYP  37
+
+
+WertReaktion DaLVESteuerSequenz Aktion 
+         
+bei LVE_DE_ABRUF_DE_FEHLER                          an DE FG 1 ID 17 TYP   1 
+bei LVE_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 1 ID 17 TYP  14 
+bei LVE_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 1 ID 18 TYP  29
+bei LVE_DE_ABRUF_LVE_BETRIEBSPARAMETER              an DE FG 1 ID 19 TYP  32 
+bei LVE_DE_ABRUF_SVE_BETRIEBSPARAMETER              an DE FG 1 ID 19 TYP  34 
+bei LVE_DE_ABRUF_GEO_KENN                           an DE FG 1 ID 19 TYP  36
+bei LVE_DE_ABRUF_VKLASSE_KURZ                       an DE FG 1 ID 19 TYP  37
+bei LVE_DE_ABRUF_VKLASSE_LANG                       an DE FG 1 ID 19 TYP  38
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_0                 an DE FG 1 ID 20 TYP  49
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_1                 an DE FG 1 ID 20 TYP  50
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_2                 an DE FG 1 ID 20 TYP  51
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_3                 an DE FG 1 ID 20 TYP  52
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_4                 an DE FG 1 ID 20 TYP  53
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_10                an DE FG 1 ID 20 TYP  65 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_11                an DE FG 1 ID 20 TYP  66 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_12                an DE FG 1 ID 20 TYP  67 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_13                an DE FG 1 ID 20 TYP  68 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_14                an DE FG 1 ID 20 TYP  69 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_15                an DE FG 1 ID 20 TYP  70 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_16                an DE FG 1 ID 20 TYP  71 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_17                an DE FG 1 ID 20 TYP  72 
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_18                an DE FG 1 ID 20 TYP  73
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_19                an DE FG 1 ID 20 TYP  74
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_20                an DE FG 1 ID 20 TYP  75
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_21                an DE FG 1 ID 20 TYP  76
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_22                an DE FG 1 ID 20 TYP  77
+bei LVE_DE_ABRUF_LVE_ERGEBNIS_OPT_23                an DE FG 1 ID 20 TYP  78
+bei LVE_DE_ABRUF_SVE_ERGEBNIS_OPT_0                 an DE FG 1 ID 20 TYP  96
+bei LVE_DE_ABRUF_SVE_ERGEBNIS_OPT_1                 an DE FG 1 ID 20 TYP  97
+
+bei LVE_SM_ABRUF_DE_FEHLER                          an SM FG 1 ID 17 TYP   1 
+bei LVE_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 1 ID 17 TYP  14 
+bei LVE_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 1 ID 18 TYP  29
+bei LVE_SM_ABRUF_LVE_BETRIEBSPARAMETER              an SM FG 1 ID 19 TYP  32 
+bei LVE_SM_ABRUF_SVE_BETRIEBSPARAMETER              an SM FG 1 ID 19 TYP  34 
+bei LVE_SM_ABRUF_GEO_KENN                           an SM FG 1 ID 19 TYP  36
+bei LVE_SM_ABRUF_VKLASSE_KURZ                       an SM FG 1 ID 19 TYP  37
+bei LVE_SM_ABRUF_VKLASSE_LANG                       an SM FG 1 ID 19 TYP  38
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_0                 an SM FG 1 ID 20 TYP  49
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_1                 an SM FG 1 ID 20 TYP  50
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_2                 an SM FG 1 ID 20 TYP  51
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_3                 an SM FG 1 ID 20 TYP  52
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_4                 an SM FG 1 ID 20 TYP  53
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_10                an SM FG 1 ID 20 TYP  65
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_11                an SM FG 1 ID 20 TYP  66
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_12                an SM FG 1 ID 20 TYP  67
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_13                an SM FG 1 ID 20 TYP  68
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_14                an SM FG 1 ID 20 TYP  69
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_15                an SM FG 1 ID 20 TYP  70
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_16                an SM FG 1 ID 20 TYP  71
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_17                an SM FG 1 ID 20 TYP  72
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_18                an SM FG 1 ID 20 TYP  73
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_19                an SM FG 1 ID 20 TYP  74
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_20                an SM FG 1 ID 20 TYP  75
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_21                an SM FG 1 ID 20 TYP  76
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_22                an SM FG 1 ID 20 TYP  77
+bei LVE_SM_ABRUF_LVE_ERGEBNIS_OPT_23                an SM FG 1 ID 20 TYP  78
+bei LVE_SM_ABRUF_SVE_ERGEBNIS_OPT_0                 an SM FG 1 ID 20 TYP  96
+bei LVE_SM_ABRUF_SVE_ERGEBNIS_OPT_1                 an SM FG 1 ID 20 TYP  97
+
+bei LVE_SM_ABRUF_PUFFER_LANG                        an SM FG 1 ID  2 TYP  20
+    laut DaLVELangPufferAbfrage
+bei LVE_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 1 ID  2 TYP  29
+    laut DaLVEKanalSoll
+bei LVE_DE_SENDEN_LVE_BETRIEBSPARAMETER             an DE FG 1 ID  3 TYP  32
+    laut DaLVEBetriebsParamSoll 
+
+bei LVE_DE_SENDEN_VKLASSE_KURZ                      an DE FG 1 ID  3 TYP  37
+    laut DaLVEvKlassenKurzSnd  
+bei LVE_DE_SENDEN_VKLASSE_LANG                      an DE FG 1 ID  3 TYP  38
+    laut DaLVEvKlassenLangSnd  
+bei LVE_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 1 ID  2 TYP  29
+    laut DaLVEKanalSoll
+bei LVE_SM_SENDEN_LVE_BETRIEBSPARAMETER             an SM FG 1 ID  3 TYP  32 
+    laut DaLVEBetriebsParamSoll 
+
+bei LVE_SM_SENDEN_VKLASSE_KURZ                      an SM FG 1 ID  3 TYP  37
+    laut DaLVEvKlassenKurzSnd
+bei LVE_SM_SENDEN_VKLASSE_LANG                      an SM FG 1 ID  3 TYP  38
+    laut DaLVEvKlassenLangSnd 
+
+
+WertReaktion DaAXLSteuerSequenz Aktion 
+
+bei AXL_DE_ABRUF_DE_FEHLER                          an DE FG 2 ID 17 TYP   1 
+bei AXL_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 2 ID 17 TYP  14 
+bei AXL_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 2 ID 18 TYP  29
+bei AXL_DE_ABRUF_BETRIEBSPARAMETER                  an DE FG 2 ID 19 TYP  32 
+bei AXL_DE_ABRUF_GEO_KENN                           an DE FG 2 ID 19 TYP  36
+bei AXL_DE_ABRUF_GRENZWERTE                         an DE FG 2 ID 19 TYP  37
+bei AXL_DE_ABRUF_PARAMETER                          an DE FG 2 ID 19 TYP  38
+bei AXL_DE_ABRUF_OPTION10                           an DE FG 2 ID 20 TYP  65
+
+bei AXL_SM_ABRUF_DE_FEHLER                          an SM FG 2 ID 17 TYP   1 
+bei AXL_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 2 ID 17 TYP  14 
+bei AXL_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 2 ID 18 TYP  29
+bei AXL_SM_ABRUF_BETRIEBSPARAMETER                  an SM FG 2 ID 19 TYP  32 
+bei AXL_SM_ABRUF_GEO_KENN                           an SM FG 2 ID 19 TYP  36
+bei AXL_SM_ABRUF_GRENZWERTE                         an SM FG 2 ID 19 TYP  37
+bei AXL_SM_ABRUF_PARAMETER                          an SM FG 2 ID 19 TYP  38
+bei AXL_SM_ABRUF_OPTION10                           an SM FG 2 ID 20 TYP  65
+
+bei AXL_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 2 ID  2 TYP  29
+    laut DaAXLKanalSoll
+bei AXL_DE_SENDEN_BETRIEBSPARAMETER                 an DE FG 2 ID  3 TYP  32 
+    laut DaAXLBetriebsParamSoll
+
+bei AXL_DE_SENDEN_GRENZWERTE                        an DE FG 2 ID  3 TYP  37
+    laut DaAXLGrenzwerteSoll
+bei AXL_DE_SENDEN_PARAMETER                         an DE FG 2 ID  3 TYP  38
+    laut DaAXLGewichtsParameterSoll
+
+bei AXL_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 2 ID  2 TYP  29
+    laut DaAXLKanalSoll
+bei AXL_SM_SENDEN_BETRIEBSPARAMETER                 an SM FG 2 ID  3 TYP  32 
+    laut DaAXLBetriebsParamSoll
+
+bei AXL_SM_SENDEN_GRENZWERTE                        an SM FG 2 ID  3 TYP  37
+    laut DaAXLGrenzwerteSoll
+bei AXL_SM_SENDEN_PARAMETER                         an SM FG 2 ID  3 TYP  38
+    laut DaAXLGewichtsParameterSoll
+
+WertReaktion DaUFDSteuerSequenz Aktion
+
+bei UFD_DE_ABRUF_DE_FEHLER                          an DE FG 3 ID 17 TYP   1
+bei UFD_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 3 ID 17 TYP  14 
+bei UFD_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 3 ID 18 TYP  29
+bei UFD_DE_ABRUF_UFD_BETRIEBSPARAMETER              an DE FG 3 ID 19 TYP  32
+bei UFD_DE_ABRUF_LUFT_TEMP                          an DE FG 3 ID 20 TYP  48
+bei UFD_DE_ABRUF_FAHRBAHNOBERFLAECHEN_TEMP          an DE FG 3 ID 20 TYP  49
+bei UFD_DE_ABRUF_FAHRBAHN_FEUCHTE                   an DE FG 3 ID 20 TYP  50
+bei UFD_DE_ABRUF_FAHRBAHN_ZUSTAND                   an DE FG 3 ID 20 TYP  51
+bei UFD_DE_ABRUF_RESTSALZGEHALT                     an DE FG 3 ID 20 TYP  52
+bei UFD_DE_ABRUF_NIEDERSCHLAG                       an DE FG 3 ID 20 TYP  53
+bei UFD_DE_ABRUF_LUFTDRUCK                          an DE FG 3 ID 20 TYP  54
+bei UFD_DE_ABRUF_RELATIVE_LUFTFEUCHTE               an DE FG 3 ID 20 TYP  55
+bei UFD_DE_ABRUF_WINDRICHTUNG                       an DE FG 3 ID 20 TYP  56
+bei UFD_DE_ABRUF_WINDGESCHW_MITTEL                  an DE FG 3 ID 20 TYP  57
+bei UFD_DE_ABRUF_SCHNEEHOHE                         an DE FG 3 ID 20 TYP  58
+bei UFD_DE_ABRUF_FAHRBAHN_GLAETTE                   an DE FG 3 ID 20 TYP  59
+bei UFD_DE_ABRUF_SICHTWEITE                         an DE FG 3 ID 20 TYP  60
+bei UFD_DE_ABRUF_HELLIGKEIT                         an DE FG 3 ID 20 TYP  61
+bei UFD_DE_ABRUF_NIEDERSCHLAGSMENGE                 an DE FG 3 ID 20 TYP  62
+bei UFD_DE_ABRUF_NIEDERSCHLAGSART                   an DE FG 3 ID 20 TYP  63
+bei UFD_DE_ABRUF_WINDGESCHW_MAX                     an DE FG 3 ID 20 TYP  64
+bei UFD_DE_ABRUF_GEFRIER_TEMP                       an DE FG 3 ID 20 TYP  65
+bei UFD_DE_ABRUF_TAUPUNKT_TEMP                      an DE FG 3 ID 20 TYP  66
+bei UFD_DE_ABRUF_TIEFE1_TEMP                        an DE FG 3 ID 20 TYP  67
+bei UFD_DE_ABRUF_TIEFE2_TEMP                        an DE FG 3 ID 20 TYP  68
+bei UFD_DE_ABRUF_TIEFE3_TEMP                        an DE FG 3 ID 20 TYP  69
+bei UFD_DE_ABRUF_FBZ                                an DE FG 3 ID 20 TYP  70
+bei UFD_DE_ABRUF_NS                                 an DE FG 3 ID 20 TYP  71
+bei UFD_DE_ABRUF_WFD                                an DE FG 3 ID 20 TYP  72
+
+bei UFD_SM_ABRUF_DE_FEHLER                          an SM FG 3 ID 17 TYP   1
+bei UFD_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 3 ID 17 TYP  14 
+bei UFD_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 3 ID 18 TYP  29
+bei UFD_SM_ABRUF_UFD_BETRIEBSPARAMETER              an SM FG 3 ID 19 TYP  32
+bei UFD_SM_ABRUF_TREPPENFUNKTION                    an SM FG 3 ID 19 TYP  35
+bei UFD_SM_ABRUF_GEO_KENN                           an SM FG 3 ID 19 TYP  36
+bei UFD_SM_ABRUF_LUFT_TEMP                          an SM FG 3 ID 20 TYP  48
+bei UFD_SM_ABRUF_FAHRBAHNOBERFLAECHEN_TEMP          an SM FG 3 ID 20 TYP  49
+bei UFD_SM_ABRUF_FAHRBAHN_FEUCHTE                   an SM FG 3 ID 20 TYP  50
+bei UFD_SM_ABRUF_FAHRBAHN_ZUSTAND                   an SM FG 3 ID 20 TYP  51
+bei UFD_SM_ABRUF_RESTSALZGEHALT                     an SM FG 3 ID 20 TYP  52
+bei UFD_SM_ABRUF_NIEDERSCHLAG                       an SM FG 3 ID 20 TYP  53
+bei UFD_SM_ABRUF_LUFTDRUCK                          an SM FG 3 ID 20 TYP  54
+bei UFD_SM_ABRUF_RELATIVE_LUFTFEUCHTE               an SM FG 3 ID 20 TYP  55
+bei UFD_SM_ABRUF_WINDRICHTUNG                       an SM FG 3 ID 20 TYP  56
+bei UFD_SM_ABRUF_WINDGESCHW_MITTEL                  an SM FG 3 ID 20 TYP  57
+bei UFD_SM_ABRUF_SCHNEEHOHE                         an SM FG 3 ID 20 TYP  58
+bei UFD_SM_ABRUF_FAHRBAHN_GLAETTE                   an SM FG 3 ID 20 TYP  59
+bei UFD_SM_ABRUF_SICHTWEITE                         an SM FG 3 ID 20 TYP  60
+bei UFD_SM_ABRUF_HELLIGKEIT                         an SM FG 3 ID 20 TYP  61
+bei UFD_SM_ABRUF_NIEDERSCHLAGSMENGE                 an SM FG 3 ID 20 TYP  62
+bei UFD_SM_ABRUF_NIEDERSCHLAGSART                   an SM FG 3 ID 20 TYP  63
+bei UFD_SM_ABRUF_WINDGESCHW_MAX                     an SM FG 3 ID 20 TYP  64
+bei UFD_SM_ABRUF_GEFRIER_TEMP                       an SM FG 3 ID 20 TYP  65
+bei UFD_SM_ABRUF_TAUPUNKT_TEMP                      an SM FG 3 ID 20 TYP  66
+bei UFD_SM_ABRUF_TIEFE1_TEMP                        an SM FG 3 ID 20 TYP  67
+bei UFD_SM_ABRUF_TIEFE2_TEMP                        an SM FG 3 ID 20 TYP  68
+bei UFD_SM_ABRUF_TIEFE3_TEMP                        an SM FG 3 ID 20 TYP  69
+bei UFD_SM_ABRUF_FBZ                                an SM FG 3 ID 20 TYP  70
+bei UFD_SM_ABRUF_NS                                 an SM FG 3 ID 20 TYP  71
+bei UFD_SM_ABRUF_WFD                                an SM FG 3 ID 20 TYP  72
+
+bei UFD_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 3 ID  2 TYP  29
+    laut DaUFDKanalSoll
+bei UFD_DE_SENDEN_UFD_BETRIEBSPARAMETER             an DE FG 3 ID  3 TYP  32
+    laut DaUFDBetriebsParamSoll
+
+bei UFD_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 3 ID  2 TYP  29
+    laut DaUFDKanalSoll
+bei UFD_SM_SENDEN_UFD_BETRIEBSPARAMETER             an SM FG 3 ID  3 TYP  32
+    laut DaUFDBetriebsParamSoll
+
+
+WertReaktion DaWVZSteuerSequenz Aktion 
+
+bei WVZ_DE_ABRUF_PUFFER                             an DE FG 4 ID  2 TYP  20
+    laut DaWVZAbrufPuffer
+
+bei WVZ_SM_ABRUF_PUFFER                             an SM FG 4 ID  2 TYP  20
+    laut DaWVZAbrufPuffer
+
+         
+bei WVZ_DE_ABRUF_DE_FEHLER                          an DE FG 4 ID 17 TYP   1 
+bei WVZ_DE_ABRUF_NICHT_DARSTELLBARE_WVZ             an DE FG 4 ID 17 TYP   2 
+bei WVZ_DE_ABRUF_DEFEKTE_LAMPEN                     an DE FG 4 ID 17 TYP   3 
+bei WVZ_DE_ABRUF_GESTOERTE_TEXTPOS                  an DE FG 4 ID 17 TYP   4 
+bei WVZ_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 4 ID 17 TYP  14 
+bei WVZ_DE_ABRUF_BETRIEBSART                        an DE FG 4 ID 18 TYP  17 
+bei WVZ_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 4 ID 18 TYP  29
+bei WVZ_DE_ABRUF_GRUNDEINSTELLUNG                   an DE FG 4 ID 19 TYP  33 
+bei WVZ_DE_ABRUF_GEO_KENN                           an DE FG 4 ID 19 TYP  36
+bei WVZ_DE_ABRUF_CODELISTE                          an DE FG 4 ID 19 TYP  43
+bei WVZ_DE_ABRUF_STELLZUSTAND                       an DE FG 4 ID 21 TYP  55
+bei WVZ_DE_ABRUF_SLT_ZULAESSIGE_PRG                 an DE FG 4 ID 19 TYP 120
+
+bei WVZ_SM_ABRUF_DE_FEHLER                          an SM FG 4 ID 17 TYP   1 
+bei WVZ_SM_ABRUF_NICHT_DARSTELLBARE_WVZ             an SM FG 4 ID 17 TYP   2 
+bei WVZ_SM_ABRUF_DEFEKTE_LAMPEN                     an SM FG 4 ID 17 TYP   3 
+bei WVZ_SM_ABRUF_GESTOERTE_TEXTPOS                  an SM FG 4 ID 17 TYP   4 
+bei WVZ_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 4 ID 17 TYP  14 
+bei WVZ_SM_ABRUF_BETRIEBSART                        an SM FG 4 ID 18 TYP  17 
+bei WVZ_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 4 ID 18 TYP  29
+bei WVZ_SM_ABRUF_GRUNDEINSTELLUNG                   an SM FG 4 ID 19 TYP  33 
+bei WVZ_SM_ABRUF_GEO_KENN                           an SM FG 4 ID 19 TYP  36
+bei WVZ_SM_ABRUF_CODELISTE                          an SM FG 4 ID 19 TYP  43
+bei WVZ_SM_ABRUF_STELLZUSTAND                       an SM FG 4 ID 21 TYP  55
+bei WVZ_SM_ABRUF_SLT_ZULAESSIGE_PRG                 an SM FG 4 ID 19 TYP 120
+
+bei WVZ_DE_SENDEN_BETRIEBSART                       an DE FG 4 ID  2 TYP  17
+    laut DaWVZBetrArtPhysSoll 
+bei WVZ_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 4 ID  2 TYP  29
+    laut DaWVZKanalSoll
+bei WVZ_DE_SENDEN_GRUNDEINSTELLUNG                  an DE FG 4 ID  3 TYP  33
+    laut DaWVZGrundEinSend 
+#if 0
+bei WVZ_SM_SENDEN_BETRIEBSART                       an SM FG 4 ID  2 TYP  17
+    laut DaWVZBetrArtPhysSoll 
+#endif    
+bei WVZ_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 4 ID  2 TYP  29
+    laut DaWVZKanalSoll
+bei WVZ_SM_SENDEN_GRUNDEINSTELLUNG                  an SM FG 4 ID  3 TYP  33 
+    laut DaWVZGrundEinSend 
+bei WVZ_DE_SENDEN_STELLZUSTAND                      an DE FG 4 ID  5 TYP  55
+    laut DaWVZStellzustandSend
+
+
+WertReaktion DaVLTSteuerSequenz Aktion 
+         
+bei VLT_DE_ABRUF_DE_FEHLER                          an DE FG 6 ID 17 TYP   1 
+bei VLT_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 6 ID 17 TYP  14 
+bei VLT_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 6 ID 18 TYP  29
+bei VLT_DE_ABRUF_BETRIEBSPARAMETER                  an DE FG 6 ID 19 TYP  32 
+bei VLT_DE_ABRUF_GEO_KENN                           an DE FG 6 ID 19 TYP  36
+bei VLT_DE_ABRUF_TUER                               an DE FG 6 ID 20 TYP  48
+bei VLT_DE_ABRUF_TEMPERATUR                         an DE FG 6 ID 20 TYP  49
+bei VLT_DE_ABRUF_LICHT                              an DE FG 6 ID 20 TYP  50
+bei VLT_DE_ABRUF_STROM                              an DE FG 6 ID 20 TYP  51
+bei VLT_DE_ABRUF_HEIZUNG                            an DE FG 6 ID 20 TYP  52
+bei VLT_DE_ABRUF_LUEFTUNG                           an DE FG 6 ID 20 TYP  53
+bei VLT_DE_ABRUF_UEBERSPANNUNG                      an DE FG 6 ID 20 TYP  54
+bei VLT_DE_ABRUF_DIEBSTAHL                          an DE FG 6 ID 20 TYP  55
+bei VLT_DE_ABRUF_SOLARANLAGE                        an DE FG 6 ID 20 TYP  56
+
+bei VLT_SM_ABRUF_DE_FEHLER                          an SM FG 6 ID 17 TYP   1 
+bei VLT_SM_ABRUF_ERG_DE_FEHLER                      an SM FG 6 ID 17 TYP  14 
+bei VLT_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 6 ID 18 TYP  29
+bei VLT_SM_ABRUF_BETRIEBSPARAMETER                  an SM FG 6 ID 19 TYP  32 
+bei VLT_SM_ABRUF_GEO_KENN                           an SM FG 6 ID 19 TYP  36
+bei VLT_SM_ABRUF_TUER                               an SM FG 6 ID 20 TYP  48
+bei VLT_SM_ABRUF_TEMPERATUR                         an SM FG 6 ID 20 TYP  49
+bei VLT_SM_ABRUF_LICHT                              an SM FG 6 ID 20 TYP  50
+bei VLT_SM_ABRUF_STROM                              an SM FG 6 ID 20 TYP  51
+bei VLT_SM_ABRUF_HEIZUNG                            an SM FG 6 ID 20 TYP  52
+bei VLT_SM_ABRUF_LUEFTUNG                           an SM FG 6 ID 20 TYP  53
+bei VLT_SM_ABRUF_UEBERSPANNUNG                      an SM FG 6 ID 20 TYP  54
+bei VLT_SM_ABRUF_DIEBSTAHL                          an SM FG 6 ID 20 TYP  55
+bei VLT_SM_ABRUF_SOLARANLAGE                        an SM FG 6 ID 20 TYP  56
+
+bei VLT_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 6 ID  2 TYP  29
+    laut DaVLTKanalSoll
+bei VLT_DE_SENDEN_BETRIEBSPARAMETER                 an DE FG 6 ID  3 TYP  32 
+    laut DaVLTBetriebsParamSoll
+
+bei VLT_SM_SENDEN_KANAL_STEUERUNG                   an SM FG 6 ID  2 TYP  29
+    laut DaVLTKanalSoll
+bei VLT_SM_SENDEN_BETRIEBSPARAMETER                 an SM FG 6 ID  3 TYP  32 
+    laut DaVLTBetriebsParamSoll
+
+WertReaktion DaGSWSteuerSequenz Aktion 
+         
+bei GSW_DE_ABRUF_DE_FEHLER                          an DE FG 8 ID 17 TYP   1 
+bei GSW_DE_ABRUF_ERG_DE_FEHLER                      an DE FG 8 ID 17 TYP  14 
+bei GSW_DE_ABRUF_KANAL_STEUERUNG                    an DE FG 8 ID 18 TYP  29
+bei GSW_DE_ABRUF_BETRPARAMKAMERA                    an DE FG 8 ID 19 TYP  32 
+bei GSW_DE_ABRUF_GEO_KENN                           an DE FG 8 ID 19 TYP  36
+bei GSW_DE_ABRUF_BILDZAEHLER                        an DE FG 8 ID 20 TYP  48
+
+bei GSW_SM_ABRUF_SM_FEHLER                          an SM FG 8 ID 17 TYP   1 
+bei GSW_SM_ABRUF_ERG_SM_FEHLER                      an SM FG 8 ID 17 TYP  14 
+bei GSW_SM_ABRUF_KANAL_STEUERUNG                    an SM FG 8 ID 18 TYP  29
+bei GSW_SM_ABRUF_BETRPARAMKAMERA                    an SM FG 8 ID 19 TYP  32 
+bei GSW_SM_ABRUF_GEO_KENN                           an SM FG 8 ID 19 TYP  36
+bei GSW_SM_ABRUF_BILDZAEHLER                        an SM FG 8 ID 20 TYP  48
+
+bei GSW_DE_SENDEN_KANAL_STEUERUNG                   an DE FG 8 ID  2 TYP  29
+    laut DaGSWKanalSoll
+bei GSW_DE_SENDEN_BETRPARAMKAMERA             	    an DE FG 8 ID  3 TYP  32 
+    laut DaGSWBetrParaKameraSoll
+bei GSW_DE_SENDEN_BETRPARAMMESS              	    an DE FG 8 ID  3 TYP  33 
+    laut DaGSWBetrParaMessSoll
+
+
+/* ======================================================================== */
+/* ENDE snd-UZ-SM                                                           */
+/* ======================================================================== */
+
+#endif

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%highlight{%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}" disableAnsi="false" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console" />
+		</Root>
+<!--         <Logger name="org.apache.kafka" level="debug" /> -->
+<!--         <Logger name="de.heuboe.asfinag.tls.tele.in.TlsKafkaTelgramReceiver" level="trace" /> -->
+        <Logger name="de.heuboe.rcvtls.conn.ExternalConn1" level="trace">
+<!--             AppenderRef ref="LogFile" /> -->
+<!--             AppenderRef ref="Console" /> -->
+        </Logger>
+        <Logger name="de.heuboe.asfinag.vmis2.tls.rcv" level="debug"/>
+        <Logger name="de.heuboe.asfinag.tls.tele.in.TlsKafkaTelgramReceiver" level="debug"/>
+
+        <Logger name="de.heuboe.asfinag.tls.cfglib" level="debug"/>
+        
+        <Logger name="org.apache.kafka.clients.consumer.ConsumerConfig" level="warn" />
+        <Logger name="org.apache.kafka.clients.producer.ProducerConfig" level="warn" />
+        <Logger name="org.apache.kafka.clients.admin.AdminClientConfig" level="warn" />
+        <Logger name="org.apache.kafka" level="warn" />
+        <Logger name="kafka" level="warn" />
+        <Logger name="org.springframework.kafka" level="warn" />
+        <Logger name="org.apache.zookeeper" level="warn" />
+        <Logger name="state.change.logger" level="warn" />
+        <Logger name="data-plane-kafka-request-handler" level="warn" />
+
+        <Logger name="eu.vmis_ehe.vmis2.tls.received.conv.Fg1ConvTlsRcvCvt" level="debug" />
+        <Logger name="eu.vmis_ehe.vmis2.tls.received.conv.Fg2ConvTlsRcvCvt" level="debug" />
+        <Logger name="eu.vmis_ehe.vmis2.tls.received.conv.Fg3ConvTlsRcvCvt" level="debug" />
+        <Logger name="eu.vmis_ehe.vmis2.tls.received.conv.Fg4ConvTlsRcvCvt" level="debug" />
+        <Logger name="eu.vmis_ehe.vmis2.tls.received.conv.Fg6ConvTlsRcvCvt" level="debug" />
+        <Logger name="eu.vmis_ehe.vmis2.tls.received.conv.Fg9ConvTlsRcvCvt" level="debug" />
+        <Logger name="eu.vmis_ehe.vmis2.tls.received.conv.Fg254ConvTlsRcvCvt" level="debug" />
+	</Loggers>
+</Configuration>

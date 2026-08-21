@@ -1,0 +1,30 @@
+{
+  "uzs": {
+    "uzs": [{
+      "id": "WIE",
+      "name": "rVMZ Wien",
+      "scope": "TLS"
+    }, {
+      "id": "UZ_Salzburg",
+      "name": "UZ Salzburg",
+      "scope": "TLS"
+    }, {
+      "id": "UZ_1",
+      "name": "UZ Tirol",
+      "scope": "TLS"
+    }, {
+      "id": "UZ_I018",
+      "name": "UZ_I018",
+      "scope": "TLS"
+    }, {
+      "id": "UZ_Kaernten",
+      "name": "UZ_Kärnten",
+      "scope": "TLS"
+    }, {
+      "id": "UZ_2",
+      "name": "UZ_Oberösterreich",
+      "scope": "TLS"
+    }]
+  },
+  "errors": []
+}

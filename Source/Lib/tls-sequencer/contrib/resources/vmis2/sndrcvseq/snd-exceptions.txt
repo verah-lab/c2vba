@@ -1,0 +1,95 @@
+#define EA_VIRTUELL_UFD 	\
+Knoten 32755-7  DE  137 ,138 ,201 ,233 \
+Knoten 31314-14 DE  137 ,138 ,201 ,233 \
+Knoten 32748-5  DE  137 ,138 ,201 ,233 \
+Knoten 32753-66 DE  137 ,138 ,201 ,233 \
+Knoten 31354-12 DE  137 ,138 ,201 ,233 \
+Knoten 32751-12 DE  105 ,106 ,233 ,201 \
+Knoten 31351-2  DE  136 ,137 ,201 ,233 \
+Knoten 31343-17 DE  137 ,138 ,201 ,233 \
+Knoten 31346-30 DE  105 ,106 ,233 ,201 \
+Knoten 31353-9  DE  105 ,106 ,233 ,201 \
+Knoten 32752-44 DE  137 ,138 ,201 ,233 \
+Knoten 31317-9  DE  105 ,106 ,233 ,201 \
+Knoten 31318-40 DE  106 ,107 ,233 ,201 \
+Knoten 31341-66 DE  137 ,138 ,201 ,233 \
+Knoten 31345-32 DE  105 ,106 ,233 ,201 \
+Knoten 32750-1  DE  138 ,139 ,201 ,233 \
+Knoten 32752-3  DE  137 ,138 ,201 ,233 \
+Knoten 32753-44 DE  137 ,138 ,201 ,233 \
+Knoten 31315-28 DE  137 ,138 ,201 ,233 \
+Knoten 32752-89 DE  139 ,140 ,201 ,233 \
+Knoten 31316-23 DE  137 ,138 ,201 ,233 \
+Knoten 31341-15 DE  137 ,138 ,201 ,233 \
+Knoten 31348-9  DE  106 ,107 ,233 ,201 \
+Knoten 32754-40 DE  137 ,138 ,201 ,233 \
+Knoten 31318-86 DE  137 ,138 ,201 ,233
+
+#define AUSLEITSYSTEM_RADFELD \
+Knoten 31318-86  DE 33, 34, 41, 42, 97,105,179 \
+Knoten 31318-94  DE 33, 34, 35, 36, 41, 42, 43, 44, 97,105,179, \
+                    49, 50, 51, 52, 57, 58, 59, 60,113,121,180  \
+Knoten 31318-104 DE 33, 34, 35, 36, 41, 42, 43, 44, 97,105,179, \
+                    49, 50, 57, 58, 113,121,180  
+
+#define AKTIV_RADFELD \
+Knoten 31318-113 DE 33, 34, 41, 42, 97,105 \
+Knoten 31341-15  DE 33, 34, 41, 42, 97,105 \
+Knoten 31341-37  DE 33, 34, 41, 42, 97,105 
+
+#define AUSLEITSYSTEM_RADFELD_CL \
+Knoten 31318-86  DE 193 \
+Knoten 31318-94  DE 193, 195 \
+Knoten 31318-104 DE 193, 195 
+
+#define AKTIV_RADFELD_CL \
+Knoten 31318-113 DE 193 \
+Knoten 31341-15  DE 193 \
+Knoten 31341-37  DE 193 
+
+#define AUSLEITSYSTEM_KUNDEL \
+Knoten 31318-31  DE  1,  2,  9, 10, 65, 73,147, 17, 18, 19, 20, \
+                    25, 26, 27, 28, 81, 89,148 \
+Knoten 31318-40  DE  1,  2,  3,  4,  9, 10, 11, 12, 65, 73,147, \
+                    17, 18, 19, 20, 25, 26, 27, 28, 81, 89,148  \
+Knoten 31318-45  DE  1,  2,  9, 10, 65, 73,147 \
+
+#define AKTIV_KUNDEL \
+Knoten 31317-9   DE  1,  2,  9, 10, 65, 73     \
+Knoten 31317-22  DE  1,  2,  9, 10, 65, 73     \
+Knoten 31318-11  DE  1,  2,  9, 10, 65, 73     
+
+#define AUSLEITSYSTEM_KUNDEL_CL \
+Knoten 31318-31  DE 194,196 \
+Knoten 31318-40  DE 194,196 \
+Knoten 31318-45  DE 194 
+
+#define AKTIV_KUNDEL_CL \
+Knoten 31317-9   DE 194     \
+Knoten 31317-22  DE 194     \
+Knoten 31318-11  DE 194     
+
+Sendeausnahmen
+  In Datei "snd-uz-sm.txt"
+    bei
+      Datenart
+      DaUFDKanalSoll,
+      DaUFDBetriebsParamSoll
+      nichts senden von
+        EA_VIRTUELL_UFD
+    bei
+      Datenart
+      DaWVZStellzustandSend,
+      DaWVZKanalSoll,
+      DaWVZGrundEinSend,
+      DaWVZGeoKennSoll,
+      DaWVZCodedefSend
+      nichts senden von
+        AUSLEITSYSTEM_RADFELD
+    bei
+      Datenart
+      DaWVZBetrArtPhysSoll,
+      DaWVZHellAQSoll,
+      DaWVZKanalSoll
+      nichts senden von
+        AUSLEITSYSTEM_RADFELD_CL

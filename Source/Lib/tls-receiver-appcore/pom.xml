@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.base</groupId>
+        <artifactId>heuboe-base-parent</artifactId>
+        <version>1.6.3</version>
+    </parent>
+
+    <groupId>de.heuboe.tls</groupId>
+    <artifactId>tls-receiver-appcore</artifactId>
+    <version>2.2.1-SNAPSHOT</version>
+
+
+    <name>${project.artifactId}</name>
+    <description>Ingdependent parts of process for receiving TLS telegrams via broker</description>
+    <inceptionYear>2019</inceptionYear>
+    <url>${urlCombined}</url>
+
+    <developers>
+        <developer>
+            <name>Ronald Nikel</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/${urlmain}</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:${urlmain}.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:${urlmain}.git</developerConnection>
+      <tag>HEAD</tag>
+  </scm>
+
+    <properties>
+        <!-- scm --> 
+        <urlmain>Tls/${project.artifactId}</urlmain>
+        <urlCombined>https://${gitlab}/${urlmain}</urlCombined>
+        <gitlab>gitlab.heuboe.hbintern</gitlab>
+        
+        <!-- dependencies -->
+        <tls-resources.version>5.1.0</tls-resources.version>
+        <tls-cfglib.version>3.0.0</tls-cfglib.version>
+        <vmis2-configservice-interface.version>1.21.0</vmis2-configservice-interface.version>
+        <vmis2-tls-cfggetter.version>2.0.0</vmis2-tls-cfggetter.version>
+    </properties>
+
+    <dependencies>
+        <!-- HeuBoe VMIS2 -->
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-kafka-protopojo-converter</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-log4j2-extension</artifactId>
+            <version>1.3.1</version>
+            <scope>runtime</scope>
+        </dependency>
+    
+        <dependency>
+            <groupId>de.heuboe.idgenerator</groupId>
+            <artifactId>heuboe-idgenerator</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+    
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-tls-cfggetter</artifactId>
+            <version>${vmis2-tls-cfggetter.version}</version>
+        </dependency>
+    
+        <!-- Core HeuBoe TLS -->
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>receiver-transformer</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-tel-io-interface</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-cfglib</artifactId>
+            <version>${tls-cfglib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-rcvdataconverter</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        
+		<!-- interface of configservice -->
+		<dependency>
+			<groupId>de.heuboe.asfinag</groupId>
+			<artifactId>vmis2-configservice-interface</artifactId>
+			<version>${vmis2-configservice-interface.version}</version>
+		</dependency>
+        
+
+        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.devh</groupId>
+            <artifactId>grpc-client-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Spring-Metrics -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+        <!-- testing only -->
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-generator-proto</artifactId>
+            <version>${tls-resources.version}</version>
+			<scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-proto-interface</artifactId>
+            <version>${tls-resources.version}</version>
+			<scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>  <!-- declare the exclusion here -->
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>  <!-- declare the exclusion here -->
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-cgl</artifactId>
+            <version>3.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- /testing only -->
+        
+        <!-- https://mvnrepository.com/artifact/com.googlecode.protobuf-java-format/protobuf-java-format -->
+        <dependency>
+            <groupId>com.googlecode.protobuf-java-format</groupId>
+            <artifactId>protobuf-java-format</artifactId>
+            <version>1.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

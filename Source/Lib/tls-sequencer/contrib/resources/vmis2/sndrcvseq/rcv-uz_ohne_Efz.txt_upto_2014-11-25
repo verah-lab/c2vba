@@ -1,0 +1,2822 @@
+
+#ifndef	RCV_UZ
+#define	RCV_UZ
+
+/* ========================================================================== */
+/* Allgemeine Defines                                                         */
+/* ========================================================================== */
+
+/*******************************************************************************
+*
+*	GetValue[1-4]* Konvention
+*		Die Anzahl der Ziffern gibt an, wieviele Bytes gelesen werden
+*		Die Ziffer gibt an, welche Wertigkeit das jeweile Byte in der
+*		Zielvariablen einnehmen soll. 1 Gibt hierbei das
+*		niederwertigste Byte an.
+*
+*	Beispiel:
+*		GetValue3412
+*			1. gelesene Byte -> 3. Byte im Ergebnis (vHigh)
+*			2. gelesene Byte -> 4. Byte im Ergebnis (eHigh)
+*			3. gelesene Byte -> 1. Byte im Ergebnis (Low)
+*			4. gelesene Byte -> 2. Byte im Ergebnis (High)
+*
+*	Damit wird aus
+*		1.	2.	3.	4.	eHigh	vHigh	High	Low
+*		0xaa	0xbb	0xcc	0xdd ->	0xbb	0xaa	0xdd	0xcc
+*
+*******************************************************************************/
+#ifndef GetValue21
+#define GetValue21(x) Get High (x) Get Low (x) 
+#endif
+
+#ifndef GetValue4321
+#define GetValue4321(x) Get eHigh (x) Get vHigh (x) Get High (x) Get Low (x) 
+#endif
+
+#ifndef GetAndAssign
+#define GetAndAssign(x) Get Low ($ x) x := $ x
+#endif
+
+/* ========================================================================== */
+/* INCLUDES                                                                   */
+/* ========================================================================== */
+
+/* ========================================================================== */
+/* Zeitstempel nach TLS                                                       */
+/* ========================================================================== */
+
+Datatype Virtuell					Fg   * Id   * Typ  30
+
+      Get Low ($Stunde)
+      Get Low ($Minute)
+      Get Low ($Sekunde)
+
+long intervallaenge		Lebenszeit Einzeltelegramm
+long Hundertstel		Lebenszeit Einzeltelegramm
+long folgenummer		Lebenszeit Einzeltelegramm
+
+/* ========================================================================== */
+/* FG 254 - Telegramme (Definition)                                           */
+/* ========================================================================== */
+
+
+/* Fg 254 Id 129 Typ   1 ------------------------------------------ DE-Fehler */
+Datatype DaSYSFehlerDE						Fg 254 Id 129 Typ   1
+  systime :=	$AktuelleZeit
+  Get Low	(Fehlercode)
+  Get Low	(Hersteller)
+
+/* Fg 254 Id 129 Typ   1 ------------------------------------------ DE-Fehler */
+Meldungsinfo Datatype Virtuell				Fg 254 Id 129 Typ   1
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg 254 Id 129 Typ  14 ------------------------------------- Erg. DE-Fehler */
+Datatype DaSYSErgFehlerDE					Fg 254 Id 129 Typ  14
+  systime :=	$AktuelleZeit
+  Get Low	(Hersteller)
+  Skip
+  Get Low	(Fehlerbyte1)
+  Get Low	(Fehlerbyte2)
+  Get Low	(Fehlerbyte3)
+  Get Low	(Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block	herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg 254 Id 129 Typ  14 ------------------------------------- Erg. DE-Fehler */
+Meldungsinfo Datatype Virtuell				Fg 254 Id 129 Typ  14
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low       ($HerstellerCode)
+	Skip
+	Temporaer f1
+	Temporaer f2
+	Temporaer f3
+	Temporaer f4
+	Get Low ($f1)
+	Get Low ($f2)
+	Get Low ($f3)
+	Get Low ($f4)
+    $ErrorCode := 0
+    If ($f1 != 0 || $f2 != 0 || $f3 != 0 || $f4 != 0) { $ErrorCode := 1 }
+    Temporaer anz
+    Get Low($anz)
+    IncLoop(i, 0, $anz) {
+      Skip
+    }
+    
+/* Fg 254 Id 130 Typ   16 --------------------------------- negative Quittung */
+Datatype DaSYSNegQuittEmpfang				Fg 254 Id 130 Typ  16
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg 254 Id 130 Typ   16 --------------------------------- negative Quittung */
+Meldungsinfo Datatype Virtuell  			Fg 254 Id 130 Typ  16
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg 254 Id 130 Typ   17 ----------------------------------- Initialisierung */
+Datatype DaSYSInitMeldung					Fg 254 Id 130 Typ  17
+  systime 		:=	$AktuelleZeit
+  
+/* Fg 254 Id 131 Typ   28 --------------------------------- positive Quittung */
+Datatype DaSYSPosQuittEmpfang				Fg 254 Id 131 Typ  28
+  systime :=	$AktuelleZeit
+
+/* Fg 254 Id 131 Typ  32 ------------------------- Statische Geraetekenndaten */
+Datatype DaSYSGeraetKenn					Fg 254 Id 131 Typ  32
+  systime 		:=	$AktuelleZeit
+  AnzHerstellerbytes	:=	$DeLaenge-1
+  Get Low			(Hersteller)
+  Get Block	herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg 254 Id 131 Typ  34 ------------------------------ Konfigurationstabelle */
+Datatype DaSYSKonfigurationstabelleIst		Fg 254 Id 131 Typ  34
+  systime :=	$AktuelleZeit
+  Laenge  :=	$DeLaenge-1
+  Get Low	(Zeilen)
+  Get Block Daten Offset 0 Size Laenge
+
+/* Fg 254 Id 131 Typ  35 ---------------------------------- OSI-3-Routingfeld */
+Datatype DaSYSOSI3RoutingIst				Fg 254 Id 131 Typ  35
+  systime :=	$AktuelleZeit
+  Laenge  :=	$DeLaenge-1
+  Get Low	(Bloecke)
+  Get Block Daten Offset 0 Size Laenge
+
+/* Fg 254 Id 131 Typ  36 ----------------------------- Geografische Kenndaten */
+Datatype DaSYSGeoKennIst					Fg 254 Id 131 Typ  36
+  systime :=	$AktuelleZeit
+  Get Low       (Landeskennung)
+  Get Low		(Strassenart)
+  Get High		(StrassenNr)
+  Get Low       (StrassenNr)
+  Get vHigh		(km)
+  Get High		(km)
+  Get Low       (km)
+  Get Low       (Fahrtrichtung)
+  Get Low       (Reserve)
+
+/* Fg 254 Id 131 Typ  37 --------------------------------------- Knotennummer */
+Datatype DaSYSKnotennummerIst				Fg 254 Id 131 Typ  37
+  systime :=	$AktuelleZeit
+  Get Low       (knotennummer)
+  Get High      (knotennummer)
+  Get vHigh     (knotennummer)
+
+
+/* Fg 254 Id 129 Typ 131 ----------------------------------------- DUE-Fehler */
+Datatype DaSYSFehlerDUE						Fg 254 Id 129 Typ 131
+  //systime :=	$AktuelleZeit
+  Get Low       (Fehlercode)
+  Get Low       (Hersteller)
+
+/* Fg 254 Id 129 Typ 131 ----------------------------------------- DUE-Fehler */
+Meldungsinfo Datatype Virtuell  			Fg 254 Id 129 Typ 131
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low			($ErrorCode)
+	Get Low			($HerstellerCode)
+
+/* Fg 254 Id 130 Typ 19 ------------------------ DUE-Fehler gemaess PLaNT KRI2*/
+Datatype DaSYSFehlerDUE						Fg 254 Id 130 Typ  19
+  //systime :=	$AktuelleZeit
+  Get Low       (Fehlercode)
+
+/* Fg 254 Id 130 Typ 19 ------------------------ DUE-Fehler gemaess PLaNT KRI2*/
+Meldungsinfo Datatype Virtuell  			Fg 254 Id 130 Typ  19
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low			($ErrorCode)
+
+/* Fg 254 Id 2 Typ 19 ------------------------ DUE-Fehler gemaess PLaNT KRI2*/
+Datatype DaSYSFehlerDUE						Fg 254 Id 2 Typ  19
+  //systime :=	$AktuelleZeit
+  Get Low       (Fehlercode)
+
+/* Fg 254 Id 2 Typ 19 ------------------------ DUE-Fehler gemaess PLaNT KRI2*/
+Meldungsinfo Datatype Virtuell  			Fg 254 Id 2 Typ  19
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low			($ErrorCode)
+
+
+/* Fg 254 Id 131 Typ 127 -------------------------- Konfigurationstabelle KRI */
+Datatype DaSYSKonfTabKRIIst   		    	Fg 254 Id 131 Typ 127
+  Temporaer anz
+  $anz := $DeLaenge/4
+  IncLoop(i, 0, $anz) {
+    Get Low	(osi2[$i])
+    Get Low	(knotennummer[$i])
+    Get High	(knotennummer[$i])
+    Get vHigh	(knotennummer[$i])
+  }
+
+/* Fg 254 Id 132 Typ 126 ---------------------------- Externe Steuerung KRI2C */
+Datatype DaSYSExterneSteuerung   		    	Fg 254 Id 132 Typ 126
+  systime :=	$AktuelleZeit
+  Get Low       (ba)
+  Get Low		(anfoNr)
+
+/* ========================================================================== */
+/* FG 1 - Telegramme (Definition)                                             */
+/* ========================================================================== */
+
+
+/* Fg   1 Id 129 Typ   1 ----------------------------------- DE-Fehlermeldung */
+Datatype DaLVEFehlerDE						Fg   1 Id 129 Typ   1
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlercode)
+  Get Low       (Hersteller)
+
+/* Fg   1 Id 129 Typ   1 ------------------------------------------ DE-Fehler */
+Meldungsinfo Datatype Virtuell				Fg   1 Id 129 Typ   1
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   1 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Datatype DaLVEErgFehlerDE					Fg   1 Id 129 Typ  14
+  systime :=	$AktuelleZeit
+  Get Low       (Hersteller)
+  Skip
+  Get Low       (Fehlerbyte1)
+  Get Low       (Fehlerbyte2)
+  Get Low       (Fehlerbyte3)
+  Get Low       (Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block	herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg   1 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   1 Id 129 Typ  14
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low       ($HerstellerCode)
+	Skip
+	Temporaer f1
+	Temporaer f2
+	Temporaer f3
+	Temporaer f4
+	Get Low ($f1)
+	Get Low ($f2)
+	Get Low ($f3)
+	Get Low ($f4)
+    $ErrorCode := 0
+    If ($f1 != 0 || $f2 != 0 || $f3 != 0 || $f4 != 0) { $ErrorCode := 1 }
+    Temporaer anz
+    Get Low($anz)
+    IncLoop(i, 0, $anz) {
+      Skip
+    }
+
+/* Fg   1 Id 130 Typ   16 --------------------------------- negative Quittung */
+Datatype DaLVENegQuittEmpfang				Fg   1 Id 130 Typ  16
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg   1 Id 130 Typ   16 --------------------------------- negative Quittung */
+Meldungsinfo Datatype Virtuell  			Fg   1 Id 130 Typ  16
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+#if 1
+/* Fg   1 Id8 130 Typ  29 ------------------------------------ Kanalsteuerung */
+Datatype DaLVEKanalIst						Fg   1 Id8 130 Typ  29 
+  systime :=	$AktuelleZeit
+  Get Low	(Steuerbyte)
+  $preDeltaT	:= 10
+  $postDeltaT	:= 20
+#else  
+/* ACHTUNG: nur zu Demo-Zwecken */
+/* Fg   1 Id8 130 Typ  29 ------------------------------------ Kanalsteuerung */ 
+Datatype DaLVEKanalIst						Fg  10 Id8 130 Typ  29 
+  systime :=	3666
+  Get Low	(Steuerbyte)
+  Skip
+#endif
+
+
+/* Fg   1 Id 131 Typ  32 ------------------------------ LVE-Betriebsparameter */
+Datatype DaLVEBetriebsParamIst				Fg   1 Id 131 Typ  32 
+  systime :=	$AktuelleZeit
+  Get Low       (OptionKurz)
+  Get Low       (IVLaengeKurz)
+  Get Low       (OptionLang)
+  Get Low       (IVLaengeLang)
+  Get Low       (alpha1)
+  Get Low       (alpha2)
+  Get Low       (Laengengrenzwert)
+  Get Low       (Mittelwert)
+  
+/* Fg   1 Id 131 Typ  34 ------------------------------ SVE-Betriebsparameter */
+Datatype DaSVEBetriebsParamIst				Fg   1 Id 131 Typ  34 
+  systime :=	$AktuelleZeit
+  Get Low       (OptionSVE)
+  Get Low       (IVLaengeSVE)
+  
+/* Fg   1 Id 131 Typ  36 ----------------------------- Geografische Kenndaten */
+Datatype DaLVEGeoKennIst					Fg   1 Id 131 Typ  36
+  systime :=	$AktuelleZeit
+  Get Low       (Landeskennung)
+  Get Low       (Strassenart)
+  Get High		(StrassenNr)
+  Get Low       (StrassenNr)
+  Get vHigh		(km)
+  Get High		(km)
+  Get Low       (km)
+  Get Low       (Fahrtrichtung)
+  Get Low       (Reserve)
+
+/* Fg   1 Id 131 Typ  37 ---------------------------------- LVE-vKlassen Kurz */
+Datatype DaLVEvKlassenKurzIst				Fg   1 Id 131 Typ  37
+  systime :=	$AktuelleZeit
+  Get Low	(FahrzeugKlasse)
+  Get Low	(AnzKlassenGrenzen)
+  IncLoop(i, 0, AnzKlassenGrenzen) {
+    Get Low	(KlassenGrenzen[$i])
+  }
+      	
+/* Fg   1 Id 131 Typ  38 ---------------------------------- LVE-vKlassen Lang */
+Datatype DaLVEvKlassenLangIst				Fg   1 Id 131 Typ  38
+  systime :=	$AktuelleZeit
+  Get Low	(FahrzeugKlasse)
+  Get Low	(AnzKlassenGrenzen)
+  IncLoop(i, 0, AnzKlassenGrenzen) {
+    Get Low	(KlassenGrenzen[$i])
+  }
+
+/* Fg   1 Id8 132 Typ  48 ----------- Intervalldaten wie in der TLS definiert */
+Datatype DaLVEIntervalldaten				Fg   1 Id8 132 Typ  48
+  GetAndAssign (Stunde)
+  GetAndAssign (Minute)
+  GetAndAssign (Sekunde)
+  Get Low	(IntervallArt)  
+  Get Low	($intervallaenge) IntervallLaenge := $intervallaenge
+
+/* Fg   1 Id8 132 Typ  49 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ  49
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 0
+
+  Get Low	(qKFZ)
+  Get Low	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)	Const 255
+  Get Low	(Beleg)	Const 255
+  Get Low	(s)	Const 255
+  Get Low	(vKFZMittel)	Const 255
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+  
+/* Fg   1 Id8 132 Typ  50 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ  50
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 1
+
+  Get Low	(qKFZ)
+  Get Low	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)
+  Get Low	(Beleg)	Const 255
+  Get Low	(s)	Const 255
+  Get Low	(vKFZMittel)	Const 255
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+
+/* Fg   1 Id8 132 Typ  51 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ  51
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 2
+
+  Get Low	(qKFZ)
+  Get Low	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)	Const 255
+  Get Low	(Beleg)
+  Get Low	(s)	Const 255
+  Get Low	(vKFZMittel)	Const 255
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+
+/* Fg   1 Id8 132 Typ  52 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ  52
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 3
+
+  Get Low	(qKFZ)
+  Get Low	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)
+  Get Low	(Beleg)
+  Get Low	(s)
+  Get Low	(vKFZMittel)
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+
+/* Fg   1 Id8 132 Typ  53 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ  53
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 4
+
+  Get Low	(qKFZ)
+  Get Low	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)
+  Get Low	(Beleg)
+  Get Low	(s)
+  Get Low	(vKFZMittel)
+
+  Get Low	(AnzPkwAEvKlassen)
+  IncLoop (i, 0, AnzPkwAEvKlassen) {
+    Get Low	(PkwAEvKlasse[$i])
+    Get High	(PkwAEvKlasse[$i])	Const 0
+    Get vHigh	(PkwAEvKlasse[$i])	Const 0
+    Get eHigh	(PkwAEvKlasse[$i])	Const 0
+  }
+  Get Low	(AnzLkwAEvKlassen)
+  IncLoop (j, 0, AnzLkwAEvKlassen) {
+    Get Low	(LkwAEvKlasse[$j])
+    Get High	(LkwAEvKlasse[$j])	Const 0
+    Get vHigh	(LkwAEvKlasse[$j])	Const 0
+    Get eHigh	(LkwAEvKlasse[$j])	Const 0
+  }
+  Intervalldauer := $intervallaenge
+
+/* Fg   1 Id8 132 Typ 113 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ 113
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 0
+
+  Get Low	(qKFZ)
+  Get High	(qKFZ)
+  Get Low	(qLKW)
+  Get High	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)	Const 255
+  Get Low	(Beleg)	Const 255
+  Get Low	(s)	Const 255
+  Get Low	(vKFZMittel)	Const 255
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+
+/* Fg   1 Id8 132 Typ 114 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ 114
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 1
+  
+  Get Low	(qKFZ)
+  Get High	(qKFZ)
+  Get Low	(qLKW)
+  Get High	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)
+  Get Low	(Beleg)	Const 255
+  Get Low	(s)	Const 255
+  Get Low	(vKFZMittel)	Const 255
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 115-------------- Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ 115
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 2
+
+  Get Low	(qKFZ)
+  Get High	(qKFZ)
+  Get Low	(qLKW)
+  Get High	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)	Const 255
+  Get Low	(Beleg)
+  Get Low	(s)	Const 255
+  Get Low	(vKFZMittel)	Const 255
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 116 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ 116
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 3
+
+  Get Low	(qKFZ)
+  Get High	(qKFZ)
+  Get Low	(qLKW)
+  Get High	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)
+  Get Low	(Beleg)
+  Get Low	(s)
+  Get Low	(vKFZMittel)
+
+  Get Low	(AnzPkwAEvKlassen)	Const 0
+  Get Low	(AnzLkwAEvKlassen)	Const 0
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 117 ------------ Ereignisdaten wie in der TLS definiert */
+Datatype DaLVEKurzErfassung				Fg   1 Id8 132 Typ 117
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 4
+
+  Get Low	(qKFZ)
+  Get High	(qKFZ)
+  Get Low	(qLKW)
+  Get High	(qLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+  Get Low	(tNetto)
+  Get Low	(Beleg)
+  Get Low	(s)
+  Get Low	(vKFZMittel)
+
+  Get Low	(AnzPkwAEvKlassen)
+  IncLoop (i, 0, AnzPkwAEvKlassen) {
+    Get Low	(PkwAEvKlasse[$i])
+    Get High	(PkwAEvKlasse[$i])
+    Get vHigh	(PkwAEvKlasse[$i])	Const 0
+    Get eHigh	(PkwAEvKlasse[$i])	Const 0
+  }
+  Get Low	(AnzLkwAEvKlassen)
+  IncLoop (j, 0, AnzLkwAEvKlassen) {
+    Get Low	(LkwAEvKlasse[$j])
+    Get High	(LkwAEvKlasse[$j])
+    Get vHigh	(LkwAEvKlasse[$j])	Const 0
+    Get eHigh	(LkwAEvKlasse[$j])	Const 0
+  }
+  Intervalldauer := $intervallaenge
+
+
+/*****************************************************************************/
+/* Erfassung Langzeitdaten                                                   */
+/*****************************************************************************/
+
+#ifdef Init_long
+#undef Init_long
+#endif
+#define Init_long(x) 	Get eHigh (x) Const 255 \
+								Get vHigh (x) Const 255 \
+								Get High (x) Const 255  \
+								Get Low (x) Const 255
+								
+#ifdef  Init_l_anz_ze						
+#undef  Init_l_anz_ze
+#endif
+#define Init_l_anz_ze(x) 	Init_long(x)
+
+#ifdef Init_km_h_mF
+#undef Init_km_h_mF
+#endif
+#define Init_km_h_mF(x) Get Low (x) Const 255
+
+#ifdef Init2Null
+#undef Init2Null
+#endif
+#define Init2Null(x) 	Get Low (x) Const 0
+
+#ifdef Init_long_Array
+#undef Init_long_Array
+#endif
+#define Init_long_Array(x) 	Init_long(x[0]) 									\
+										Init_long(x[1]) 									\
+										Init_long(x[2]) 									\
+										Init_long(x[3]) 									\
+										Init_long(x[4]) 									\
+										Init_long(x[5]) 									\
+										Init_long(x[6]) 									\
+										Init_long(x[7]) 									\
+										Init_long(x[8]) 									\
+										Init_long(x[10]) 									\
+										Init_long(x[11]) 									\
+										Init_long(x[12]) 									\
+										Init_long(x[13]) 									\
+										Init_long(x[14]) 									\
+										Init_long(x[15]) 									\
+
+#ifdef Init_LangErfassung
+#undef Init_LangErfassung
+#endif
+#define Init_LangErfassung 															\
+Init_l_anz_ze(qKfz)		Init_l_anz_ze(qLkwAe)		Init_l_anz_ze(qPkwG) \
+Init_l_anz_ze(qPkwA)		Init_l_anz_ze(qLkw)			Init_l_anz_ze(qLkwK) \
+Init_l_anz_ze(qBus)		Init_l_anz_ze(qNkKfz)		Init_l_anz_ze(qPkw)	\
+Init_l_anz_ze(qLkwA)		Init_l_anz_ze(qSattelKfz)	Init_l_anz_ze(qKrad)	\
+Init_l_anz_ze(qLfw)																		\
+																								\
+Init_km_h_mF(vKfz)		Init_km_h_mF(vPkwAe)			Init_km_h_mF(vLkwAe)	\
+Init_km_h_mF(vPkwG)		Init_km_h_mF(vPkwA)			Init_km_h_mF(vLkw)	\
+Init_km_h_mF(vLkwK)		Init_km_h_mF(vBus)			Init_km_h_mF(vKrad)	\
+Init_km_h_mF(vPkw)		Init_km_h_mF(vLfw)			Init_km_h_mF(vLkwA)	\
+Init_km_h_mF(vSattelKfz) Init_km_h_mF(sPkwAe)		Init_km_h_mF(sLkwAe)	\
+Init_km_h_mF(sPkwG)		Init_km_h_mF(sPkwA)			Init_km_h_mF(sLkw)	\
+Init_km_h_mF(sLkwK)		Init_km_h_mF(sBus)			Init_km_h_mF(sKrad)	\
+Init_km_h_mF(sPkw)		Init_km_h_mF(sLfw)			Init_km_h_mF(sLkwA)	\
+Init_km_h_mF(sSattelKfz) Init_km_h_mF(v85Pkw)		Init_km_h_mF(v85PkwG)\
+																								\
+Init2Null(AnzvKlassenPkwAe)		Init2Null(AnzvKlassenLkwAe)				\
+Init2Null(AnzvKlassenPkwG)			Init2Null(AnzvKlassenPkwA)					\
+Init2Null(AnzvKlassenLkw)			Init2Null(AnzvKlassenLkwK)					\
+Init2Null(AnzvKlassenBus)			Init2Null(AnzvKlassenqNkKfz)				\
+Init2Null(AnzvKlassenqPkw)			Init2Null(AnzvKlassenqLkwA)				\
+Init2Null(AnzvKlassenqSattelKfz)	Init2Null(AnzvKlassenqKrad)				\
+Init2Null(AnzvKlassenqLfw)																\
+																								\
+Init_long_Array(vKlassenPkwAe)														\
+Init_long_Array(vKlassenLkwAe)														\
+Init_long_Array(vKlassenPkwG)															\
+Init_long_Array(vKlassenPkwA)															\
+Init_long_Array(vKlassenLkw)															\
+Init_long_Array(vKlassenLkwK)															\
+Init_long_Array(vKlassenBus)															\
+Init_long_Array(vKlassenqNkKfz)														\
+Init_long_Array(vKlassenqPkw)															\
+Init_long_Array(vKlassenqLkwA)														\
+Init_long_Array(vKlassenqSattelKfz)													\
+Init_long_Array(vKlassenqKrad)														\
+Init_long_Array(vKlassenqLfw)								
+
+/* Fg   1 Id8 132 Typ  64 ----------- Intervalldaten wie in der TLS definiert */
+Datatype DaLVELangIntervalldaten			Fg   1 Id8 132 Typ  64
+  GetAndAssign (Jahr)
+  GetAndAssign (Monat)
+  GetAndAssign (Tag)
+  GetAndAssign (Stunde)
+  Get Low	($intervallaenge) IntervallLaenge := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ  64 ----------- Intervalldaten wie in der TLS definiert */
+Datatype DaLVELangIntervalldaten			Fg   1 Id8 164 Typ  64
+  GetAndAssign (Jahr)
+  GetAndAssign (Monat)
+  GetAndAssign (Tag)
+  GetAndAssign (Stunde)
+  Get Low	($intervallaenge) IntervallLaenge := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 65 ------------------------- Langzeitdateten Option 10 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 65     Init_LangErfassung     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 10
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+  Intervalldauer := $intervallaenge
+
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 65     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 10
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 66 ------------------------- Langzeitdateten Option 11 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 66     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 11
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+
+  Get Low	(vKfz)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 66     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 11
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+
+  Get Low	(vKfz)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 67 ------------------------- Langzeitdateten Option 12 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 67     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 12
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 67     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 12
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 68 ------------------------- Langzeitdateten Option 13 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 68     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 13
+  Get Low	(Puffer)	Const 0
+  
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 68     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 13
+  Get Low	(Puffer)	Const 1
+  
+  Get Low	(qKfz)
+  Get High	(qKfz)
+
+  Get Low	(qLkwAe)
+  Get High	(qLkwAe)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 69 ------------------------- Langzeitdateten Option 14 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 69     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 14
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 69     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 14
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 70 ------------------------- Langzeitdateten Option 15 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 70     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 15
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 70     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 15
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwG)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 71 ------------------------- Langzeitdateten Option 16 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 71     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 16     	
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwG)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 71     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 16            
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwG)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 72 ------------------------- Langzeitdateten Option 17 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 72     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 17           
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+
+  Get Low	(AnzvKlassenPkwAe)
+  IncLoop (i1, 0, AnzvKlassenPkwAe) {
+    Get Low	(vKlassenPkwAe[$i1])
+    Get High	(vKlassenPkwAe[$i1])
+  }
+
+  Get Low	(AnzvKlassenLkwAe)
+  IncLoop (i2, 0, AnzvKlassenLkwAe) {
+    Get Low	(vKlassenLkwAe[$i2])
+    Get High	(vKlassenLkwAe[$i2])
+  }
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 72     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 17           
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+
+  Get Low	(AnzvKlassenPkwAe)
+  IncLoop (i1, 0, AnzvKlassenPkwAe) {
+    Get Low	(vKlassenPkwAe[$i1])
+    Get High	(vKlassenPkwAe[$i1])
+  }
+
+  Get Low	(AnzvKlassenLkwAe)
+  IncLoop (i2, 0, AnzvKlassenLkwAe) {
+    Get Low	(vKlassenLkwAe[$i2])
+    Get High	(vKlassenLkwAe[$i2])
+  }
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 73 ------------------------- Langzeitdateten Option 18 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 73     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 18           
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwG)
+  Get Low	(vPkwA)
+  Get Low	(vLkw)
+  Get Low	(vLkwK)
+  Get Low	(vBus)
+
+  Get Low	(sPkwG)
+  Get Low	(sPkwA)
+  Get Low	(sLkw)
+  Get Low	(sLkwK)
+  Get Low	(sBus)
+
+  Get Low	(v85PkwG)
+
+  Get Low	(AnzvKlassenPkwG)
+  IncLoop (i1, 0, AnzvKlassenPkwG) {
+    Get Low	(vKlassenPkwG[$i1])
+    Get High	(vKlassenPkwG[$i1])
+  }
+
+  Get Low	(AnzvKlassenPkwA)
+  IncLoop (i2, 0, AnzvKlassenPkwA) {
+    Get Low	(vKlassenPkwA[$i2])
+    Get High	(vKlassenPkwA[$i2])
+  }
+
+  Get Low	(AnzvKlassenLkw)
+  IncLoop (i3, 0, AnzvKlassenLkw) {
+    Get Low	(vKlassenLkw[$i3])
+    Get High	(vKlassenLkw[$i3])
+  }
+
+  Get Low	(AnzvKlassenLkwK)
+  IncLoop (i4, 0, AnzvKlassenLkwK) {
+    Get Low	(vKlassenLkwK[$i4])
+    Get High	(vKlassenLkwK[$i4])
+  }
+
+  Get Low	(AnzvKlassenBus)
+  IncLoop (i5, 0, AnzvKlassenBus) {
+    Get Low	(vKlassenBus[$i5])
+    Get High	(vKlassenBus[$i5])
+  }
+  Intervalldauer := $intervallaenge
+
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 73     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 18           
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qPkwG)
+  Get High	(qPkwG)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwK)
+  Get High	(qLkwK)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+
+  Get Low	(vPkwG)
+  Get Low	(vPkwA)
+  Get Low	(vLkw)
+  Get Low	(vLkwK)
+  Get Low	(vBus)
+
+  Get Low	(sPkwG)
+  Get Low	(sPkwA)
+  Get Low	(sLkw)
+  Get Low	(sLkwK)
+  Get Low	(sBus)
+
+  Get Low	(v85PkwG)
+
+  Get Low	(AnzvKlassenPkwG)
+  IncLoop (i1, 0, AnzvKlassenPkwG) {
+    Get Low	(vKlassenPkwG[$i1])
+    Get High	(vKlassenPkwG[$i1])
+  }
+
+  Get Low	(AnzvKlassenPkwA)
+  IncLoop (i2, 0, AnzvKlassenPkwA) {
+    Get Low	(vKlassenPkwA[$i2])
+    Get High	(vKlassenPkwA[$i2])
+  }
+
+  Get Low	(AnzvKlassenLkw)
+  IncLoop (i3, 0, AnzvKlassenLkw) {
+    Get Low	(vKlassenLkw[$i3])
+    Get High	(vKlassenLkw[$i3])
+  }
+
+  Get Low	(AnzvKlassenLkwK)
+  IncLoop (i4, 0, AnzvKlassenLkwK) {
+    Get Low	(vKlassenLkwK[$i4])
+    Get High	(vKlassenLkwK[$i4])
+  }
+
+  Get Low	(AnzvKlassenBus)
+  IncLoop (i5, 0, AnzvKlassenBus) {
+    Get Low	(vKlassenBus[$i5])
+    Get High	(vKlassenBus[$i5])
+  }
+  Intervalldauer := $intervallaenge
+  
+  
+
+/* Fg   1 Id8 132 Typ 74 ------------------------- Langzeitdateten Option 19 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 74     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 19           
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung 				Fg   1 Id8 164 Typ 74     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 19           
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 75 ------------------------- Langzeitdateten Option 20 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 75     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 20           
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 75     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 20           
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Intervalldauer := $intervallaenge
+
+
+/* Fg   1 Id8 132 Typ 76 ------------------------- Langzeitdateten Option 21 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 76     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 21           
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 76     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 21           
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+  Intervalldauer := $intervallaenge
+
+/* Fg   1 Id8 132 Typ 77 ------------------------- Langzeitdateten Option 12 */
+Datatype DaLVELangErfassung				Fg   1 Id8 132 Typ 77     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 22           
+  Get Low	(Puffer)	Const 0
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+
+  Get Low	(AnzvKlassenPkwAe)
+  IncLoop (i1, 0, AnzvKlassenPkwAe) {
+    Get Low	(vKlassenPkwAe[$i1])
+    Get High	(vKlassenPkwAe[$i1])
+  }
+
+  Get Low	(AnzvKlassenLkwAe)
+  IncLoop (i2, 0, AnzvKlassenLkwAe) {
+    Get Low	(vKlassenLkwAe[$i2])
+    Get High	(vKlassenLkwAe[$i2])
+  }
+  Intervalldauer := $intervallaenge
+
+/* Fg   1 Id8 132 Typ 77 ------------------------- Langzeitdateten Option 12 */
+Datatype DaLVELangErfassung				Fg   1 Id8 164 Typ 77     Init_LangErfassung
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 22           
+  Get Low	(Puffer)	Const 1
+
+  Get Low	(qNkKfz)
+  Get High	(qNkKfz)
+  Get Low	(qKrad)
+  Get High	(qKrad)
+  Get Low	(qPkw)
+  Get High	(qPkw)
+  Get Low	(qLfw)
+  Get High	(qLfw)
+  Get Low	(qPkwA)
+  Get High	(qPkwA)
+  Get Low	(qLkw)
+  Get High	(qLkw)
+  Get Low	(qLkwA)
+  Get High	(qLkwA)
+  Get Low	(qSattelKfz)
+  Get High	(qSattelKfz)
+  Get Low	(qBus)
+  Get High	(qBus)
+
+  Get Low	(vPkwAe)
+  Get Low	(vLkwAe)
+  Get Low	(sPkwAe)
+  Get Low	(sLkwAe)
+  Get Low	(v85Pkw)
+
+  Get Low	(AnzvKlassenPkwAe)
+  IncLoop (i1, 0, AnzvKlassenPkwAe) {
+    Get Low	(vKlassenPkwAe[$i1])
+    Get High	(vKlassenPkwAe[$i1])
+  }
+
+  Get Low	(AnzvKlassenLkwAe)
+  IncLoop (i2, 0, AnzvKlassenLkwAe) {
+    Get Low	(vKlassenLkwAe[$i2])
+    Get High	(vKlassenLkwAe[$i2])
+  }
+  Intervalldauer := $intervallaenge
+
+  
+/* Fg   1 Id8 132 Typ 96 ------------------------- Langzeitdaten Option  0 */
+Datatype DaSVEKurzErfassung				Fg   1 Id8 132 Typ 96
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 0           
+  Get Low	(kKFZ)
+  Get High	(kKFZ)
+  Get Low	(vKFZ)
+
+/* Fg   1 Id8 132 Typ 97 ------------------------- Langzeitdaten Option  1 */
+Datatype DaSVEKurzErfassung				Fg   1 Id8 132 Typ 97
+  systime :=	$AktuelleZeit
+  Get Low	(Option)	Const 1           
+  Get Low	(kKFZ)
+  Get High	(kKFZ)
+  Get Low	(vKFZ)
+  Get Low	(kPKW)
+  Get High	(kPKW)
+  Get Low	(kLKW)
+  Get High	(kLKW)
+  Get Low	(vPKW)
+  Get Low	(vLKW)
+
+/* ========================================================================== */
+/* FG 1 - Telegramme (Herstellerdefiniert)                                    */
+/* ========================================================================== */
+
+/* Ignorieren der EFzD */
+/* Ergänzt durch Peter Pöchhacker am 18.05.2012 */
+/* Beginn der Änderung: PPC */
+#if 0
+/* Ende der Änderung: PPC */
+
+/* Fg   1 Id8 132 Typ 63 -------------------------------- Einzelfahrzeugdaten */
+Datatype DaLVEEinzelfahrzeuge				Fg   1 Id8 132 Typ 63
+  Get Low	(status)
+  Get Low	(kfzKlasse)
+  Get Low	(vKfz)
+  Get High	(vKfz)
+  Get Low	(tBeleg)
+  Get High	(tBeleg)
+  Get Low	(tNetto)
+  Get High	(tNetto)
+  Get Low	(fzgLaenge)
+
+/* Ergänzt durch Peter Pöchhacker am 18.05.2012 */
+/* Beginn der Änderung: PPC */
+#else
+#define IGNORIEREN IncLoop(i, 0, $DeLaenge) { Skip }
+
+Datatype Virtuell							Fg   1 Id8 132 Typ 63
+	IGNORIEREN
+#endif
+/* Ende der Änderung: PPC */
+
+/* Fg   1 Id8 132 Typ 163 ------------------------------ Geisterfahrer  1 */
+Datatype DaLVEGeisterfahrer					Fg   1 Id8 132 Typ 163
+  Get Low	(hersteller)
+  Get Low	(status)
+  Get Low	(kfzKlasse)
+  Get Low	(vKfz)
+  Get High	(vKfz)
+  Get Low	(tBeleg)
+  Get High	(tBeleg)
+  Get Low	(tNetto)
+  Get High	(tNetto)
+  Get Low	(fzgLaenge)
+
+/* Fg   1 Id8 132 Typ 190 ------------------- Ergebnismeldung Abstandswarnung */
+Datatype DaLVEErgebnisAbstandWarn			Fg   1 Id8 132 Typ 190
+  systime :=	$AktuelleZeit
+  Get Low	(fzg_typ)
+  Get Low	(v)
+  Get Low	(tNetto)
+
+/* Fg   1 Id8 132 Typ 191 ------------------- Betr.-Parameter Abstandswarnung */
+Datatype DaLVEBetrParamAbstandWarnIst		Fg   1 Id8 131 Typ 191
+  systime :=	$AktuelleZeit
+  Get Low	(aktiv)
+  Get Low	(tNetto)
+
+
+/* ========================================================================== */
+/* FG 2 - Telegramme (Definition)                                             */
+/* ========================================================================== */
+
+
+/* Fg   2 Id 129 Typ   1 ----------------------------------- DE-Fehlermeldung */
+Datatype DaAXLFehlerDE						Fg   2 Id 129 Typ   1
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlercode)
+  Get Low       (Hersteller)
+
+/* Fg   2 Id 129 Typ   1 ------------------------------------------ DE-Fehler */
+Meldungsinfo Datatype Virtuell				Fg   2 Id 129 Typ   1
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   2 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Datatype DaAXLErgFehlerDE					Fg   2 Id 129 Typ  14
+  systime :=	$AktuelleZeit
+  Get Low       (Hersteller)
+  Skip
+  Get Low       (Fehlerbyte1)
+  Get Low       (Fehlerbyte2)
+  Get Low       (Fehlerbyte3)
+  Get Low       (Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block	herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg   2 Id 129 Typ  14 ------------------------------------- Erg. DE-Fehler */
+Meldungsinfo Datatype Virtuell				Fg   2 Id 129 Typ  14
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low       ($HerstellerCode)
+	Skip
+	Temporaer f1
+	Temporaer f2
+	Temporaer f3
+	Temporaer f4
+	Get Low ($f1)
+	Get Low ($f2)
+	Get Low ($f3)
+	Get Low ($f4)
+    $ErrorCode := 0
+    If ($f1 != 0 || $f2 != 0 || $f3 != 0 || $f4 != 0) { $ErrorCode := 1 }
+    Temporaer anz
+    Get Low($anz)
+    IncLoop(i, 0, $anz) {
+      Skip
+    }
+
+/* Fg   2 Id 130 Typ   16 --------------------------------- negative Quittung */
+Datatype DaAXLNegQuittEmpfang				Fg   2 Id 130 Typ  16
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg   2 Id 130 Typ   16 --------------------------------- negative Quittung */
+Meldungsinfo Datatype Virtuell				Fg   2 Id 130 Typ  16
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   2 Id8 130 Typ  29 ------------------------------------ Kanalsteuerung */
+Datatype DaAXLKanalIst						Fg   2 Id8 130 Typ  29 
+  systime :=	$AktuelleZeit
+  Get Low	(Steuerbyte)
+
+/* Fg   2 Id8 132 Typ  31 -------------------------------------- Zeitstempel */
+Datatype DaAXLZeitEinzelergebnis			Fg   2 Id8 132 Typ  31 
+  Get Low	($Jahr)
+  Get High	($Jahr)		Jahr := $Jahr
+  GetAndAssign (Monat)
+  GetAndAssign (Tag)
+  GetAndAssign (Stunde)
+  GetAndAssign (Minute)
+  GetAndAssign (Sekunde)
+  GetAndAssign (Hundertstel)
+  Get Low	(aktueller_Satz)
+  Get High	(aktueller_Satz)
+  Get Low	(Gesamt_Saetze)
+  Get High	(Gesamt_Saetze)
+
+/* Fg   2 Id8 164 Typ  31 -------------- Puffer ----------------- Zeitstempel */
+Datatype DaAXLZeitEinzelergebnis			Fg   2 Id8 164 Typ  31 
+  Get Low	($Jahr)
+  Get High	($Jahr)		Jahr := $Jahr
+  GetAndAssign (Monat)
+  GetAndAssign (Tag)
+  GetAndAssign (Stunde)
+  GetAndAssign (Minute)
+  GetAndAssign (Sekunde)
+  GetAndAssign (Hundertstel)
+  Get Low	(aktueller_Satz)
+  Get High	(aktueller_Satz)
+  Get Low	(Gesamt_Saetze)
+  Get High	(Gesamt_Saetze)
+
+/* Fg   2 Id 131 Typ  32 ------------------------------ LVE-Betriebsparameter */
+Datatype DaAXLBetriebsParamIst				Fg   2 Id 131 Typ  32 
+  systime :=	$AktuelleZeit
+  Get Low       (Reserve1)
+  Get Low       (Reserve2)
+  Get Low       (VersionErgebnis)
+  Get Low       (IVLaenge)
+  Get Low       (Reserve3)
+  Get Low       (VersionEinzel)
+  Get Low       (SpeicherungVorOrt)
+
+  
+/* Fg   2 Id 131 Typ  36 ----------------------------- Geografische Kenndaten */
+Datatype DaAXLGeoKennIst					Fg   2 Id 131 Typ  36
+  systime :=	$AktuelleZeit
+  Get Low       (Landeskennung)
+  Get Low       (Strassenart)
+  Get High	(StrassenNr)
+  Get Low       (StrassenNr)
+  Get vHigh	(km)
+  Get High	(km)
+  Get Low       (km)
+  Get Low       (Fahrtrichtung)
+  Get Low       (Reserve)
+
+/* Fg   2 Id 131 Typ  37 ---------------------------------------- AXL-Grenzen */
+Datatype DaAXLGrenzwerteIst					Fg   2 Id 131 Typ  37
+  systime :=	$AktuelleZeit
+  Get Low	(EinzelAchslast1)
+  Get High	(EinzelAchslast1)
+  Get Low	(EinzelAchslast)
+  Get High	(EinzelAchslast)
+  Get Low	(MaxAbstand1DoppelAchse)
+  Get Low	(MaxAbstand2DoppelAchse)
+  Get Low	(MaxAbstand3DoppelAchse)
+  Get Low	(MaxAbstand1DreifachAchse)
+  Get Low	(MaxAbstand2DreifachAchse)
+  Get Low	(Abstand1Doppelachslast)
+  Get High	(Abstand1Doppelachslast)
+  Get Low	(Abstand2Doppelachslast)
+  Get High	(Abstand2Doppelachslast)
+  Get Low	(Abstand3Doppelachslast)
+  Get High	(Abstand3Doppelachslast)
+  Get Low	(Abstand1Dreifachachslast)
+  Get High	(Abstand1Dreifachachslast)
+  Get Low	(Abstand2Dreifachachslast)
+  Get High	(Abstand2Dreifachachslast)
+  Get Low	(AnzFahrzeugtypen)
+  IncLoop(i, 0, AnzFahrzeugtypen) {
+    Get Low		(CodeFahrzeugtyp[$i])
+    Get Low		(Gesamtgewicht[$i])
+    Get High	(Gesamtgewicht[$i])
+  }
+
+/* Fg   2 Id 131 Typ  38 -------------------------------------- AXL-Parameter */
+Datatype DaAXLGewichtsParameterIst			Fg   2 Id 131 Typ  38
+  systime :=	$AktuelleZeit
+  Get Low	(AnzEinzelAchsKlassen)
+  Get Low	(AnzDoppelAchsKlassen)
+  Get Low	(AnzDreifachAchsKlassen)
+  
+  IncLoop(i, 0, AnzEinzelAchsKlassen) {
+    Get Low	(EinzelAchsKlassenGrenzen[$i])
+    Get High	(EinzelAchsKlassenGrenzen[$i])
+  }
+  
+  IncLoop(j, 0, AnzDoppelAchsKlassen) {
+    Get Low	(DoppelAchsKlassenGrenzen[$j])
+    Get High	(DoppelAchsKlassenGrenzen[$j])
+  }
+  
+  IncLoop(k, 0, AnzDreifachAchsKlassen) {
+    Get Low	(DreifachAchsKlassenGrenzen[$k])
+    Get High	(DreifachAchsKlassenGrenzen[$k])
+  }
+  
+  Get Low	(AnzFzgKl3Grenzen)
+  Get Low	(AnzFzgKl4Grenzen)
+  Get Low	(AnzFzgKl5Grenzen)
+  
+  IncLoop(l, 0, AnzFzgKl3Grenzen) {
+    Get Low	(FzgKl3Grenzen[$l])
+    Get High	(FzgKl3Grenzen[$l])
+  }
+  
+  IncLoop(m, 0, AnzFzgKl4Grenzen) {
+    Get Low	(FzgKl4Grenzen[$m])
+    Get High	(FzgKl4Grenzen[$m])
+  }
+  
+  IncLoop(n, 0, AnzFzgKl5Grenzen) {
+    Get Low	(FzgKl5Grenzen[$n])
+    Get High	(FzgKl5Grenzen[$n])
+  }
+
+/* Fg   2 Id 132 Typ  60 -------------------------------------- AXL-Erfassung */
+Datatype DaAXLEinzelErfassung				Fg   2 Id 131 Typ  60
+  systime :=	$AktuelleZeit
+
+  Get Low	(Option)	Const 1
+
+  Get Low	(Fahrzeugtyp)
+  Get Low	(Fahrzeuglaenge)
+  Get High	(Fahrzeuglaenge)
+  Get Low	(Geschwindigkeit)
+  Get Low	(Fahrzeugabstand)
+  Get High	(Fahrzeugabstand)
+  Get Low	(Fahrzeuggewicht)
+  Get High	(Fahrzeuggewicht)
+  
+  Get Low	(Ueberladung)
+  IncLoop(i, 0, Ueberladung) {
+    Get Low	(Achsart[$i])
+    Get Low	(Achslast[$i])
+    Get High	(Achslast[$i])
+    Get Low	(Achsabstand[$i])
+    Get High	(Achsabstand[$i])
+  }
+
+/* Fg   2 Id 132 Typ  61 -------------------------------------- AXL-Erfassung */
+Datatype DaAXLEinzelErfassung				Fg   2 Id 131 Typ  61
+  systime :=	$AktuelleZeit
+
+  Get Low	(Option)	Const 2
+
+  Get Low	(Fahrzeugtyp)
+  Get Low	(Fahrzeuglaenge)
+  Get High	(Fahrzeuglaenge)
+  Get Low	(Geschwindigkeit)
+  Get Low	(Fahrzeugabstand)
+  Get High	(Fahrzeugabstand)
+  Get Low	(Fahrzeuggewicht)
+  Get High	(Fahrzeuggewicht)
+  
+  Get Low	(Ueberladung)
+  IncLoop(i, 0, Ueberladung) {
+    Get Low	(Achsart[$i])
+    Get Low	(Radlast_links[$i])
+    Get Low	(Radlast_rechts[$i])
+    Get Low	(Achsabstand[$i])
+    Get High	(Achsabstand[$i])
+  }
+
+/* Fg   2 Id 132 Typ  64 --------------------------------- AXL-Intervalldaten */
+Datatype DaAXLLangIntervalldaten			Fg   2 Id 131 Typ  64
+  //systime :=	$AktuelleZeit
+  GetAndAssign	(Jahr)
+  GetAndAssign	(Monat)
+  GetAndAssign	(Tag)
+  GetAndAssign	(Stunde)
+  GetAndAssign	(Minute)
+  Get Low	($intervallaenge) IntervallLaenge := $intervallaenge
+#if 0
+/* Fg   2 Id 132 Typ  65 --------------------------------- AXL-Achslastdaten */
+Datatype DaAXLErfassungOpt10				Fg   2 Id 132 Typ  65
+  systime :=	$AktuelleZeit
+  Get Low	(Puffer)	Const 0
+  Get Low	(AnzEinzelAchsKlassen)
+  Get Low	(AnzDoppelAchsKlassen)
+  Get Low	(AnzDreifachAchsKlassen)
+  
+  IncLoop(i1, 0, AnzEinzelAchsKlassen) {
+    Get Low	(AnzAchsenEinzelachse[$i1])
+    Get High	(AnzAchsenEinzelachse[$i1])
+  }
+  
+  IncLoop(i2, 0, AnzDoppelAchsKlassen) {
+    Get Low	(AnzAchsenDoppelachse[$i2])
+    Get High	(AnzAchsenDoppelachse[$i2])
+  }
+  
+  IncLoop(i3, 0, AnzDreifachAchsKlassen) {
+    Get Low	(AnzAchsenDreifachachse[$i3])
+    Get High	(AnzAchsenDreifachachse[$i3])
+  }
+  
+  Get Low	(AnzUeberladungenFzgKl3)
+  Get Low	(AnzUeberladungenFzgKl4)
+  Get Low	(AnzUeberladungenFzgKl5)
+
+  Get Low	(AnzGewKlasseFzgKl3)
+  Get Low	(AnzGewKlasseFzgKl4)
+  Get Low	(AnzGewKlasseFzgKl5)
+
+  IncLoop(i4, 0, AnzGewKlasseFzgKl3) {
+    Get Low	(GesamtGewKlasseFzgKl3[$i4])
+    Get High	(GesamtGewKlasseFzgKl3[$i4])
+  }
+  
+  IncLoop(i5, 0, AnzGewKlasseFzgKl4) {
+    Get Low	(GesamtGewKlasseFzgKl4[$i5])
+    Get High	(GesamtGewKlasseFzgKl4[$i5])
+  }
+  
+  IncLoop(i6, 0, AnzGewKlasseFzgKl5) {
+    Get Low	(GesamtGewKlasseFzgKl5[$i6])
+    Get High	(GesamtGewKlasseFzgKl5[$i6])
+  }
+  Intervalldauer := $intervallaenge
+
+/* dito aus Puffer --------------------------------------------------------- */
+Datatype DaAXLErfassungOpt10				Fg   2 Id 164 Typ  65
+  systime :=	$AktuelleZeit
+  Get Low	(Puffer)	Const 1
+  Get Low	(AnzEinzelAchsKlassen)
+  Get Low	(AnzDoppelAchsKlassen)
+  Get Low	(AnzDreifachAchsKlassen)
+  
+  IncLoop(i1, 0, AnzEinzelAchsKlassen) {
+    Get Low	(AnzAchsenEinzelachse[$i1])
+    Get High	(AnzAchsenEinzelachse[$i1])
+  }
+  
+  IncLoop(i2, 0, AnzDoppelAchsKlassen) {
+    Get Low	(AnzAchsenDoppelachse[$i2])
+    Get High	(AnzAchsenDoppelachse[$i2])
+  }
+  
+  IncLoop(i3, 0, AnzDreifachAchsKlassen) {
+    Get Low	(AnzAchsenDreifachachse[$i3])
+    Get High	(AnzAchsenDreifachachse[$i3])
+  }
+  
+  Get Low	(AnzUeberladungenFzgKl3)
+  Get Low	(AnzUeberladungenFzgKl4)
+  Get Low	(AnzUeberladungenFzgKl5)
+
+  Get Low	(AnzGewKlasseFzgKl3)
+  Get Low	(AnzGewKlasseFzgKl4)
+  Get Low	(AnzGewKlasseFzgKl5)
+
+  IncLoop(i4, 0, AnzGewKlasseFzgKl3) {
+    Get Low	(GesamtGewKlasseFzgKl3[$i4])
+    Get High	(GesamtGewKlasseFzgKl3[$i4])
+  }
+  
+  IncLoop(i5, 0, AnzGewKlasseFzgKl4) {
+    Get Low	(GesamtGewKlasseFzgKl4[$i5])
+    Get High	(GesamtGewKlasseFzgKl4[$i5])
+  }
+  
+  IncLoop(i6, 0, AnzGewKlasseFzgKl5) {
+    Get Low	(GesamtGewKlasseFzgKl5[$i6])
+    Get High	(GesamtGewKlasseFzgKl5[$i6])
+  }
+  Intervalldauer := $intervallaenge
+#endif
+
+/* ========================================================================== */
+/* FG 3 (Empfang SM-UZ)                                                       */
+/* ========================================================================== */
+
+/* Fg   3 Id 129 Typ   1 ----------------------------------- DE-Fehlermeldung */
+Datatype DaUFDFehlerDE						Fg   3 Id 129 Typ   1
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlercode)
+  Get Low       (Hersteller)
+
+/* Fg   1 Id 129 Typ    1 ---------------------------------- DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   3 Id 129 Typ   1
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   3 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Datatype DaUFDErgFehlerDE					Fg   3 Id 129 Typ  14
+  systime :=	$AktuelleZeit
+  Get Low       (Hersteller)
+  Skip
+  Get Low       (Fehlerbyte1)
+  Get Low       (Fehlerbyte2)
+  Get Low       (Fehlerbyte3)
+  Get Low       (Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg   3 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   3 Id 129 Typ  14
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low       ($HerstellerCode)
+	Skip
+	Temporaer f1
+	Temporaer f2
+	Temporaer f3
+	Temporaer f4
+	Get Low ($f1)
+	Get Low ($f2)
+	Get Low ($f3)
+	Get Low ($f4)
+    $ErrorCode := 0
+    If ($f1 != 0 || $f2 != 0 || $f3 != 0 || $f4 != 0) { $ErrorCode := 1 }
+    Temporaer anz
+    Get Low($anz)
+    IncLoop(i, 0, $anz) {
+      Skip
+    }
+
+/* Fg   3 Id 130 Typ   16 --------------------------------- negative Quittung */
+Datatype DaUFDNegQuittEmpfang				Fg   3 Id 130 Typ  16
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg   3 Id 130 Typ   16 --------------------------------- negative Quittung */
+Meldungsinfo Datatype Virtuell  			Fg   3 Id 130 Typ  16
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   3 Id8 130 Typ  29 ------------------------------------ Kanalsteuerung */
+Datatype DaUFDKanalIst						Fg   3 Id8 130 Typ  29 
+  systime :=	$AktuelleZeit
+  Get Low	(Steuerbyte)
+
+/* Fg   3 Id 131 Typ  32 ------------------------------ UFD-Betriebsparameter */
+Datatype DaUFDBetriebsParamIst  			Fg   3 Id 131 Typ  32 
+  systime :=	$AktuelleZeit
+  Get Low       (ErfassPeriode)
+  Get High      (ErfassPeriode)
+  Get Low       (Uebertragung)
+  
+/* Fg   3 Id 131 Typ  36 ----------------------------- Geografische Kenndaten */
+Datatype DaUFDGeoKennIst					Fg   3 Id 131 Typ  36
+  systime :=	$AktuelleZeit
+  Get Low       (Landeskennung)
+  Get Low       (Strassenart)
+  Get High	(StrassenNr)
+  Get Low       (StrassenNr)
+  Get vHigh	(km)
+  Get High	(km)
+  Get Low       (km)
+  Get Low       (Fahrtrichtung)
+  Get Low       (Reserve)
+
+/* Fg   3 Id 132 Typ  48-72 ------------------------------- UFD-Ergebniswerte */
+Datatype DaUFDLuftTemp_erf  			    Fg   3 Id 132 Typ  48
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+  
+Datatype DaUFDFBTemp_erf					Fg   3 Id 132 Typ  49
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+  
+Datatype DaUFDFBFeuchte_erf					Fg   3 Id 132 Typ  50
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDFBOberFlaeche_erf				Fg   3 Id 132 Typ  51
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  
+Datatype DaUFDFBRestSalz_erf				Fg   3 Id 132 Typ  52
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDNiederInten_erf				Fg   3 Id 132 Typ  53
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDLuftDruck_erf					Fg   3 Id 132 Typ  54
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDLuftFeuchte_erf				Fg   3 Id 132 Typ  55
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDWindRichtung_erf				Fg   3 Id 132 Typ  56
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDWindGeschw_erf				Fg   3 Id 132 Typ  57
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDSchneeHoehe_erf				Fg   3 Id 132 Typ  58
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDFBGlaette_erf					Fg   3 Id 132 Typ  59
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDSichtWeite_erf				Fg   3 Id 132 Typ  60
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDHelligkeit_erf				Fg   3 Id 132 Typ  61
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDNiederMenge_erf				Fg   3 Id 132 Typ  62
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDNiederArt_erf					Fg   3 Id 132 Typ  63
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDWindGeschwMax_erf				Fg   3 Id 132 Typ  64
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDGefrierTemp_erf				Fg   3 Id 132 Typ  65
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDTaupunktTemp_erf				Fg   3 Id 132 Typ  66
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDTempTiefe1_erf				Fg   3 Id 132 Typ  67
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDTempTiefe2_erf				Fg   3 Id 132 Typ  68
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDTempTiefe3_erf				Fg   3 Id 132 Typ  69
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDFBZ_erf						Fg   3 Id 132 Typ  70
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDNS_erf						Fg   3 Id 132 Typ  71
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDWFD_erf						Fg   3 Id 132 Typ  72
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+Datatype DaUFDTSK_erf						Fg   3 Id 132 Typ  73
+  systime :=	$AktuelleZeit
+  Get Low       (Messwert)
+
+Datatype DaUFDLaerm_erf						Fg   3 Id 132 Typ 203
+  Get Low       (Messwert)
+  Get High      (Messwert)
+
+
+
+/* ========================================================================== */
+/* FG 4 (Empfang SM-UZ)                                                       */
+/* ========================================================================== */
+
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  129 Typ  31 Folgenummer
+  systime :=	$AktuelleZeit
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer) 
+  Get High	($folgenummer) folgenummer := $folgenummer
+  
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  130 Typ  31 Folgenummer
+  systime :=	$AktuelleZeit
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer)
+  Get High	($folgenummer) folgenummer := $folgenummer
+
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  131 Typ  31 Folgenummer
+  systime :=	$AktuelleZeit
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer)
+  Get High	($folgenummer) folgenummer := $folgenummer
+  
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  133 Typ  31 Folgenummer
+  systime :=	$AktuelleZeit
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer)
+  Get High	($folgenummer) folgenummer := $folgenummer
+
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  161 Typ  31 Folgenummer Historisch
+  systime :=	$AktuelleZeit
+  $nachgeliefert := 1
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer)
+  Get High	($folgenummer) folgenummer := $folgenummer
+  
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  162 Typ  31 Folgenummer Historisch
+  systime :=	$AktuelleZeit
+  $nachgeliefert := 1
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer)
+  Get High	($folgenummer) folgenummer := $folgenummer
+  
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  163 Typ  31 Folgenummer Historisch
+  systime :=	$AktuelleZeit
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer)
+  Get High	($folgenummer) folgenummer := $folgenummer
+
+Datatype DaWVZZeitMitFolgeNr				Fg   4 Id  165 Typ  31 Folgenummer Historisch
+  systime :=	$AktuelleZeit
+  $nachgeliefert := 1
+  Get Low	($Stunde)	stunde :=	$Stunde
+  Get Low	($Minute)	minute :=	$Minute
+  Get Low	($Sekunde)	sekunde :=	$Sekunde
+  Get Low	($Tag)		tag :=		$Tag
+  Get Low	($folgenummer)
+  Get High	($folgenummer) folgenummer := $folgenummer
+
+/* Fg   4 Id  129 Typ   1 --------------------------------- DE-Fehlermeldung  */
+Datatype DaWVZFehlerDEIst					Fg   4 Id  129 Typ   1
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(Fehlercode)
+  Get Low	(Hersteller)
+
+/* Fg   4 Id  161 Typ   1 --------------------------------- DE-Fehlermeldung  */
+Datatype DaWVZFehlerDEIst					Fg   4 Id  161 Typ   1	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(Fehlercode)
+  Get Low	(Hersteller)
+
+/* Fg   4 Id  129 Typ   1 --------------------------------- DE-Fehlermeldung  */
+Meldungsinfo Datatype Virtuell				Fg   4 Id 129 Typ   1
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+
+/* Fg   4 Id  129 Typ   2 ---------------------------- Nicht darstellbare WVZ */
+Datatype DaWVZNichtDarstellbareWVZ			Fg   4 Id  129 Typ   2
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low (AnzByte)
+  Get Block WVZCode Offset 0 Size AnzByte
+  
+/* Fg   4 Id  161 Typ   2 ---------------------------- Nicht darstellbare WVZ */
+Datatype DaWVZNichtDarstellbareWVZ			Fg   4 Id  161 Typ   2	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low (AnzByte)
+  Get Block WVZCode Offset 0 Size AnzByte
+  
+/* Fg   4 Id  129 Typ   2 ---------------------------- Nicht darstellbare WVZ */
+Meldungsinfo Datatype Virtuell				Fg   4 Id 129 Typ   2
+  $StateInfoBytes	:= $DeLaenge
+  $StateInfoOff	:= 0
+  Get Low       ($ErrorCode)
+  IncLoop(i, 0, $ErrorCode) {
+      Skip
+  }
+
+
+/* Fg   4 Id  129 Typ   3 -------------------------- defekte Lampen eines WZG */
+Datatype DaWVZDefekteLampen					Fg   4 Id  129 Typ   3
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	 (AnzLampen)
+  AnzByte := (AnzLampen+3)/4
+  Get Block status Offset 0 Size AnzByte
+
+/* Fg   4 Id  161 Typ   3 -------------------------- defekte Lampen eines WZG */
+Datatype DaWVZDefekteLampen					Fg   4 Id  161 Typ   3	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	 (AnzLampen)
+  AnzByte := (AnzLampen+3)/4
+  Get Block status Offset 0 Size AnzByte
+
+/* Fg   4 Id  129 Typ   3 -------------------------- defekte Lampen eines WZG */
+Meldungsinfo Datatype Virtuell				Fg   4 Id 129 Typ   3
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Temporaer anzLampen
+	Get Low ($anzLampen)
+	Temporaer anzByte
+	$anzByte := ($anzLampen+3)/4
+	$ErrorCode := 0
+	IncLoop(i, 0, $anzByte) {
+	    Temporaer stat
+        Get Low	($stat)
+        If ($stat != 0) { $ErrorCode := 1 }
+  	}
+
+
+/* Fg   4 Id  129 Typ   4 ---------------------------- Gestoerte Textposition */
+Datatype DaWVZGestoerteTextPos				Fg   4 Id  129 Typ   4
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	 (anzbyte)
+  Get Block textpos Offset 0 Size anzbyte
+
+/* Fg   4 Id  161 Typ   4 ---------------------------- Gestoerte Textposition */
+Datatype DaWVZGestoerteTextPos				Fg   4 Id  161 Typ   4	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	 (anzbyte)
+  Get Block textpos Offset 0 Size anzbyte
+
+/* Fg   4 Id  129 Typ   4 ---------------------------- Gestoerte Textposition */
+Meldungsinfo Datatype Virtuell				Fg   4 Id 129 Typ   4
+  $StateInfoBytes	:= $DeLaenge
+  $StateInfoOff	:= 0
+  Get Low       ($ErrorCode)
+  IncLoop(i, 0, $ErrorCode) {
+      Skip
+  }
+
+
+/* Fg   4 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Datatype DaWVZErgFehlerDE					Fg   4 Id  129 Typ  14
+  systime :=	$AktuelleZeit
+  Get Low	(Hersteller)
+  Skip
+  Get Low	(Fehlerbyte1)
+  Get Low	(Fehlerbyte2)
+  Get Low	(Fehlerbyte3)
+  Get Low	(Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block	herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg   4 Id 161 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Datatype DaWVZErgFehlerDE					Fg   4 Id  161 Typ  14 Historisch
+  systime :=	$AktuelleZeit
+  Get Low	(Hersteller)
+  Skip
+  Get Low	(Fehlerbyte1)
+  Get Low	(Fehlerbyte2)
+  Get Low	(Fehlerbyte3)
+  Get Low	(Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block	herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg   4 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   4 Id 129 Typ  14
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low       ($HerstellerCode)
+	Skip
+	Temporaer f1
+	Temporaer f2
+	Temporaer f3
+	Temporaer f4
+	Get Low ($f1)
+	Get Low ($f2)
+	Get Low ($f3)
+	Get Low ($f4)
+    $ErrorCode := 0
+    If ($f1 != 0 || $f2 != 0 || $f3 != 0 || $f4 != 0) { $ErrorCode := 1 }
+    Temporaer anz
+    Get Low($anz)
+    IncLoop(i, 0, $anz) {
+      Skip
+    }
+
+/* Fg   4 Id 130 Typ   16 --------------------------------- negative Quittung */
+Datatype DaWVZNegQuittEmpfang				Fg   4 Id  130 Typ  16
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg   4 Id 162 Typ   16 --------------------------------- negative Quittung */
+Datatype DaWVZNegQuittEmpfang				Fg   4 Id  162 Typ  16	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg   4 Id 130 Typ   16 --------------------------------- negative Quittung */
+Meldungsinfo Datatype Virtuell  			Fg   4 Id 130 Typ  16
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   4 Id  130 Typ  17 --------------------------------------- Betriebsart */
+Datatype DaWVZBetrArtPhysIst				Fg   4 Id  130 Typ  17
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(WVZBetrArt)
+
+/* Fg   4 Id  162 Typ  17 --------------------------------------- Betriebsart */
+Datatype DaWVZBetrArtPhysIst				Fg   4 Id  162 Typ  17	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(WVZBetrArt)
+
+
+/* Fg   4 Id8 130 Typ  29 ------------------------------------ Kanalsteuerung */
+Datatype DaWVZKanalIst					Fg   4 Id8 130 Typ  29
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(Steuerbyte)
+
+/* Fg   4 Id8 162 Typ  29 ------------------------------------ Kanalsteuerung */
+Datatype DaWVZKanalIst					Fg   4 Id8 162 Typ  29	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(Steuerbyte)
+
+
+/* Fg   4 Id  131 Typ  33 ---------------------------------- Grundeinstellung */
+Datatype DaWVZGrundEinErf				Fg   4 Id  131 Typ  33
+  systime :=	$AktuelleZeit
+  Get Low	(anzeigeprinzip)
+  Get Low	(stellcode)
+  Get Low	(funktionsbyte)
+  If ($DeLaenge > 3) {  
+    Get Low (anzahl)
+    If (anzeigeprinzip == 4) {
+  	  IncLoop(i, 0, anzahl) {
+        Get Low	(code[$i*2])
+        Get Low	(code[$i*2+1])
+  	  }
+    } Else {
+	  Get Block code Offset 0 Size anzahl
+	}
+  }
+
+/* Fg   4 Id  131 Typ  36 ---------------------------- Geografische Kenndaten */
+Datatype DaWVZGeoKennIst				Fg   4 Id  131 Typ  36
+  systime :=	$AktuelleZeit
+  Get Low	(Landeskennung)
+  Get Low	(Strassenart)
+  Get High	(StrassenNr)
+  Get Low       (StrassenNr)
+  Get vHigh	(km)
+  Get High	(km)
+  Get Low       (km)
+  Get Low	(Fahrtrichtung)
+  Get Low	(Reserve)
+
+/* Fg   4 Id  131 Typ  43 ----------------------------------------- Codeliste */
+Datatype DaWVZCodeliste					Fg   4 Id  131 Typ  43
+  systime :=	$AktuelleZeit
+  Get Low	(anzeigeprinzip)
+  Get Low	(anzahl)
+  Get Block stellcode Offset 0 Size anzahl
+
+/* Fg   4 Id  131 Typ  44 ------------------------------------ Codedefinition */
+Datatype DaWVZCodedefErf				Fg   4 Id  131 Typ  44
+  systime :=	$AktuelleZeit
+  Get Low	(anzeigeprinzip)
+  Get Low	(stellcode)
+  Get Low	(anzahl)
+  If ( anzeigeprinzip == 4 ) {
+    Get Block code Offset 0 Size anzahl*2
+  } Else {
+    If ( anzeigeprinzip == 8 ) {
+      Get Block code Offset 0 Size anzahl*4
+    } Else {
+      Get Block code Offset 0 Size anzahl
+    } 
+  }
+  
+/* Fg   4 Id  133 Typ  49 --------------------------------- Helligkeit AQ Ist */
+Datatype DaWVZHellAQIst					Fg   4 Id  133 Typ  49
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(WVZHell)
+  Get Low	(WVZHellBetrArt)
+
+/* Fg   4 Id  165 Typ  49 --------------------------------- Helligkeit AQ Ist */
+Datatype DaWVZHellAQIst					Fg   4 Id  165 Typ  49	Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(WVZHell)
+  Get Low	(WVZHellBetrArt)
+
+/* Fg   4 Id  133 Typ  55 -------------------------------------- Stellzustand */
+Datatype DaWVZStellzustandErf				Fg   4 Id  133 Typ  55 
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(anzeigeprinzip)
+  Get Low	(stellcode)
+  Get Low	(funktionsbyte)
+  If (funktionsbyte == 82) {
+    funktionsbyte := 1
+  }
+  If ($DeLaenge > 3) {
+    Get Low (anzahl)
+    If (anzeigeprinzip == 4) {
+  	  IncLoop(i, 0, anzahl) {
+        Get Low	(code[$i*2])
+        Get Low	(code[$i*2+1])
+  	  }
+    } Else {
+	  Get Block code Offset 0 Size anzahl
+	}
+  }
+
+/* Fg   4 Id  133 Typ  55 -------------------------------------- Stellzustand */
+Datatype DaWVZStellzustandErf				Fg   4 Id  165 Typ  55 Historisch
+  systime :=	$AktuelleZeit
+  folgenummer :=$folgenummer
+  Get Low	(anzeigeprinzip)
+  Get Low	(stellcode)
+  Get Low	(funktionsbyte)
+  If ($DeLaenge > 3) {
+    Get Low (anzahl)
+    If (anzeigeprinzip == 4) {
+  	  IncLoop(i, 0, anzahl) {
+        Get Low	(code[$i*2])
+        Get Low	(code[$i*2+1])
+  	  }
+    } Else {
+	  Get Block code Offset 0 Size anzahl
+	}
+  }
+
+/* ========================================================================== */
+/* FG 6 (Empfang SM-UZ)                                                       */
+/* ========================================================================== */
+
+/* Fg   6 Id 129 Typ   1 ---------------------------------- DE-Fehlermeldung  */
+Datatype DaVLTFehlerDE					Fg   6 Id  129 Typ   1
+  systime :=	$AktuelleZeit
+  Get Low	(Fehlercode)
+  Get Low	(Hersteller)
+
+/* Fg   6 Id 129 Typ   1 ----------------------------------- DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   6 Id  129 Typ   1
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+
+/* Fg   6 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Datatype DaVLTErgFehlerDE				Fg   6 Id  129 Typ  14
+  systime :=	$AktuelleZeit
+  Get Low       (Hersteller)
+  Skip
+  Get Low       (Fehlerbyte1)
+  Get Low       (Fehlerbyte2)
+  Get Low       (Fehlerbyte3)
+  Get Low       (Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg   6 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   6 Id  129 Typ  14
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low       ($HerstellerCode)
+	Skip
+	Temporaer f1
+	Temporaer f2
+	Temporaer f3
+	Temporaer f4
+	Get Low ($f1)
+	Get Low ($f2)
+	Get Low ($f3)
+	Get Low ($f4)
+    $ErrorCode := 0
+    If ($f1 != 0 || $f2 != 0 || $f3 != 0 || $f4 != 0) { $ErrorCode := 1 }
+    Temporaer anz
+    Get Low($anz)
+    IncLoop(i, 0, $anz) {
+      Skip
+    }
+  
+  
+/* Fg   6 Id 130 Typ   16 --------------------------------- negative Quittung */
+Datatype DaVLTNegQuittEmpfang				Fg   6 Id  130 Typ  16
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg   6 Id 130 Typ   16 --------------------------------- negative Quittung */
+Meldungsinfo Datatype Virtuell				Fg   6 Id  130 Typ  16
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+  
+
+/* Fg   6 Id8 130 Typ  29 ------------------------------------ Kanalsteuerung */
+Datatype DaVLTKanalIst					Fg   6 Id8 130 Typ  29
+  systime :=	$AktuelleZeit
+  Get Low	(Steuerbyte)
+
+
+/* Fg   6 Id 131 Typ  32 -------------------------- VLT-Betriebsparameter Ist */
+Datatype DaVLTBetriebsParamIst				Fg   6 Id  131 Typ  32
+  systime :=	$AktuelleZeit
+  Get Low	(ErfassPeriode)
+  Get High	(ErfassPeriode)
+  Get Low	(Uebertragung)
+
+
+/* Fg   6 Id 131 Typ  32 ------------------------- Geografische Kenndaten Ist */
+Datatype DaVLTGeoKennIst				Fg   6 Id  131 Typ  36
+  systime :=	$AktuelleZeit
+  Get Low	(Landeskennung)
+  Get Low	(Strassenart)
+  Get High	(StrassenNr)
+  Get Low   (StrassenNr)
+  Get vHigh	(km)
+  Get High	(km)
+  Get Low   (km)
+  Get Low	(Fahrtrichtung)
+  Get Low	(Reserve)
+
+/* Fg   6 Id 132 Typ  48 ---------------------------------------- Tuerkontakt */
+Datatype DaVLTTuerkontakt_erf					Fg   6 Id  132 Typ  48
+  Get Low	(zustand)
+
+/* Fg   6 Id 132 Typ  48 ---------------------------------------- Tuerkontakt */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  48
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ  49 ----------------------------- Temperaturueberwachung */
+Datatype DaVLTTemperatur_erf			    	Fg   6 Id  132 Typ  49
+  Get Low	(zustand)
+
+/* Fg   6 Id 132 Typ  49 ----------------------------- Temperaturueberwachung */
+Meldungsinfo Datatype Virtuell			    	Fg   6 Id  132 Typ  49
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ  50 ---------------------------------------------- Licht */
+Datatype DaVLTLicht_erf							Fg   6 Id  132 Typ  50
+  Get Low	(zustand)
+
+/* Fg   6 Id 132 Typ  50 ---------------------------------------------- Licht */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  50
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ  51 ------------------------------------ Stromversorgung */
+Datatype DaVLTStrom_erf							Fg   6 Id  132 Typ  51
+  Get Low	(zustand)
+
+/* Fg   6 Id 132 Typ  51 ------------------------------------ Stromversorgung */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  51
+  Get Low       ($ErrorCode)
+ 
+/* Fg   6 Id 132 Typ  52 -------------------------------------------- Heizung */
+Datatype DaVLTHeizung_erf						Fg   6 Id  132 Typ  52
+  Get Low	(zustand)
+
+/* Fg   6 Id 132 Typ  52 -------------------------------------------- Heizung */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  52
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ  53 ------------------------------------------- Lueftung */
+Datatype DaVLTLueftung_erf						Fg   6 Id  132 Typ  53 
+  Get Low	(zustand)        
+
+/* Fg   6 Id 132 Typ  53 ------------------------------------------- Lueftung */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  53
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ  54 -------------------------------------- Ueberspannung */
+Datatype DaVLTUeberspannung_erf					Fg   6 Id  132 Typ  54 
+  Get Low	(zustand)        
+
+/* Fg   6 Id 132 Typ  54 -------------------------------------- Ueberspannung */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  54
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ  55 ---------------------------------------- Vandalismus */
+Datatype DaVLTAlarm_erf							Fg   6 Id  132 Typ  55 
+  Get Low	(zustand)        
+
+/* Fg   6 Id 132 Typ  55 ---------------------------------------- Vandalismus */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  55
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ  56 ---------------------------------------- Solaranlage */
+Datatype DaVLTSolaranlage_erf					Fg   6 Id  132 Typ  56 
+  Get Low	(zustand)        
+  Get Low	(ladespannung)        
+  Get Low	(ladestrom)        
+
+/* Fg   6 Id 132 Typ  56 ---------------------------------------- Solaranlage */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ  56
+  Get Low       ($ErrorCode)
+  Skip /*	(ladespannung)      */  
+  Skip /*	(ladestrom)         */
+
+
+/* Fg   6 Id 132 Typ 132 ------------------------------------ Hoehenkontrolle */
+Datatype DaVLTHoehenkontrolle_erf	        	Fg   6 Id  132 Typ 132
+  Skip /* Hersteller immer Siemens */
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low	(zustand)        
+
+/* Fg   6 Id 132 Typ 132 ------------------------------------ Hoehenkontrolle */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ 132
+  Get Low       ($HerstellerCode)
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low       ($ErrorCode)
+
+
+/* Fg   6 Id 132 Typ 220 -------------------------------------- Alarm Encoder */
+/* Fg   6 Id 132 Typ 128 -------------------------------------- Alarm Encoder */
+Datatype DaVLTAlarmEncoder_erf					Fg   6 Id  132 Typ 220
+  Skip /* Hersteller immer Siemens */
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low	(zustand)        
+Datatype DaVLTAlarmEncoder_erf					Fg   6 Id  132 Typ 128
+  Skip /* Hersteller immer Siemens */
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low	(zustand)        
+  
+/* Fg   6 Id 132 Typ 220 -------------------------------------- Alarm Encoder */
+/* Fg   6 Id 132 Typ 128 -------------------------------------- Alarm Encoder */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ 220
+  Get Low       ($HerstellerCode)
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low       ($ErrorCode)
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ 128
+  Get Low       ($HerstellerCode)
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low       ($ErrorCode)
+
+
+/* Fg   6 Id 132 Typ 221 --------------------------------  Encoder-Erdschluss */
+/* Fg   6 Id 132 Typ 131 --------------------------------  Encoder-Erdschluss */
+Datatype DaVLTAlarmEncoderErdschluss_erf		Fg   6 Id  132 Typ 221
+  Skip /* Hersteller immer Siemens */
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+Get Low	(zustand)        
+Datatype DaVLTAlarmEncoderErdschluss_erf		Fg   6 Id  132 Typ 131
+  Skip /* Hersteller immer Siemens */
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+Get Low	(zustand)        
+  
+/* Fg   6 Id 132 Typ 221 --------------------------------- Encoder-Erdschluss */
+/* Fg   6 Id 132 Typ 131 --------------------------------- Encoder-Erdschluss */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ 221
+  Get Low       ($HerstellerCode)
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low       ($ErrorCode)
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ 131
+  Get Low       ($HerstellerCode)
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low       ($ErrorCode)
+
+
+/* Fg   6 Id 132 Typ 222 --------------------------------- Schluesselschalter */
+Datatype DaVLTSchluesselschalter_erf			Fg   6 Id  132 Typ 222
+  Skip /* Hersteller immer Siemens */
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low	(zustand)        
+  
+/* Fg   6 Id 132 Typ 222 --------------------------------- Schluesselschalter */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ 222
+  Get Low       ($HerstellerCode)
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low       ($ErrorCode)
+
+/* Fg   6 Id 132 Typ 223 ---------------------------------------- Brandmelder */
+Datatype DaVLTBrandmelder_erf		           	Fg   6 Id  132 Typ 223
+  Skip /* Hersteller immer Siemens */
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low	(zustand)        
+  
+/* Fg   6 Id 132 Typ 223 ---------------------------------------- Brandmelder */
+Meldungsinfo Datatype Virtuell					Fg   6 Id  132 Typ 223
+  Get Low       ($HerstellerCode)
+  Skip /* Anzahl gueltiger Bits, immer 1 */
+  Get Low       ($ErrorCode)
+
+/* ========================================================================== */
+/* FG 8 (Empfang SM-UZ)                                                       */
+/* ========================================================================== */
+
+/* Fg   8 Id 129 Typ   1 ----------------------------------- DE-Fehlermeldung */
+Datatype DaGSWFehlerDE					Fg   8 Id 129 Typ   1
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlercode)
+  Get Low       (Hersteller)
+
+/* Fg   8 Id 129 Typ    1 ---------------------------------- DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   8 Id 129 Typ   1
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   8 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Datatype DaGSWErgFehlerDE				Fg   8 Id 129 Typ  14
+  systime :=	$AktuelleZeit
+  Get Low       (Hersteller)
+  Skip
+  Get Low       (Fehlerbyte1)
+  Get Low       (Fehlerbyte2)
+  Get Low       (Fehlerbyte3)
+  Get Low       (Fehlerbyte4)
+  Get Low       (AnzHerstellerbytes)
+  Get Block herstellerfehler Offset 0 Size AnzHerstellerbytes
+
+/* Fg   8 Id 129 Typ   14 ----------------------------- Erg. DE-Fehlermeldung */
+Meldungsinfo Datatype Virtuell				Fg   8 Id 129 Typ  14
+	$StateInfoBytes	:= $DeLaenge
+	$StateInfoOff	:= 0
+	Get Low       ($HerstellerCode)
+	Skip
+	Temporaer f1
+	Temporaer f2
+	Temporaer f3
+	Temporaer f4
+	Get Low ($f1)
+	Get Low ($f2)
+	Get Low ($f3)
+	Get Low ($f4)
+    $ErrorCode := 0
+    If ($f1 != 0 || $f2 != 0 || $f3 != 0 || $f4 != 0) { $ErrorCode := 1 }
+    Temporaer anz
+    Get Low($anz)
+    IncLoop(i, 0, $anz) {
+      Skip
+    }
+
+/* Fg   8 Id 130 Typ   16 --------------------------------- negative Quittung */
+Datatype DaGSWNegQuittEmpfang				Fg   8 Id 130 Typ  16
+  systime :=	$AktuelleZeit
+  Get Low       (Fehlerursache)
+  Get Low       (Hersteller)
+
+/* Fg   8 Id 130 Typ   16 --------------------------------- negative Quittung */
+Meldungsinfo Datatype Virtuell  			Fg   8 Id 130 Typ  16
+  Get Low       ($ErrorCode)
+  Get Low       ($HerstellerCode)
+
+/* Fg   8 Id8 130 Typ  29 ------------------------------------ Kanalsteuerung */
+Datatype DaGSWKanalIst					Fg   8 Id8 130 Typ  29 
+  systime :=	$AktuelleZeit
+  Get Low	(Steuerbyte)
+
+/* Fg   8 Id 131 Typ  32 ----------------------- GSW-Betriebsparameter Kamera */
+Datatype DaGSWBetrParaKameraIst  			Fg   8 Id 131 Typ  32 
+  systime :=	$AktuelleZeit
+  Get Low	(Uebertragungsverfahren)               
+  Get Low	(Erfassungsperiode)           
+  Get Low	(BetriebsartFront)
+  Get Low	(BetriebsartHeck)
+  
+/* Fg   8 Id 131 Typ  33 ----------------------- GSW-Betriebsparameter Kamera */
+Datatype DaGSWBetrParaMessIst  				Fg   8 Id 131 Typ  33 
+  systime :=	$AktuelleZeit
+  Get Low	(LkwUeberholverbot)               
+  Get Low	(VmaxPkw)
+  Get Low	(VauslPkw)
+  Get Low	(VmaxLkw)
+  Get Low	(VauslLkw)
+  Get Low	(VmaxBus)
+  Get Low	(VauslBus)
+  Get Low	(anzVausl)
+  IncLoop(i, 0, anzVausl) {
+	  Get Low	(Vmax[$i])
+	  Get Low	(Vausl[$i])
+  }
+  
+/* Fg   8 Id 131 Typ  36 ----------------------------- Geografische Kenndaten */
+Datatype DaGSWGeoKennIst				Fg   8 Id 131 Typ  36
+  systime :=	$AktuelleZeit
+  Get Low       (Landeskennung)
+  Get Low       (Strassenart)
+  Get High	(StrassenNr)
+  Get Low       (StrassenNr)
+  Get vHigh	(km)
+  Get High	(km)
+  Get Low       (km)
+  Get Low       (Fahrtrichtung)
+  Get Low       (Reserve)
+
+/* Fg   8 Id 132 Typ  48 ---------------------------------- GSW-Ergebniswerte */
+Datatype DaGSWBildZaehler  			        Fg   8 Id 132 Typ  48
+  systime :=	$AktuelleZeit
+  Get Low       (BildzaehlerFront)
+  Get High      (BildzaehlerFront)
+  Get Low       (BildzaehlerHeck)
+  Get High      (BildzaehlerHeck)
+
+
+/* ========================================================================== */
+/* ENDE rcv-UZ                                                                */
+/* ========================================================================== */
+
+#endif
+

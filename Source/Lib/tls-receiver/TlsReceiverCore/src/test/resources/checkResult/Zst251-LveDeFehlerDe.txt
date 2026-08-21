@@ -1,0 +1,72 @@
+[ {
+  "address" : "50463009",
+  "deMeta" : {
+    "deBlockRaw" : "AAY=",
+    "deNr" : 33,
+    "seqDeInETel" : 1,
+    "typ" : 1
+  },
+  "etel" : null,
+  "etelMeta" : {
+    "fg" : 1,
+    "id" : 129,
+    "job" : 0,
+    "numDeInETel" : 2
+  },
+  "items" : [ {
+    "asArray" : null,
+    "asBlock" : null,
+    "asDate" : null,
+    "asDouble" : null,
+    "asGregorianCalendar" : null,
+    "asItemList" : null,
+    "asLong" : 0,
+    "asString" : null,
+    "consumedSize" : 1,
+    "name" : "Fehlercode",
+    "type" : "Integer",
+    "value" : 0
+  }, {
+    "asArray" : null,
+    "asBlock" : null,
+    "asDate" : null,
+    "asDouble" : null,
+    "asGregorianCalendar" : null,
+    "asItemList" : null,
+    "asLong" : 6,
+    "asString" : null,
+    "consumedSize" : 1,
+    "name" : "Hersteller",
+    "type" : "Integer",
+    "value" : 6
+  }, {
+    "asArray" : null,
+    "asBlock" : null,
+    "asDate" : null,
+    "asDouble" : null,
+    "asGregorianCalendar" : null,
+    "asItemList" : null,
+    "asLong" : 0,
+    "asString" : null,
+    "consumedSize" : 0,
+    "name" : "#Puffer",
+    "type" : "Integer",
+    "value" : 0
+  }, {
+    "asArray" : null,
+    "asBlock" : null,
+    "asDate" : 1533993928000,
+    "asDouble" : null,
+    "asGregorianCalendar" : null,
+    "asItemList" : null,
+    "asLong" : 1533993928000,
+    "asString" : null,
+    "consumedSize" : 4,
+    "name" : "Zeitstempel",
+    "type" : "Date",
+    "value" : 1533993928000
+  } ],
+  "name" : "LVEFehlerDE",
+  "subsequent" : false,
+  "tele" : null
+} ]

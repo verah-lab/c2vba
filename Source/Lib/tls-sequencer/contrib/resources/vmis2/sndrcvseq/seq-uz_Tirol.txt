@@ -1,0 +1,335 @@
+/************************************************************************/
+/* Specfile fuer Sequencer UZ Hessen                                    */
+/************************************************************************/
+
+#include "spec.h"
+#include "seq-uz_allgemein.txt"
+
+
+/* Externe Trigger aufgrund von Roten und Gelben LSA vor Tunnelportalen
+*/
+Bei Eingang von DaWVZStellzustandABIst
+{
+  /*   WZG_LSA("=B501200765P001.P02", "LSA12W_076,260"
+  */
+  If ($Eaid == 2002479) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003876) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003876) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003877) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003877) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+  
+  /*   WZG_LSA("=B501200765P002.P02", "LSA12O_076,770"
+  */  
+  If ($Eaid == 2002477) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003878) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003878) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003879) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003879) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+  
+  /* WZG_LSA("=B501300021P005.P02", "LSA13WS_001,376",
+  */
+  If ($Eaid == 2003308) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003884) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003884) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003885) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003885) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+  
+  /* WZG_LSA("=B501300021P007.P02", "LSA13WN_001,547",
+  */ 
+  If ($Eaid == 2003306) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003886) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003886) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003887) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003887) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+  
+  /* WZG_LSA("=B501300094P003.P02", "LSA13N_009,645",
+  */
+  If ($Eaid == 2002652) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003888) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003888) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2003889) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2003889) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+  
+  /* WZG_LSA("=B501300094P002.P02", "LSA13S_008,760",
+  */
+  If ($Eaid == 2002979) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2004097) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2004097) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2004098) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2004098) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+  
+  
+  
+  /* Milser Tunnel FR Bregenz bei zugehoeriger LSA Rot oder Gelb
+     WZG_A01_LSA("VLSA_A12_1_938_AS",
+     2028717|116|VLSA_A12_2_965_IS|1|Y|
+     2028471|112|Tu_Mils_Kuf_ROT|1|Y|
+     2028472|112|Tu_Mils_Kuf_GELB|1|Y|
+  */
+  If ($Eaid == 2028717) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2028471) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2028471) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2028472) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2028472) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+  /* Milser Tunnel FR Bregenz bei zugehoeriger LSA Rot oder Gelb
+     WZG_A01_LSA("VLSA_A12_1_938_AS",
+     2028530|116|VLSA_A12_1_938_AS|1|Y|
+     2028473|112|Tu_Mils_Bre_ROT|1|Y|
+     2028474|112|Tu_Mils_Bre_GELB|1|Y|  
+  */
+  If ($Eaid == 2028530) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2028473) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2028473) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+    If (DaWVZStellzustandABIst-New.stellcode == 108   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2028474) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2028474) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+}
+
+/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen
+*/
+Bei Eingang von DaSYSFehlerDUE
+{
+  If (Fehlercode == 0) {
+
+    /* KRI 1 */
+    If ($Eaid == 2003086) {
+      Ea(2001231) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI 2 */
+    If ($Eaid == 2003087) {
+      Ea(2001235) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    
+    /* KRI 3 */
+    If ($Eaid == 2003088) {
+      Ea(2001239) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI 4 */
+    If ($Eaid == 2003089) {
+      Ea(2001243) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+
+    /* KRI 5 */
+    If ($Eaid == 2003090) {
+      Ea(2001246) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    
+    /* KRI2C_Tirol */
+    If ($Eaid == 2036335) {
+      Ea(2034308) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+	
+    /* KRI_SiUm_Amras */
+    If ($Eaid == 2036334) {
+      Ea(2034306) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    
+    /* 2028877 KRI_A12_0_ABM_Imst  ->  2027997 KRI_A12_0_ABM_Imst.DE0  */
+    If ($Eaid == 2028877) {
+      Ea(2027997) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    
+    /* 2055109 KRI_A13_0_Berg_Isel_FR1  ->  2055020 KRI_A13_0_Berg_Isel_FR1.DE0  */
+    If ($Eaid == 2055109) {
+      Ea(2055020) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+    
+    /* 2055110 KRI_A13_0_Berg_Isel_FR2  ->  2055022 KRI_A13_0_Berg_Isel_FR2.DE0  */
+    If ($Eaid == 2055110) {
+      Ea(2055022) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+    }
+  }
+}
+
+/* Wenn ein SLT-Richtungs-DE neue Programmanforderungen sendet,
+    dann das höchstpriore aktive Programm in DaWVZStellzustandABIst eintragen
+    (Prioritätsfolge manuell codiert)
+*/
+Bei Eingang von DaSLTPrgAnforderungenErf
+{
+  If ($Eaid == 2035504) {
+    If (DaSLTPrgAnforderungenErf-New.code[115] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 135} Else {
+     If (DaSLTPrgAnforderungenErf-New.code[117] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 136} Else {
+      If (DaSLTPrgAnforderungenErf-New.code[119] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 137} Else {
+       If (DaSLTPrgAnforderungenErf-New.code[121] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 138} Else {
+        If (DaSLTPrgAnforderungenErf-New.code[111] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 133} Else {
+         If (DaSLTPrgAnforderungenErf-New.code[109] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 132} Else {
+          If (DaSLTPrgAnforderungenErf-New.code[107] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 131} Else {
+           If (DaSLTPrgAnforderungenErf-New.code[113] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 134} Else {
+            If (DaSLTPrgAnforderungenErf-New.code[105] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 130} Else {
+            If (DaSLTPrgAnforderungenErf-New.code[85] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 103} Else {
+              If (DaSLTPrgAnforderungenErf-New.code[97] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 115} Else {
+               If (DaSLTPrgAnforderungenErf-New.code[99] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 116} Else {
+                If (DaSLTPrgAnforderungenErf-New.code[101] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 117} Else {
+                 If (DaSLTPrgAnforderungenErf-New.code[103] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 118} Else {
+                  If (DaSLTPrgAnforderungenErf-New.code[93] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 113} Else {
+                   If (DaSLTPrgAnforderungenErf-New.code[91] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 112} Else {
+                    If (DaSLTPrgAnforderungenErf-New.code[89] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 111} Else {
+                     If (DaSLTPrgAnforderungenErf-New.code[95] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 114} Else {
+                      If (DaSLTPrgAnforderungenErf-New.code[87] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 110} Else {
+                       If (DaSLTPrgAnforderungenErf-New.code[83] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 102} Else {
+                        If (DaSLTPrgAnforderungenErf-New.code[77] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 41} Else {
+                         If (DaSLTPrgAnforderungenErf-New.code[19] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 10} Else {
+                          If (DaSLTPrgAnforderungenErf-New.code[17] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 9} Else {
+                           If (DaSLTPrgAnforderungenErf-New.code[15] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 8} Else {
+                            If (DaSLTPrgAnforderungenErf-New.code[7] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 4} Else {
+                             If (DaSLTPrgAnforderungenErf-New.code[33] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 17} Else {
+                              If (DaSLTPrgAnforderungenErf-New.code[47] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 24} Else {
+                               If (DaSLTPrgAnforderungenErf-New.code[73] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 37} Else {
+                                If (DaSLTPrgAnforderungenErf-New.code[75] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 38} Else {
+                                 If (DaSLTPrgAnforderungenErf-New.code[69] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 35} Else {
+                                  If (DaSLTPrgAnforderungenErf-New.code[71] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 36} Else {
+                                   If (DaSLTPrgAnforderungenErf-New.code[27] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 14} Else {
+                                    If (DaSLTPrgAnforderungenErf-New.code[29] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 15} Else {
+                                     If (DaSLTPrgAnforderungenErf-New.code[23] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 12} Else {
+                                      If (DaSLTPrgAnforderungenErf-New.code[25] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 13} Else {
+                                       If (DaSLTPrgAnforderungenErf-New.code[1] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 1} Else {
+                                        If (DaSLTPrgAnforderungenErf-New.code[63] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 32} Else {
+                                         If (DaSLTPrgAnforderungenErf-New.code[79] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 42} Else {
+                                          If (DaSLTPrgAnforderungenErf-New.code[9] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 5} Else {
+                                           If (DaSLTPrgAnforderungenErf-New.code[5] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 3} Else {
+                                            If (DaSLTPrgAnforderungenErf-New.code[41] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 21} Else {
+                                             If (DaSLTPrgAnforderungenErf-New.code[31] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 16} Else {
+                                              If (DaSLTPrgAnforderungenErf-New.code[21] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 11} Else {
+                                               If (DaSLTPrgAnforderungenErf-New.code[39] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 20} Else {
+                                                If (DaSLTPrgAnforderungenErf-New.code[61] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 31} Else {
+                                                 If (DaSLTPrgAnforderungenErf-New.code[37] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 19} Else {
+                                                  If (DaSLTPrgAnforderungenErf-New.code[59] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 30} Else {
+                                                   If (DaSLTPrgAnforderungenErf-New.code[57] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 29} Else {
+                                                    If (DaSLTPrgAnforderungenErf-New.code[55] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 28} Else {
+                                                     If (DaSLTPrgAnforderungenErf-New.code[53] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 27} Else {
+                                                      If (DaSLTPrgAnforderungenErf-New.code[45] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 23} Else {
+                                                       If (DaSLTPrgAnforderungenErf-New.code[51] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 26} Else {
+                                                        If (DaSLTPrgAnforderungenErf-New.code[65] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 33} Else {
+                                                         If (DaSLTPrgAnforderungenErf-New.code[67] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 34} Else {
+                                                          If (DaSLTPrgAnforderungenErf-New.code[49] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 25} Else {
+                                                           If (DaSLTPrgAnforderungenErf-New.code[13] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 7} Else {
+                                                            If (DaSLTPrgAnforderungenErf-New.code[3] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 2} Else {
+                                                             If (DaSLTPrgAnforderungenErf-New.code[11] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 6} Else {
+                                                              If (DaSLTPrgAnforderungenErf-New.code[35] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 18} Else {
+                                                               If (DaSLTPrgAnforderungenErf-New.code[43] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 22} Else {
+                                                                If (DaSLTPrgAnforderungenErf-New.code[81] == 1) {Ea(2035504) in DaWVZStellzustandABIst.stellcode := 101}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+  }
+  If ($Eaid == 2034623) {
+    If (DaSLTPrgAnforderungenErf-New.code[93] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 118} Else {
+     If (DaSLTPrgAnforderungenErf-New.code[91] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 117} Else {
+      If (DaSLTPrgAnforderungenErf-New.code[89] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 116} Else {
+       If (DaSLTPrgAnforderungenErf-New.code[87] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 115} Else {
+        If (DaSLTPrgAnforderungenErf-New.code[83] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 113} Else {
+         If (DaSLTPrgAnforderungenErf-New.code[81] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 112} Else {
+          If (DaSLTPrgAnforderungenErf-New.code[79] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 111} Else {
+           If (DaSLTPrgAnforderungenErf-New.code[85] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 114} Else {
+            If (DaSLTPrgAnforderungenErf-New.code[77] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 110} Else {
+            If (DaSLTPrgAnforderungenErf-New.code[73] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 102} Else {
+              If (DaSLTPrgAnforderungenErf-New.code[111] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 138} Else {
+               If (DaSLTPrgAnforderungenErf-New.code[109] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 137} Else {
+                If (DaSLTPrgAnforderungenErf-New.code[107] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 136} Else {
+                 If (DaSLTPrgAnforderungenErf-New.code[105] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 135} Else {
+                  If (DaSLTPrgAnforderungenErf-New.code[101] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 133} Else {
+                   If (DaSLTPrgAnforderungenErf-New.code[99] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 132} Else {
+                    If (DaSLTPrgAnforderungenErf-New.code[97] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 131} Else {
+                     If (DaSLTPrgAnforderungenErf-New.code[103] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 134} Else {
+                      If (DaSLTPrgAnforderungenErf-New.code[95] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 130} Else {
+                       If (DaSLTPrgAnforderungenErf-New.code[75] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 103} Else {
+                        If (DaSLTPrgAnforderungenErf-New.code[67] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 41} Else {
+                         If (DaSLTPrgAnforderungenErf-New.code[17] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 10} Else {
+                          If (DaSLTPrgAnforderungenErf-New.code[15] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 9} Else {
+                           If (DaSLTPrgAnforderungenErf-New.code[13] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 8} Else {
+                            If (DaSLTPrgAnforderungenErf-New.code[7] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 4} Else {
+                             If (DaSLTPrgAnforderungenErf-New.code[31] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 17} Else {
+                              If (DaSLTPrgAnforderungenErf-New.code[45] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 24} Else {
+                               If (DaSLTPrgAnforderungenErf-New.code[65] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 40} Else {
+                                If (DaSLTPrgAnforderungenErf-New.code[63] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 39} Else {
+                                 If (DaSLTPrgAnforderungenErf-New.code[25] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 14} Else {
+                                  If (DaSLTPrgAnforderungenErf-New.code[27] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 15} Else {
+                                   If (DaSLTPrgAnforderungenErf-New.code[21] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 12} Else {
+                                    If (DaSLTPrgAnforderungenErf-New.code[23] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 13} Else {
+                                     If (DaSLTPrgAnforderungenErf-New.code[1] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 1} Else {
+                                      If (DaSLTPrgAnforderungenErf-New.code[61] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 32} Else {
+                                       If (DaSLTPrgAnforderungenErf-New.code[5] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 3} Else {
+                                        If (DaSLTPrgAnforderungenErf-New.code[39] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 21} Else {
+                                         If (DaSLTPrgAnforderungenErf-New.code[29] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 16} Else {
+                                          If (DaSLTPrgAnforderungenErf-New.code[19] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 11} Else {
+                                           If (DaSLTPrgAnforderungenErf-New.code[37] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 20} Else {
+                                            If (DaSLTPrgAnforderungenErf-New.code[59] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 31} Else {
+                                             If (DaSLTPrgAnforderungenErf-New.code[35] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 19} Else {
+                                              If (DaSLTPrgAnforderungenErf-New.code[57] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 30} Else {
+                                               If (DaSLTPrgAnforderungenErf-New.code[55] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 29} Else {
+                                                If (DaSLTPrgAnforderungenErf-New.code[53] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 28} Else {
+                                                 If (DaSLTPrgAnforderungenErf-New.code[51] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 27} Else {
+                                                  If (DaSLTPrgAnforderungenErf-New.code[43] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 23} Else {
+                                                   If (DaSLTPrgAnforderungenErf-New.code[49] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 26} Else {
+                                                    If (DaSLTPrgAnforderungenErf-New.code[47] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 25} Else {
+                                                     If (DaSLTPrgAnforderungenErf-New.code[11] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 7} Else {
+                                                      If (DaSLTPrgAnforderungenErf-New.code[3] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 2} Else {
+                                                       If (DaSLTPrgAnforderungenErf-New.code[9] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 6} Else {
+                                                        If (DaSLTPrgAnforderungenErf-New.code[33] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 18} Else {
+                                                         If (DaSLTPrgAnforderungenErf-New.code[41] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 22} Else {
+                                                          If (DaSLTPrgAnforderungenErf-New.code[71] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 101} Else {
+                                                           If (DaSLTPrgAnforderungenErf-New.code[69] == 1) {Ea(2034623) in DaWVZStellzustandABIst.stellcode := 42}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}
+
+
+
+
+
+
+
+

@@ -1,0 +1,245 @@
+// Hinweise:
+//
+// BYTE, SHORT, LONG sind Getter für Ganzzahlen. BYTE iste ohne Vorzeichen. SHORT und LONG
+// sind mit Vorzeichen und little endian. Um dies zu ändern, müssen die Zusätze 'signed', 
+// 'unsigned' und/oder 'big endian' verwendet werden
+//
+// NODE ist ein Getter speziell für Knotennummern. Diese sind immer ohne Vorzeichen und 'little endian'. 
+// 
+// TIME verwendet einen Spezifikations-String, z.B. 'h m s'.
+// Der String besteht aus Buchstaben, die durch Leerzeichen oder Doppelpunkte getrennt werden. 
+// Folgende Buchstaben werden unterstützt
+// d für Tag
+// M für Monat
+// c für Jahrhundert (ein Byte von 0-99)
+// y für Jahr (ein Byte von 0-99)
+// Y für Jahr (zwei Byte, 0-9999, litle endian)
+// h für Stunde, bit 8 enthält die Flagge für die Sommerzeit
+// m für Minute
+// s für Sekunde
+// z initialisiert Stunde/Minute/Sekunde mit null anstelle der aktuellen Uhrzeit, sollte als erstes verwendet werden
+// Wenn ein Buchstabe nicht verwendet wird, wird der entsprechende Wert aus der aktuellen Uhrzeit übernommen
+//
+// BLOCK liest ein Byte array ein. Die Größe kann auf folgende Arten ermittelt werden:
+// 'with size' erwartet die Größe im ersten byte
+// 'to end' liest alle bytes bis zum Ende des DE-Blocks
+//  'fixed size <n>' liest n bytes
+//
+// SKIP ignoriert exakt ein byte
+//
+// ARRAY [ ... ]
+// Einlesen eines Array von gleichen Objekten
+//
+// IF (condition) { ... } ELSE { ... }
+// Die condition prüft eine interne Variable auf einen vorgegebenen Wert.
+// Wenn die Variable gespeichert werden soll, muss dies mit einem zusätzlichen SET erfolgen
+// Das ELSE ist optional. 
+//
+// OPT { ... }
+// Liest die angegebenen Daten ein, falls der DE-Block noch nicht abgearbeitet ist.
+//
+// Interne Variablen unterscheiden sich in automatische und benutzerdefinierte Variablen.
+// Benutzerdefinierte Variablen beginnen mit dem '$' Zeichen.
+// Automatische Variablen beginnen mit dem '#'-Zeichen. Es existieren folgende automatische Variablen:
+// #Node Knotennummer
+// #TlsFg Funktionsgruppe des Einzeltelegramms
+// #TlsId Id des Einzeltelegramms
+// #TlsJob Jobnummer
+// #ActualTime Die aktuelle Uhrzeit
+// #De DE-Nummer
+// #DeLen Länge des DE-Blocks (inkl. DE-Nummer und DE-Typ)
+//
+// HEADER DE-Blöcke. DE-Blöcke, die als HEADER gekennzeichnet sind, speichern alle Inhalte automatisch 
+// in einer speziellen internen Variablen. Daher ist hier kein '$'-Zeichen zu verwenden
+//  
+// SET attribute := expression
+// Setzt den Wert eines Attributs mit dem Inhalt eines Ausdrucks.
+// Der Ausdruck kann eine interne Variable, eine konstante Zahl oder eine Verknüpfung
+// mit einem der Operatoren + - * / & >> << sein. Die Operatoren werden von links nach rechts
+// ohne Priorisierung ausgewertet. Eine Klammerung ist möglich.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// CUSTOM DATATYPES
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype Zeitstempel                                    Fg 2 Id 129-133 Typ 251 HEADER // Unix-Zeitstempel
+TIME "U" zeitstempel
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//FG 2
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype AXLDeFehler                                    Fg 2 Id 129 Typ 1 
+BYTE fehlercode
+BYTE hersteller
+
+Datatype AXLErgDeFehler                                 Fg 2 Id 129 Typ 14 
+BYTE hersteller
+BLOCK with size tlsFehlerbytes
+BLOCK with size herstellerFehlerbytes
+
+Datatype AXLNegativeQuittung                            Fg 2 Id 130 Typ 16 
+BYTE fehlerursache
+BYTE hersteller
+
+Datatype AXLPositiveQuittung                            Fg 2 Id 130 Typ 28 
+SET quittung := 0
+
+Datatype AXLKanalsteuerung                              Fg 2 Id 130 Typ 29 
+BYTE kanalsteuerbyte
+
+Datatype Zeitstempel                                    Fg 2 Id 129 Typ 30 HEADER
+TIME "h m s" zeitstempel
+
+Datatype AXLZeitstempel                                 Fg 2 Id 131,163 Typ 31 HEADER
+TIME "Y M d h m s" zeitstempel
+BYTE inval([100-255]) hundertstelsekunden
+unsigned SHORT laufendeNr
+unsigned SHORT gesamtzahl
+SET #Puffer := #TlsId == 163
+
+Datatype AXLBetriebsparameter                           Fg 2 Id 131 Typ 32
+SKIP
+SKIP 
+BYTE datenversion
+BYTE intervalldauer
+SKIP
+BYTE datenversionEinzel
+BYTE speicherung
+
+Datatype AXLGeoKenndaten                                Fg 2 Id 131 Typ 36
+BYTE landeskennung
+BYTE strassenart
+BCD 2 strassennummer
+BCD 3 $kilometrierung SET kilometrierung := $kilometrierung / 100 
+BYTE fahrtrichtung
+BYTE reservebyte
+
+Datatype AXLParameterAchslastGrenzwerte                 Fg 2 Id 131 Typ 37
+unsigned SHORT inval(65535) maxEinzelachslast1
+unsigned SHORT inval(65535) maxEinzelachslast
+BYTE inval(255) maxAbstandDoppelachse1
+unsigned SHORT inval(65535) maxDoppelachslast1
+BYTE inval(255) maxAbstandDoppelachse2
+unsigned SHORT inval(65535) maxDoppelachslast2
+BYTE inval(255) maxAbstandDoppelachse3
+unsigned SHORT inval(65535) maxDoppelachslast3
+BYTE inval(255) maxAbstandDreifachachse1
+unsigned SHORT inval(65535) maxDreifachachslast1
+BYTE inval(255) maxAbstandDreifachachse2
+unsigned SHORT inval(65535) maxDreifachachslast2
+ARRAY [
+BYTE fahrzeugtypCode
+unsigned SHORT inval(65535) maxGesamtgewicht
+] fahrzeugtypen
+
+Datatype AXLParameterAchslastklassen5p1                 Fg 2 Id 131 Typ 38
+ARRAY [unsigned SHORT inval(65535) grenze] einzelachslastklasseGrenzen
+ARRAY [unsigned SHORT inval(65535) grenze] doppelachslastklasseGrenzen
+ARRAY [unsigned SHORT inval(65535) grenze] dreifachachslastklasseGrenzen
+ARRAY [unsigned SHORT inval(65535) grenze] fahrzeugklasse3Grenzen
+ARRAY [unsigned SHORT inval(65535) grenze] fahrzeugklasse4Grenzen
+ARRAY [unsigned SHORT inval(65535) grenze] fahrzeugklasse5Grenzen
+
+Datatype AXLParameterAchslastklassen8p1                 Fg 2 Id 131 Typ 39
+ARRAY [unsigned SHORT inval(65535) grenze] einzelachslastklasseGrenzen
+ARRAY [unsigned SHORT inval(65535) grenze] doppelachslastklasseGrenzen
+ARRAY [unsigned SHORT inval(65535) grenze] dreifachachslastklasseGrenzen
+ARRAY [unsigned SHORT inval(65535) grenze] fahrzeugklasse3Grenzen
+ARRAY [unsigned SHORT inval(65535) grenze] fahrzeugklasse5Grenzen
+ARRAY [unsigned SHORT inval(65535) grenze] fahrzeugklasse8Grenzen
+ARRAY [unsigned SHORT inval(65535) grenze] fahrzeugklasse9Grenzen
+
+Datatype AXLEinzelergebnisVersion1                      Fg 2 Id 132,164 Typ 60
+BYTE fahrzeugtyp
+unsigned SHORT inval(65535) fahrzeuglaenge
+BYTE inval(255) geschwindigkeit
+unsigned SHORT inval(65535) fahrzeugabstand
+unsigned SHORT inval(65535) gesamtgewicht
+BYTE ueberladung
+ARRAY [
+BYTE achsart
+unsigned SHORT inval(65535) achslast
+unsigned SHORT inval(65535) achsabstand
+] achslastdatengruppen
+SET #Puffer := #TlsId == 164
+
+Datatype AXLEinzelergebnisVersion2                      Fg 2 Id 132,164 Typ 61
+BYTE fahrzeugtyp
+unsigned SHORT inval(65535) fahrzeuglaenge
+BYTE inval(255) geschwindigkeit
+unsigned SHORT inval(65535) fahrzeugabstand
+unsigned SHORT inval(65535) gesamtgewicht
+BYTE  ueberladung
+ARRAY [
+BYTE achsart
+BYTE inval(255, $? / 10) radlastLinks
+BYTE inval(255, $? / 10) radlastRechts
+unsigned SHORT inval(65535) achsabstand
+] achslastdatengruppen
+SET #Puffer := #TlsId == 164
+
+Datatype AXLEinzelergebnisVersion3                      Fg 2 Id 132,164 Typ 62
+BYTE fahrzeugtyp
+unsigned SHORT inval(65535) fahrzeuglaenge
+BYTE inval(255) geschwindigkeit
+unsigned SHORT inval(65535) fahrzeugabstand
+NODE inval(16777215) gesamtgewicht
+BYTE  ueberladung
+ARRAY [
+BYTE achsart
+unsigned SHORT inval(65535) achslast
+unsigned SHORT inval(65535) achsabstand
+] achslastdatengruppen
+SET #Puffer := #TlsId == 164
+
+Datatype AXLIntervallzeitstempel                        Fg 2 Id 132,164 Typ 64 HEADER
+TIME "z y M d h m" zeitstempel
+BYTE intervalllaenge
+SET #Puffer := #TlsId == 164
+
+Datatype AXLErgebnisVersion10                           Fg 2 Id 132,164 Typ 65
+ARRAY [unsigned SHORT inval(65535) klasse] einzelachslastklassen
+ARRAY [unsigned SHORT inval(65535) klasse] doppelachslastklassen
+ARRAY [unsigned SHORT inval(65535) klasse] dreifachachslastklassen
+BYTE inval(255) ueberladungenKlasse3
+BYTE inval(255) ueberladungenKlasse4
+BYTE inval(255) ueberladungenKlasse5
+ARRAY [unsigned SHORT inval(65535) klasse] fahrzeugklassen3
+ARRAY [unsigned SHORT inval(65535) klasse] fahrzeugklassen4
+ARRAY [unsigned SHORT inval(65535) klasse] fahrzeugklassen5
+
+
+Datatype AXLErgebnisVersion11                           Fg 2 Id 132,164 Typ 66
+ARRAY [unsigned SHORT inval(65535) klasse] einzelachslastklassen
+ARRAY [unsigned SHORT inval(65535) klasse] doppelachslastklassen
+ARRAY [unsigned SHORT inval(65535) klasse] dreifachachslastklassen
+BYTE inval(255) ueberladungenKlasse3
+BYTE inval(255) ueberladungenKlasse5
+BYTE inval(255) ueberladungenKlasse8
+BYTE inval(255) ueberladungenKlasse9
+ARRAY [unsigned SHORT inval(65535) klasse] fahrzeugklassen3
+ARRAY [unsigned SHORT inval(65535) klasse] fahrzeugklassen5
+ARRAY [unsigned SHORT inval(65535) klasse] fahrzeugklassen8
+ARRAY [unsigned SHORT inval(65535) klasse] fahrzeugklassen9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

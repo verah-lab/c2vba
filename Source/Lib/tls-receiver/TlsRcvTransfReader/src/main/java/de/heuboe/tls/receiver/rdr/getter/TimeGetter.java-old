@@ -1,0 +1,467 @@
+package de.heuboe.tls.receiver.rdr.getter;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Map;
+import java.util.TimeZone;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import de.heuboe.tls.receiver.interfaces.DataItem;
+import de.heuboe.tls.receiver.interfaces.DataItem.DataItemType;
+import de.heuboe.tls.receiver.interfaces.SystemMessageManagement;
+import de.heuboe.tls.receiver.rdr.item.TimeItem;
+import de.heuboe.tls.tlstele.meta.Helper;
+
+/**
+ * @author ronald
+ */
+
+/**
+ * These Getters have the purpose to extract TLS time out of a byte array
+ * Objects of this class get TLS time
+ */
+public class TimeGetter extends AbstractGetter { // NOSONAR here is a comment
+
+    private static final Logger LOGGER            = LogManager.getLogger( TimeGetter.class );
+    private static final String DEBLOCK_TOO_SHORT = "DeBlock too short";
+    private static final String STD_TIMEFMT_SHORT = "dd.MM.yyyy HH:mm:ss z";
+
+    private static SystemMessageManagement smm = null;
+    
+    private static int          timetolerance;                                               // number of seconds in the future acceptable for a timestamp
+
+    private static TimeZone     defaultTimeZone   = TimeZone.getTimeZone( "Europe/Berlin" ); // timezone where tls timestamps operate in
+    // Europe/Berlin MEZ with daylight saving time
+    // GMT+01:00 MEZ but always wintertime !needs to be exact!
+    // UTC ...
+
+    public static void setTimeZone( String tzID ) { // need a valid timezone ID here. otherwise check may fails
+        defaultTimeZone = TimeZone.getTimeZone( tzID );
+        if ( !tzID.equals( defaultTimeZone.getID() ) ) {
+            throw new IllegalArgumentException( tzID + " seems to be no valid timezone id" );
+        }
+        LOGGER.info( "Using timezone " + defaultTimeZone.getID() + " for TLS timestamps" );
+    }
+
+    public static void setTimetolerance( int tolerance ) {
+        timetolerance = tolerance;
+    }
+
+    public static void setSystemMessageManagement( SystemMessageManagement smm ) {
+        TimeGetter.smm = smm;
+    }
+
+    private List<String> spec          = new ArrayList<>();
+    private boolean      dstCorrection = true;
+    private boolean      unixTime      = false;
+    private String       targetType    = "";
+
+    /**
+     * Constructor
+     * @param letters how to interpret the bytes or an instruction (z)
+     * @param name Name of the resulting object
+     * @param targetType For type evaluating after parsing
+     */
+    public TimeGetter( String letters, String name, String targetType ) {
+        super( name );
+        this.targetType = targetType;
+        if ( letters.startsWith( "UTC>" ) ) {
+            dstCorrection = false;
+            letters = letters.substring( "UTC>".length() );
+        }
+        if ( "U".equals( letters ) ) {
+            unixTime = true;
+        } else {
+            for ( String letter : letters.split( "[ :]" ) ) {
+                switch ( letter ) {
+                    case "c":
+                    case "y":
+                    case "Y":
+                    case "m":
+                    case "d":
+                    case "h":
+                    case "M":
+                    case "s":
+                    case "z":
+                        // these letters are ok
+                        spec.add( letter );
+                        break;
+                    default:
+                        // all other letters are invalid
+                        throw new IllegalArgumentException( "Invalid time specification: " + letters );
+                }
+            }
+        }
+    }
+
+    private static int getUnsignedIntFromByte( final byte b ) {
+        int res = b;
+        if ( 0 > b ) {
+            res += 256;
+        }
+        return res;
+    }
+
+    private static int getUnsignedIntFromInt( final int i ) {
+        int res = i;
+        if ( 0 > i ) {
+            res += 256;
+        }
+        return res;
+    }
+
+    private static class BoolRef {
+        private boolean b;
+
+        BoolRef( boolean init ) {
+            this.b = init;
+        }
+
+        public boolean isTrue() {
+            return b;
+        }
+
+        public void setValue( boolean b ) {
+            this.b = b;
+        }
+    }
+
+    private static class IntRef {
+        private int i;
+
+        IntRef( int init ) {
+            this.i = init;
+        }
+
+        public int getInt() {
+            return i;
+        }
+
+        public void setInt( int b ) {
+            this.i = b;
+        }
+    }
+
+    private enum CorrectionModules {
+        INIT, DAY, MONTH, NOTREQUIRED
+    }
+
+    private static class CorrectionModuleslRef {
+        private CorrectionModules b;
+
+        CorrectionModuleslRef( CorrectionModules init ) {
+            this.b = init;
+        }
+
+        public CorrectionModules getVal() {
+            return b;
+        }
+
+        public void setB( CorrectionModules b ) {
+            this.b = b;
+        }
+    }
+
+    private static TimeZone tzUTC = TimeZone.getTimeZone( "UTC" );
+    private static boolean doDebugTimes = false;
+
+    /*
+     * (non-Javadoc)
+     * @see de.heuboe.tls.receiver.interfaces.GetterRule#get(byte[], int, java.util.Map)
+     * Analyse a sequence of bytes which are meant to be time
+     * preset is done to RcvTimeBase (if present) the original time recorded of of data delivered at a later stage
+     * if real time analysis (no RcvTimeBase present) is done, preset is made to the timestamp of the construction time of the telegram being analysed
+     */
+    @Override
+    public DataItem get( byte[] data, int ofs, Map<String, DataItem> etelVars ) {
+        GregorianCalendar actualTime = (GregorianCalendar) etelVars.get( "#ActualTime" ).getAsGregorianCalendar().clone();
+        if ( null != etelVars.get( "#RcvTimeBase" ) ) {
+            actualTime = etelVars.get( "#RcvTimeBase" ).getAsGregorianCalendar();
+        }
+        int dstoff = actualTime.get( Calendar.DST_OFFSET );
+        // this instead of using set will avoid loss of correct dst
+        actualTime.add( Calendar.MILLISECOND, -actualTime.get(Calendar.MILLISECOND) );
+        long millis = actualTime.getTimeInMillis();
+        if (doDebugTimes) {LOGGER.debug( "Start 0 -> Zeit: " + printTime( actualTime ) + " ms " + millis );}
+        
+//        LOGGER.debug( "TG ms: " + millis + " dstoff " + dstoff );
+        boolean currentlyInDst = (dstoff != 0);
+
+        GregorianCalendar cal = (GregorianCalendar) actualTime.clone(); // ( defaultTimeZone ); // 'wall time' or time according to time zone
+//        cal.setTimeInMillis( millis );
+//        cal.set( Calendar.MILLISECOND, 0 );
+        GregorianCalendar calCompare = actualTime; //(GregorianCalendar) cal.clone(); // 'wall time' or time according to time zone
+
+        GregorianCalendar cal2 = (GregorianCalendar) actualTime.clone(); // new GregorianCalendar( tz ); // utc
+        cal2.setTimeZone( tzUTC );
+//        LOGGER.debug( "cal2 -> Zeit: " + printTime( cal2 ) + " ms " + millis );
+//        cal2.setTimeInMillis( millis );
+//        cal2.set( Calendar.MILLISECOND, 0 );
+        
+//        LOGGER.debug( "Start 1 -> Zeit: " + printTime( cal ) );
+        
+        int i = 0;
+        BoolRef tlsTimeIsDst = new BoolRef( false );
+        GregorianCalendar calRes;
+        BoolRef haveDay = new BoolRef( false );
+        if ( unixTime ) {
+            calRes = new GregorianCalendar();
+            i += handleUnixTime( calRes, data, ofs, i );
+        } else {
+            LOGGER.debug( "Time in " + Helper.hexdump( data ) );
+            IntRef dayRef = new IntRef( -1 );
+            CorrectionModuleslRef mod = new CorrectionModuleslRef( CorrectionModules.INIT );
+//            LOGGER.debug( "0 data in -> Zeit: " + printTime( cal ) );
+            for ( String letter : spec ) {
+                if ( ofs + i >= data.length ) {
+                    throw new IllegalArgumentException( DEBLOCK_TOO_SHORT );
+                }
+                int value = data[ofs + i];
+                ++i;
+                // dst will be corrected after loop
+                i = handleTimeFormatCharacter( data, ofs, cal, cal2, i, tlsTimeIsDst, haveDay, letter, value, mod, dayRef );
+                if (doDebugTimes) {LOGGER.debug( i + " data in -> Zeit: " + printTime( cal ) );}
+            }
+            cal.set( Calendar.DST_OFFSET, dstoff );
+            
+            if (doDebugTimes) {LOGGER.debug( "  data in -> Zeit: " + printTime( cal ) );}
+            
+            checkTimeCorrectionBack( cal, calCompare, mod, spec, haveDay, dayRef );
+            
+            if (doDebugTimes) {LOGGER.debug( "corr in -> Zeit: " + printTime( cal ) );}
+
+            if ( dstCorrection ) {
+//                boolean currentlyInDst = calCompare.get( Calendar.DST_OFFSET ) != 0;
+                if ( tlsTimeIsDst.isTrue() && !currentlyInDst ) { // dst running out
+//                    cal.add( Calendar.HOUR_OF_DAY, -1 );
+                    if (mod.getVal() != CorrectionModules.NOTREQUIRED ) {
+                        cal.add( Calendar.DAY_OF_MONTH, 1 );
+                    } else {
+                        cal.set( Calendar.DST_OFFSET, 3600000 ); // correct would be dst offset of current timezone
+                    }
+                }
+                if ( !( tlsTimeIsDst.isTrue() ) && currentlyInDst ) {
+//                    cal.add( Calendar.HOUR_OF_DAY, +1 );
+                    cal.set( Calendar.DST_OFFSET, 0 );
+                }
+                LOGGER.debug( "Zeit: " + printTime( cal ) );
+                calRes = cal;
+            } else {
+                SimpleDateFormat fmt = new SimpleDateFormat( STD_TIMEFMT_SHORT );
+                fmt.setTimeZone( TimeZone.getTimeZone( "UTC" ) );
+                LOGGER.debug( "Zeit(UTC): " + fmt.format( cal2.getTime() ) );
+                calRes = cal2;
+            }
+        }
+        return new TimeItem( name, calRes.getTime(), i );
+    }
+
+    private static void checkTimeCorrectionBack( GregorianCalendar cal, GregorianCalendar calCompare, CorrectionModuleslRef mod, List<String> spec, BoolRef haveDay, IntRef daytRef ) {
+        if ( cal.getTimeInMillis() > ( calCompare.getTimeInMillis() + ( timetolerance * 1000 ) ) ) {
+            // evaluated timestamp is in the future
+            // we need to correct it back in time
+            if ( CorrectionModules.INIT == mod.getVal() ) {
+                // should not happen
+                LOGGER.error( "Unexpected strange timeformat {}. Correction has state INIT!", spec );
+                
+                String msg = String.format( "Unexpected strange timeformat %s. Correction has state INIT!", spec.toString() );
+
+                if ( null != smm ) {
+                    smm.sendMessage( msg );
+                }
+            }
+            if (CorrectionModules.DAY == mod.getVal()) {
+                cal.add( Calendar.DAY_OF_MONTH, -1 );
+            }
+            if (CorrectionModules.MONTH == mod.getVal()) {
+                // one 'month' back
+                LOGGER.debug( "Reduce month by one from: " + cal.get( Calendar.MONTH ) );
+                cal.add( Calendar.MONTH, -1 );
+                // another abnormal situation: 31.2.<Y> -> 3.3.<Y>. this means one month back is not enough
+                if ( cal.getTimeInMillis() > ( calCompare.getTimeInMillis() + ( timetolerance * 1000 ) ) ) {
+                    cal.add( Calendar.MONTH, -1 );
+                }
+            }
+            
+            // there may be an abnormal situation: e.g. receive data at 01.04.<Y> 00:00:01 for 31.03.<Y> 23:59:00, i.e. including day(!)
+            // this will end up here as 01.05.<Y> since the mix in of 31., illegal for april!, into april leads to first may : 01.05.<Y> 23:59:00
+            // at this place it is assumed to have the day of data above as the same day in the grgorian calendar (well most of the time)
+            if ( haveDay.isTrue() && ( cal.get( Calendar.DAY_OF_MONTH ) != daytRef.getInt() ) ) {
+                // timestamps may not be (far) in the future
+                // since 31.04. -> 01.05. is >plus one day< one day is subtracted here to correct
+                // after correction of month above again apply the month
+                cal.set( Calendar.DAY_OF_MONTH, daytRef.getInt() );
+                int m1 = calCompare.get( Calendar.MONTH );
+                int m2 = cal.get( Calendar.MONTH );
+                // some last absurdities
+                if (m2 > m1) { // date may not be in the future
+                    cal.add( Calendar.MONTH, -1 );
+                }
+                LOGGER.debug( "Crrected abnormal: " + printTime( cal ) );
+            }
+        }
+    }
+
+    private int handleTimeFormatCharacter( byte[] data, int ofs, GregorianCalendar cal, GregorianCalendar cal2, int i, BoolRef tlsTimeIsDst, BoolRef haveDay, // NOSONAR parameters are needed
+            String letter, int value, CorrectionModuleslRef mod, IntRef dayRef ) {
+        switch ( letter ) {
+            case "z":
+                // avoid 'set bug' in gregorian calendar
+                // use add -value instead of setting to zero
+                cal.add( Calendar.HOUR_OF_DAY, -cal.get( Calendar.HOUR_OF_DAY ) );
+                cal.add( Calendar.MINUTE, -cal.get( Calendar.MINUTE ) );
+                cal.add( Calendar.SECOND, -cal.get( Calendar.SECOND ) );
+
+                cal2.add( Calendar.HOUR_OF_DAY, -cal.get( Calendar.HOUR_OF_DAY ) );
+                cal2.add( Calendar.MINUTE, -cal.get( Calendar.MINUTE ) );
+                cal2.add( Calendar.SECOND, -cal.get( Calendar.SECOND ) );
+                i = i - 1;
+                break;
+            case "c":
+                rangeCheck( value, 0, 99, "Century is out of range" );
+                value *= 100;
+                int year = cal.get( Calendar.YEAR ) % 100;
+                cal.set( Calendar.YEAR, value + year );
+                year = cal2.get( Calendar.YEAR ) % 100;
+                cal2.set( Calendar.YEAR, value + year );
+                break;
+            case "y":
+                rangeCheck( value, 0, 99, "Year is out of range" );
+                int century = ( cal.get( Calendar.YEAR ) / 100 ) * 100;
+                cal.set( Calendar.YEAR, value + century );
+                century = ( cal2.get( Calendar.YEAR ) / 100 ) * 100;
+                cal2.set( Calendar.YEAR, value + century );
+                mod.setB( CorrectionModules.NOTREQUIRED ); // need no check, max value
+                break;
+            case "Y":
+                if ( ofs + i >= data.length ) {
+                    throw new IllegalArgumentException( DEBLOCK_TOO_SHORT );
+                }
+                value = getUnsignedIntFromInt( value ) + ( data[ofs + i] << 8 );
+                ++i;
+                rangeCheck( value, 0, 9999, "Year is out of range" );
+                cal.set( Calendar.YEAR, value );
+                cal2.set( Calendar.YEAR, value );
+                mod.setB( CorrectionModules.NOTREQUIRED ); // need no check, max value
+                break;
+            case "M":
+                rangeCheck( value, 1, 12, "Month is out of range" );
+                cal.set( Calendar.MONTH, value - 1 );
+                cal2.set( Calendar.MONTH, value - 1 );
+                break;
+            case "d":
+                rangeCheck( value, 1, 31, "Day is out of range" );
+                dayRef.setInt( value );
+                cal.set( Calendar.DAY_OF_MONTH, value );
+                cal2.set( Calendar.DAY_OF_MONTH, value );
+                haveDay.setValue( true );
+                if ( mod.getVal().ordinal() < CorrectionModules.MONTH.ordinal() ) {
+                    mod.setB( CorrectionModules.MONTH );
+                }
+                break;
+            case "h":
+                value = getUnsignedIntFromInt( value );
+                if ( value >= 128 ) {
+                    tlsTimeIsDst.setValue( true );
+                    value -= 128;
+                }
+                rangeCheck( value, 0, 23, "Hour is out of range" );
+                cal.set( Calendar.HOUR_OF_DAY, value );
+                cal2.set( Calendar.HOUR_OF_DAY, value );
+                if ( mod.getVal().ordinal() < CorrectionModules.DAY.ordinal() ) {
+                    mod.setB( CorrectionModules.DAY );
+                }
+                break;
+            case "m":
+                rangeCheck( value, 0, 59, "Minute is out of range" );
+                cal.set( Calendar.MINUTE, value );
+                cal2.set( Calendar.MINUTE, value );
+                break;
+            case "s":
+                rangeCheck( value, 0, 59, "Second is out of range" );
+                cal.set( Calendar.SECOND, value );
+                cal2.set( Calendar.SECOND, value );
+                break;
+            default:
+                throw new IllegalArgumentException( "Illegal time format character: " + letter );
+        }
+        return i;
+    }
+    
+    private static String printTime( GregorianCalendar cal ) {
+        return String.format(
+                // @formatter:off
+                "%s %02d.%02d.%04d %02d:%02d:%02d.%03d %s", 
+                cal.getTimeZone().getID(),
+                
+                cal.get( Calendar.DAY_OF_MONTH ),
+                cal.get( Calendar.MONTH ) + 1,
+                cal.get( Calendar.YEAR ),
+                
+                cal.get( Calendar.HOUR_OF_DAY ),
+                cal.get( Calendar.MINUTE ),
+                cal.get( Calendar.SECOND ),
+                
+                cal.get( Calendar.MILLISECOND ),
+                
+                cal.get( Calendar.DST_OFFSET ) != 0 ? "DST ON" : "DST OFF"
+                ); // @formatter:on
+    }
+
+    private void rangeCheck( final int value, int allowedLow, final int allowedHigh, String failureText ) {
+        if ( value < allowedLow || value > allowedHigh ) {
+            throw new IllegalArgumentException( failureText );
+        }
+    }
+
+    private int handleUnixTime( GregorianCalendar calRes, byte[] data, int ofs, int i ) {
+        int value;
+        long secs = 0;
+        if ( ofs + i >= data.length ) {
+            throw new IllegalArgumentException( DEBLOCK_TOO_SHORT );
+        }
+        value = getUnsignedIntFromByte( data[ofs + i] );
+        secs = 256 * secs + value;
+        ++i;
+        if ( ofs + i >= data.length ) {
+            throw new IllegalArgumentException( DEBLOCK_TOO_SHORT );
+        }
+        value = getUnsignedIntFromByte( data[ofs + i] );
+        secs = 256 * secs + value;
+        ++i;
+        if ( ofs + i >= data.length ) {
+            throw new IllegalArgumentException( DEBLOCK_TOO_SHORT );
+        }
+        value = getUnsignedIntFromByte( data[ofs + i] );
+        secs = 256 * secs + value;
+        ++i;
+        if ( ofs + i >= data.length ) {
+            throw new IllegalArgumentException( DEBLOCK_TOO_SHORT );
+        }
+        value = getUnsignedIntFromByte( data[ofs + i] );
+        secs = 256 * secs + value;
+
+        calRes.setTimeInMillis( secs * 1000 );
+
+        SimpleDateFormat fmt = new SimpleDateFormat( STD_TIMEFMT_SHORT );
+        fmt.setTimeZone( calRes.getTimeZone() );
+        LOGGER.debug( "Zeit: " + fmt.format( calRes.getTime() ) );
+        return 4;
+    }
+
+    @Override
+    public void prepareType( String name, Map<String, DataItemType> typeMap ) {
+        // NOSONAR nothing to do here
+        resType = DataItemType.GREGORIAN;
+    }
+
+    @Override
+    public String getTargetType() {
+        return targetType;
+    }
+}

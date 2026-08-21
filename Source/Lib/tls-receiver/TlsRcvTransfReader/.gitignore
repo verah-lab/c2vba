@@ -1,0 +1,7 @@
+/target/
+/.classpath
+/.project
+/.settings
+/*.iml
+/.flattened-pom.xml
+/pom.xml.versionsBackup

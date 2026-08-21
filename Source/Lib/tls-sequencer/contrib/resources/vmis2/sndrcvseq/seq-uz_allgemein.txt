@@ -1,0 +1,177 @@
+/* ========================================================================== */
+/* FG 1 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von DaLVEFehlerDE
+{
+  If ( (Fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG)
+  {
+    
+    If ($DeNummer < 193 ) {
+      DaLVESteuerSequenz.Aktion := LVE_DE_SENDEN_KANAL_STEUERUNG
+	}
+  }
+}
+
+Bei Eingang von DaLVESteuerSequenz
+{
+  If ($DeNummer < 193 )
+  {
+     Switch( Aktion ) {
+       Case LVE_DE_SENDEN_KANAL_STEUERUNG:
+            Aktion := LVE_DE_SENDEN_LVE_BETRIEBSPARAMETER
+            Break
+       Case LVE_DE_SENDEN_LVE_BETRIEBSPARAMETER:
+            Aktion := LVE_DE_SENDEN_VKLASSE_LANG
+            Break
+       Case LVE_DE_SENDEN_VKLASSE_LANG:
+            Aktion := LVE_DE_SENDEN_VKLASSE_KURZ
+            Break
+     }
+  }
+} 
+
+/* ========================================================================== */
+/* FG 2 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von DaAXLFehlerDE
+{
+  If ( (Fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG)
+  {
+    DaAXLSteuerSequenz.Aktion := AXL_DE_SENDEN_KANAL_STEUERUNG
+  }
+}
+
+Bei Eingang von DaAXLSteuerSequenz
+{
+  If (Aktion == AXL_DE_SENDEN_KANAL_STEUERUNG)
+  {
+    Aktion := AXL_DE_SENDEN_BETRIEBSPARAMETER
+  }
+#if 0  
+  If (Aktion == AXL_DE_SENDEN_BETRIEBSPARAMETER)
+  {
+    Aktion := AXL_DE_SENDEN_GRENZWERTE
+  }
+  If (Aktion == AXL_DE_SENDEN_GRENZWERTE)
+  {
+    Aktion := AXL_DE_SENDEN_PARAMETER
+  }
+#endif  
+}
+
+/* ========================================================================== */
+/* FG 3 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+Bei Eingang von DaUFDFehlerDE
+{
+  If ( (Fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG)
+  {
+    DaUFDSteuerSequenz.Aktion := UFD_DE_SENDEN_KANAL_STEUERUNG
+  }
+}
+
+Bei Eingang von DaUFDSteuerSequenz
+{
+  If (Aktion == UFD_DE_SENDEN_KANAL_STEUERUNG)
+  {
+    Aktion := UFD_DE_SENDEN_UFD_BETRIEBSPARAMETER
+  }
+}
+
+/* ========================================================================== */
+/* FG 4 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von DaWVZFehlerDEIst
+{
+  If ( (Fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG)
+  {
+    If ($DeNummer > 192 && $DeNummer < 224) {
+       // Clusterkanal
+      DaWVZSteuerSequenz.Aktion := WVZ_DE_SENDEN_BETRIEBSART
+    } Else {
+      // normales WZG
+      DaWVZSteuerSequenz.Aktion := WVZ_DE_SENDEN_KANAL_STEUERUNG
+    }
+  }
+}
+
+Bei Eingang von DaWVZSteuerSequenz
+{
+  Switch(Aktion) {
+    Case WVZ_DE_SENDEN_KANAL_STEUERUNG:
+      Aktion := WVZ_DE_SENDEN_GRUNDEINSTELLUNG
+      Break
+  }
+}
+
+
+/* ====================================================================================== */
+/* FG 4 (Meldung Autarkbetrieb)
+/*   Einbaugrund: 
+/*   Eine KRI2C versendet zur Zeit bei Ruecknahme einer externen Steuerung
+/*   die Einstellung des Autarkbetriebs. (Die AQ sollen in die Grundeinstellung)
+/*   Damit die Betriebsart "Autakrbetrieb" nicht laengere Zeit anliegt wird nun hier sofort
+/*   die eigentlich eingestellte Betriebsart versendet. (siehe bug 1973)
+/*
+/*   Hinweis: Wird der Autarkbetrieb nach Übergang SSt tot -> lebt an die UZ versendet,
+/*            so wird nun in diesem Fall die Betriebsart zweimal an den Cluster
+/*            versendet.
+/* ====================================================================================== */
+
+Bei Eingang von DaWVZBetrArtPhysIst
+{
+	If ( WVZBetrArt == AUTARKBETRIEB )
+	{
+		DaWVZSteuerSequenz.Aktion	:=	WVZ_DE_SENDEN_BETRIEBSART
+	}
+}
+
+/* ========================================================================== */
+/* FG 6 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von DaVLTFehlerDE
+{
+  If ( (Fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG)
+  {
+    DaVLTSteuerSequenz.Aktion := VLT_DE_SENDEN_KANAL_STEUERUNG
+  }
+}
+
+Bei Eingang von DaVLTSteuerSequenz
+{
+  If (Aktion == VLT_DE_SENDEN_KANAL_STEUERUNG)
+  {
+    Aktion := VLT_DE_SENDEN_BETRIEBSPARAMETER
+  }
+}
+
+/* ========================================================================== */
+/* FG 8 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von DaGSWFehlerDE
+{
+  If ( (Fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG)
+  {
+    DaGSWSteuerSequenz.Aktion := GSW_DE_SENDEN_KANAL_STEUERUNG
+  }
+}
+
+
+/* ========================================================================== */
+/* FG 254 (Zeit Synchronisation                                               */
+/* ========================================================================== */
+
+Bei Eingang von DaSYAZeitSync {
+  einmaliger retriggerbarer Monoflop ( 15, 300 ) {
+    DaSYSSteuerSequenz.Aktion	:= GLOBALE_ZEITSYNCHRONISATION
+    ErrorMessage ("ZeitSync durch %", $Eaid)
+  }
+}
+
+
+

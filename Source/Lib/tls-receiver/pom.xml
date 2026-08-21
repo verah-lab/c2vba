@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.heuboe.tls</groupId>
+		<artifactId>tls-parent-pom</artifactId>
+		<version>3.0.0</version>
+	</parent>
+
+	<artifactId>receive-tls-parent-pom</artifactId>
+	<version>2.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>receive-tls-parent</name>
+	<description>Libs of TLS receiver</description>
+
+	<inceptionYear>2017</inceptionYear>
+	<url>${urlCombined}</url>
+
+	<organization>
+		<name>Heusch/Boesefeldt GmbH</name>
+		<url>https://www.heuboe.de</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>All rights reserved - Heusch/Boesefeldt GmbH</name>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>${urlCombined}</url>
+		<connection>scm:git:git@${gitlab}:${urlmain}.git</connection>
+		<developerConnection>scm:git:git@${gitlab}:${urlmain}.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>rn</id>
+			<name>Ronald Nikel</name>
+			<email>ronald.nikel@heuboe.de</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<urlmain>Tls/tls-receiver</urlmain>
+		<urlCombined>https://${gitlab}/${urlmain}</urlCombined>
+		<gitlab>gitlab.heuboe.hbintern</gitlab>
+
+		<tls-tele.version>2.0.0</tls-tele.version>
+		<jhbRegressionTest.version>0.3.2</jhbRegressionTest.version>
+
+<!--        <junit-jupiter.version>5.8.2</junit-jupiter.version>-->
+	</properties>
+
+	<modules>
+		<module>TlsRcvInterfaces</module>
+		<module>TlsRcvTransfReader</module>
+		<module>TlsRcvTransformer</module>
+	</modules>
+
+	<dependencyManagement>
+
+        <dependencies>
+<!--            <dependency>-->
+<!--                <groupId>org.junit</groupId>-->
+<!--                <artifactId>junit-bom</artifactId>-->
+<!--                <version>${junit-jupiter.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+
+			<dependency>
+				<groupId>de.heuboe.tls</groupId>
+				<artifactId>tls-tele</artifactId>
+				<version>${tls-tele.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.heuboe.base</groupId>
+				<artifactId>jhbRegressionTest</artifactId>
+				<version>${jhbRegressionTest.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" monitorInterval="60" status="warn">
+
+    <Properties>
+        <Property name="layoutPattern">%date{DEFAULT} | %5.5level | %15.15class{1.}(%4.4line) &gt; %message%n</Property>
+        <Property name="applicationName">${env:application.name}</Property>
+        <Property name="applicationInstance">${env:application.instance}</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- console appender which logs an easy human readable line -->
+        <Appender type="Console" name="console">
+            <Layout type="PatternLayout" pattern="${layoutPattern}" />
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="de.heuboe" level="warn" />
+        <Logger name="org.springframework" level="warn" />
+        <Logger name="org.apache.kafka" level="warn" />
+        <Logger name="kafka" level="warn" />
+
+        <Root level="info">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+
+</Configuration>

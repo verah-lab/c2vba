@@ -1,0 +1,62 @@
+[ {
+  "address" : "50463009",
+  "deMeta" : {
+    "deBlockRaw" : "AAY=",
+    "deNr" : 33,
+    "seqDeInETel" : 1,
+    "typ" : 1
+  },
+  "etel" : null,
+  "etelMeta" : {
+    "fg" : 2,
+    "id" : 129,
+    "job" : 0,
+    "numDeInETel" : 2
+  },
+  "items" : [ {
+    "asArray" : [ ],
+    "asBlock" : [ ],
+    "asBlockRaw" : "",
+    "asDate" : null,
+    "asDouble" : null,
+    "asGregorianCalendar" : null,
+    "asItemList" : [ ],
+    "asLong" : 0,
+    "asString" : null,
+    "consumedSize" : 1,
+    "name" : "fehlercode",
+    "type" : "INTEGER",
+    "value" : 0
+  }, {
+    "asArray" : [ ],
+    "asBlock" : [ ],
+    "asBlockRaw" : "",
+    "asDate" : null,
+    "asDouble" : null,
+    "asGregorianCalendar" : null,
+    "asItemList" : [ ],
+    "asLong" : 6,
+    "asString" : null,
+    "consumedSize" : 1,
+    "name" : "hersteller",
+    "type" : "INTEGER",
+    "value" : 6
+  }, {
+    "asArray" : [ ],
+    "asBlock" : [ ],
+    "asBlockRaw" : "",
+    "asDate" : 1533993928000,
+    "asDouble" : null,
+    "asGregorianCalendar" : null,
+    "asItemList" : [ ],
+    "asLong" : 1533993928000,
+    "asString" : null,
+    "consumedSize" : 4,
+    "name" : "zeitstempel",
+    "type" : "DATE",
+    "value" : 1533993928000
+  } ],
+  "name" : "AXLDeFehler",
+  "subsequent" : false,
+  "tele" : null
+} ]

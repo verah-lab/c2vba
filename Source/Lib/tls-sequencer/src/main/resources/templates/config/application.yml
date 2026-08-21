@@ -1,0 +1,152 @@
+## +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+##
+## tls/tls-sequencer
+##
+## This file provides a list of all custom application properties. The
+## properties are listed with a possible default value, a hint which values
+## might be allowed and a short description what the properties are used for.
+##
+## The file is intended as a template for custom property files
+## of this application, which are then used in specific environments.
+##
+## All properties that have no default value or need to be overridden
+## can be specified either
+##   - within a custom property file ('-Dspring.config.location=file:<path>')
+##   - by using system properties (-D<property>=<value>)
+##   - application parameters (--<property>=<value>).
+##
+## See: Spring Boot Reference Guide - Externalized Configuration
+## http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config
+## +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+## --------------------------------------------------------------------------
+## Sequencer
+## --------------------------------------------------------------------------
+de:
+  heuboe:
+    tls:
+      sequencer:
+        ## ----------------------------------------------------------
+        ## Sequencer configuration
+        ## ----------------------------------------------------------
+        header:
+          # The content of the header with the sequencerMarker that will be used to differ between sequencer messages
+          # from different sequencer instances. Default: modifiedBySequencer
+          sequencerContent:
+          # The key in the Kafka header that will be used to identify a sequencer message.
+          sequencerMarker: X-Sequencer-Message
+          # The key in the Kafka header that will be used to identify the protobuf type of the message.
+          type: X-Protobuf-Type
+
+        # This part configures the prefix and suffix of Kafka topics in the receive direction. This mainly means all
+        # topics that will normally be filled by the tls-receiver. This is necessary for receiving and sending messages
+        # to this topics.
+        receive:
+          topic:
+            prefix:
+            suffix:
+
+        script:
+          # The absolute path defines where the sequencer scripts can be found. All scripts in this path will be loaded
+          # by the sequencer.
+          path:
+
+          # A comma separated list of script files that will be loaded in every sequencer instance.
+          globalScripts:
+
+          # The absolute path defines where test scripts will be loaded from. This enables the possibility to side load
+          # scripts that will disable all deployed scripts without changing the deployment. Default empty string.
+          testModePath:
+
+          # The stage and system name influence the scripts that were loaded at the start of the sequencer. The pattern
+          # for script naming is 'seq-uz-<systemName>-<stageName>*.txt'. If both are empty the script retrieve logic
+          # will be ignored. Default empty string.
+          stageName:
+          systemName:
+
+        # This part configures the prefix and suffix of Kafka topics in the send direction. This mainly means all topics
+        # that will be processed by the tls-sender for iface telegram generation. This is necessary for receiving and
+        # sending messages to this topics.
+        send:
+          topic:
+            prefix:
+            suffix:
+
+        # The id of the UZ for this application. Will also be used to search for UZ specific scripts under the script
+        # path configured above.
+        uzid:
+
+        # Enables a debug mode that avoid sending sequencer messages to Kafka. If true the messages that will normally
+        # be sent will be printed to the log. Default false.
+        noSendMode:
+
+        # The number of retries the KafkaOperatorService will resend messages via Akka if the sequencer does not answer
+        # in the configured response retry timeout. Default 0.
+        responseRetries:
+
+        # The response timeout in milliseconds the KafkaOperatorService waits until resend the current message if
+        # retries are configured. Default 5000.
+        resonseTimeout:
+
+## --------------------------------------------------------------------------
+## GRPC ConfigService
+## --------------------------------------------------------------------------
+grpc:
+  client:
+    ConfigService:
+      address:
+      negotiationType:
+
+## --------------------------------------------------------------------------
+## Spring Actuator
+## --------------------------------------------------------------------------
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        exclude: shutdown
+        include: health,info,metrics,prometheus,loggers
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+## --------------------------------------------------------------------------
+## Spring Kafka
+## --------------------------------------------------------------------------
+spring:
+  kafka:
+    # The Kafka servers to connect to
+    bootstrap-servers:
+
+    # ID to pass to the Kafka server when making requests. Used for server-side logging.
+    # If it is omitted, a (meaningless) default value is used with which this application can not be identified.
+    # It is therefore strongly recommended to set this value (for example to the application name or artifactId).
+    client-id:
+
+    # The name of the consumer group for kafka.
+    # This is important because the progress/current index is saved using this name.
+    # Different applications that listen to kafka HAVE to use different group ids.
+    consumer:
+      group-id:
+      properties:
+        value:
+          deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      topic-pattern: ''
+    producer:
+      properties:
+        value:
+          serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+
+  main:
+    ## --------------------------------------------------------------------------
+    ## Bean configuration
+    ## --------------------------------------------------------------------------
+    allow-bean-definition-overriding: true

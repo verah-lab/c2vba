@@ -1,0 +1,498 @@
+/************************************************************************/
+/* Specfile fuer Sequencer UZ Wels                                      */
+/************************************************************************/
+
+Global VLSA_A02_2_799_F1
+Global VLSA_A02_2_799_F2
+Global VLSA_A02_2_860_IS
+Global VLSA_A02_2_860_AS
+Global VLSA_A02_1_841_E1
+Global VLSA_A02_1_841_F1
+Global VLSA_A02_1_841_F2
+Global VLSA_A02_2_846_IS
+Global VLSA_A02_2_846_AS
+Global VLSA_A02_2_862_AS
+Global VLSA_A02_2_862_IS
+
+Global VLSA_A02_1_845_IS
+Global VLSA_A02_1_845_AS
+Global VLSA_A02_1_832_E1
+Global VLSA_A02_1_832_F1
+Global VLSA_A02_1_832_F2
+Global VLSA_A02_1_798_F1
+Global VLSA_A02_1_798_F2
+Global VLSA_A02_1_861_AS
+Global VLSA_A02_1_861_IS
+Global VLSA_A02_1_863_F2
+Global VLSA_A02_1_863_F1
+
+
+
+
+#include "spec.h"
+#include "seq-uz_allgemein.txt"
+
+/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen*/
+
+Bei Eingang von DaSYSFehlerDUE
+{  
+	If (Fehlercode == 0) {    
+
+		/* 2025455|13|KRI_2B_ABM_K_VBA_U|10|Y| (KRI-device) -> 2024957|112|KRI_2B_ABM_K_VBA_U.DE0|10|Y| (Q-KRI) */    
+		If ($Eaid == 2025455) {
+			Ea(2024957) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		/* 2021322|13|KRI_2B_ABM_K_WWW|10|Y| (KRI-device) -> 2020801|112|KRI_2B_ABM_K_WWW.DE0|10|Y| (Q-KRI) */    
+		If ($Eaid == 2021322) {
+			Ea(2020801) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+		/* 2048159|13|KRI_2B_ABM_K_1|10|Y|  ->  2047645|112|KRI_2B_ABM_K_1.DE0|10|Y| */
+		If ($Eaid == 2048159) {
+			Ea(2047645) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		/* 2048160|13|KRI_2B_ABM_Z_1|10|Y|  ->  2047649|112|KRI_2B_ABM_Z_1.DE0|10|Y| */
+		If ($Eaid == 2048160) {
+			Ea(2047649) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+	}
+}
+
+/* Externe Trigger aufgrund von Roten und Gelben LSA vor Tunnelportalen
+*/
+Bei Eingang von DaWVZStellzustandABIst
+{
+// Durch VLSA beeinflusste AQ`s, WWW`s, WTA`s
+
+// FR Wien Graz
+// ************
+//
+// Farchern Tunnel West FR Wien Graz bei zugehoeriger LSA Rot
+//
+//WZG_A02_LSA("VLSA_A02_2_799_F1", "VLSA_A02_2_304,425_F1", 39062 130, 33, 193, LANE_WZG_HFS, "A02_2", 304425, 304425, 2, "A02_2", 304425, "H010:IOCTRL")
+//WZG_A02_LSA("VLSA_A02_2_799_F2", "VLSA_A02_2_304,425_F2", 39062 130, 34, 193, LANE_WZG_1UFS, "A02_2", 304425, 304425, 2, "A02_2", 304425, "H010:IOCTRL")
+//2025267|116|VLSA_A02_2_799_F1|10|Y|
+//2025268|116|VLSA_A02_2_799_F2|10|Y|
+//2025234|112|TQ_VLSA_Farchern_Wien_Rot|10|Y|
+//
+	If ($Eaid == 2025267 || $Eaid == 2025268) {
+	  If ($Eaid == 2025267) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_799_F1 := 1
+	    } Else {
+	      $VLSA_A02_2_799_F1 := 0
+	    }
+	  }
+	  If ($Eaid == 2025268) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_799_F2 := 1
+	    } Else {
+	      $VLSA_A02_2_799_F2 := 0
+	    }
+	  }
+	  If ( $VLSA_A02_2_799_F1 == 1 || $VLSA_A02_2_799_F2 == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025234) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025234) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}  
+	  
+//
+// Falkenberg Tunnel FR Wien Graz bei zugehoeriger LSA Rot oder Gelb
+//
+//  WZG_A02_LSA("VLSA_A02_2_860_IS", "VLSA_A02_2_327,430_IS", 39062 130, 97, 201, LANE_WZG_IS, "A02_2", 325760, 325760, 2, "A02_2", 325760, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_2_860_AS", "VLSA_A02_2_327,430_AS", 39062 130, 98, 201, LANE_WZG_AS, "A02_2", 325760, 325760, 2, "A02_2", 325760, "H010:IOCTRL")
+//2025286|116|VLSA_A02_2_860_IS|10|Y|
+//2025287|116|VLSA_A02_2_860_AS|10|Y|
+//2025236|112|TQ_VLSA_Falkenberg_Wien_Rot|10|Y|
+
+	If ($Eaid == 2025286 || $Eaid == 2025287) {
+	  If ($Eaid == 2025286) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_860_IS := 1
+	    } Else {
+	      $VLSA_A02_2_860_IS := 0
+	    }
+	  }
+	  If ($Eaid == 2025287) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_860_AS := 1
+	    } Else {
+	      $VLSA_A02_2_860_AS := 0
+	    }
+	  }
+	  If ( $VLSA_A02_2_860_IS == 1 || $VLSA_A02_2_860_AS == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025236) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025236) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+
+//
+// Ehrentalerberg Tunnel FR Wien Graz bei zugehoeriger LSA Rot oder Gelb
+//
+//  WZG_A02_LSA("VLSA_A02_1_841_E1", "VLSA_A02_2_320,529_E1", 39062 130, 65, 202, LANE_WZG_NFS, "A02_2", 320529, 320529, 2, "A02_2", 320529, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_1_841_F1", "VLSA_A02_2_320,529_F1", 39062 130, 66, 202, LANE_WZG_HFS, "A02_2", 320529, 320529, 2, "A02_2", 320529, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_1_841_F2", "VLSA_A02_2_320,529_F2", 39062 130, 67, 202, LANE_WZG_1UFS, "A02_2", 320529, 320529, 2, "A02_2", 320529, "H010:IOCTRL")
+//2025273|116|VLSA_A02_1_841_E1|10|Y|
+//2025274|116|VLSA_A02_1_841_F1|10|Y|
+//2025275|116|VLSA_A02_1_841_F2|10|Y|
+//2025238|112|TQ_VLSA_Ehrentlbg_Wien_Rot|10|Y|
+
+	If ($Eaid == 2025273 || $Eaid == 2025274 || $Eaid == 2025275) {
+	  If ($Eaid == 2025273) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_841_E1 := 1
+	    } Else {
+	      $VLSA_A02_1_841_E1 := 0
+	    }
+	  }
+	  If ($Eaid == 2025274) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_841_F1 := 1
+	    } Else {
+	      $VLSA_A02_1_841_F1 := 0
+	    }
+	  }
+	  If ($Eaid == 2025275) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_841_F2 := 1
+	    } Else {
+	      $VLSA_A02_1_841_F2 := 0
+	    }
+	  }
+	  If ( $VLSA_A02_1_841_E1 == 1 || $VLSA_A02_1_841_F1 == 1 || $VLSA_A02_1_841_F2 == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025238) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025238) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+
+
+
+//
+// Lendorf Tunnel FR Wien Graz bei zugehoeriger LSA Rot oder Gelb
+//
+//  WZG_A02_LSA("VLSA_A02_2_846_IS", "VLSA_A02_2_322,364_IS", 39062 130, 49, 197, LANE_WZG_IS, "A02_2", 322364, 322364, 2, "A02_2", 322364, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_2_846_AS", "VLSA_A02_2_322,364_AS", 39062 130, 50, 197, LANE_WZG_AS, "A02_2", 322364, 322364, 2, "A02_2", 322364, "H010:IOCTRL")
+//2025280|116|VLSA_A02_2_846_IS|10|Y|
+//2025281|116|VLSA_A02_2_846_AS|10|Y|
+//2025240|112|TQ_WWW_VLSA_Lendorf_Wien_Rot|10|Y|
+
+	If ($Eaid == 2025280 || $Eaid == 2025281) {
+	  If ($Eaid == 2025280) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_846_IS := 1
+	    } Else {
+	      $VLSA_A02_2_846_IS := 0
+	    }
+	  }
+	  If ($Eaid == 2025281) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_846_AS := 1
+	    } Else {
+	      $VLSA_A02_2_846_AS := 0
+	    }
+	  }
+	  If ( $VLSA_A02_2_846_IS == 1 || $VLSA_A02_2_846_AS == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025240) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025240) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+//
+// UFT Trettnig FR Wien
+//
+//  WZG_A02_LSA("VLSA_A02_2_862_AS", "VLSA_A02_2_324,120~AS", 39062 130, 113, 205, LANE_WZG_AS, "A02_2", 324120, 324120, 2, "A02_2", 324120, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_2_862_IS", "VLSA_A02_2_324,120~IS", 39062 130, 114, 205, LANE_WZG_IS, "A02_2", 324120, 324120, 2, "A02_2", 324120, "H010:IOCTRL")
+//2025519|116|VLSA_A02_2_862_AS|10|Y|
+//2025520|116|VLSA_A02_2_862_IS|10|Y|
+//2048241|112|TQ_VLSA_Trettnig_Wien_Rot|10|Y|
+
+	If ($Eaid == 2025519 || $Eaid == 2025520) {
+	  If ($Eaid == 2025519) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_862_AS := 1
+	    } Else {
+	      $VLSA_A02_2_862_AS := 0
+	    }
+	  }
+	  If ($Eaid == 2025520) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_2_862_IS := 1
+	    } Else {
+	      $VLSA_A02_2_862_IS := 0
+	    }
+	  }
+	  If ( $VLSA_A02_2_862_AS == 1 || $VLSA_A02_2_862_IS == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2048241) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2048241) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+// FR Villach
+// **********
+//
+// Lendorf Tunnel FR Villach bei zugehoeriger LSA Rot oder Gelb
+//
+//  WZG_A02_LSA("VLSA_A02_1_845_IS", "VLSA_A02_1_321,890_IS", 39062 130, 90, 210, LANE_WZG_IS, "A02_1", 321890, 321890, 2, "A02_1", 321890, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_1_845_AS", "VLSA_A02_1_321,890_AS", 39062 130, 91, 210, LANE_WZG_AS, "A02_1", 321890, 321890, 2, "A02_1", 321890, "H010:IOCTRL")
+//2025525|116|VLSA_A02_1_845_IS|10|Y|
+//2025526|116|VLSA_A02_1_845_AS|10|Y|
+//2025242|112|TQ_VLSA_Lendorf_Villach_Rot|10|Y|
+
+  
+	If ($Eaid == 2025525 || $Eaid == 2025526) {
+	  If ($Eaid == 2025525) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_845_IS := 1
+	    } Else {
+	      $VLSA_A02_1_845_IS := 0
+	    }
+	  }
+	  If ($Eaid == 2025526) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_845_AS := 1
+	    } Else {
+	      $VLSA_A02_1_845_AS := 0
+	    }
+	  }
+	  If ( $VLSA_A02_1_845_IS == 1 || $VLSA_A02_1_845_AS == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025242) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025242) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+//
+// Ehrentalerberg Tunnel FR Villach bei zugehoeriger LSA Rot oder Gelb
+//
+//  WZG_A02_LSA("VLSA_A02_1_832_E1", "VLSA_A02_1_317,028_E1", 39062 130, 25, 200, LANE_WZG_HFS, "A02_1", 317028, 317028, 2, "A02_1", 317028, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_1_832_F1", "VLSA_A02_1_317,028_F1", 39062 130, 26, 200, LANE_WZG_HFS, "A02_1", 317028, 317028, 2, "A02_1", 317028, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_1_832_F2", "VLSA_A02_1_317,028_F2", 39062 130, 27, 200, LANE_WZG_1UFS, "A02_1", 317028, 317028, 2, "A02_1", 317028, "H010:IOCTRL")
+//2025258|116|VLSA_A02_1_832_E1|10|Y|
+//2025259|116|VLSA_A02_1_832_F1|10|Y|
+//2025260|116|VLSA_A02_1_832_F2|10|Y|
+//2025244|112|TQ_VLSA_Ehrentlbg_Villach_Rot|10|Y|
+
+	If ($Eaid == 2025258 || $Eaid == 2025259 || $Eaid == 2025260) {
+	  If ($Eaid == 2025258) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_832_E1 := 1
+	    } Else {
+	      $VLSA_A02_1_832_E1 := 0
+	    }
+	  }
+	  If ($Eaid == 2025259) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_832_F1 := 1
+	    } Else {
+	      $VLSA_A02_1_832_F1 := 0
+	    }
+	  }
+	  If ($Eaid == 2025260) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_832_F2 := 1
+	    } Else {
+	      $VLSA_A02_1_832_F2 := 0
+	    }
+	  }
+	  If ( $VLSA_A02_1_832_E1 == 1 || $VLSA_A02_1_832_F1 == 1 || $VLSA_A02_1_832_F2 == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025244) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025244) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+//
+// Farchern Ost Tunnel FR Villach bei zugehoeriger LSA Rot oder Gelb
+//
+//WZG_A02_LSA("VLSA_A02_1_798_F1", "VLSA_A02_1_303,823_F1", 39062 130, 9, 196, LANE_WZG_HFS, "A02_1", 303823, 303823, 2, "A02_1", 303823, "H010:IOCTRL")
+//WZG_A02_LSA("VLSA_A02_1_798_F2", "VLSA_A02_1_303,823_F2", 39062 130, 10, 196, LANE_WZG_1UFS, "A02_1", 303823, 303823, 2, "A02_1", 303823, "H010:IOCTRL")
+//2025252|116|VLSA_A02_1_798_F1|10|Y|
+//2025253|116|VLSA_A02_1_798_F2|10|Y|
+//2025246|112|TQ_VLSA_Farchern_Villach_Rot|10|Y|
+
+
+	If ($Eaid == 2025252 || $Eaid == 2025253) {
+	  If ($Eaid == 2025252) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_798_F1 := 1
+	    } Else {
+	      $VLSA_A02_1_798_F1 := 0
+	    }
+	  }
+	  If ($Eaid == 2025253) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_798_F2 := 1
+	    } Else {
+	      $VLSA_A02_1_798_F2 := 0
+	    }
+	  }
+	  If ( $VLSA_A02_1_798_F1 == 1 || $VLSA_A02_1_798_F2 == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025246) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2025246) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+//
+// UFT Trettnig FR Villach
+//
+//  WZG_A02_LSA("VLSA_A02_1_861_AS", "VLSA_A02_1_323,630_AS", 39062 130, 92, 212, LANE_WZG_AS, "A02_1", 323630, 323630, 2, "A02_1", 323630, "H010:IOCTRL")
+//  WZG_A02_LSA("VLSA_A02_1_861_IS", "VLSA_A02_1_323,630_IS", 39062 130, 102, 212, LANE_WZG_IS, "A02_1", 323630, 323630, 2, "A02_1", 323630, "H010:IOCTRL")
+//2025529|116|VLSA_A02_1_861_AS|10|Y|
+//2025530|116|VLSA_A02_1_861_IS|10|Y|
+//2048242|112|TQ_VLSA_Trettnig_Villach_Rot|10|Y|
+
+
+	If ($Eaid == 2025529 || $Eaid == 2025530) {
+	  If ($Eaid == 2025529) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_861_AS := 1
+	    } Else {
+	      $VLSA_A02_1_861_AS := 0
+	    }
+	  }
+	  If ($Eaid == 2025530) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_861_IS := 1
+	    } Else {
+	      $VLSA_A02_1_861_IS := 0
+	    }
+	  }
+	  If ( $VLSA_A02_1_861_AS == 1 || $VLSA_A02_1_861_IS == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2048242) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2048242) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+
+// Falkenberg Tunnel FR Villach
+//
+//WZG_A02_LSA("VLSA_A02_1_863_F2", "VLSA_A02_1_324,630~F2", 39062 130, 99, 216, LANE_WZG_1UFS, "A02_1", 324630, 324630, 2, "A02_1", 324630, "H010:IOCTRL")
+//WZG_A02_LSA("VLSA_A02_1_863_F1", "VLSA_A02_1_324,630~F1", 39062 130, 100, 216, LANE_WZG_HFS, "A02_1", 324630, 324630, 2, "A02_1", 324630, "H010:IOCTRL")
+//2025535|116|VLSA_A02_1_863_F2|10|Y|
+//2025536|116|VLSA_A02_1_863_F1|10|Y|
+//2048243|112|TQ_VLSA_Falkenberg_Villach_Rot|10|Y|
+
+	If ($Eaid == 2025535 || $Eaid == 2025536) {
+	  If ($Eaid == 2025535) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_863_F2 := 1
+	    } Else {
+	      $VLSA_A02_1_863_F2 := 0
+	    }
+	  }
+	  If ($Eaid == 2025536) {
+	    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+	      $VLSA_A02_1_863_F1 := 1
+	    } Else {
+	      $VLSA_A02_1_863_F1 := 0
+	    }
+	  }
+	  If ( $VLSA_A02_1_863_F2 == 1 || $VLSA_A02_1_863_F1 == 1 )
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2048243) in DaTriggerSchaltzustand.schaltzustand := 1
+		}
+	  }
+	  Else
+	  {
+		einmaliger retriggerbarer Monoflop ( 5, 15 )
+		{
+		Ea(2048243) in DaTriggerSchaltzustand.schaltzustand := 0
+		}
+	  }
+	}
+
+	  
+}

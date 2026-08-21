@@ -1,0 +1,8 @@
+
+Neue Version erzeugen inkl. git-commit
+# set-version.bash
+
+deploy to nexus, create tag and push all to gitlab
+# deploy.bash
+
+

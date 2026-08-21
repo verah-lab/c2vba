@@ -1,0 +1,27 @@
+#define EA_VIR_NI   \
+2025084 auf 2025073 \
+2025037 auf 2025057
+
+
+#define EA_VIR_NS   \
+2025085 auf 2025074 \
+2025038 auf 2025058
+
+
+Verdoppeln in DaUFDFehlerDE
+EA_VIR_NI
+EA_VIR_NS
+
+Verdoppeln in DaUFDKanalIst
+EA_VIR_NI
+EA_VIR_NS
+
+Verdoppeln in DaUFDBetriebsParamIst
+EA_VIR_NI
+EA_VIR_NS
+
+Verdoppeln in DaUFDNiederInten_erf
+EA_VIR_NI
+
+Verdoppeln in DaUFDNS_erf
+EA_VIR_NS

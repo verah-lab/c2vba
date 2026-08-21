@@ -1,0 +1,35 @@
+#define EA_VIR_NI   \
+2006407 auf 2006410 \
+2006546 auf 2006552 \
+2006240 auf 2006243 \
+2006351 auf 2006359 \
+2006482 auf 2006485 \
+2006297 auf 2006300 \
+
+
+#define EA_VIR_NS   \
+2006406 auf 2006409 \
+2006545 auf 2006551 \
+2006239 auf 2006242 \
+2006350 auf 2006358 \
+2006481 auf 2006484 \
+2006296 auf 2006299 \
+
+
+Verdoppeln in DaUFDFehlerDE
+EA_VIR_NI
+EA_VIR_NS
+
+Verdoppeln in DaUFDKanalIst
+EA_VIR_NI
+EA_VIR_NS
+
+Verdoppeln in DaUFDBetriebsParamIst
+EA_VIR_NI
+EA_VIR_NS
+
+Verdoppeln in DaUFDNiederInten_erf
+EA_VIR_NI
+
+Verdoppeln in DaUFDNS_erf
+EA_VIR_NS

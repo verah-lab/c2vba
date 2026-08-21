@@ -1,0 +1,71 @@
+/************************************************************************/
+/* Specfile fuer Sequencer UZ Wels                                      */
+/************************************************************************/
+
+#include "spec.h"
+#include "seq-uz_allgemein.txt"
+
+/* Wenn die KRI2 auf lebt wechselt, Zeitsync auslösen*/
+
+Bei Eingang von DaSYSFehlerDUE
+{  
+	If (Fehlercode == 0) {    
+
+		/* 2027840 KRI_A09_SH-Graz-West (KRI-device) ->  2025559 KRI_A09_SH-Graz-West (Q-KRI) */    
+		If ($Eaid == 2027840) {
+			Ea(2025559) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+		/* 2027841 KRI_A02_SH-Graz-West (KRI-device) ->  2025566 KRI_A02_SH-Graz-West(Q-KRI) */    
+		If ($Eaid == 2027841) {
+			Ea(2025566) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+		/* 2027842 KRI_Pack (KRI-device) ->  2025572 KRI_Pack (Q-KRI) */    
+		If ($Eaid == 2027842) {
+			Ea(2025572) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+		/* 2037356 KRI_2B_A02_SH_SBA_GRAZ_KN_WEST -> 2036668 KRI_2B_A02_SH_SBA_GRAZ_KN_WEST */    
+		If ($Eaid == 2037356) {
+			Ea(2036668) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+		/* 2037357 KRI_2B_A09_SH_SBA_GRAZ_KN_WEST -> 2036673 KRI_2B_A09_SH_SBA_GRAZ_KN_WEST */    
+		If ($Eaid == 2037357) {
+			Ea(2036673) in DaSYSSteuerSequenz.Aktion	:= LOKALE_ZEITSYNCHRONISATION
+		}
+		
+	}
+}
+
+
+Bei Eingang von DaWVZStellzustandABIst
+{
+  
+  /*   WZG_LSA("VLSA_A09_2_803", "VLSA_A09_2_184,850"
+  */  
+  If ($Eaid == 2027620) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2037809) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2037809) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+
+  If ($Eaid == 2027621) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2037810) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2037810) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+
+  If ($Eaid == 2027622) {
+    If (DaWVZStellzustandABIst-New.stellcode == 107   && DaWVZStellzustandABIst-New.funktionsbyte > 0) {
+      Ea(2037811) in DaTriggerSchaltzustand.schaltzustand := 1
+    } Else {
+      Ea(2037811) in DaTriggerSchaltzustand.schaltzustand := 0
+    }
+  }
+}

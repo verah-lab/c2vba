@@ -1,0 +1,7 @@
+include:
+  - project: HeuBoeCommons/hb-ci-templates
+    ref: JDK21
+    file:
+      - base.yml
+      - verify-commits.yml
+      - build-releases.yml

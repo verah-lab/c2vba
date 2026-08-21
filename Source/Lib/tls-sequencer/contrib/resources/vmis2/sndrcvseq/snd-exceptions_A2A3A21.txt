@@ -1,0 +1,21 @@
+#define EA_VIRTUELL_UFD 	 \
+Knoten 31211-2 DE  114 ,115 ,116 ,133 \
+Knoten 31208-8 DE  114 ,115 ,116 ,133 \
+Knoten 36361-24 DE  114 ,115 ,116 ,133 \
+Knoten 44354-6 DE  114 ,115 ,116 ,133 \
+Knoten 44354-15 DE  114 ,115 ,116 ,133 \
+Knoten 31209-9 DE  114 ,115 ,116 ,133 \
+Knoten 31210-8 DE  114 ,115 ,116 ,133 \
+Knoten 36361-41 DE  114 ,115 ,116 ,133 \
+Knoten 31208-21 DE  114 ,115 ,116 ,133 \
+Knoten 31211-34 DE  114 ,115 ,116 ,133
+
+
+Sendeausnahmen
+  In Datei "snd-uz-sm.txt"
+    bei
+      Datenart
+      DaUFDKanalSoll,
+      DaUFDBetriebsParamSoll
+      nichts senden von
+        EA_VIRTUELL_UFD

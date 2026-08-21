@@ -1,0 +1,18 @@
+{
+  "id": "MQ_A02_2_340.Cl1",
+  "tlsTime": "2020-01-01T10:00:00.000000Z",
+  "processTime": "2020-01-01T10:00:00.000000Z",
+  "jobnummer" : 0,
+  "intervallArt": 1,
+  "intervalllaenge": 4,
+  "qKfz": 2,
+  "qLkwAe": 0,
+  "vPkwAe": 81,
+  "vLkwAe": -1,
+  "nettozeitluecke": 18.0,
+  "belegung": 5,
+  "sKfz": 13,
+  "vKfz": 79,
+  "vKlassenPkwAe": [1, 2, 3, 4],
+  "vKlassenLkwAe": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}

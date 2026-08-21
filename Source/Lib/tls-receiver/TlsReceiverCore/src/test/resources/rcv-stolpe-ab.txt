@@ -1,0 +1,1768 @@
+// Hinweise:
+//
+// BYTE, SHORT, LONG sind Getter für Ganzzahlen. BYTE iste ohne Vorzeichen. SHORT und LONG
+// sind mit Vorzeichen und little endian. Um dies zu ändern, müssen die Zusätze 'signed', 
+// 'unsigned' und/oder 'big endian' verwendet werden
+//
+// NODE ist ein Getter speziell für Knotennummern. Diese sind immer ohne Vorzeichen und 'little endian'. 
+// 
+// TIME verwendet einen Spezifikations-String, z.B. 'h m s'.
+// Der String besteht aus Buchstaben, die durch Leerzeichen oder Doppelpunkte getrennt werden. 
+// Folgende Buchstaben werden unterstützt
+// d für Tag
+// M für Monat
+// c für Jahrhundert (ein Byte von 0-99)
+// y für Jahr (ein Byte von 0-99)
+// Y für Jahr (zwei Byte, 0-9999, litle endian)
+// h für Stunde, bit 8 enthält die Flagge für die Sommerzeit
+// m für Minute
+// s für Sekunde
+// z initialisiert Stunde/Minute/Sekunde mit null anstelle der aktuellen Uhrzeit, sollte als erstes verwendet werden
+// Wenn ein Buchstabe nicht verwendet wird, wird der entsprechende Wert aus der aktuellen Uhrzeit übernommen
+//
+// BLOCK liest ein Byte array ein. Die Größe kann auf folgende Arten ermittelt werden:
+// 'with size' erwartet die Größe im ersten byte
+// 'to end' liest alle bytes bis zum Ende des DE-Blocks
+//  'fixed size <n>' liest n bytes
+//
+// SKIP ignoriert exakt ein byte
+//
+// ARRAY [ ... ]
+// Einlesen eines Array von gleichen Objekten
+//
+// IF (condition) { ... } ELSE { ... }
+// Die condition prüft eine interne Variable auf einen vorgegebenen Wert.
+// Wenn die Variable gespeichert werden soll, muss dies mit einem zusätzlichen SET erfolgen
+// Das ELSE ist optional. 
+//
+// OPT { ... }
+// Liest die angegebenen Daten ein, falls der DE-Block noch nicht abgearbeitet ist.
+//
+// Interne Variablen unterscheiden sich in automatische und benutzerdefinierte Variablen.
+// Benutzerdefinierte Variablen beginnen mit dem '$' Zeichen.
+// Automatische Variablen beginnen mit dem '#'-Zeichen. Es existieren folgende automatische Variablen:
+// #Node Knotennummer
+// #TlsFg Funktionsgruppe des Einzeltelegramms
+// #TlsId Id des Einzeltelegramms
+// #TlsJob Jobnummer
+// #ActualTime Die aktuelle Uhrzeit
+// #De DE-Nummer
+// #DeLen Länge des DE-Blocks (inkl. DE-Nummer und DE-Typ)
+//
+// HEADER DE-Blöcke. DE-Blöcke, die als HEADER gekennzeichnet sind, speichern alle Inhalte automatisch 
+// in einer speziellen internen Variablen. Daher ist hier kein '$'-Zeichen zu verwenden
+//  
+// SET attribute := expression
+// Setzt den Wert eines Attributs mit dem Inhalt eines Ausdrucks.
+// Der Ausdruck kann eine interne Variable, eine konstante Zahl oder eine Verknüpfung
+// mit einem der Operatoren + - * / & >> << sein. Die Operatoren werden von links nach rechts
+// ohne Priorisierung ausgewertet. Eine Klammerung ist möglich.
+// 
+
+/////////////////////////
+// Locations
+/////////////////////////
+
+LOCATIONS TwoByteV78_2000Draft 6233-19, 7345-19, 4711-215
+
+LOCATIONS OnePointFiveByteV78_2002 6233-21, 7645-19, 4712-115
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Zeitstempel alle FG
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype Zeitstempel 									Fg 1-8,254 Id 129-133 Typ 30 HEADER
+TIME "h m s" Zeitstempel
+
+Datatype Zeitstempel									Fg 1-8,254 Id 129-133 Typ 251 HEADER // Unix-Zeitstempel
+TIME "U" Zeitstempel
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 254
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype SYSDeFehler 									Fg 254 Id 129,161 Typ 1 
+BYTE Fehlercode
+BYTE Hersteller
+SET #Puffer := #TlsId == 161
+
+Datatype SYSErgDeFehler 								Fg 254 Id 129 Typ 14 
+BYTE Hersteller
+BYTE $HerstellerBytes
+SET HerstellerBytes := $HerstellerBytes
+BLOCK with size ($HerstellerBytes)TlsFehlercodes 
+
+Datatype SYSFehlerDUE									Fg 254 Id 129 Typ 131
+BYTE Fehlercode
+BYTE Hersteller
+
+Datatype SYSNegativeQuittung 							Fg 254 Id 130 Typ 16 
+BYTE Fehlerursache
+BYTE Hersteller
+
+Datatype SYSInitMeldung 								Fg 254 Id 130 Typ 17 
+SET Meldung := 0
+
+Datatype SYSZeitsynchronisation 						Fg 254 Id 2 Typ 18 
+TIME "h m s d M y" Zeit
+BYTE Wochentag
+
+Datatype SYSFehlerDUE									Fg 254 Id 130, 162 Typ 19 
+BYTE Fehlercode
+SET #Puffer := #TlsId == 162
+
+
+
+
+Datatype SYSPositiveQuittung 							Fg 254 Id 131 Typ 28 
+SET Quittung := 0
+
+Datatype SYSStatischeGeraetekenndaten 					Fg 254 Id 131 Typ 32
+BYTE Hersteller
+BLOCK to end Kenndaten
+
+//Datatype SYSKonfigurationstabelle 						Fg 254 Id 131 Typ 34
+//ARRAY [ 
+//BYTE Eak
+//BYTE Ea
+//BYTE FG
+//BYTE De
+//] Zeile
+
+//Datatype SYSOsi3Routing 								Fg 254 Id 131 Typ 35
+//ARRAY [
+//// TODO Wenn man den Adress-Identifier interpretieren kann, kann man noch die Einzelteile extrahieren
+//BLOCK with size Routing
+//] Routingfeld
+
+Datatype SYSGeoKenndaten 								Fg 254 Id 131 Typ 36
+BYTE Landeskennung
+BYTE Strassenart
+BCD 2 Strassennummer
+BCD 3 $Kilometer
+SET Kilometer := $Kilometer / 100
+BYTE Fahrtrichtung
+BYTE Reserve
+
+Datatype SYSKnotennummer 								Fg 254 Id 131 Typ 37  @ TwoByteV78_2000Draft
+NODE Knotennummer
+
+Datatype SYSKnotennummer 								Fg 254 Id 131 Typ 37 -@ TwoByteV78_2000Draft //OnePointFiveByteV78_2002
+NODE $Knotennummer
+SET Knotennummer := $Knotennummer + 1
+
+Datatype SYSErweiterteKonfigtabelle 					Fg 254 Id 131 Typ 39
+// dont want to parse this...
+BLOCK to end Konfigtabelle
+Datatype SYSErweiterteKonfigtabelle 					Fg 254 Id 131 Typ 39
+// dont want to parse this...
+BLOCK to end Konfigtabelle
+
+Datatype SYSDateiTransfer 								Fg 254 Id 131 Typ 41
+unsigned SHORT $Blocknummer
+SET Blocknummer := $Blocknummer
+IF ( $Blocknummer == 1) {
+  unsigned SHORT Datenbloecke
+  STRING with size Dateiname
+} ELSE {
+  BLOCK with size Datenblock
+}
+
+Datatype SYSExterneSteuerung 							Fg 254 Id 132 Typ 126
+BYTE Betriebsart
+BYTE Anforderungsnummer
+
+//Datatype SYSKriKonfig 									Fg 254 Id 131 Typ 127
+//ARRAY [ 
+//BYTE Osi2
+//NODE Node
+//] Zeile
+
+Datatype ZSTStatusSSt									Fg 254 Id 132, 164 Typ 159
+BYTE Status
+SET #Puffer := #TlsId == 164
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 1
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype LVEFehlerDE 									Fg 1 Id 129,161 Typ 1 
+BYTE $Fehlercode
+SET Fehlercode := inval($Fehlercode,32767,$Fehlercode)
+//BYTE Hersteller
+///* >> */ BYTE inval(255, $? + 400) Hersteller
+/* >> */ BYTE inval(255) Hersteller
+SET #Puffer := #TlsId == 161
+
+//IF
+//Datatype LVEErgFehlerDE									Fg 1 Id 129,161 Typ 14
+//BYTE Hersteller
+//SKIP
+//BYTE Fehlerbyte1
+//BYTE Fehlerbyte2
+//BYTE Fehlerbyte3
+//BYTE Fehlerbyte4
+//BYTE $AnzHerstellerbytes
+//SET AnzHerstellerbytes := $AnzHerstellerbytes
+//BLOCK with size ($AnzHerstellerbytes) herstellerfehler
+//SET #Puffer := #TlsId == 161
+//endif
+
+//Falsche ID?!
+//Datatype LVENegQuittEmpfang 							Fg 1 Id 130,162 Typ 16 
+//BYTE Fehlerursache
+//BYTE Hersteller
+//SET #Puffer := #TlsId == 162
+
+Datatype LVENegQuittEmpfang 							Fg 1 Id 130,164 Typ 16 
+BYTE Fehlerursache
+BYTE Hersteller
+SET #Puffer := #TlsId == 164
+
+Datatype LVEKanalIst/*LVEKanalsteuerung*/ 					Fg 1 Id 130,162 Typ 29 
+BYTE Steuerbyte
+SET #Puffer := #TlsId == 162
+
+//Datatype LVEPositiveQuittung 							Fg 1 Id 131 Typ 28 
+//SET Quittung := 0
+
+
+
+Datatype LVEBetriebsParamIst/*LVEBetriebsparameter*/				Fg 1 Id 131,163 Typ 32 
+BYTE OptionKurz
+BYTE inval([2-4,254,0xff]) IVLaengeKurz
+BYTE inval(255, $? + 400) IVLaengeKurz2
+BYTE inval(255) IVLaengeKurz3
+SET egon  := inval( $lgw_in,255,$lgw_in+400)
+SET hugo  := inval( $lgw_in,255,$lgw_in+10)
+SET berta := inval( $?,[2-4,254,0xff],$lgw_in+10)
+// SET erna  := inval( 5,255,$lgw_in+400) // fehler im ersten argument
+BYTE OptionLang
+BYTE IVLaengeLang
+BYTE alpha1
+BYTE alpha2
+BYTE Laengengrenzwert
+BYTE Mittelwert
+//SET Alpha1 := $Alpha1 / 256 
+//SET Alpha2 := $Alpha2 / 256 
+//SET Laengengrenzwert := $Laengengrenzwert + 400
+//SET Mittelwertbildung := $Mittelwertbildung & 0x80 >> 7
+//???SET Startwert := $Mittelwertbildung & 0x7F
+SET JobNr := #TlsJob
+SET #Puffer := #TlsId == 163
+
+//Datatype LVEKurzErfassung 							Fg1 Id 164 Typ 116 
+
+
+Datatype LVELang										Fg 1 Id 132, 164 Typ 204
+BYTE qKfz
+SHORT qKfz
+BYTE qLkwAe
+SHORT qLkwAe
+BYTE qPkwG
+SHORT qPkwG
+BYTE qPkwA
+SHORT qPkwA
+BYTE qLkw
+SHORT qLkw
+BYTE qLkwK
+SHORT qLkwK
+BYTE qBus
+SHORT qBus
+BYTE qNkKfz
+SHORT qNkKfz
+BYTE qPkw
+SHORT qPkw
+BYTE qLkwA
+SHORT qLkwA
+BYTE qSattelKfz
+SHORT qSattelKfz
+BYTE qKrad
+SHORT qKrad
+BYTE qLfw
+SHORT qLfw
+
+BYTE vKfz
+BYTE vPkwAe
+BYTE vLkwAe
+BYTE vPkwG
+BYTE vPkwA
+BYTE vLkw
+BYTE vLkwK
+BYTE vBus
+BYTE vKrad
+BYTE vPkw
+BYTE vLfw
+BYTE vLkwA
+BYTE vSattelKfz
+BYTE sPkwAe
+BYTE sLkwAe
+BYTE sPkwG
+BYTE sPkwA
+BYTE sLkw
+BYTE sLkwK
+BYTE sBus
+BYTE sKrad
+BYTE sPkw
+BYTE sLfw
+BYTE sLkwA
+BYTE sSattelKfz
+BYTE v85Pkw
+BYTE v85PkwG
+
+BYTE Option
+BYTE Intervalldauer
+SET #Puffer := #TlsId == 164
+
+// Erfassung Langzeitdaten
+
+//TODO: IncLoop noch nicht geklärt! ;;;;;;;;;;;;
+Datatype LVELangvKlasse									Fg 1 Id 132,164 Typ 205
+BYTE Option
+BYTE Intervalldauer
+SET #Puffer := #TlsId == 164
+
+//INCLOOP ;;;;;;;;;;;;
+BYTE AnzvKlassenPkwAe
+BYTE AnzvKlassenLkwAe
+BYTE AnzvKlassenPkwG
+BYTE AnzvKlassenPkwA
+BYTE AnzvKlassenLkw
+BYTE AnzvKlassenLkwK
+BYTE AnzvKlassenBus
+BYTE AnzvKlassenqNkKfz
+BYTE AnzvKlassenqPkw
+BYTE AnzvKlassenqLkwA
+BYTE AnzvKlassenqSattelKfz
+BYTE AnzvKlassenqKrad
+BYTE AnzvKlassenqLfw
+SHORT AnzvKlassenPkwAe
+SHORT AnzvKlassenLkwAe
+SHORT AnzvKlassenPkwG
+SHORT AnzvKlassenPkwA
+SHORT AnzvKlassenLkw
+SHORT AnzvKlassenLkwK
+SHORT AnzvKlassenBus
+SHORT AnzvKlassenqNkKfz
+SHORT AnzvKlassenqPkw
+SHORT AnzvKlassenqLkwA
+SHORT AnzvKlassenqSattelKfz
+SHORT AnzvKlassenqKrad
+SHORT AnzvKlassenqLfw
+
+//TODO: IncLoop muss noch behandelt werden ;;;;;;;;;;;;
+Datatype LVELangvKlasseOpt24							Fg 1 Id 132, 164 Typ 206
+BYTE Option
+BYTE Intervalldauer
+
+BYTE vLVo
+SHORT vLVo
+BYTE vSGV
+SHORT vSGV
+BYTE vBPA
+SHORT vBPA
+
+BYTE sLVo
+SHORT sLVo
+BYTE sSGV
+SHORT sSGV
+BYTE sBPA
+SHORT sBPA
+
+BYTE v85LVo
+BYTE v85SGV
+BYTE v85BPA
+
+BYTE v15LVo
+BYTE v15SGV
+BYTE v15BPA
+
+//INCLOOP ;;;;;;;;;;;;
+BYTE AnzvKlassenLVo
+SHORT vKlassenLVo
+
+BYTE AnzvKlassenSGV
+SHORT AnzvKlassenSGV
+
+BYTE vKlassenBPA
+SHORT vKlassenBPA
+SET #Puffer := #TlsId == 164
+
+
+// Erfassung Langzeitdaten (deprecated, DaLVELang usw. werden direkt erfasst)
+
+//if
+//Datatype LVELangErfassung								Fg 1 Id 132, 164 Typ 198
+//SKIP
+//SHORT qKfz
+//BYTE qKfz
+//SHORT qLkwAe
+//BYTE qLkwAe
+//SHORT qPkwG
+//BYTE qPkwG
+//SHORT qPkwA
+//BYTE qPkwA
+//SHORT qLkw
+//BYTE qLkw
+//SHORT qLkwK
+//BYTE qLkwK
+//SHORT qBus
+//BYTE qBus
+//SHORT qNkKfz
+//BYTE qNkKfz
+//SHORT qPkw
+//BYTE qPkw
+//SHORT qLkwA
+//BYTE qLkwA
+//SHORT qSattelKfz
+//BYTE qSattelKfz
+//SHORT qKrad
+//BYTE qKrad
+//SHORT qLfw
+//BYTE qLfw
+//
+//BYTE vKfz
+//BYTE vPkwAe
+//BYTE vLkwAe
+//BYTE vPkwG
+//BYTE vPkwA
+//BYTE vLkw
+//BYTE vLkwK
+//BYTE vBus
+//BYTE vKrad
+//BYTE vPkw
+//BYTE vLfw
+//BYTE vLkwA
+//BYTE vSattelKfz
+//
+//BYTE sPkwAe
+//BYTE sLkwAe
+//BYTE sPkwG
+//BYTE sPkwA
+//BYTE sLkw
+//BYTE sLkwK
+//BYTE sBus
+//BYTE sKrad
+//BYTE sPkw
+//BYTE sLfw
+//BYTE sLkwA
+//BYTE sSattelKfz
+//
+//BYTE v85Pkw
+//BYTE v85PkwG
+//
+//ARRAY[
+//BYTE AnzvKlassenPkwAe
+//SHORT AnzvKlassenPkwAe
+//]AnzvKlassenPkwAe
+//ARRAY[
+//BYTE AnzvKlassenLkwAe
+//SHORT AnzvKlassenLkwAe
+//]AnzvKlassenLkwAe
+//ARRAY[
+//BYTE AnzvKlassenPkwG
+//SHORT AnzvKlassenPkwG
+//]AnzvKlassenPkwG
+//ARRAY[
+//BYTE AnzvKlassenPkwA
+//SHORT AnzvKlassenPkwA
+//]AnzvKlassenPkwA
+//ARRAY[
+//BYTE AnzvKlassenLkw
+//SHORT AnzvKlassenLkw
+//]AnzvKlassenLkw
+//ARRAY[
+//BYTE AnzvKlassenLkwK
+//SHORT AnzvKlassenLkwK
+//]AnzvKlassenLkwK
+//ARRAY[
+//BYTE AnzvKlassenBus
+//SHORT AnzvKlassenBus
+//]AnzvKlassenBus
+//
+//BYTE Option
+//BYTE Intervalldauer
+//SET #Puffer := #TlsId == 164
+//endif
+
+//if
+//Datatype LVELangErfassungOpt24							Fg 1 Id 132, 164 Typ 199
+//SKIP
+//BYTE qNkKfz
+//SHORT qNkKfz
+//BYTE qKrad
+//SHORT qKrad
+//BYTE qPkw
+//SHORT qPkw
+//BYTE qLfw
+//SHORT qLfw
+//BYTE qPkwA
+//SHORT qPkwA
+//BYTE qLkw
+//SHORT qLkw
+//BYTE qLkwA
+//SHORT qLkwA
+//BYTE qSattelKfz
+//SHORT qSattelKfz
+//BYTE qBus
+//SHORT qBus
+//
+//BYTE vLVo
+//SHORT vLVo
+//BYTE vSGV
+//SHORT vSGV
+//BYTE vBPA
+//SHORT vBPA
+//
+//BYTE sLVo
+//SHORT sLVo
+//BYTE sSGV
+//SHORT sSGV
+//BYTE sBPA
+//SHORT sBPA
+//
+//BYTE v85LVo
+//BYTE v85SGV
+//BYTE v85BPA
+//
+//BYTE v15LVo
+//BYTE v15SGV
+//BYTE v15BPA
+//
+//ARRAY[
+//BYTE vKlassenLVo
+//SHORT vKlassenLVo
+//]vKlassenLVo
+//ARRAY[
+//BYTE vKlassenSGV
+//SHORT vKlassenSGV
+//]vKlassenSGV
+//ARRAY[
+//BYTE vKlassenBPA
+//SHORT vKlassenBPA
+//]vKlassenBPA
+//BYTE Option
+//BYTE Intervalldauer
+//SET #Puffer := #TlsId == 164
+//endif
+
+
+
+//Datatype LVEEfzBetriebsparameter 						Fg 1 Id 131 Typ 33 
+//BYTE MaxAnzahl
+//BYTE MaxDauer
+//BYTE Vmin
+//BYTE Vmax
+//BYTE Fahrzeugklasse
+//BYTE MeldeOption
+
+//Datatype SVEBetriebsparameter 							Fg 1 Id 131 Typ 34 
+//BYTE Version
+//BYTE Intervalldauer
+
+Datatype LVEGeoKenndaten 								Fg 1 Id 131 Typ 36
+BYTE Landeskennung
+BYTE Strassenart
+BCD 2 Strassennummer
+BCD 3 $Kilometer
+SET Kilometer := $Kilometer / 100
+BYTE Fahrtrichtung
+BYTE Reserve
+
+Datatype LVEGeschwindigkeitsklasenKurz 					Fg 1 Id 131 Typ 37
+BYTE Fahrzeugklasse
+BLOCK with size Geschwindigkeitsgrenzen
+
+Datatype LVEGeschwindigkeitsklassenLang 					Fg 1 Id 131 Typ 38
+BYTE Fahrzeugklasse
+BLOCK with size Geschwindigkeitsgrenzen
+
+Datatype LVEIntervallzeitstempel 						Fg 1 Id 132 Typ 48 HEADER
+TIME "h m s" Zeitstempel
+BYTE IntervallArt
+BYTE IntervallLaenge
+
+Datatype LVEErgebnisVersion0 							Fg 1 Id 132 Typ 49
+BYTE QKfz
+BYTE QLkw
+BYTE VPkw
+BYTE VLkw
+
+Datatype LVEErgebnisVersion1 							Fg 1 Id 132 Typ 50
+BYTE QKfz
+BYTE QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE Nettozeitluecke
+
+Datatype LVEErgebnisVersion2 							Fg 1 Id 132 Typ 51
+BYTE QKfz
+BYTE QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE Belegung
+
+//Datatype LVEKurzErfassung 							Fg 1 Id 132 Typ 52 // 8 bit
+//BYTE  qKFZ
+//BYTE  qLKW
+//BYTE  vPKW
+//BYTE  vLKW
+//BYTE  tNetto
+//BYTE  Beleg
+//BYTE  s
+//BYTE  vKFZMittel
+
+Datatype LVEKurzErfassung 							Fg 1 Id 132, 164 Typ 116 // 16 bit
+SHORT qKFZ
+SHORT qLKW
+BYTE  vPKW
+BYTE  vLKW
+BYTE  tNetto
+BYTE  Beleg
+BYTE  s
+BYTE  vKFZMittel
+SET JobNr := #TlsJob
+SET Option := 3
+SET Intervalldauer := 4
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion4 							Fg 1 Id 132 Typ 53
+BYTE QKfz
+BYTE QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE Nettozeitluecke
+BYTE Belegung
+BYTE Standardabweichung
+BYTE Vexpo
+BLOCK with size VKlassenPkwAe
+BLOCK with size VKlassenLkwAe
+
+Datatype LVEErgebnisVersion5 							Fg 1 Id 132 Typ 54
+BYTE QPkwG
+BYTE QPkwA
+BYTE QLkw
+BYTE QLkwK
+BYTE QBus
+BYTE QnkKfz
+BYTE VPkwG
+BYTE VPkwA
+BYTE VLkw
+BYTE VLkwK
+BYTE VBus
+BYTE SPkwG
+BYTE SPkwA
+BYTE SLkw
+BYTE SLkwK
+BYTE SBus
+BYTE Nettozeitluecke
+BYTE Belegung
+BYTE Vexpo
+
+Datatype LVEErgebnisVersion6 							Fg 1 Id 132 Typ 55
+BYTE QnkKfz
+BYTE QKrad
+BYTE QPkw
+BYTE QLfw
+BYTE QPkwA
+BYTE QLkw
+BYTE QLkwA
+BYTE QSattelKfz
+BYTE QBus
+BYTE VKrad
+BYTE VPkw
+BYTE VLfw
+BYTE VPkwA
+BYTE VLkw
+BYTE VLkwA
+BYTE VSattelKfz
+BYTE VBus
+BYTE SKrad
+BYTE SPkw
+BYTE SLfw
+BYTE SPkwA
+BYTE SLkw
+BYTE SLkwA
+BYTE SSattelKfz
+BYTE SBus
+BYTE Nettozeitluecke
+BYTE Belegung
+BYTE Vexpo
+
+//Datatype LVEKfzEinzeldatenSammel 						Fg 1 Id 132 Typ 62
+//ARRAY [
+//BYTE Status
+//BYTE Fahrzeugklasse
+//BYTE Geschwindigkeit
+//unsigned SHORT Belegtzeit
+//unsigned SHORT $Zeitoffset
+//SET Zeitoffset := $Zeitoffset / 100
+//BYTE Fahrzeuglaenge
+//] Einzeldaten
+
+Datatype LVEKfzEinzeldaten 								Fg 1 Id 132 Typ 63
+BYTE Status
+BYTE Fahrzeugklasse
+unsigned SHORT Geschwindigkeit
+unsigned SHORT Belegtzeit
+unsigned SHORT $Nettozeitluecke
+BYTE Fahrzeuglaenge
+SET Nettozeitluecke := $Nettozeitluecke / 100
+
+Datatype LVEIntervallzeitstempel 						Fg 1 Id 132,164 Typ 64 HEADER
+TIME "z y M d h" Zeitstempel
+BYTE IntervallLaenge
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion10 							Fg 1 Id 132,164 Typ 65
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion11 							Fg 1 Id 132,164 Typ 66
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+BYTE VKfz
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion12 							Fg 1 Id 132,164 Typ 67
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion13 							Fg 1 Id 132,164 Typ 68
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+BYTE V85Pkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion14 							Fg 1 Id 132,164 Typ 69
+unsigned SHORT QPkwG
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwK
+unsigned SHORT QBus
+unsigned SHORT QnkKfz
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion15 							Fg 1 Id 132,164 Typ 70
+unsigned SHORT QPkwG
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwK
+unsigned SHORT QBus
+unsigned SHORT QnkKfz
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion16 							Fg 1 Id 132,164 Typ 71
+unsigned SHORT QPkwG
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwK
+unsigned SHORT QBus
+unsigned SHORT QnkKfz
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+BYTE V85Pkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion17 							Fg 1 Id 132,164 Typ 72
+unsigned SHORT QPkwG
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwK
+unsigned SHORT QBus
+unsigned SHORT QnkKfz
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+BYTE V85Pkw
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenPkw
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenLkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion18 							Fg 1 Id 132,164 Typ 73
+unsigned SHORT QPkwG
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwK
+unsigned SHORT QBus
+unsigned SHORT QnkKfz
+BYTE VPkwG
+BYTE VPkwA
+BYTE VLkw
+BYTE VLkwK
+BYTE VBus
+BYTE SPkwG
+BYTE SPkwA
+BYTE SLkw
+BYTE SLkwK
+BYTE SBus
+BYTE V85Pkw
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenPkwG
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenPkwA
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenLkw
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenLkwK
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenBus
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion19 							Fg 1 Id 132,164 Typ 74
+unsigned SHORT QnkKfz
+unsigned SHORT QKrad
+unsigned SHORT QPkw
+unsigned SHORT QLfw
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwA
+unsigned SHORT QSattelKfz
+unsigned SHORT QBus
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion20 							Fg 1 Id 132,164 Typ 75
+unsigned SHORT QnkKfz
+unsigned SHORT QKrad
+unsigned SHORT QPkw
+unsigned SHORT QLfw
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwA
+unsigned SHORT QSattelKfz
+unsigned SHORT QBus
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion21 							Fg 1 Id 132,164 Typ 76
+unsigned SHORT QnkKfz
+unsigned SHORT QKrad
+unsigned SHORT QPkw
+unsigned SHORT QLfw
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwA
+unsigned SHORT QSattelKfz
+unsigned SHORT QBus
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+BYTE V85Pkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion22 							Fg 1 Id 132,164 Typ 77
+unsigned SHORT QnkKfz
+unsigned SHORT QKrad
+unsigned SHORT QPkw
+unsigned SHORT QLfw
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwA
+unsigned SHORT QSattelKfz
+unsigned SHORT QBus
+BYTE VPkw
+BYTE VLkw
+BYTE SPkw
+BYTE SLkw
+BYTE V85Pkw
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenPkw
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenLkw
+SET #Puffer := #TlsId == 164
+
+Datatype LVEErgebnisVersion24 							Fg 1 Id 132,164 Typ 79
+unsigned SHORT QnkKfz
+unsigned SHORT QKrad
+unsigned SHORT QPkw
+unsigned SHORT QLfw
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwA
+unsigned SHORT QSattelKfz
+unsigned SHORT QBus
+unsigned SHORT $VLVo SET VLVo := $VLVo / 10
+unsigned SHORT $VSGV SET VSGV := $VSGV / 10
+unsigned SHORT $VBPA SET VBPA := $VBPA / 10
+unsigned SHORT $SLVo SET SLVo := $SLVo / 10
+unsigned SHORT $SSGV SET SSGV := $SSGV / 10
+unsigned SHORT $SBPA SET SBPA := $SBPA / 10
+BYTE V85LVo
+BYTE V85SGV
+BYTE V85BPA
+BYTE V15LVo
+BYTE V15SGV
+BYTE V15BPA
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenLVo
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenSGV
+ARRAY [
+unsigned SHORT VKlasse
+] VKlassenBPA
+SET #Puffer := #TlsId == 164
+
+Datatype SVEErgebnisVersion0 							Fg 1 Id 132 Typ 96
+unsigned SHORT KKfz
+BYTE VKfz
+
+Datatype SVEErgebnisVersion1 							Fg 1 Id 132 Typ 97
+unsigned SHORT KKfz
+BYTE VKfz
+unsigned SHORT KPkw
+unsigned SHORT KLkw
+BYTE VPkw
+BYTE VLkw
+
+Datatype LVEErgebnisVersion0 							Fg 1 Id 132 Typ 113
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+BYTE VPkw
+BYTE VLkw
+
+Datatype LVEErgebnisVersion1 							Fg 1 Id 132 Typ 114
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE Nettozeitluecke
+
+Datatype LVEErgebnisVersion2 							Fg 1 Id 132 Typ 115
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE Belegung
+
+//Datatype LVEErgebnisVersion3 							Fg 1 Id 132 Typ 116
+//unsigned SHORT QKfz
+//unsigned SHORT QLkw
+//BYTE VPkw
+//BYTE VLkw
+//BYTE Nettozeitluecke
+//BYTE Belegung
+//BYTE Standardabweichung
+//BYTE Vexpo
+
+Datatype LVEErgebnisVersion4 							Fg 1 Id 132 Typ 117
+unsigned SHORT QKfz
+unsigned SHORT QLkw
+BYTE VPkw
+BYTE VLkw
+BYTE Nettozeitluecke
+BYTE Belegung
+BYTE Standardabweichung
+BYTE Vexpo
+BLOCK with size VKlassenPkwAe
+BLOCK with size VKlassenLkwAe
+
+Datatype LVEErgebnisVersion5 							Fg 1 Id 132 Typ 118
+unsigned SHORT QPkwG
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwK
+unsigned SHORT QBus
+unsigned SHORT QnkKfz
+BYTE VPkwG
+BYTE VPkwA
+BYTE VLkw
+BYTE VLkwK
+BYTE VBus
+BYTE SPkwG
+BYTE SPkwA
+BYTE SLkw
+BYTE SLkwK
+BYTE SBus
+BYTE Nettozeitluecke
+BYTE Belegung
+BYTE Vexpo
+
+Datatype LVEErgebnisVersion6 							Fg 1 Id 132 Typ 119
+unsigned SHORT QnkKfz
+unsigned SHORT QKrad
+unsigned SHORT QPkw
+unsigned SHORT QLfw
+unsigned SHORT QPkwA
+unsigned SHORT QLkw
+unsigned SHORT QLkwA
+unsigned SHORT QSattelKfz
+unsigned SHORT QBus
+BYTE VKrad
+BYTE VPkw
+BYTE VLfw
+BYTE VPkwA
+BYTE VLkw
+BYTE VLkwA
+BYTE VSattelKfz
+BYTE VBus
+BYTE SKrad
+BYTE SPkw
+BYTE SLfw
+BYTE SPkwA
+BYTE SLkw
+BYTE SLkwA
+BYTE SSattelKfz
+BYTE SBus
+BYTE Nettozeitluecke
+BYTE Belegung
+BYTE Vexpo
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 2
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype AXLDeFehler 									Fg 2 Id 129 Typ 1 
+BYTE Fehlercode
+BYTE Hersteller
+
+Datatype AXLErgDeFehler 								Fg 2 Id 129 Typ 14 
+BYTE Hersteller
+BLOCK with size TlsFehlercodes 
+BLOCK with size HerstellerBytes
+
+Datatype AXLNegativeQuittung 							Fg 2 Id 130 Typ 16 
+BYTE Fehlerursache
+BYTE Hersteller
+
+Datatype AXLPositiveQuittung 							Fg 2 Id 131 Typ 28 
+SET Quittung := 0
+
+Datatype AXLKanalsteuerung 								Fg 2 Id 130 Typ 29 
+BYTE Status
+
+Datatype AXLZeitstempel 								Fg 2 Id 131 Typ 31 HEADER
+TIME "Y M d h m s" Zeitstempel
+BYTE Hundertstel
+unsigned SHORT LfdNr
+unsigned SHORT Gesmatzahl
+
+Datatype AXLBetriebsparameter 							Fg 2 Id 131 Typ 32
+SKIP
+SKIP 
+BYTE Version
+BYTE Intervall
+SKIP
+BYTE VersionEinzel
+BYTE Speicherung
+
+Datatype AXLGeoKenndaten 								Fg 2 Id 131 Typ 36
+BYTE Landeskennung
+BYTE Strassenart
+BCD 2 Strassennummer
+BCD 3 $Kilometer
+SET Kilometer := $Kilometer / 100
+BYTE Fahrtrichtung
+BYTE Reserve
+
+Datatype AXLParameterAchslastGrenzwerte 				Fg 2 Id 131 Typ 37
+unsigned SHORT MaxEinzelAchslast1
+unsigned SHORT MaxEinzelAchslast
+BYTE  MaxAbstandDoppelachse1
+unsigned SHORT MaxAchslastDoppelachse1
+BYTE  MaxAbstandDoppelachse2
+unsigned SHORT MaxAchslastDoppelachse2
+BYTE  MaxAbstandDoppelachse3
+unsigned SHORT MaxAchslastDoppelachse3
+BYTE  MaxAbstandDreifachachse1
+unsigned SHORT MaxAchslastDreifachachse1
+BYTE  MaxAbstandDreifachachse2
+unsigned SHORT MaxAchslastDreifachachse2
+ARRAY [
+BYTE  Fahrzeugtyp
+unsigned SHORT MaxGesamtgewicht
+] MaxGesamtgewichte
+
+Datatype AXLParameterAchslastklassen5p1 				Fg 2 Id 131 Typ 38
+ARRAY [
+unsigned SHORT Grenze
+] Einzelachslastklassen
+ARRAY [
+unsigned SHORT Grenze
+] Doppelachslastklassen
+ARRAY [
+unsigned SHORT Grenze
+] Dreifachachslastklassen
+ARRAY [
+unsigned SHORT Grenze
+] Fahrzeugklasse3
+ARRAY [
+unsigned SHORT Grenze
+] Fahrzeugklasse4
+ARRAY [
+unsigned SHORT Grenze
+] Fahrzeugklasse5
+
+Datatype AXLParameterAchslastklassen8p1 				Fg 2 Id 131 Typ 39
+ARRAY [
+unsigned SHORT Grenze
+] Einzelachslastklassen
+ARRAY [
+unsigned SHORT Grenze
+] Doppelachslastklassen
+ARRAY [
+unsigned SHORT Grenze
+] Dreifachachslastklassen
+ARRAY [
+unsigned SHORT Grenze
+] Fahrzeugklasse3
+ARRAY [
+unsigned SHORT Grenze
+] Fahrzeugklasse5
+ARRAY [
+unsigned SHORT Grenze
+] Fahrzeugklasse8
+ARRAY [
+unsigned SHORT Grenze
+] Fahrzeugklasse9
+
+Datatype AXLEinzelergebnisVersion1 						Fg 2 Id 132,164 Typ 60
+BYTE Fahrzeugtyp
+unsigned SHORT Fahrzeuglaenge
+BYTE  Geschwindigkeit
+unsigned SHORT Fahrzeugabstand
+unsigned SHORT Gesamtgewicht
+BYTE  Ueberladung
+ARRAY [
+BYTE  Achsart
+unsigned SHORT Achslast
+unsigned SHORT Achsabstand
+] Achslastdatengruppen
+SET #Puffer := #TlsId == 164
+
+Datatype AXLEinzelergebnisVersion2 						Fg 2 Id 132,164 Typ 61
+BYTE Fahrzeugtyp
+unsigned SHORT Fahrzeuglaenge
+BYTE  Geschwindigkeit
+unsigned SHORT Fahrzeugabstand
+unsigned SHORT Gesamtgewicht
+BYTE  Ueberladung
+ARRAY [
+BYTE  Achsart
+BYTE  AchslastLinks
+BYTE  AchslastRechts
+unsigned SHORT Achsabstand
+] Achslastdatengruppen
+SET #Puffer := #TlsId == 164
+
+Datatype AXLEinzelergebnisVersion3 						Fg 2 Id 132,164 Typ 62
+BYTE Fahrzeugtyp
+unsigned SHORT Fahrzeuglaenge
+BYTE  Geschwindigkeit
+unsigned SHORT Fahrzeugabstand
+NODE  Gesamtgewicht		// Der drei byte Typ fuer die Knotennummer passt hier
+BYTE  Ueberladung
+ARRAY [
+BYTE  Achsart
+unsigned SHORT Achslast
+unsigned SHORT Achsabstand
+] Achslastdatengruppen
+SET #Puffer := #TlsId == 164
+
+Datatype AXLIntervallzeitstempel 						Fg 2 Id 132,164 Typ 64 HEADER
+TIME "z y M d h m" Zeitstempel
+BYTE IntervallLaenge
+SET #Puffer := #TlsId == 164
+
+Datatype AXLErgebnisVersion10 							Fg 2 Id 132,164 Typ 65
+ARRAY [
+unsigned SHORT Klasse
+] Einzelachslastklassen
+ARRAY [
+unsigned SHORT Klasse
+] Doppelachslastklassen
+ARRAY [
+unsigned SHORT Klasse
+] Dreifachachslastklassen
+BYTE UeberladungenKlasse3
+BYTE UeberladungenKlasse4
+BYTE UeberladungenKlasse5
+ARRAY [
+unsigned SHORT Klasse
+] Fahrzeugklasse3
+ARRAY [
+unsigned SHORT Klasse
+] Fahrzeugklasse4
+ARRAY [
+unsigned SHORT Klasse
+] Fahrzeugklasse5
+SET #Puffer := #TlsId == 164
+
+Datatype AXLErgebnisVersion11 							Fg 2 Id 132,164 Typ 66
+ARRAY [
+unsigned SHORT Klasse
+] Einzelachslastklassen
+ARRAY [
+unsigned SHORT Klasse
+] Doppelachslastklassen
+ARRAY [
+unsigned SHORT Klasse
+] Dreifachachslastklassen
+BYTE UeberladungenKlasse3
+BYTE UeberladungenKlasse5
+BYTE UeberladungenKlasse8
+BYTE UeberladungenKlasse9
+ARRAY [
+unsigned SHORT Klasse
+] Fahrzeugklasse3
+ARRAY [
+unsigned SHORT Klasse
+] Fahrzeugklasse5
+ARRAY [
+unsigned SHORT Klasse
+] Fahrzeugklasse8
+ARRAY [
+unsigned SHORT Klasse
+] Fahrzeugklasse9
+SET #Puffer := #TlsId == 164
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 3
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype UFDFehlerDE 									Fg 3 Id 129,161 Typ 1 
+BYTE Fehlercode
+BYTE Hersteller
+SET #Puffer := #TlsId == 161
+
+//IF
+//Datatype UFDErgFehlerDE 								Fg 3 Id 129, 161 Typ 14 
+//BYTE Hersteller
+//SKIP
+//BYTE Fehlerbyte1
+//BYTE Fehlerbyte2
+//BYTE Fehlerbyte3
+//BYTE Fehlerbyte4
+//BYTE $AnzHerstellerbytes
+//SET AnzHerstellerbytes := $AnzHerstellerbytes
+//BLOCK with size ($AnzHerstellerbytes) herstellerfehler
+//SET #Puffer := #TlsId == 161
+//endif
+
+
+Datatype UFDKanalIst							Fg 3 Id 130,162 Typ 29 
+BYTE Steuerbyte
+SET #Puffer := #TlsId == 162
+
+Datatype UFDBetriebsParamIst					Fg 3 Id 131, 163 Typ 32
+unsigned SHORT PeriodenDauer
+BYTE Uebertragung
+SET #Puffer := #TlsId == 163
+
+
+Datatype UFDNegativeQuittung 							Fg 3 Id 130 Typ 16 
+BYTE Fehlerursache
+BYTE Hersteller
+
+Datatype UFDPositiveQuittung 							Fg 3 Id 131 Typ 28 
+SET Quittung := 0
+
+
+Datatype UFDGeoKenndaten 								Fg 3 Id 131 Typ 36
+BYTE Landeskennung
+BYTE Strassenart
+BCD 2 Strassennummer
+BCD 3 $Kilometer
+SET Kilometer := $Kilometer / 100
+BYTE Fahrtrichtung
+BYTE Reserve
+
+
+Datatype UFDLuftTemp 								Fg 3 Id 132,164 Typ 48
+BYTE Messwert
+signed SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDFBTemp /*UFDFahrbahnoberflaechentemperatur*/ 				Fg 3 Id 132,164 Typ 49
+BYTE Messwert
+signed SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDFBRestSalz 									Fg 3 Id 132,164 Typ 52
+BYTE Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDNiederInten /*UFDNiederschlagsintensitaet*/ 			Fg 3 Id 132,164 Typ 53
+BYTE Messwert
+unsigned SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDLuftDruck 								Fg 3 Id 132,164 Typ 54
+BYTE Messwert
+unsigned SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDLuftFeuchte /*UFDRelativeLuftfeuchte*/ 				Fg 3 Id 132,164 Typ 55
+BYTE Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDWindRichtung 							Fg 3 Id 132,164 Typ 56
+BYTE Messwert
+unsigned SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDWindGeschw /*UFDWindgeschwindigkeit*/ 				Fg 3 Id 132,164 Typ 57
+BYTE Messwert
+SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDSchneeHoehe 							Fg 3 Id 132,164 Typ 58
+BYTE Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDSichtWeite 								Fg 3 Id 132,164 Typ 60
+BYTE Messwert
+unsigned SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDHelligkeit 								Fg 3 Id 132,164 Typ 61
+BYTE Messwert
+unsigned SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDWindGeschwMax/*UFDWindgeschwindigkeitMax*/				Fg 3 Id 132,164 Typ 64
+BYTE Messwert
+unsigned SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDGefrierTemp/*UFDGefriertemperatur*/					Fg 3 Id 132,164 Typ 65
+BYTE Messwert
+signed SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDTaupunktTemp/*UFDTaupunkttemperatur*/ 				Fg 3 Id 132,164 Typ 66
+BYTE Messwert
+signed SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDTempTiefe1/*UFDBodentemperaturTiefe1*/ 				Fg 3 Id 132,164 Typ 67
+BYTE Messwert
+signed SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDTempTiefe2/*UFDBodentemperaturTiefe2*/				Fg 3 Id 132,164 Typ 68
+BYTE Messwert
+signed SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDTempTiefe3/*UFDBodentemperaturTiefe3*/ 				Fg 3 Id 132,164 Typ 69
+BYTE Messwert
+signed SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDFBZ/*UFDZustandFahrbahnoberflaeche*/				Fg 3 Id 132,164 Typ 70
+BYTE Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDNS/*UFDNiederschlagsart*/						Fg 3 Id 132,164 Typ 71
+BYTE Messwert
+SET #Puffer := #TlsId == 164
+
+Datatype UFDWFD/*UFDWasserfilmdicke*/						Fg 3 Id 132,164 Typ 72
+BYTE Messwert
+unsigned SHORT Messwert
+SET #Puffer := #TlsId == 164
+
+//Datatype UFDTaustoffkonzentration 						Fg 3 Id 132,164 Typ 73
+//BYTE Messwert
+//SET #Puffer := #TlsId == 164
+
+//Datatype UFDTaustoffmenge 							Fg 3 Id 132,164 Typ 74
+//BYTE Messwert
+//SET #Puffer := #TlsId == 164
+
+//Datatype UFDSchneefilmdicke 							Fg 3 Id 132,164 Typ 75
+//BYTE Messwert
+//SET #Puffer := #TlsId == 164
+
+//Datatype UFDEisfilmdicke 							Fg 3 Id 132,164 Typ 76
+//BYTE Messwert
+//SET #Puffer := #TlsId == 164
+
+//Datatype UFDGriffigkeit 							Fg 3 Id 132,164 Typ 77
+//BYTE $Messwert SET Messwert := $Messwert / 100
+//SET #Puffer := #TlsId == 164
+
+//Datatype UFDGlobalstrahlung 							Fg 3 Id 132,164 Typ 78
+//unsigned SHORT Messwert
+//SET #Puffer := #TlsId == 164
+
+//Datatype UFDFZW 								Fg 3 Id 132,164 Typ 79
+//BYTE Messwert
+//SET #Puffer := #TlsId == 164
+
+//Datatype UFDStickstoffmonoxid							Fg 3 Id 132 Typ 80
+//FLOAT Messwert
+//
+//Datatype UFDStickstoffdioxid							Fg 3 Id 132 Typ 81
+//FLOAT Messwert
+//
+//Datatype UFDStickoxide							Fg 3 Id 132 Typ 82
+//FLOAT Messwert
+//
+//Datatype UFDSchadstoffePM10							Fg 3 Id 132 Typ 83
+//FLOAT Messwert
+//
+//Datatype UFDSchadstoffePM2_5							Fg 3 Id 132 Typ 84
+//FLOAT Messwert
+//
+//Datatype UFDSchadstoffePM1							Fg 3 Id 132 Typ 85
+//FLOAT Messwert
+//
+//Datatype UFDSchalldruckpegelLA						Fg 3 Id 132 Typ 86
+//FLOAT Messwert
+//
+//Datatype UFDDauerschallpegelLAeq						Fg 3 Id 132 Typ 87
+//FLOAT Messwert
+//
+//Datatype UFDBasispegelLA95	 						Fg 3 Id 132 Typ 88
+//FLOAT Messwert
+//
+//Datatype UFDMittlererSpitzenpegelLA1						Fg 3 Id 132 Typ 89
+//FLOAT Messwert
+ 
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 4
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype WVZZeitMitFolgeNr 								Fg 4 Id 129-133,161-165 Typ 31 HEADER
+TIME "h m s d" Zeitstempel
+unsigned SHORT folgenummer
+
+
+Datatype WVZFehlerDEIst	 								Fg 4 Id 129,161 Typ 1 
+BYTE Fehlercode
+BYTE Hersteller
+SET #Puffer := #TlsId == 161
+
+Datatype WVZNichtDarstellbareWVZ 						Fg 4 Id 129,161 Typ 2
+BYTE $AnzByte
+SET AnzByte := $AnzByte
+BLOCK with size ($AnzByte) WVZCode
+SET #Puffer := #TlsId == 161
+
+Datatype WVZDefekteLampen	 							Fg 4 Id 129,161 Typ 3
+BYTE AnzLampen
+BYTE $AnzByte 
+SET AnzByte := (AnzLampen+3)/4
+BLOCK with size ($AnzByte) status
+SET #Puffer := #TlsId == 161
+
+//IF
+//Datatype WVZGestoerteTextPos							Fg 4 Id 129,161 Typ 4
+//BYTE $anzbyte
+//SET anzbyte := $anzbyte
+//BLOCK with size ($anzbyte) textpos
+//SET #Puffer := #TlsId == 161
+//endif
+
+
+Datatype WVZDefekteLEDKetten							Fg 4 Id 129,161 Typ 5
+BYTE Anzeigeprinzip
+BYTE AusfallSchwere
+BYTE AnzVorhandeneKetten
+BYTE AnzGemeldeteKetten
+BLOCK to end KettenStatus 
+SET #Puffer := #TlsId == 161
+
+Datatype WVZGestoertePixelspalten						Fg 4 Id 129,161 Typ 6
+BYTE $Anzahl SET Anzahl := $Anzahl
+ARRAY ($Anzahl) [
+unsigned SHORT Spaltennummer
+BYTE  AnzahlFehlerhafterPixel
+] Pixelspalten
+SET #Puffer := #TlsId == 161
+
+
+
+Datatype WVZErgFehlerDE								Fg 4 Id 129,161 Typ 14 
+BYTE Hersteller
+SKIP
+BYTE Fehlerbyte1
+BYTE Fehlerbyte2
+BYTE Fehlerbyte3
+BYTE Fehlerbyte4
+BYTE $AnzHerstellerbytes
+SET AnzHerstellerbytes := $AnzHerstellerbytes
+BLOCK with size ($AnzHerstellerbytes) herstellerfehler
+SET #Puffer := #TlsId == 161
+
+Datatype WVZNegativeQuittung 							Fg 4 Id 130 Typ 16 
+BYTE Fehlerursache
+BYTE Hersteller
+
+Datatype WVZBetrArtPhysIst		 							Fg 4 Id 130,162 Typ 17 
+BYTE WVZBetrArt
+SET #Puffer := #TlsId == 162
+
+//Datatype WVZPositiveQuittung 							Fg 4 Id 131 Typ 28 
+//SET Quittung := 0
+
+Datatype WVZKanalIst 								Fg 4 Id 130,162 Typ 29 
+BYTE Steuerbyte
+SET #Puffer := #TlsId == 162
+
+Datatype WVZGrundIst 									Fg 4 Id 131, 163 Typ 32
+BYTE WVZCode
+BYTE Funktion
+SET #Puffer := #TlsId == 163
+
+
+//Datatype WVZGrundeinstellung 							Fg 4 Id 131,163 Typ 33 
+//BYTE Anzeigeprinzip
+//BYTE Stellcode
+//BYTE Funktionsbyte
+//OPT { BLOCK with size Komponenten }
+//SET #Puffer := #TlsId == 163
+
+
+//Datatype WVZGeoKenndaten 								Fg 4 Id 131 Typ 36
+//BYTE Landeskennung
+//BYTE Strassenart
+//BCD 2 Strassennummer
+//BCD 3 $Kilometer
+//SET Kilometer := $Kilometer / 100
+//BYTE Fahrtrichtung
+//BYTE Reserve
+
+Datatype WVZCodeliste 									Fg 4 Id 131 Typ 43
+BYTE anzeigeprinzip
+BYTE $anzahl
+SET anzahl := $anzahl
+BLOCK with size ($anzahl) stellcode
+
+//Datatype WVZCodedefinition 								Fg 4 Id 131,163 Typ 44
+//BYTE $Anzeigeprinzip SET Anzeigeprinzip := $Anzeigeprinzip
+//BYTE Stellcode
+//IF ($Anzeigeprinzip == 8) {
+//  ARRAY [ 
+//    BYTE DeNummer
+//    BYTE Anzeigeprinzip
+//    BYTE Stellcode
+//    BYTE Funktionsbyte
+//  ] Stellzustaende
+// } ELSE {
+//  IF ($Anzeigeprinzip == 4) {
+//    ARRAY [ 
+//      BYTE Stellcode
+//      BYTE Funktionsbyte
+//    ] Prismen
+//  } ELSE {
+//    IF ( ($Anzeigeprinzip == 2)  || ($Anzeigeprinzip == 3) ) {
+//      STRING with size Textzeichen
+//    }
+//  }   
+//}
+//SET #Puffer := #TlsId == 163
+
+//Datatype WVZBilddefinition 								Fg 4 Id 131,163 Typ 45
+//BYTE Stellcode
+//STRING with size Dateiname
+//SET #Puffer := #TlsId == 163
+
+
+Datatype WVZSchaltIst                     	                Fg 4 Id 133,165 Typ 48
+BYTE WVZCode
+BYTE Funktion
+SET #Puffer := #TlsId == 165
+
+Datatype WVZHellAQIst 									Fg 4 Id 133,165 Typ 49
+BYTE WVZHell
+BYTE WVZHellBetrArt
+SET #Puffer := #TlsId == 165
+
+
+//Datatype WVZStellzustand								Fg 4 Id 133,165 Typ 55
+//BYTE $Anzeigeprinzip SET Anzeigeprinzip := $Anzeigeprinzip
+//BYTE $Stellcode SET Stellcode := $Stellcode
+//BYTE Funktionsbyte
+//IF ($Stellcode == 0) {
+//  IF ($Anzeigeprinzip == 4) {
+//    ARRAY [ 
+//      BYTE Stellcode
+//      BYTE Funktionsbyte
+//    ] Prismen
+//  } ELSE {
+//    IF ( ($Anzeigeprinzip == 2)  || ($Anzeigeprinzip == 3) ) {
+//      STRING with size Textzeichen
+//    }
+//  }   
+//} 
+//SET #Puffer := #TlsId == 165
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 5
+///////////////////////////////////////////////////////////////////////////////////////////////
+Datatype WWWFehlerDEIst								Fg 5 Id 129, 161 Typ 1
+BYTE Fehlercode
+BYTE Hersteller
+SET #Puffer := #TlsId == 161
+
+Datatype WWWBetrArtPhysIst							Fg 5 Id 130, 162 Typ 17
+BYTE WWWBetrArt
+SET #Puffer := #TlsId == 162
+
+Datatype WWWKanalIst								Fg 5 Id 130, 162 Typ 29
+BYTE Steuerbyte
+SET #Puffer := #TlsId == 162
+
+Datatype WWWPrgDefIst								Fg 5 Id 131, 163 Typ 32
+ARRAY[
+BYTE $PrismenAnzahl
+SET $PrismenAnzahl := PrismenAnzahl - 1
+BYTE ProgrammNummer
+ARRAY[
+BYTE Prisma
+]$PrismenAnzahl
+]$AnzBloecke
+SET #Puffer := #TlsId == 163
+
+Datatype WWWSchaltIst 								Fg 5 Id 133, 165 Typ 48
+BYTE WWWCode
+BYTE WWWStatus
+SET #Puffer := #TlsId == 165
+
+Datatype WWWPrismaIst								Fg 5 Id 133, 165 Typ 49
+ARRAY[
+BYTE Prisma
+]PrismenAnzahl
+SET #Puffer := #TlsId == 165
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// FG 6
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Datatype VLTFehlerDE 									Fg 6 Id 129,161 Typ 1 
+BYTE Fehlercode
+BYTE Hersteller
+SET #Puffer := #TlsId == 161
+
+
+//if
+//Datatype VLTErgFehlerDE 								Fg 6 Id 129,161 Typ 14 
+//BYTE Hersteller
+//BYTE Fehlerbyte1
+//BYTE Fehlerbyte2
+//BYTE Fehlerbyte3
+//BYTE Fehlerbyte4
+//BYTE $AnzHerstellerbytes
+//SET AnzHerstellerbytes := $AnzHerstellerbytes
+//BLOCK with size ($AnzHerstellerbytes) TlsFehlercodes 
+//SET #Puffer := #TlsId == 161
+//endif
+
+
+Datatype VLTKanalIst									Fg 6 Id 130,162 Typ 29
+BYTE Steuerbyte
+SET #Puffer := #TlsId == 162
+
+
+Datatype VLTBetriebsParamIst							Fg 6 Id 131, 163 Typ 32 
+BYTE PeriodenDauer
+SHORT PeriodenDauer
+BYTE Uebertragung
+SET #Puffer := #TlsId == 163
+
+Datatype VLTNegativeQuittung 							Fg 6 Id 130 Typ 16 
+BYTE Fehlerursache
+BYTE Hersteller
+
+Datatype VLTPositiveQuittung 							Fg 6 Id 131 Typ 28 
+SET Quittung := 0
+
+Datatype VLTGeoKenndaten 								Fg 6 Id 131 Typ 36
+BYTE Landeskennung
+BYTE Strassenart
+BCD 2 Strassennummer
+BCD 3 $Kilometer
+SET Kilometer := $Kilometer / 100
+BYTE Fahrtrichtung
+BYTE Reserve
+
+Datatype VLTTuerkontakt 								Fg 6 Id 132, 164 Typ 48
+BYTE Meldungstext
+SET #Puffer := #TlsId == 164
+
+
+Datatype VLTTemperatur									Fg 6 Id 132, 164 Typ 49
+BYTE Meldungstext
+SET #Puffer := #TlsId == 164
+
+Datatype VLTLicht		 								Fg 6 Id 132, 164 Typ 50
+BYTE Meldungstext
+SET #Puffer := #TlsId == 164
+
+Datatype VLTStrom										Fg 6 Id 132, 164 Typ 51
+BYTE Meldungstext
+SET JobNr := #TlsJob
+SET #Puffer := #TlsId == 164
+
+Datatype VLTHeizung		 								Fg 6 Id 132, 164 Typ 52
+BYTE Meldungstext
+SET #Puffer := #TlsId == 164
+
+Datatype VLTLueftung 									Fg 6 Id 132, 164 Typ 53
+BYTE Meldungstext
+SET #Puffer := #TlsId == 164
+
+Datatype VLTUeberspannung  								Fg 6 Id 132, 164 Typ 54
+BYTE Meldungstext
+SET #Puffer := #TlsId == 164
+
+Datatype VLTAlarm										Fg 6 Id 132, 164 Typ 55
+BYTE Meldungstext
+SET #Puffer := #TlsId == 164
+
+//IF 0
+//Datatype DaVLTSolaranlage								Fg 6 Id 132,164 Typ 56
+//BYTE zustand
+//BYTE ladespannung
+//BYTE ladestrom
+//SET #Puffer := #TlsId == 164
+//endif
+
+Datatype VLTLokaleEnergieversorgung						Fg 6 Id 132 Typ 57
+BYTE Meldungstext
+unsigned SHORT $Ladespannung 
+SET Ladespannung := $Ladespannung / 100
+unsigned SHORT $Ladestrom    
+SET Ladestrom := $Ladestrom / 100
+  
+//Datatype Virtuell /*LVE GeoKenn*/						Fg 1 Id 131 Typ  36
+//	BLOCK to end skip
