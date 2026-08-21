@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>HeuBoeIncubator/automated-dependency-update/renovate/renovate-config",
+    ":automergePatch",
+    ":automergeMinor"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "excludePackagePatterns": [
+        "de.heuboe.*"
+      ],
+      "enabled": false
+    },
+    {
+      "postUpgradeTasks": {
+        "commands": [
+          "update_changelog \"Renovate -> Update to {{{depName}}} v{{{newVersion}}} (was {{{currentVersion}}})\""
+        ],
+        "fileFilters": [
+          "CHANGELOG.md"
+        ],
+        "executionMode": "update"
+      },
+      "matchPackagePatterns": [
+        ".*"
+      ]
+    }
+  ]
+}

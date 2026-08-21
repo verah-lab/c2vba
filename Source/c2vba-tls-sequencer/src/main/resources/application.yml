@@ -1,0 +1,64 @@
+## +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+##
+## c2vba/c2vba-tls-sequencer
+##
+## This file provides a list of all custom application properties. The
+## properties are listed with a possible default value, a hint which values
+## might be allowed and a short description what the properties are used for.
+##
+## The file is intended as a template for custom property files
+## of this application, which are then used in specific environments.
+##
+## All properties that have no default value or need to be overridden
+## can be specified either
+##   - within a custom property file ('-Dspring.config.location=file:<path>')
+##   - by using system properties (-D<property>=<value>)
+##   - application parameters (--<property>=<value>).
+##
+## See: Spring Boot Reference Guide - Externalized Configuration
+## http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config
+## +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+## --------------------------------------------------------------------------
+## Spring Actuator
+## --------------------------------------------------------------------------
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        exclude: shutdown
+        include: health,info,metrics,prometheus,loggers
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+## --------------------------------------------------------------------------
+## Spring Kafka
+## --------------------------------------------------------------------------
+spring:
+  kafka:
+    # The name of the consumer group for kafka.
+    # This is important because the progress/current index is saved using this name.
+    # Different applications that listen to kafka HAVE to use different group ids.
+    consumer:
+      properties:
+        value:
+          deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+    producer:
+      properties:
+        value:
+          serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+
+  main:
+    ## --------------------------------------------------------------------------
+    ## Bean configuration
+    ## --------------------------------------------------------------------------
+    allow-bean-definition-overriding: true

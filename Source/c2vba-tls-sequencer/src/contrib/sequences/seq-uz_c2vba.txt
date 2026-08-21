@@ -1,0 +1,11 @@
+/* ========================================================================== */
+/* Reacts on alive messages from KRI's and trigger time syncs.                */
+/* ========================================================================== */
+Bei Eingang von SYSFehlerDUE (self=true) {
+    if (fehlercode == 0) {
+        if (isKri($Eaid)) {
+            Ea in SteuerSequenz.action via out.SYSSteuerSequenz := LOKALE_ZEITSYNCHRONISATION
+            Ea in SteuerSequenz.fg via out.SYSSteuerSequenz := 254
+        }
+    }
+}

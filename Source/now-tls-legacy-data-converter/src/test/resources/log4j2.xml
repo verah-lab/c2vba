@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %date{HH:mm:ss,SSS} | %highlight{%5.5level | %25.25logger{1}} | %m%n
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.apache.kafka" level="WARN" />
+        <Logger name="org.apache.kafka.common.metrics" level="WARN" />
+        <Logger name="org.springframework.data.convert.CustomConversions" level="ERROR" />
+        <Logger name="de.heuboe.tls.cfglib.Osi7CfgImpl" level="ERROR" />
+        <Logger name="de.heuboe.tls.parser.proto" level="WARN" />
+        <Logger name="de.heuboe.tls.kafka.operator" level="INFO" />
+        <Logger name="de.now.tls.legacy.data.converter" level="INFO" />
+
+        <Root level="WARN">
+            <AppenderRef ref="STDOUT" />
+        </Root>
+    </Loggers>
+
+</Configuration>

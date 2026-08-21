@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.tls</groupId>
+        <artifactId>tls-parent-pom</artifactId>
+        <version>2.2.0</version>
+    </parent>
+
+    <groupId>de.heuboe.now</groupId>
+    <artifactId>tls-receiver-app-now</artifactId>
+    <version>1.0.7</version>
+
+    <name>${project.artifactId}</name>
+    <description>Process for receiving TLS telegrams via broker ofr NI</description>
+    <inceptionYear>2019</inceptionYear>
+    <url>${urlCombined}</url>
+
+    <developers>
+        <developer>
+            <name>Ronald Nikel</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/${urlmain}</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:${urlmain}.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:${urlmain}.git</developerConnection>
+      <tag>HEAD</tag>
+  </scm>
+
+    <properties>
+        <!-- scm -->
+        <urlmain>ni/entwicklung/tls/${project.artifactId}</urlmain>
+        <gitlab>gitlab.heuboe.hbintern</gitlab>
+        <urlCombined>https://${gitlab}/${urlmain}</urlCombined>
+
+        <!-- docker -->
+        <mainClass>de.heuboe.tls.receiver.now.ReceiverMain</mainClass>
+        <from.image>${docker.registry}/eclipse-temurin:21-jre-alpine</from.image>
+        <to.image>${docker.registry}/heuboe/now/${project.artifactId}:${project.version}</to.image>
+
+        <from.image.expanded>${from.image}</from.image.expanded> <!-- in order to hover for instance -->
+        <to.image.expanded>${to.image}</to.image.expanded> <!-- in order to hover for instance -->
+
+        <!-- dependencies -->
+        <vmis2-alarm-service.version>0.3.0</vmis2-alarm-service.version>
+        <jhbRegressionTest.version>0.3.2</jhbRegressionTest.version>
+        <tls-cgl-now.version>1.0.6</tls-cgl-now.version>
+        <now-tls-resources.version>1.0.4</now-tls-resources.version>
+        <tls-receiver-appcore.version>1.2.4</tls-receiver-appcore.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.heuboe.now</groupId>
+            <artifactId>now-tls-proto-interface</artifactId>
+            <version>${now-tls-resources.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.now</groupId>
+            <artifactId>now-tls-generator-proto</artifactId>
+            <version>${now-tls-resources.version}</version>
+        </dependency>
+
+        <!-- HeuBoe VMIS2 -->
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-kafka-protopojo-converter</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-log4j2-extension</artifactId>
+            <version>1.3.1</version>
+            <scope>runtime</scope>
+        </dependency>
+
+		<dependency>
+		  <groupId>de.heuboe.idgenerator</groupId>
+		  <artifactId>heuboe-idgenerator</artifactId>
+		  <version>1.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.heuboe.asfinag</groupId>
+			<artifactId>vmis2-tls-cfggetter</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-alarm-service</artifactId>
+            <version>${vmis2-alarm-service.version}</version>
+        </dependency>
+
+        <!-- for docker runtime environment -->
+        <dependency>
+            <groupId>de.heuboe.now</groupId>
+            <artifactId>tls-cgl-now</artifactId>
+            <version>${tls-cgl-now.version}</version>
+        </dependency>
+
+
+         <!-- Core HeuBoe TLS -->
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-receiver-appcore</artifactId>
+            <version>${tls-receiver-appcore.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>receiver-interfaces</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+
+		<!-- interface of configservice -->
+		<dependency>
+			<groupId>de.heuboe.asfinag</groupId>
+			<artifactId>vmis2-configservice-interface</artifactId>
+			<version>1.16.27</version>
+		</dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+        </dependency>
+
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.devh</groupId>
+            <artifactId>grpc-client-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Spring-Metrics -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+        
+        <!-- Test -->
+
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.heuboe.base</groupId>
+            <artifactId>jhbRegressionTest</artifactId>
+            <version>${jhbRegressionTest.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.5.0</version>
+
+                <executions>
+                    <execution>
+                        <id>docker-build</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <from>
+                        <image>${from.image}</image>
+                    </from>
+                    <to>
+                        <image>${to.image}</image>
+                    </to>
+                    <!-- We currently don't use HTTPS -> insecure -->
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+                            <jvmFlag>-Dspring.config.additional-location=/config/</jvmFlag>
+                        </jvmFlags>
+                        <mainClass>${mainClass}</mainClass>
+                        <!-- The ports that the application exposes -->
+                        <!-- The ports that the application exposes, including
+                            its purpose -->
+                        <ports>
+                            <port>8080</port><!-- actuator -->
+                        </ports>
+                        <volumes>
+	                        <volume>/config</volume>
+                        </volumes>
+                        <labels>
+                            <version>${project.version}</version>
+                            <build.timestamp>${maven.build.timestamp}</build.timestamp>
+                            <git.tags>${git.tags}</git.tags>
+                            <git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+                            <git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+                        </labels>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                        <filesModificationTime>${git.commit.time}</filesModificationTime>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

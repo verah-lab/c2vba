@@ -1,0 +1,52 @@
+/* ========================================================================== */
+/* Converts incoming SYSKommunikationsstatus messages to SYSFehlerDUE         */
+/* messages with manufacturer HeuBoe.                                         */
+/* ========================================================================== */
+Bei Eingang von SYSKommunikationsstatus
+{
+    SYSFehlerDUE.fehlercode := status
+    SYSFehlerDUE.hersteller := 6
+}
+
+/* ========================================================================== */
+/* Temporary helper for due2de.                                               */
+/* ========================================================================== */
+Bei Eingang von LVEDeFehler (self=true)
+{
+    if ((fehlercode == 128) && (hersteller == 6)) {
+        DEs des Knoten fg(1) in in.LVEDeFehler.fehlercode := 0
+        DEs des Knoten fg(1) in in.LVEDeFehler.hersteller := 6
+    }
+}
+
+Bei Eingang von UFDDeFehler (self=true)
+{
+    if ((fehlercode == 128) && (hersteller == 6)) {
+        DEs des Knoten fg(3) in in.UFDDeFehler.fehlercode := 0
+        DEs des Knoten fg(3) in in.UFDDeFehler.hersteller := 6
+    }
+}
+
+Bei Eingang von WZGDeFehler (self=true)
+{
+    if ((fehlercode == 128) && (hersteller == 6)) {
+        DEs des Knoten fg(4) in in.WZGDeFehler.fehlercode := 0
+        DEs des Knoten fg(4) in in.WZGDeFehler.hersteller := 6
+    }
+}
+
+Bei Eingang von WWWDeFehler (self=true)
+{
+    if ((fehlercode == 128) && (hersteller == 6)) {
+        DEs des Knoten fg(5) in in.WWWDeFehler.fehlercode := 0
+        DEs des Knoten fg(5) in in.WWWDeFehler.hersteller := 6
+    }
+}
+
+Bei Eingang von VLTDeFehler (self=true)
+{
+    if ((fehlercode == 128) && (hersteller == 6)) {
+        DEs des Knoten fg(6) in in.VLTDeFehler.fehlercode := 0
+        DEs des Knoten fg(6) in in.VLTDeFehler.hersteller := 6
+    }
+}

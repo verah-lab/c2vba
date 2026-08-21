@@ -1,0 +1,14 @@
+/.classpath
+/.project
+/.settings/
+/target/
+*.iml
+/.factorypath
+/application.properties
+/application-*.properties
+/log4j2.xml
+/pom.xml.releaseBackup
+/release.properties
+/tlsoip-201-1-KRI_A23-clt-0.log
+/tlsoip-201-1-KRI_A23-srv-0.log
+/pom.xml.versionsBackup

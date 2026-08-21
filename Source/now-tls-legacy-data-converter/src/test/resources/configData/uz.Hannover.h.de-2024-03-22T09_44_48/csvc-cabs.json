@@ -1,0 +1,138 @@
+{
+  "cables": {
+    "cables": [{
+      "id": "138102515",
+      "name": "UZ_Hannover_UZ_KRUZ_243",
+      "deviceIds": ["uz.Hannover.h.de", "kri.kri_a2_01.h.de"]
+    }, {
+      "id": "138136535",
+      "name": "KRI_KRI_A2_01_IB_215",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_d_1.h.de", "sst.sst_d_2.h.de", "sst.sst_d_3.h.de", "sst.sst_d_4.h.de", "sst.sst_b_5.h.de", "sst.sst_b_6.h.de", "sst.sst_d_7.h.de"]
+    }, {
+      "id": "138136536",
+      "name": "KRI_KRI_A2_01_IB_216",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_b_8.h.de", "sst.sst_b_9.h.de", "sst.sst_b_10.h.de", "sst.sst_b_11.h.de", "sst.sst_d_12.h.de", "sst.sst_b_13.h.de", "sst.sst_b_14.h.de", "sst.sst_d_15.h.de"]
+    }, {
+      "id": "138136537",
+      "name": "KRI_KRI_A2_01_IB_217",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_d_16.h.de", "sst.sst_b_17.h.de", "sst.sst_d_18.h.de", "sst.sst_d_19.h.de", "sst.sst_d_20.h.de", "sst.sst_d_21.h.de", "sst.sst_d_21a.h.de", "sst.sst_d_22.h.de", "sst.sst_d_23.h.de", "sst.sst_b_24a.h.de"]
+    }, {
+      "id": "138136521",
+      "name": "KRI_KRI_A2_01_IB_201",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_a2_do_208_490.h.de", "sst.sst_a2_do_208_840_p.h.de", "sst.sst_a2_do_209_200.h.de", "sst.sst_a2_do_210_110.h.de", "sst.sst_a2_do_211_360.h.de", "sst.sst_a2_b_213_260.h.de", "sst.sst_a2_b_212_690_er.h.de", "sst.sst_a2_b_212_500_e.h.de", "sst.sst_a2_b_212_210.h.de", "sst.sst_a2_b_211_535.h.de", "sst.sst_a2_b_210_465.h.de", "sst.sst_a2_b_209_520.h.de"]
+    }, {
+      "id": "138136538",
+      "name": "KRI_KRI_A2_01_IB_218",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.a2_d_240_075.h.de", "sst.sst_b_24.h.de", "sst.sst_b_25.h.de", "sst.a2_d_243_800.h.de", "sst.sst_b_26.h.de", "sst.a2_d_245_200.h.de", "sst.sst_b_27.h.de", "sst.sst_b_28.h.de", "sst.sst_b_29.h.de", "sst.sst_d_249_855.h.de", "sst.sst_b_30.h.de", "sst.a2_d_252_510.h.de", "sst.sst_b_31.h.de", "sst.sst_b_32.h.de", "sst.sst_b_33.h.de"]
+    }, {
+      "id": "138136539",
+      "name": "KRI_KRI_A2_01_IB_219",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_b_43.h.de"]
+    }, {
+      "id": "138136555",
+      "name": "KRI_KRI_A2_01_IB_235",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_b_34.h.de", "sst.sst_d_259_960.h.de", "sst.sst_b_35.h.de", "sst.sst_b_36.h.de", "sst.sst_b_37.h.de", "sst.sst_b_38.h.de", "sst.sst_b_38a.h.de", "sst.sst_a2_b_269_340.h.de", "sst.sst_a2_d_269_540.h.de", "sst.sst_a2_b_270_600.h.de", "sst.sst_a2_d_271_400.h.de", "sst.sst_a2_d_272_850.h.de", "sst.sst_a2_b_273_830.h.de", "sst.sst_b_42.h.de", "sst.sst_a2_b_275_700.h.de"]
+    }, {
+      "id": "138136540",
+      "name": "KRI_KRI_A2_01_IB_220",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_d_39.h.de", "sst.sst_d_40.h.de", "sst.sst_d_40a.h.de", "sst.sst_d_40b.h.de"]
+    }, {
+      "id": "138136556",
+      "name": "KRI_KRI_A2_01_IB_236",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_a2_d_277_600.h.de", "sst.sst_a2_b_278_300.h.de", "sst.sst_a2_d_279_480.h.de", "sst.sst_a2_b_280_470.h.de", "sst.sst_d_280_950.h.de", "sst.sst_a2_b_282_110.h.de", "sst.sst_a2_d_283_035.h.de", "sst.sst_a2_b_283_620.h.de"]
+    }, {
+      "id": "138136525",
+      "name": "KRI_KRI_A2_01_IB_205",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_d_189_60.h.de", "sst.sst_b_191_25.h.de", "sst.sst_d_192_80.h.de", "sst.sst_b_194_10.h.de", "sst.sst_d_194_85.h.de", "sst.sst_b_195_95.h.de", "sst.sst_d_196_40.h.de", "sst.sst_b_198_00.h.de", "sst.sst_b_199_50.h.de", "sst.sst_b_200_85.h.de", "sst.sst_b_202_25.h.de", "sst.sst_b_203_55.h.de", "sst.sst_b_204_65.h.de"]
+    }, {
+      "id": "138136526",
+      "name": "KRI_KRI_A2_01_IB_206",
+      "deviceIds": ["kri.kri_a2_01.h.de", "sst.sst_b_170_00.h.de", "sst.sst_b_171_50.h.de", "sst.sst_d_173_20.h.de", "sst.sst_b_174_55.h.de", "sst.sst_b_175_35.h.de", "sst.sst_b_176_55.h.de", "sst.sst_b_178_15.h.de", "sst.sst_b_179_55.h.de", "sst.sst_b_181_25.h.de", "sst.sst_b_182_65.h.de", "sst.sst_b_184_40.h.de", "sst.sst_d_186_05.h.de", "sst.sst_d_187_90.h.de"]
+    }, {
+      "id": "138102513",
+      "name": "UZ_Hannover_UZ_KRUZ_241",
+      "deviceIds": ["uz.Hannover.h.de", "kri.kri_a2_02.h.de"]
+    }, {
+      "id": "138136016",
+      "name": "KRI_KRI2x - lxtc57a202_IB_208",
+      "deviceIds": ["kri.kri_a2_02.h.de", "sst.gma_herrenhausen.h.de", "sst.gma_garbsen.h.de"]
+    }, {
+      "id": "138136017",
+      "name": "KRI_KRI2x - lxtc57a202_IB_209",
+      "deviceIds": ["kri.kri_a2_02.h.de", "sst.gma_lahe.h.de", "sst.gma_vahrenheide.h.de", "sst.gma_altwarmbuechen.h.de", "sst.gma_burgdorf.h.de"]
+    }, {
+      "id": "138136035",
+      "name": "KRI_KRI2x - lxtc57a202_IB_227",
+      "deviceIds": ["kri.kri_a2_02.h.de", "sst.gma_holtensen.h.de", "sst.gma_kolenfeld.h.de", "sst.gma_caecilienhoehe.h.de", "sst.gma_lauenau.h.de", "sst.gma_kaltenweide.h.de", "sst.gma_schulenburg.h.de", "sst.gma_pohle.h.de", "sst.gma_hattendorf.h.de", "sst.gma_bernser_kirchweg.h.de", "sst.gma_papenbrink.h.de"]
+    }, {
+      "id": "138136020",
+      "name": "KRI_KRI2x - lxtc57a202_IB_212",
+      "deviceIds": ["kri.kri_a2_02.h.de", "sst.sst_b_mq40.h.de", "sst.sst_b_mq41.h.de", "sst.sst_b_mq42.h.de", "sst.sst_b_mq43.h.de", "sst.sst_b_mq50.h.de", "sst.sst_b_mq51.h.de", "sst.sst_b_mq38.h.de", "sst.sst_b_mq52.h.de", "sst.sst_d_mq49.h.de"]
+    }, {
+      "id": "138136021",
+      "name": "KRI_KRI2x - lxtc57a202_IB_213",
+      "deviceIds": ["kri.kri_a2_02.h.de", "sst.sst_b522_h_2050.h.de", "sst.sst_d_mq36.h.de", "sst.sst_d_mq47.h.de", "sst.sst_d_mq48.h.de", "sst.sst_d_mq37.h.de", "sst.sst_b_mq53.h.de", "sst.sst_b_mq54.h.de", "sst.sst_d_mq56.h.de", "sst.sst_b_mq39.h.de", "sst.sst_d_mq57.h.de", "sst.sst_b_mq55.h.de"]
+    }, {
+      "id": "138136011",
+      "name": "KRI_KRI2x - lxtc57a202_IB_203",
+      "deviceIds": ["kri.kri_a2_02.h.de", "sst.sst_d_mq12.h.de", "sst.sst_d_mq13.h.de", "sst.sst_d_mq15.h.de", "sst.sst_b_mq33.h.de", "sst.sst_b_mq32.h.de", "sst.sst_b_mq31.h.de"]
+    }, {
+      "id": "138136012",
+      "name": "KRI_KRI2x - lxtc57a202_IB_204",
+      "deviceIds": ["kri.kri_a2_02.h.de", "sst.sst_d_mq83.h.de"]
+    }, {
+      "id": "138102514",
+      "name": "UZ_Hannover_UZ_KRUZ_242",
+      "deviceIds": ["uz.Hannover.h.de", "kri.kri_a2_han_01.h.de"]
+    }, {
+      "id": "138136291",
+      "name": "KRI_KRI2x - lxtc57han01_IB_227",
+      "deviceIds": ["kri.kri_a2_han_01.h.de", "sst.gma_haemelerwald.h.de"]
+    }, {
+      "id": "138136265",
+      "name": "KRI_KRI2x - lxtc57han01_IB_201",
+      "deviceIds": ["kri.kri_a2_han_01.h.de", "sst.sst_b_21n.h.de", "sst.sst_d_22n.h.de", "sst.sst_b_23n.h.de"]
+    }, {
+      "id": "138136266",
+      "name": "KRI_KRI2x - lxtc57han01_IB_202",
+      "deviceIds": ["kri.kri_a2_han_01.h.de", "sst.sst_b_15n.h.de", "sst.sst_b_16n.h.de", "sst.sst_b_17n.h.de", "sst.sst_d_18n.h.de", "sst.sst_b_19n.h.de", "sst.sst_b_20n.h.de"]
+    }, {
+      "id": "138136271",
+      "name": "KRI_KRI2x - lxtc57han01_IB_207",
+      "deviceIds": ["kri.kri_a2_han_01.h.de", "sst.gma_lehrte.h.de", "sst.gma_allerbeck.h.de"]
+    }, {
+      "id": "138102516",
+      "name": "UZ_Hannover_UZ_KRUZ_244",
+      "deviceIds": ["uz.Hannover.h.de", "kri.kri_a2_bs_02.h.de"]
+    }, {
+      "id": "138136784",
+      "name": "KRI_KRI2x - lxtc57bs02_IB_208",
+      "deviceIds": ["kri.kri_a2_bs_02.h.de", "sst.sst_1n.h.de", "sst.sst_2n.h.de", "sst.sst_3n.h.de", "sst.sst_4n.h.de", "sst.sst_5n.h.de", "sst.sst_6n.h.de", "sst.sst_7n.h.de"]
+    }, {
+      "id": "138136803",
+      "name": "KRI_KRI2x - lxtc57bs02_IB_227",
+      "deviceIds": ["kri.kri_a2_bs_02.h.de", "sst.gma_peine.h.de"]
+    }, {
+      "id": "138136807",
+      "name": "KRI_KRI2x - lxtc57bs02_IB_231",
+      "deviceIds": ["kri.kri_a2_bs_02.h.de", "sst.gma_watenstedt.h.de", "sst.gma_westerode.h.de"]
+    }, {
+      "id": "138136808",
+      "name": "KRI_KRI2x - lxtc57bs02_IB_232",
+      "deviceIds": ["kri.kri_a2_bs_02.h.de", "sst.gma_schladen.h.de"]
+    }, {
+      "id": "138136809",
+      "name": "KRI_KRI2x - lxtc57bs02_IB_233",
+      "deviceIds": ["kri.kri_a2_bs_02.h.de", "sst.gma_essehof.h.de", "sst.gma_braunschweig-ost.h.de", "sst.gma_bs-flughafen.h.de"]
+    }, {
+      "id": "138136810",
+      "name": "KRI_KRI2x - lxtc57bs02_IB_234",
+      "deviceIds": ["kri.kri_a2_bs_02.h.de", "sst.gma_braunschweig-hafen.h.de"]
+    }, {
+      "id": "138136783",
+      "name": "KRI_KRI2x - lxtc57bs02_IB_207",
+      "deviceIds": ["kri.kri_a2_bs_02.h.de", "sst.sst_8n.h.de", "sst.sst_9n.h.de", "sst.sst_10n.h.de", "sst.sst_11n.h.de", "sst.sst_11na.h.de", "sst.sst_12n.h.de"]
+    }]
+  },
+  "errors": []
+}

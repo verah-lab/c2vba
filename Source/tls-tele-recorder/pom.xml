@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.tls</groupId>
+        <artifactId>tls-parent-pom</artifactId>
+        <version>3.0.0</version>
+    </parent>
+
+    <artifactId>tls-tele-recorder</artifactId>
+    <version>2.0.1</version>
+
+    <name>${project.artifactId}</name>
+    <description>Logs all telegrams into files and makes them available via a TCP/IP interface.</description>
+    <url>https://www.heuboe.de</url>
+    <inceptionYear>2020</inceptionYear>
+
+    <organization>
+        <name>Heusch/Boesefeldt GmbH</name>
+        <url>https://www.heuboe.de</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>All rights reserved</name>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>AOh</id>
+            <name>Alexander Ohlrogge</name>
+            <email>alexander.ohlrogge@heuboe.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/Tls/tls-tele-recorder.git</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:Tls/tls-tele-recorder.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:Tls/tls-tele-recorder.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <!-- encoding properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- sonar properties -->
+        <sonar.exclusions>src/**/config/**,src/**/Main.java</sonar.exclusions>
+        <sonar.test.exclusions>src/test/**</sonar.test.exclusions>
+
+        <!-- docker -->
+        <mainClass>de.heuboe.tls.tele.recorder.Main</mainClass>
+
+        <!-- heuboe dependency versions -->
+        <tls-kafka-operator.version>5.0.1</tls-kafka-operator.version>
+        <tls-tele.version>2.0.0</tls-tele.version>
+        <tls-tel-io-interface.version>3.0.0</tls-tel-io-interface.version>
+        <receiver-reader.version>2.0.0</receiver-reader.version>
+
+        <!-- vmis2 dependency versions -->
+        <vmis2-log4j2-extension.version>1.3.1</vmis2-log4j2-extension.version>
+
+        <!-- 3rd party dependency versions -->
+        <vavr.version>0.10.4</vavr.version>
+        <quartz.version>2.3.2</quartz.version>
+    </properties>
+
+    <dependencies>
+        <!-- heuboe dependencies -->
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-kafka-operator</artifactId>
+            <version>${tls-kafka-operator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-tele</artifactId>
+            <version>${tls-tele.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-tel-io-interface</artifactId>
+            <version>${tls-tel-io-interface.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>receiver-reader</artifactId>
+            <version>${receiver-reader.version}</version>
+        </dependency>
+
+        <!-- vmis2 dependencies -->
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-log4j2-extension</artifactId>
+            <version>${vmis2-log4j2-extension.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- 3rd party dependencies -->
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <!-- exclude local application files from jar -->
+                    <exclude>**/application-*.yml</exclude>
+                    <!-- exclude template application file from jar -->
+                    <exclude>**/application-template.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- Dockering -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <executions>
+                    <!-- Optional -->
+                    <!-- Build a tar file to allow local inspection -->
+                    <execution>
+                        <id>docker-build-tar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>buildTar</goal>
+                        </goals>
+                    </execution>
+                    <!-- Required -->
+                    <!-- Upload the image to the registry -->
+                    <execution>
+                        <id>docker-build</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <from>
+                        <!-- ${docker.registry} is set via settings.xml -->
+                        <image>${docker.registry}/eclipse-temurin:21-jre-alpine</image>
+                    </from>
+                    <to>
+                        <!-- This change is important -->
+                        <image>${docker.registry}/heuboe/tls/${project.artifactId}:${project.version}</image>
+                    </to>
+                    <!-- We currently don't use HTTPS -> insecure -->
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <container>
+                        <jvmFlags>
+                            <!-- Flags für Spring -->
+                            <jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+                            <jvmFlag>-Dspring.config.additional-location=/config/</jvmFlag>
+                            <!-- Do not add flags such as -Xmx2G or other parameters here that might be changed later on -->
+                        </jvmFlags>
+                        <mainClass>${mainClass}</mainClass>
+                        <ports>
+                            <!-- Ports with their function -->
+                            <port>8080</port><!-- web -->
+                            <port>9090</port><!-- grpc -->
+                        </ports>
+                        <labels>
+                            <version>${project.version}</version>
+                            <build.timestamp>${maven.build.timestamp}</build.timestamp>
+                            <!-- Metadata-derived from the git-commit-id-plugin -->
+                            <git.tags>${git.tags}</git.tags>
+                            <git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+                            <git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+                        </labels>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                        <filesModificationTime>${git.commit.time}</filesModificationTime>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

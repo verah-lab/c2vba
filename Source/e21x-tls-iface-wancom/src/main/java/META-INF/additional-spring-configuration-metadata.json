@@ -1,0 +1,52 @@
+{"properties": [
+  {
+    "name": "de.heuboe.tls.tlsoip.config.uzId",
+    "type": "java.lang.String",
+    "description": "The id of the UZ under concern"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.sndTopic",
+    "type": "java.lang.String",
+    "description": "Topic name for kafka channel to send data"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.commStateTopic",
+    "type": "java.lang.String",
+    "description": "Topic name for kafka channel where current communication status is kept"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.rcvTopic",
+    "type": "java.lang.String",
+    "description": "Topic name for kafka channel to receive data"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.ifaceKey",
+    "type": "int",
+    "description": "A value for a certain process to act on data with the same value in sndTopic data"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.timezone4Sync",
+    "type": "java.lang.String",
+    "description": "Theid of the time zon to be used to generate telegrams with timesync data"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.maxJobNr",
+    "type": "int",
+    "description": "The maximal jab number that should be used"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.minJobNr",
+    "type": "int",
+    "description": "The minimal jab number that should be used"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.tlsOverIpConfigFile",
+    "type": "java.lang.String",
+    "description": "Configuration for the different connections to establish are kept in this file"
+  },
+  {
+    "name": "de.heuboe.tls.tlsoip.config.useDstBit",
+    "type": "boolean",
+    "description": "Marks if to use the highest bit in hour of timesyncs when dst is in effect"
+  }
+]}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}" disableAnsi="false" />
+<!--            PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" disableAnsi="false" /> -->
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>
+        <Logger name="de.heuboe.rcvtls.conn.ExternalConn1" level="trace">
+<!--             AppenderRef ref="LogFile" /> -->
+<!--             AppenderRef ref="Console" /> -->
+        </Logger>
+        <Logger name="de.heuboe.tlsOff" level="debug"/>
+        <Logger name="de.heuboe.tls.sysconkafka.Tele2SendReceiver_off" level="trace"/>
+        <Logger name="de.heuboe.tls.iface.lib.IfaceApp" level="trace"/>
+        <Logger name="de.heuboe.tls.tlsoip.kcfg.test_mehr.doppelte_lotte.IfaceAppKRI" level="trace"/>
+    </Loggers>
+</Configuration>

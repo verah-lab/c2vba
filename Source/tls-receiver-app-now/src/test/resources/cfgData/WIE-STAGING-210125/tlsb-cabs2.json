@@ -1,0 +1,553 @@
+[ {
+  "deviceIdsList" : [ "WIE", "KRI_PPP_2B" ],
+  "id" : "-2134767416",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_200"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_2B", "SM_S02_0_470", "SM_S02_0_700", "SM_S02_0_620", "SM_S01_1_660", "SM_S01_1_710", "SM_S01_1_620", "SM_S01_1_640" ],
+  "id" : "-1386479160",
+  "name" : "KRI_KRI_PPP_2B_IB_200"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_2B", "SM_S02_0_540", "SM_S01_2_410", "SM_S01_1_670", "SM_S01_1_720", "SM_S01_1_690", "SM_S01_1_610", "SM_S01_1_760", "SM_S01_1_630" ],
+  "id" : "-1386479158",
+  "name" : "KRI_KRI_PPP_2B_IB_202"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_2B", "SM_S01_1_940", "SM_S01_1_820", "SM_S01_1_800" ],
+  "id" : "-1386479157",
+  "name" : "KRI_KRI_PPP_2B_IB_203"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_2B", "SM_A05_1_410", "SM_A05_1_350", "SM_A05_1_290", "SM_A05_1_230", "SM_A05_1_170", "SM_A05_1_120", "SM_A05_1_080", "SM_A05_1_390", "SM_A05_1_110" ],
+  "id" : "-1386479155",
+  "name" : "KRI_KRI_PPP_2B_IB_205"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_2B", "SM_A05_1_360", "SM_A05_1_300", "SM_A05_1_240", "SM_A05_1_180", "SM_A05_1_130", "SM_A05_1_090", "SM_A05_1_050", "SM_A05_1_340", "SM_A05_1_270", "SM_A05_1_160" ],
+  "id" : "-1386479154",
+  "name" : "KRI_KRI_PPP_2B_IB_206"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_2B", "SM_A05_1_370", "SM_A05_1_320", "SM_A05_1_260", "SM_A05_1_200", "SM_A05_1_140", "SM_A05_1_100", "SM_A05_1_065", "SM_A05_1_210" ],
+  "id" : "-1386479153",
+  "name" : "KRI_KRI_PPP_2B_IB_207"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_PPP_EB_2C" ],
+  "id" : "-2134767415",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_201"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_EB_2C", "SM_S01_1_730", "SM_S01_1_740", "SM_S01_1_750", "SM_S01_1_995" ],
+  "id" : "-1386478903",
+  "name" : "KRI_KRI_PPP_EB_2C_IB_201"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_EB_2C", "SM_A05_1_060", "SM_A05_1_035", "SM_A05_2_980", "SM_A05_2_990" ],
+  "id" : "-1386478896",
+  "name" : "KRI_KRI_PPP_EB_2C_IB_208"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_PPP_KB_2C" ],
+  "id" : "-2134767414",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_202"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_KB_2C", "SM_S01_2_235", "SM_S01_2_230", "SM_S01_1_790" ],
+  "id" : "-1386478644",
+  "name" : "KRI_KRI_PPP_KB_2C_IB_204"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_TuKO_RFB1" ],
+  "id" : "-2134767407",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_209"
+}, {
+  "deviceIdsList" : [ "KRI_TuKO_RFB1", "SM_S01_1_827", "SM_S01_1_830", "SM_S01_1_840", "SM_S01_1_850", "SM_S01_1_865", "SM_S01_1_875", "SM_S01_1_880", "SM_S01_1_890", "SM_S01_1_885", "SM_S01_1_900", "SM_S01_1_920", "SM_S01_1_945", "SM_S01_1_938", "SM_S01_1_935", "SM_S01_1_960", "SM_S01_1_970", "SM_S01_1_975", "SM_S01_1_980", "SM_A05_1_010", "SM_A05_1_020", "SM_A05_1_025", "SM_A05_1_028", "SM_A05_1_030", "SM_A05_1_040", "SM_B305_2_960", "SM_S01_1_825", "SM_A22_1_620" ],
+  "id" : "-1386478383",
+  "name" : "KRI_KRI_TuKO_RFB1_IB_209"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_TuKO_RFB2" ],
+  "id" : "-2134767406",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_210"
+}, {
+  "deviceIdsList" : [ "KRI_TuKO_RFB2", "SM_S01_2_060", "SM_S01_2_070", "SM_S01_2_080", "SM_S01_2_090", "SM_S01_2_110", "SM_A22_2_380", "SM_A22_2_375", "SM_S01_2_005", "SM_S01_2_010" ],
+  "id" : "-1386478126",
+  "name" : "KRI_KRI_TuKO_RFB2_IB_210"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_PPP_VZE1_2B" ],
+  "id" : "-2134767405",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_211"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE1_2B", "SM_S02_0_620_VZE" ],
+  "id" : "-1386477869",
+  "name" : "KRI_KRI_PPP_VZE1_2B_IB_211"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE1_2B", "SM_S01_0_620_VZE" ],
+  "id" : "-1386477868",
+  "name" : "KRI_KRI_PPP_VZE1_2B_IB_212"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE1_2B", "SM_S01_0_710_VZE" ],
+  "id" : "-1386477867",
+  "name" : "KRI_KRI_PPP_VZE1_2B_IB_213"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE1_2B", "SM_S01_0_800_VZE" ],
+  "id" : "-1386477866",
+  "name" : "KRI_KRI_PPP_VZE1_2B_IB_214"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE1_2B", "SM_S01_0_825_VZE" ],
+  "id" : "-1386477865",
+  "name" : "KRI_KRI_PPP_VZE1_2B_IB_215"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_PPP_VZE2_2B" ],
+  "id" : "-2134767404",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_212"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE2_2B", "SM_A05_0_390_VZE" ],
+  "id" : "-1386477608",
+  "name" : "KRI_KRI_PPP_VZE2_2B_IB_216"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE2_2B", "SM_A05_0_320_VZE" ],
+  "id" : "-1386477607",
+  "name" : "KRI_KRI_PPP_VZE2_2B_IB_217"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE2_2B", "SM_A05_0_210_VZE" ],
+  "id" : "-1386477606",
+  "name" : "KRI_KRI_PPP_VZE2_2B_IB_218"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE2_2B", "SM_A05_0_160_VZE" ],
+  "id" : "-1386477605",
+  "name" : "KRI_KRI_PPP_VZE2_2B_IB_219"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE2_2B", "SM_A05_0_110_VZE" ],
+  "id" : "-1386477604",
+  "name" : "KRI_KRI_PPP_VZE2_2B_IB_220"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_PPP_VZE3_2B" ],
+  "id" : "-2134767403",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_213"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE3_2B", "SM_A05_0_080_VZE" ],
+  "id" : "-1386477347",
+  "name" : "KRI_KRI_PPP_VZE3_2B_IB_221"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE3_2B", "SM_S01_0_960_VZE" ],
+  "id" : "-1386477346",
+  "name" : "KRI_KRI_PPP_VZE3_2B_IB_222"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE3_2B", "SM_S01_0_995_VZE", "SM_A22_0_380_VZE", "SM_A22_0_620_VZE" ],
+  "id" : "-1386477344",
+  "name" : "KRI_KRI_PPP_VZE3_2B_IB_224"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE3_2B" ],
+  "id" : "-1386477343",
+  "name" : "KRI_KRI_PPP_VZE3_2B_IB_225"
+}, {
+  "deviceIdsList" : [ "KRI_PPP_VZE3_2B", "SM_A05_0_035_VZE" ],
+  "id" : "-1386477342",
+  "name" : "KRI_KRI_PPP_VZE3_2B_IB_226"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_A22" ],
+  "id" : "-2134767400",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_216"
+}, {
+  "deviceIdsList" : [ "KRI_A22", "SM_A22_0_043", "SM_A22_0_160", "SM_A22_0_237", "SM_A22_0_594", "SM_A22_0_625", "SM_A22_0_644", "SM_A22_0_644_1", "SM_A22_0_683" ],
+  "id" : "-1386477085",
+  "name" : "KRI_KRI_A22_IB_227"
+}, {
+  "deviceIdsList" : [ "KRI_A22", "SM_S01_1_634_1", "SM_A01_1_142", "SM_A01_1_173", "SM_A05_1_260_1", "SM_A05_1_170_1", "SM_A21_2_433", "SM_A21_2_675", "SM_A21_2_746" ],
+  "id" : "-1386477084",
+  "name" : "KRI_KRI_A22_IB_228"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_A01_AVS_Inzersdorf" ],
+  "id" : "-2134767401",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_215"
+}, {
+  "deviceIdsList" : [ "KRI_A01_AVS_Inzersdorf", "SM_A01_0_221" ],
+  "id" : "-2135158584",
+  "name" : "KRI_KRI_A01_AVS_Inzersdorf_IB_200"
+}, {
+  "deviceIdsList" : [ "KRI_A01_AVS_Inzersdorf", "SM_A01_0_128", "SM_A01_0_132", "SM_A01_0_184", "SM_A01_0_188", "SM_A01_2_189" ],
+  "id" : "-2135158583",
+  "name" : "KRI_KRI_A01_AVS_Inzersdorf_IB_201"
+}, {
+  "deviceIdsList" : [ "KRI_A01_AVS_Inzersdorf", "SM_S33_0_45", "SM_A05_1_556", "SM_A05_1_922", "SM_A05_1_915" ],
+  "id" : "-2135158582",
+  "name" : "KRI_KRI_A01_AVS_Inzersdorf_IB_202"
+}, {
+  "deviceIdsList" : [ "WIE", "I048_KRI_3" ],
+  "id" : "-2134767413",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_203"
+}, {
+  "deviceIdsList" : [ "I048_KRI_3", "SM_A01_2_106", "SM_A01_2_107", "SM_A01_2_110", "SM_A01_2_115", "SM_A21_1_382", "SM_A21_2_410" ],
+  "id" : "-2135162675",
+  "name" : "KRI_I048_KRI_3_IB_205"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_A23" ],
+  "id" : "-2134767399",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_217"
+}, {
+  "deviceIdsList" : [ "KRI_A23", "SM_A23_0_010", "SM_A04_0_577_2", "SM_A23_0_233", "SM_A23_0_535", "SM_A22_0_030", "SM_A23_0_140", "SM_A23_0_233_2", "SM_A23_0_233_3", "SM_A23_0_233_4" ],
+  "id" : "-2134756919",
+  "name" : "KRI_KRI_A23_IB_201"
+}, {
+  "deviceIdsList" : [ "WIE", "I038_KRI_1" ],
+  "id" : "-2134767398",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_218"
+}, {
+  "deviceIdsList" : [ "I038_KRI_1", "SM_A02_2_340", "SM_A021_2_330", "SM_A021_2_322", "SM_A021_2_320", "SM_A02_2_224" ],
+  "id" : "-2135158327",
+  "name" : "KRI_I038_KRI_1_IB_201"
+}, {
+  "deviceIdsList" : [ "I038_KRI_1", "SM_A02_2_260", "SM_A02_2_252", "SM_A02_2_250", "SM_A021_1_130", "SM_A02_2_240", "SM_A02_1_140", "SM_A02_2_230", "SM_A02_2_225", "SM_A02_1_150", "SM_A03_2_100" ],
+  "id" : "-2135158326",
+  "name" : "KRI_I038_KRI_1_IB_202"
+}, {
+  "deviceIdsList" : [ "I038_KRI_1", "SM_A02_2_220", "SM_A02_2_210", "SM_A02_1_200", "SM_A02_1_205", "SM_A02_2_195", "SM_A02_2_190", "SM_A02_2_180" ],
+  "id" : "-2135158325",
+  "name" : "KRI_I038_KRI_1_IB_203"
+}, {
+  "deviceIdsList" : [ "I038_KRI_1", "SM_A02_1_180", "SM_A02_2_200", "SM_A02_1_210", "SM_A02_1_220", "SM_A02_2_170", "SM_A02_1_230", "SM_A02_2_160", "SM_A02_2_140", "SM_A02_2_130", "SM_A02_2_135" ],
+  "id" : "-2135158324",
+  "name" : "KRI_I038_KRI_1_IB_204"
+}, {
+  "deviceIdsList" : [ "I038_KRI_1", "SM_A02_2_270", "SM_A02_1_060", "SM_A02_2_310", "SM_A02_2_300", "SM_A02_2_280", "SM_A02_2_290", "SM_A021_1_070", "SM_A02_1_090" ],
+  "id" : "-2135158323",
+  "name" : "KRI_I038_KRI_1_IB_205"
+}, {
+  "deviceIdsList" : [ "I038_KRI_1", "SM_A02_2_120", "SM_A02_2_112", "SM_A02_2_110" ],
+  "id" : "-2135158322",
+  "name" : "KRI_I038_KRI_1_IB_206"
+}, {
+  "deviceIdsList" : [ "I038_KRI_1", "SM_A02_2_500", "SM_A231_2_020", "SM_A02_1_030", "SM_A231_2_010" ],
+  "id" : "-2135158320",
+  "name" : "KRI_I038_KRI_1_IB_208"
+}, {
+  "deviceIdsList" : [ "WIE", "I038_KRI_2" ],
+  "id" : "-2134767397",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_219"
+}, {
+  "deviceIdsList" : [ "I038_KRI_2", "SM_A021_2_336", "SM_A021_2_333", "SM_A23_2_005", "SM_A23_1_006" ],
+  "id" : "-2135158071",
+  "name" : "KRI_I038_KRI_2_IB_201"
+}, {
+  "deviceIdsList" : [ "WIE", "I038_KRI_3" ],
+  "id" : "-2134767396",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_220"
+}, {
+  "deviceIdsList" : [ "I038_KRI_3", "SM_A21_1_410", "SM_A21_1_360", "SM_A21_1_420", "SM_A02_1_005", "SM_A02_2_010" ],
+  "id" : "-2135157815",
+  "name" : "KRI_I038_KRI_3_IB_201"
+}, {
+  "deviceIdsList" : [ "WIE", "I038_KRI_4" ],
+  "id" : "-2134767395",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_221"
+}, {
+  "deviceIdsList" : [ "I038_KRI_4", "SM_A02_1_207", "SM_A02_1_213", "SM_A02_1_215", "SM_A02_1_223", "SM_A02_1_225" ],
+  "id" : "-2135157559",
+  "name" : "KRI_I038_KRI_4_IB_201"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_A23_WWW" ],
+  "id" : "-2134767382",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_234"
+}, {
+  "deviceIdsList" : [ "KRI_A23_WWW", "SM_PRaf_2_001", "SM_A23_2_774", "SM_A23_2_761", "SM_A23_0_584", "SM_A23_0_232", "SM_A23_0_198", "SM_A23_0_582", "SM_A23_0_200", "SM_A23_0_605_2", "SM_A23_2_590_3", "SM_A23_1_186", "SM_A23_1_190" ],
+  "id" : "-2134756647",
+  "name" : "KRI_KRI_A23_WWW_IB_217"
+}, {
+  "deviceIdsList" : [ "WIE", "I048_KRI_1" ],
+  "id" : "-2134767394",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_222"
+}, {
+  "deviceIdsList" : [ "I048_KRI_1", "SM_A23_2_535_2", "SM_A23_2_537", "SM_A23_2_540", "SM_A23_2_543" ],
+  "id" : "256000713",
+  "name" : "KRI_I048_KRI_1_IB_201"
+}, {
+  "deviceIdsList" : [ "I048_KRI_1", "SM_A23_2_548_2", "SM_A23_2_558", "SM_A23_1_180", "SM_A23_1_185", "SM_A23_2_582_2", "SM_A23_2_590", "SM_A23_2_590_2", "SM_A23_1_165", "SM_A23_1_160" ],
+  "id" : "256000714",
+  "name" : "KRI_I048_KRI_1_IB_202"
+}, {
+  "deviceIdsList" : [ "I048_KRI_1", "SM_A23_2_610", "SM_A23_2_610_2", "SM_A23_2_630", "SM_A23_2_630_2", "SM_A23_2_660", "SM_A23_1_080", "SM_A23_2_665", "SM_A23_2_670", "SM_A23_2_675", "SM_A23_2_680" ],
+  "id" : "256000717",
+  "name" : "KRI_I048_KRI_1_IB_205"
+}, {
+  "deviceIdsList" : [ "WIE", "I048_KRI_2" ],
+  "id" : "-2134767393",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_223"
+}, {
+  "deviceIdsList" : [ "I048_KRI_2", "SM_A23_2_685", "SM_A23_2_710", "SM_A23_2_721", "SM_A23_2_730", "SM_A231_2_020_2" ],
+  "id" : "256006859",
+  "name" : "KRI_I048_KRI_2_IB_203"
+}, {
+  "deviceIdsList" : [ "I048_KRI_2", "SM_A02_2_500_2", "SM_A23_1_012" ],
+  "id" : "256006860",
+  "name" : "KRI_I048_KRI_2_IB_204"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_WIENS_WWW" ],
+  "id" : "-2134767388",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_228"
+}, {
+  "deviceIdsList" : [ "KRI_WIENS_WWW", "SM_A02_0_121", "SM_A02_0_122", "SM_A02_0_123", "SM_A02_0_124", "SM_A02_0_126", "SM_S04_0_735" ],
+  "id" : "-2135157303",
+  "name" : "KRI_KRI_WIENS_WWW_IB_201"
+}, {
+  "deviceIdsList" : [ "KRI_WIENS_WWW", "SM_A02_2_035", "SM_A23_2_570", "SM_A02_1_082", "SM_A02_2_092", "SM_A02_2_004", "SM_A02_2_017", "SM_A02_1_018", "SM_A02_2_137", "SM_S02_1_609", "SM_A22_0_683_2" ],
+  "id" : "-2135157302",
+  "name" : "KRI_KRI_WIENS_WWW_IB_202"
+}, {
+  "deviceIdsList" : [ "WIE", "I095_KRI_1" ],
+  "id" : "-2134767387",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_229"
+}, {
+  "deviceIdsList" : [ "I095_KRI_1", "SM_A23_1_805", "SM_A23_1_859" ],
+  "id" : "-2134759727",
+  "name" : "KRI_KRI_TuStHi_FR1_IB_209"
+}, {
+  "deviceIdsList" : [ "WIE", "I095_KRI_2" ],
+  "id" : "-2134767385",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_231"
+}, {
+  "deviceIdsList" : [ "I095_KRI_2", "SM_A23_2_876", "SM_A23_2_830" ],
+  "id" : "-2134759470",
+  "name" : "KRI_KRI_TuStHi_FR2_IB_210"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_TuKaiMue_FR1" ],
+  "id" : "-2134767384",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_232"
+}, {
+  "deviceIdsList" : [ "KRI_TuKaiMue_FR1", "SM_A22_1_077" ],
+  "id" : "-2134759213",
+  "name" : "KRI_KRI_TuKaiMü_FR1_IB_211"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_TuKaiMue_FR2" ],
+  "id" : "-2134767383",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_233"
+}, {
+  "deviceIdsList" : [ "KRI_TuKaiMue_FR2", "SM_A22_2_077" ],
+  "id" : "-2134758956",
+  "name" : "KRI_KRI_TuKaiMü_FR2_IB_212"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100003TD001" ],
+  "id" : "-2134767381",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_235"
+}, {
+  "deviceIdsList" : [ "_K400100003TD001", "SST_S1_1.010", "SST_S1_1.030" ],
+  "id" : "-2134764344",
+  "name" : "KRI_KRI 2C VO sued FR 1_IB_200"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_A04" ],
+  "id" : "-2134767380",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_236"
+}, {
+  "deviceIdsList" : [ "KRI_A04", "SM_A04_0_583", "SM_A04_0_605", "SM_A04_0_017", "SM_A04_0_017_2", "SM_A04_0_040", "SM_A04_0_558", "SM_A04_0_072", "SM_A04_0_072_2", "SM_A04_0_086" ],
+  "id" : "-2134761527",
+  "name" : "KRI_KRI_A04_IB_201"
+}, {
+  "deviceIdsList" : [ "KRI_A04", "SM_A04_0_094", "SM_A04_0_620", "SM_A04_0_600", "SM_A04_0_030", "SM_A04_0_579", "SM_A04_0_570", "SM_A04_0_064" ],
+  "id" : "-2134761526",
+  "name" : "KRI_KRI_A04_IB_202"
+}, {
+  "deviceIdsList" : [ "KRI_A04", "SM_A04_0_610", "SM_A04_0_590", "SM_A04_0_020", "SM_A04_0_580", "SM_A04_0_575", "SM_A04_0_560", "SM_A04_0_555", "SM_A04_0_080", "SM_A04_0_090", "SM_A04_0_090_2", "SM_A04_0_209" ],
+  "id" : "-2134761525",
+  "name" : "KRI_KRI_A04_IB_203"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100011TD001" ],
+  "id" : "-2134767379",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_237"
+}, {
+  "deviceIdsList" : [ "_K400100011TD001", "SST_S1_2.240", "SST_S1_2.260", "SST_S1_2.270", "SST_S1_2.280", "SST_S1_2.290", "SST_S1_2.300", "SM_S01_1_132" ],
+  "id" : "-2134764086",
+  "name" : "KRI_KRI 2C VO nord FR 2_IB_202"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100060TD001" ],
+  "id" : "-2134767412",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_204"
+}, {
+  "deviceIdsList" : [ "_K400100060TD001", "SST_S1_1.090", "SST_S1_1.100", "SST_S1_2.180", "SST_S1_1.115" ],
+  "id" : "-2134763828",
+  "name" : "KRI_KRI 2C RU FR 1_IB_204"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_S01_1_HE" ],
+  "id" : "-2134767411",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_205"
+}, {
+  "deviceIdsList" : [ "KRI_S01_1_HE", "SM_S01_1_065", "SM_S01_2_211" ],
+  "id" : "-2134762035",
+  "name" : "KRI_KRI 2C HE FR 1_IB_205"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100061TD001" ],
+  "id" : "-2134767410",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_206"
+}, {
+  "deviceIdsList" : [ "_K400100061TD001", "SST_S1_2.140", "SST_S1_2.150", "SST_S1_2.160", "SST_S1_2.170", "SST_S1_2.097" ],
+  "id" : "-2134763570",
+  "name" : "KRI_KRI 2C RU FR 2_IB_206"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_S01_2_HE" ],
+  "id" : "-2134767409",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_207"
+}, {
+  "deviceIdsList" : [ "KRI_S01_2_HE", "SM_S01_2_181", "SM_S01_2_205", "SM_S01_2_210", "SM_S01_1_066" ],
+  "id" : "-2134761777",
+  "name" : "KRI_KRI 2C HE FR 2_IB_207"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100108TD001" ],
+  "id" : "-2134767408",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_208"
+}, {
+  "deviceIdsList" : [ "_K400100108TD001", "SST_S1_1.210", "SST_S1_1.220", "SST_S1_1.230", "SST_S1_1.240", "SST_L2003a_1.250", "SST_S1_1.150", "SST_S1_1.160" ],
+  "id" : "-2134763312",
+  "name" : "KRI_KRI 2C RA west FR 1_IB_208"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100127TD001" ],
+  "id" : "-2134767377",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_239"
+}, {
+  "deviceIdsList" : [ "_K400100127TD001", "SST_S1_2.070", "SST_S1_2.080", "SST_S1_2.090" ],
+  "id" : "-2134763054",
+  "name" : "KRI_KRI 2C RA ost FR 2_IB_210"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100148TD001" ],
+  "id" : "-2134767376",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_240"
+}, {
+  "deviceIdsList" : [ "_K400100148TD001", "SST_S1_1.290", "SST_S1_1.300", "SST_S1_1.310", "SST_S1_1.320", "SST_S1_1.340", "SST_S1_1.350", "SST_S1_1.360", "SM_S01_1_881" ],
+  "id" : "-2134762796",
+  "name" : "KRI_KRI 2C SW FR 1_IB_212"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400199149TD001" ],
+  "id" : "-2134767402",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_214"
+}, {
+  "deviceIdsList" : [ "_K400199149TD001", "SST_S1_2.010", "SST_S1_2.020", "SST_S1_2.030", "SST_S1_2.040", "SST_S1_2.005", "SST_L2066_1.010" ],
+  "id" : "-2134762538",
+  "name" : "KRI_KRI 2C SW FR 2_IB_214"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100000TD001.KE01" ],
+  "id" : "-2134767374",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_242"
+}, {
+  "deviceIdsList" : [ "_K400100000TD001.KE01", "SST_S1_0.004", "SST_S1_2.310", "SST_A2_0.006", "SST_S1_1.040", "SST_S1_1.050", "SST_S1_1.060", "SST_S1_2.230", "SST_S1_2.220" ],
+  "id" : "-2134768424",
+  "name" : "KRI_KRI 2B S1_IB_216"
+}, {
+  "deviceIdsList" : [ "_K400100000TD001.KE01", "SST_S1_1.130", "SST_S1_1.140", "SST_S1_2.120", "SST_S1_1.180", "SST_S1_2.110", "SST_S1_1.200", "SST_S1_2.095", "SST_S1_1.265", "SST_S1_1.270" ],
+  "id" : "-2134768423",
+  "name" : "KRI_KRI 2B S1_IB_217"
+}, {
+  "deviceIdsList" : [ "_K400100000TD001.KE01", "SST_S1_1.080", "SST_S1_2.200", "SST_S1_2.190", "SST_S1_1.120", "SST_S1_2.130", "SST_S1_1.170", "SST_S1_1.190", "SST_S1_2.100" ],
+  "id" : "-2134768420",
+  "name" : "KRI_KRI 2B S1_IB_220"
+}, {
+  "deviceIdsList" : [ "_K400100000TD001.KE01", "SST_S1_1.280", "SST_S1_2.060", "SST_S1_2.050", "SST_S1_1.370", "SST_S1_1.380", "SST_S1_1.390", "SST_S1_1.400" ],
+  "id" : "-2134768419",
+  "name" : "KRI_KRI 2B S1_IB_221"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100160TD001" ],
+  "id" : "-2134767373",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_243"
+}, {
+  "deviceIdsList" : [ "_K400100160TD001", "SST_A2_2.325", "SST_A2_2.315", "SST_A2_1.035", "SST_A2_1.054", "SST_A2_0.410" ],
+  "id" : "-2134768678",
+  "name" : "KRI_KRI 2B ANDERE_IB_218"
+}, {
+  "deviceIdsList" : [ "_K400100160TD001", "SST_A21_1.060", "SST_A21_1.050", "SST_A21_1.040" ],
+  "id" : "-2134768677",
+  "name" : "KRI_KRI 2B ANDERE_IB_219"
+}, {
+  "deviceIdsList" : [ "_K400100160TD001", "SST_A2_2.251", "SST_A2_2.261", "SST_A2_2.263", "SST_A2_2.033" ],
+  "id" : "-2134768674",
+  "name" : "KRI_KRI 2B ANDERE_IB_222"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_2B_WTA_A2_A21" ],
+  "id" : "-2134767392",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_224"
+}, {
+  "deviceIdsList" : [ "KRI_2B_WTA_A2_A21", "SST_A2_2.252", "SST_A21_1.030" ],
+  "id" : "-2134760736",
+  "name" : "KRI_KRI 2B WTA A2 A21_IB_224"
+}, {
+  "deviceIdsList" : [ "KRI_2B_WTA_A2_A21", "SM_S01_0_164" ],
+  "id" : "-2134760735",
+  "name" : "KRI_KRI 2B WTA A2 A21_IB_225"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_2B_WWW_A21" ],
+  "id" : "-2134767391",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_225"
+}, {
+  "deviceIdsList" : [ "KRI_2B_WWW_A21", "SST_A21_2.005", "SST_A21_2.035", "SST_A21_2.045", "SST_A21_2.050" ],
+  "id" : "-2134760479",
+  "name" : "KRI_KRI 2B WWW A21_IB_225"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_2B_WWW_A4" ],
+  "id" : "-2134767390",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_226"
+}, {
+  "deviceIdsList" : [ "KRI_2B_WWW_A4", "SST_A4_1.075", "SST_A4_1.068" ],
+  "id" : "-2134760222",
+  "name" : "KRI_KRI 2B WWW A4_IB_226"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_2B_WTA_A4" ],
+  "id" : "-2134767389",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_227"
+}, {
+  "deviceIdsList" : [ "KRI_2B_WTA_A4", "SST_A4_1.085", "SST_A4_1.075_2" ],
+  "id" : "-2134759965",
+  "name" : "KRI_KRI 2B WTA A4_IB_227"
+}, {
+  "deviceIdsList" : [ "KRI_2B_WTA_A4", "SM_PAus_1_650" ],
+  "id" : "-2134759964",
+  "name" : "KRI_KRI 2B WTA A4_IB_228"
+}, {
+  "deviceIdsList" : [ "WIE", "_K400100000TD002" ],
+  "id" : "-2134767386",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_230"
+}, {
+  "deviceIdsList" : [ "_K400100000TD002", "SST_A2_2.261.TSG", "SST_A2_2.263.TSG", "SST_A2_2.033.TSG", "SST_A2_1.054.TSG", "SST_A21_1.050.TSG", "SST_A2_0.410.TSG", "SST_A21_1.060.TSG", "SST_S1_0.004.TSG", "SST_S1_1.020", "SST_S1_1.030.TSG", "SST_S1_2.300.TSG", "SST_S1_1.080.TSG", "SST_S1_1.100.TSG", "SST_S1_1.110", "SST_S1_2.160.TSG", "SST_S1_1.150.TSG", "SST_S1_1.160.TSG", "SST_S1_1.210.TSG", "SST_A21_3.706", "SST_S1_1.220.TSG", "SST_S1_1.230.TSG", "SST_S1_1.240.TSG", "SST_L2003a_1.250.TSG", "SST_S1_2.080.TSG", "SST_S1_1.190.TSG", "SST_S1_2.010.TSG", "SST_S1_2.040.TSG", "SST_S1_2.070.TSG", "SST_S1_1.280.TSG", "SST_S1_2.150.TSG", "SST_S1_1.380.TSG", "SST_S1_2.200.TSG", "SST_S1_2.210.TSG", "SST_S1_2.230.TSG", "SST_S1_2.260.TSG", "SST_S1_2.270.TSG", "SST_S1_2.290.TSG", "SST_S1_1.115.TSG", "SST_S1_2.005.TSG", "SST_S1_2.025", "SST_S1_1.330.TSG", "SST_L2003a_1.255", "SST_S1_1.300.TSG", "SST_S1_1.360.TSG", "SST_S1_2.020.TSG", "SST_S1_1.290.TSG", "SST_S1_1.340.TSG", "SST_S1_2.140.TSG", "SST_S1_2.180.TSG", "SST_S1_1.033.TSG", "SST_S1_1.036.TSG", "SST_S1_1.243.TSG", "SST_S1_1.246.TSG" ],
+  "id" : "-2134768154",
+  "name" : "KRI_KRI ZLT_IB_230"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI2B_A04" ],
+  "id" : "-2134767378",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_238"
+}, {
+  "deviceIdsList" : [ "KRI2B_A04", "SM_A04_0_578", "SM_A04_0_568", "SM_A04_0_571", "SM_A04_0_065", "SM_A04_0_561", "SM_A04_2_012", "SM_A04_2_025", "SM_A04_1_018", "SM_S01_1_991", "SM_A04_1_558", "SM_A04_1_962", "SM_A04_2_989", "SM_A06_1_543", "SM_S01_1_617" ],
+  "id" : "-2134756399",
+  "name" : "KRI_KRI2B_A04_IB_209"
+}, {
+  "deviceIdsList" : [ "KRI2B_A04", "SM_S01_2_069" ],
+  "id" : "-2134756397",
+  "name" : "KRI_KRI2B_A04_IB_211"
+}, {
+  "deviceIdsList" : [ "WIE", "_K50xx0FVEyD003" ],
+  "id" : "-2134767368",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_248"
+}, {
+  "deviceIdsList" : [ "_K50xx0FVEyD003" ],
+  "id" : "-2134766386",
+  "name" : "KRI_FVE-KRI 3_IB_206"
+}, {
+  "deviceIdsList" : [ "_K50xx0FVEyD003", "SM_S05_0_916", "SM_A221_0_902", "SM_A221_0_902_2", "SM_S03_0_308", "SM_S31_0_595", "SM_A23_0_665", "_M500100444C001", "_M500100502C001", "_M500100565C001", "_M500100673C001", "_M500200342C001", "_M502100098C001", "_M502100372C001" ],
+  "id" : "-2134766385",
+  "name" : "KRI_FVE-KRI 3_IB_207"
+}, {
+  "deviceIdsList" : [ "_K50xx0FVEyD003", "_M500100331C001", "_M500200251C001", "_M502100160C001", "_M502100244C001", "_M500300130C001", "_M400500730C001", "_M500600040C001", "_M500600207C001", "_M500100774C001", "SM_S331_1_544" ],
+  "id" : "-2134766380",
+  "name" : "KRI_FVE-KRI 3_IB_212"
+}, {
+  "deviceIdsList" : [ "WIE", "_K50xx0FVEyD005" ],
+  "id" : "-2134767367",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_249"
+}, {
+  "deviceIdsList" : [ "_K50xx0FVEyD005", "_M403300085C001", "_M403300166C001", "_M502200007C001", "_M502200008C001", "_M502200088C001", "_M502300069C001", "_M500100158C001", "_M500400265C001", "_M500400342C001", "_M500400370C001", "_M500300091C001", "_M500300360C001", "_M403100439C001", "_M400400012C001", "_M400400164C001", "_M400500978C001" ],
+  "id" : "-2134765868",
+  "name" : "KRI_FVE-KRI 5_IB_212"
+}, {
+  "deviceIdsList" : [ "_K50xx0FVEyD005", "_M403300012C001", "_M500300259C001", "_M500400422C001", "_M500400543C001", "_M500400648C001", "_M400400113C001", "_M403100372C001", "_M403100715C001", "_M403100743C001", "_M500400606C001", "_M403100576C001", "_M502300003C001", "_M502300090C001", "_M502300129C001", "_M502300163C001" ],
+  "id" : "-2134765867",
+  "name" : "KRI_FVE-KRI 5_IB_213"
+}, {
+  "deviceIdsList" : [ "WIE", "KRI_A01_A21" ],
+  "id" : "-2134767366",
+  "name" : "UZ_rVMZ Wien_UZ_KRUZ_250"
+}, {
+  "deviceIdsList" : [ "KRI_A01_A21", "SM_A01_1_089", "SM_A01_2_125" ],
+  "id" : "-2135157048",
+  "name" : "KRI_KRI_A01_A21_IB_200"
+}, {
+  "deviceIdsList" : [ "KRI_A01_A21", "SM_A21_1_036" ],
+  "id" : "-2135157047",
+  "name" : "KRI_KRI_A01_A21_IB_201"
+}, {
+  "deviceIdsList" : [ "KRI_A01_A21", "SM_A22_0_176", "SM_A22_0_204", "SM_A22_0_566", "SM_A22_0_867", "SM_A22_0_934", "_M502200125C001", "_M502200226C001", "_M502200040C001", "_M504711040C001" ],
+  "id" : "-2135157046",
+  "name" : "KRI_KRI_A01_A21_IB_202"
+} ]

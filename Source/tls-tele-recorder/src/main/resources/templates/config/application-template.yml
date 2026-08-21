@@ -1,0 +1,113 @@
+## +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+##
+## tls/tls-tele-recorder
+##
+## This file provides a list of all custom application properties. The
+## properties are listed with a possible default value, a hint which values
+## might be allowed and a short description what the properties are used for.
+##
+## The file is intended as a template for custom property files
+## of this application, which are then used in specific environments.
+##
+## All properties that have no default value or need to be overridden
+## can be specified either
+##   - within a custom property file ('-Dspring.config.location=file:<path>')
+##   - by using system properties (-D<property>=<value>)
+##   - application parameters (--<property>=<value>).
+##
+## See: Spring Boot Reference Guide - Externalized Configuration
+## http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config
+## +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+## --------------------------------------------------------------------------
+## Tele recorder configuration
+## --------------------------------------------------------------------------
+tls:
+  tele:
+    recorder:
+      # File path for saving log files.
+      absolutLogPath:
+
+      # topic for receiving telegrams
+      receiveTopic:
+
+      # topic for sending telegrams
+      sendTopic:
+
+      # Interval configuration for creating new log files.
+      interval:
+        # Defines the interval in seconds. Will be overridden by cron configuration.
+        static:
+        # Defines the interval as cron expression. This will override the interval configuration.
+        cron:
+
+      # Configuration for log cleaning.
+      cleanLogs:
+        # Determine the clean log strategy. Depending on this value one of the following parameter will be used.
+        # Possible values: number, size, none
+        strategy:
+        # Number of log files that should be kept (0 means unlimited log files).
+        number:
+        # Size in Megabyte that should be kept (0 means unlimited log files).
+        size:
+
+      # Flag that enable a GZIP compression for completed log files. The log files will be deleted after compression.
+      # Compressed files will also be deleted due to log cleaning! Default false.
+      compressLogs:
+
+      # Determines the number of max recursive calls of the saveToFile method due to filestream access errors. Default 5.
+      maxSaveRetries:
+
+      # retries the KafkaOperatorService resends messages to the tele-recorder
+      responseRetries:
+
+      # the timeout the KafkaOperatorService waits until resends a message to the tele-recorder
+      responseTimeout:
+
+      # define server paths for different functionalities
+      server:
+        http:
+          # Flag that enables or disables the HTTP server. Default false.
+          enabled:
+          path:
+            # path for reading all current saved telegrams
+            readTelegrams:
+            # path for live streaming telegrams
+            streamTelegrams:
+
+        tcp:
+          # Flag that enables or disables the TPC server. Default true.
+          enabled:
+          # Definition of the TCP port for streaming telegrams.
+          port:
+          # Definition of the TCP port for streaming legacy telegrams.
+          legacyPort:
+
+          # This property changes the real address of a telegram to the given value before sending it via TCP. The value
+          # must be greater than 0. This will be used for legacy telegrams only! The recorded telegrams will not be
+          # affected from this change. Default 0.
+          updateRealAddress:
+
+          # Configuration for a timestamp manipulation of telegrams. This manipulation is only necessary for a legacy
+          # transfer of telegrams from the new E21X TPF to the old core system. Due to major changes in the GPRS UZ with
+          # regard to a new timestamp behavior this manipulation is necessary to support the legacy system. Default
+          # false.
+          manipulateTimestamps:
+            # This flag activates the timestamp manipulation. Default false.
+            activated:
+            # Determine the timezone for extracting the timestamp from telegrams. Default Europe/Berlin.
+            timezone:
+
+
+
+## --------------------------------------------------------------------------
+## Spring Kafka
+## --------------------------------------------------------------------------
+spring:
+  kafka:
+    bootstrap-servers:
+    consumer:
+      # The name of the consumer group for kafka.
+      # This is important because the progress/current index is saved using this name.
+      # Different applications that listen to kafka HAVE to use different group ids.
+      group-id:

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.base</groupId>
+        <artifactId>heuboe-base-parent</artifactId>
+        <version>1.1.1</version>
+    </parent>
+
+    <groupId>de.heuboe.c2vba</groupId>
+    <artifactId>c2vba-tls-sequencer</artifactId>
+    <version>2.1.0</version>
+
+    <name>${project.artifactId}</name>
+    <description>C2VBA sequencer.</description>
+    <url>https://www.heuboe.de</url>
+    <inceptionYear>2022</inceptionYear>
+
+    <organization>
+        <name>Heusch/Boesefeldt GmbH</name>
+        <url>https://www.heuboe.de</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>All rights reserved</name>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>AOh</id>
+            <name>Alexander Ohlrogge</name>
+            <email>alexander.ohlrogge@heuboe.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/c2vba/tls/c2vba-tls-sequencer.git</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:c2vba/tls/c2vba-tls-sequencer.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:c2vba/tls/c2vba-tls-sequencer.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <!-- encoding properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- sonar properties -->
+        <sonar.exclusions>src/**/config/**,src/**/Main.java</sonar.exclusions>
+
+        <!-- docker -->
+        <mainClass>de.c2vba.tls.sequencer.Main</mainClass>
+
+        <!-- heuboe dependency versions -->
+        <tls-sequencer.version>4.0.1</tls-sequencer.version>
+
+        <!-- now dependency versions -->
+        <now-tls-proto-interface.version>2.0.0</now-tls-proto-interface.version>
+
+        <!-- vmis2 dependency versions -->
+        <vmis2-tls-cfggetter.version>2.0.0</vmis2-tls-cfggetter.version>
+    </properties>
+
+    <dependencies>
+        <!-- heuboe dependencies -->
+        <dependency>
+            <groupId>de.heuboe.tls</groupId>
+            <artifactId>tls-sequencer</artifactId>
+            <version>${tls-sequencer.version}</version>
+        </dependency>
+
+        <!-- NOW dependencies -->
+        <dependency>
+            <groupId>de.heuboe.now</groupId>
+            <artifactId>now-tls-proto-interface</artifactId>
+            <version>${now-tls-proto-interface.version}</version>
+        </dependency>
+
+        <!-- VMIS2 dependencies -->
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-tls-cfggetter</artifactId>
+            <version>${vmis2-tls-cfggetter.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <!-- exclude all application yml files from fat jar -->
+                    <exclude>templates/*</exclude>
+                    <exclude>application-*.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- Dockering -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <executions>
+                    <!-- Optional -->
+                    <!-- Build a tar file to allow local inspection -->
+                    <execution>
+                        <id>docker-build-tar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>buildTar</goal>
+                        </goals>
+                    </execution>
+                    <!-- Required -->
+                    <!-- Upload the image to the registry -->
+                    <execution>
+                        <id>docker-build</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <from>
+                        <!-- ${docker.registry} is set via settings.xml -->
+                        <image>${docker.registry}/eclipse-temurin:21-jre-alpine</image>
+                    </from>
+                    <to>
+                        <!-- This change is important -->
+                        <image>${docker.registry}/heuboe/c2vba/${project.artifactId}:${project.version}</image>
+                    </to>
+                    <container>
+                        <jvmFlags>
+                            <!-- Flags für Spring -->
+                            <jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+                            <jvmFlag>-Dspring.config.additional-location=/config/</jvmFlag>
+                            <!-- Do not add flags such as -Xmx2G or other parameters here that might be changed later on -->
+                        </jvmFlags>
+                        <mainClass>${mainClass}</mainClass>
+                        <ports>
+                            <port>8080</port><!-- web -->
+                            <port>9090</port><!-- grpc -->
+                        </ports>
+                        <labels>
+                            <version>${project.version}</version>
+                            <build.timestamp>${maven.build.timestamp}</build.timestamp>
+                            <!-- Metadata-derived from the git-commit-id-plugin -->
+                            <git.tags>${git.tags}</git.tags>
+                            <git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+                            <git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+                        </labels>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                        <filesModificationTime>${git.commit.time}</filesModificationTime>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

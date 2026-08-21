@@ -1,0 +1,17 @@
+{
+  "timeStamp" : 1567507977737,
+  "direction" : "RECEIVE",
+  "realAddress" : 256257,
+  "logAddress" : 66051,
+  "rcvTimeBase" : null,
+  "etels" : [ {
+    "fg" : 9,
+    "tlsId" : 132,
+    "job" : 0,
+    "deblocks" : [ {
+      "deNr" : 33,
+      "deTyp" : 70,
+      "content" : [ 171, 235, 148, 159, 109, 225 ]
+    } ]
+  } ]
+}
