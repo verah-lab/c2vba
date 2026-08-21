@@ -1,0 +1,83 @@
+2025-10-20T14:44:37.995639Z
+ID_CLASS	ID_PERM	ID_NAME	TLS_KNOTENNUMMER	TLS_LOC	TLS_DIST	TLS_FG	TLS_DE	FD	TLS_PORT	TLS_SLAVE	TLS_EAK	TLS_EA	TLS_WZGTYP	TLS_ZEICHENSATZ	TLS_ANZEIGEPRINZIP	TLS_HERSTELLER	TLS_TYP	TLS_REF	TLS_FAHRTR	LOC_LANE	LOC_WGS84_COOR_LAT	LOC_WGS84_COOR_LONG	LOC_ID_ASFiNAG	EFH	TLS_IFACEKEY
+VRZ	vrz.vrz_by.m.de	VRZ_BY	256000	1000	0	0	0		0	0	0						0																										
+UZ	C2VBA	C2VBA	256011	1000	11	0	0		200	0	0						0	vrz.vrz_by.m.de																									
+KRI	kri.kri20.m.de	KRI20	9031635	35279	211	0	0		200	0	0						0	C2VBA																									
+KRI	kri.uz08_kri1.m.de	UZ08_KRI1	9316246	36391	150	0	0		201	0	0						0	C2VBA																									
+KRI	kri.uz07_kri1.m.de	UZ07_KRI1	11008667	43002	155	0	0		202	0	0						0	C2VBA																									
+KRI	kri.uz06_kri1.m.de	UZ06_KRI1	9206036	35961	20	0	0		203	0	0						0	C2VBA																									
+KRI	kri.uz07_kri2.m.de	UZ07_KRI2	9906994	38699	50	0	0		204	0	0						0	C2VBA																									
+KRI	kri.uz08_kri3.m.de	UZ08_KRI3	9316715	36393	107	0	0		205	0	0						0	C2VBA																									
+KRI	kri.uz06_kri2.m.de	UZ06_KRI2	9216393	36001	137	0	0		206	0	0						0	C2VBA																									
+KRI	kri.uz07_kri3.m.de	UZ07_KRI3	9916887	38737	215	0	0		207	0	0						0	C2VBA																									
+KRI	kri.uz06_kri3.m.de	UZ06_KRI3	9130960	35667	208	0	0		208	0	0						0	C2VBA																									
+KRI	kri.kri14.m.de	KRI14	9916100	38734	196	0	0		209	0	0						0	C2VBA																									
+KRI	kri.uz07_kri4.m.de	UZ07_KRI4	9908135	38703	167	0	0		210	0	0						0	C2VBA																									
+KRI	kri.uz15_kri1.m.de	UZ15_KRI1	1716657	6705	177	0	0		211	0	0						0	C2VBA																									
+KRI	kri.uz06_kri4.m.de	UZ06_KRI4	9206071	35961	55	0	0		212	0	0						0	C2VBA																									
+KRI	kri.uz07_kri5.m.de	UZ07_KRI5	9918229	38743	21	0	0		213	0	0						0	C2VBA																									
+KRI	kri.uz14_kri1.m.de	UZ14_KRI1	9506080	37133	32	0	0		214	0	0						0	C2VBA																									
+KRI	kri.kri16.m.de	KRI16	807361	3153	193	0	0		215	0	0						0	C2VBA																									
+KRI	kri.uz07_kri6.m.de	UZ07_KRI6	909694	3553	126	0	0		216	0	0						0	C2VBA																									
+KRI	kri.uz14_kri2.m.de	UZ14_KRI2	9619551	37576	95	0	0		217	0	0						0	C2VBA																									
+KRI	kri.kri17.m.de	KRI17	9416276	36782	84	0	0		218	0	0						0	C2VBA																									
+KRI	kri.uz01_kri1.m.de	UZ01_KRI1	805018	3144	154	0	0		219	0	0						0	C2VBA																									
+KRI	kri.kri170.m.de	KRI170	9917174	38738	246	0	0		220	0	0						0	C2VBA																									
+KRI	kri.kri18.m.de	KRI18	809038	3160	78	0	0		221	0	0						0	C2VBA																									
+KRI	kri.uz01_kri2.m.de	UZ01_KRI2	806415	3150	15	0	0		222	0	0						0	C2VBA																									
+KRI	kri.uz13_kri1p.m.de	UZ13_KRI1P	9619167	37574	223	0	0		223	0	0						0	C2VBA																									
+KRI	kri.kri171.m.de	KRI171	306987	1199	43	0	0		224	0	0						0	C2VBA																									
+KRI	kri.uz01_kri3.m.de	UZ01_KRI3	9916798	38737	126	0	0		225	0	0						0	C2VBA																									
+KRI	kri.kri172.m.de	KRI172	719368	2810	8	0	0		226	0	0						0	C2VBA																									
+KRI	kri.uz01_kri4.m.de	UZ01_KRI4	10471023	40902	111	0	0		227	0	0						0	C2VBA																									
+KRI	kri.kri140.m.de	KRI140	9316299	36391	203	0	0		228	0	0						0	C2VBA																									
+KRI	kri.uz01_kri5.m.de	UZ01_KRI5	9917349	38739	165	0	0		229	0	0						0	C2VBA																									
+KRI	kri.kri141.m.de	KRI141	318468	1244	4	0	0		230	0	0						0	C2VBA																									
+KRI	kri.kri174.m.de	KRI174	9607881	37530	201	0	0		231	0	0						0	C2VBA																									
+KRI	kri.uz01_kri6.m.de	UZ01_KRI6	10471027	40902	115	0	0		232	0	0						0	C2VBA																									
+KRI	kri.kri164.m.de	KRI164	718314	2805	234	0	0		233	0	0						0	C2VBA																									
+KRI	kri.uz01_kri7.m.de	UZ01_KRI7	9906752	38698	64	0	0		234	0	0						0	C2VBA																									
+KRI	kri.kri132.m.de	KRI132	807006	3152	94	0	0		235	0	0						0	C2VBA																									
+KRI	kri.kri143.m.de	KRI143	907614	3545	94	0	0		236	0	0						0	C2VBA																									
+KRI	kri.kri165.m.de	KRI165	9608519	37533	71	0	0		237	0	0						0	C2VBA																									
+KRI	kri.kri144.m.de	KRI144	11015044	43027	132	0	0		238	0	0						0	C2VBA																									
+KRI	kri.kri166.m.de	KRI166	806284	3149	140	0	0		239	0	0						0	C2VBA																									
+KRI	kri.kri188.m.de	KRI188	9418490	36790	250	0	0		240	0	0						0	C2VBA																									
+KRI	kri.kri167.m.de	KRI167	9609744	37538	16	0	0		241	0	0						0	C2VBA																									
+KRI	kri.kri189.m.de	KRI189	917329	3583	81	0	0		242	0	0						0	C2VBA																									
+KRI	kri.kri168.m.de	KRI168	807601	3154	177	0	0		243	0	0						0	C2VBA																									
+KRI	kri.kri136.m.de	KRI136	715002	2792	250	0	0		244	0	0						0	C2VBA																									
+KRI	kri.kri137.m.de	KRI137	9516741	37174	197	0	0		245	0	0						0	C2VBA																									
+KRI	kri.kri16_sts.m.de	KRI16_STS	9906999	38699	55	0	0		246	0	0						0	C2VBA																									
+KRI	kri.kri_tu_fa.m.de	KRI_TU_Fa	9519570	37185	210	0	0		247	0	0						0	C2VBA																									
+GRP	wwk.wwk_9950103m.de	WWW BAB A99 - AS17 AK München Ost_Stg	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9250004m.de	WWW BAB A92 AS1 - AD München-Feldmoching (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950108m.de	WWW BAB A99 - AS17 AK München Ost_Sbg	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950107m.de	WWW BAB A9 AS68 - AK Neufahrn (Fr. Nürnberg)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950112m.de	WWW BAB A99 AS12b - AS Fröttmaning-Nord (Fr. Salzburg)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9405m.de	WWW BAB A94 - AS5 München Riem_1_Pas	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950102m.de	WWW BAB A9 AS70 - AS Garching-Nord (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9401m.de	WWW BAB A94 - AS6 Feldkirchen West_Mch	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9450100m.de	WWW BAB A94 - AS8 AK München Ost	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950106m.de	WWW BAB A9 AS72 - AK München-Nord (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950101m.de	WWW BAB A9 AS72 - AK München-Nord (Fr. Nürnberg)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950109m.de	WWW BAB A99 AS13 - AK München-Nord (Fr. Stuttgart)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_850100m.de	WWW BAB A8 Sued A95 AK München Süd	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950100m.de	WWW BAB A99 AS11 - AD München-Feldmoching (Fr. Salzburg)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9404m.de	WWW BAB A94 - AS4 Am Moosfeld_Pas	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_92620m.de	WWW BAB A92 AS3 - AS Unterschleißheim (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9403m.de	WWW BAB A94 - AS4 Am Moosfeld_Mch	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950105m.de	WWW BAB A9 AS69 - AS Eching (Fr. Nürnberg)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950105m.de	WWW BAB A99 - AS14 Aschheim/Ismaning	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950106m.de	WWW BAB A99 - AS15 Kirchheim b.München	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950104m.de	WWW BAB A9 AS71 - AS Garching-Süd (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950100m.de	WWW BAB A9 AS68 - AK Neufahrn (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_92370m.de	WWW BAB A92 AS2 - AS Oberschleißheim (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9402m.de	WWW BAB A94 - AS5  München Riem_Mch 	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_922400m.de	WWW BAB A92 AS2 - AS Oberschleißheim (Fr. Deggendorf)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950102m.de	WWW BAB A99 AS12 - AS München-Neuherberg (Fr. Salzburg)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9407m.de	WWW BAB A94 - AS6 Feldkirchen West_Pas	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9250003m.de	WWW BAB A92 AS4 - AK Neufahrn (Fr. München)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9406m.de	WWW BAB A94 - AS5 München Riem_2_Pas	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_950103m.de	WWW BAB A9 AS70 - AS Garching-Nord (Fr. Nürnberg)	0	0	0	0	0		0	0	0						0																										
+GRP	wwk.wwk_9950111m.de	WWW BAB A99 AS11 - AD München-Feldmoching (Fr. Stuttgart)	0	0	0	0	0		0	0	0						0																										

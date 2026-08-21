@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/.settings/
+/target/
+/log4j2.xml
+/application.properties
+/application.yml
+/*.iml
+/.idea
+/src/test/resources/application.properties

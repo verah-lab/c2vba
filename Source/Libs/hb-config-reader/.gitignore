@@ -1,0 +1,12 @@
+**/target/
+.settings/
+.project
+application.properties
+.classpath
+/.idea
+*.iml
+/.factorypath
+**/resources/application-test.properties
+**/resources/log4j2.xml
+
+
