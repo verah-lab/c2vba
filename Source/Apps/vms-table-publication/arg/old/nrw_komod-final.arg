@@ -1,0 +1,26 @@
+-fileDir=F:/komod/vmsTable
+-vmsServiceUrl=http://peters2-w7.heuboe.hbintern:8083/Datex2/VMSPublication/Service
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+-tableId=KOMOD-D2-VMS-Unit-Table-VRZ-Lev
+-tableName=KOMOD-VMS-Unit-Table-VRZ-Lev
+-tableVersion=3
+-sender=DE-NW-Straßen-NRW
+-filterAQ=WW.A57_3.Meerb.S.a
+-filterAQ=WW.A57_3.Meerb.S.b
+-filterAQ=WW.A44_2.Meerb.O.a
+-filterAQ=WW.A44_2.Meerb.O.b
+-filterAQ="AQ41"
+-filterAQ="AQ42"
+-filterAQ="AQ43"
+-filterAQ="AQ44"
+-filterAQ="AQ44a"
+-filterAQ="AQ8"
+-filterAQ="AQ9"
+-filterAQ="AQ10"
+-filterAQ="AQ11"
+-filterAQ="AQ12"
+-dWiStaMode=COMPLETE_TEXTAREA
+-dWiStaDeTextAreaLayout="{ POS(LEFT) / TEXT(132,134,138) / IMAGE(LEFT:130) / IMAGE(LEFT:146) } | { POS(RIGHT) / TEXT(131,133,137) / IMAGE(RIGHT:129) / IMAGE(RIGHT:145) }"
+-dWiStaDeTextAreaLayout="{ POS(LEFT) / TEXT(164,166,170) / IMAGE(LEFT:162) / IMAGE(LEFT:178) } |  { POS(RIGHT) / TEXT(163,165,169) / IMAGE(RIGHT:161) / IMAGE(RIGHT:177) }"
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+--

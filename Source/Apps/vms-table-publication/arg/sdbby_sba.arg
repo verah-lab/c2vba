@@ -1,0 +1,14 @@
+-fileDir=F:/sdbby/vmsTable
+-vmsServiceUrl=http://peters2-w7.heuboe.hbintern:8083/SDBBY/Datex2/VMSPublication/Service
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+-tableId=BY-SDB-D2-VMS-Unit-Table-SBA
+-tableName=BY-SDB-D2-VMS-Unit-Table-SBA
+-tableVersion=133
+-filterVBA=SBA_A9_Fischbach_FR_Berlin
+-filterVBA=SBA_A9_Fischbach_FR_Muenchen
+-filterVBA=SBA_A9_Freimann_FR_Berlin
+-filterVBA=SBA_A9_Freimann_FR_Muenchen
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+-addTmcLocations
+-addOpenLRLocations
+--

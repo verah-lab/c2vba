@@ -1,0 +1,10 @@
+-fileDir=F:/sdbby/vmsTable
+-vmsServiceUrl=http://peters2-w7.heuboe.hbintern:8083/SDBBY/Datex2/VMSPublication/Service
+-tableId=BY-SDB-D2-VMS-Unit-Table-ALL
+-tableName=BY-SDB-D2-VMS-Unit-Table-ALL
+-tableVersion=10
+-sender="DE-Bayerische Straßenbauverwaltung-ZVM"
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+-addTmcLocations
+-addOpenLRLocations
+--

@@ -1,0 +1,158 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>wls-kernel-parent</artifactId>
+		<groupId>de.heuboe.wls</groupId>
+		<version>4.4.4</version>
+	</parent>
+	
+
+	<groupId>de.heuboe.datex2.vms</groupId>
+ 	<artifactId>vms-table-publication</artifactId>
+	<version>1.1.4</version>
+
+	<name>DATEX II VMS Table Publisher</name>
+	<description>Generates DATEX II vms table publications</description>
+	
+	<scm>  
+		<url>https://gitlab.heuboe.hbintern/Datex2/vms-table-publication</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:Datex2/vms-table-publication.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:Datex2/vms-table-publication.git</developerConnection>
+    </scm>
+    
+	<properties>
+  		<java.version>11</java.version>
+        <additionalparam>-Xdoclint:none</additionalparam>
+        
+        <vms.pub.svc.version>1.1.3</vms.pub.svc.version>
+        
+	</properties>
+
+ 	<dependencies>
+ 	
+ 		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbBase</artifactId>
+		</dependency>  
+		
+		<dependency>
+   			<groupId>de.heuboe.logging</groupId>
+    		<artifactId>heuboe-log4j2-extension</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbCorba</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jacorb</groupId>
+			<artifactId>jacorb</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-jdk14</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+		  	<groupId>antlr</groupId>
+		  	<artifactId>antlr</artifactId>
+		</dependency>
+		
+		<dependency>
+		  	<groupId>commons-io</groupId>
+		  	<artifactId>commons-io</artifactId>
+		</dependency>
+ 
+		<dependency>
+   			<groupId>de.heuboe.logging</groupId>
+    		<artifactId>heuboe-log4j2-extension</artifactId>
+		</dependency>
+		
+	    <dependency>
+			<groupId>de.heuboe.datex2.vms</groupId>
+			<artifactId>vms-publication-service</artifactId>
+			<version>${vms.pub.svc.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>de.heuboe.base</groupId>
+					<artifactId>jddp</artifactId>
+				</exclusion> 
+				<exclusion>
+					<groupId>de.heuboe.nrw</groupId>
+					<artifactId>image-service-lib</artifactId>
+				</exclusion> 
+				<exclusion>
+					<groupId>de.heuboe.wls</groupId>
+					<artifactId>wls-persistence</artifactId>
+				</exclusion> 
+			</exclusions>
+	    </dependency>
+	    
+	    <!--  JAXB, JAXWS dependencies -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jaxb</groupId>
+		    <artifactId>jaxb-runtime</artifactId>
+		</dependency>      
+		<dependency>
+    		<groupId>javax.xml.ws</groupId>
+    		<artifactId>jaxws-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>javax.jws</groupId>
+		    <artifactId>jsr181-api</artifactId>
+		    <version>1.0-MR1</version>
+		</dependency>		
+
+		<dependency>
+			<groupId>javax.xml.ws</groupId>
+			<artifactId>jaxws-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
+	    
+
+	    <dependency>
+		    <groupId>xerces</groupId>
+		    <artifactId>xercesImpl</artifactId>
+	    </dependency>
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<!-- build an executable jar -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.5.8</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>de.heuboe.datex2.vms.table.pub.Main</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	
+</project>

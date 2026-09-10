@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d2LogicalModel 
+		modelBaseVersion="2" 
+		xmlns="http://datex2.eu/schema/2/2_0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../schema/DATEXIISchema_2_2_3_vms.xsd">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+	</exchange>
+	<payloadPublication xsi:type="VmsTablePublication" lang="de">
+		<publicationTime>1980-01-01T00:00:00+01:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+		<headerInformation>
+			<confidentiality>noRestriction</confidentiality>
+			<informationStatus>real</informationStatus>
+		</headerInformation>
+	<vmsUnitTable id="BY-SDB-D2-VMS-Unit-Table" version="1">
+		<vmsUnitTableIdentification>BY-SDB-D2-VMS</vmsUnitTableIdentification>
+		<vmsUnitRecord id="AQ_1" version="1">
+			<numberOfVms>1</numberOfVms>
+			<vmsUnitIPAddress>127.0.0.1</vmsUnitIPAddress>
+		</vmsUnitRecord>
+	</vmsUnitTable>
+	</payloadPublication>
+</d2LogicalModel>
+ 

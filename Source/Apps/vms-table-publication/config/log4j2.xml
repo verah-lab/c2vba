@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+    
+	    <Properties>
+	        <!-- global layout pattern; designed to show log patterns in fixed sized columns -->
+	        <!-- see: https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout -->
+	        <Property name="layoutPattern">%date{ABSOLUTE} | %5.5level | %15.15thread | %25.25logger{1.} | %30.30class{1.}(%line) | %15.15X{context} | %15.15marker |> %message%n</Property>
+	    </Properties>
+    
+        <Console name="Console" target="SYSTEM_OUT">
+        
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        
+		<RollingFile name="LogFile" 
+		             fileName="log/vmsTablePublication.log"
+		             filePattern="${log-path}/vmsTablePublication-%d{yyyy-MM-dd HH:mm:ss.SSS}.log">
+			<PatternLayout>
+			
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+				
+			</PatternLayout>
+			<Policies>
+				 <SizeBasedTriggeringPolicy size="10 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		
+		
+    </Appenders>
+    <Loggers>
+        <Root level="warn">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="LogFile"/>
+        </Root>
+		<Logger name="de.heuboe" level="debug" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+    </Loggers>
+</Configuration>
+

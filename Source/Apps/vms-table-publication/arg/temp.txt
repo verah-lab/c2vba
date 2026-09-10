@@ -1,0 +1,1 @@
+-vmsServiceUrl=http://worker1.d.uz.komodnext.heuboe.hbintern:31352/Datex2/VMSPublication/Service

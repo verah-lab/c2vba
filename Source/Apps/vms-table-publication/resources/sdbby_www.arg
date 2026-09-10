@@ -1,0 +1,12 @@
+-user=postgres 
+-program=vmsTablePublisher 
+-passwd=postgres 
+-dbms=postgres 
+-env=sdbby-w7v:5599:by 
+-db=by 
+-server=dbsrv9-2k12 
+-special=psTest
+-fileDir=D:\BY\data\OUT\mdm\vmt
+-vmsServiceUrl=http://sdbby-w7v:8083/SDBBY/Datex2/VMSPublication/Service
+-filterVBA=WWW_Muenchen
+--

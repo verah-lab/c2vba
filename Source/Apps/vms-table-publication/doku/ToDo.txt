@@ -1,0 +1,18 @@
+Compound-AQ:
+
+1) Der ImageService liefert die ID des Main-AQ.
+   Damit kann die Location ermittelt werden: WLS
+   
+2) WWWs als Compound-AQ
+
+3) Schilderbrücke: evtl. getrennt
+   LanePos 'Abs' --> Exit/Entry (kein LaneEnum ?) umsetzen  
+   
+ C-Schilder als Texte ?  
+ 
+ 
+ 4) Bug WLS:
+ 
+ <srid> der WWWs wird vom WLS falsch als 4326 (WGS84) geliefert.  
+ 
+ Workaround: srid=32632 wird angenommen !  

@@ -1,0 +1,11 @@
+-fileDir=F:/sdbby/vmsTable
+-vmsServiceUrl=http://peters2-w7.heuboe.hbintern:8083/SDBBY/Datex2/VMSPublication/Service
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+-tableId=BY-SDB-D2-VMS-Unit-Table-WWW
+-tableName=BY-SDB-D2-VMS-Unit-Table-WWW
+-tableVersion=10
+-filterVBA=WWW_Muenchen
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+-addTmcLocations
+-addOpenLRLocations
+--

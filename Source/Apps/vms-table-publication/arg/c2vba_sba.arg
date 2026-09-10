@@ -1,0 +1,11 @@
+-fileDir=F:/sdbby/vmsTable
+-vmsServiceUrl=http://master1.d.c2vba.heuboe.hbintern:31352/Datex2/VMSPublication/Service
+-d2SchemaLocation=http://62.132.115.147:11447/schema/DATEXIISchema_2_2_3_vms.xsd
+-tableId=BY-SDB-D2-VMS-Unit-Table-SBA
+-tableName=BY-SDB-D2-VMS-Unit-Table-SBA
+-tableVersion=115
+-filterVBA=BY-SBA_A9_Freimann_FR_Berlin
+-filterVBA=BY-SBA_A9_Freimann_FR_Muenchen
+-addTmcLocations
+-addOpenLRLocations
+--
