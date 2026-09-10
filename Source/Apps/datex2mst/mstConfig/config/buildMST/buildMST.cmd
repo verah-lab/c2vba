@@ -1,0 +1,3 @@
+set HBOUTIMMEDIATE=1
+"C:\Program Files (x86)\Java\jre7\bin\java" -Xmx1024m -Dorg.omg.CORBA.ORBClass=org.jacorb.orb.ORB -Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton -DORBInitRef.NameService=corbaloc::he1-w7v:9923/NameService -cp ../../jarsIntegrated/datex2MSTBuilder_3.4.7/*; de.heuboe.datex2.mst.builder.client.MSTBuilderClient @buildMST.arg -mstId=%1 -mstVersion=%2 -defVersion=%3 -refVersion=%4
+pause

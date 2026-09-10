@@ -1,0 +1,11 @@
+-user=postgres 
+-program=ParkingTablePublisher 
+-passwd=postgres 
+-dbms=postgres 
+-env=he1-w7v:5623:vzh 
+-db=vzhdb03 
+-server=hedb-w7v 
+-special=psTest
+-fileDir=D:\VZH\data\OUT\ITP\PTP
+-locSrvURL=locStatelessServer/hedb-w7v/vzhdb03/he1-w7v:5623:vzh
+--
