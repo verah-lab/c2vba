@@ -1,0 +1,2 @@
+-vmsServiceUrl=http://peters2-w7:8083/Datex2/VMSPublication/Service
+-vmsServiceUrl=http://nrw-guisvc-w7v:11111/Datex2/VMSPublication/Service

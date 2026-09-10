@@ -1,0 +1,15 @@
+-tableId=KOMOD-D2-VMS-Unit-Table-VRZ-Lev
+-tableVersion=7
+-pubInstance=ps
+-fileDir=F:/komod/vms
+-pubInterval=60
+-pubMode=OnUpdateCyclicSnapshot
+-sender=DE-NW-Straßen-NRW
+-datex2Target=MDM
+-vmsServiceUrl=http://peters-wx:8083/Datex2/VMSPublication/Service
+-vmsServiceListenerPort=4748
+-d2ReceiverURL=http://sdbby-w7v:5717/D2PushReceiver
+-checkData
+-switchingDatakindName=DaWVZWechseltextIst
+-switchingDatakindName=DaWVZSchaltIst
+--

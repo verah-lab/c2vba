@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d2LogicalModel 
+modelBaseVersion="2" 
+xmlns="http://datex2.eu/schema/2/2_0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../schema/DATEXIISchema_2_2_3.xsd">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+		
+	</exchange>
+	<payloadPublication xsi:type="VmsPublication" lang="de">
+		<publicationTime>1980-01-01T00:00:00+01:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+		<headerInformation>
+			<confidentiality>noRestriction</confidentiality>
+			<informationStatus>real</informationStatus>
+		</headerInformation>
+		<vmsUnit>
+			<vmsUnitTableReference id="BY-SDB-VMS-Unit-Table" targetClass="VmsUnitTable" version="1"/>
+			<vmsUnitReference id="AQ_1" targetClass="VmsUnitRecord" version="1"/>
+			<vms vmsIndex="1">
+				<vms>
+					<vmsWorking>true</vmsWorking>
+					<vmsMessage messageIndex="1">
+						<vmsMessage>
+							<timeLastSet>1980-01-01T00:00:00+01:00</timeLastSet>
+							<textPage pageNumber="1">
+								<vmsText>
+									<vmsTextLine lineIndex="1">
+										<vmsTextLine>
+											<vmsTextLine>Stau !</vmsTextLine>
+										</vmsTextLine>
+									</vmsTextLine>
+								</vmsText>
+							</textPage>
+						</vmsMessage>
+					</vmsMessage>
+				</vms>
+			</vms>
+		</vmsUnit>
+	</payloadPublication>
+</d2LogicalModel>

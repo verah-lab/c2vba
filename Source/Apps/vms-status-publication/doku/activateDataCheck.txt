@@ -1,0 +1,9 @@
+Aktivierung des DataChecks des vmsStatusPublishers
+
+
+http://<HOST>:<server.port>/activateDataCheck
+
+
+Produktiv-System
+
+

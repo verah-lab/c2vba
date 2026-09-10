@@ -1,0 +1,17 @@
+-user=postgres 
+-program=VmsPublisher 
+-passwd=postgres 
+-dbms=postgres 
+-env=sdbby-w7v:5599:by 
+-db=by 
+-server=dbsrv9-2k12 
+-special=psTest
+-tableId=BY-SDB-D2-VMS-Unit-Table-SBA
+-tableVersion=10
+-fileDir=F:/sdbby/vms
+-pubInterval=30
+-pubMode=CyclicComplete
+-vmsServiceUrl=http://peters2-w7.heuboe.hbintern:8083/SDBBY/Datex2/VMSPublication/Service
+-vmsServiceListenerPort=4748
+-mdmAuthenticationFile=D:/by/etc/mdm/vms/mdmAuth.properties
+--
