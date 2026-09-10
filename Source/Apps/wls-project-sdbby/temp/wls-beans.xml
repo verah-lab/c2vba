@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<ctx:property-placeholder location="${wls.properties}" />
+
+	<bean id="roadMap" class="de.heuboe.wls.roadmap.intrest.IntrestRoadMap">
+		<property name="wlsSrid" value="${wls.srid:0}" />
+		<property name="sourceSrid" value="${map.srid:0}" />
+		<property name="filename" value="${map.pathname:0}" />
+	</bean>
+<!--
+	<bean id="roadElementSource" class="de.heuboe.wls.persistence.IterablePersistentSource">
+		<property name="locType" value="RoadElement" />
+		<property name="clasz" value="de.heuboe.wls.data.roadmap.RoadElement" />
+		<property name="persistenceManager" ref="wlsPersistenceManager" />
+		
+		<property name="baseSource" ref="roadMap" />
+        <property name="sourceFiles">
+          <list>
+            <value>"${map.pathname:}"</value>
+          </list>
+        </property>
+	</bean>
+-->	
+	<!-- Initialize roadNetCache -->
+	<bean id="roadNetCache" class="de.heuboe.wls.roadmap.RoadNetCache"
+		init-method="init">
+		<constructor-arg value="${wls.srid:0}" />
+		<property name="source" ref="roadMap" />
+	</bean>
+
+	<!-- Initialize RoadMapPlugin -->
+	<bean id="roadMapPlugin" class="de.heuboe.wls.plugin.roadmap.RoadMapPlugin">
+		<property name="roadMap" ref="roadNetCache" />
+	</bean>
+
+	<!-- Initialize RoadNetPlugin -->
+	<bean id="roadNetPlugin" class="de.heuboe.wls.plugin.roadmap.RoadNetPlugin">
+		<property name="roadNet" ref="roadNetCache" />
+	</bean>
+
+	<!-- Initialize wwwPanelSource -->
+	<bean id="sdbbyFeatureSource" class="de.heuboe.wls.by.SdbbyFeatureSource">
+		<property name="filenameAq" value="${vms.filename}" />
+		<property name="filenameWww" value="${www.filename}" />
+		<property name="filenameStrg" value="${sdb.filename}" />
+		<property name="srid" value="${wls.srid}" />
+		<property name="roadNet" ref="roadNetCache" />
+	</bean>
+
+	<!-- Initialize wwwPanelPlugin -->
+	<bean id="sdbbyFeaturePlugin" class="de.heuboe.wls.by.MultiGetterPluginIgnoreBbox">
+		<property name="source" ref="sdbbyFeatureSource" />
+	</bean>
+	
+	<bean id="strategyGetterPlugin" class="de.heuboe.wls.by.StrategyGetterPlugin" init-method="init">
+		<property name="source" ref="sdbbyFeatureSource" />
+	</bean>
+	
+	<bean id="tccPointFeaturePlugin" class="de.heuboe.wls.by.TccPointFeaturePlugin" init-method="init">
+		<property name="source" ref="sdbbyFeatureSource" />
+	</bean>
+	
+
+	<!-- Initialize OpenLRPlugin -->
+	<bean id="openLrPlugin" class="de.heuboe.wls.plugin.openlr.OpenLRPlugin"
+		init-method="init">
+		<property name="wlsSrid" value="${wls.srid}" />
+		<property name="encoderConfig" value="${openLR.encoder.config:openLR-encoder.xml}" />
+		<property name="decoderConfig" value="${openLR.decoder.config:openLR-decoder.xml}" />
+		<property name="roadMap" ref="roadNetCache" />
+	</bean>
+
+
+	<!-- Wls persistence -->
+
+	<bean id="wlsPersistenceManager" class="de.heuboe.wls.persistence.PersistenceManager"  init-method="init">
+		<property name="wlsVersion" value="${wls.system.version:}" />
+		<property name="host" value="${wls.persistence.host:}" />
+		<property name="database" value="${wls.persistence.database:}" />
+		<property name="port" value="${wls.persistence.port:}" />
+	</bean>
+
+
+	<!-- Initialize Tmc -->
+	
+	<bean id="tmcFilter" class="de.heuboe.wls.by.TmcFilterSdbby" >
+	</bean>
+	
+	<bean id="tmcTable" class="de.heuboe.wls.tmc.csv.CsvTmcTable" >
+		<property name="wlsSrid" value="${wls.srid:0}" />
+		<property name="sourceSrid" value="${tmc.srid:4326}" />
+		<property name="filename" value="${tmc.filename:}" />
+		<property name="version" value="${tmc.version:}" />
+	</bean>
+
+	<bean id="tmcTableCache" class="de.heuboe.wls.tmc.TmcTableCache" init-method="init">
+		<constructor-arg name="source" ref="tmcTable"/>
+	</bean>
+	
+	<bean id="tmcPlugin" class="de.heuboe.wls.tmc.plugin.TmcPlugin">
+		<property name="locationCache" ref="tmcTableCache" />
+	</bean>
+	
+	<bean id="tmcRoadSegmentFactory" class="de.heuboe.wls.tmc.roadnet.TmcRoadSegmentFactory">
+		<property name="tmcTable" ref="tmcTableCache" />
+		<property name="roadNet" ref="roadNetCache" />
+		<property name="roadNetFiles" value="${tmc.roadnet.files}" />
+		<property name="persistenceManager" ref="wlsPersistenceManager" />		
+		<property name="tmcFilter" ref="tmcFilter" />
+		<property name="maxPointLocMatches" value="${maxPointLocMatches:12}" />
+		<property name="maxPointLocDistance" value="${maxPointLocDistance:150}" />
+		<property name="withoutJunctions" value="true" />
+	</bean>
+	
+	<bean id="tmcRoadSegmentSource" class="de.heuboe.wls.tmc.roadnet.TmcRoadSegmentSource">
+		<property name="factory" ref="tmcRoadSegmentFactory" />
+	</bean>
+	
+<!--  	
+	<bean id="tmcLocationCache" class="de.heuboe.wls.tmc.roadnet.TmcRoadSegmentCache" init-method="init">
+		<constructor-arg name="roadMapPlugin" ref="roadMapPlugin"/>
+		<constructor-arg name="source" ref="tmcRoadSegmentSource"/>
+	</bean>
+
+	<bean id="tmcRoadnetPlugin" class="de.heuboe.wls.tmc.roadnet.plugin.TmcRoadnetPlugin" init-method="init">
+		<property name="locationCache" ref="tmcLocationCache" />
+		<property name="roadNetCache" ref="roadNetCache" />
+		<property name="tmcTable" ref="tmcTableCache" />
+	</bean>
+-->	
+
+ 	<!-- Initialize WLS -->
+	<bean id="executor" class="java.util.concurrent.Executors"
+		factory-method="newFixedThreadPool" destroy-method="shutdownNow">
+		<constructor-arg value="${wls.poolSize:10}"/>
+	</bean>
+
+	<!-- Initialize LogControl -->
+	<bean id="logControl" class="de.heuboe.base.log.control.LogControlManager" init-method="start">
+	</bean>
+
+	<bean id="wls" class="de.heuboe.wls.srv.impl.WebLocationService">
+		<constructor-arg name="srid" value="${wls.srid:0}"/>
+		<constructor-arg name="executor" ref="executor"/>
+		<property name="plugins">
+			<list>
+				<ref bean="roadMapPlugin" />
+				<ref bean="roadNetPlugin" />
+				<ref bean="sdbbyFeaturePlugin" />
+				<ref bean="strategyGetterPlugin" />
+				<ref bean="tccPointFeaturePlugin" />
+				<ref bean="openLrPlugin" />
+				
+				<ref bean="tmcPlugin" />
+<!--  				<ref bean="tmcRoadnetPlugin" /> -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="geoServer" class="de.heuboe.wls.by.WlsGeoServerCfg">
+		<constructor-arg name="wlsVersion" value="${wls.system.version}"/>
+		<constructor-arg name="inSupplyMode" value="false"/>
+		<constructor-arg name="geoServicePort" value="${geo.service.port:4916}"/>
+		<constructor-arg name="tmcTableCache" ref="tmcTableCache"/>
+		<constructor-arg name="wlsPersistenceManager" ref="wlsPersistenceManager"/>
+	</bean>
+	
+
+</beans>

@@ -1,0 +1,100 @@
+{
+	"geoLayerTypes": [{
+			"name": "RoadNet",
+			"description": "Straßennetz",
+			"locationType": "RoadElement",
+			"locationSubType": null,
+			"alterable": false
+		},
+		{
+            "name": "RoadComponent",
+            "description": "Straßenkomponenten",
+            "locationType": "RoadComponent",
+            "locationSubType": null,
+            "alterable": false
+        }, 
+		{
+			"name": "TmcNet",
+			"description": "RDS/TMC-Netz",
+			"locationType": "TmcRoadSegment",
+			"locationSubType": null,
+			"alterable": false
+		},	
+		{
+			"name": "LCLPoint",
+			"description": "LCL-Punkte",
+			"locationType": "TmcLocation",
+			"locationSubType": null,
+			"icon": "lclPointIcon",
+			"roadType": "TMC",
+			"alterable": false
+		},	
+		{
+			"name": "TmcPoints",
+			"description": "Tmc-Punkte",
+			"locationType": "de.heuboe.wls.data.tmc.DirectedTmcLocation",
+			"locationSubType": null,
+			"roadType": "TMC",
+			"shortNameFields": [ "Straße:", "Name", "(ID)" ],
+			"shortInfoFields": [ "Straße:", "Name", "(ID)" ],
+			"icon": "tmcNoneIcon",
+			"alterable": true,
+			"visibleFromLevel" : 12
+		},
+		{
+			"name": "AQ",
+			"description": "Anzeigequerschnitte",
+			"locationType": "de.heuboe.wls.data.tcc.TccPointFeature",
+			"icon": "gantryIcon",
+			"alterable": false
+		},
+		{
+			"name": "MQ",
+			"description": "Messquerschnitte",
+			"locationType": "de.heuboe.wls.data.geofeature.GeoFeature",
+			"locationSubType": "MQ",
+			"icon": "mqIcon",
+			"selectedIcon": "selMqIcon",
+			"alterable": false,
+			"visibleFromLevel" : 10
+		},		
+		{
+			"name": "UFD",
+			"description": "Umfeldsensor",
+			"locationType": "de.heuboe.wls.data.geofeature.GeoFeature",
+			"locationSubType": "UFD",
+			"icon": "ufdIcon",
+			"selectedIcon": "selUfdIcon",
+			"alterable": false,
+			"visibleFromLevel" : 10
+		},		
+		{
+			"name": "WWW-Kette",
+			"description": "WWW-Ketten",
+			"locationType": "de.heuboe.wls.data.tcc.TccPointFeatureGroup",
+			"icon": "gantryIcon",
+			"alterable": false
+		},
+		{
+			"name": "Strategie-Routen",
+			"description": "Strategie-Routen",
+			"locationType": "GeoFeature",
+			"locationSubType": "SdbbyRoute",
+			"alterable": false,
+			"strokeWeight": 2.0
+		},
+		{
+			"name": "Strategie-Trigger",
+			"description": "Strategie-Routen-Trigger",
+			"locationType": "GeoFeature",
+			"locationSubType": "SdbbyTrigger",
+			"icon": "triggerIcon",
+			"alterable": false,
+			"strokeWeight": 2.0
+		}
+	],
+	"geoRoadTypes": [
+		"TMC"
+	]
+	
+}

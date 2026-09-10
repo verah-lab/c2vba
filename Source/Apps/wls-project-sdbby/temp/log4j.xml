@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration
+	xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!--  Console Appender -->
+	<appender
+		name="console"
+		class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %c{1} - %m%n" />
+		</layout>
+	</appender>
+    
+	<appender name="hbCorbaLogger"
+		class="de.heuboe.base.jhbLog4jAppender.HbCorbaLog4jAppender">
+		<param name="DefaultContext" value="wls.rz" />
+		<param name="ReconnectionTimeout" value="2" />
+		<param name="BufferSize" value="1000" />
+	</appender>
+	
+    <!--  File Appender -->
+	<appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="wls.log" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c{1} - %m%n" />
+        </layout>
+    </appender>
+     
+	<!-- Heuboe logger -->
+	<logger name="de.heuboe" additivity="false">
+		<level value="info" />
+		<appender-ref ref="file" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="de.heuboe.wls" additivity="false">
+		<level value="info" />
+		<appender-ref ref="file" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<!-- publish server endpoint -->
+	<logger name="org.apache.cxf.endpoint" additivity="false">
+		<level value="info" />
+		<appender-ref ref="file" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="console" />
+	</root>
+	
+
+</log4j:configuration>

@@ -1,0 +1,10 @@
+[ERROR] Failed to execute goal de.heuboe.maven.plugins:ops-maven-plugin:0.14.0:prepare-dist (default-cli) on project standalone-pom: 
+Unable to resolve dependencies!: The following artifacts could not be resolved: 
+
+openlr:encoder:jar:1.4.2, 
+openlr:decoder:jar:1.4.2, 
+openlr:xml:jar:1.4.2, 
+openlr:binary:jar:1.4.2, 
+openlr:data:jar:1.4.2, 
+openlr-tools:otk:jar:1.4.2:
+

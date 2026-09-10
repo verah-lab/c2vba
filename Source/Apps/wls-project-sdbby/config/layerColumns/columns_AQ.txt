@@ -1,0 +1,81 @@
+[ {
+  "name" : "Locationtyp",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Klasse",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "ID",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Name",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Ort",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "BAB",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Road",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "AQTYPE",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Kilometer",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "FAHRTRICHTUNG",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "WINKEL",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Heading",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "Kilometer",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "Knotennummer",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "UZ",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Target",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+} ]

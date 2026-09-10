@@ -1,0 +1,10 @@
+ private static final String COL_KNOTEN_NR_NORD = "KNOTENNR";
+ private static final String COL_NAME_NORD = "BEZEICHNUNG";
+ private static final String COL_ID_NORD = "BEZEICHNUNG";
+ private static final String COL_ID_NORD_2 = "QUERSCHNITT_ID";
+ private static final String COL_LATITUDE_NORD = "WGS84_BREITE";
+ private static final String COL_LONGITUDE_NORD = "WGS84_LAENGE";
+ private static final String COL_ROAD_NORD = "BAB";
+ private static final String COL_ROAD_KM_NORD = "VON_KM";                
+ private static final String COL_DE_NORD = "LISTE_DE_KANAELE";
+    
