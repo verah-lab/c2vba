@@ -1,0 +1,14 @@
+--
+-user=postgres 
+-passwd=postgres 
+-program=MSTLocServiceBuilder 
+-dbms=postgres 
+-env=tevzhw8ap01:5623:vzh 
+-db=vzhdb03
+-server=hedb-w7v
+-special=ps
+-d2Version=HPA
+-mst=VL
+-mstVersion=7
+-defVersion=1
+-locServiceUrl="http://127.0.0.1:4711/EVE/EVEDatex2LocalisationService"

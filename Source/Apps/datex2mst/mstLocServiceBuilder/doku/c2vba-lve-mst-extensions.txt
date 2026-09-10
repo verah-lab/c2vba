@@ -1,0 +1,27 @@
+1) measurementSiteNumberOfLanes auf HB-Seite ergänzen
+
+2 h
+
+Bemerkung: die Lanes werden in DATEX-II in <supplementaryPositionalDescription> erfasst
+
+
+2) specificLane
+
+HB: jede measurementSpecificCharacteristics hat eine specificLane
+
+
+3) Index measurementSpecificCharacteristics
+
+Parameter: specificLane Lane, specificMeasurementValueType ValT, specificVehicleCharacteristics:vehicleType VehT
+
+a) Integer-Wert der Enum-Werte verwenden:
+
+Lane * 1000 +  ValT * 100 + Lane
+
+b) Source: 
+
+
+4) 'Location-Gruppe' --> 'carriageway'   (Analyse_Datex2_FG1_Konfig_Daten_Gesamtbayern.docx)
+
+Ggf. aus config-service, sonst aus DE-Schema oder ID
+

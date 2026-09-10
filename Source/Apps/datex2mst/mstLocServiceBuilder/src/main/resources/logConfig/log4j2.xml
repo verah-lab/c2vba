@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+	<Properties>
+		<!-- global layout pattern; designed to show log patterns in fixed sized 
+			columns -->
+		<!-- see: https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout -->
+        <Property name="layoutPattern">%date{ABSOLUTE} | %5.5level | %30.30class{1.}(%line) |> %message%n</Property>
+	</Properties>
+
+	<Appenders>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>${layoutPattern}</pattern>
+			</PatternLayout>
+		</Console>
+
+		<RollingFile name="LogFile" fileName="log/d2MSTLocServiceBuilder.log"
+			filePattern="log/d2MSTLocServiceBuilder-%i.log">
+			<PatternLayout>
+				<pattern>${layoutPattern}</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+
+		<!-- appender that writes log events to the ImcMsgTee -->
+
+		<!-- <ImcMsgTee name="ImcMsgTee" context="d2MSTPubBuilder"> <PatternLayout> 
+			<pattern>${layoutPattern}</pattern> </PatternLayout> </ImcMsgTee> -->
+
+		<!-- Wraps the ImcMsgTee appender and writes LogEvents on a separate Thread -->
+		<!-- Thus writing logs should not block the system. -->
+		<!-- <Async name="AsyncImcMsgTee"> <AppenderRef ref="ImcMsgTee" /> </Async> -->
+	</Appenders>
+	<Loggers>
+		<Root level="warn">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="LogFile" />
+		</Root>
+		<Logger name="de.heuboe" level="info" additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="LogFile" />
+			<!-- <AppenderRef ref="ImcMsgTee"/> -->
+		</Logger>
+
+
+	</Loggers>
+</Configuration>
+

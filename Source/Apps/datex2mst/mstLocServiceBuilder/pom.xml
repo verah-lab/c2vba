@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.heuboe.datex2</groupId>
+ 	<artifactId>datex2MSTLocServiceBuilder</artifactId>
+	
+	<name>Datex2 MST Location Service Builder</name>
+	<description>Erzeugt die detaillierte, persistente MST-Definition. Bezieht Location-Daten über einen Location-Service </description>
+	
+ 	<parent>
+		<groupId>de.heuboe.datex2.mst</groupId>
+	 	<artifactId>datex2MSTParent</artifactId>
+ 		<version>5.0.2</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+	
+	
+	<properties>
+		<datex2.schema.base.new.version>1.3.6</datex2.schema.base.new.version>
+		<datex2.mst.version>5.0.2</datex2.mst.version>
+		<datex2.measure.base.version>5.0.0</datex2.measure.base.version>
+		<additionalparam>-Xdoclint:none</additionalparam>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>datex2-schema_2_3</artifactId>
+			<version>${datex2.schema.base.new.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+		 	<artifactId>datex2MeasureBase</artifactId>
+			<version>${datex2.measure.base.version}</version>
+		</dependency>  
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+		 	<artifactId>datex2MSTConfig</artifactId>
+			<version>${datex2.mst.version}</version>
+			
+			<exclusions>
+				<exclusion>
+				    <groupId>de.heuboe.datex2</groupId>
+				    <artifactId>datex2-schema_2_1</artifactId>
+				</exclusion>
+			</exclusions>
+			
+		</dependency>  
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>mstLocServiceInterface</artifactId>
+			<version>${datex2.mst.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+		 	<artifactId>datex2MSTBuilder</artifactId>
+			<version>${datex2.mst.version}</version>
+			<exclusions>
+				<exclusion>
+				    <groupId>de.heuboe.base</groupId>
+				    <artifactId>jhbBase</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+   	</dependencies>
+
+
+	<build>
+		<plugins>
+			<!-- build an executable jar -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.5.8</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>de.heuboe.datex2.location.service.server.Main</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
