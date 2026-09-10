@@ -1,0 +1,58 @@
+#
+# 1) Remarks
+#
+# a) The url is only for information, but one should check if it is 'reachable'
+#    (<url>?wsdl in a web browser should return the WSDL content of the soap service)
+# b) In production environment the available ports are restricted by
+#    i)  Firewall configurations 
+#    ii) Kubernetes node port definitions (the node ports may differ from the pod ports) 
+# 
+# 2) Restrictions for consumerMode = PUSH
+#
+# a) For a single serverPort only one serverSchema shall be used
+# b) For a single serverPort different contexts shall be used
+#
+#
+regions:
+  region-configs:
+    -
+      name: vms-nord-sintec
+      remote: SOAP
+      consumerMode: PULL      
+      url: https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4417000/clientPullService
+      trustStoreFile: D:/komodnext/mdm/vms/cert/mdm-sectigo-2029.jks
+      trustStorePassword: pFef!KHE
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      topic: C2VBA-datex2-publication-vms-www-nord-test
+    -
+      name: vms-sued-heuboe
+      remote: SOAP      
+      consumerMode: PUSH      
+      url: https://vzh.heuboe.de:4717/datex2/services/supplierPushService
+      context: /supplierPushService
+      keyStoreType: PKCS12
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      serverPort: 4717
+      serverDomain: "vrz.heuboe.de"
+      topic: C2VBA-datex2-publication-vms-tts-sued-test
+    -
+      name: fg1-sued
+      remote: SOAP      
+      consumerMode: PUSH      
+      serverSchema: http
+      url: http://peters-wx:4718/datex2/services/supplierPushService-fg1-sued
+      context: /supplierPushService-fg1-sued
+      serverPort: 4718
+      topic: C2VBA-datex2-publication-mdp-fg1-sued-test
+    -
+      name: fg3-sued
+      remote: SOAP      
+      consumerMode: PUSH      
+      serverSchema: http
+      url: http://peters-wx:4718/datex2/services/supplierPushService-fg3-sued
+      context: /supplierPushService-fg3-sued
+      serverPort: 4718
+      topic: C2VBA-datex2-publication-mdp-fg3-sued-test
+      

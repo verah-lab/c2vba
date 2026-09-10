@@ -1,0 +1,27 @@
+#
+# 1) Remarks
+#
+# a) The url is only for information, but one should check if it is 'reachable'
+#    (<url>?wsdl in a web browser should return the WSDL content of the soap service)
+# b) In production environment the available ports are restricted by
+#    i)  Firewall configurations 
+#    ii) Kubernetes node port definitions (the node ports may differ from the pod ports) 
+# 
+# 2) Restrictions for consumerMode = PUSH
+#
+# a) For a single serverPort only one serverSchema shall be used
+# b) For a single serverPort different contexts shall be used
+#
+#
+regions:
+  region-configs:
+    -
+      name: mdp-sued-fg1
+      remote: SOAP
+      consumerMode: PULL      
+      url: https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4525000/clientPullService
+      trustStoreFile: D:/komodnext/mdm/vms/cert/mdm-sectigo-2029.jks
+      trustStorePassword: pFef!KHE
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: GUChsx5n2S
+      topic: C2VBA-datex2-publication-mdp-fg1-sued-test

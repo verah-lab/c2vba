@@ -1,0 +1,268 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>de.heuboe.c2vba.base</groupId>
+		<artifactId>c2vba-base-parent</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	
+	<groupId>de.heuboe.c2vba.datex2</groupId>
+ 	<artifactId>c2vba-datex2-region-receiver</artifactId>
+	<version>0.2.1-SNAPSHOT</version>
+	
+	<properties>
+		<java.version>11</java.version>
+		<datex2.schema.version>1.3.6.1</datex2.schema.version>
+		<datex2.schema.base.version>1.3.4</datex2.schema.base.version>
+		<datex2.base.version>5.0.2</datex2.base.version>
+		<datex2.pull.version>5.0.5</datex2.pull.version>
+		<datex2.kafka.version>0.0.1</datex2.kafka.version>
+		<datex2.kafka.tools.version>0.1.4</datex2.kafka.tools.version>
+		<additionalparam>-Xdoclint:none</additionalparam>
+		
+	    <sonar.test.exclusions>src/test/**/*</sonar.test.exclusions>
+	</properties>
+	
+	<scm>  
+		<url>https://gitlab.heuboe.hbintern/c2vba/c2vba-datex2-region-receiver</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:c2vba/c2vba-datex2-region-receiver.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:c2vba/c2vba-datex2-region-receiver.git</developerConnection>
+    </scm>
+    
+ 	<dependencies>
+		<dependency>
+			<groupId>de.heuboe.c2vba.datex2</groupId>
+			<artifactId>c2vba-datex2-kafka</artifactId>
+			<version>${datex2.kafka.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.heuboe.kafka</groupId>
+			<artifactId>kafka-tools</artifactId>
+			<version>${datex2.kafka.tools.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>datex2-schema_2_3</artifactId>
+			<version>${datex2.schema.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>datex2Base</artifactId>
+			<version>${datex2.base.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>de.heuboe.datex2</groupId>
+		    <artifactId>datex2-pull-client</artifactId>
+		    <version>${datex2.pull.version}</version>
+		</dependency>
+    
+    	<dependency>
+    		<groupId>org.apache.kafka</groupId>
+    		<artifactId>kafka-clients</artifactId>
+		</dependency>
+		
+		<dependency>
+		  	<groupId>de.heuboe.wls</groupId>
+		  	<artifactId>wls-srv</artifactId>
+            <exclusions>
+	            <exclusion>
+        			<groupId>org.apache.cxf</groupId>
+				    <artifactId>cxf-rt-transports-http-jetty</artifactId>
+	            </exclusion>
+            </exclusions>
+		</dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!--  Spring  -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.metro</groupId>
+			<artifactId>webservices-extra</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+	
+
+		<!-- for testing only -->
+
+		<dependency>
+			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+        
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbRegressionTest</artifactId>
+			<version>0.2.8</version>
+			<scope>test</scope>
+		</dependency>
+	
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            
+            <exclusions>
+	            <exclusion>
+				    <groupId>com.vaadin.external.google</groupId>
+				    <artifactId>android-json</artifactId>
+	            </exclusion>
+            </exclusions>
+        </dependency>
+        
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-commons</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		  	<groupId>org.junit.jupiter</groupId>
+  			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<executions>
+					<!-- Optional -->
+					<!-- Build a tar file to allow local inspection -->
+					<execution>
+						<id>docker-build-tar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>buildTar</goal>
+						</goals>
+					</execution>
+					<!-- Required -->
+					<!-- Upload the image to the registry -->
+					<execution>
+						<id>docker-build</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<from>
+						<!-- ${docker.registry} is set via settings.xml 
+						<image>${docker.registry}/adoptopenjdk/openjdk11:alpine-jre</image>
+						-->
+						<image>${docker.registry}/eclipse-temurin:17-jre-alpine</image>
+					</from>
+					<to>
+						<!-- This change is important -->
+						<image>${docker.registry}/heuboe/c2vba/datex2/${project.artifactId}:${project.version}</image>
+					</to>
+					<container>
+						<jvmFlags>
+							<!-- Flags für Spring -->
+							<jvmFlag>--add-opens=java.base/java.lang=ALL-UNNAMED</jvmFlag>
+							<jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+							<jvmFlag>-Dspring.config.location=file:/config/</jvmFlag>
+							<!-- Do not add flags such as -Xmx2G or other parameters here that 
+								might be changed later on -->
+						</jvmFlags>
+						<mainClass>${mainClass}</mainClass>
+						<ports>
+							<!-- Ports with their function -->
+							<port>8080</port><!-- actuator -->
+						</ports>
+						<labels>
+							<version>${project.version}</version>
+							<build.timestamp>${maven.build.timestamp}</build.timestamp>
+							<!-- Metadata-derived from the git-commit-id-plugin -->
+							<git.tags>${git.tags}</git.tags>
+							<git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+							<git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+						</labels>
+						<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+						<filesModificationTime>${git.commit.time}</filesModificationTime>
+					</container>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<verbose>false</verbose>
+					<skipPoms>false</skipPoms>
+					<dateFormat>yyyy-MM-dd'T'HH:mm:ss'Z'</dateFormat><!-- Required for dockering -->
+					<dateFormatTimeZone>UTC</dateFormatTimeZone><!-- Required for dockering -->
+					<generateGitPropertiesFile>true</generateGitPropertiesFile>
+					<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+					<failOnNoGitDirectory>false</failOnNoGitDirectory>
+					<failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+					<excludeProperties>
+						<!-- Requested to be excluded by colleague -->
+						<excludeProperty>.*\.user\..*</excludeProperty>
+						<!-- same here and we already have other build information files -->
+						<excludeProperty>.*\.build\..*</excludeProperty>
+					</excludeProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

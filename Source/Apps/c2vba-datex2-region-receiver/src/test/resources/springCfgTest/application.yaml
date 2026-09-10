@@ -1,0 +1,18 @@
+regions:
+  regionConfig:
+    -
+      name: vms-nord-sintec
+      url: https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4417000/clientPullService
+      trustStoreFile: D:/komodnext/mdm/vms/cert/mdm-sectigo-2029.jks
+      trustStorePassword: pFef!KHE
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      topic: C2VBA-datex2-publication-vms-nord
+    -
+      name: vms-sued-heuboe
+      url: https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4418000/clientPullService
+      trustStoreFile: D:/komodnext/mdm/vms/cert/mdm-sectigo-2029.jks
+      trustStorePassword: pFef!KHE
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      topic: C2VBA-datex2-publication-vms-sued

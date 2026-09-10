@@ -1,0 +1,54 @@
+#
+# 1) Remarks
+#
+# a) The url is only for information, but one should check if it is 'reachable'
+#    (<url>?wsdl in a web browser should return the WSDL content of the soap service)
+# b) In production environment the available ports are restricted by
+#    i)  Firewall configurations 
+#    ii) Kubernetes node port definitions (the node ports may differ from the pod ports) 
+# 
+# 2) Restrictions for consumerMode = PUSH
+#
+# a) For a single serverPort only one serverSchema shall be used
+# b) For a single serverPort different contexts shall be used
+#
+#
+regions:
+  region-configs:
+    -
+      name: nord-mst-fg1
+      remote: SOAP
+      consumerMode: PUSH      
+      url: https://mdm-datex2.heuboe.de:4723/datex2/services/supplierPushService-nord-mst-fg1
+      context: /supplierPushService-nord-mst-fg1
+      keyStoreType: PKCS12
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      serverPort: 4723
+      serverDomain: "mdm-datex2.heuboe.de"
+      topic: C2VBA-datex2-publication-mst-fg1-nord-test
+    -
+      name: nord-vmst-sba
+      remote: SOAP      
+      consumerMode: PUSH      
+      url: https://mdm-datex2.heuboe.de:4723/datex2/services/supplierPushService-nord-vmst-sba
+      context: /supplierPushService-nord-vmst-sba
+      keyStoreType: PKCS12
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      serverPort: 4723
+      serverDomain: "mdm-datex2.heuboe.de"
+      topic: C2VBA-datex2-publication-vmst-sba-nord-test
+    -
+      name: nord-vmst-www-table
+      remote: SOAP      
+      consumerMode: PUSH      
+      url: https://mdm-datex2.heuboe.de:4723/datex2/services/supplierPushService-nord-vmst-www
+      context: /supplierPushService-nord-vmst-www
+      keyStoreType: PKCS12
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      serverPort: 4723
+      serverDomain: "mdm-datex2.heuboe.de"
+      topic: C2VBA-datex2-publication-vmst-www-nord-test
+      

@@ -1,0 +1,41 @@
+#
+# 1) Remarks
+#
+# a) The url is only for information, but one should check if it is 'reachable'
+#    (<url>?wsdl in a web browser should return the WSDL content of the soap service)
+# b) In production environment the available ports are restricted by
+#    i)  Firewall configurations 
+#    ii) Kubernetes node port definitions (the node ports may differ from the pod ports) 
+# 
+# 2) Restrictions for consumerMode = PUSH
+#
+# a) For a single serverPort only one serverSchema shall be used
+# b) For a single serverPort different contexts shall be used
+#
+#
+regions:
+  region-configs:
+    -
+      name: vms-nord-sba
+      remote: SOAP
+      consumerMode: PUSH      
+      url: https:///mdm-datex2.heuboe.de:4718/datex2/services/supplierPushService-www-nord
+      context: /supplierPushService-www-nord
+      keyStoreType: PKCS12
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      serverPort: 4718
+      serverDomain: "mdm-datex2.heuboe.de"
+      topic: C2VBA-datex2-publication-vms-www-nord-test
+    -
+      name: vms-sued-sba
+      remote: SOAP      
+      consumerMode: PUSH      
+      url: https://mdm-datex2.heuboe.de:4717/datex2/services/supplierPushService-www-sued
+      context: /supplierPushService-www-sued
+      keyStoreType: PKCS12
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      serverPort: 4717
+      serverDomain: "mdm-datex2.heuboe.de"
+      topic: C2VBA-datex2-publication-vms-www-sued-test

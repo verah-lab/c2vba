@@ -1,0 +1,40 @@
+regions:
+  region-configs:
+    -
+      name: mdp-nord-fg1
+      remote: SOAP
+      consumerMode: PULL      
+      url: ${FG1-NORD-URL}
+      trustStoreFile: 
+      trustStorePassword: 
+      keyStoreFile: /mdm-certs/${SYSTEM_PRIVATE_KEY_FILE}
+      keyStorePassword: ${SYSTEM_PRIVATE_KEY_PW}
+      topic: C2VBA-datex2-publication-mdp-fg1-nord
+    -
+      name: mdp-nord-fg3
+      remote: SOAP
+      consumerMode: PULL      
+      url: ${FG3-NORD-URL}
+      trustStoreFile: 
+      trustStorePassword: 
+      keyStoreFile: /mdm-certs/${SYSTEM_PRIVATE_KEY_FILE}
+      keyStorePassword: ${SYSTEM_PRIVATE_KEY_PW}
+      topic: C2VBA-datex2-publication-mdp-fg3-nord
+    -
+      name: mdp-sued-fg1
+      remote: SOAP
+      consumerMode: PUSH      
+      url: http://mdm-datex2.heuboe.de:4721/datex2/services/supplierPushService-fg1-sued
+      context: /supplierPushService-fg1-sued
+      serverSchema: http
+      serverPort: 4721
+      topic: C2VBA-datex2-publication-mdp-fg1-sued
+    -
+      name: mdp-sued-fg3
+      remote: SOAP
+      consumerMode: PUSH      
+      url: http://mdm-datex2.heuboe.de:4721/datex2/services/supplierPushService-fg3-sued
+      context: /supplierPushService-fg3-sued
+      serverSchema: http
+      serverPort: 4721
+      topic: C2VBA-datex2-publication-mdp-fg3-sued

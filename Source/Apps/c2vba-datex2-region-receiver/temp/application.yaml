@@ -1,0 +1,34 @@
+regions:
+  region-configs:
+    -
+      name: vms-nord-sintec
+      remote: SOAP
+      consumerMode: PULL      
+      url: https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4417000/clientPullService
+      trustStoreFile: D:/komodnext/mdm/vms/cert/mdm-sectigo-2029.jks
+      trustStorePassword: pFef!KHE
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      topic: C2VBA-datex2-publication-vms-www-nord-test
+    -
+      name: vms-sued-heuboe
+      remote: SOAP      
+      consumerMode: PUSH      
+      url: https://vzh.heuboe.de:4717/datex2/services/supplierPushService
+      context: /supplierPushService
+      keyStoreType: PKCS12
+      keyStoreFile: D:/komodnext/mdm/vms/cert/vzh.heuboe.de.p12
+      keyStorePassword: dUXTjBHYTR
+      serverPort: 4717
+      serverDomain: "vrz.heuboe.de"
+      topic: C2VBA-datex2-publication-vms-tts-sued-test
+    -
+      name: extra
+      remote: SOAP      
+      consumerMode: PUSH      
+      serverSchema: http
+      url: http://vzh.heuboe.de:4718/datex2/services/supplierPushService-sba
+      context: /supplierPushService-sba
+      serverPort: 4718
+      topic: C2VBA-datex2-publication-vms-sba-nord-test
+      
