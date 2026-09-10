@@ -1,0 +1,3553 @@
+TYPE	NAME	MATCHLEVEL	DE	PROGRAM	TEXT
+					
+RULE	Rule-S-01	1			
+STRATEGY	S-01				
+REQUIREMENT	S-01-WWK_9250003	1			
+CONDITION	S-01-WWQ_92572b				
+CONTENT			wzg.wzg92-572b-mch_w3_42.m.de	243	
+CONTENT			wzg.wzg92-572b-mch_w4_43.m.de	242	
+CONDITION	S-01-WWQ_92584				
+CONTENT			wzg.wzg92-584-mch_w9_42.m.de	242	
+CONDITION	S-01-WWQ_92586				
+CONTENT			wzg.wzg92-586-mch_w9_42.m.de	242	
+CONDITION	S-01-WWQ_92588				
+CONTENT			wzg.wzg92-588-mch_w9_42.m.de	242	
+CONDITION	S-01-WWQ_92_AK_Neuf_1174_UM				
+CONTENT			wzg.wzg_92_akneuf_1174_um_w3_36.m.de	242	
+CONDITION	S-01-WWQ_92_AK_Neuf_1454_UM				
+CONTENT			wzg.wzg_92_akneuf_1454_um_w3_36.m.de	242	
+					
+RULE	Rule-S-02	1			
+STRATEGY	S-02				
+REQUIREMENT	S-02-WWK_9250003	1			
+CONDITION	S-02-WWQ_92572a				
+CONTENT			wzg.wzg92-572a-mch_w4_36.m.de	241	
+CONTENT			wzg.wzg92-572a-mch_w5_37.m.de	242	
+CONDITION	S-02-WWQ_92584				
+CONTENT			wzg.wzg92-584-mch_w4_37.m.de	242	
+CONDITION	S-02-WWQ_92586				
+CONTENT			wzg.wzg92-586-mch_w4_37.m.de	242	
+CONDITION	S-02-WWQ_92588				
+CONTENT			wzg.wzg92-588-mch_w4_37.m.de	242	
+					
+RULE	Rule-S-03	1			
+STRATEGY	S-03				
+REQUIREMENT	S-03-WWK_9950100	1			
+CONDITION	S-03-WWQ_99025				
+CONTENT			wzg.wzg99-025-sbg_w1_34.m.de	242	
+CONDITION	S-03-WWQ_99028				
+CONTENT			wzg.wzg99-028-sbg_w1_34.m.de	242	
+					
+RULE	Rule-S-04	1			
+STRATEGY	S-04				
+REQUIREMENT	S-04-WWK_9250004	1			
+CONDITION	S-04-WWQ_92684				
+CONTENT			wzg.wzg92-684-mch_w3_4.m.de	242	
+CONTENT			wzg.wzg92-684-mch_w3_4.m.de	243	
+CONDITION	S-04-WWQ_92686				
+CONTENT			wzg.wzg92-686-mch_w3_4.m.de	242	
+CONTENT			wzg.wzg92-686-mch_w3_4.m.de	243	
+CONDITION	S-04-WWQ_92696				
+CONTENT			wzg.wzg92-696-mch_w3_4.m.de	242	
+CONTENT			wzg.wzg92-696-mch_w3_4.m.de	243	
+					
+RULE	Rule-S-05	1			
+STRATEGY	S-05				
+REQUIREMENT	S-05-WWK_950101	1			
+CONDITION	S-05-WWQ_9125				
+CONTENT			wzg.wzg9-125-nbg_w5_6.m.de	242	
+CONTENT			wzg.wzg9-125-nbg_w7_8.m.de	242	
+CONTENT			wzg.wzg9-125-nbg_w7_8.m.de	243	
+CONTENT			wzg.wzg9-125-nbg_w6_7.m.de	242	
+CONTENT			wzg.wzg9-125-nbg_w6_7.m.de	243	
+CONDITION	S-05-WWQ_9130				
+CONTENT			wzg.wzg9-130-nbg_w5_6.m.de	242	
+CONTENT			wzg.wzg9-130-nbg_w7_8.m.de	242	
+CONTENT			wzg.wzg9-130-nbg_w7_8.m.de	243	
+CONTENT			wzg.wzg9-130-nbg_w6_7.m.de	242	
+CONTENT			wzg.wzg9-130-nbg_w6_7.m.de	243	
+CONDITION	S-05-WWQ_9140				
+CONTENT			wzg.wzg9-140-nbg_w3_4.m.de	242	
+CONTENT			wzg.wzg9-140-nbg_w3_4.m.de	243	
+CONTENT			wzg.wzg9-140-nbg_w4_5.m.de	242	
+CONTENT			wzg.wzg9-140-nbg_w4_5.m.de	243	
+CONTENT			wzg.wzg9-140-nbg_w2_3.m.de	242	
+CONTENT			wzg.wzg9-140-nbg_w2_3.m.de	243	
+CONTENT			wzg.wzg9-140-nbg_w1_2.m.de	242	
+					
+RULE	Rule-S-06	1			
+STRATEGY	S-06				
+REQUIREMENT	S-06-WWK_9950109	1			
+CONDITION	S-06-WWQ_99_27350				
+CONTENT			wzg.wzg_99_27350_stg_pw3_138.m.de	242	
+CONDITION	S-06-WWQ_99_26545				
+CONTENT			wzg.wzg_99_26545_stg_pw3_138.m.de	242	
+CONDITION	S-06-WWQ_99_26040				
+CONTENT			wzg.wzg_99_26040_stg_pw3_135.m.de	242	
+CONDITION	S-06-WWQ_99_25600				
+CONTENT			wzg.wzg_99_25600_stg_pw3_135.m.de	242	
+CONDITION	S-06-WWQ_99_25130				
+CONTENT			wzg.wzg_99_25130_stg_pw3_135.m.de	241	
+					
+RULE	Rule-S-07	1			
+STRATEGY	S-07				
+REQUIREMENT	S-07-WWK_950103	1			
+CONDITION	S-07-WWQ_9238				
+CONTENT			wzg.wzg9-238-nbg_w2_2.m.de	241	
+CONDITION	S-07-WWQ_9248				
+CONTENT			wzg.wzg9-248-nbg_w2_2.m.de	242	
+					
+RULE	Rule-S-08	1			
+STRATEGY	S-08				
+REQUIREMENT	S-08-WWK_9950112	1			
+CONDITION	S-08-WWQ_99062				
+CONTENT			wzg.wzg99-062-sbg_w3_36.m.de	242	
+CONTENT			wzg.wzg99-062-sbg_w3_36.m.de	243	
+CONDITION	S-08-WWQ_99063				
+CONTENT			wzg.wzg99-063-stg_w3_36.m.de	242	
+CONDITION	S-08-WWQ_99072				
+CONTENT			wzg.wzg99-072-stg_w3_36.m.de	242	
+					
+RULE	Rule-S-10a	1			
+STRATEGY	S-10a				
+MAIN_ROUTE_STRATEGY	S-13b				
+REQUIREMENT	S-10a-WWK_950106	1			
+CONDITION	S-10a-WWQ_9.781a				
+CONTENT			wzg.wzg9-781a-mch_w2_3.m.de	241	
+CONDITION	S-10a-WWQ_9.781b				
+CONTENT			wzg.wzg9-781b-mch_w2_3.m.de	241	
+CONDITION	S-10a-WWQ_9.781c				
+CONTENT			wzg.wzg9-781c-mch_w2_3.m.de	241	
+REQUIREMENT	S-10a-WWK_9950106	1			
+CONDITION	S-10a-AQ99-145-Sbg				
+CONTENT			wzg.wzg99-145-sbg_w1_33.m.de	242	
+CONTENT			wzg.wzg99-145-sbg_w1_33.m.de	243	
+CONTENT			wzg.wzg99-145-sbg_lcd2_98.m.de		Messe / ICM
+CONTENT			wzg.wzg99-145-sbg_lcd2_98.m.de		Messe
+CONTENT			wzg.wzg99-145-sbg_lcd2_98.m.de		Test
+CONDITION	S-10a-AQ99-152-Sbg				
+CONTENT			wzg.wzg99-152-sbg_w1_35.m.de	242	
+CONTENT			wzg.wzg99-152-sbg_w1_35.m.de	243	
+CONTENT			wzg.wzg99-152-sbg_lcd2_98.m.de		Messe / ICM
+CONTENT			wzg.wzg99-152-sbg_lcd2_98.m.de		Messe
+CONTENT			wzg.wzg99-152-sbg_lcd2_98.m.de		Test
+CONDITION	S-10a-AQ99-160-Sbg				
+CONTENT			wzg.wzg99-160-sbg_w6_38.m.de	241	
+CONTENT			wzg.wzg99-160-sbg_lcd2_98.m.de		Messe / ICM
+CONTENT			wzg.wzg99-160-sbg_lcd2_98.m.de		Messe
+CONTENT			wzg.wzg99-160-sbg_lcd2_98.m.de		Test
+CONDITION	S-10a-AQ99-180-Sbg				
+CONTENT			wzg.wzg99-180-sbg_w6_38.m.de	241	
+CONTENT			wzg.wzg99-180-sbg_lcd2_98.m.de		Messe / ICM
+CONTENT			wzg.wzg99-180-sbg_lcd2_98.m.de		Messe
+CONTENT			wzg.wzg99-180-sbg_lcd2_98.m.de		Test
+					
+RULE	Rule-S-11a	1			
+STRATEGY	S-11a				
+MAIN_ROUTE_STRATEGY	S-11b				
+REQUIREMENT	S-11a-WWK_9450100	1			
+CONDITION	S-11a-AQAQ188-Mch				
+CONTENT			wzg.wzgaq188-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq188-mch_w2_2.m.de	242	
+CONDITION	S-11a-AQAQ190-Mch				
+CONTENT			wzg.wzgaq190-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq190-mch_w2_2.m.de	242	
+CONDITION	S-11a-AQAQ194-Mch				
+CONTENT			wzg.wzgaq194-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq194-mch_w2_2.m.de	242	
+REQUIREMENT	S-11a-WWK_9401 	1			
+CONDITION	S-11a-AQWWQ201_Mch				
+CONTENT			wzg.wzgwwq201-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq201-mch_wta2_227.m.de		<MesseName>
+CONDITION	S-11a-AQWWQ202_Mch				
+CONTENT			wzg.wzgwwq202-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq202-mch_wta2_227.m.de		<MesseName>
+					
+RULE	Rule-S-11b	1			
+STRATEGY	S-11b				
+REQUIREMENT	S-11b-WWK_9450100	1			
+CONDITION	S-11b-AQAQ188-Mch				
+CONTENT			wzg.wzgaq188-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq188-mch_w2_2.m.de	242	
+CONDITION	S-11b-WZGAQ190-Mch				
+CONTENT			wzg.wzgaq190-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq190-mch_w2_2.m.de	242	
+CONDITION	S-11b-WZGAQ194-Mch				
+CONTENT			wzg.wzgaq194-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq194-mch_w2_2.m.de	242	
+REQUIREMENT	S-11b-WWK_9402 	1			
+CONDITION	S-11b-AQWWQ03_Mch				
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Test
+CONDITION	S-11b-AQWWQ04_Mch				
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Test
+					
+RULE	Rule-S-11c	1			
+STRATEGY	S-11c				
+MAIN_ROUTE_STRATEGY	S-11b				
+REQUIREMENT	S-11c-WWK_9450100	1			
+CONDITION	S-11c-AQGAQ188-Mch				
+CONTENT			wzg.wzgaq188-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq188-mch_w2_2.m.de	242	
+CONDITION	S-11c-AQAQ190-Mch				
+CONTENT			wzg.wzgaq190-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq190-mch_w2_2.m.de	242	
+CONDITION	S-11c-AQAQ194-Mch				
+CONTENT			wzg.wzgaq194-mch_w2_2.m.de	241	
+CONTENT			wzg.wzgaq194-mch_w2_2.m.de	242	
+REQUIREMENT	S-11c-WWK_9403 	1			
+CONDITION	S-11c-AQWWQ05_Mch				
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Test
+CONDITION	S-11c-AQWWQ06_Mch				
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Test
+					
+RULE	Rule-S-12a	1			
+STRATEGY	S-12a				
+MAIN_ROUTE_STRATEGY	S-12b				
+REQUIREMENT	S-12a-WWK_850100	1			
+CONDITION	S-12a-AQ8_100_Mch				
+CONTENT			wzg.wzg8-100-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-100-mch_w7_40.m.de	242	
+CONDITION	S-12a-AQ8_110_Mch				
+CONTENT			wzg.wzg8-110-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-110-mch_w7_40.m.de	242	
+CONDITION	S-12a-AQ8_120_Mch				
+CONTENT			wzg.wzg8-120-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-120-mch_w7_40.m.de	242	
+CONDITION	S-12a-AQ8_130_Mch				
+CONTENT			wzg.wzg8-130-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-130-mch_w7_40.m.de	242	
+CONDITION	S-12a-AQ8_140_Mch				
+CONTENT			wzg.wzg8-140-mch_w4_37.m.de	241	
+CONTENT			wzg.wzg8-140-mch_w5_38.m.de	242	
+REQUIREMENT	S-12a-WWK-9950103	1			
+CONDITION	S-12a-AQ99-630-Stg				
+CONTENT			wzg.wzg99-630-stg_w7_8.m.de	241	
+CONTENT			wzg.wzg99-630-stg_w14_15.m.de	241	
+CONTENT			wzg.wzg99-630-stg_w14_15.m.de	242	
+CONDITION	S-12a-AQ99-635-Stg				
+CONTENT			wzg.wzg99-635-stg_w7_8.m.de	243	
+CONTENT			wzg.wzg99-635-stg_w13_14.m.de	243	
+CONTENT			wzg.wzg99-635-stg_w18_19.m.de	241	
+CONTENT			wzg.wzg99-635-stg_w18_19.m.de	242	
+CONDITION	S-12a-AQ99-650-Stg				
+CONTENT			wzg.wzg99-650-stg_w7_8.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w15_16.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w15_16.m.de	242	
+CONTENT			wzg.wzg99-650-stg_w20_21.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w20_21.m.de	242	
+CONDITION	S-12a-AQ99-670-Stg				
+CONTENT			wzg.wzg99-670-stg_w5_6.m.de	241	
+CONTENT			wzg.wzg99-670-stg_w11_12.m.de	243	
+CONTENT			wzg.wzg99-670-stg_w12_13.m.de	242	
+REQUIREMENT	S-12a-WWK_9401 	1			
+CONDITION	S-12a-AQWWQ201-Mch				
+CONTENT			wzg.wzgwwq201-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq201-mch_wta2_227.m.de		<MesseName>
+CONDITION	S-12a-AQWWQ202-Mch				
+CONTENT			wzg.wzgwwq202-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq202-mch_wta2_227.m.de		<MesseName>
+					
+RULE	Rule-S-12b	1			
+STRATEGY	S-12b				
+REQUIREMENT	S-12b-WWK_850100	1			
+CONDITION	S-12b-AQ8_100_Mch				
+CONTENT			wzg.wzg8-100-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-100-mch_w7_40.m.de	242	
+CONDITION	S-12b-AQ8_110_Mch				
+CONTENT			wzg.wzg8-110-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-110-mch_w7_40.m.de	242	
+CONDITION	S-12b-AQ8_120_Mch				
+CONTENT			wzg.wzg8-120-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-120-mch_w7_40.m.de	242	
+CONDITION	S-12b-AQ8_130_Mch				
+CONTENT			wzg.wzg8-130-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-130-mch_w7_40.m.de	242	
+CONDITION	S-12b-AQ8_140_Mch				
+CONTENT			wzg.wzg8-140-mch_w4_37.m.de	241	
+CONTENT			wzg.wzg8-140-mch_w5_38.m.de	242	
+REQUIREMENT	S-12b-WWK-9950103	1			
+CONDITION	S-12b-AQ99-630-Stg				
+CONTENT			wzg.wzg99-630-stg_w7_8.m.de	241	
+CONTENT			wzg.wzg99-630-stg_w14_15.m.de	241	
+CONTENT			wzg.wzg99-630-stg_w14_15.m.de	242	
+CONDITION	S-12b-AQ99-635-Stg				
+CONTENT			wzg.wzg99-635-stg_w7_8.m.de	243	
+CONTENT			wzg.wzg99-635-stg_w13_14.m.de	243	
+CONTENT			wzg.wzg99-635-stg_w18_19.m.de	241	
+CONTENT			wzg.wzg99-635-stg_w18_19.m.de	242	
+CONDITION	S-12b-AQ99-650-Stg				
+CONTENT			wzg.wzg99-650-stg_w7_8.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w15_16.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w15_16.m.de	242	
+CONTENT			wzg.wzg99-650-stg_w20_21.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w20_21.m.de	242	
+CONDITION	S-12b-AQ99-670-Stg				
+CONTENT			wzg.wzg99-670-stg_w5_6.m.de	241	
+CONTENT			wzg.wzg99-670-stg_w11_12.m.de	243	
+CONTENT			wzg.wzg99-670-stg_w12_13.m.de	242	
+REQUIREMENT	S-12b-WWK_9402 	1			
+CONDITION	S-12b-AQWWQ03-Mch		WWQ94_003_Mch_226		Fujitsu Forum
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		<MesseName>
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		<MesseName>
+CONDITION	S-12b-AQWWQ04-Mch				
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		<MesseName>
+					
+RULE	Rule-S-12c	1			
+STRATEGY	S-12c				
+MAIN_ROUTE_STRATEGY	S-12b				
+REQUIREMENT	S-12c-WWK_850100	1			
+CONDITION	S-12c-AQ8_100_Mch				
+CONTENT			wzg.wzg8-100-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-100-mch_w7_40.m.de	242	
+CONDITION	S-12c-AQ8_110_Mch				
+CONTENT			wzg.wzg8-110-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-110-mch_w7_40.m.de	242	
+CONDITION	S-12c-AQ8_120_Mch				
+CONTENT			wzg.wzg8-120-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-120-mch_w7_40.m.de	242	
+CONDITION	S-12c-AQ8_130_Mch				
+CONTENT			wzg.wzg8-130-mch_w6_39.m.de	241	
+CONTENT			wzg.wzg8-130-mch_w7_40.m.de	242	
+CONDITION	S-12c-AQ8_140_Mch				
+CONTENT			wzg.wzg8-140-mch_w4_37.m.de	241	
+CONTENT			wzg.wzg8-140-mch_w5_38.m.de	242	
+REQUIREMENT	S-12c-WWK-9950103	1			
+CONDITION	S-12c-AQ99-630-Stg				
+CONTENT			wzg.wzg99-630-stg_w7_8.m.de	241	
+CONTENT			wzg.wzg99-630-stg_w14_15.m.de	241	
+CONTENT			wzg.wzg99-630-stg_w14_15.m.de	242	
+CONDITION	S-12c-AQ99-635-Stg				
+CONTENT			wzg.wzg99-635-stg_w7_8.m.de	243	
+CONTENT			wzg.wzg99-635-stg_w13_14.m.de	243	
+CONTENT			wzg.wzg99-635-stg_w18_19.m.de	241	
+CONTENT			wzg.wzg99-635-stg_w18_19.m.de	242	
+CONDITION	S-12c-AQ99-650-Stg				
+CONTENT			wzg.wzg99-650-stg_w7_8.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w15_16.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w15_16.m.de	242	
+CONTENT			wzg.wzg99-650-stg_w20_21.m.de	241	
+CONTENT			wzg.wzg99-650-stg_w20_21.m.de	242	
+CONDITION	S-12c-AQ99-670-Stg				
+CONTENT			wzg.wzg99-670-stg_w5_6.m.de	241	
+CONTENT			wzg.wzg99-670-stg_w11_12.m.de	243	
+CONTENT			wzg.wzg99-670-stg_w12_13.m.de	242	
+REQUIREMENT	S-12c-WWK_9403 	1			
+CONDITION	S-12c-AQWWQ05-Mch				
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		<MesseName>
+CONDITION	S-12c-AQWWQ06-Mch				
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		<MesseName>
+					
+RULE	Rule-S-13a	1			
+STRATEGY	S-13a				
+MAIN_ROUTE_STRATEGY	S-13b				
+REQUIREMENT	S-13a-WWK_950106	1			
+CONDITION	S-13a-WWQ_9.781a				
+CONTENT			wzg.wzg9-781a-mch_w2_3.m.de	241	
+CONDITION	S-13a-WWQ_9.781b				
+CONTENT			wzg.wzg9-781b-mch_w2_3.m.de	241	
+CONDITION	S-13a-WWQ_9.781c				
+CONTENT			wzg.wzg9-781c-mch_w2_3.m.de	241	
+REQUIREMENT	S-13a-WWK_9950105	1			
+CONDITION	S-13a-WWQ_99_29277_Sbg				
+CONTENT			wzg.wzg_99_29277_sbg_w1_33.m.de	241	
+CONDITION	S-13a-WWQ_99_28850_Sbg				
+CONTENT			wzg.wzg_99_28850_sbg-sbg_w1_33.m.de	241	
+REQUIREMENT	S-13a-WWK_9950106	1			
+CONDITION	S-13a-AQ99-145-Sbg				
+CONTENT			wzg.wzg99-145-sbg_w1_33.m.de	241	
+CONDITION	S-13a-AQ99-152-Sbg				
+CONTENT			wzg.wzg99-152-sbg_w1_35.m.de	241	
+CONDITION	S-13aAQ99-160-Sbg				
+CONTENT			wzg.wzg99-160-sbg_w2_34.m.de	243	
+CONTENT			wzg.wzg99-160-sbg_w3_35.m.de	242	
+CONDITION	S-13a-AQ99-180-Sbg				
+CONTENT			wzg.wzg99-180-sbg_w2_34.m.de	243	
+CONTENT			wzg.wzg99-180-sbg_w3_35.m.de	242	
+REQUIREMENT	S-13a-WWK_9950108	1			
+CONDITION	S-13a-AQ99-200-Sbg				
+CONTENT			wzg.wzg99-200-sbg_w4_36.m.de	241	
+CONTENT			wzg.wzg99-200-sbg_w4_36.m.de	242	
+CONTENT			wzg.wzg99-200-sbg_w7_39.m.de	241	
+CONDITION	S-13a-AQ99-220-Sbg				
+CONTENT			wzg.wzg99-220-sbg_w3_35.m.de	241	
+CONTENT			wzg.wzg99-220-sbg_w4_36.m.de	241	
+CONTENT			wzg.wzg99-220-sbg_w4_36.m.de	242	
+CONDITION	S-13a-AQ99-230-Sbg				
+CONTENT			wzg.wzg99-230-sbg_w2_34.m.de	241	
+CONTENT			wzg.wzg99-230-sbg_w2_34.m.de	242	
+REQUIREMENT	S-13a-WWK_9401 	1			
+CONDITION	S-13a-AQWWQ201-Mch				
+CONTENT			wzg.wzgwwq201-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq201-mch_wta2_227.m.de		<MesseName>
+CONDITION	S-13a-AQWWQ202-Mch				
+CONTENT			wzg.wzgwwq202-mch_wta1_226.m.de		<MesseName>
+CONTENT			wzg.wzgwwq202-mch_wta2_227.m.de		<MesseName>
+					
+RULE	Rule-S-13b	1			
+STRATEGY	S-13b				
+REQUIREMENT	S-13b-WWK_950106	1			
+CONDITION	S-13b-WWQ9-781a-Mch				
+CONTENT			wzg.wzg9-781a-mch_w2_3.m.de	241	
+CONDITION	S-13b-WWQ9-781b-Mch				
+CONTENT			wzg.wzg9-781b-mch_w2_3.m.de	241	
+CONDITION	S-13b-WWQ9-781c-Mch				
+CONTENT			wzg.wzg9-781c-mch_w2_3.m.de	241	
+REQUIREMENT	S-13b-WWK_9950105	1			
+CONDITION	S-13b-WZG_99_29277_Sbg				
+CONTENT			wzg.wzg_99_29277_sbg_w1_33.m.de	241	
+CONDITION	S-13b-WZG_99_28850_Sbg-Sbg				
+CONTENT			wzg.wzg_99_28850_sbg-sbg_w1_33.m.de	241	
+REQUIREMENT	S-13b-WWK_9950106	1			
+CONDITION	S-13b-AQ99-145-Sbg				
+CONTENT			wzg.wzg99-145-sbg_w1_33.m.de	241	
+CONDITION	S-13b-AQ99-152-Sbg				
+CONTENT			wzg.wzg99-152-sbg_w1_35.m.de	241	
+CONDITION	S-13b-AQ99-160-Sbg				
+CONTENT			wzg.wzg99-160-sbg_w2_34.m.de	243	
+CONTENT			wzg.wzg99-160-sbg_w3_35.m.de	242	
+CONDITION	S-13b-AQ99-180-Sbg				
+CONTENT			wzg.wzg99-180-sbg_w2_34.m.de	243	
+CONTENT			wzg.wzg99-180-sbg_w3_35.m.de	242	
+REQUIREMENT	S-13b-WWK_9950108	1			
+CONDITION	S-13b-AQ99-200-Sbg				
+CONTENT			wzg.wzg99-200-sbg_w4_36.m.de	241	
+CONTENT			wzg.wzg99-200-sbg_w4_36.m.de	242	
+CONTENT			wzg.wzg99-200-sbg_w7_39.m.de	241	
+CONDITION	S-13b-AQ99-220-Sbg				
+CONTENT			wzg.wzg99-220-sbg_w3_35.m.de	241	
+CONTENT			wzg.wzg99-220-sbg_w4_36.m.de	241	
+CONTENT			wzg.wzg99-220-sbg_w4_36.m.de	242	
+CONDITION	S-13b-AQ99-230-Sbg				
+CONTENT			wzg.wzg99-230-sbg_w2_34.m.de	241	
+CONTENT			wzg.wzg99-230-sbg_w2_34.m.de	242	
+REQUIREMENT	S-13b-WWK_9402 	1			
+CONDITION	S-13b-AQWWQ03-Mch				
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq03-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq03-mch_wta2_227.m.de		Test
+CONDITION	S-13b-AQWWQ04-Mch				
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq04-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq04-mch_wta2_227.m.de		Test
+					
+RULE	Rule-S-13c	1			
+STRATEGY	S-13c				
+MAIN_ROUTE_STRATEGY	S-13b				
+REQUIREMENT	S-13c-WWK_950106	1			
+CONDITION	S-13c-WWQ9-781a-Mch				
+CONTENT			wzg.wzg9-781a-mch_w2_3.m.de	241	
+CONDITION	S-13c-WWQ9-781b-Mch				
+CONTENT			wzg.wzg9-781b-mch_w2_3.m.de	241	
+CONDITION	S-13c-WWQ9-781c-Mch				
+CONTENT			wzg.wzg9-781c-mch_w2_3.m.de	241	
+REQUIREMENT	S-13c-WWK_9950105	1			
+CONDITION	S-13c-WZG_99_29277_Sbg				
+CONTENT			wzg.wzg_99_29277_sbg_w1_33.m.de	241	
+CONDITION	S-13c-WZG_99_28850_Sbg-Sbg				
+CONTENT			wzg.wzg_99_28850_sbg-sbg_w1_33.m.de	241	
+REQUIREMENT	S-13c-WWK_9950106	1			
+CONDITION	S-13c-AQ99-145-Sbg				
+CONTENT			wzg.wzg99-145-sbg_w1_33.m.de	241	
+CONDITION	S-13c-AQ99-152-Sbg				
+CONTENT			wzg.wzg99-152-sbg_w1_35.m.de	241	
+CONDITION	S-13c-AQ99-160-Sbg				
+CONTENT			wzg.wzg99-160-sbg_w2_34.m.de	243	
+CONTENT			wzg.wzg99-160-sbg_w3_35.m.de	242	
+CONDITION	S-13c-AQ99-180-Sbg				
+CONTENT			wzg.wzg99-180-sbg_w2_34.m.de	243	
+CONTENT			wzg.wzg99-180-sbg_w3_35.m.de	242	
+REQUIREMENT	S-13c-WWK_9950108	1			
+CONDITION	S-13c-AQ99-200-Sbg				
+CONTENT			wzg.wzg99-200-sbg_w4_36.m.de	241	
+CONTENT			wzg.wzg99-200-sbg_w4_36.m.de	242	
+CONTENT			wzg.wzg99-200-sbg_w7_39.m.de	241	
+CONDITION	S-13c-AQ99-220-Sbg				
+CONTENT			wzg.wzg99-220-sbg_w3_35.m.de	241	
+CONTENT			wzg.wzg99-220-sbg_w4_36.m.de	241	
+CONTENT			wzg.wzg99-220-sbg_w4_36.m.de	242	
+CONDITION	S-13c-AQ99-230-Sbg				
+CONTENT			wzg.wzg99-230-sbg_w2_34.m.de	241	
+CONTENT			wzg.wzg99-230-sbg_w2_34.m.de	242	
+REQUIREMENT	S-13c-WWK_9403 	1			
+CONDITION	S-13c-AQWWQ05-Mch				
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq05-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq05-mch_wta2_227.m.de		Test
+CONDITION	S-13c-AQWWQ06-Mch				
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq06-mch_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq06-mch_wta2_227.m.de		Test
+					
+RULE	Rule-S-14a				
+STRATEGY	S-14a				
+MAIN_ROUTE_STRATEGY	S-14c				
+REQUIREMENT	S-14a-WWK_9404	1			
+CONDITION	S-14a-AQWWQ07-Pas				
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Test
+CONDITION	S-14a-AQWWQ08-Pas				
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Test
+					
+RULE	Rule-S-14b				
+STRATEGY	S-14b				
+MAIN_ROUTE_STRATEGY	S-14c				
+REQUIREMENT	S-14b-WWK_9405	1			
+CONDITION	S-14b-AQWWQ09-Pas				
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Test
+CONDITION	S-14b-AQWWQ10-Pas				
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Test
+					
+RULE	Rule-S-14c				
+STRATEGY	S-14c				
+REQUIREMENT	S-14c-WWK_9406	1			
+CONDITION	S-14c-AQWWQ11-Pas				
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Test
+					
+RULE	Rule-S-14d				
+STRATEGY	S-14d				
+MAIN_ROUTE_STRATEGY	S-14c				
+REQUIREMENT	S-14d-WWK_9407	1			
+CONDITION	S-14d-AQWWQ12-Pas				
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Test
+CONDITION	S-14d-AQWWQ13-Pas				
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Test
+					
+RULE	Rule-S-15a	1			
+STRATEGY	S-15a				
+MAIN_ROUTE_STRATEGY	S-13b				
+REQUIREMENT	S-15a-WWK_950106	1			
+CONDITION	S-15a-WWQ_9.781a				
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Test
+CONDITION	S-15a-WWQ_9.781b				
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Test
+CONDITION	S-15a-WWQ_9.781c				
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Test
+CONDITION	S-15a-WWQ_9.781d				
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Test
+REQUIREMENT	S-15a-WWK_9404	1			
+CONDITION	S-15a-AQWWQ07-Pas				
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Test
+CONDITION	S-15a-AQWWQ08-Pas				
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Test
+					
+RULE	Rule-S-15b	1			
+STRATEGY	S-15b				
+MAIN_ROUTE_STRATEGY	S-13b				
+REQUIREMENT	S-15b-WWK_950106	1			
+CONDITION	S-15b-WWQ_9.781a				
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Test
+CONDITION	S-15b-WWQ_9.781b				
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Test
+CONDITION	S-15b-WWQ_9.781c				
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Test
+CONDITION	S-15b-WWQ_9.781d				
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Test
+REQUIREMENT	S-15b-WWK_9405	1			
+CONDITION	S-15b-AQWWQ09_Pas				
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Test
+CONDITION	S-15b-AQWWQ10_Pas				
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Test
+					
+RULE	Rule-S-15c	1			
+STRATEGY	S-15c				
+MAIN_ROUTE_STRATEGY	S-13b				
+REQUIREMENT	S-15c-WWK_950106	1			
+CONDITION	S-15c-WWQ_9.781a				
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Test
+CONDITION	S-15c-WWQ_9.781b				
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Test
+CONDITION	S-15c-WWQ_9.781c				
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Test
+CONDITION	S-15c-WWQ_9.781d				
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Test
+REQUIREMENT	S-15c-WWK_9406	1			
+CONDITION	S-15c-AQWWQ11_Pas				
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Test
+					
+RULE	Rule-S-15d	1			
+STRATEGY	S-15d				
+MAIN_ROUTE_STRATEGY	S-13b				
+REQUIREMENT	S-15d-WWK_950106	1			
+CONDITION	S-15d-WWQ_9.781a				
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781a-mch_wta1_2.m.de		Test
+CONDITION	S-15d-WWQ_9.781b				
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781b-mch_wta1_2.m.de		Test
+CONDITION	S-15d-WWQ_9.781c				
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781c-mch_wta1_2.m.de		Test
+CONDITION	S-15d-WWQ_9.781d				
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe/ICM
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Messe
+CONTENT			wzg.wzg9-781d-mch_wta1_2.m.de		Test
+REQUIREMENT	S-15d-WWK_9407	1			
+CONDITION	S-15d-AQWWQ12-Mch				
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Test
+CONDITION	S-15d-AQWWQ13-Mch				
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Test
+					
+RULE	Rule-S-16a	1			
+STRATEGY	S-16a				
+MAIN_ROUTE_STRATEGY	S-12b				
+REQUIREMENT	S-16a-WWK_850100	1			
+CONDITION	S-16a-AQ8_100_Mch				
+CONTENT			wzg.wzg8-100-mch_w1_34.m.de	243	
+CONDITION	S-16a-AQ8_110_Mch				
+CONTENT			wzg.wzg8-110-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-110-mch_w2_35.m.de	242	
+CONDITION	S-16a-AQ8_120_Mch				
+CONTENT			wzg.wzg8-120-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-120-mch_w2_35.m.de	242	
+CONDITION	S-16a-AQ8_130_Mch				
+CONTENT			wzg.wzg8-130-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-130-mch_w2_35.m.de	242	
+REQUIREMENT	S-16a-WWK_9404	1			
+CONDITION	S-16a-AQWWQ07-Pas				
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq07-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq07-pas_wta2_227.m.de		Test
+CONDITION	S-16a-AQWWQ08-Pas				
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq08-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq08-pas_wta2_227.m.de		Test
+					
+RULE	Rule-S-16b	1			
+STRATEGY	S-16b				
+MAIN_ROUTE_STRATEGY	S-12b				
+REQUIREMENT	S-16b-WWK_850100	1			
+CONDITION	S-16b-AQ8_100_Mch				
+CONTENT			wzg.wzg8-100-mch_w1_34.m.de	243	
+CONDITION	S-16b-AQ8_110_Mch				
+CONTENT			wzg.wzg8-110-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-110-mch_w2_35.m.de	242	
+CONDITION	S-16b-AQ8_120_Mch				
+CONTENT			wzg.wzg8-120-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-120-mch_w2_35.m.de	242	
+CONDITION	S-16b-AQ8_130_Mch				
+CONTENT			wzg.wzg8-130-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-130-mch_w2_35.m.de	242	
+REQUIREMENT	S-16b-WWK_9405	1			
+CONDITION	S-16b-AQWWQ09-Pas				
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq09-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq09-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq09-pas_wta3_227.m.de		Test
+CONDITION	S-16b-AQWWQ10-Pas				
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq10-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq10-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq10-pas_wta3_227.m.de		Test
+					
+RULE	Rule-S-16c	1			
+STRATEGY	S-16c				
+MAIN_ROUTE_STRATEGY	S-12b				
+REQUIREMENT	S-16c-WWK_850100	1			
+CONDITION	S-16c-AQ8_100_Mch				
+CONTENT			wzg.wzg8-100-mch_w1_34.m.de	243	
+CONDITION	S-16c-AQ8_110_Mch				
+CONTENT			wzg.wzg8-110-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-110-mch_w2_35.m.de	242	
+CONDITION	S-16c-AQ8_120_Mch				
+CONTENT			wzg.wzg8-120-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-120-mch_w2_35.m.de	242	
+CONDITION	S-16c-AQ8_130_Mch				
+CONTENT			wzg.wzg8-130-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-130-mch_w2_35.m.de	242	
+REQUIREMENT	S-16c-WWK_9406	1			
+CONDITION	S-16c-AQWWQ11-Pas				
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		productronica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ICIS
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		BAU
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		OOP
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		opti
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ISPO
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		internationale Handwerksmesse
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		analytica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		LEIF
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		IFAT
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		automatica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Laser
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		electronica
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		ceramitec
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		FESPA
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		bauma
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		exopharm
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		exopharm
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		exopharm 
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Messe
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq11-pas_wta1_225.m.de		Test
+CONTENT			wzg.wzgwwq11-pas_wta2_226.m.de		Test
+CONTENT			wzg.wzgwwq11-pas_wta3_227.m.de		Test
+					
+RULE	Rule-S-16d	1			
+STRATEGY	S-16d				
+MAIN_ROUTE_STRATEGY	S-12b				
+REQUIREMENT	S-16d-WWK_850100	1			
+CONDITION	S-16d-AQ8_100_Mch				
+CONTENT			wzg.wzg8-100-mch_w1_34.m.de	243	
+CONDITION	S-16d-AQ8_110_Mch				
+CONTENT			wzg.wzg8-110-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-110-mch_w2_35.m.de	242	
+CONDITION	S-16d-AQ8_120_Mch				
+CONTENT			wzg.wzg8-120-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-120-mch_w2_35.m.de	242	
+CONDITION	S-16d-AQ8_130_Mch				
+CONTENT			wzg.wzg8-130-mch_w1_34.m.de	243	
+CONTENT			wzg.wzg8-130-mch_w2_35.m.de	242	
+REQUIREMENT	S-16d-WWK_9407	1			
+CONDITION	S-16d-AQWWQ12-Pas				
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq12-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq12-pas_wta2_227.m.de		Test
+CONDITION	S-16d-AQWWQ13-Pas				
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Fujitsu Forum
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		productronica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		productronica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		GBTA Conference
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		ICIS
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		ICIS
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Heim + Handwerk
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		TRENDSET
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		TRENDSET
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		BAU
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		BAU
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		OOP
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		OOP
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		opti
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		opti
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		ISPO
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		ISPO
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		INHORGENTA
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		f.re.e
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		f.re.e
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		LOPEC
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		LOPEC
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		PERFORMANCE DAYS
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		OutDoor
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		OutDoor
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		EXPO REAL
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Munich Show
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Munich Show
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Internationale Handwerksmesse
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		analytica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		analytica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		LEIF
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		LEIF
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		IFAT
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		IFAT
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Laser
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Laser
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Pferd International
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Pferd International
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		automatica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		automatica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		eMove 360
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		eMove 360
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		electronica
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		electronica
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Transport Logistic
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Transport Logisitc
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		bauma
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		bauma
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Beauty Forum
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Ceramitec
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Ceramitec
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		FESPA
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		FESPA
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Intersolar
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Intersolar
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		exopharm
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		exopharm
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Internet World Expo
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Messe
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Messe
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Messe/ICM
+CONTENT			wzg.wzgwwq13-pas_wta1_226.m.de		Test
+CONTENT			wzg.wzgwwq13-pas_wta2_227.m.de		Test
+					
+RULE	DE-10201 A9.Neufahrn.S.Salzburg	1			
+STRATEGY	DE-10201	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_9_510820_Mch				
+CONTENT			wzg.wzg_9_510820_mch_w11_235.m.de	242	
+CONTENT		ODER	wzg.wzg_9_510820_mch_w8_232.m.de	242	
+CONDITION	WWQ_9_511350_Mch				
+CONTENT			wzg.wzg_9_511350_mch_w11_235.m.de	242	
+CONTENT		ODER	wzg.wzg_9_511350_mch_w8_232.m.de	242	
+CONDITION	WWQ_9_511805_Mch				
+CONTENT			wzg.wzg_9_511805_mch_w10_235.m.de	242	
+CONTENT		ODER	wzg.wzg_9_511805_mch_w7_232.m.de	242	
+CONDITION	WWQ_9_AKNeuf_0840_AF				
+CONTENT			wzg.wzg_9_akneuf_0840_af_w3_228.m.de	242	
+CONTENT			wzg.wzg_9_akneuf_0840_af_w3_228.m.de	242	
+					
+					
+RULE	DE-10202 A9.Neufahrn.S.Stuttgart	1			
+STRATEGY	DE-10202	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_9_510820_Mch				
+CONTENT			wzg.wzg_9_510820_mch_w6_230.m.de	242	
+CONTENT		ODER	wzg.wzg_9_510820_mch_w4_228.m.de	242	
+CONDITION	WWQ_9_511350_Mch				
+CONTENT			wzg.wzg_9_511350_mch_w6_230.m.de	242	
+CONTENT		ODER	wzg.wzg_9_511350_mch_w4_228.m.de	242	
+CONDITION	WWQ_9_511805_Mch				
+CONTENT			wzg.wzg_9_511805_mch_w5_230.m.de	242	
+CONTENT		ODER	wzg.wzg_9_511805_mch_w3_228.m.de	242	
+					
+RULE	DE-10203 A9.Neufahrn.S.München	1			
+STRATEGY	DE-10203	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_9_510820_Mch				
+CONTENT			wzg.wzg_9_510820_mch_w9_233.m.de	242	
+CONDITION	WWQ_9_511350_Mch				
+CONTENT			wzg.wzg_9_511350_mch_w9_233.m.de	242	
+CONDITION	WWQ_9_511805_Mch				
+CONTENT			wzg.wzg_9_511805_mch_w8_233.m.de	242	
+CONDITION	WWQ_9_AKNeuf_0840_AF				
+CONTENT			wzg.wzg_9_akneuf_0840_af_w4_229.m.de	241	
+CONTENT			wzg.wzg_9_akneuf_0840_af_w4_229.m.de	241	
+					
+RULE	DE-10204 A92.Neufahrn.W.Salzburg	1			
+STRATEGY	DE-10204	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_92_EOst_0225_XZ				
+CONTENT			wzg.wzg_92_eost_0225_xz_w10_43.m.de	241	
+CONDITION	WWQ_92_EOst_0033_XZ				
+CONTENT			wzg.wzg_92_eost_0033_xz_w10_43.m.de	241	
+CONDITION	AQ92-588-Mch				
+CONTENT			wzg.wzg92-588-mch_w6_39.m.de	241	
+CONDITION	AQ92-586-Mch				
+CONTENT			wzg.wzg92-586-mch_w6_39.m.de	241	
+CONDITION	AQ92-584-Mch				
+CONTENT			wzg.wzg92-584-mch_w6_39.m.de	241	
+CONDITION	AQ92-572a-Mch				
+CONTENT			wzg.wzg92-572a-mch_w6_38.m.de	243	
+					
+RULE	DE-10205 A92.Neufahrn.W.Stuttgart	1			
+STRATEGY	DE-10205	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_92_AKNeuf_1454_UM				
+CONTENT			wzg.wzg_92_akneuf_1454_um_w2_35.m.de	242	
+CONDITION	WWQ_92_AKNeuf_1174_UM				
+CONTENT			wzg.wzg_92_akneuf_1174_um_w2_35.m.de	242	
+CONDITION	WWQ_92_EOst_0225_XZ				
+CONTENT			wzg.wzg_92_eost_0225_xz_w2_35.m.de	242	
+CONDITION	WWQ_92_EOst_0033_XZ				
+CONTENT			wzg.wzg_92_eost_0033_xz_w2_35.m.de	242	
+CONDITION	AQ92-588-Mch				
+CONTENT			wzg.wzg92-588-mch_w8_41.m.de	242	
+CONDITION	AQ92-586-Mch				
+CONTENT			wzg.wzg92-586-mch_w8_41.m.de	242	
+CONDITION	AQ92-584-Mch				
+CONTENT			wzg.wzg92-584-mch_w8_41.m.de	242	
+CONDITION	AQ92-572a-Mch				
+CONTENT			wzg.wzg92-572a-mch_w1_33.m.de	242	
+					
+RULE	DE-10206 A92.Neufahrn.W.München	1			
+STRATEGY	DE-10206	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_92_EOst_0225_XZ				
+CONTENT			wzg.wzg_92_eost_0225_xz_w6_39.m.de	242	
+CONDITION	WWQ_92_EOst_0033_XZ				
+CONTENT			wzg.wzg_92_eost_0033_xz_w6_39.m.de	242	
+CONDITION	AQ92-588-Mch				
+CONTENT			wzg.wzg92-588-mch_w2_35.m.de	242	
+CONDITION	AQ92-586-Mch				
+CONTENT			wzg.wzg92-586-mch_w6_39.m.de	242	
+CONDITION	AQ92-584-Mch				
+CONTENT			wzg.wzg92-584-mch_w2_35.m.de	242	
+CONDITION	AQ92-572a-Mch				
+CONTENT			wzg.wzg92-572a-mch_w2_34.m.de	242	
+CONTENT		ODER	wzg.wzg92-572a-mch_w3_35.m.de	242	
+					
+					
+RULE	DE-10207 A99.MünchenNord.W.Deggendorf	1			
+STRATEGY	DE-10207	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_99_24425_Stg				
+CONTENT			wzg.wzg_99_24425_stg_pw3_132.m.de	242	
+CONDITION	WWQ_99_24765_Stg				
+CONTENT			wzg.wzg_99_24765_stg_pw3_132.m.de	242	
+CONDITION	WWQ_99_25130_Stg				
+CONTENT			wzg.wzg_99_25130_stg_pw3_135.m.de	242	
+CONDITION	WWQ_99_25600_Stg				
+CONTENT			wzg.wzg_99_25600_stg_pw3_135.m.de	242	
+CONDITION	WWQ_99_26040_Stg				
+CONTENT			wzg.wzg_99_26040_stg_pw3_135.m.de	242	
+CONDITION	WWQ_99_26545_Stg				
+CONTENT			wzg.wzg_99_26545_stg_pw3_138.m.de	242	
+CONDITION	WWQ_99_27350_Stg				
+CONTENT			wzg.wzg_99_27350_stg_pw3_138.m.de	242	
+					
+					
+RULE	DE-10208 A99.MünchenNord.W.Berlin	1			
+STRATEGY	DE-10208	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	WWQ_99_24425_Stg				
+CONTENT			wzg.wzg_99_24425_stg_pw2_131.m.de	242	
+CONDITION	WWQ_99_24765_Stg				
+CONTENT			wzg.wzg_99_24765_stg_pw2_131.m.de	242	
+CONDITION	WWQ_99_25130_Stg				
+CONTENT			wzg.wzg_99_25130_stg_pw2_134.m.de	242	
+CONDITION	WWQ_99_25600_Stg				
+CONTENT			wzg.wzg_99_25600_stg_pw2_134.m.de	242	
+CONDITION	WWQ_99_26040_Stg				
+CONTENT			wzg.wzg_99_26040_stg_pw2_134.m.de	242	
+CONDITION	WWQ_99_26545_Stg				
+CONTENT			wzg.wzg_99_26545_stg_pw2_137.m.de	242	
+CONDITION	WWQ_99_27350_Stg				
+CONTENT			wzg.wzg_99_27350_stg_pw2_137.m.de	242	
+					
+					
+RULE	DE-10209 A9.München-Nord.N.Nürnberg+Deggendorf	1			
+STRATEGY	DE-10209	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	AQ9-140-Nbg				
+CONTENT			wzg.wzg9-140-nbg_w1_2.m.de	243	
+CONTENT		AND	wzg.wzg9-140-nbg_w2_3.m.de	243	
+CONDITION	AQ9-130-Nbg				
+CONTENT			wzg.wzg9-130-nbg_w5_6.m.de	243	
+CONTENT		AND	wzg.wzg9-130-nbg_w6_7.m.de	243	
+CONDITION	AQ9-125-Nbg				
+CONTENT			wzg.wzg9-125-nbg_w5_6.m.de	243	
+CONTENT		AND	wzg.wzg9-125-nbg_w6_7.m.de	243	
+					
+RULE	DE-10210 A99.MünchenFeldmoching.O.Nürnberg	1			
+STRATEGY	DE-10210	optimierte Zielführung aufgrund kürzerer Reisezeit	optimized route guidance due to shorter travel time		
+REQUIREMENT		1			
+CONDITION	AQ99-025-Sbg				
+CONTENT			wzg.wzg99-025-sbg_w1_34.m.de	243	
+CONDITION	AQ99-028-Sbg				
+CONTENT			wzg.wzg99-028-sbg_w1_34.m.de	243	
+					
+					
+RULE	DE-10044 Allach.Fern.A8.DachauFürstenfeldbruck.O.Deggendorf	1			
+STRATEGY	DE-10044	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_8_12300_Mch				
+CONTENT			wzg.wzg_8_12300_mch_wta1_2.m.de		A99 Tunnelsperre
+CONTENT		UND	wzg.wzg_8_12300_mch_wta2_3.m.de		nach AD Eschenried
+					
+					
+RULE	DE-10045 Allach.Fern.A8.DachauFürstenfeldbruck.O.Salzburg	1			
+STRATEGY	DE-10045	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_8_12300_Mch				
+CONTENT			wzg.wzg_8_12300_mch_wta1_2.m.de		A99 Tunnelsperre
+CONTENT		UND	wzg.wzg_8_12300_mch_wta2_3.m.de		nach AD Eschenried
+					
+					
+					
+RULE	DE-10046 Allach.Fern.B471.DachauFürstenfeldbruck.O.Deggendorf	1			
+STRATEGY	DE-10046	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_B471_24741_Dah				
+CONTENT			wzg.wzg_b471_24741_dah_w4_229.m.de	242	
+CONDITION	AQ_B471_24958_Dah				
+CONTENT			wzg.wzg_b471_24958_dah_w4_229.m.de	242	
+					
+					
+RULE	DE-10047 Allach.Fern.B471.DachauFürstenfeldbruck.O.Salzburg	1			
+STRATEGY	DE-10047	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_B471_24741_Dah				
+CONTENT			wzg.wzg_b471_24741_dah_w4_229.m.de	242	
+CONDITION	AQ_B471_24958_Dah				
+CONTENT			wzg.wzg_b471_24958_dah_w4_229.m.de	242	
+					
+					
+RULE	DE-10048 Allach.Fern.A92.Oberschleissheim.S.Stuttgart	1			
+STRATEGY	DE-10048	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_92_3720_Mch				
+CONTENT			wzg.wzg_92_3720_mch_w1_226.m.de	242	
+CONTENT		UND	wzg.wzg_92_3720_mch_w2_227.m.de	242	
+CONDITION	AQ_92_3210_Mch				
+CONTENT			wzg.wzg_92_3210_mch_w3_228.m.de	242	
+					
+					
+RULE	DE-10049 Allach.Fern.A92.Oberschleissheim.S.Lindau	1			
+STRATEGY	DE-10049	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_92_3720_Mch				
+CONTENT			wzg.wzg_92_3720_mch_w1_226.m.de	242	
+CONTENT		UND	wzg.wzg_92_3720_mch_w2_227.m.de	242	
+CONDITION	AQ_92_3210_Mch				
+CONTENT			wzg.wzg_92_3210_mch_w3_228.m.de	242	
+					
+					
+RULE	DE-10050 Allach.Fern.A99.München-Feldmoching.W.Stuttgart	1			
+STRATEGY	DE-10050	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_99_18390_Stg				
+CONTENT			wzg.wzg_99_18390_stg_w1_225.m.de	242	
+CONTENT		UND	wzg.wzg_99_18390_stg_w2_226.m.de	242	
+CONDITION	AQ_99_18185_Stg				
+CONTENT			wzg.wzg_99_18185_stg_w1_225.m.de	242	
+CONTENT		UND	wzg.wzg_99_18185_stg_w2_226.m.de	242	
+					
+					
+RULE	DE-10051 Allach.Fern.A99.München-Feldmoching.W.Lindau	1			
+STRATEGY	DE-10051	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure		
+REQUIREMENT		1			
+CONDITION	AQ_99_18390_Stg				
+CONTENT			wzg.wzg_99_18390_stg_w1_225.m.de	242	
+CONTENT		UND	wzg.wzg_99_18390_stg_w2_226.m.de	242	
+CONDITION	AQ_99_18185_Stg				
+CONTENT			wzg.wzg_99_18185_stg_w1_225.m.de	242	
+CONTENT		UND	wzg.wzg_99_18185_stg_w2_226.m.de	242	
+												
+												
+RULE	DE-10001 Reinertshof.Nah.1.N.A1-PKW											
+STRATEGY	DE-10001.A1	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT		1										
+CONDITION	aq.aq_a7_958_035_ulm.m.de											
+CONTENT			wzg.aq_a7_958_035_ulm_c1_73.m.de	209								
+CONDITION	aq.aq_a7_958_183_ulm.m.de											
+CONTENT			wzg.aq_a7_958_183_ulm_c1_133.m.de	99								
+CONTENT		UND	wzg.aq_a7_958_183_ulm_c2_134.m.de	99								
+CONDITION	aq.portal_a7_957_863_ulm.m.de											
+CONTENT		ODER	wzg.portal_a7_957_863_ulm_c1_73.m.de	77								
+												
+												
+RULE	DE-10001 Reinertshof.Nah.1.N.A2-LKW											
+STRATEGY	DE-10001.A2	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT		1										
+CONDITION	aq.aq_a7_958_035_ulm.m.de											
+CONTENT			wzg.aq_a7_958_035_ulm_c1_73.m.de	209								
+CONDITION	aq.aq_a7_958_183_ulm.m.de											
+CONTENT			wzg.aq_a7_958_183_ulm_c1_133.m.de	99								
+CONTENT		UND	wzg.aq_a7_958_183_ulm_c2_134.m.de	99								
+CONDITION	aq.portal_a7_957_863_ulm.m.de											
+CONTENT		ODER	wzg.portal_a7_957_863_ulm_c1_73.m.de	77								
+												
+												
+RULE	DE-10003 Reinertshof.Nah.2.S.A1-PKW											
+STRATEGY	DE-10003.A1	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT		1										
+CONDITION	aq.aq_a7_956_719_fue.m.de											
+CONTENT			wzg.aq_a7_956_719_fue_c1_165.m.de	99								
+CONTENT		UND	wzg.aq_a7_956_719_fue_c2_166.m.de	99								
+CONDITION	aq.aq_a7_956_569_fue.m.de											
+CONTENT			wzg.aq_a7_956_569_fue_c1_105.m.de	209								
+CONDITION	aq.portal_a7_957_039_fue.m.de											
+CONTENT			wzg.portal_a7_957_039_fue_c1_105.m.de	77								
+												
+												
+												
+RULE	DE-10003 Reinertshof.Nah.2.S.A2-LKW											
+STRATEGY	DE-10003.A2	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT		1										
+CONDITION	aq.aq_a7_956_719_fue.m.de											
+CONTENT			wzg.aq_a7_956_719_fue_c1_165.m.de	99								
+CONTENT		UND	wzg.aq_a7_956_719_fue_c2_166.m.de	99								
+CONDITION	aq.aq_a7_956_569_fue.m.de											
+CONTENT			wzg.aq_a7_956_569_fue_c1_105.m.de	209								
+CONDITION	aq.portal_a7_957_039_fue.m.de											
+CONTENT			wzg.portal_a7_957_039_fue_c1_105.m.de	77								
+												
+												
+RULE	DE-10005 Reinertshof.Block.S											
+STRATEGY	DE-10005	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_a7_956_719_fue.m.de											
+CONTENT			wzg.aq_a7_956_719_fue_c1_165.m.de	214								
+CONTENT		UND	wzg.aq_a7_956_719_fue_c2_166.m.de	214								
+CONDITION	aq.aq_a7_956_569_fue.m.de											
+CONTENT			wzg.aq_a7_956_569_fue_c1_105.m.de	214								
+												
+												
+RULE	DE-10007 Füssen.Nah.S											
+STRATEGY	DE-10007.A1	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT		1										
+CONDITION	aq.aq_a7_960_920_fue.m.de											
+CONTENT			wzg.aq_a7_960_920_fue_c1_105.m.de	209								
+CONTENT		ODER	wzg.aq_a7_960_920_fue_c1_105.m.de	77								
+												
+RULE	DE-10009 Füssen.Block.S											
+STRATEGY	DE-10009	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_a7_960_920_fue.m.de											
+CONTENT			wzg.aq_a7_960_920_fue_c1_105.m.de	214								
+												
+												
+RULE	DE-10034 Eching.Block.O											
+STRATEGY	DE-10034	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_96_139409_mch.m.de											
+CONTENT			wzg.wzg_96_139409_mch_wta1_73.m.de	214								
+												
+												
+RULE	DE-10035 Eching.Block.W											
+STRATEGY	DE-10035	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_96_140345_lin.m.de											
+CONTENT			wzg.wzg_96_140345_lin_wta1_105.m.de	214								
+												
+												
+RULE	DE-10038 Etterschlag.Block.O											
+STRATEGY	DE-10038	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_96_146145_mch.m.de											
+CONTENT			wzg.wzg_96_146145_mch_wta1_73.m.de	214								
+												
+												
+RULE	DE-10039 Etterschlag.Block.W											
+STRATEGY	DE-10039	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_96_147050_lin.m.de											
+CONTENT			wzg.wzg_96_147050_lin_wta1_105.m.de	214								
+												
+												
+RULE	DE-10041 Gilching.Block.W											
+STRATEGY	DE-10041	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_96_154530_lin.m.de											
+CONTENT			wzg.wzg_96_154530_lin_wta1_105.m.de	214								
+												
+												
+RULE	DE-10043 Germering.Block.W											
+STRATEGY	DE-10043	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_96_160362_lin.m.de											
+CONTENT			wzg.wzg_96_160362_lin_wta1_105.m.de	214								
+												
+												
+RULE	DE-10056 Allach.Block.O.1											
+STRATEGY	DE-10056	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_99_10155_sbg.m.de											
+CONTENT			wzg.wzg_99_10155_sbg_wta1_106.m.de	214								
+												
+												
+RULE	DE-10057 Allach.Block.O.2											
+STRATEGY	DE-10057	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_99_10155_sbg.m.de											
+CONTENT			wzg.wzg_99_10155_sbg_wta1_106.m.de	214								
+												
+												
+RULE	DE-10058 Allach.Block.W											
+STRATEGY	DE-10058	Blockabfertigung, Autobahn weiter befahren	block-based handling, continue on motorway									
+REQUIREMENT		1										
+CONDITION	aq.aq_99_11680_stg.m.de											
+CONTENT			wzg.wzg_99_11680_stg_wta1_73.m.de	214								
+												
+												
+RULE	DE-10059 Aubing.Fern.A8.DachauFürstenfeldbruck.O.Lindau											
+STRATEGY	DE-10059.A1	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT		1										
+CONDITION	aq.aq_99_5446_lin.m.de											
+CONTENT			wzg.wzg_99_5446_lin_c2_106.m.de	205								
+CONDITION	aq.aq_99_5620_lin.m.de											
+CONTENT			wzg.wzg_99_5620_lin_d1_163.m.de	213								
+CONTENT		UND	wzg.wzg_99_5620_lin_d2_164.m.de	213								
+CONDITION	aq.aq_99_as7_000_sz.m.de											
+CONTENT			wzg.wzg_99_as7_000_sz_pw1_42.m.de	241								
+CONDITION	aq.aq_99_as7_000_dc.m.de											
+CONTENT			wzg.wzg_99_as7_000_dc_pw1_38.m.de	241								
+CONDITION	aq.wta_99_5357_lin.m.de											
+CONTENT			wzg.wta_99_5357_lin_wta1_37.m.de	220								
+CONDITION	aq.aq_99_as7_150_sz.m.de											
+CONTENT			wzg.wta_99_as7_150_sz_wta1_46.m.de	220								
+												
+												
+RULE	DE-10061 Aubing.Fern.A96.MünchenSüdwest.O.Salzburg											
+STRATEGY	DE-10061.A1	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT												
+CONDITION	aq.aq_99_2927_sbg.m.de											
+CONTENT			wzg.wzg_99_2927_sbg_c2_74.m.de	205								
+CONDITION	aq.aq_99_2700_sbg.m.de											
+CONTENT			wzg.wzg_99_2700_sbg_d1_131.m.de	213								
+CONTENT		UND	wzg.wzg_99_2700_sbg_d2_132.m.de	213								
+CONDITION	aq.wta_99_3113_sbg.m.de											
+CONTENT			wzg.wta_99_3113_sbg_wta1_5.m.de	220								
+												
+												
+RULE	DE-10062 Aubing.Fern.A96.MünchenLaim.W.Stuttgart											
+STRATEGY	DE-10062.A1	optimierte Zielführung aufgrund von Tunnelsperrung	optimized route guidance due to tunnel closure									
+REQUIREMENT		1										
+CONDITION	aq.aq_99_2927_sbg.m.de											
+CONTENT			wzg.wzg_99_2927_sbg_c2_74.m.de	205								
+CONDITION	aq.aq_99_2700_sbg.m.de											
+CONTENT			wzg.wzg_99_2700_sbg_d1_131.m.de	213								
+CONTENT		UND	wzg.wzg_99_2700_sbg_d2_132.m.de	213								
+CONDITION	aq.wta_99_3113_sbg.m.de											
+CONTENT			wzg.wta_99_3113_sbg_wta1_5.m.de	220								
+												

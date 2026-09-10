@@ -1,0 +1,18 @@
+DataHandler.checkCompleteness():  
+
+
+With data (aus wzgIdsData)
+
+wzg.wzg92-530-mch_a1_33.m.de
+wzg.aq_a7_959_720_ulm_b1_65.m.de
+wzg.aq_94_108999_mch_c1_105.m.de
+wzg.aq_93_as40_0214_hm_lsa3_167.m.de
+wzg.wzg_96_169700_mch_led1_74.m.de
+
+WithoutData (aus wzgIds)
+
+wzg.wzg9-630-mch_c3_107.m.de 
+wzg.wzg9-120-nbg-r_b1_131.m.de
+wzg.wzg_99a_101408_stg_b1_65.m.de
+wzg.wzg9-155-nbg_a3_3.m.de
+wzg.wzg_96_140915_lin_b1_97.m.de

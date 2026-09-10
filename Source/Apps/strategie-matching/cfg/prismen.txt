@@ -1,0 +1,4810 @@
+[ {
+  "permId" : "WWQ_9760_52",
+  "name" : "WWQ_9760_52",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_53",
+  "name" : "WWQ_9760_53",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_50",
+  "name" : "WWQ_9760_50",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_51",
+  "name" : "WWQ_9760_51",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_56",
+  "name" : "WWQ_9760_56",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_54",
+  "name" : "WWQ_9760_54",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_55",
+  "name" : "WWQ_9760_55",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92696_5",
+  "name" : "WWQ_92696_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92696_6",
+  "name" : "WWQ_92696_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92696_3",
+  "name" : "WWQ_92696_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92696_4",
+  "name" : "WWQ_92696_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_8",
+  "name" : "WWQ_99772_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_33",
+  "name" : "AQ99-160-Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92684_1",
+  "name" : "WWQ_92684_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_7",
+  "name" : "WWQ_99772_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_34",
+  "name" : "AQ99-160-Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92684_3",
+  "name" : "WWQ_92684_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_9",
+  "name" : "WWQ_99772_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92684_2",
+  "name" : "WWQ_92684_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_4",
+  "name" : "WWQ_99772_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_3",
+  "name" : "WWQ_99772_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_97",
+  "name" : "AQ99-152-Sbg_97",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_6",
+  "name" : "WWQ_99772_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_98",
+  "name" : "AQ99-152-Sbg_98",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_5",
+  "name" : "WWQ_99772_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_2",
+  "name" : "WWQ_99772_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_39",
+  "name" : "AQ99-160-Sbg_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99772_1",
+  "name" : "WWQ_99772_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_37",
+  "name" : "AQ99-160-Sbg_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_38",
+  "name" : "AQ99-160-Sbg_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_35",
+  "name" : "AQ99-160-Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_36",
+  "name" : "AQ99-160-Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_28850_Sbg_33",
+  "name" : "WWQ99_28850_Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_28850_Sbg_36",
+  "name" : "WWQ99_28850_Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92684_5",
+  "name" : "WWQ_92684_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_163",
+  "name" : "WWQ_9586_163",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92684_4",
+  "name" : "WWQ_92684_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_98",
+  "name" : "AQ99-145-Sbg_98",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_28850_Sbg_34",
+  "name" : "WWQ99_28850_Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_97",
+  "name" : "AQ99-145-Sbg_97",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_009_Pas_225",
+  "name" : "WWQ94_009_Pas_225",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_28850_Sbg_35",
+  "name" : "WWQ99_28850_Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92684_6",
+  "name" : "WWQ_92684_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_228",
+  "name" : "WWQ_9584_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_34",
+  "name" : "AQ8O_110_Mch_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_227",
+  "name" : "WWQ_9584_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_33",
+  "name" : "AQ8O_110_Mch_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_226",
+  "name" : "WWQ_9584_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_36",
+  "name" : "AQ8O_110_Mch_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_35",
+  "name" : "AQ8O_110_Mch_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_38",
+  "name" : "AQ8O_110_Mch_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_37",
+  "name" : "AQ8O_110_Mch_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_009_Pas_233",
+  "name" : "WWQ94_009_Pas_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_39",
+  "name" : "AQ8O_110_Mch_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_009_Pas_227",
+  "name" : "WWQ94_009_Pas_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_009_Pas_226",
+  "name" : "WWQ94_009_Pas_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_009_Pas_229",
+  "name" : "WWQ94_009_Pas_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_009_Pas_228",
+  "name" : "WWQ94_009_Pas_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_44",
+  "name" : "AQ8O_110_Mch_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_237",
+  "name" : "WWQ_9584_237",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_236",
+  "name" : "WWQ_9584_236",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_235",
+  "name" : "WWQ_9584_235",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_41",
+  "name" : "AQ8O_110_Mch_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_9",
+  "name" : "WWQ_9308_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_234",
+  "name" : "WWQ_9584_234",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_40",
+  "name" : "AQ8O_110_Mch_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_8",
+  "name" : "WWQ_9308_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_233",
+  "name" : "WWQ_9584_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_43",
+  "name" : "AQ8O_110_Mch_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_7",
+  "name" : "WWQ_9308_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_232",
+  "name" : "WWQ_9584_232",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_110_Mch_42",
+  "name" : "AQ8O_110_Mch_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_6",
+  "name" : "WWQ_9308_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_231",
+  "name" : "WWQ_9584_231",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_5",
+  "name" : "WWQ_9308_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_230",
+  "name" : "WWQ_9584_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_4",
+  "name" : "WWQ_9308_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_3",
+  "name" : "WWQ_9308_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_28850_Sbg_58",
+  "name" : "WWQ99_28850_Sbg_58",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_2",
+  "name" : "WWQ_9308_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_1",
+  "name" : "WWQ_9308_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_28850_Sbg_57",
+  "name" : "WWQ99_28850_Sbg_57",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99058_35",
+  "name" : "WWQ_99058_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99058_33",
+  "name" : "WWQ_99058_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99058_34",
+  "name" : "WWQ_99058_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99782_1",
+  "name" : "WWQ_99782_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99782_3",
+  "name" : "WWQ_99782_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99782_2",
+  "name" : "WWQ_99782_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_229",
+  "name" : "WWQ_9584_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_004_Mch_233",
+  "name" : "WWQ94_004_Mch_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92686_1",
+  "name" : "WWQ_92686_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92686_6",
+  "name" : "WWQ_92686_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92686_3",
+  "name" : "WWQ_92686_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92686_2",
+  "name" : "WWQ_92686_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92686_5",
+  "name" : "WWQ_92686_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92686_4",
+  "name" : "WWQ_92686_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_50",
+  "name" : "WWQ_9700_50",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99785_1",
+  "name" : "WWQ_99785_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_41",
+  "name" : "WWQ_92586_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_42",
+  "name" : "WWQ_92586_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_43",
+  "name" : "WWQ_92586_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_97",
+  "name" : "AQ99-160-Sbg_97",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-160-Sbg_98",
+  "name" : "AQ99-160-Sbg_98",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_40",
+  "name" : "WWQ_92586_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_34",
+  "name" : "WWQ_92586_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_35",
+  "name" : "WWQ_92586_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_36",
+  "name" : "WWQ_92586_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_37",
+  "name" : "WWQ_92586_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_33",
+  "name" : "WWQ_92586_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_38",
+  "name" : "WWQ_92586_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92586_39",
+  "name" : "WWQ_92586_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92696_1",
+  "name" : "WWQ_92696_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_1",
+  "name" : "AQ99-630-Stg_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92696_2",
+  "name" : "WWQ_92696_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99784_6",
+  "name" : "WWQ_99784_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_2",
+  "name" : "AQ99-630-Stg_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_3",
+  "name" : "AQ99-630-Stg_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_ASAsh_0920_AM_34",
+  "name" : "WWQ99_ASAsh_0920_AM_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_4",
+  "name" : "AQ99-630-Stg_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_5",
+  "name" : "AQ99-630-Stg_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_6",
+  "name" : "AQ99-630-Stg_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99784_5",
+  "name" : "WWQ_99784_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_7",
+  "name" : "AQ99-630-Stg_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99784_4",
+  "name" : "WWQ_99784_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_8",
+  "name" : "AQ99-630-Stg_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_9",
+  "name" : "AQ99-630-Stg_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_004_Mch_229",
+  "name" : "WWQ94_004_Mch_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_004_Mch_228",
+  "name" : "WWQ94_004_Mch_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_004_Mch_227",
+  "name" : "WWQ94_004_Mch_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_004_Mch_226",
+  "name" : "WWQ94_004_Mch_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_38",
+  "name" : "AQ8O_120_Mch_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_43",
+  "name" : "WWQ_9740_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_39",
+  "name" : "AQ8O_120_Mch_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_44",
+  "name" : "WWQ_9740_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_36",
+  "name" : "AQ8O_120_Mch_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_41",
+  "name" : "WWQ_9740_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_37",
+  "name" : "AQ8O_120_Mch_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_42",
+  "name" : "WWQ_9740_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_40",
+  "name" : "WWQ_9740_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9601_230",
+  "name" : "WWQ_9601_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781c_4",
+  "name" : "WWQ_9.781c_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9601_231",
+  "name" : "WWQ_9601_231",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781c_3",
+  "name" : "WWQ_9.781c_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781c_2",
+  "name" : "WWQ_9.781c_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_49",
+  "name" : "WWQ_9740_49",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781c_1",
+  "name" : "WWQ_9.781c_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_34",
+  "name" : "AQ8O_120_Mch_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_47",
+  "name" : "WWQ_9740_47",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_35",
+  "name" : "AQ8O_120_Mch_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_48",
+  "name" : "WWQ_9740_48",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_45",
+  "name" : "WWQ_9740_45",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_33",
+  "name" : "AQ8O_120_Mch_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_46",
+  "name" : "WWQ_9740_46",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9601_227",
+  "name" : "WWQ_9601_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9601_228",
+  "name" : "WWQ_9601_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9601_229",
+  "name" : "WWQ_9601_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_6",
+  "name" : "WWQ_9125_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1174_UM_36",
+  "name" : "WWQ_92_AK_Neuf_1174_UM_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_7",
+  "name" : "WWQ_9125_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1174_UM_37",
+  "name" : "WWQ_92_AK_Neuf_1174_UM_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_8",
+  "name" : "WWQ_9125_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1174_UM_34",
+  "name" : "WWQ_92_AK_Neuf_1174_UM_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_9",
+  "name" : "WWQ_9125_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9601_226",
+  "name" : "WWQ_9601_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1174_UM_35",
+  "name" : "WWQ_92_AK_Neuf_1174_UM_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_12",
+  "name" : "WWQ_9328_12",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_13",
+  "name" : "WWQ_9328_13",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_10",
+  "name" : "WWQ_9328_10",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_11",
+  "name" : "WWQ_9328_11",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_33",
+  "name" : "WWQ_9740_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1454_UM_34",
+  "name" : "WWQ_92_AK_Neuf_1454_UM_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1454_UM_33",
+  "name" : "WWQ_92_AK_Neuf_1454_UM_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1454_UM_36",
+  "name" : "WWQ_92_AK_Neuf_1454_UM_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1454_UM_35",
+  "name" : "WWQ_92_AK_Neuf_1454_UM_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_41",
+  "name" : "AQ8O_120_Mch_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_29277_Sbg_35",
+  "name" : "WWQ99_29277_Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_2",
+  "name" : "WWQ_9125_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_42",
+  "name" : "AQ8O_120_Mch_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_29277_Sbg_34",
+  "name" : "WWQ99_29277_Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_3",
+  "name" : "WWQ_9125_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1454_UM_37",
+  "name" : "WWQ_92_AK_Neuf_1454_UM_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92_AK_Neuf_1174_UM_33",
+  "name" : "WWQ_92_AK_Neuf_1174_UM_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_29277_Sbg_33",
+  "name" : "WWQ99_29277_Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_4",
+  "name" : "WWQ_9125_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_38",
+  "name" : "WWQ_9740_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_40",
+  "name" : "AQ8O_120_Mch_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_5",
+  "name" : "WWQ_9125_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_39",
+  "name" : "WWQ_9740_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_36",
+  "name" : "WWQ_9740_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_37",
+  "name" : "WWQ_9740_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_43",
+  "name" : "AQ8O_120_Mch_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_34",
+  "name" : "WWQ_9740_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_120_Mch_44",
+  "name" : "AQ8O_120_Mch_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_29277_Sbg_36",
+  "name" : "WWQ99_29277_Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9125_1",
+  "name" : "WWQ_9125_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_35",
+  "name" : "WWQ_9740_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_1",
+  "name" : "WWQ_9328_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_2",
+  "name" : "WWQ_9328_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_3",
+  "name" : "WWQ_9328_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_4",
+  "name" : "WWQ_9328_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_5",
+  "name" : "WWQ_9328_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_6",
+  "name" : "WWQ_9328_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_20",
+  "name" : "AQ99-635-Stg_20",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_7",
+  "name" : "WWQ_9328_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_8",
+  "name" : "WWQ_9328_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9328_9",
+  "name" : "WWQ_9328_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99025_33",
+  "name" : "WWQ_99025_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99025_34",
+  "name" : "WWQ_99025_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99025_35",
+  "name" : "WWQ_99025_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_233",
+  "name" : "WWQ_9586_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922900_229",
+  "name" : "WWQ_922900_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_232",
+  "name" : "WWQ_9586_232",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_231",
+  "name" : "WWQ_9586_231",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_230",
+  "name" : "WWQ_9586_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_011_Pas_233",
+  "name" : "WWQ94_011_Pas_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_237",
+  "name" : "WWQ_9586_237",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_236",
+  "name" : "WWQ_9586_236",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_235",
+  "name" : "WWQ_9586_235",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_234",
+  "name" : "WWQ_9586_234",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781d_2",
+  "name" : "WWQ_9.781d_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781d_1",
+  "name" : "WWQ_9.781d_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_40",
+  "name" : "AQ99-152-Sbg_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922900_226",
+  "name" : "WWQ_922900_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922900_225",
+  "name" : "WWQ_922900_225",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922900_228",
+  "name" : "WWQ_922900_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922900_227",
+  "name" : "WWQ_922900_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781d_4",
+  "name" : "WWQ_9.781d_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_35",
+  "name" : "AQ99-152-Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_36",
+  "name" : "AQ99-152-Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_37",
+  "name" : "AQ99-152-Sbg_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_229",
+  "name" : "WWQ_9586_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_228",
+  "name" : "WWQ_9586_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_227",
+  "name" : "WWQ_9586_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_38",
+  "name" : "AQ99-152-Sbg_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-152-Sbg_39",
+  "name" : "AQ99-152-Sbg_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_229",
+  "name" : "WWQ_9590_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_011_Pas_226",
+  "name" : "WWQ94_011_Pas_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92372_228",
+  "name" : "WWQ_92372_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_228",
+  "name" : "WWQ_9590_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_011_Pas_225",
+  "name" : "WWQ94_011_Pas_225",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92372_229",
+  "name" : "WWQ_92372_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_227",
+  "name" : "WWQ_9590_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_226",
+  "name" : "WWQ_9590_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9586_226",
+  "name" : "WWQ_9586_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_29277_Sbg_57",
+  "name" : "WWQ99_29277_Sbg_57",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_33",
+  "name" : "AQ99-145-Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_011_Pas_229",
+  "name" : "WWQ94_011_Pas_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_011_Pas_228",
+  "name" : "WWQ94_011_Pas_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_011_Pas_227",
+  "name" : "WWQ94_011_Pas_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_29277_Sbg_58",
+  "name" : "WWQ99_29277_Sbg_58",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_4",
+  "name" : "AQ99-650-Stg_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_006_Mch_227",
+  "name" : "WWQ94_006_Mch_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_5",
+  "name" : "AQ99-650-Stg_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_006_Mch_226",
+  "name" : "WWQ94_006_Mch_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_2",
+  "name" : "AQ99-650-Stg_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_3",
+  "name" : "AQ99-650-Stg_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-685-Stg_1",
+  "name" : "AQ99-685-Stg_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_8",
+  "name" : "AQ99-650-Stg_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_9",
+  "name" : "AQ99-650-Stg_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-685-Stg_3",
+  "name" : "AQ99-685-Stg_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_6",
+  "name" : "AQ99-650-Stg_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-685-Stg_2",
+  "name" : "AQ99-685-Stg_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92372_230",
+  "name" : "WWQ_92372_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_7",
+  "name" : "AQ99-650-Stg_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92372_231",
+  "name" : "WWQ_92372_231",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92372_232",
+  "name" : "WWQ_92372_232",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_10",
+  "name" : "AQ99-670-Stg_10",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_11",
+  "name" : "AQ99-670-Stg_11",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_12",
+  "name" : "AQ99-670-Stg_12",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_13",
+  "name" : "AQ99-670-Stg_13",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_42",
+  "name" : "WWQ_92584_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_010_Pas_233",
+  "name" : "WWQ94_010_Pas_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_41",
+  "name" : "WWQ_92584_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_40",
+  "name" : "WWQ_92584_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781a_1",
+  "name" : "WWQ_9.781a_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781a_2",
+  "name" : "WWQ_9.781a_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_43",
+  "name" : "WWQ_92584_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781a_3",
+  "name" : "WWQ_9.781a_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781a_4",
+  "name" : "WWQ_9.781a_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_1",
+  "name" : "AQ99-650-Stg_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_37",
+  "name" : "AQ99-145-Sbg_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_36",
+  "name" : "AQ99-145-Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_35",
+  "name" : "AQ99-145-Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_34",
+  "name" : "AQ99-145-Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-145-Sbg_38",
+  "name" : "AQ99-145-Sbg_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_39",
+  "name" : "AQ99-200-Sbg_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_9",
+  "name" : "AQ99-635-Stg_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_38",
+  "name" : "AQ99-200-Sbg_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_8",
+  "name" : "AQ99-635-Stg_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_7",
+  "name" : "AQ99-635-Stg_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_35",
+  "name" : "WWQ_92584_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_010_Pas_226",
+  "name" : "WWQ94_010_Pas_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_6",
+  "name" : "AQ99-635-Stg_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_35",
+  "name" : "AQ99-200-Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_34",
+  "name" : "WWQ_92584_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_010_Pas_227",
+  "name" : "WWQ94_010_Pas_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_5",
+  "name" : "AQ99-635-Stg_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_34",
+  "name" : "AQ99-200-Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_33",
+  "name" : "WWQ_92584_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_4",
+  "name" : "AQ99-635-Stg_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_37",
+  "name" : "AQ99-200-Sbg_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_010_Pas_225",
+  "name" : "WWQ94_010_Pas_225",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_3",
+  "name" : "AQ99-635-Stg_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_36",
+  "name" : "AQ99-200-Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_39",
+  "name" : "WWQ_92584_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_2",
+  "name" : "AQ99-635-Stg_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_38",
+  "name" : "WWQ_92584_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_1",
+  "name" : "AQ99-635-Stg_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_37",
+  "name" : "WWQ_92584_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_010_Pas_228",
+  "name" : "WWQ94_010_Pas_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92321_227",
+  "name" : "WWQ_92321_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92584_36",
+  "name" : "WWQ_92584_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_010_Pas_229",
+  "name" : "WWQ94_010_Pas_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92321_226",
+  "name" : "WWQ_92321_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92321_229",
+  "name" : "WWQ_92321_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92321_228",
+  "name" : "WWQ_92321_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99056_34",
+  "name" : "WWQ_99056_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99056_33",
+  "name" : "WWQ_99056_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99056_36",
+  "name" : "WWQ_99056_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92321_230",
+  "name" : "WWQ_92321_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99056_35",
+  "name" : "WWQ_99056_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-695-Stg_1",
+  "name" : "AQ99-695-Stg_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_41",
+  "name" : "AQ99-200-Sbg_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_40",
+  "name" : "AQ99-200-Sbg_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781b_1",
+  "name" : "WWQ_9.781b_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_34",
+  "name" : "WWQ_9760_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_35",
+  "name" : "WWQ_9760_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781b_4",
+  "name" : "WWQ_9.781b_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781b_3",
+  "name" : "WWQ_9.781b_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_33",
+  "name" : "WWQ_9760_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9.781b_2",
+  "name" : "WWQ_9.781b_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_38",
+  "name" : "WWQ_9760_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99056_37",
+  "name" : "WWQ_99056_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_39",
+  "name" : "WWQ_9760_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_36",
+  "name" : "WWQ_9760_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_37",
+  "name" : "WWQ_9760_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-200-Sbg_33",
+  "name" : "AQ99-200-Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_10",
+  "name" : "WWQ_9308_10",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_11",
+  "name" : "WWQ_9308_11",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_41",
+  "name" : "WWQ_9760_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_42",
+  "name" : "WWQ_9760_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_40",
+  "name" : "WWQ_9760_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_45",
+  "name" : "WWQ_9760_45",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_46",
+  "name" : "WWQ_9760_46",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_43",
+  "name" : "WWQ_9760_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_44",
+  "name" : "WWQ_9760_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_49",
+  "name" : "WWQ_9760_49",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_47",
+  "name" : "WWQ_9760_47",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9760_48",
+  "name" : "WWQ_9760_48",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9238_2",
+  "name" : "WWQ_9238_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9238_1",
+  "name" : "WWQ_9238_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9308_12",
+  "name" : "WWQ_9308_12",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9238_3",
+  "name" : "WWQ_9238_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_226",
+  "name" : "WWQ_99.X2_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_225",
+  "name" : "WWQ_99.X2_225",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_228",
+  "name" : "WWQ_99.X2_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_227",
+  "name" : "WWQ_99.X2_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_229",
+  "name" : "WWQ_99.X2_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99028_33",
+  "name" : "WWQ_99028_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_ASAsh_0530_AM_33",
+  "name" : "WWQ99_ASAsh_0530_AM_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99028_34",
+  "name" : "WWQ_99028_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99028_35",
+  "name" : "WWQ_99028_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99028_36",
+  "name" : "WWQ_99028_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_012_Pas_227",
+  "name" : "WWQ94_012_Pas_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_012_Pas_226",
+  "name" : "WWQ94_012_Pas_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_42",
+  "name" : "WWQ_99063_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_43",
+  "name" : "WWQ_99063_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ99_ASAsh_0530_AM_34",
+  "name" : "WWQ99_ASAsh_0530_AM_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_40",
+  "name" : "WWQ_99063_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_41",
+  "name" : "WWQ_99063_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92623_1",
+  "name" : "WWQ_92623_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92623_2",
+  "name" : "WWQ_92623_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-220-Sbg_36",
+  "name" : "AQ99-220-Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-220-Sbg_34",
+  "name" : "AQ99-220-Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-220-Sbg_35",
+  "name" : "AQ99-220-Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-220-Sbg_33",
+  "name" : "AQ99-220-Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_231",
+  "name" : "WWQ_99.X2_231",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_230",
+  "name" : "WWQ_99.X2_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922430_225",
+  "name" : "WWQ_922430_225",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X2_233",
+  "name" : "WWQ_99.X2_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922430_226",
+  "name" : "WWQ_922430_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922430_227",
+  "name" : "WWQ_922430_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_005_Mch_227",
+  "name" : "WWQ94_005_Mch_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922430_228",
+  "name" : "WWQ_922430_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_005_Mch_226",
+  "name" : "WWQ94_005_Mch_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_35",
+  "name" : "WWQ_99063_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_36",
+  "name" : "WWQ_99063_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_33",
+  "name" : "WWQ_99063_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_34",
+  "name" : "WWQ_99063_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_39",
+  "name" : "WWQ_99063_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_37",
+  "name" : "WWQ_99063_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_38",
+  "name" : "WWQ_99063_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_17",
+  "name" : "AQ99-630-Stg_17",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_15",
+  "name" : "AQ99-630-Stg_15",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_16",
+  "name" : "AQ99-630-Stg_16",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_13",
+  "name" : "AQ99-630-Stg_13",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_14",
+  "name" : "AQ99-630-Stg_14",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_11",
+  "name" : "AQ99-630-Stg_11",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_12",
+  "name" : "AQ99-630-Stg_12",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_2",
+  "name" : "WWQ94_194_Mch_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_1",
+  "name" : "WWQ94_194_Mch_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_46",
+  "name" : "WWQ_99063_46",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_98",
+  "name" : "AQ99-180-Sbg_98",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_47",
+  "name" : "WWQ_99063_47",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_97",
+  "name" : "AQ99-180-Sbg_97",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-630-Stg_10",
+  "name" : "AQ99-630-Stg_10",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_44",
+  "name" : "WWQ_99063_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99063_45",
+  "name" : "WWQ_99063_45",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9248_3",
+  "name" : "WWQ_9248_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9248_2",
+  "name" : "WWQ_9248_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9248_1",
+  "name" : "WWQ_9248_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92622_2",
+  "name" : "WWQ_92622_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92622_1",
+  "name" : "WWQ_92622_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_33",
+  "name" : "AQ8O_100_Mch_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_35",
+  "name" : "AQ8O_100_Mch_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_34",
+  "name" : "AQ8O_100_Mch_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_37",
+  "name" : "AQ8O_100_Mch_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_36",
+  "name" : "AQ8O_100_Mch_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_232",
+  "name" : "WWQ_9590_232",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_39",
+  "name" : "AQ8O_100_Mch_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_231",
+  "name" : "WWQ_9590_231",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_38",
+  "name" : "AQ8O_100_Mch_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_230",
+  "name" : "WWQ_9590_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_1",
+  "name" : "WWQ_9345_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_236",
+  "name" : "WWQ_9590_236",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_008_Pas_227",
+  "name" : "WWQ94_008_Pas_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_3",
+  "name" : "WWQ_9345_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_235",
+  "name" : "WWQ_9590_235",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_008_Pas_228",
+  "name" : "WWQ94_008_Pas_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_2",
+  "name" : "WWQ_9345_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_234",
+  "name" : "WWQ_9590_234",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_008_Pas_229",
+  "name" : "WWQ94_008_Pas_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_5",
+  "name" : "WWQ_9345_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9590_233",
+  "name" : "WWQ_9590_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_4",
+  "name" : "WWQ_9345_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_38",
+  "name" : "AQ99-180-Sbg_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_37",
+  "name" : "AQ99-180-Sbg_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_36",
+  "name" : "AQ99-180-Sbg_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_35",
+  "name" : "AQ99-180-Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_34",
+  "name" : "AQ99-180-Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-180-Sbg_33",
+  "name" : "AQ99-180-Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92372_226",
+  "name" : "WWQ_92372_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92372_227",
+  "name" : "WWQ_92372_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_42",
+  "name" : "AQ8O_100_Mch_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_41",
+  "name" : "AQ8O_100_Mch_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_43",
+  "name" : "AQ8O_100_Mch_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_4",
+  "name" : "WWQ94_194_Mch_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_7",
+  "name" : "WWQ_9345_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_3",
+  "name" : "WWQ94_194_Mch_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_6",
+  "name" : "WWQ_9345_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_6",
+  "name" : "WWQ94_194_Mch_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_9",
+  "name" : "WWQ_9345_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_5",
+  "name" : "WWQ94_194_Mch_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_8",
+  "name" : "WWQ_9345_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_8",
+  "name" : "WWQ94_194_Mch_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_7",
+  "name" : "WWQ94_194_Mch_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_194_Mch_9",
+  "name" : "WWQ94_194_Mch_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_100_Mch_40",
+  "name" : "AQ8O_100_Mch_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_39",
+  "name" : "AQ8O_130_Mch_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_37",
+  "name" : "AQ8O_130_Mch_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_38",
+  "name" : "AQ8O_130_Mch_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_35",
+  "name" : "AQ8O_130_Mch_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_36",
+  "name" : "AQ8O_130_Mch_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_33",
+  "name" : "AQ8O_130_Mch_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_922430_229",
+  "name" : "WWQ_922430_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_34",
+  "name" : "AQ8O_130_Mch_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_16",
+  "name" : "AQ99-635-Stg_16",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_17",
+  "name" : "AQ99-635-Stg_17",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_18",
+  "name" : "AQ99-635-Stg_18",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_19",
+  "name" : "AQ99-635-Stg_19",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_12",
+  "name" : "AQ99-635-Stg_12",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_10",
+  "name" : "WWQ_9345_10",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_13",
+  "name" : "AQ99-635-Stg_13",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_14",
+  "name" : "AQ99-635-Stg_14",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_12",
+  "name" : "WWQ_9345_12",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_15",
+  "name" : "AQ99-635-Stg_15",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_11",
+  "name" : "WWQ_9345_11",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_10",
+  "name" : "AQ99-635-Stg_10",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-635-Stg_11",
+  "name" : "AQ99-635-Stg_11",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9345_13",
+  "name" : "WWQ_9345_13",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_54",
+  "name" : "WWQ_9740_54",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_55",
+  "name" : "WWQ_9740_55",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_52",
+  "name" : "WWQ_9740_52",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_53",
+  "name" : "WWQ_9740_53",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_50",
+  "name" : "WWQ_9740_50",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_51",
+  "name" : "WWQ_9740_51",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_44",
+  "name" : "AQ8O_130_Mch_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_42",
+  "name" : "AQ8O_130_Mch_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_43",
+  "name" : "AQ8O_130_Mch_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_40",
+  "name" : "AQ8O_130_Mch_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_130_Mch_41",
+  "name" : "AQ8O_130_Mch_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9740_56",
+  "name" : "WWQ_9740_56",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_008_Pas_226",
+  "name" : "WWQ94_008_Pas_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_43",
+  "name" : "WWQ_92588_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9584_163",
+  "name" : "WWQ_9584_163",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_7",
+  "name" : "WWQ_99765_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_8",
+  "name" : "WWQ_99765_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_9",
+  "name" : "WWQ_99765_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_40",
+  "name" : "WWQ_92588_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_7",
+  "name" : "WWQ94_190_Mch_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_8",
+  "name" : "WWQ94_190_Mch_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_42",
+  "name" : "WWQ_92588_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_9",
+  "name" : "WWQ94_190_Mch_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_41",
+  "name" : "WWQ_92588_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_37",
+  "name" : "WWQ_92588_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9140_2",
+  "name" : "WWQ_9140_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_36",
+  "name" : "WWQ_92588_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9140_1",
+  "name" : "WWQ_9140_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_39",
+  "name" : "WWQ_92588_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9140_4",
+  "name" : "WWQ_9140_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_38",
+  "name" : "WWQ_92588_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9140_3",
+  "name" : "WWQ_9140_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_33",
+  "name" : "WWQ_92588_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_35",
+  "name" : "WWQ_92588_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92588_34",
+  "name" : "WWQ_92588_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9140_5",
+  "name" : "WWQ_9140_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_6",
+  "name" : "WWQ94_188_Mch_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_7",
+  "name" : "WWQ94_188_Mch_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_8",
+  "name" : "WWQ94_188_Mch_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_47",
+  "name" : "WWQ_99072_47",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_9",
+  "name" : "WWQ94_188_Mch_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_46",
+  "name" : "WWQ_99072_46",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_45",
+  "name" : "WWQ_99072_45",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_44",
+  "name" : "WWQ_99072_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_43",
+  "name" : "WWQ_99072_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_49",
+  "name" : "WWQ_9700_49",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_42",
+  "name" : "WWQ_99072_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_47",
+  "name" : "WWQ_9700_47",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_48",
+  "name" : "WWQ_9700_48",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_45",
+  "name" : "WWQ_9700_45",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_1",
+  "name" : "WWQ94_188_Mch_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_46",
+  "name" : "WWQ_9700_46",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_2",
+  "name" : "WWQ94_188_Mch_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_43",
+  "name" : "WWQ_9700_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_3",
+  "name" : "WWQ94_188_Mch_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_44",
+  "name" : "WWQ_9700_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_4",
+  "name" : "WWQ94_188_Mch_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_41",
+  "name" : "WWQ_9700_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_188_Mch_5",
+  "name" : "WWQ94_188_Mch_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_42",
+  "name" : "WWQ_9700_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_40",
+  "name" : "WWQ_9700_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_38",
+  "name" : "WWQ_99072_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_37",
+  "name" : "WWQ_99072_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572a_38",
+  "name" : "WWQ_92572a_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_36",
+  "name" : "WWQ_99072_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_35",
+  "name" : "WWQ_99072_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572a_36",
+  "name" : "WWQ_92572a_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_34",
+  "name" : "WWQ_99072_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572a_37",
+  "name" : "WWQ_92572a_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_33",
+  "name" : "WWQ_99072_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572a_34",
+  "name" : "WWQ_92572a_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_38",
+  "name" : "WWQ_9700_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572a_35",
+  "name" : "WWQ_92572a_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_39",
+  "name" : "WWQ_9700_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_36",
+  "name" : "WWQ_9700_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572a_33",
+  "name" : "WWQ_92572a_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_37",
+  "name" : "WWQ_9700_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_34",
+  "name" : "WWQ_9700_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_35",
+  "name" : "WWQ_9700_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9700_33",
+  "name" : "WWQ_9700_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_39",
+  "name" : "WWQ_99072_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_201_Mch_227",
+  "name" : "WWQ94_201_Mch_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_41",
+  "name" : "WWQ_99072_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_201_Mch_226",
+  "name" : "WWQ94_201_Mch_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99072_40",
+  "name" : "WWQ_99072_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_201_Mch_229",
+  "name" : "WWQ94_201_Mch_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_201_Mch_228",
+  "name" : "WWQ94_201_Mch_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_1",
+  "name" : "WWQ_9130_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572b_39",
+  "name" : "WWQ_92572b_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_3",
+  "name" : "WWQ_9130_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_2",
+  "name" : "WWQ_9130_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_9",
+  "name" : "WWQ_9130_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_1",
+  "name" : "AQ99-670-Stg_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_8",
+  "name" : "WWQ_9130_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_2",
+  "name" : "AQ99-670-Stg_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_3",
+  "name" : "AQ99-670-Stg_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_5",
+  "name" : "WWQ_9130_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_4",
+  "name" : "WWQ_9130_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_7",
+  "name" : "WWQ_9130_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9130_6",
+  "name" : "WWQ_9130_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_40",
+  "name" : "AQ8O_140_Mch_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_37",
+  "name" : "WWQ_9710_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_38",
+  "name" : "WWQ_9710_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_39",
+  "name" : "WWQ_9710_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_41",
+  "name" : "AQ8O_140_Mch_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_33",
+  "name" : "WWQ_9710_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_34",
+  "name" : "WWQ_9710_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_013_Pas_226",
+  "name" : "WWQ94_013_Pas_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_35",
+  "name" : "WWQ_9710_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_013_Pas_227",
+  "name" : "WWQ94_013_Pas_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_36",
+  "name" : "WWQ_9710_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_48",
+  "name" : "WWQ_9710_48",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_33",
+  "name" : "AQ8O_140_Mch_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_49",
+  "name" : "WWQ_9710_49",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_007_Pas_226",
+  "name" : "WWQ94_007_Pas_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_007_Pas_227",
+  "name" : "WWQ94_007_Pas_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_44",
+  "name" : "WWQ_9710_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_003_Mch_226",
+  "name" : "WWQ94_003_Mch_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_37",
+  "name" : "AQ8O_140_Mch_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_202_Mch_229",
+  "name" : "WWQ94_202_Mch_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_45",
+  "name" : "WWQ_9710_45",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_003_Mch_227",
+  "name" : "WWQ94_003_Mch_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_36",
+  "name" : "AQ8O_140_Mch_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_202_Mch_228",
+  "name" : "WWQ94_202_Mch_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_46",
+  "name" : "WWQ_9710_46",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_35",
+  "name" : "AQ8O_140_Mch_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_202_Mch_227",
+  "name" : "WWQ94_202_Mch_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_47",
+  "name" : "WWQ_9710_47",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_34",
+  "name" : "AQ8O_140_Mch_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_202_Mch_226",
+  "name" : "WWQ94_202_Mch_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_40",
+  "name" : "WWQ_9710_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_41",
+  "name" : "WWQ_9710_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_42",
+  "name" : "WWQ_9710_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_003_Mch_228",
+  "name" : "WWQ94_003_Mch_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_39",
+  "name" : "AQ8O_140_Mch_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_9710_43",
+  "name" : "WWQ_9710_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_003_Mch_229",
+  "name" : "WWQ94_003_Mch_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ8O_140_Mch_38",
+  "name" : "AQ8O_140_Mch_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_40",
+  "name" : "WWQ_99062_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_19",
+  "name" : "AQ99-650-Stg_19",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_42",
+  "name" : "WWQ_99062_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_18",
+  "name" : "AQ99-650-Stg_18",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_41",
+  "name" : "WWQ_99062_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_17",
+  "name" : "AQ99-650-Stg_17",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_233",
+  "name" : "WWQ_99.X_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_16",
+  "name" : "AQ99-650-Stg_16",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_007_Pas_228",
+  "name" : "WWQ94_007_Pas_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_15",
+  "name" : "AQ99-650-Stg_15",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_007_Pas_229",
+  "name" : "WWQ94_007_Pas_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_231",
+  "name" : "WWQ_99.X_231",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_14",
+  "name" : "AQ99-650-Stg_14",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_230",
+  "name" : "WWQ_99.X_230",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_13",
+  "name" : "AQ99-650-Stg_13",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_12",
+  "name" : "AQ99-650-Stg_12",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_11",
+  "name" : "AQ99-650-Stg_11",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_10",
+  "name" : "AQ99-650-Stg_10",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99777_3",
+  "name" : "WWQ_99777_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99777_2",
+  "name" : "WWQ_99777_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_003_Mch_233",
+  "name" : "WWQ94_003_Mch_233",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99777_1",
+  "name" : "WWQ_99777_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_33",
+  "name" : "WWQ_99062_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_35",
+  "name" : "WWQ_99062_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_34",
+  "name" : "WWQ_99062_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_37",
+  "name" : "WWQ_99062_37",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_36",
+  "name" : "WWQ_99062_36",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_39",
+  "name" : "WWQ_99062_39",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_38",
+  "name" : "WWQ_99062_38",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_1",
+  "name" : "WWQ94_190_Mch_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_2",
+  "name" : "WWQ94_190_Mch_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_3",
+  "name" : "WWQ94_190_Mch_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_4",
+  "name" : "WWQ94_190_Mch_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_5",
+  "name" : "WWQ94_190_Mch_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ94_190_Mch_6",
+  "name" : "WWQ94_190_Mch_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572b_44",
+  "name" : "WWQ_92572b_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572b_42",
+  "name" : "WWQ_92572b_42",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572b_43",
+  "name" : "WWQ_92572b_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572b_40",
+  "name" : "WWQ_92572b_40",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_226",
+  "name" : "WWQ_99.X_226",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_92572b_41",
+  "name" : "WWQ_92572b_41",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_225",
+  "name" : "WWQ_99.X_225",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_22",
+  "name" : "AQ99-650-Stg_22",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_21",
+  "name" : "AQ99-650-Stg_21",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-650-Stg_20",
+  "name" : "AQ99-650-Stg_20",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_8",
+  "name" : "AQ99-670-Stg_8",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_3",
+  "name" : "WWQ_99765_3",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-230-Sbg_33",
+  "name" : "AQ99-230-Sbg_33",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_9",
+  "name" : "AQ99-670-Stg_9",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_4",
+  "name" : "WWQ_99765_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-230-Sbg_34",
+  "name" : "AQ99-230-Sbg_34",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_229",
+  "name" : "WWQ_99.X_229",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_5",
+  "name" : "WWQ_99765_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_228",
+  "name" : "WWQ_99.X_228",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_6",
+  "name" : "WWQ_99765_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99.X_227",
+  "name" : "WWQ_99.X_227",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_4",
+  "name" : "AQ99-670-Stg_4",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_5",
+  "name" : "AQ99-670-Stg_5",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_6",
+  "name" : "AQ99-670-Stg_6",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_1",
+  "name" : "WWQ_99765_1",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-230-Sbg_35",
+  "name" : "AQ99-230-Sbg_35",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "AQ99-670-Stg_7",
+  "name" : "AQ99-670-Stg_7",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99765_2",
+  "name" : "WWQ_99765_2",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_44",
+  "name" : "WWQ_99062_44",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_43",
+  "name" : "WWQ_99062_43",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_46",
+  "name" : "WWQ_99062_46",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_45",
+  "name" : "WWQ_99062_45",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_48",
+  "name" : "WWQ_99062_48",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+}, {
+  "permId" : "WWQ_99062_47",
+  "name" : "WWQ_99062_47",
+
+  "stellcode" : -1,
+  "displayedText" : null,
+  "funktionsbyte" : 0
+} ]

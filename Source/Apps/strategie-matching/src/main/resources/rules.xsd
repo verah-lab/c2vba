@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema targetNamespace="http://sdbby.heuboe.de/strategy/matching/data" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns3="http://sdbby.heuboe.de/strategy/matching/data"
+	version="1.0">
+
+	<xs:complexType name="ruleSet">
+		<xs:annotation>
+			<xs:documentation>Root class containing the set of rules for matching strategies.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="rule" type="ns3:rule" maxOccurs="unbounded" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the list of all rules</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="mainRoute">
+		<xs:sequence>
+			<xs:element name="mainRouteStrategy" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>A Strategy which is regarded as active 
+					                  if all rules(strategies) which reference it as MAIN_ROUTE_STRATEGY 
+					                  are not active. Its route is assumed as the default. 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="referencingStrategy" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Rule/Strategy which references the mainRouteStrategy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="mainRouteSet">
+		<xs:sequence>
+			<xs:element name="mainRoute" type="ns3:mainRoute" maxOccurs="unbounded" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="activationCause">
+		<xs:sequence>
+			<xs:element name="language" type="xs:string">
+			</xs:element>
+			<xs:element name="description" type="xs:string">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+
+	<xs:complexType name="rule">
+		<xs:annotation>
+			<xs:documentation>The definition of a rule that is checked in order to detect an active strategy.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The name of the rule identifying it in logging output.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="strategy" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The id of the strategy which is detected as active if all requirements are fulfilled.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cause" type="ns3:activationCause" maxOccurs="unbounded" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>cause of activation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mainRouteStrategy" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The id of the strategy which is regarded as active 
+					                  if all rule(strategies) which reference it as MAIN_ROUTE_STRATEGY 
+					                  are not active. Its route is assumed as the default.   
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="matchLevel" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						The number of requirements in percent that have to be fulfilled. 
+						If omitted, all requirements have to be fulfilled.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requirement" type="ns3:requirement" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The list of requirements that apply to this rule</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="requirement">
+		<xs:annotation>
+			<xs:documentation>
+				A requirement aggregates the conditions that have to be fulfilled.
+			 	If a given amount of these conditions is fulfilled, the requirement is fulfilled.
+			 	A requirement is used to describe the status of a www chain that is necessary for
+			 	the detection of a strategy.
+			 </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The name of the requirement identifying it in logging output.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="matchLevel" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						The number of conditions in percent that have to be fulfilled. 
+						If omitted, all conditions have to be fulfilled.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="condition" type="ns3:condition" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The list of conditions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="condition">
+		<xs:annotation>
+			<xs:documentation>
+				Definition of a single condition.
+				If at least one de content is detected as active, the condition is fulfilled.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The name of the condition identifying it in logging output.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="deContent" type="ns3:deContent" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						The list of allowed de contents.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="deContent">
+		<xs:annotation>
+			<xs:documentation>Definition of a single de content.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="wwwDe" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The ID of a www de.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="logicalOperator" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>'AND' or 'ODER':
+					                  logical combining of deContents on evaluation of a condition 
+					                  ('ODER' is default, all deContents of a single condition are 
+					                   shall have the same logicalOperator, for the first it may be 
+					                   undefined: logical combining is defined by the others.)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="programNumber" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>The program number of a www content.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="displayedText" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The text displayed (free text display site).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="RuleSet" type="ns3:ruleSet"></xs:element>
+</xs:schema>
