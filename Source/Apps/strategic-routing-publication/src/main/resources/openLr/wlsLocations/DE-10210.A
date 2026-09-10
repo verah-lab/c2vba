@@ -1,0 +1,869 @@
+{
+  "id" : "DE-10210.A",
+  "name" : "DE-10210.A",
+  "elements" : [ {
+    "id" : "DE921114725_1",
+    "length" : 76.03522044541296,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194758003_1",
+    "length" : 53.17443090819471,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194758004_1",
+    "length" : 35.3615697848952,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1172807017_1",
+    "length" : 111.39127483628384,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1232584236_1",
+    "length" : 263.55549097613704,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1257073737_1",
+    "length" : 67.02566249727988,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1257073738_1",
+    "length" : 79.57245850776116,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE722826877_1",
+    "length" : 79.62651228430826,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE576292706_1",
+    "length" : 59.534401124895695,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783184491_1",
+    "length" : 53.54297269502081,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783184492_1",
+    "length" : 41.62344806097885,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194643407_1",
+    "length" : 849.6575003229977,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194643408_1",
+    "length" : 137.56926174516693,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921185705_1",
+    "length" : 38.70046825322542,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194641964_1",
+    "length" : 59.606957951358304,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194641965_1",
+    "length" : 119.87745112733579,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194641865_1",
+    "length" : 58.86596979127998,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194641866_1",
+    "length" : 18.608464707464243,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194643236_1",
+    "length" : 167.8052689500802,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194643237_1",
+    "length" : 199.51339718006153,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921185707_1",
+    "length" : 245.1100444128963,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921185708_1",
+    "length" : 201.059868009504,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921185709_1",
+    "length" : 104.28404502876796,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783171136_1",
+    "length" : 131.97385969702668,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52825120_1",
+    "length" : 33.729354529618696,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52797649_1",
+    "length" : 188.69798200293087,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562822142_1",
+    "length" : 101.54442094226536,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085321816_1",
+    "length" : 141.69896851013343,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085321817_1",
+    "length" : 61.08978810804095,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783171144_1",
+    "length" : 88.52781443168877,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783171143_2",
+    "length" : 625.5896813104213,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE586882289_2",
+    "length" : 108.30915141583992,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1269941576_2",
+    "length" : 86.9025956987692,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1269941575_2",
+    "length" : 139.07398462041135,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE576300160_2",
+    "length" : 209.91443329126312,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE576300159_2",
+    "length" : 20.54840526043901,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1273270885_2",
+    "length" : 53.42966041747819,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1273270884_2",
+    "length" : 93.36079505628128,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783176736_2",
+    "length" : 56.13341098988298,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783176735_2",
+    "length" : 192.8167784637766,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE586882252_2",
+    "length" : 48.63264686396894,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE586882257_2",
+    "length" : 71.17955098534705,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283660416_2",
+    "length" : 47.22184931602337,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283660415_2",
+    "length" : 220.16753056723462,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283660418_2",
+    "length" : 36.42814844443676,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283660417_2",
+    "length" : 214.75778230701567,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283612729_2",
+    "length" : 46.84971824851134,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283612728_2",
+    "length" : 39.19488384991181,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1204452312_2",
+    "length" : 12.455771601415433,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283612726_2",
+    "length" : 24.921609412088117,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1283612725_2",
+    "length" : 46.533937999657894,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1286437415_2",
+    "length" : 142.15229600805813,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1286437414_2",
+    "length" : 48.81530186860928,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1245137809_2",
+    "length" : 17.917361529334308,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1297826561_2",
+    "length" : 23.480578916841917,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1297826560_2",
+    "length" : 60.56152376723058,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225020641_2",
+    "length" : 238.74752968725682,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225020640_2",
+    "length" : 189.91633630458685,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE722733437_2",
+    "length" : 57.39802071714119,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1281265605_2",
+    "length" : 144.41411297086816,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1281265604_1",
+    "length" : 20.559081906598152,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE554330247_1",
+    "length" : 122.75403460588976,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE67625838_1",
+    "length" : 174.59511161654723,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920987534_1",
+    "length" : 122.17269918058342,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920987535_1",
+    "length" : 247.50481737973382,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE554330039_1",
+    "length" : 71.4023157016369,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1243926826_1",
+    "length" : 161.79721424173312,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562774078_1",
+    "length" : 32.82837562701476,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1217501861_1",
+    "length" : 15.128124799261668,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1268349880_1",
+    "length" : 100.0161958850563,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1268349881_1",
+    "length" : 50.53383903294737,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1232537336_1",
+    "length" : 146.9123039224503,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225197481_1",
+    "length" : 38.80970562939659,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225197482_1",
+    "length" : 69.05688254702805,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244180678_1",
+    "length" : 68.24508653582531,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244180679_1",
+    "length" : 37.52858613168497,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1256987649_1",
+    "length" : 16.414061893319975,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1256987650_1",
+    "length" : 15.12878187639939,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE586900042_1",
+    "length" : 132.36771957356194,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783176706_1",
+    "length" : 16.41402417943154,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783176707_1",
+    "length" : 452.32262698047475,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225251807_1",
+    "length" : 57.567875443536984,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225251808_1",
+    "length" : 111.49844752373028,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1182942176_1",
+    "length" : 37.51742958639719,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1182942177_1",
+    "length" : 64.60166530338613,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783091733_1",
+    "length" : 90.39450532932011,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52913974_1",
+    "length" : 202.9457912122616,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085146397_1",
+    "length" : 17.265606855426128,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085146398_1",
+    "length" : 141.74874593728578,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920987539_1",
+    "length" : 326.40728187639314,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE722728701_1",
+    "length" : 149.01427534785734,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE722728702_1",
+    "length" : 25.79286408668386,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783091734_1",
+    "length" : 107.86096726825808,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244200778_1",
+    "length" : 127.9096983789559,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244200779_1",
+    "length" : 57.5662199728533,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244200776_1",
+    "length" : 38.573108233186296,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244200777_1",
+    "length" : 799.9419987476324,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920987540_1",
+    "length" : 334.62718403737415,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085146395_1",
+    "length" : 60.09490243783546,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1282943672_1",
+    "length" : 92.59967867657,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1282943673_1",
+    "length" : 52.602354274855905,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52819363_1",
+    "length" : 193.4346889038892,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085151072_1",
+    "length" : 22.839963389268135,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085151073_1",
+    "length" : 85.29309695597121,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920987542_1",
+    "length" : 47.848281604767486,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085151074_1",
+    "length" : 26.257499474814143,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1085151075_1",
+    "length" : 151.7984933719477,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE586900015_1",
+    "length" : 208.48129759208754,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE586900014_1",
+    "length" : 341.7795589897555,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920963271_1",
+    "length" : 194.05398793397995,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920963272_1",
+    "length" : 150.37910946834504,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52836344_1",
+    "length" : 387.6099085754649,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1289720612_1",
+    "length" : 25.011924824505922,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1289720613_1",
+    "length" : 165.29882898720945,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920963274_1",
+    "length" : 272.63719042362436,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562821923_1",
+    "length" : 1498.862424020422,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE586893466_1",
+    "length" : 128.8807663279349,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225300766_1",
+    "length" : 48.948076097553695,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225300767_1",
+    "length" : 62.23306012801981,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783165139_1",
+    "length" : 119.51260160426759,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562821924_1",
+    "length" : 34.62822579333767,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562821925_1",
+    "length" : 183.32468086085075,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE792367307_1",
+    "length" : 60.92560084854045,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE792367308_1",
+    "length" : 108.57052173561863,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE920963275_1",
+    "length" : 22.650189336703747,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1210719017_1",
+    "length" : 212.18189848659898,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1210719018_1",
+    "length" : 281.2133019697138,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE770438840_1",
+    "length" : 37.243643095217436,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE576294292_1",
+    "length" : 106.22399432363898,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1143172122_1",
+    "length" : 22.649862849797607,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1143172123_1",
+    "length" : 8.330695343822274,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1172530962_1",
+    "length" : 38.275230852343505,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1172530963_1",
+    "length" : 61.96088574692748,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783093348_1",
+    "length" : 115.37961875325504,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783093349_1",
+    "length" : 136.834414104859,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE67618558_1",
+    "length" : 35.19458711634866,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562821911_1",
+    "length" : 187.52960319009532,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1190047785_1",
+    "length" : 297.78812715154334,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1295737943_1",
+    "length" : 621.6900525693045,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562762232_1",
+    "length" : 313.17700848170915,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225281172_1",
+    "length" : 40.34969865157819,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225281173_1",
+    "length" : 40.09668963911895,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE64465322_1",
+    "length" : 67.19056246834249,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783093340_1",
+    "length" : 24.991034165173968,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783093341_1",
+    "length" : 13.016586166340923,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1074070974_1",
+    "length" : 61.69699775205626,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1210729848_1",
+    "length" : 68.47287744774654,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1210729849_1",
+    "length" : 135.40632366341288,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1126385243_1",
+    "length" : 51.577872445926694,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1126385244_1",
+    "length" : 167.51526485665687,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244452152_1",
+    "length" : 40.09708138953878,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244452153_1",
+    "length" : 182.7819909568648,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225297302_1",
+    "length" : 41.65323997225665,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225297303_1",
+    "length" : 26.04301441816296,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562821934_1",
+    "length" : 104.9161407147071,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1181633856_1",
+    "length" : 132.24450046007993,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1181633857_1",
+    "length" : 23.689162522645212,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244433599_1",
+    "length" : 33.32060832030944,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1244433600_1",
+    "length" : 36.96660629018257,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1198227516_1",
+    "length" : 111.44446991058041,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1181588761_1",
+    "length" : 17.70383314237299,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE67618368_1",
+    "length" : 101.00126690956779,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE67618369_1",
+    "length" : 627.3622158191233,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE554326496_1",
+    "length" : 38.01742091245737,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1181597677_1",
+    "length" : 48.67785919953192,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1181597678_1",
+    "length" : 57.00745150215464,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1210771281_1",
+    "length" : 21.345414465627503,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1210771282_1",
+    "length" : 38.00491314692621,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225281125_1",
+    "length" : 35.66226418670316,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225281126_1",
+    "length" : 98.92086805394776,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1210771280_1",
+    "length" : 28.63583560114798,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE979633792_1",
+    "length" : 1133.3244782195195,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  } ],
+  "direction" : "POSITIVE",
+  "firstOffset" : 28.0,
+  "lastOffset" : 28.0,
+  "length" : 21727.954871924783
+}
