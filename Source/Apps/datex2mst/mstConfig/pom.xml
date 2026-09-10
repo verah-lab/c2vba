@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.heuboe.datex2</groupId>
+ 	<artifactId>datex2MSTConfig</artifactId>
+	
+	<name>MST-Definition</name>
+	<description>Definition einer MST auf der Grundlage einer Datex2-Abbildungskonfiguration gemäß XML-Schema http://www.heuboe.de/mstConfig</description>
+	
+ 	<parent>
+		<groupId>de.heuboe.datex2.mst</groupId>
+	 	<artifactId>datex2MSTParent</artifactId>
+ 		<version>5.0.2</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+	
+	
+	<properties>
+		<additionalparam>-Xdoclint:none</additionalparam>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>datex2-schema-base</artifactId>
+			<version>${datex2.base.version}</version>
+			<exclusions>
+				<exclusion>
+				    <groupId>de.heuboe.base</groupId>
+				    <artifactId>jhbBase</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+   	
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>datex2-schema_2_3</artifactId>
+			<version>${datex2.base.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>datex2MeasureBase</artifactId>
+			<version>5.0.0</version>
+		</dependency> 
+		
+
+	</dependencies>
+
+	<build>
+	
+		<plugins>
+			<plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.14.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<schemaDirectory>src/main/resources/schema</schemaDirectory>
+                   <plugins>
+                       <plugin>
+                           <groupId>org.jvnet.jaxb2_commons</groupId>
+                           <artifactId>jaxb2-basics</artifactId>
+                           <version>0.11.1</version>
+                       </plugin>
+                   </plugins>
+					<episodes>
+						<episode>
+							<groupId>de.heuboe.datex2</groupId>
+							<artifactId>datex2-schema_2_3</artifactId>
+						</episode>
+					</episodes>
+				</configuration>
+				
+			</plugin>
+  
+		</plugins>
+	</build>
+
+   	
+
+</project>
