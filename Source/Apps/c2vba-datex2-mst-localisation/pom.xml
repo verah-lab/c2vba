@@ -1,0 +1,365 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<!-- parent -->
+	<parent>
+		<artifactId>wls-kernel-parent</artifactId>
+		<groupId>de.heuboe.wls</groupId>
+		<version>4.7.5</version>
+	</parent>
+	
+	<groupId>de.heuboe.by.c2vba</groupId>
+	<artifactId>c2vba-datex2-mst-localisation</artifactId>
+	<version>5.0.5</version>
+	
+	<name>C2VBA Datex2-MST-Localisation</name>
+		
+	<scm>  
+		<url>https://gitlab.heuboe.hbintern/SdbBy/c2vba-datex2-mst-localisation</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:SdbBy/c2vba-datex2-mst-localisation.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:SdbBy/c2vba-datex2-mst-localisation.git</developerConnection>
+    </scm>
+	
+	<properties>
+		<java.version>11</java.version>
+		<datex2.schema.version>1.3.4</datex2.schema.version>
+		<datex2.version>3.6.5</datex2.version>
+  		<datex2.wls.version>0.1.0</datex2.wls.version>
+		<datex2.builder.version>5.0.2</datex2.builder.version>
+		<cfg-svc-interface.version>1.16.19</cfg-svc-interface.version>
+  		<kafka-tools.version>0.1.8</kafka-tools.version>
+	</properties>
+
+	<dependencies>
+		
+	    <!--  JAXB, JAXWS dependencies -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jaxb</groupId>
+		    <artifactId>jaxb-runtime</artifactId>
+		</dependency>      
+		<dependency>
+    		<groupId>javax.xml.ws</groupId>
+    		<artifactId>jaxws-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>javax.jws</groupId>
+		    <artifactId>jsr181-api</artifactId>
+		    <version>1.0-MR1</version>
+		</dependency>		
+		
+		
+	    <!--  CXF dependencies -->
+		
+		<dependency>
+			<groupId>de.heuboe.asfinag</groupId>
+			<artifactId>vmis2-configservice-interface</artifactId>
+			<version>${cfg-svc-interface.version}</version>
+		</dependency>
+
+
+	    <dependency>
+	        <groupId>org.apache.cxf</groupId>
+	        <artifactId>cxf-tools-common</artifactId>
+	    </dependency>		
+	    
+   		<dependency>
+        	<groupId>org.apache.cxf</groupId>
+        	<artifactId>cxf-rt-transports-http-jetty</artifactId>
+    	</dependency>
+    	
+ 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+    		<groupId>org.apache.logging.log4j</groupId>
+	  		<artifactId>log4j-slf4j-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-jul</artifactId>
+		</dependency>
+    	
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbBase</artifactId>
+		</dependency>
+		
+		<!--  DATEX-II  -->
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>datex2-schema_2_3</artifactId>
+			<version>${datex2.schema.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+		 	<artifactId>datex2Base</artifactId>
+			<version>${datex2.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+		 	<artifactId>datex2-wls</artifactId>
+			<version>${datex2.wls.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+			<artifactId>mstLocServiceInterface</artifactId>
+			<version>${datex2.builder.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-iface</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-util</artifactId>
+			
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
+			
+		</dependency>
+
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-lib</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-roadmap</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-roadmap-lib</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>de.heuboe.db</groupId>
+					<artifactId>heuboe-mongoDB</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-geo-features-lib</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-tmc</artifactId>
+		</dependency>
+
+		<!--  Kafka  -->
+
+		<dependency>
+	    	<groupId>de.heuboe.kafka</groupId>
+			<artifactId>kafka-tools</artifactId>
+			<version>${kafka-tools.version}</version>
+	    </dependency>
+	    
+		<dependency>
+	        <groupId>de.heuboe.asfinag</groupId>
+		    <artifactId>vmis2-kafka-protopojo-converter</artifactId>
+		    <version>1.5.1</version>
+		</dependency>
+		
+		<!-- Spring -->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				
+			</exclusions>
+		</dependency>
+    	<dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
+		
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+		  	<groupId>net.devh</groupId>
+		  	<artifactId>grpc-client-spring-boot-starter</artifactId>
+		  	<version>2.10.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbRegressionTest</artifactId>
+			<version>0.2.8</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<executions>
+					<!-- Optional -->
+					<!-- Build a tar file to allow local inspection -->
+					<execution>
+						<id>docker-build-tar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>buildTar</goal>
+						</goals>
+					</execution>
+					<!-- Required -->
+					<!-- Upload the image to the registry -->
+					<execution>
+						<id>docker-build</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<from>
+						<!-- ${docker.registry} is set via settings.xml 
+						<image>${docker.registry}/adoptopenjdk/openjdk11:alpine-jre</image>
+						-->
+						<image>${docker.registry}/eclipse-temurin:17-jdk-alpine</image>
+					</from>
+					<to>
+						<!-- This change is important -->
+						<image>${docker.registry}/heuboe/by/c2vba/${project.artifactId}:${project.version}</image>
+					</to>
+					<container>
+						<jvmFlags>
+							<!-- Flags für Spring -->
+							<jvmFlag>--add-opens=java.base/java.lang=ALL-UNNAMED</jvmFlag>
+							<jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+							<jvmFlag>-Dspring.config.location=file:/config/</jvmFlag>
+							<!-- Do not add flags such as -Xmx2G or other parameters here that 
+								might be changed later on -->
+						</jvmFlags>
+						<mainClass>${mainClass}</mainClass>
+						<ports>
+							<!-- Ports with their function -->
+							<port>8080</port><!-- actuator -->
+						</ports>
+						<labels>
+							<version>${project.version}</version>
+							<build.timestamp>${maven.build.timestamp}</build.timestamp>
+							<!-- Metadata-derived from the git-commit-id-plugin -->
+							<git.tags>${git.tags}</git.tags>
+							<git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+							<git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+						</labels>
+						<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+						<filesModificationTime>${git.commit.time}</filesModificationTime>
+					</container>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<verbose>false</verbose>
+					<skipPoms>false</skipPoms>
+					<dateFormat>yyyy-MM-dd'T'HH:mm:ss'Z'</dateFormat><!-- Required for dockering -->
+					<dateFormatTimeZone>UTC</dateFormatTimeZone><!-- Required for dockering -->
+					<generateGitPropertiesFile>true</generateGitPropertiesFile>
+					<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+					<failOnNoGitDirectory>false</failOnNoGitDirectory>
+					<failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+					<excludeProperties>
+						<!-- Requested to be excluded by colleague -->
+						<excludeProperty>.*\.user\..*</excludeProperty>
+						<!-- same here and we already have other build information files -->
+						<excludeProperty>.*\.build\..*</excludeProperty>
+					</excludeProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	
+</project>

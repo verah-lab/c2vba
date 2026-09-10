@@ -1,0 +1,11 @@
+--
+-program=c2vba-datex2-mst-localisation 
+-user=postgres
+-passwd=postgres
+-special=pspsps
+-dbms=postgres
+-server=dbsrv9-2k12
+-db=by
+-env=sdbby-2k19:5599:by
+-wlsUrl=http://sdbby-2k19:8085/WebLocationServerSrv?wsdl
+-zqlSrvAddress=zqlServerProxy/dbsrv9-2k12/by/sdbby-2k19:5599:by
