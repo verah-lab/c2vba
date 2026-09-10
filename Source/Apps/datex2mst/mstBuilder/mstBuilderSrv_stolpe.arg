@@ -1,0 +1,27 @@
+-program=mstBuilderSrv
+-special=psTest
+-dbms=Oracle
+-db=
+-server=db9tcp
+-user=stolpe
+-passwd=stolpe
+-env=baba-vrz-w7v:5636:stolpe
+-ORBInitRef NameService=iioploc://baba-vrz-w7v:9936/NameService 
+-ORBSvcConfDirective "static Server_Strategy_Factory '-ORBconcurrency thread-per-connection'"
+-configSchemaLocation=config/mstConfig.xsd
+-definitionSchemaLocation=config/mstDefinition.xsd
+-lveBetriebsParamDatakind=DaLVEBetriebsParamSoll
+-d2Version=2.1_MDM
+-geodyn2WLSAddress=WlsProxy
+-useLocNameAsMsId
++log=1A1
++log=1B2
++log=1C1 
++log=1D1 
++log=1E1 
++log=1F2 
++log=1G1
++log=1H1 
+--
+
+

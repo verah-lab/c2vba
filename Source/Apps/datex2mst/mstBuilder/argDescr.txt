@@ -1,0 +1,7 @@
+appl			Applikationsname
+db				Datenbankname
+dbserver		Datenbankserver
+env				Geodyn2-Systemumgebung
+usr				DB-Benutzer
+pwd				DB-Passwort
+special			Prozess-Variante

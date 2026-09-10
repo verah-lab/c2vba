@@ -1,0 +1,23 @@
+ToDo:
+
+4. Location-Informationen RDS-Info) in einem CORBA-Call anfordern
+
+6. Fehler-Behandlung überprüfen.
+
+10. Bei einem reinen Road-Filter vor der Location-Instanziierung prüfen,
+    ob Location-Id zu den filter-matchenden IDs gehört.
+
+
+Erledigt:
+
+1. Status-Datensätze schreiben
+
+2. Test-Client anlegen
+
+3. XML-Konfiguration vervollständigen
+
+5. Fraction-Locations zu einer Location zusammenfassen
+
+7. Ungültigkeitswerte der FG3-Datenarten überprüfen.
+
+

@@ -1,0 +1,23 @@
+-program=mstBuilderSrv
+-special=psTest
+-db=vzhdb03
+-server=hedb-w7v
+-user=postgres
+-passwd=postgres
+-env=he1-w7v:5623:vzh
+-ORBInitRef NameService=iioploc://he1-w7v:9923/NameService 
+-ORBSvcConfDirective "static Server_Strategy_Factory '-ORBconcurrency thread-per-connection'"
+-configSchemaLocation=config/mstConfig.xsd
+-definitionSchemaLocation=config/mstDefinition.xsd
+-d2Version=2.0RC2
++log=1A1
++log=1B2
++log=1C1 
++log=1D1 
++log=1E1 
++log=1F2 
++log=1G1
++log=1H1 
+--
+
+
