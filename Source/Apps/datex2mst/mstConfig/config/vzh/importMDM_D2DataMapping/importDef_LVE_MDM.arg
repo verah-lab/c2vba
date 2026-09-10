@@ -1,0 +1,12 @@
+-user=postgres
+-passwd=postgres
+-special=ps
+-dbms=postgres
+-server=dbsrv9-2k12
+-db=vzhdb04
+-env=he2-w7v:5623:vzh 
+-mstId=LVE_MDM
+-d2Version=2.1_MDM
+-schemaFile=MDM-Profile_MeasurementSiteTable_Ext_V_Q.xsd
+--
+

@@ -1,0 +1,11 @@
+-program=CLOBImporter
+-user=postgres
+-passwd=postgres
+-special=ps
+-dbms=postgres
+-server=dbsrv7-2k8
+-db=vzhdb04
+-datakind=datex2MSTConfig
+-clobFileDir=D:/vzh/binScript/importMDM_D2DataMapping/data
+-clobFilePattern=mstConfigMDM*.xml
+-clobColumn=defPart

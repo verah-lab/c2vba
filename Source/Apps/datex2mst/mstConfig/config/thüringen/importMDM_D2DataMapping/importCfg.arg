@@ -1,0 +1,11 @@
+-program=CLOBImporter
+-special=importD2Cfg
+-user=stolpe 
+-passwd=stolpe 
+-program=D2MDPPubBuilder 
+-dbms=oracle 
+-env=baba-vrz-w7v:5636:stolpe 
+-db=
+-server=db9tcp
+-d2Version=2.1_MDM
+-xmlCfgFile=data\mstConfig.xml

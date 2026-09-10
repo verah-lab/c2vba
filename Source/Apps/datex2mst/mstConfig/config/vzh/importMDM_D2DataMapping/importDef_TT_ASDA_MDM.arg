@@ -1,0 +1,13 @@
+-user=postgres
+-passwd=postgres
+-special=vh
+-dbms=postgres
+-server=dbsrv7-2k8
+-db=vzhdb04
+-env=he2-w7v:5623:vzh 
+-mstId=TT_ASDA_MDM
+-d2Version=2.1_MDM
+-schemaFile=MDM-Profile_MeasurementSiteTable_Ext_TT.xsd
+--
+
+

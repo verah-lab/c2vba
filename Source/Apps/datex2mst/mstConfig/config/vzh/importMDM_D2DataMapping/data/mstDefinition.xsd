@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:def="http://www.heuboe.de/mst/definition" targetNamespace="http://www.heuboe.de/mst/definition"
+	xmlns:cfg="http://www.heuboe.de/mst.config" 
+	elementFormDefault="qualified">
+
+	<xs:import
+		namespace="http://www.heuboe.de/mst/config" 
+		schemaLocation="mstConfig.xsd"
+	/>
+	
+	<xs:element name="mstDefinition" type="def:MstDefinition"/>
+
+      <xs:complexType name="MstEntry">
+        <xs:sequence>
+          <xs:element name="datakindName" type="xs:string"/>
+          <xs:element name="column" type="xs:string"/>
+          <xs:element name="columnCharacteristic" type="xs:string" minOccurs="0"/>
+          <xs:element name="validInterval" type="xs:int"/>
+
+<!--  
+      Columns may hold aggregated values of different periods.
+      Period selection is done here 
+-->
+          <xs:element name="period" type="xs:int" minOccurs="0"/>
+          <xs:element name="filterColumn" type="xs:string" minOccurs="0"/>
+          <xs:element name="filterValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="MstEntries">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="def:MstEntry"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="subObjNames">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="item" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="MstObjFilter">
+        <xs:sequence>
+          <xs:element name="referenceType" type="xs:string" minOccurs="0"/>
+          <xs:element name="type" type="xs:string" minOccurs="0"/>
+          <xs:element name="id" type="xs:string"/>
+          <xs:element name="subObjIds" type="def:subObjNames" minOccurs="0"/>
+        </xs:sequence>   
+ 	<xs:attribute name="exclusive" type="xs:boolean" default="false" />
+
+      </xs:complexType>
+
+<!--	  
+      <xs:complexType name="MstObjFilter">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string"/>
+          <xs:element name="subObjIds" type="def:subObjNames" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+-->      
+      <xs:complexType name="MstObjFilters">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="def:MstObjFilter"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="MstRoadFilter">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="startOffset" type="xs:int"/>
+          <xs:element name="endOffset" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="MstRoadFilters">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="def:MstRoadFilter"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="MstFilter">
+        <xs:sequence>
+          <xs:element name="subObjType" type="xs:string" minOccurs="0"/>
+          <xs:element name="objFilters" type="def:MstObjFilters" minOccurs="0"/>
+          <xs:element name="roadFilters" type="def:MstRoadFilters" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="MstDefinition">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element name="defVersion" type="xs:string"/>
+          <xs:element name="lclVersion" type="xs:string" minOccurs="0"/>
+		  
+		  <!-- Valid values: qkurz, qname  -->
+          <xs:element name="qNameMode" type="xs:string" minOccurs="0"/>
+		  
+          <xs:element name="columnEntries" type="def:MstEntries"/>
+          <xs:element name="filter" type="def:MstFilter" minOccurs="0"/>
+          <xs:element name="active" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="MstDefinitionList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="def:MstDefinition"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+	
+</xs:schema>

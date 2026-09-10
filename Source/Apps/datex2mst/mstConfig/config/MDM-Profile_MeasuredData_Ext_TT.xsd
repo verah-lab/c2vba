@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" version="2.1" targetNamespace="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="_ExtensionType">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_MeasuredValueExtensionType">
+    <xs:sequence>
+      <xs:element name="additionalMeasuredValues" type="D2LogicalModel:AdditionalMeasuredValues" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_MeasurementSiteRecordVersionedReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:VersionedReference">
+        <xs:attribute name="targetClass" use="required" fixed="MeasurementSiteRecord" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="_MeasurementSiteTableVersionedReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:VersionedReference">
+        <xs:attribute name="targetClass" use="required" fixed="MeasurementSiteTable" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="_SiteMeasurementsIndexMeasuredValue">
+    <xs:sequence>
+      <xs:element name="measuredValue" type="D2LogicalModel:MeasuredValue" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_TrafficSpeedExtensionType">
+    <xs:sequence>
+      <xs:element name="trafficSpeedExtended" type="D2LogicalModel:TrafficSpeedExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdditionalMeasuredValues">
+    <xs:annotation>
+      <xs:documentation>provides the possibility to tansfer more than one data-value per time</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="basicData" type="D2LogicalModel:BasicData" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BasicData" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Generic data that is either measured or calculated (elaborated) at the same time or over the same time period.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="measurementOrCalculationPeriod" type="D2LogicalModel:Seconds" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The time elapsed between the beginning and the end of the sampling or measurement period. This item may differ from the unit attribute; e.g. an hourly flow can be estimated from a 5-minute measurement period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="basicDataExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Boolean">
+    <xs:annotation>
+      <xs:documentation>Boolean has the value space required to support the mathematical concept of binary-valued logic: {true, false}. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="ComputationMethodEnum">
+    <xs:annotation>
+      <xs:documentation>Types of computational methods used in deriving data values for data sets.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="arithmeticAverageOfSamplesBasedOnAFixedNumberOfSamples">
+        <xs:annotation>
+          <xs:documentation>Arithmetic average of sample values based on a fixed number of samples.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="arithmeticAverageOfSamplesInATimePeriod">
+        <xs:annotation>
+          <xs:documentation>Arithmetic average of sample values in a time period.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="harmonicAverageOfSamplesInATimePeriod">
+        <xs:annotation>
+          <xs:documentation>Harmonic average of sample values in a time period.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="medianOfSamplesInATimePeriod">
+        <xs:annotation>
+          <xs:documentation>Median of sample values taken over a time period.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="movingAverageOfSamples">
+        <xs:annotation>
+          <xs:documentation>Moving average of sample values.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ConfidentialityValueEnum">
+    <xs:annotation>
+      <xs:documentation>Values of confidentiality.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="noRestriction">
+        <xs:annotation>
+          <xs:documentation>No restriction on usage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CountryEnum">
+    <xs:annotation>
+      <xs:documentation>List of countries.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="at">
+        <xs:annotation>
+          <xs:documentation>Austria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="be">
+        <xs:annotation>
+          <xs:documentation>Belgium</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bg">
+        <xs:annotation>
+          <xs:documentation>Bulgaria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ch">
+        <xs:annotation>
+          <xs:documentation>Switzerland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cs">
+        <xs:annotation>
+          <xs:documentation>Serbia and Montenegro</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cy">
+        <xs:annotation>
+          <xs:documentation>Cyprus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cz">
+        <xs:annotation>
+          <xs:documentation>Czech Republic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="de">
+        <xs:annotation>
+          <xs:documentation>Germany</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dk">
+        <xs:annotation>
+          <xs:documentation>Denmark</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ee">
+        <xs:annotation>
+          <xs:documentation>Estonia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="es">
+        <xs:annotation>
+          <xs:documentation>Spain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fi">
+        <xs:annotation>
+          <xs:documentation>Finland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fo">
+        <xs:annotation>
+          <xs:documentation>Faroe Islands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fr">
+        <xs:annotation>
+          <xs:documentation>France</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gb">
+        <xs:annotation>
+          <xs:documentation>Great Britain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gg">
+        <xs:annotation>
+          <xs:documentation>Guernsey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gi">
+        <xs:annotation>
+          <xs:documentation>Gibraltar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gr">
+        <xs:annotation>
+          <xs:documentation>Greece</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hr">
+        <xs:annotation>
+          <xs:documentation>Croatia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hu">
+        <xs:annotation>
+          <xs:documentation>Hungary</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ie">
+        <xs:annotation>
+          <xs:documentation>Ireland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="im">
+        <xs:annotation>
+          <xs:documentation>Isle Of Man</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="is">
+        <xs:annotation>
+          <xs:documentation>Iceland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="it">
+        <xs:annotation>
+          <xs:documentation>Italy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="je">
+        <xs:annotation>
+          <xs:documentation>Jersey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="li">
+        <xs:annotation>
+          <xs:documentation>Lichtenstein</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lt">
+        <xs:annotation>
+          <xs:documentation>Lithuania</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lu">
+        <xs:annotation>
+          <xs:documentation>Luxembourg</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lv">
+        <xs:annotation>
+          <xs:documentation>Latvia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ma">
+        <xs:annotation>
+          <xs:documentation>Morocco</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mc">
+        <xs:annotation>
+          <xs:documentation>Monaco</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mk">
+        <xs:annotation>
+          <xs:documentation>Macedonia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mt">
+        <xs:annotation>
+          <xs:documentation>Malta</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nl">
+        <xs:annotation>
+          <xs:documentation>Netherlands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="no">
+        <xs:annotation>
+          <xs:documentation>Norway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pl">
+        <xs:annotation>
+          <xs:documentation>Poland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pt">
+        <xs:annotation>
+          <xs:documentation>Portugal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ro">
+        <xs:annotation>
+          <xs:documentation>Romania</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="se">
+        <xs:annotation>
+          <xs:documentation>Sweden</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="si">
+        <xs:annotation>
+          <xs:documentation>Slovenia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sk">
+        <xs:annotation>
+          <xs:documentation>Slovakia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sm">
+        <xs:annotation>
+          <xs:documentation>San Marino</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tr">
+        <xs:annotation>
+          <xs:documentation>Turkey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="va">
+        <xs:annotation>
+          <xs:documentation>Vatican City State</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Other than as defined in this enumeration.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="d2LogicalModel" type="D2LogicalModel:D2LogicalModel" />
+  <xs:complexType name="D2LogicalModel">
+    <xs:annotation>
+      <xs:documentation>The DATEX II logical model comprising exchange, content payload and management sub-models.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="exchange" type="D2LogicalModel:Exchange" />
+      <xs:element name="payloadPublication" type="D2LogicalModel:PayloadPublication" minOccurs="0" />
+      <xs:element name="d2LogicalModelExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="modelBaseVersion" use="required" fixed="2" />
+    <xs:attribute name="extensionName" use="optional" default="MDM Messwerte dynamisch" />
+    <xs:attribute name="extensionVersion" use="optional" default="02-00-00" />
+  </xs:complexType>
+  <xs:complexType name="DataValue" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data value of something that can be measured or calculated. Any provided meta-data values specified in the attributes override any specified generic characteristics such as defined for a specific measurement in the MeasurementSiteTable. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="dataError" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Indication of whether the value is deemed to be erroneous by the supplier, (true = erroneous). If not present the data value is assumed to be ok. This may be used when automatic fault detection information relating to sensors is available.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reasonForDataError" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The reason why the value is deemed to be erroneous by the supplier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dataValueExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="accuracy" type="D2LogicalModel:Percentage" use="optional">
+      <xs:annotation>
+        <xs:documentation>The extent to which the value may be subject to error, measured as a percentage of the data value.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:simpleType name="DateTime">
+    <xs:annotation>
+      <xs:documentation>A combination of integer-valued year, month, day, hour, minute properties, a decimal-valued second property and a time zone property from which it is possible to determine the local time, the equivalent UTC time and the time zone offset from UTC.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  
+  <xs:simpleType name="DenyReasonEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unknownReason" />
+      <xs:enumeration value="wrongCatalogue" />
+      <xs:enumeration value="wrongFilter" />
+      <xs:enumeration value="wrongOrder" />
+      <xs:enumeration value="wrongPartner" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="ResponseEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="acknowledge" />
+      <xs:enumeration value="catalogueRequestDenied" />
+      <xs:enumeration value="filterRequestDenied" />
+      <xs:enumeration value="requestDenied" />
+      <xs:enumeration value="subscriptionRequestDenied" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="Exchange">
+    <xs:annotation>
+      <xs:documentation>Details associated with the management of the exchange between the supplier and the client.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="denyReason" type="D2LogicalModel:DenyReasonEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="response" type="D2LogicalModel:ResponseEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplierIdentification" type="D2LogicalModel:InternationalIdentifier" />
+      <xs:element name="exchangeExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Float">
+    <xs:annotation>
+      <xs:documentation>A floating point number whose value space consists of the values m × 2^e, where m is an integer whose absolute value is less than 2^24, and e is an integer between -149 and 104, inclusive.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:float" />
+  </xs:simpleType>
+  <xs:complexType name="HeaderInformation">
+    <xs:annotation>
+      <xs:documentation>Management information relating to the data contained within a publication.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="confidentiality" type="D2LogicalModel:ConfidentialityValueEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The extent to which the related information may be circulated, according to the recipient type. Recipients must comply with this confidentiality statement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="informationStatus" type="D2LogicalModel:InformationStatusEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The status of the related information (real, test, exercise ....).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="headerInformationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="InformationStatusEnum">
+    <xs:annotation>
+      <xs:documentation>Status of the related information (i.e. real, test or exercise).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="real">
+        <xs:annotation>
+          <xs:documentation>The information is real. It is not a test or exercise.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="test">
+        <xs:annotation>
+          <xs:documentation>The information is part of a test for checking the exchange of this type of information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InternationalIdentifier">
+    <xs:annotation>
+      <xs:documentation>An identifier/name whose range is specific to the particular country.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="country" type="D2LogicalModel:CountryEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ISO 3166-1 two character country code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nationalIdentifier" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifier or name unique within the specified country.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="internationalIdentifierExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="KilometresPerHour">
+    <xs:annotation>
+      <xs:documentation>A measure of speed defined in kilometres per hour.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:simpleType name="Language">
+    <xs:annotation>
+      <xs:documentation>A language datatype, identifies a specified language by an ISO 639-1 2-alpha / ISO 639-2 3-alpha code.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:language" />
+  </xs:simpleType>
+  <xs:complexType name="MeasuredDataPublication">
+    <xs:annotation>
+      <xs:documentation>A publication containing one or more measurement data sets, each set being measured at a single measurement site.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:PayloadPublication">
+        <xs:sequence>
+          <xs:element name="measurementSiteTableReference" type="D2LogicalModel:_MeasurementSiteTableVersionedReference" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A reference to a versioned Measurement Site table.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="headerInformation" type="D2LogicalModel:HeaderInformation" />
+          <xs:element name="siteMeasurements" type="D2LogicalModel:SiteMeasurements" maxOccurs="unbounded" />
+          <xs:element name="measuredDataPublicationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeasuredValue">
+    <xs:annotation>
+      <xs:documentation>Contains optional characteristics for the specific measured value (indexed to correspond with the defined characteristics of the measurement at the referenced measurement site) which override the static characteristics defined in the MeasurementSiteTable.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="basicData" type="D2LogicalModel:BasicData" minOccurs="0" />
+      <xs:element name="measuredValueExtension" type="D2LogicalModel:_MeasuredValueExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultilingualString">
+    <xs:sequence>
+      <xs:element name="values">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value" type="D2LogicalModel:MultilingualStringValue" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultilingualStringValue">
+    <xs:simpleContent>
+      <xs:extension base="D2LogicalModel:MultilingualStringValueType">
+        <xs:attribute name="lang" type="xs:language" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MultilingualStringValueType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NonNegativeInteger">
+    <xs:annotation>
+      <xs:documentation>An integer number whose value space is the set {0, 1, 2, ..., 2147483645, 2147483646, 2147483647}.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="PayloadPublication" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A payload publication of traffic related information or associated management information created at a specific point in time that can be exchanged via a DATEX II interface.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="publicationTime" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Date/time at which the payload publication was created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="publicationCreator" type="D2LogicalModel:InternationalIdentifier" />
+      <xs:element name="payloadPublicationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="lang" type="D2LogicalModel:Language" use="required">
+      <xs:annotation>
+        <xs:documentation>The default language used throughout the payload publication.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:simpleType name="Percentage">
+    <xs:annotation>
+      <xs:documentation>A measure of percentage.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:complexType name="PercentageValue">
+    <xs:annotation>
+      <xs:documentation>A measured or calculated value expressed as a percentage.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DataValue">
+        <xs:sequence>
+          <xs:element name="percentage" type="D2LogicalModel:Percentage" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A value expressed as a percentage.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="percentageValueExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="Seconds">
+    <xs:annotation>
+      <xs:documentation>Seconds.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:complexType name="SiteMeasurements">
+    <xs:annotation>
+      <xs:documentation>A  measurement data set derived from a specific measurement site.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="measurementSiteReference" type="D2LogicalModel:_MeasurementSiteRecordVersionedReference" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference to a versioned measurement site record defined in a Measurement Site table.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measurementTimeDefault" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The time associated with the set of measurements. It may be the time of the beginning, the end or the middle of the measurement period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measuredValue" type="D2LogicalModel:_SiteMeasurementsIndexMeasuredValue" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Composition to the indexed measured value associated with the measurement site. The index uniquely associates the measurement value with the corresponding indexed measurement characteristics defined for the measurement site.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="siteMeasurementsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpeedValue">
+    <xs:annotation>
+      <xs:documentation>A measured or calculated value of speed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DataValue">
+        <xs:sequence>
+          <xs:element name="speed" type="D2LogicalModel:KilometresPerHour" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A value of speed expressed in kilometres per hour.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="speedValueExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="String">
+    <xs:annotation>
+      <xs:documentation>A character string whose value space is the set of finite-length sequences of characters. Every character has a corresponding Universal Character Set code point (as defined in ISO/IEC 10646), which is an integer.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TrafficConcentration">
+    <xs:annotation>
+      <xs:documentation>Averaged measurements or calculations of traffic concentration.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TrafficData">
+        <xs:sequence>
+          <xs:element name="occupancy" type="D2LogicalModel:PercentageValue" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An averaged measurement or calculation of the percentage of time that a section of road at the specified measurement site is occupied by vehicles.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trafficConcentrationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TrafficData" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Measured or derived values relating to traffic or individual vehicle movements on a specific section or at a specific point on the road network.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:BasicData">
+        <xs:sequence>
+          <xs:element name="forVehiclesWithCharacteristicsOf" type="D2LogicalModel:VehicleCharacteristics" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Used to define the vehicle characteristics to which the TrafficValue is applicable primarily in Elaborated Data Publications, but may also be used in Measured Data Publications to override vehicle characteristics defined for the measurement site.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trafficDataExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TrafficFlow">
+    <xs:annotation>
+      <xs:documentation>Averaged measurements or calculations of traffic flow rates.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TrafficData">
+        <xs:sequence>
+          <xs:element name="vehicleFlow" type="D2LogicalModel:VehicleFlowValue" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An averaged measurement of flow rate defined in terms of the number of vehicles passing the specified measurement site.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trafficFlowExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TrafficSpeed">
+    <xs:annotation>
+      <xs:documentation>Averaged measurements or calculations of traffic speed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TrafficData">
+        <xs:sequence>
+          <xs:element name="averageVehicleSpeed" type="D2LogicalModel:SpeedValue" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An averaged measurement or calculation of the speed of vehicles at the specified location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trafficSpeedExtension" type="D2LogicalModel:_TrafficSpeedExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TrafficSpeedExtended">
+    <xs:annotation>
+      <xs:documentation>Extension class that adds min/max speed to the average speed measurement of level A</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="minVehicleSpeed" type="D2LogicalModel:SpeedValue" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>A minimum measurement or calculation of the speed of vehicles at the specified location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="maxVehicleSpeed" type="D2LogicalModel:SpeedValue" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>A maximum measurement or calculation of the speed of vehicles at the specified location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VehicleCharacteristics">
+    <xs:annotation>
+      <xs:documentation>The characteristics of a vehicle, e.g. lorry of gross weight greater than 30 tonnes.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="vehicleType" type="D2LogicalModel:VehicleTypeEnum" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vehicle type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="vehicleCharacteristicsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VehicleFlowValue">
+    <xs:annotation>
+      <xs:documentation>A measured or calculated value of the flow rate of vehicles.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DataValue">
+        <xs:sequence>
+          <xs:element name="vehicleFlowRate" type="D2LogicalModel:VehiclesPerHour" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A value of vehicle flow rate expressed in vehicles per hour.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="vehicleFlowValueExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="VehiclesPerHour">
+    <xs:annotation>
+      <xs:documentation>Vehicles per hour.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:simpleType name="VehicleTypeEnum">
+    <xs:annotation>
+      <xs:documentation>Types of vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="anyVehicle">
+        <xs:annotation>
+          <xs:documentation>Vehicle of any type.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="articulatedVehicle">
+        <xs:annotation>
+          <xs:documentation>Articulated vehicle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bicycle">
+        <xs:annotation>
+          <xs:documentation>Bicycle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bus">
+        <xs:annotation>
+          <xs:documentation>Bus.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="car">
+        <xs:annotation>
+          <xs:documentation>Car.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="carOrLightVehicle">
+        <xs:annotation>
+          <xs:documentation>Car or light vehicle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="carWithTrailer">
+        <xs:annotation>
+          <xs:documentation>Car towing a trailer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lorry">
+        <xs:annotation>
+          <xs:documentation>Lorry of any type.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="motorcycle">
+        <xs:annotation>
+          <xs:documentation>Motorcycle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="van">
+        <xs:annotation>
+          <xs:documentation>Van.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vehicleWithTrailer">
+        <xs:annotation>
+          <xs:documentation>Vehicle (of unspecified type) towing a trailer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VersionedReference">
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  
+  
+   <xs:complexType name="DurationValue">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DataValue">
+        <xs:sequence>
+          <xs:element name="duration" type="D2LogicalModel:Seconds" minOccurs="1" maxOccurs="1" />
+          <xs:element name="durationValueExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+ 
+
+  <xs:simpleType name="TravelTimeTrendTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="decreasing" />
+      <xs:enumeration value="increasing" />
+      <xs:enumeration value="stable" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+   <xs:simpleType name="TravelTimeTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="best" />
+      <xs:enumeration value="estimated" />
+      <xs:enumeration value="instantaneous" />
+      <xs:enumeration value="reconstituted" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+   <xs:complexType name="TravelTimeData">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:BasicData">
+        <xs:sequence>
+          <xs:element name="travelTimeTrendType" type="D2LogicalModel:TravelTimeTrendTypeEnum" minOccurs="0" maxOccurs="1" />
+          <xs:element name="travelTimeType" type="D2LogicalModel:TravelTimeTypeEnum" minOccurs="0" maxOccurs="1" />
+          <xs:element name="vehicleType" type="D2LogicalModel:VehicleTypeEnum" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="travelTime" type="D2LogicalModel:DurationValue" minOccurs="0" />
+          <xs:element name="freeFlowTravelTime" type="D2LogicalModel:DurationValue" minOccurs="0" />
+          <xs:element name="normallyExpectedTravelTime" type="D2LogicalModel:DurationValue" minOccurs="0" />
+          <xs:element name="freeFlowSpeed" type="D2LogicalModel:SpeedValue" minOccurs="0" />
+          <xs:element name="travelTimeDataExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+ 
+  
+  
+  
+</xs:schema>
