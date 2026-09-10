@@ -1,0 +1,12 @@
+ToDo:
+-----
+
+1) Manager: nicht zyklisch
+
+Benachrichtigung:   update( List<D2Strategy> ),  snapshot() 
+
+
+
+
+Done:
+-----

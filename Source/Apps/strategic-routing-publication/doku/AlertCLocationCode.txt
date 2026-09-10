@@ -1,0 +1,29 @@
+	Code zur Erzeugung der AlertC-Verortung von Routen: 
+	
+	
+	private void setTriggerLocation( de.heuboe.wls.data.wls.Location triggerLocation, 
+								     Location d2TriggerLocation )
+			throws SRPException					     
+	{
+/*		
+		// ### Assume coordinate location
+		
+		Point point = (Point)d2TriggerLocation;  // NOSONAR
+		point.setPointByCoordinates( null );
+		
+		AlertCMethod4Point alertCPoint = (AlertCMethod4Point)point.getAlertCPoint(); 
+		alertCPoint.setAlertCLocationTableVersion( Parameter.instance().getLCLVersion() );
+		
+		AlertCMethod4PrimaryPointLocation alertCM4Location = alertCPoint.getAlertCMethod4PrimaryPointLocation();
+		AlertCLocation alcLoc = alertCM4Location.getAlertCLocation();
+		
+		
+		// @@@ alertCLocation.setAlertCLocationName( "" ); // NOSONAR
+		Integer ac = Integer.getInteger( strategyLocation.getAreaCode() );
+		alcLoc.setSpecificLocation( BigInteger.valueOf( ac ) );
+
+		alertCPoint.setAlertCMethod4PrimaryPointLocation( alertCM4Location );
+*/		
+		
+		// @@@ alertCLocation.setAlertCLocationName( "" );
+		

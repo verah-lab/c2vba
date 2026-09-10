@@ -1,0 +1,17 @@
+-user=postgres 
+-program=VmsPublisher 
+-passwd=postgres 
+-dbms=postgres 
+-env=sdbby-w7v:5599:by 
+-db=by 
+-server=dbsrv9-2k12 
+-special=psTest
+-fileDir=F:/sdbby/srp
+-checkInterval=1000
+-publicationMode=OnUpdateCyclicSnapshot
+-pubInterval=30
+-datex2Target=peter
+-wlsUrl=http://sdbby-w7v.heuboe.hbintern:8085/WebLocationServerSrv?wsdl
+-sdbbyUrl=http://sdbby-w7v.heuboe.hbintern:8123/SdbbyService
+-d2ReceiverURL=http://sdbby-w7v:5717/D2PushReceiver
+--
