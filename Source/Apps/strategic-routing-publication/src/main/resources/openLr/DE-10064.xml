@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<strategicRouteManagement xmlns="http://datex2.eu/schema/2/2_0">
+    <nameOfRouteManagement>
+        <values>
+            <value lang="de">DE-10064</value>
+        </values>
+    </nameOfRouteManagement>
+    <triggerOrigin>
+        <triggerDescription></triggerDescription>
+        <location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Point">
+            <pointExtension>
+                <openlrExtendedPoint>
+                    <openlrPointLocationReference>
+                        <openlrGeoCoordinate>
+                            <openlrCoordinate>
+<latitude>48.199017</latitude>
+<longitude>11.436568</longitude>
+                            </openlrCoordinate>
+                        </openlrGeoCoordinate>
+                        <openlrPointAlongLine>
+                            <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+                            <openlrOrientation>withLineDirection</openlrOrientation>
+                            <openlrPositiveOffset>1017</openlrPositiveOffset>
+                            <openlrLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.20442</latitude>
+    <longitude>11.4462</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>262</openlrBearing>
+</openlrLineAttributes>
+<openlrPathAttributes>
+    <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+    <openlrDistanceToNextLRPoint>2753</openlrDistanceToNextLRPoint>
+</openlrPathAttributes>
+                            </openlrLocationReferencePoint>
+                            <openlrLastLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.1838</latitude>
+    <longitude>11.43458</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>26</openlrBearing>
+</openlrLineAttributes>
+                            </openlrLastLocationReferencePoint>
+                        </openlrPointAlongLine>
+                    </openlrPointLocationReference>
+                </openlrExtendedPoint>
+            </pointExtension>
+        </location>
+    </triggerOrigin>
+    <triggerOrigin>
+        <triggerDescription></triggerDescription>
+        <location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Point">
+            <pointExtension>
+                <openlrExtendedPoint>
+                    <openlrPointLocationReference>
+                        <openlrGeoCoordinate>
+                            <openlrCoordinate>
+<latitude>48.19097</latitude>
+<longitude>11.417656</longitude>
+                            </openlrCoordinate>
+                        </openlrGeoCoordinate>
+                        <openlrPointAlongLine>
+                            <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+                            <openlrOrientation>withLineDirection</openlrOrientation>
+                            <openlrPositiveOffset>447</openlrPositiveOffset>
+                            <openlrLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.19378</latitude>
+    <longitude>11.41333</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>134</openlrBearing>
+</openlrLineAttributes>
+<openlrPathAttributes>
+    <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+    <openlrDistanceToNextLRPoint>1740</openlrDistanceToNextLRPoint>
+</openlrPathAttributes>
+                            </openlrLocationReferencePoint>
+                            <openlrLastLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.18279</latitude>
+    <longitude>11.43005</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>315</openlrBearing>
+</openlrLineAttributes>
+                            </openlrLastLocationReferencePoint>
+                        </openlrPointAlongLine>
+                    </openlrPointLocationReference>
+                </openlrExtendedPoint>
+            </pointExtension>
+        </location>
+    </triggerOrigin>
+    <triggerOrigin>
+        <triggerDescription></triggerDescription>
+        <location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Point">
+            <pointExtension>
+                <openlrExtendedPoint>
+                    <openlrPointLocationReference>
+                        <openlrGeoCoordinate>
+                            <openlrCoordinate>
+<latitude>48.168205</latitude>
+<longitude>11.452631</longitude>
+                            </openlrCoordinate>
+                        </openlrGeoCoordinate>
+                        <openlrPointAlongLine>
+                            <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+                            <openlrOrientation>withLineDirection</openlrOrientation>
+                            <openlrPositiveOffset>190</openlrPositiveOffset>
+                            <openlrLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.16716</latitude>
+    <longitude>11.45462</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>305</openlrBearing>
+</openlrLineAttributes>
+<openlrPathAttributes>
+    <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+    <openlrDistanceToNextLRPoint>1728</openlrDistanceToNextLRPoint>
+</openlrPathAttributes>
+                            </openlrLocationReferencePoint>
+                            <openlrLastLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.17788</latitude>
+    <longitude>11.43779</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>136</openlrBearing>
+</openlrLineAttributes>
+                            </openlrLastLocationReferencePoint>
+                        </openlrPointAlongLine>
+                    </openlrPointLocationReference>
+                </openlrExtendedPoint>
+            </pointExtension>
+        </location>
+    </triggerOrigin>
+    <triggerDestination>
+        <triggerDescription></triggerDescription>
+        <location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Point">
+            <pointExtension>
+                <openlrExtendedPoint>
+                    <openlrPointLocationReference>
+                        <openlrGeoCoordinate>
+                            <openlrCoordinate>
+<latitude>48.142014</latitude>
+<longitude>11.395057</longitude>
+                            </openlrCoordinate>
+                        </openlrGeoCoordinate>
+                        <openlrPointAlongLine>
+                            <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+                            <openlrOrientation>withLineDirection</openlrOrientation>
+                            <openlrPositiveOffset>155</openlrPositiveOffset>
+                            <openlrLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.14336</latitude>
+    <longitude>11.39451</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>167</openlrBearing>
+</openlrLineAttributes>
+<openlrPathAttributes>
+    <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+    <openlrDistanceToNextLRPoint>511</openlrDistanceToNextLRPoint>
+</openlrPathAttributes>
+                            </openlrLocationReferencePoint>
+                            <openlrLastLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.13899</latitude>
+    <longitude>11.39664</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>341</openlrBearing>
+</openlrLineAttributes>
+                            </openlrLastLocationReferencePoint>
+                        </openlrPointAlongLine>
+                    </openlrPointLocationReference>
+                </openlrExtendedPoint>
+            </pointExtension>
+        </location>
+    </triggerDestination>
+    <triggerDestination>
+        <triggerDescription></triggerDescription>
+        <location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Point">
+            <pointExtension>
+                <openlrExtendedPoint>
+                    <openlrPointLocationReference>
+                        <openlrGeoCoordinate>
+                            <openlrCoordinate>
+<latitude>48.142014</latitude>
+<longitude>11.395057</longitude>
+                            </openlrCoordinate>
+                        </openlrGeoCoordinate>
+                        <openlrPointAlongLine>
+                            <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+                            <openlrOrientation>withLineDirection</openlrOrientation>
+                            <openlrPositiveOffset>156</openlrPositiveOffset>
+                            <openlrLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.14336</latitude>
+    <longitude>11.39451</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>167</openlrBearing>
+</openlrLineAttributes>
+<openlrPathAttributes>
+    <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+    <openlrDistanceToNextLRPoint>511</openlrDistanceToNextLRPoint>
+</openlrPathAttributes>
+                            </openlrLocationReferencePoint>
+                            <openlrLastLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.13899</latitude>
+    <longitude>11.39664</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>341</openlrBearing>
+</openlrLineAttributes>
+                            </openlrLastLocationReferencePoint>
+                        </openlrPointAlongLine>
+                    </openlrPointLocationReference>
+                </openlrExtendedPoint>
+            </pointExtension>
+        </location>
+    </triggerDestination>
+    <triggerDestination>
+        <triggerDescription></triggerDescription>
+        <location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Point">
+            <pointExtension>
+                <openlrExtendedPoint>
+                    <openlrPointLocationReference>
+                        <openlrGeoCoordinate>
+                            <openlrCoordinate>
+<latitude>48.14201</latitude>
+<longitude>11.395058</longitude>
+                            </openlrCoordinate>
+                        </openlrGeoCoordinate>
+                        <openlrPointAlongLine>
+                            <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+                            <openlrOrientation>withLineDirection</openlrOrientation>
+                            <openlrPositiveOffset>156</openlrPositiveOffset>
+                            <openlrLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.14336</latitude>
+    <longitude>11.39451</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>167</openlrBearing>
+</openlrLineAttributes>
+<openlrPathAttributes>
+    <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+    <openlrDistanceToNextLRPoint>511</openlrDistanceToNextLRPoint>
+</openlrPathAttributes>
+                            </openlrLocationReferencePoint>
+                            <openlrLastLocationReferencePoint>
+<openlrCoordinate>
+    <latitude>48.13899</latitude>
+    <longitude>11.39664</longitude>
+</openlrCoordinate>
+<openlrLineAttributes>
+    <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+    <openlrFormOfWay>motorway</openlrFormOfWay>
+    <openlrBearing>341</openlrBearing>
+</openlrLineAttributes>
+                            </openlrLastLocationReferencePoint>
+                        </openlrPointAlongLine>
+                    </openlrPointLocationReference>
+                </openlrExtendedPoint>
+            </pointExtension>
+        </location>
+    </triggerDestination>
+    <route>
+        <nameOfRoute>
+            <values>
+                <value lang="de">Hauptroute</value>
+            </values>
+        </nameOfRoute>
+        <originalRoute>true</originalRoute>
+        <itinerary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ItineraryByIndexedLocations">
+            <locationContainedInItinerary index="1">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.17198</latitude>
+        <longitude>11.421602</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>100</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17265</latitude>
+            <longitude>11.42252</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>221</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>3729</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14603</latitude>
+            <longitude>11.39391</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>0</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="2">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.142014</latitude>
+        <longitude>11.395057</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>155</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14336</latitude>
+            <longitude>11.39451</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>167</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>511</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.13899</latitude>
+            <longitude>11.39664</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>341</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+        </itinerary>
+    </route>
+    <route>
+        <nameOfRoute>
+            <values>
+                <value lang="de">Alternativroute über Puchheim</value>
+            </values>
+        </nameOfRoute>
+        <originalRoute>false</originalRoute>
+        <itinerary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ItineraryByIndexedLocations">
+            <locationContainedInItinerary index="1">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.174427</latitude>
+        <longitude>11.422409</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>139</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17427</latitude>
+            <longitude>11.42425</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>277</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>163</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17442</latitude>
+            <longitude>11.42209</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>88</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="2">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.179855</latitude>
+        <longitude>11.403349</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>415</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17741</latitude>
+            <longitude>11.40749</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>310</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>752</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17969</latitude>
+            <longitude>11.39882</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>86</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="3">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.180614</latitude>
+        <longitude>11.392867</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>461</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17969</latitude>
+            <longitude>11.39882</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>271</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>844</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.18265</latitude>
+            <longitude>11.38876</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>143</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="4">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.18482</latitude>
+        <longitude>11.386087</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>315</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.18265</latitude>
+            <longitude>11.38876</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>332</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>553</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.18614</latitude>
+            <longitude>11.38358</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>126</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="5">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.188923</latitude>
+        <longitude>11.378537</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>486</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.18614</latitude>
+            <longitude>11.38358</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>305</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>893</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.19143</latitude>
+            <longitude>11.37454</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>137</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="6">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.192387</latitude>
+        <longitude>11.372937</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>160</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.19143</latitude>
+            <longitude>11.37454</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>321</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>243</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.19269</latitude>
+            <longitude>11.37192</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>114</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="7">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.1855</latitude>
+        <longitude>11.371269</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>801</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.19269</latitude>
+            <longitude>11.37192</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>184</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>1524</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17902</latitude>
+            <longitude>11.37056</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>11</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="8">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.177143</latitude>
+        <longitude>11.368553</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>259</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17902</latitude>
+            <longitude>11.37056</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>223</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>439</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17648</latitude>
+            <longitude>11.36638</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>70</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="9">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.175</latitude>
+        <longitude>11.3663</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>150</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17635</latitude>
+            <longitude>11.36628</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>179</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>222</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.17435</latitude>
+            <longitude>11.3663</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>0</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="10">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.165783</latitude>
+        <longitude>11.354964</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>1289</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.1742</latitude>
+            <longitude>11.36617</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>245</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>2500</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.16062</latitude>
+            <longitude>11.34071</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>70</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="11">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.1589</latitude>
+        <longitude>11.336947</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>308</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.16048</latitude>
+            <longitude>11.34034</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>228</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>425</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.15824</latitude>
+            <longitude>11.33571</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>51</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="12">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.153107</latitude>
+        <longitude>11.338218</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>520</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.15714</latitude>
+            <longitude>11.33472</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>146</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>978</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14915</latitude>
+            <longitude>11.33925</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>20</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="13">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.144382</latitude>
+        <longitude>11.346858</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>621</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14707</latitude>
+            <longitude>11.33979</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>140</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>892</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14419</latitude>
+            <longitude>11.3505</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>275</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="14">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.14308</latitude>
+        <longitude>11.361467</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>478</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14351</latitude>
+            <longitude>11.35505</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>101</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>879</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14314</latitude>
+            <longitude>11.36687</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>268</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="15">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.14319</latitude>
+        <longitude>11.368722</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>37</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14318</latitude>
+            <longitude>11.36823</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>89</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>96</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.1432</latitude>
+            <longitude>11.36951</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>270</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="16">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.14325</latitude>
+        <longitude>11.381888</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>928</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.1432</latitude>
+            <longitude>11.36951</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>92</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>1778</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14616</latitude>
+            <longitude>11.3923</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>267</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+            <locationContainedInItinerary index="17">
+                <location xsi:type="Point">
+                    <pointExtension>
+                        <openlrExtendedPoint>
+                            <openlrPointLocationReference>
+<openlrGeoCoordinate>
+    <openlrCoordinate>
+        <latitude>48.142014</latitude>
+        <longitude>11.395056</longitude>
+    </openlrCoordinate>
+</openlrGeoCoordinate>
+<openlrPointAlongLine>
+    <openlrSideOfRoad>onRoadOrUnknown</openlrSideOfRoad>
+    <openlrOrientation>withLineDirection</openlrOrientation>
+    <openlrPositiveOffset>155</openlrPositiveOffset>
+    <openlrLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.14336</latitude>
+            <longitude>11.39451</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>167</openlrBearing>
+        </openlrLineAttributes>
+        <openlrPathAttributes>
+            <openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+            <openlrDistanceToNextLRPoint>511</openlrDistanceToNextLRPoint>
+        </openlrPathAttributes>
+    </openlrLocationReferencePoint>
+    <openlrLastLocationReferencePoint>
+        <openlrCoordinate>
+            <latitude>48.13899</latitude>
+            <longitude>11.39664</longitude>
+        </openlrCoordinate>
+        <openlrLineAttributes>
+            <openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+            <openlrFormOfWay>motorway</openlrFormOfWay>
+            <openlrBearing>341</openlrBearing>
+        </openlrLineAttributes>
+    </openlrLastLocationReferencePoint>
+</openlrPointAlongLine>
+                            </openlrPointLocationReference>
+                        </openlrExtendedPoint>
+                    </pointExtension>
+                </location>
+            </locationContainedInItinerary>
+        </itinerary>
+    </route>
+</strategicRouteManagement>
