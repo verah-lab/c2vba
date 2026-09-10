@@ -1,0 +1,25 @@
+ToDos:
+
+
+später: 
+
+4) Problem: Segment-Location ohne RDS-Verortung
+
+
+erledigt:
+
+
+1) DDL: 'referential constraints' ergänzen
+
+2) Alle 'alten' TRAILS-Attribute übertragen in MST-Publication
+
+3) Koordinaten in 'Location' übertragen
+
+5) noch nicht übernommene DB-Spalten 
+
+   	//column       (char  mp_direction[1]    "betroffene Fahrtrichtung" );
+  
+6) DB-Datenarten historisch 
+
+
+  

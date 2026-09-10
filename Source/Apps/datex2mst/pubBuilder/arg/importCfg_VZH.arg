@@ -1,0 +1,10 @@
+-user=postgres 
+-passwd=postgres 
+-dbms=postgres 
+-env=he1-w7v:5623:vzh 
+-db=vzhdb03 
+-server=hedb-w7v 
+-special=psTest
+-d2Version=myTest
+-xmlCfgFile=\\\\he1-w7v\VZH\binScript\importMDM_D2DataMapping\data\mstConfigMDM.xml
+--

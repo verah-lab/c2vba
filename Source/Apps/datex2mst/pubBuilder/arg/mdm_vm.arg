@@ -1,0 +1,6 @@
+-Djava.library.path=c:/tools/share
+-Xmx256m 
+-Xrs 
+-Dorg.omg.CORBA.ORBClass=org.jacorb.orb.ORB 
+-Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton 
+-DORBInitRef.NameService=corbaloc::tevzhw8ap01:9923\NameService 

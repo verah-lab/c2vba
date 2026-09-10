@@ -1,0 +1,39 @@
+vmis:
+
+-dbms=Informix
+-db=austria2
+-server=db4tcp
+-user=informix
+-password=informix
+-env=vmis-vrz:5598:vmis
+-d2SchemaPath="C:\Dokumente und Einstellungen\peters.NT-DOMAIN\Desktop\Datex II\DATEXIISchema_1_0_1_0.xsd"
+-pubInstance=myMST
+-pubFilePath=D:\mstPub
+-pubCountryCode=de
+-pubNatId=VZH
+-pubLanguage=de
++log=1A1
+
+Hessen:
+
+db vzhdb01
+server uranustcp
+user/passwd informix,informix
+env jupiter:5623:vzhopt
+
+NameService auf 9998
+
+
+-dbms=Informix
+-db=vzhdb01
+-server=uranustcp
+-user=informix
+-password=informix
+-env=jupiter:5623:vzhopt
+-serverName=timSrv
+-d2SchemaPath="C:\Dokumente und Einstellungen\peters.NT-DOMAIN\Desktop\Datex II\DATEXIISchema_1_0_1_0.xsd"
+-pubInstance=myMST
+-pubFilePath=D:\mstPub
+-pubCountryCode=de
+-pubNatId=VZH
+-pubLanguage=de

@@ -1,0 +1,32 @@
+ArgumentDefinition( "dbms", "", "Informix", false, 1, 1, true, true )
+ArgumentDefinition( "db", "Datenbank", null, false, 1, 1, true, true )
+ArgumentDefinition( "server", "Datenbank-Server", null, false, 1, 1, true, true )
+ArgumentDefinition( "user", "DB-Benutzer", null, false, 1, 1, true, true )
+ArgumentDefinition( "password", "DB-Passwort", null, false, 1, 1, true, true )
+ArgumentDefinition( "env", "Geodyn2-Environment", null, false, 1, 1, true, true )
+ArgumentDefinition( "program", "Name des Prozesse im Geodyn2-Environment", "D2MSTPubBuilder", false, 0, 1, true, true )
+ArgumentDefinition( "special", "", "", false, 0, 1, true, true )
+			
+Flag( "checkValidity", "Prüfung der Validität der erzeugten Publications" )
+
+ArgumentDefinition( "d2SchemaPath", "Pfad der XML-Schema-Datei", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubInstance", "MST-Kennung", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubFilePath", "Verzeichnis, in dem die Meldungsdateien abgelegt werden", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubErrFilePath", "Verzeichnis, in dem invalide Publication-Dateien abgelegt werden (Ist der Aufrufparameter nicht definiert, werden auch fehlerhafte Dateien in <pubFilePath> abgelegt).", null, false, 0, 1, true, true )
+			
+ArgumentDefinition( "pubCountryCode", "", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubNatId", "", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubLanguage", "",  null, false, 1, 1, true, true )
+Flag( "overwriteOutput", "Erzeugt Dateinamen ohne Zeitstempel und überschreibt somit die alten Datei" )
+Flag( "once", "Erzeugt eine Datei und beendet sich dann. Ansonsten bleibt das Programm angemeldet und generiert eine Publication bei Änderung !" )
+Opt( "metaDataFileName", "Name der Meta-Datei", "" )
+Opt( "metaDataSchemaLocation", "URL des Meta-Daten XML-Schemas ", "http://www.otap.hessen.de/metadata.xsd" )
+Opt( "sinkId", "SenkenId (-1 heißt keine Senke !)", -1 )
+
+			
+-Djava.library.path="C:/Tools/Share"
+-Dorg.omg.CORBA.ORBClass=org.jacorb.orb.ORB
+-Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton
+-DORBInitRef.NameService=corbaloc::jupiter:9998/NameService
+			
+Pfade, Host-Namen, Ports anpassen !			

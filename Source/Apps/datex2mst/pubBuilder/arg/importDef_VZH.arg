@@ -1,0 +1,13 @@
+-user=postgres 
+-passwd=postgres 
+-dbms=postgres 
+-env=he1-w7v:5623:vzh 
+-db=vzhdb03 
+-server=hedb-w7v 
+-special=psTest
+-mstId=TT_VZH_MDM
+-defVersion=1
+-d2Version=2.1_MDM_MMT2
+-xmlDefFile=\\\\he1-w7v\VZH\binScript\importMDM_D2DataMapping\data\mstDefinitionTT_VZH_MDM.xml
+-schemaFile=DATEXIISchema_2_2_3.xsd
+--

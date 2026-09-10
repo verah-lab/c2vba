@@ -1,0 +1,18 @@
+-user=stolpe 
+-program=D2MSTPubBuilder 
+-passwd=stolpe 
+-dbms=oracle 
+-env=baba-vrz-w7v:5636:stolpe 
+-db= 
+-server=db9tcp 
+-special=psTest
+-mstId=LVE_MDM 
+-mstVersion=11
+-pubCountryCode=de 
+-pubNatId="DE-MDM-Landesbetrieb Straßenwesen Brandenburg" 
+-pubLanguage=de 
+-useMVTemplateFactory
+-checkValidity
+-once
+-testMode
+--

@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="utf-8"?>
+<d2LogicalModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" modelBaseVersion="2" xmlns="http://datex2.eu/schema/2/2_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datex2.eu/schema/2/2_0 MDM-Profile_MeasurementSiteTable_Ext_V_Q.xsd">
+    <exchange xmlns="http://datex2.eu/schema/2/2_0">
+        <supplierIdentification>
+            <country>de</country>
+            <nationalIdentifier>VZH</nationalIdentifier>
+        </supplierIdentification>
+    </exchange>
+    <payloadPublication xsi:type="MeasurementSiteTablePublication" lang="de">
+        <publicationTime>2010-11-17T14:20:00.000+01:00</publicationTime>
+        <publicationCreator>
+            <country>de</country>
+            <nationalIdentifier>VZH</nationalIdentifier>
+        </publicationCreator>
+        <headerInformation>
+            <confidentiality>noRestriction</confidentiality>
+            <informationStatus>real</informationStatus>
+        </headerInformation>
+        <measurementSiteTable id="LVE_MDM" version="8">
+            <measurementSiteTableIdentification>Messwertersetzte Verkehrsdaten fahrstreifenbezogen</measurementSiteTableIdentification>
+            <measurementSiteRecord id="R2006207" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A45/4LSN</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="5">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="6">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="7">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="8">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <supplementaryPositionalDescription>
+                        <affectedCarriagewayAndLanes>
+                            <carriageway>mainCarriageway</carriageway>
+                            <lane>lane1</lane>
+                            <lane>lane2</lane>
+                        </affectedCarriagewayAndLanes>
+                    </supplementaryPositionalDescription>
+                    <alertCPoint xsi:type="AlertCMethod4Point">
+                        <alertCLocationCountryCode>D</alertCLocationCountryCode>
+                        <alertCLocationTableNumber>01</alertCLocationTableNumber>
+                        <alertCLocationTableVersion>15.1</alertCLocationTableVersion>
+                        <alertCDirection>
+                            <alertCDirectionCoded>positive</alertCDirectionCoded>
+                        </alertCDirection>
+                        <alertCMethod4PrimaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>11393</specificLocation>
+                            </alertCLocation>
+                            <offsetDistance>
+                                <offsetDistance>5394</offsetDistance>
+                            </offsetDistance>
+                        </alertCMethod4PrimaryPointLocation>
+                    </alertCPoint>
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.28944648614207</latitude>
+                            <longitude>8.96744618049787</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2006210" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A45/4LSS</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="5">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="6">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="7">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="8">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <supplementaryPositionalDescription>
+                        <affectedCarriagewayAndLanes>
+                            <carriageway>mainCarriageway</carriageway>
+                            <lane>lane1</lane>
+                            <lane>lane2</lane>
+                        </affectedCarriagewayAndLanes>
+                    </supplementaryPositionalDescription>
+                    <alertCPoint xsi:type="AlertCMethod4Point">
+                        <alertCLocationCountryCode>D</alertCLocationCountryCode>
+                        <alertCLocationTableNumber>01</alertCLocationTableNumber>
+                        <alertCLocationTableVersion>15.1</alertCLocationTableVersion>
+                        <alertCDirection>
+                            <alertCDirectionCoded>negative</alertCDirectionCoded>
+                        </alertCDirection>
+                        <alertCMethod4PrimaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>11389</specificLocation>
+                            </alertCLocation>
+                            <offsetDistance>
+                                <offsetDistance>4943</offsetDistance>
+                            </offsetDistance>
+                        </alertCMethod4PrimaryPointLocation>
+                    </alertCPoint>
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.292027057138654</latitude>
+                            <longitude>8.965394779971605</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2006213" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A45/5LSN</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.28904192221355</latitude>
+                            <longitude>8.967979891032021</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2006215" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A45/5LSS</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.29215284982641</latitude>
+                            <longitude>8.965001606083</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2006217" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A45/6LSN</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.289536484834315</latitude>
+                            <longitude>8.967670725438591</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2006219" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A45/6LSS</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.29167625236848</latitude>
+                            <longitude>8.965212533567591</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2023511" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A3/Q799GN</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="5">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="6">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="7">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="8">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="9">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="10">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="11">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="12">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <supplementaryPositionalDescription>
+                        <affectedCarriagewayAndLanes>
+                            <carriageway>mainCarriageway</carriageway>
+                            <lane>lane1</lane>
+                            <lane>lane2</lane>
+                            <lane>lane3</lane>
+                        </affectedCarriagewayAndLanes>
+                    </supplementaryPositionalDescription>
+                    <alertCPoint xsi:type="AlertCMethod4Point">
+                        <alertCLocationCountryCode>D</alertCLocationCountryCode>
+                        <alertCLocationTableNumber>01</alertCLocationTableNumber>
+                        <alertCLocationTableVersion>15.1</alertCLocationTableVersion>
+                        <alertCDirection>
+                            <alertCDirectionCoded>positive</alertCDirectionCoded>
+                        </alertCDirection>
+                        <alertCMethod4PrimaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>10885</specificLocation>
+                            </alertCLocation>
+                            <offsetDistance>
+                                <offsetDistance>3479</offsetDistance>
+                            </offsetDistance>
+                        </alertCMethod4PrimaryPointLocation>
+                    </alertCPoint>
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.410131127844046</latitude>
+                            <longitude>7.996282790143976</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2023515" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A3/Q800SGN</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>-1.0</latitude>
+                            <longitude>-1.0</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2023517" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A3/Q800GN</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="5">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="6">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="7">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="8">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="9">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="10">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="11">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane2</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="12">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane3</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <supplementaryPositionalDescription>
+                        <affectedCarriagewayAndLanes>
+                            <carriageway>mainCarriageway</carriageway>
+                            <lane>lane1</lane>
+                            <lane>lane2</lane>
+                            <lane>lane3</lane>
+                        </affectedCarriagewayAndLanes>
+                    </supplementaryPositionalDescription>
+                    <alertCPoint xsi:type="AlertCMethod4Point">
+                        <alertCLocationCountryCode>D</alertCLocationCountryCode>
+                        <alertCLocationTableNumber>01</alertCLocationTableNumber>
+                        <alertCLocationTableVersion>15.1</alertCLocationTableVersion>
+                        <alertCDirection>
+                            <alertCDirectionCoded>positive</alertCDirectionCoded>
+                        </alertCDirection>
+                        <alertCMethod4PrimaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>10885</specificLocation>
+                            </alertCLocation>
+                            <offsetDistance>
+                                <offsetDistance>2142</offsetDistance>
+                            </offsetDistance>
+                        </alertCMethod4PrimaryPointLocation>
+                    </alertCPoint>
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>50.4123754424894</latitude>
+                            <longitude>7.978248067915837</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+            <measurementSiteRecord id="R2023521" version="8">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A3/Q801SGN</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="2">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="3">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>car</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSpecificCharacteristics index="4">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>hardShoulder</specificLane>
+                        <specificMeasurementValueType>trafficSpeed</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>lorry</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>-1.0</latitude>
+                            <longitude>-1.0</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+        </measurementSiteTable>
+    </payloadPublication>
+</d2LogicalModel>

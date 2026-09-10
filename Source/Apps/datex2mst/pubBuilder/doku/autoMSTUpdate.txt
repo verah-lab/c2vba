@@ -1,0 +1,58 @@
+Datex2: Konzept Automatische Aktualisierung MST
+-----------------------------------------------
+
+
+1) Erweiterung der Datenart datex2MSTDefinition:
+
+neue Spalten:
+
+autoUpdate			boolesch, true: MST wird automatisch aktualisiert 
+mdpPublisher		der (hbMonitor-) Name des Prozesses, der die DATEX-II-Daten-Publikation erzeugt	
+mdpRestartAfter    	Zeitraum (Minuten) von der Erstellung der MST bis zum Neustart des MDP-Publishers 
+connPropFile        Verbindungsparameter (i.d.R. MDM) des MST-Empfängers
+
+
+2) Neuer Online-Prozess:
+
+a) MST-Update für MSTs mit autoUpdate = true 
+
+- MST-ID: Inkrementieren der höchsten Version
+
+
+b) MST-UpdateTrigger: 
+
+- etwa System-Neustart, auch im HPA-Kontext ?
+
+Kann man feststellen, ob es inhaltliche Änderungen im Vergleich zur Vorversion gibt und das Update unterdrücken ?  
+
+
+c) MDP-Neustart nach <mdpRestartAfter> Minuten. Neue MST wird vorher als 'aktiv' gekennzeichnet.
+
+
+3) Erweiterung d2MSTPublisher
+
+Versenden der erzeugten MST an MDM (oder per HTTP an andere Empfänger)  
+
+
+
+4) Bemerkungen zur Funktionalität eines MDM-Datennehmers
+
+a) Beim MDM liegt jeweils nur die aktuelle Version der MST vor.
+   Der Datennehmer muss also mindestens auch die Vorhergehende vorhalten, um die Zeit zwischen Publikation 
+   einer neuen MST-Publikation und Start der zugehörigen Daten-Publikation überbrücken zu können.
+
+b) Der Datennehmer sollte die MST regelmäßig per Pull abfragen (stündlich). So wird er gewahr, wenn
+   eine neue Version ansteht und kann sie 'testen'. Damit sind auch explizite Update-Benachrichtigungen 
+   des MST-Erzeugers nicht mehr nötig. 
+
+c) In der Kommunikation mit den Holländern (NDW-Viewer) wird wie in a) und b) verfahren (NDW in der Rolle des MDM).
+   Hier gibt es doch noch eine E-Mail-Benachrichtigung zur neuen MST.  
+   
+   
+Aufwände: 
+
+1)  1 d   
+
+2)  3 d
+
+3)  1 d
