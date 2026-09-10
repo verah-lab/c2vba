@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordSet>
+    <record datakind="DaLVEKurzInterpolOpt0" action="UPDATE">
+        <data name="time" value="28.07.2016 17:35:00"/>
+        <data name="id" value="698766593"/>
+        <data name="qKFZ" value="-1"/>
+        <data name="qLKW" value="2"/>
+        <data name="vPKW" value="255"/>
+        <data name="vLKW" value="87"/>
+        <data name="tNetto" value="91"/>
+        <data name="Beleg" value="2"/>
+        <data name="s" value="5"/>
+        <data name="vKFZMittel" value="110"/>
+    </record>
+    <record datakind="DaLVEKurzInterpolOpt0" action="UPDATE">
+        <data name="time" value="28.07.2016 17:35:00"/>
+        <data name="id" value="698766594"/>
+        <data name="qKFZ" value="12"/>
+        <data name="qLKW" value="4"/>
+        <data name="vPKW" value="95"/>
+        <data name="vLKW" value="68"/>
+        <data name="tNetto" value="255"/>
+        <data name="Beleg" value="4"/>
+        <data name="s" value="255"/>
+        <data name="vKFZMittel" value="132"/>
+    </record>
+    <record datakind="DaLVEKurzInterpolOpt0" action="UPDATE">
+        <data name="time" value="28.07.2016 17:35:00"/>
+        <data name="id" value="673153090"/>
+        <data name="qKFZ" value="24"/>
+        <data name="qLKW" value="5"/>
+        <data name="vPKW" value="101"/>
+        <data name="vLKW" value="81"/>
+        <data name="tNetto" value="3"/>
+        <data name="Beleg" value="19"/>
+        <data name="s" value="255"/>
+        <data name="vKFZMittel" value="255"/>
+    </record>
+    <record datakind="DaLVEKurzInterpolOpt0" action="UPDATE">
+        <data name="time" value="28.07.2016 17:35:00"/>
+        <data name="id" value="673153089"/>
+        <data name="qKFZ" value="-1"/>
+        <data name="qLKW" value="-1"/>
+        <data name="vPKW" value="255"/>
+        <data name="vLKW" value="255"/>
+        <data name="tNetto" value="255"/>
+        <data name="Beleg" value="255"/>
+        <data name="s" value="255"/>
+        <data name="vKFZMittel" value="255"/>
+    </record>
+    
+    <record datakind="DaLVEFehlerDE" action="UPDATE">
+        <data name="time" value="17.07.2016 13:39:43"/>
+        <data name="id" value="698766593"/>
+        <data name="Fehlercode" value="0"/>
+        <data name="Hersteller" value="13"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+    
+    <record datakind="DaLVEFehlerDE" action="UPDATE">
+        <data name="time" value="17.07.2016 13:39:43"/>
+        <data name="id" value="698766594"/>
+        <data name="Fehlercode" value="0"/>
+        <data name="Hersteller" value="13"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+    
+    <record datakind="DaLVEFehlerDE" action="UPDATE">
+        <data name="time" value="17.07.2016 13:39:43"/>
+        <data name="id" value="673153090"/>
+        <data name="Fehlercode" value="0"/>
+        <data name="Hersteller" value="13"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+    
+    <record datakind="DaLVEFehlerDE" action="UPDATE">
+        <data name="time" value="17.07.2016 13:39:43"/>
+        <data name="id" value="673153089"/>
+        <data name="Fehlercode" value="0"/>
+        <data name="Hersteller" value="13"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+    
+    
+    <record datakind="DaLVEKanalIst" action="UPDATE">
+        <data name="time" value="26.07.2016 15:23:13"/>
+        <data name="id" value="698766593"/>
+        <data name="Steuerbyte" value="0"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+    
+    <record datakind="DaLVEKanalIst" action="UPDATE">
+        <data name="time" value="26.07.2016 15:23:13"/>
+        <data name="id" value="698766594"/>
+        <data name="Steuerbyte" value="0"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+
+    <record datakind="DaLVEKanalIst" action="UPDATE">
+        <data name="time" value="26.07.2016 15:23:13"/>
+        <data name="id" value="673153090"/>
+        <data name="Steuerbyte" value="0"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+
+    <record datakind="DaLVEKanalIst" action="UPDATE">
+        <data name="time" value="26.07.2016 15:23:13"/>
+        <data name="id" value="673153089"/>
+        <data name="Steuerbyte" value="0"/>
+        <data name="systime" value="0"/>
+        <data name="JobNr" value=""/>
+    </record>
+    
+    
+    
+    <record datakind="datex2MDPItemState" action="UPDATE">
+        <data name="time" value="27.07.2016 12:40:31"/>
+        <data name="id" value="698766593"/>
+        <data name="state" value="1"/>
+    </record>
+    <record datakind="datex2MDPItemState" action="UPDATE">
+        <data name="time" value="27.07.2016 12:40:31"/>
+        <data name="id" value="698766594"/>
+        <data name="state" value="1"/>
+    </record>
+
+    <record datakind="datex2MDPItemState" action="UPDATE">
+        <data name="time" value="27.07.2016 12:40:31"/>
+        <data name="id" value="673153089"/>
+        <data name="state" value="1"/>
+    </record>
+    <record datakind="datex2MDPItemState" action="UPDATE">
+        <data name="time" value="27.07.2016 12:40:31"/>
+        <data name="id" value="673153090"/>
+        <data name="state" value="1"/>
+    </record>
+    
+    
+</recordSet>

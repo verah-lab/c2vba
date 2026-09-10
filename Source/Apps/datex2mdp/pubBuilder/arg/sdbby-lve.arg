@@ -1,0 +1,26 @@
+-user=postgres
+-passwd=postgres
+-special=ps
+-dbms=postgres
+-server=dbsrv9-2k12
+-db=by
+-env=sdbby-2k19:5599:by
+-special=develop-ps
+-program=datex2MDPBuilder
+-mstId=LVE
+-mstVersion=11
+-pubCountryCode=de
+-pubNatId="DE-MDM-Bayerische Straßenbauverwaltung - Zentralstelle für Verkehrsmanagement"
+-pubLanguage=de
+-pubCycle=60
+-mdmAuthenticationFile=D:/by/etc/mdm/mdp/mdmAuth_tests.properties
+-d2SchemaPath=D:/by/etc/d2Schema
+-d2SchemaFile=DATEXIISchema_2_2_3-FBZExt.xsd
+-d2SchemaModelBaseVersion=2
+-d2SchemaNameSpace=http://datex2.eu/schema/2/2_0
+-useMVTemplateFactory
+-checkValidity 
+-pubFilePath=F:/sdbby/mdm/mdp/lve
+-invalidValsAsDataError 
+-itemDBFilter=DaLVEFehlerDE:eaid:Fehlercode:0
+-itemDBFilter=DaLVEKanalIst:eaid:Steuerbyte:0

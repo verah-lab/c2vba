@@ -1,0 +1,88 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<siteMeasurements xmlns="http://datex2.eu/schema/2/2_0">
+    <measurementSiteReference targetClass="MeasurementSiteRecord" id="R8002657" version="4"/>
+    <measurementTimeDefault>2016-07-31T23:20:00+02:00</measurementTimeDefault>
+    <measuredValue index="2">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficFlow">
+                <vehicleFlow>
+                    <vehicleFlowRate>720</vehicleFlowRate>
+                </vehicleFlow>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+    <measuredValue index="4">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficFlow">
+                <vehicleFlow>
+                    <vehicleFlowRate>240</vehicleFlowRate>
+                </vehicleFlow>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+    <measuredValue index="6">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficSpeed">
+                <averageVehicleSpeed>
+                    <speed>95.0</speed>
+                </averageVehicleSpeed>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+    <measuredValue index="8">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficSpeed">
+                <averageVehicleSpeed>
+                    <speed>68.0</speed>
+                </averageVehicleSpeed>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+</siteMeasurements>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<siteMeasurements xmlns="http://datex2.eu/schema/2/2_0">
+    <measurementSiteReference targetClass="MeasurementSiteRecord" id="R8001799" version="4"/>
+    <measurementTimeDefault>2016-07-31T23:20:00+02:00</measurementTimeDefault>
+    <measuredValue index="1">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficFlow">
+                <vehicleFlow>
+                    <dataError>true</dataError>
+                    <vehicleFlowRate>0</vehicleFlowRate>
+                </vehicleFlow>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+    <measuredValue index="3">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficFlow">
+                <vehicleFlow>
+                    <dataError>true</dataError>
+                    <vehicleFlowRate>0</vehicleFlowRate>
+                </vehicleFlow>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+    <measuredValue index="5">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficSpeed">
+                <averageVehicleSpeed>
+                    <dataError>true</dataError>
+                    <speed>0.0</speed>
+                </averageVehicleSpeed>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+    <measuredValue index="7">
+        <measuredValue>
+            <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TrafficSpeed">
+                <averageVehicleSpeed>
+                    <dataError>true</dataError>
+                    <speed>0.0</speed>
+                </averageVehicleSpeed>
+            </basicData>
+        </measuredValue>
+    </measuredValue>
+</siteMeasurements>

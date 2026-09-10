@@ -1,0 +1,40 @@
+ArgumentDefinition( "dbms", "", "Informix", false, 1, 1, true, true )
+ArgumentDefinition( "db", "Datenbank", null, false, 1, 1, true, true )
+ArgumentDefinition( "server", "Datenbank-Server", null, false, 1, 1, true, true )
+ArgumentDefinition( "user", "DB-Benutzer", null, false, 1, 1, true, true )
+ArgumentDefinition( "password", "DB-Passwort", null, false, 1, 1, true, true )
+ArgumentDefinition( "env", "Geodyn2-Environment", null, false, 1, 1, true, true )
+ArgumentDefinition( "program", "Name des Prozesse im Geodyn2-Environment", "D2MDPPubBuilder", false, 0, 1, true, true )
+ArgumentDefinition( "special", "", "", false, 0, 1, true, true )
+			
+Flag( "checkValidity", "Prüfung der Validität der erzeugten Publications" )
+
+ArgumentDefinition( "d2SchemaPath", "Pfad der XML-Schema-Datei", null, false, 1, 1, true, true )
+			
+ArgumentDefinition( "pubInstance", "Damit wird eine Auswahl von konstanten Werten (Tabelle 'd2ClassNode2D2DefaultVal_var') getroffen", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubFilePath", "Verzeichnis, in dem die Publicationdateien abgelegt werden", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubErrFilePath", "Verzeichnis, in dem invalide Publicationdateien abgelegt werden (Ist der Aufrufparameter nicht definiert, werden auch fehlerhafte Dateien in <pubFilePath> abglegt).", null, false, 0, 1, true, true )
+ArgumentDefinition( "pubCycle", "Ausgabe-Zyklus (in Sekunden)", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubOffset", "Offset zum Ausgabe-Zyklus (in Sekunden)", 0, false, 0, 1, true, true )
+			
+ArgumentDefinition( "pubCountryCode", "countryCode", "de", false, 0, 1, true, true )
+ArgumentDefinition( "pubNatId", "natId", null, false, 1, 1, true, true )
+ArgumentDefinition( "pubLanguage", "language", "de", false, 1, 1, true, true )
+Flag( "overwriteOutput", "Erzeugt Dateinamen ohne Zeitstempel und überschreibt somit die alten Datei" )
+Opt( "metaDataFileName", "Name der Meta-Datei", "" )
+Opt( "metaDataSchemaLocation", "URL des Meta-Daten XML-Schemas ", "http://www.otap.hessen.de/metadata.xsd" )
+Opt( "sinkId", "SenkenId (-1 heißt keine Senke !)", -1 )
+			
+Flag( "writeVehClass", "Die Fahrzeugklasse wird geschrieben" )
+
+
+
+VM-Aufrufparameter:
+-------------------
+			
+-Djava.library.path="C:/Tools/Share"
+-Dorg.omg.CORBA.ORBClass=org.jacorb.orb.ORB
+-Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton
+-DORBInitRef.NameService=corbaloc::jupiter:9998/NameService
+			
+Pfade, Host-Namen, Ports anpassen !			

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordSet>
+    <record datakind="datex2MDPItemState" action="UPDATE">
+        <data name="time" value="27.07.2016 12:40:31"/>
+        <data name="id" value="698766594"/>
+        <data name="state" value="1"/>
+    </record>
+</recordSet>

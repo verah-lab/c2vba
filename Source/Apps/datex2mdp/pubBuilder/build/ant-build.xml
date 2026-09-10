@@ -1,0 +1,92 @@
+<project name="d2MDPPubBuilder" default="dist" basedir=".">
+  <!-- set global properties for this build -->
+  <property environment="env"/>
+  <property file="version.properties" />	
+  <property name="JavaBin"     location="${env.JAVA_HOME}/bin"/>
+  <property name="JavaSrcVer"  value="1.6"/>
+	
+  <property name="src"      location="src"/>
+  <property name="bin"      location="bin"/>
+  <property name="hb1dir"  location="../../.." />
+  <property name="corba"    location="${hb1dir}/corba"/>
+  <property name="jar"      location="${hb1dir}/jar"/>
+
+  <property name="jarFile"   location="${jar}/d2MDPPubBuilder.jar"/>
+
+  <path id="project.class.path">
+	<fileset dir="${jar}">
+		<include name="**/*jar"/>
+	</fileset>
+  </path>
+
+	
+  <!-- Clean -->
+  <target name="clean" description="clean" >
+	<delete dir="${bin}"/>
+	<delete file="${jarFile}"/>
+  </target>
+  
+	<target name="cleanAll" description="clean all inclusive used HB-Jars" >
+		<echo message="everything is clean" />
+	</target>
+	
+  <!-- Compile the java code from ${src} into ${bin} -->
+  <target name="compile" description="compile the source " >
+    <mkdir dir="${bin}"/>
+    <javac srcdir="${src}" 
+    	destdir="${bin}" 
+    	fork="yes"
+		source="1.6"
+    	deprecation="on"
+    	executable="${JavaBin}/javac" 
+    	classpathref="project.class.path"
+    	/>
+  </target>
+  
+  <!-- Put everything in ${bin} into the jar file -->
+  <target name="dist" depends="compile" description="generate the distribution" >        
+    <jar destfile="${jarFile}">
+	  <fileset dir="${bin}" />
+    	  <manifest>
+    	    <attribute name="Built-By" value="${user.name}"/>
+    	    <attribute name="Specification-Title" value="${name}"/>
+    	    <attribute name="Specification-Version" value="${version}"/>
+    	    <attribute name="Specification-Vendor" value="${organization}"/>
+    	    <attribute name="Implementation-Title" value="${name}"/>
+    	    <attribute name="Implementation-Version" value="${version}"/> 
+    	    <attribute name="Implementation-Vendor" value="${organization}"/>
+    	  </manifest>
+  </jar>
+  </target>
+
+  <!-- Compile the java code from ${src} into ${bin} -->
+  <target name="compile_dbg" description="compile the source with debug info's" >
+    <mkdir dir="${bin}"/>
+    <javac srcdir="${src}" 
+    	destdir="${bin}" 
+    	fork="yes"
+		source="1.6"
+    	debug="on"
+    	deprecation="on"
+    	executable="${JavaBin}/javac" 
+    	classpathref="project.class.path" />
+  </target>
+  
+  <!-- Put everything in ${bin} into the jar file -->
+  <target name="dist_dbg" depends="compile_dbg" description="generate the distribution with debug info's" >        
+    <jar destfile="${jarFile}">
+	  <fileset dir="${bin}" />
+    	  <manifest>
+    	    <attribute name="Built-By" value="${user.name}"/>
+    	    <attribute name="Specification-Title" value="${name}"/>
+    	    <attribute name="Specification-Version" value="${version}"/>
+    	    <attribute name="Specification-Vendor" value="${organization}"/>
+    	    <attribute name="Implementation-Title" value="${name}"/>
+    	    <attribute name="Implementation-Version" value="${version}"/> 
+    	    <attribute name="Implementation-Vendor" value="${organization}"/>
+    	  </manifest>
+    </jar>
+  </target>
+
+</project>
+

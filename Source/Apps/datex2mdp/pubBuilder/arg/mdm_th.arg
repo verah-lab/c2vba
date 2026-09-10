@@ -1,0 +1,25 @@
+--
+-user=postgres
+-program=D2MSTPubBuilder
+-passwd=postgres
+-dbms=postgres
+-env=th-int1-w7v:5590:uvr
+-db=uvr_1
+-server=dbsrv10-wxv
+-special=ps
+-mstId=LVE_MDM
+-pubCountryCode=de
+-pubNatId="DE-MDM-Landesbetrieb Straßenwesen Brandenburg"
+-pubLanguage=de
+-pubCycle=30
+-d2SchemaPath=D:\VRZ_Stolpe\etc/d2Schema
+-d2SchemaFile=MDM-Profile_MeasuredData.xsd
+-d2SchemaModelBaseVersion=2
+-d2SchemaNameSpace=http://datex2.eu/schema/2/2_0
+-useMVTemplateFactory
+-checkValidity
+-pubFilePath=D:\VRZ_Stolpe\data\OUT\MDM\MDP\LVE_MDM
+-invalidValsAsDataError
+-itemDBFilter=DaLVEKanalIst:eaid:Steuerbyte:0
+-itemDBFilter=DaLVEFehlerDE:eaid:Fehlercode:0
+

@@ -1,0 +1,22 @@
+--
+-user=postgres
+-passwd=postgres
+-program=D2MDPPubBuilder
+-dbms=postgres
+-env=he4-w7v:5623:vzh
+-db=vzhdb_migr
+-server=dbsrv9-2k12
+-special=psps
+-mstId=LVE
+-pubCountryCode=de
+-pubNatId="DE-MDM-Hessen Mobil - Straßen- und Verkehrsmanagement"
+-pubLanguage=de
+-pubCycle=60
+-pubOffset=20
+-d2SchemaPath=F:\vzh\mdm\d2Schema
+-d2SchemaFile=DATEXIISchema_2_2_3.xsd
+-d2SchemaModelBaseVersion=2
+-d2SchemaNameSpace=http://datex2.eu/schema/2/2_0
+-pubFilePath=F:\vzh\mdm\mdp 
+-useMVTemplateFactory 
+-checkValidity

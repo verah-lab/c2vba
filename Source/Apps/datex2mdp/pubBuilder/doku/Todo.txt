@@ -1,0 +1,37 @@
+ToDos:
+
+später: 
+
+4) Problem: Segment-Location ohne RDS-Verortung
+
+5) Kafka/MongoDB
+
+
+erledigt:
+
+
+1) DDL: 'referential constraints' ergänzen
+
+2) Alle 'alten' TRAILS-Attribute übertragen in MST-Publication
+
+3) Koordinaten in 'Location' übertragen
+
+5) Aufruf-Parameter: Zeitoffset Publication-Erzeugung in Sekunden angeben 
+
+13) Performance: StringBuffer
+
+14) MST-Name unbekannt: Fehlermeldung, Prozess-Ende
+ 
+10) Werte-Status berücksichtigen (Josef)
+
+12) Wie werden ungültige Werte behandelt ? (Josef)
+	Ungültige Werte nicht ausgeben
+
+11) Zeitstempel ?
+
+20) Validity-Check liefert Fehler ???
+
+6) Transformation der Goedyn2-Koordinaten.    
+
+
+ 

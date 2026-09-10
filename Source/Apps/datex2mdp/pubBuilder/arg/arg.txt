@@ -1,0 +1,52 @@
+vmis:
+
+-dbms=Informix
+-db=austria2
+-server=db4tcp
+-user=informix
+-password=informix
+-env=vmis-vrz:5598:vmis
+-d2SchemaPath="C:\Dokumente und Einstellungen\peters.NT-DOMAIN\Desktop\Datex II\DATEXIISchema_1_0_1_0.xsd"
+-pubCycle=60
+-pubOffset=11
+-pubInstance=myMST2
+-pubFilePath=D:\mdpPub
+-pubErrFilePath=D:\mdpPub\err
+-pubCountryCode=de
+-pubNatId=VZH
+-pubLanguage=de
+-checkValidity
++log=1A1
+
+Hessen:
+
+db vzhdb01
+server uranustcp
+user/passwd informix,informix
+env jupiter:5623:vzhopt
+
+NameService auf 9998
+
+
+-dbms=Informix
+-db=vzhdb01
+-server=uranustcp
+-user=informix
+-password=informix
+-env=jupiter:5623:vzhopt
+-d2SchemaPath="C:\Dokumente und Einstellungen\peters.NT-DOMAIN\Desktop\Datex II\DATEXIISchema_1_0_1_0.xsd"
+-pubCycle=60
+-pubOffset=11
+-pubInstance=myMST2
+-pubFilePath=D:\mdpPub
+-pubErrFilePath=D:\mdpPub\err
+-pubCountryCode=de
+-pubNatId=VZH
+-pubLanguage=de
+-checkValidity
+
+
+Log-Level: 
+
+C2: Fehler in Daten (etwa 'veraltet') 
+

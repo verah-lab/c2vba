@@ -1,0 +1,2213 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" version="2.1" targetNamespace="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="_ExtensionType">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_IntermediatePointOnLinearElement">
+    <xs:sequence>
+      <xs:element name="referent" type="D2LogicalModel:Referent" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_MeasurementSiteRecordExtensionType">
+    <xs:sequence>
+      <xs:element name="measurementSiteRecordExtended" type="D2LogicalModel:MeasurementSiteRecordExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_MeasurementSiteRecordIndexMeasurementSpecificCharacteristics">
+    <xs:sequence>
+      <xs:element name="measurementSpecificCharacteristics" type="D2LogicalModel:MeasurementSpecificCharacteristics" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_MeasurementSpecificCharacteristicsExtensionType">
+    <xs:sequence>
+      <xs:element name="measurementSpecificCharacteristicsExtended" type="D2LogicalModel:MeasurementSpecificCharacteristicsExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_PointExtensionType">
+    <xs:sequence>
+      <xs:element name="openlrExtendedPoint" type="D2LogicalModel:OpenlrExtendedPoint" minOccurs="0" />
+      <xs:element name="extendedPoint" type="D2LogicalModel:ExtendedPoint" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdditonalPointAlongLinearElement">
+    <xs:annotation>
+      <xs:documentation>An addititional Container for ISO19148 compliant Point locations</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="methodName" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A name or short identifier for the used georeference method</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="methodReference" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference, for instance to the used GIS system</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="pointAlongLinearElement" type="D2LogicalModel:PointAlongLinearElement" />
+      <xs:element name="additonalPointAlongLinearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AffectedCarriagewayAndLanes">
+    <xs:annotation>
+      <xs:documentation>Supplementary positional information which details carriageway and lane locations. Several instances may exist where the element being described extends over more than one carriageway.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="carriageway" type="D2LogicalModel:CarriagewayEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Indicates the section of carriageway to which the location relates.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+       <xs:element name="lane" type="D2LogicalModel:LaneEnum" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Indicates the specific lane to which the location relates.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+     <xs:element name="lengthAffected" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This indicates the length of road measured in metres affected by the associated traffic element.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="affectedCarriagewayAndLanesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCDirection">
+    <xs:annotation>
+      <xs:documentation>The direction of traffic flow along the road to which the information relates.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertCDirectionCoded" type="D2LogicalModel:AlertCDirectionEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The direction of traffic flow to which the situation, traffic data or information is related. Positive is in the direction of coding of the road.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alertCDirectionNamed" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ALERT-C name of a direction e.g. Brussels -&gt; Lille.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alertCDirectionSense" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Indicates for circular routes (i.e. valid only for ring roads) the sense in which navigation should be made from the primary location to the secondary location, to avoid ambiguity. TRUE indicates positive RDS direction, i.e. direction of coding of road.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alertCDirectionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlertCDirectionEnum">
+    <xs:annotation>
+      <xs:documentation>The direction of traffic flow concerned by a situation or traffic data. In ALERT-C the positive (resp. negative) direction corresponds to the positive offset direction within the RDS location table.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="both">
+        <xs:annotation>
+          <xs:documentation>Indicates that both directions of traffic flow are affected by the situation or relate to the traffic data.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="negative">
+        <xs:annotation>
+          <xs:documentation>The direction of traffic flow concerned by a situation or traffic data. In ALERT-C the negative direction corresponds to the negative offset direction within the RDS location table.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="positive">
+        <xs:annotation>
+          <xs:documentation>The direction of traffic flow concerned by a situation or traffic data. In ALERT-C the positive direction corresponds to the positive offset direction within the RDS location table.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertCLocation">
+    <xs:annotation>
+      <xs:documentation>Identification of a specific point, linear or area location in an ALERT-C location table.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertCLocationName" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Name of ALERT-C location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="specificLocation" type="D2LogicalModel:AlertCLocationCode" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Unique code within the ALERT-C location table which identifies the specific point, linear or area location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alertCLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlertCLocationCode">
+    <xs:annotation>
+      <xs:documentation>A positive integer number (between 1 and 63,487) which uniquely identifies a pre-defined Alert C location defined within an Alert-C table.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="AlertCMethod2Point">
+    <xs:annotation>
+      <xs:documentation>A single point on the road network defined by reference to a point in a pre-defined ALERT-C location table and which has an associated direction of traffic flow.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:AlertCPoint">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="D2LogicalModel:AlertCDirection" />
+          <xs:element name="alertCMethod2PrimaryPointLocation" type="D2LogicalModel:AlertCMethod2PrimaryPointLocation" />
+          <xs:element name="alertCMethod2PointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod2PrimaryPointLocation">
+    <xs:annotation>
+      <xs:documentation>The point (called Primary point) which is either a single point or at the downstream end of a linear road section. The point is specified by a reference to a point in a pre-defined ALERT-C location table.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertCLocation" type="D2LogicalModel:AlertCLocation" />
+      <xs:element name="alertCMethod2PrimaryPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod4Point">
+    <xs:annotation>
+      <xs:documentation>A single point on the road network defined by reference to a point in a pre-defined ALERT-C location table plus an offset distance and which has an associated direction of traffic flow.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:AlertCPoint">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="D2LogicalModel:AlertCDirection" />
+          <xs:element name="alertCMethod4PrimaryPointLocation" type="D2LogicalModel:AlertCMethod4PrimaryPointLocation" />
+          <xs:element name="alertCMethod4PointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod4PrimaryPointLocation">
+    <xs:annotation>
+      <xs:documentation>The point (called Primary point) which is either a single point or at the downstream end of a linear road section. The point is specified by a reference to a point in a pre-defined ALERT-C location table plus a non-negative offset distance.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertCLocation" type="D2LogicalModel:AlertCLocation" />
+      <xs:element name="offsetDistance" type="D2LogicalModel:OffsetDistance" />
+      <xs:element name="alertCMethod4PrimaryPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A single point on the road network defined by reference to a pre-defined ALERT-C location table and which has an associated direction of traffic flow.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertCLocationCountryCode" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>EBU country code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alertCLocationTableNumber" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Number allocated to an ALERT-C table in a country. Ref. EN ISO 14819-3 for the allocation of a location table number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alertCLocationTableVersion" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Version number associated with an ALERT-C table reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alertCPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AngleInDegreesRestrictedRange">
+    <xs:annotation>
+      <xs:documentation>An integer number representing an angle in whole degrees between 0 and 359.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:NonNegativeInteger">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="359" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Boolean">
+    <xs:annotation>
+      <xs:documentation>Boolean has the value space required to support the mathematical concept of binary-valued logic: {true, false}. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="CarriagewayEnum">
+    <xs:annotation>
+      <xs:documentation>List of descriptors identifying specific carriageway details.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="connectingCarriageway">
+        <xs:annotation>
+          <xs:documentation>On the connecting carriageway.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entrySlipRoad">
+        <xs:annotation>
+          <xs:documentation>On the entry slip road.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="exitSlipRoad">
+        <xs:annotation>
+          <xs:documentation>On the exit slip road.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="flyover">
+        <xs:annotation>
+          <xs:documentation>On the flyover, i.e. the section of road passing over another.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="leftHandFeederRoad">
+        <xs:annotation>
+          <xs:documentation>On the left hand feeder road.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="leftHandParallelCarriageway">
+        <xs:annotation>
+          <xs:documentation>On the left hand parallel carriageway.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mainCarriageway">
+        <xs:annotation>
+          <xs:documentation>On the main carriageway.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="oppositeCarriageway">
+        <xs:annotation>
+          <xs:documentation>On the opposite carriageway.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="parallelCarriageway">
+        <xs:annotation>
+          <xs:documentation>On the adjacent parallel carriageway.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="rightHandFeederRoad">
+        <xs:annotation>
+          <xs:documentation>On the right hand feeder road.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="rightHandParallelCarriageway">
+        <xs:annotation>
+          <xs:documentation>On the right hand parallel carriageway.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="roundabout">
+        <xs:annotation>
+          <xs:documentation>On the roundabout.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="serviceRoad">
+        <xs:annotation>
+          <xs:documentation>On the adjacent service road.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="slipRoads">
+        <xs:annotation>
+          <xs:documentation>On the slip roads.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="underpass">
+        <xs:annotation>
+          <xs:documentation>On the underpass, i.e. the section of road passing under another.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ConfidentialityValueEnum">
+    <xs:annotation>
+      <xs:documentation>Values of confidentiality.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="noRestriction">
+        <xs:annotation>
+          <xs:documentation>No restriction on usage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CountryEnum">
+    <xs:annotation>
+      <xs:documentation>List of countries.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="at">
+        <xs:annotation>
+          <xs:documentation>Austria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="be">
+        <xs:annotation>
+          <xs:documentation>Belgium</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bg">
+        <xs:annotation>
+          <xs:documentation>Bulgaria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ch">
+        <xs:annotation>
+          <xs:documentation>Switzerland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cs">
+        <xs:annotation>
+          <xs:documentation>Serbia and Montenegro</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cy">
+        <xs:annotation>
+          <xs:documentation>Cyprus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cz">
+        <xs:annotation>
+          <xs:documentation>Czech Republic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="de">
+        <xs:annotation>
+          <xs:documentation>Germany</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dk">
+        <xs:annotation>
+          <xs:documentation>Denmark</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ee">
+        <xs:annotation>
+          <xs:documentation>Estonia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="es">
+        <xs:annotation>
+          <xs:documentation>Spain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fi">
+        <xs:annotation>
+          <xs:documentation>Finland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fo">
+        <xs:annotation>
+          <xs:documentation>Faroe Islands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fr">
+        <xs:annotation>
+          <xs:documentation>France</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gb">
+        <xs:annotation>
+          <xs:documentation>Great Britain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gg">
+        <xs:annotation>
+          <xs:documentation>Guernsey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gi">
+        <xs:annotation>
+          <xs:documentation>Gibraltar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gr">
+        <xs:annotation>
+          <xs:documentation>Greece</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hr">
+        <xs:annotation>
+          <xs:documentation>Croatia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hu">
+        <xs:annotation>
+          <xs:documentation>Hungary</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ie">
+        <xs:annotation>
+          <xs:documentation>Ireland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="im">
+        <xs:annotation>
+          <xs:documentation>Isle Of Man</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="is">
+        <xs:annotation>
+          <xs:documentation>Iceland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="it">
+        <xs:annotation>
+          <xs:documentation>Italy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="je">
+        <xs:annotation>
+          <xs:documentation>Jersey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="li">
+        <xs:annotation>
+          <xs:documentation>Lichtenstein</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lt">
+        <xs:annotation>
+          <xs:documentation>Lithuania</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lu">
+        <xs:annotation>
+          <xs:documentation>Luxembourg</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lv">
+        <xs:annotation>
+          <xs:documentation>Latvia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ma">
+        <xs:annotation>
+          <xs:documentation>Morocco</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mc">
+        <xs:annotation>
+          <xs:documentation>Monaco</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mk">
+        <xs:annotation>
+          <xs:documentation>Macedonia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mt">
+        <xs:annotation>
+          <xs:documentation>Malta</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nl">
+        <xs:annotation>
+          <xs:documentation>Netherlands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="no">
+        <xs:annotation>
+          <xs:documentation>Norway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pl">
+        <xs:annotation>
+          <xs:documentation>Poland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pt">
+        <xs:annotation>
+          <xs:documentation>Portugal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ro">
+        <xs:annotation>
+          <xs:documentation>Romania</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="se">
+        <xs:annotation>
+          <xs:documentation>Sweden</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="si">
+        <xs:annotation>
+          <xs:documentation>Slovenia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sk">
+        <xs:annotation>
+          <xs:documentation>Slovakia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sm">
+        <xs:annotation>
+          <xs:documentation>San Marino</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tr">
+        <xs:annotation>
+          <xs:documentation>Turkey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="va">
+        <xs:annotation>
+          <xs:documentation>Vatican City State</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Other than as defined in this enumeration.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="d2LogicalModel" type="D2LogicalModel:D2LogicalModel">
+    <xs:unique name="_d2LogicalModelMeasurementSiteRecordConstraint">
+      <xs:selector xpath=".//D2LogicalModel:measurementSiteRecord" />
+      <xs:field xpath="@id" />
+      <xs:field xpath="@version" />
+    </xs:unique>
+    <xs:unique name="_d2LogicalModelMeasurementSiteTableConstraint">
+      <xs:selector xpath=".//D2LogicalModel:measurementSiteTable" />
+      <xs:field xpath="@id" />
+      <xs:field xpath="@version" />
+    </xs:unique>
+  </xs:element>
+  <xs:complexType name="D2LogicalModel">
+    <xs:annotation>
+      <xs:documentation>The DATEX II logical model comprising exchange, content payload and management sub-models.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="exchange" type="D2LogicalModel:Exchange" />
+      <xs:element name="payloadPublication" type="D2LogicalModel:PayloadPublication" minOccurs="0" />
+      <xs:element name="d2LogicalModelExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="modelBaseVersion" use="required" fixed="2" />
+    <xs:attribute name="extensionName" use="optional" default="MDM Messstellen statisch" />
+    <xs:attribute name="extensionVersion" use="optional" default="02-00-00" />
+  </xs:complexType>
+  <xs:simpleType name="DateTime">
+    <xs:annotation>
+      <xs:documentation>A combination of integer-valued year, month, day, hour, minute properties, a decimal-valued second property and a time zone property from which it is possible to determine the local time, the equivalent UTC time and the time zone offset from UTC.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="DirectionEnum">
+    <xs:annotation>
+      <xs:documentation>List of directions of travel.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="northBound">
+        <xs:annotation>
+          <xs:documentation>North bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="northEastBound">
+        <xs:annotation>
+          <xs:documentation>North east bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="eastBound">
+        <xs:annotation>
+          <xs:documentation>East bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="southEastBound">
+        <xs:annotation>
+          <xs:documentation>South east bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="southBound">
+        <xs:annotation>
+          <xs:documentation>South bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="southWestBound">
+        <xs:annotation>
+          <xs:documentation>South west bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="westBound">
+        <xs:annotation>
+          <xs:documentation>West bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="northWestBound">
+        <xs:annotation>
+          <xs:documentation>North west bound general direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DistanceAlongLinearElement" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Distance of a point along a linear element either measured from the start node or a defined referent on that linear element, where the start node is relative to the element definition rather than the direction of traffic flow.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="distanceAlongLinearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DistanceFromLinearElementReferent">
+    <xs:annotation>
+      <xs:documentation>Distance of a point along a linear element measured from a "from referent" on the linear element, in the sense relative to the linear element definition rather than the direction of traffic flow or optionally towards a "towards referent".</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DistanceAlongLinearElement">
+        <xs:sequence>
+          <xs:element name="distanceAlong" type="D2LogicalModel:MetresAsFloat" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A measure of distance along a linear element.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="fromReferent" type="D2LogicalModel:Referent">
+            <xs:annotation>
+              <xs:documentation>A known location along the linear element from which the distanceAlong is measured, termed the "fromReferent" in ISO 19148. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="towardsReferent" type="D2LogicalModel:Referent" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A known location along the linear element towards which the distanceAlong is measured, termed the "towardsReferent" in ISO 19148.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="distanceFromLinearElementReferentExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DistanceFromLinearElementStart">
+    <xs:annotation>
+      <xs:documentation>Distance of a point along a linear element measured from the start node of the linear element, where start node is relative to the element definition rather than the direction of traffic flow.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DistanceAlongLinearElement">
+        <xs:sequence>
+          <xs:element name="distanceAlong" type="D2LogicalModel:MetresAsFloat" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A measure of distance along a linear element.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="distanceFromLinearElementStartExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ElaboratedDataFault">
+    <xs:annotation>
+      <xs:documentation>Details of a fault which is being reported for the related elaborated data.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Fault">
+        <xs:sequence>
+          <xs:element name="elaboratedDataFault" type="D2LogicalModel:ElaboratedDataFaultEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The type of fault which is being reported for the specified elaborated data.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="elaboratedDataFaultExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ElaboratedDataFaultEnum">
+    <xs:annotation>
+      <xs:documentation>Types of elaborated data faults.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="intermittentDataValues">
+        <xs:annotation>
+          <xs:documentation>Data values are being produced at intermittent intervals which are not consitent with the expected reporting interval.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noDataValuesAvailable">
+        <xs:annotation>
+          <xs:documentation>No elaborated data values are currently available.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="spuriousUnreliableDataValues">
+        <xs:annotation>
+          <xs:documentation>Spurious or unreliable data values are being produced.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unspecifiedOrUnknownFault">
+        <xs:annotation>
+          <xs:documentation>An unspecified or unknown fault exists in the process which is generating elaborated data.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Other than as defined in this enumeration.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Exchange">
+    <xs:annotation>
+      <xs:documentation>Details associated with the management of the exchange between the supplier and the client.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="supplierIdentification" type="D2LogicalModel:InternationalIdentifier" />
+      <xs:element name="exchangeExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtendedPoint">
+    <xs:annotation>
+      <xs:documentation>Extension point for Point Locations</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="additonalPointAlongLinearElement" type="D2LogicalModel:AdditonalPointAlongLinearElement" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExternalReferencing">
+    <xs:annotation>
+      <xs:documentation>A location defined by reference to an external/other referencing system.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="externalLocationCode" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A code in the external referencing system which defines the location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="externalReferencingSystem" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identification of the external/other location referencing system.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="externalReferencingExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fault">
+    <xs:annotation>
+      <xs:documentation>Information about a fault relating to a specific piece of equipment or process.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="faultIdentifier" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Unique identifier of the fault.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultDescription" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Textual description of the fault.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultCreationTime" type="D2LogicalModel:DateTime" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The date and time at which the fault was originally recorded/reported.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultLastUpdateTime" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The date and time at which the fault information as specified in this instance was last updated.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultSeverity" type="D2LogicalModel:FaultSeverityEnum" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The severity of the fault in terms of how it affects the usability of the equipment or the reliability of the data generated by the equipment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FaultSeverityEnum">
+    <xs:annotation>
+      <xs:documentation>Classification of the severity of faults.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="low">
+        <xs:annotation>
+          <xs:documentation>The fault is of low severity and has only limited impact on the usability of the equipment or the value of the data generated by the equipment.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="medium">
+        <xs:annotation>
+          <xs:documentation>The fault is of medium severity which will significantly limit the usability of the equipment or devalue the usefulness of the data generated by the equipment.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="high">
+        <xs:annotation>
+          <xs:documentation>The fault is of high severity which will render the equipment unusable or any data generated by the equipment to be of no value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>The fault is of unknown severity and hence its effect on the usability of the equipment or the usefulness of the data generated by the equipment can not be assessed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Float">
+    <xs:annotation>
+      <xs:documentation>A floating point number whose value space consists of the values m × 2^e, where m is an integer whose absolute value is less than 2^24, and e is an integer between -149 and 104, inclusive.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:float" />
+  </xs:simpleType>
+  <xs:complexType name="GroupOfLocations" abstract="true">
+    <xs:annotation>
+      <xs:documentation>One or more physically separate locations. Multiple locations may be related, as in an itinerary (or route), or may be unrelated. It is not for identifying the same physical location using different referencing systems.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="groupOfLocationsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeaderInformation">
+    <xs:annotation>
+      <xs:documentation>Management information relating to the data contained within a publication.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="confidentiality" type="D2LogicalModel:ConfidentialityValueEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The extent to which the related information may be circulated, according to the recipient type. Recipients must comply with this confidentiality statement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="informationStatus" type="D2LogicalModel:InformationStatusEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The status of the related information (real, test, exercise ....).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="headerInformationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="InformationStatusEnum">
+    <xs:annotation>
+      <xs:documentation>Status of the related information (i.e. real, test or exercise).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="real">
+        <xs:annotation>
+          <xs:documentation>The information is real. It is not a test or exercise.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="test">
+        <xs:annotation>
+          <xs:documentation>The information is part of a test for checking the exchange of this type of information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InternationalIdentifier">
+    <xs:annotation>
+      <xs:documentation>An identifier/name whose range is specific to the particular country.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="country" type="D2LogicalModel:CountryEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ISO 3166-1 two character country code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nationalIdentifier" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifier or name unique within the specified country.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="internationalIdentifierExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="LaneEnum">
+    <xs:annotation>
+      <xs:documentation>List of descriptors identifying specific lanes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="lane1">
+        <xs:annotation>
+          <xs:documentation>In the first lane numbered from nearest the hard shoulder to central median.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lane2">
+        <xs:annotation>
+          <xs:documentation>In the second lane numbered from nearest the hard shoulder to central median.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lane3">
+        <xs:annotation>
+          <xs:documentation>In the third lane numbered from nearest the hard shoulder to central median.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lane4">
+        <xs:annotation>
+          <xs:documentation>In the fourth lane numbered from nearest the hard shoulder to central median.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lane5">
+        <xs:annotation>
+          <xs:documentation>In the fifth lane numbered from nearest the hard shoulder to central median.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lane6">
+        <xs:annotation>
+          <xs:documentation>In the sixth lane numbered from nearest the hard shoulder to central median.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+	  <xs:enumeration value="hardShoulder">		
+        <xs:annotation>
+          <xs:documentation>On the hard shoulder.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Language">
+    <xs:annotation>
+      <xs:documentation>A language datatype, identifies a specified language by an ISO 639-1 2-alpha / ISO 639-2 3-alpha code.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:language" />
+  </xs:simpleType>
+  <xs:complexType name="LinearElement">
+    <xs:annotation>
+      <xs:documentation>A linear element along a single linear object, consistent with ISO 19148 definitions. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="roadName" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Name of the road of which the linear element forms a part.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="roadNumber" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifier/number of the road of which the linear element forms a part.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="linearElementReferenceModel" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The identifier of a road network reference model which segments the road network according to specific business rules.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="linearElementReferenceModelVersion" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The version of the identified road network reference model.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="linearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinearElementByCode">
+    <xs:annotation>
+      <xs:documentation>A linear element along a single linear object defined by its identifier or code in a road network reference model (specified in LinearElement class) which segments the road network according to specific business rules.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:LinearElement">
+        <xs:sequence>
+          <xs:element name="linearElementIdentifier" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>An identifier or code of a linear element (or link) in the road network reference model that is specified in the LinearElement class. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="linearElementByCodeExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LinearElementByPoints">
+    <xs:annotation>
+      <xs:documentation>A linear element along a single linear object defined by its start and end points.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:LinearElement">
+        <xs:sequence>
+          <xs:element name="startPointOfLinearElement" type="D2LogicalModel:Referent">
+            <xs:annotation>
+              <xs:documentation>The referent at a known location on the linear object which defines the start of the linear element.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="intermediatePointOnLinearElement" type="D2LogicalModel:_IntermediatePointOnLinearElement" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A referent at a known location on the linear object which is neither the start or end of the linear element.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="endPointOfLinearElement" type="D2LogicalModel:Referent">
+            <xs:annotation>
+              <xs:documentation>The referent at a known location on the linear object which defines the end of the linear element.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="linearElementByPointsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Location" abstract="true">
+    <xs:annotation>
+      <xs:documentation>The specification of a location either on a network (as a point or a linear location) or as an area. This may be provided in one or more referencing systems.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:GroupOfLocations">
+        <xs:sequence>
+          <xs:element name="externalReferencing" type="D2LogicalModel:ExternalReferencing" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="locationForDisplay" type="D2LogicalModel:PointCoordinates" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A location which may be used by clients for visual display on user interfaces.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="locationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="MeasuredOrDerivedDataTypeEnum">
+    <xs:annotation>
+      <xs:documentation>Types of measured or derived data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="individualVehicleMeasurements">
+        <xs:annotation>
+          <xs:documentation>Measured or derived individual vehicle measurements.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trafficConcentration">
+        <xs:annotation>
+          <xs:documentation>Measured or derived traffic concentration information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trafficFlow">
+        <xs:annotation>
+          <xs:documentation>Measured or derived traffic flow information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trafficSpeed">
+        <xs:annotation>
+          <xs:documentation>Measured or derived traffic speed information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MeasurementEquipmentFault">
+    <xs:annotation>
+      <xs:documentation>Details of a fault which is being reported for the related measurement equipment.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Fault">
+        <xs:sequence>
+          <xs:element name="measurementEquipmentFault" type="D2LogicalModel:MeasurementEquipmentFaultEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The type of fault which is being reported for the specified measurement equipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="measurementEquipmentFaultExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="MeasurementEquipmentFaultEnum">
+    <xs:annotation>
+      <xs:documentation>Types of measurement equipment faults.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="intermittentDataValues">
+        <xs:annotation>
+          <xs:documentation>Data values are being produced at intermittent intervals which are not consitent with the expected reporting interval.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noDataValuesAvailable">
+        <xs:annotation>
+          <xs:documentation>No measured data values are currently available.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="spuriousUnreliableDataValues">
+        <xs:annotation>
+          <xs:documentation>Spurious or unreliable data values are being produced.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unspecifiedOrUnknownFault">
+        <xs:annotation>
+          <xs:documentation>An unspecified or unknown fault exists in the measurement equipment.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Other than as defined in this enumeration.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MeasurementSiteRecord">
+    <xs:annotation>
+      <xs:documentation>An identifiable single measurement site entry/record in the Measurement Site table.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="measurementEquipmentTypeUsed" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The type of equipment used to gather the raw information from which the data values are determined, e.g. 'loop', 'ANPR' (automatic number plate recognition) or 'urban traffic management system' (such as SCOOT).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measurementSiteNumberOfLanes" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The number of lanes over which the measured value is determined.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measurementSiteIdentification" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identification of a measurement site used by the supplier or consumer systems.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measurementSide" type="D2LogicalModel:DirectionEnum" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Side of the road on which measurements are acquired, corresponding to the direction of the road.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measurementSpecificCharacteristics" type="D2LogicalModel:_MeasurementSiteRecordIndexMeasurementSpecificCharacteristics" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Composition to the indexed measurement specific characteristics associated with the measurement site. The index uniquely associates the measurement characteristics with the corresponding indexed measurement values for the measurement site.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measurementSiteLocation" type="D2LogicalModel:GroupOfLocations" />
+      <xs:element name="measurementSiteRecordExtension" type="D2LogicalModel:_MeasurementSiteRecordExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="MeasurementSiteRecordExtended">
+    <xs:annotation>
+      <xs:documentation>Additional information for a MeasurementSiteRecord</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="trafficControlComputer" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>indicates the corresponding trafficControlComputer (district), e.g. by some number or name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeasurementSiteTable">
+    <xs:annotation>
+      <xs:documentation>A Measurement Site Table comprising a number of sets of data, each describing the location from where a stream of measured data may be derived.  Each location is known as a "measurement site" which can be a point, a linear road section or an area.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="measurementSiteTableIdentification" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>An alphanumeric identification for the measurement site table, possibly human readable. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="measurementSiteRecord" type="D2LogicalModel:MeasurementSiteRecord" maxOccurs="unbounded" />
+      <xs:element name="measurementSiteTableExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="MeasurementSiteTablePublication">
+    <xs:annotation>
+      <xs:documentation>A publication containing one or more Measurment Site Tables.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:PayloadPublication">
+        <xs:sequence>
+          <xs:element name="headerInformation" type="D2LogicalModel:HeaderInformation" />
+          <xs:element name="measurementSiteTable" type="D2LogicalModel:MeasurementSiteTable" maxOccurs="unbounded" />
+          <xs:element name="measurementSiteTablePublicationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeasurementSpecificCharacteristics">
+    <xs:annotation>
+      <xs:documentation>Characteristics which are specific to an individual measurement type (specified in a known order) at the given measurement site.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="accuracy" type="D2LogicalModel:Percentage" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The extent to which the value may be subject to error, measured as a percentage of the data value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="period" type="D2LogicalModel:Seconds" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The time elapsed between the beginning and the end of the sampling or measurement period. This item may differ from the unit attribute; e.g. an hourly flow can be estimated from a 5-minute measurement period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="specificLane" type="D2LogicalModel:LaneEnum" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The lane to which the specific measurement at the measurement site relates. This overrides any lane specified for the measurement site as a whole.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="specificMeasurementValueType" type="D2LogicalModel:MeasuredOrDerivedDataTypeEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The type of this specific measurement at the measurement site.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="specificVehicleCharacteristics" type="D2LogicalModel:VehicleCharacteristics" minOccurs="0" />
+      <xs:element name="measurementSpecificCharacteristicsExtension" type="D2LogicalModel:_MeasurementSpecificCharacteristicsExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeasurementSpecificCharacteristicsExtended">
+    <xs:annotation>
+      <xs:documentation>additional Information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="inductionLoopIndex" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>number of the induction loop</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MetresAsFloat">
+    <xs:annotation>
+      <xs:documentation>A measure of distance defined in metres in a floating point format.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:simpleType name="MetresAsNonNegativeInteger">
+    <xs:annotation>
+      <xs:documentation>A measure of distance defined in metres in a non negative integer format.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="MultilingualString">
+    <xs:sequence>
+      <xs:element name="values">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value" type="D2LogicalModel:MultilingualStringValue" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultilingualStringValue">
+    <xs:simpleContent>
+      <xs:extension base="D2LogicalModel:MultilingualStringValueType">
+        <xs:attribute name="lang" type="xs:language" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MultilingualStringValueType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NetworkLocation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>The specification of a location on a network (as a point or a linear location).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Location">
+        <xs:sequence>
+          <xs:element name="supplementaryPositionalDescription" type="D2LogicalModel:SupplementaryPositionalDescription" minOccurs="0" />
+          <xs:element name="networkLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NonNegativeInteger">
+    <xs:annotation>
+      <xs:documentation>An integer number whose value space is the set {0, 1, 2, ..., 2147483645, 2147483646, 2147483647}.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="OffsetDistance">
+    <xs:annotation>
+      <xs:documentation>The non negative offset distance from the ALERT-C referenced point to the actual point.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="offsetDistance" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The non negative offset distance from the ALERT-C referenced point to the actual point. The ALERT-C locations in the Primary and Secondary locations must always encompass the linear section being specified, thus Offset Distance is towards the other point.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="offsetDistanceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrBaseLocationReferencePoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Base class used to hold data about a reference point.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="openlrCoordinate" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="openlrLineAttributes" type="D2LogicalModel:OpenlrLineAttributes" />
+      <xs:element name="openlrBaseLocationReferencePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrBasePointLocation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Holds common data that are used both in OpenlrPointAccessPoint and OpenlrPointAlongLine.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="openlrSideOfRoad" type="D2LogicalModel:OpenlrSideOfRoadEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Side of road</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openlrOrientation" type="D2LogicalModel:OpenlrOrientationEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Orientation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openlrPositiveOffset" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The positive offset along the line of the location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openlrLocationReferencePoint" type="D2LogicalModel:OpenlrLocationReferencePoint" />
+      <xs:element name="openlrLastLocationReferencePoint" type="D2LogicalModel:OpenlrLastLocationReferencePoint" />
+      <xs:element name="openlrBasePointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrExtendedPoint">
+    <xs:annotation>
+      <xs:documentation>Extension class for OpenLR point. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="openlrPointLocationReference" type="D2LogicalModel:OpenlrPointLocationReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="OpenlrFormOfWayEnum">
+    <xs:annotation>
+      <xs:documentation>Enumeration of for of way</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="undefined">
+        <xs:annotation>
+          <xs:documentation>undefined</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="motorway">
+        <xs:annotation>
+          <xs:documentation>motorway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="multipleCarriageway">
+        <xs:annotation>
+          <xs:documentation>multipleCarrigeway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="singleCarriageway">
+        <xs:annotation>
+          <xs:documentation>single carrigeway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="roundabout">
+        <xs:annotation>
+          <xs:documentation>roadabout</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="slipRoad">
+        <xs:annotation>
+          <xs:documentation>sliproad</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trafficSquare">
+        <xs:annotation>
+          <xs:documentation>traffic square</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OpenlrFunctionalRoadClassEnum">
+    <xs:annotation>
+      <xs:documentation>Enemuration of functional road class</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FRC0">
+        <xs:annotation>
+          <xs:documentation>Main road, highest importance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRC1">
+        <xs:annotation>
+          <xs:documentation>First class road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRC2">
+        <xs:annotation>
+          <xs:documentation>Second class road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRC3">
+        <xs:annotation>
+          <xs:documentation>Third class road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRC4">
+        <xs:annotation>
+          <xs:documentation>Fourth class road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRC5">
+        <xs:annotation>
+          <xs:documentation>Fifth class road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRC6">
+        <xs:annotation>
+          <xs:documentation>Sixth class road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRC7">
+        <xs:annotation>
+          <xs:documentation>Other class road, lowest importance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OpenlrGeoCoordinate">
+    <xs:annotation>
+      <xs:documentation>A geo-coordinate pair is a position in a map defined by its longitude and latitude coordinate values.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="openlrCoordinate" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="openlrGeoCoordinateExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLastLocationReferencePoint">
+    <xs:annotation>
+      <xs:documentation>The sequence of location reference points is terminated by a last location reference point.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBaseLocationReferencePoint">
+        <xs:sequence>
+          <xs:element name="openlrLastLocationReferencePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLineAttributes">
+    <xs:annotation>
+      <xs:documentation>Line attributes are part of a location reference point and consists of functional road class (FRC), form of way (FOW) and bearing (BEAR) data.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="openlrFunctionalRoadClass" type="D2LogicalModel:OpenlrFunctionalRoadClassEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The functional road class (FRC) can hold eight different values as described in the logical format.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openlrFormOfWay" type="D2LogicalModel:OpenlrFormOfWayEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The form of way (FOW) can hold eight different values as described in the logical format.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openlrBearing" type="D2LogicalModel:AngleInDegreesRestrictedRange" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>defines the bearing field as an integer value between 0 and 360 whereby “0” is included and “360” is excluded from that range.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openlrLineAttributesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLocationReferencePoint">
+    <xs:annotation>
+      <xs:documentation>The basis of a location reference is a sequence of location reference points (LRPs).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBaseLocationReferencePoint">
+        <xs:sequence>
+          <xs:element name="openlrLocationReferencePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="OpenlrOrientationEnum">
+    <xs:annotation>
+      <xs:documentation>Enumeration of side of road</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="noOrientationOrUnknown">
+        <xs:annotation>
+          <xs:documentation>No orientation or unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="withLineDirection">
+        <xs:annotation>
+          <xs:documentation>With line direction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="againstLineDirection">
+        <xs:annotation>
+          <xs:documentation>Against line direction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="both">
+        <xs:annotation>
+          <xs:documentation>Both directions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OpenlrPointAlongLine">
+    <xs:annotation>
+      <xs:documentation>Point along a line</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBasePointLocation">
+        <xs:sequence>
+          <xs:element name="openlrPointAlongLineExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPointLocationReference">
+    <xs:annotation>
+      <xs:documentation>A point location is a zero-dimensional element in a map that specifies a geometric location.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="openlrGeoCoordinate" type="D2LogicalModel:OpenlrGeoCoordinate" minOccurs="0" />
+      <xs:element name="openlrPoiWithAccessPoint" type="D2LogicalModel:OpenlrPoiWithAccessPoint" minOccurs="0" />
+      <xs:element name="openlrPointAlongLine" type="D2LogicalModel:OpenlrPointAlongLine" minOccurs="0" />
+      <xs:element name="openlrPointLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPoiWithAccessPoint">
+    <xs:annotation>
+      <xs:documentation>Point along line with access is a point location which is defined by a line, an offset value and a coordinate.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBasePointLocation">
+        <xs:sequence>
+          <xs:element name="openlrCoordinate" type="D2LogicalModel:PointCoordinates">
+            <xs:annotation>
+              <xs:documentation>The coordinate of the actual point of interest</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="openlrPoiWithAccessPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="OpenlrSideOfRoadEnum">
+    <xs:annotation>
+      <xs:documentation>Enumeration of side of road</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="onRoadOrUnknown">
+        <xs:annotation>
+          <xs:documentation>On road or unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="right">
+        <xs:annotation>
+          <xs:documentation>right</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="left">
+        <xs:annotation>
+          <xs:documentation>left</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="both">
+        <xs:annotation>
+          <xs:documentation>both</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PayloadPublication" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A payload publication of traffic related information or associated management information created at a specific point in time that can be exchanged via a DATEX II interface.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="publicationTime" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Date/time at which the payload publication was created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="publicationCreator" type="D2LogicalModel:InternationalIdentifier" />
+      <xs:element name="payloadPublicationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="lang" type="D2LogicalModel:Language" use="required">
+      <xs:annotation>
+        <xs:documentation>The default language used throughout the payload publication.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:simpleType name="Percentage">
+    <xs:annotation>
+      <xs:documentation>A measure of percentage.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:complexType name="Point">
+    <xs:annotation>
+      <xs:documentation>A single geospatial point.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:NetworkLocation">
+        <xs:sequence>
+          <xs:element name="tpegPointLocation" type="D2LogicalModel:TpegPointLocation" minOccurs="0" />
+          <xs:element name="alertCPoint" type="D2LogicalModel:AlertCPoint" minOccurs="0" />
+          <xs:element name="pointAlongLinearElement" type="D2LogicalModel:PointAlongLinearElement" minOccurs="0" />
+          <xs:element name="pointByCoordinates" type="D2LogicalModel:PointByCoordinates" minOccurs="0" />
+          <xs:element name="pointExtension" type="D2LogicalModel:_PointExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PointAlongLinearElement">
+    <xs:annotation>
+      <xs:documentation>A point on a linear element where the linear element is either a part of or the whole of a linear object (i.e. a road), consistent with ISO 19148 definitions. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="linearElement" type="D2LogicalModel:LinearElement" />
+      <xs:element name="distanceAlongLinearElement" type="D2LogicalModel:DistanceAlongLinearElement" />
+      <xs:element name="pointAlongLinearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointByCoordinates">
+    <xs:annotation>
+      <xs:documentation>A single point defined only by a coordinate set with an optional bearing direction.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="bearing" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A bearing at the point measured in degrees (0 - 359).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="pointByCoordinatesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointCoordinates">
+    <xs:annotation>
+      <xs:documentation>A pair of coordinates defining the geodetic position of a single point using the European Terrestrial Reference System 1989 (ETRS89).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="latitude" type="D2LogicalModel:Float" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Latitude in decimal degrees using the European Terrestrial Reference System 1989 (ETRS89).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="longitude" type="D2LogicalModel:Float" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Longitude in decimal degrees using the European Terrestrial Reference System 1989 (ETRS89).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="pointCoordinatesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Referent">
+    <xs:annotation>
+      <xs:documentation>A referent on a linear object that has a known location such as a node, a reference marker (e.g. a markerpost), an intersection etc.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="referentIdentifier" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The identifier of the referent, unique on the specified linear element (i.e. road or part of).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="referentType" type="D2LogicalModel:ReferentTypeEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The type of the referent.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" minOccurs="0" />
+      <xs:element name="referentExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ReferentTypeEnum">
+    <xs:annotation>
+      <xs:documentation>A set of types of known points along a linear object such as a road.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="referenceMarker">
+        <xs:annotation>
+          <xs:documentation>A marker which is usually but not necessarily physical that is one of a sequence which are spaced out along the linear object (road)  to provide a location reference. The spacing of markers is not necessarily even.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Seconds">
+    <xs:annotation>
+      <xs:documentation>Seconds.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:simpleType name="String">
+    <xs:annotation>
+      <xs:documentation>A character string whose value space is the set of finite-length sequences of characters. Every character has a corresponding Universal Character Set code point (as defined in ISO/IEC 10646), which is an integer.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SupplementaryPositionalDescription">
+    <xs:annotation>
+      <xs:documentation>A collection of supplementary positional information which improves the precision of the location.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="affectedCarriagewayAndLanes" type="D2LogicalModel:AffectedCarriagewayAndLanes" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="supplementaryPositionalDescriptionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegDescriptor" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A collection of information providing descriptive references to locations using the TPEG-Loc location referencing approach.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="descriptor" type="D2LogicalModel:MultilingualString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A text string which describes or elaborates the location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tpegDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegFramedPoint">
+    <xs:annotation>
+      <xs:documentation>A point on the road network which is framed between two other points on the same road.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointLocation">
+        <xs:sequence>
+          <xs:element name="tpegFramedPointLocationType" type="D2LogicalModel:TpegLoc01FramedPointLocationSubtypeEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The type of TPEG location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="framedPoint" type="D2LogicalModel:TpegNonJunctionPoint">
+            <xs:annotation>
+              <xs:documentation>A single non junction point on the road network which is framed between two other specified points on the road network.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="to" type="D2LogicalModel:TpegPoint">
+            <xs:annotation>
+              <xs:documentation>The location at the down stream end of the section of road which frames the TPEGFramedPoint.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="from" type="D2LogicalModel:TpegPoint">
+            <xs:annotation>
+              <xs:documentation>The location at the up stream end of the section of road which frames the TPEGFramedPoint.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tpegFramedPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegIlcPointDescriptor">
+    <xs:annotation>
+      <xs:documentation>A descriptor for describing a junction by defining the intersecting roads.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegIlcPointDescriptorType" type="D2LogicalModel:TpegLoc03IlcPointDescriptorSubtypeEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The nature of the descriptor used to define the location under consideration (derived from the TPEG Loc table 03).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tpegIlcPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegJunction">
+    <xs:annotation>
+      <xs:documentation>A point on the road network which is a road junction point.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPoint">
+        <xs:sequence>
+          <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" />
+          <xs:element name="name" type="D2LogicalModel:TpegJunctionPointDescriptor" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A name which identifies a junction point on the road network</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ilc" type="D2LogicalModel:TpegIlcPointDescriptor" maxOccurs="3">
+            <xs:annotation>
+              <xs:documentation>A descriptor for describing a junction by identifying the intersecting roads at a road junction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="otherName" type="D2LogicalModel:TpegOtherPointDescriptor" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A descriptive name which helps to identify the junction point.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tpegJunctionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegJunctionPointDescriptor">
+    <xs:annotation>
+      <xs:documentation>A descriptor for describing a point at a junction on a road network.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegJunctionPointDescriptorType" type="D2LogicalModel:TpegLoc03JunctionPointDescriptorSubtypeEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The nature of the descriptor used to define the location under consideration (derived from the TPEG Loc table 03).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tpegJunctionPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TpegLoc01FramedPointLocationSubtypeEnum">
+    <xs:annotation>
+      <xs:documentation>Types of points on the road network framed by two other points on the same road.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="framedPoint">
+        <xs:annotation>
+          <xs:documentation>A point on the road network framed by two other points on the same road.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc01SimplePointLocationSubtypeEnum">
+    <xs:annotation>
+      <xs:documentation>Types of simple point.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="intersection">
+        <xs:annotation>
+          <xs:documentation>An point on the road network at which one or more roads intersect.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nonLinkedPoint">
+        <xs:annotation>
+          <xs:documentation>A point on the road network which is not at a junction or intersection.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc03IlcPointDescriptorSubtypeEnum">
+    <xs:annotation>
+      <xs:documentation>Descriptors for describing a junction by identifying the intersecting roads at a road junction.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tpegIlcName1">
+        <xs:annotation>
+          <xs:documentation>The name of the road on which the junction point is located.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tpegIlcName2">
+        <xs:annotation>
+          <xs:documentation>The name of the first intersecting road at the junction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tpegIlcName3">
+        <xs:annotation>
+          <xs:documentation>The name of the second intersecting road (if one exists) at the junction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc03JunctionPointDescriptorSubtypeEnum">
+    <xs:annotation>
+      <xs:documentation>Descriptors for describing a point at a road junction.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="junctionName">
+        <xs:annotation>
+          <xs:documentation>Name of a road network junction where two or more roads join.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc03OtherPointDescriptorSubtypeEnum">
+    <xs:annotation>
+      <xs:documentation>Descriptors other than junction names and road descriptors which can help to identify the location of points on the road network.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="administrativeAreaName">
+        <xs:annotation>
+          <xs:documentation>Name of an administrative area.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="administrativeReferenceName">
+        <xs:annotation>
+          <xs:documentation>Reference name by which an administrative area is known.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="airportName">
+        <xs:annotation>
+          <xs:documentation>Name of an airport.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="areaName">
+        <xs:annotation>
+          <xs:documentation>Name of an area.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="buildingName">
+        <xs:annotation>
+          <xs:documentation>Name of a building.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="busStopIdentifier">
+        <xs:annotation>
+          <xs:documentation>Identifier of a bus stop on the road network.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="busStopName">
+        <xs:annotation>
+          <xs:documentation>Name of a bus stop on the road network.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="canalName">
+        <xs:annotation>
+          <xs:documentation>Name of a canal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="countyName">
+        <xs:annotation>
+          <xs:documentation>Name of a county (administrative sub-division).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ferryPortName">
+        <xs:annotation>
+          <xs:documentation>Name of a ferry port.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intersectionName">
+        <xs:annotation>
+          <xs:documentation>Name of a road network intersection.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lakeName">
+        <xs:annotation>
+          <xs:documentation>Name of a lake.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="linkName">
+        <xs:annotation>
+          <xs:documentation>Name of a road link.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="localLinkName">
+        <xs:annotation>
+          <xs:documentation>Local name of a road link.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="metroStationName">
+        <xs:annotation>
+          <xs:documentation>Name of a metro/underground station.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nationName">
+        <xs:annotation>
+          <xs:documentation>Name of a nation (e.g. Wales) which is a sub-division of a ISO recognised country.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nonLinkedPointName">
+        <xs:annotation>
+          <xs:documentation>Name of a point on the road network which is not at a junction or intersection. </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="parkingFacilityName">
+        <xs:annotation>
+          <xs:documentation>Name of a parking facility.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pointName">
+        <xs:annotation>
+          <xs:documentation>Name of a specific point.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pointOfInterestName">
+        <xs:annotation>
+          <xs:documentation>Name of a general point of interest.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="railwayStation">
+        <xs:annotation>
+          <xs:documentation>Name of a railway station.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="regionName">
+        <xs:annotation>
+          <xs:documentation>Name of a geographic region.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="riverName">
+        <xs:annotation>
+          <xs:documentation>Name of a river.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="seaName">
+        <xs:annotation>
+          <xs:documentation>Name of a sea.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="serviceAreaName">
+        <xs:annotation>
+          <xs:documentation>Name of a service area on a road network.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tidalRiverName">
+        <xs:annotation>
+          <xs:documentation>Name of a river which is of a tidal nature.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="townName">
+        <xs:annotation>
+          <xs:documentation>Name of a town.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Other than as defined in this enumeration.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TpegNonJunctionPoint">
+    <xs:annotation>
+      <xs:documentation>A point on the road network which is not a road junction point.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPoint">
+        <xs:sequence>
+          <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" />
+          <xs:element name="name" type="D2LogicalModel:TpegOtherPointDescriptor" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A descriptive name which helps to identify the non junction point. At least one descriptor must identify the road on which the point is located, i.e. must be of type 'linkName' or 'localLinkName'.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tpegNonJunctionPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegOtherPointDescriptor">
+    <xs:annotation>
+      <xs:documentation>General descriptor for describing a point.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegOtherPointDescriptorType" type="D2LogicalModel:TpegLoc03OtherPointDescriptorSubtypeEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The nature of the descriptor used to define the location under consideration (derived from the TPEG Loc table 03).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tpegOtherPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A point on the road network which is either a junction point or a non junction point.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="tpegPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegPointDescriptor" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A descriptor for describing a point location.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegPointLocation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A single point on the road network defined by a TPEG-Loc structure and which has an associated direction of traffic flow.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="tpegDirection" type="D2LogicalModel:DirectionEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The direction of traffic flow.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tpegPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegSimplePoint">
+    <xs:annotation>
+      <xs:documentation>A point on the road network which is not bounded by any other points on the road network.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointLocation">
+        <xs:sequence>
+          <xs:element name="tpegSimplePointLocationType" type="D2LogicalModel:TpegLoc01SimplePointLocationSubtypeEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The type of TPEG location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="point" type="D2LogicalModel:TpegPoint">
+            <xs:annotation>
+              <xs:documentation>A single point defined by a coordinate set and TPEG decriptors.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tpegSimplePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleCharacteristics">
+    <xs:annotation>
+      <xs:documentation>The characteristics of a vehicle, e.g. lorry of gross weight greater than 30 tonnes.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="vehicleType" type="D2LogicalModel:VehicleTypeEnum" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vehicle type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="vehicleCharacteristicsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VehicleTypeEnum">
+    <xs:annotation>
+      <xs:documentation>Types of vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="anyVehicle">
+        <xs:annotation>
+          <xs:documentation>Vehicle of any type.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="articulatedVehicle">
+        <xs:annotation>
+          <xs:documentation>Articulated vehicle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bicycle">
+        <xs:annotation>
+          <xs:documentation>Bicycle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bus">
+        <xs:annotation>
+          <xs:documentation>Bus.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="car">
+        <xs:annotation>
+          <xs:documentation>Car.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="carOrLightVehicle">
+        <xs:annotation>
+          <xs:documentation>Car or light vehicle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="carWithTrailer">
+        <xs:annotation>
+          <xs:documentation>Car towing a trailer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lorry">
+        <xs:annotation>
+          <xs:documentation>Lorry of any type.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="motorcycle">
+        <xs:annotation>
+          <xs:documentation>Motorcycle.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="van">
+        <xs:annotation>
+          <xs:documentation>Van.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vehicleWithTrailer">
+        <xs:annotation>
+          <xs:documentation>Vehicle (of unspecified type) towing a trailer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

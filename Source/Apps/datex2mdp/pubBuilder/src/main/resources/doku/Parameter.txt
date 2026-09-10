@@ -1,0 +1,147 @@
+System-Properties
+-----------------
+
+de.heuboe.file.outdated.interval:
+
+	Vorhaltezeitraum für Publikationen in Stunden
+
+
+
+ArgParser:
+----------
+
+Default-Parameter in Klammern aufgeführt.
+
+
+ohne Kommentar:
+
+dbms 
+db 
+server
+user
+passwd
+env
+program
+special
+		
+		
+			
+checkValidity
+
+	Flag: Prüfung der Validität der erzeugten Publications
+
+
+d2SchemaPath
+
+	Pfad der XML-Schema-Datei
+	
+	
+d2SchemaFile  
+
+	Dateiname der Datex2-XML-Schema-Datei
+	
+	
+d2SchemaModelBaseVersion
+
+	Version des Datex2-XML-Schemas
+	
+	
+d2SchemaNameSpace
+
+	Name des Namespace des Datex2-XML-Schemas
+
+			
+useMVTemplateFactory
+
+	Flag: Erzeugung der MeasuredValue-Teile der Publication nach neuem Datenmodell (datex2*) über Factory
+			
+			
+pubInstance
+
+	Damit wird eine Auswahl von konstanten Werten (Tabelle 'd2ClassNode2D2DefaultVal_var') getroffen
+	
+	
+pubCycle
+
+	Ausgabe-Zyklus (in Sekunden)
+
+
+pubOffset
+
+	Offset zum Ausgabe-Zyklus (in Sekunden)
+		
+			
+pubCountryCode
+		
+	Datex2-Attribut 'countryCode'
+	(de)
+	
+	
+pubNatId
+
+	Datex2-Attribut 'nationalIdentifier'
+	
+	
+pubLanguage
+
+	Daetx2-Attribut 'language'
+	(de)
+
+
+overwriteOutput 
+
+	Flag: Erzeugt Dateinamen ohne Zeitstempel und überschreibt somit die alten Datei
+
+
+metaDataFileName
+
+	Name der Meta-Datei
+	nur im VS-Info-Verteiler-Kontext
+	nicht im MDM-Kontext --> 'leer' angeben !
+	(metadata.xml)
+	
+	
+metaDataSchemaLocation
+
+	URL des Meta-Daten XML-Schemas ", 
+	nur im VS-Info-Verteiler-Kontext
+	nicht im MDM-Kontext --> 'leer' angeben !
+	(http://www.otap.hessen.de/metadata.xsd)
+	
+			
+pubFilePath
+
+	Verzeichnis, in dem die Publicationdateien abgelegt werden
+	nicht im VS-Info-Verteiler-Kontext
+	
+	
+pubErrFilePath
+
+	Verzeichnis, in dem invalide Publicationdateien abgelegt werden (Ist der Aufrufparameter nicht definiert, werden auch fehlerhafte Dateien in <pubFilePath> abgelegt)
+	nicht im VS-Info-Verteiler-Kontext
+
+
+idRecPath
+
+	kommagetrennt: SenkenId, Kennung (wird hier ignoriert), AusgabePfad
+	nur im VS-Info-Verteiler-Kontext
+	nicht im MDM-Kontext
+		
+			
+mdmAuthenticationFile
+
+	Zustellung an MDM: Verbindungs/Authentifikations-Parameter
+	nur im MDM-Kontext
+
+			
+writeVehClass
+
+	Flag: Die Fahrzeugklasse wird geschrieben
+	
+	
+ejectEmptySiteMeasurements
+
+	Flag: Fuer eine MeasurementSite ohne gueltige Daten wird ein (leeres, keine 'measuredValue') 'siteMeasurements'-Element geschrieben
+
+	
+	

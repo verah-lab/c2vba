@@ -1,0 +1,211 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- parent -->
+    <parent>
+        <groupId>de.heuboe.base</groupId>
+        <artifactId>jhbpom</artifactId>
+        <version>7.3.4</version>
+    </parent>
+
+    <groupId>de.heuboe.datex2</groupId>
+    <artifactId>datex2MDPBuilder</artifactId>
+    <version>5.0.6-SNAPSHOT</version>
+
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/Datex2/datex2mdp</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:Datex2/datex2mdp.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:Datex2/datex2mdp.git</developerConnection>
+      <tag>HEAD</tag>
+  </scm>
+
+    <properties>
+        <java.version>11</java.version>
+        <datex2.version>3.6.9</datex2.version>
+        <datex2.base.version>1.3.4</datex2.base.version>
+        <additionalparam>-Xdoclint:none</additionalparam>
+        <spring.boot>2.7.4</spring.boot>
+        <mainClass>de.heuboe.datex2.mdp.builder.D2MDPPubBuilder</mainClass>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.datex2</groupId>
+                <artifactId>datex2Base</artifactId>
+                <version>5.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.heuboe.datex2</groupId>
+                <artifactId>datex2-schema_2_3</artifactId>
+                <version>1.3.6</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-receiving-processing-datamodel</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>3.21.7</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-tls-proto-interface</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.heuboe.datex2</groupId>
+            <artifactId>datex2Base</artifactId>
+            <version>5.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jhbBase</artifactId>
+                    <groupId>de.heuboe.base</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.datex2</groupId>
+            <artifactId>datex2-push-client</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.datex2</groupId>
+            <artifactId>datex2-mst-persistence</artifactId>
+            <version>5.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>de.heuboe.datex2</groupId>
+                    <artifactId>datex2-schema_2_1</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>de.heuboe.base</groupId>
+                    <artifactId>jddp</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.13.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${spring.boot}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <version>${spring.boot}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jacorb</groupId>
+            <artifactId>jacorb</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>0.10.4</version>
+        </dependency>
+
+        <!-- for testing only -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Dockering -->
+            <plugin>
+                <!-- Or use it in a separate project (recommended) -->
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>docker-build</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <from>
+                        <image>${docker.registry}/eclipse-temurin:17-jre-alpine</image>
+                    </from>
+                    <to>
+                        <image>${docker.registry}/heuboe/datex2/mdp/datex2mdp-builder:${project.version}</image>
+                    </to>
+                    <!-- We currently don't use HTTPS -> insecure -->
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+                            <jvmFlag>-Dspring.config.additional-location=/config/</jvmFlag>
+                        </jvmFlags>
+                        <mainClass>${mainClass}</mainClass>
+                        <!-- The ports that the application exposes -->
+                        <ports>
+                            <port>8080</port> <!-- Actuator -->
+                        </ports>
+                        <labels>
+                            <version>${project.version}</version>
+                            <build.timestamp>${maven.build.timestamp}</build.timestamp>
+                            <!-- Disable the following if you don't run the goal as part of your
+                                main project -->
+                            <git.tags>${git.tags}</git.tags>
+                            <git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+                            <git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+                        </labels>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                        <filesModificationTime>${git.commit.time}</filesModificationTime>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
