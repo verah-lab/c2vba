@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+    
+	    <Properties>
+	        <!-- global layout pattern; designed to show log patterns in fixed sized columns -->
+	        <!-- see: https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout -->
+	        <Property name="layoutPattern">%date{ABSOLUTE} | %5.5level | %15.15thread | %25.25logger{1.} | %30.30class{1.}(%line) | %15.15X{context} | %15.15marker |> %message%n</Property>
+	    </Properties>
+    
+        <Console name="Console" target="SYSTEM_OUT">
+        
+            <PatternLayout pattern="%date{ABSOLUTE} | %5.5level | %15.15thread | %25.25logger{1.} | %30.30class{1.}(%line) | %15.15X{context} | %15.15marker |> %message%n" />
+        </Console>
+        
+		<RollingFile name="LogFile" 
+		             fileName="F:/sdbby/log/sdbby-service/sdbby-service.log"
+		             filePattern="F:/sdbby/log/sdbby-service/sdbby-service-%d{yyyy-MM-dd HH:mm:ss.SSS}.log">
+			<PatternLayout>
+			
+				<pattern>${layoutPattern}</pattern>
+				
+			</PatternLayout>
+			<Policies>
+				 <SizeBasedTriggeringPolicy size="10 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		
+        <!--
+        <ImcMsgTee name="ImcMsgTee" context="vmsStatusPublication">
+        </ImcMsgTee>
+		-->
+        
+        <!-- Wraps the ImcMsgTee appender and writes LogEvents on a separate Thread -->
+        <!-- Thus writing logs should not block the system. -->
+        <!--
+        <Async name="AsyncImcMsgTee">
+            <AppenderRef ref="ImcMsgTee" />
+        </Async>
+		-->
+		
+    </Appenders>
+    <Loggers>
+        <Root level="warn">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="LogFile"/>
+            <!--   <AppenderRef ref="ImcMsgTee"/>-->
+        </Root>
+		<Logger name="de.heuboe" level="info" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="LogFile"/>
+            <!--   <AppenderRef ref="ImcMsgTee"/>-->
+        </Logger>
+    </Loggers>
+</Configuration>
+

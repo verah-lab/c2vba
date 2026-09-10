@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ConfigSet xmlns:ns2="http://sdbby.heuboe.de/service/config/data">
+    <configItem>
+        <name>BY-SBA_A9_Fischbach_FR_Muenchen</name>
+        <id>kri.kri20.m.de</id>
+        <id>kri.kri189.m.de</id>
+    </configItem>
+    <configItem>
+        <name>BY-SBA_A9_Freimann_FR_Muenchen</name>
+        <id>kri.kri20.m.de</id>
+        <id>kri.kri189.m.de</id>
+    </configItem>
+    <configItem>
+        <name>BY-WWW_Muenchen</name>
+        <id>kri.kri20.m.de</id>
+        <id>kri.kri189.m.de</id>
+        <id>kri.uz06_kri4.m.de</id>
+        <id>kri.uz07_kri6.m.de</id>
+        <id>kri.kri14.m.de</id>
+        <id>kri.uz01_kri7.m.de</id>
+    </configItem>
+    <configItem>
+        <name>BY-WWW_Muenchen_Messe</name>
+        <id>kri.kri17.m.de</id>
+        <id>kri.uz07_kri6.m.de</id>
+        <id>kri.kri16.m.de</id>
+    </configItem>
+</ns2:ConfigSet>
+

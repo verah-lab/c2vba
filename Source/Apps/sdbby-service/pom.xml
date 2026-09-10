@@ -1,0 +1,267 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+	    <groupId>de.heuboe.c2vba.base</groupId>
+	    <artifactId>c2vba-base-parent</artifactId>
+	    <version>0.0.1</version>
+	</parent>
+
+	<groupId>de.heuboe.sdbby</groupId>
+	<artifactId>sdbby-service</artifactId>
+	<version>1.0.3</version>
+
+	<properties>
+		<junit.version>4.8.2</junit.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<additionalparam>-Xdoclint:none</additionalparam>
+	</properties>
+	
+	<scm>  
+		<url>https://gitlab.heuboe.hbintern/SdbBy/sdbby-service</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:SdbBy/sdbby-service.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:SdbBy/sdbby-service.git</developerConnection>
+    </scm>
+	
+	<dependencies>
+		<dependency>
+			<groupId>de.heuboe.sdbby</groupId>
+			<artifactId>sdbby-interface</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.c2vba.data</groupId>
+			<artifactId>c2vba-data</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbBase</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.heuboe.ws</groupId>
+			<artifactId>jhbWSBase</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		
+		
+		
+		<!-- Spring -->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				
+			</exclusions>
+		</dependency>
+    	<dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+		  	<groupId>net.devh</groupId>
+		  	<artifactId>grpc-client-spring-boot-starter</artifactId>
+		  	<version>2.10.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+
+		<dependency>
+	    	<groupId>de.heuboe.kafka</groupId>
+			<artifactId>kafka-tools</artifactId>
+			<version>0.1.4</version>
+	    </dependency>
+	    
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+
+		<!-- CXF -->
+		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.cxf</groupId>
+		    <artifactId>cxf-rt-features-logging</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<executions>
+					<!-- Optional -->
+					<!-- Build a tar file to allow local inspection -->
+					<execution>
+						<id>docker-build-tar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>buildTar</goal>
+						</goals>
+					</execution>
+					<!-- Required -->
+					<!-- Upload the image to the registry -->
+					<execution>
+						<id>docker-build</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<from>
+						<!-- ${docker.registry} is set via settings.xml 
+						<image>${docker.registry}/adoptopenjdk/openjdk11:alpine-jre</image>
+						-->
+						<image>${docker.registry}/eclipse-temurin:17-jdk-alpine</image>
+					</from>
+					<to>
+						<!-- This change is important -->
+						<image>${docker.registry}/heuboe/sdbby/${project.artifactId}:${project.version}</image>
+					</to>
+					<container>
+						<jvmFlags>
+							<!-- Flags für Spring -->
+							<jvmFlag>--add-opens=java.base/java.lang=ALL-UNNAMED</jvmFlag>
+							<jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+							<jvmFlag>-Dspring.config.location=file:/config/</jvmFlag>
+							<!-- Do not add flags such as -Xmx2G or other parameters here that 
+								might be changed later on -->
+						</jvmFlags>
+						<mainClass>${mainClass}</mainClass>
+						<ports>
+							<!-- Ports with their function -->
+							<port>8080</port><!-- actuator -->
+						</ports>
+						<labels>
+							<version>${project.version}</version>
+							<build.timestamp>${maven.build.timestamp}</build.timestamp>
+							<!-- Metadata-derived from the git-commit-id-plugin -->
+							<git.tags>${git.tags}</git.tags>
+							<git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+							<git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+						</labels>
+						<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+						<filesModificationTime>${git.commit.time}</filesModificationTime>
+					</container>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<verbose>false</verbose>
+					<skipPoms>false</skipPoms>
+					<dateFormat>yyyy-MM-dd'T'HH:mm:ss'Z'</dateFormat><!-- Required for dockering -->
+					<dateFormatTimeZone>UTC</dateFormatTimeZone><!-- Required for dockering -->
+					<generateGitPropertiesFile>true</generateGitPropertiesFile>
+					<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+					<failOnNoGitDirectory>false</failOnNoGitDirectory>
+					<failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+					<excludeProperties>
+						<!-- Requested to be excluded by colleague -->
+						<excludeProperty>.*\.user\..*</excludeProperty>
+						<!-- same here and we already have other build information files -->
+						<excludeProperty>.*\.build\..*</excludeProperty>
+					</excludeProperties>
+				</configuration>
+			</plugin>
+ 		</plugins>
+	</build>
+
+	<profiles>
+		<!-- Stops XDocLint from complaining about invalid html in JavaDoc -->
+		<profile>
+			<id>Java8</id>
+			<activation>
+				<jdk>1.8</jdk>
+			</activation>
+			<properties>
+				<additionalparam>-Xdoclint:none</additionalparam>
+			</properties>
+		</profile>
+	</profiles>
+</project>

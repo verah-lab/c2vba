@@ -1,0 +1,17 @@
+-Dlog4j.configuration=D:/Develop/Git/sdbby/sdbby-service/config/log4j.xml
+-Dde.heuboe.ddp.constructLogAppender=false				
+-DORBInitRef.NameService=corbaloc:iiop:1.2@sdbby-2k19:9999/NameService
+-Dcom.sun.CORBA.transport.ORBTCPReadTimeouts=1:15000:300:5
+-Dorg.omg.CORBA.ORBClass=org.jacorb.orb.ORB
+-Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton				
+-Dcfg.filename=D:/Develop/Git/sdbby/sdbby-service/config/config.xml
+-Dddp.dbms=postgres
+-Dddp.db=by
+-Dddp.server=dbsrv9-2k12
+-Dddp.user=postgres
+-Dddp.passwd=postgres
+-Dddp.name=sdbbyService
+-Dddp.special=psTest
+-Dddp.env=sdbby-2k19:5599:by
+-Dws.port=8123
+-Dprocess.name=sdbbyService

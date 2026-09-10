@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema targetNamespace="http://sdbby.heuboe.de/service/config/data" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns2="http://sdbby.heuboe.de/service/config/data"
+	version="1.0">
+
+	<xs:complexType name="configSet">
+		<xs:sequence>
+			<xs:element name="configItem" type="ns2:configItem" maxOccurs="unbounded" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="configItem">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+			</xs:element>
+			<xs:element name="id" type="xs:string" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ConfigSet" type="ns2:configSet"></xs:element>
+</xs:schema>

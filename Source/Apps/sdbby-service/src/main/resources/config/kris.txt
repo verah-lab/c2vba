@@ -1,0 +1,27 @@
+GeoDyn: KRI-IDs, Namen und Übersetzung in C2VBA-KRI-IDs
+
+qid;qname
+2000416;WWW A9 Nord             		kri.kri20.m.de,kri.kri189.m.de 
+2000417;WWW A9 Sued						kri.kri20.m.de,kri.kri189.m.de 
+2000386;WWW A92							kri.uz06_kri4.m.de
+2000420;WWW A99 						kri.uz07_kri6.m.de
+2000427;WWW Aubing						kri.kri14.m.de,kri.uz01_kri7.m.de
+2002938;SBA A9 Freimann					kri.kri20.m.de,kri.kri189.m.de 
+2004699;WWW MM A94						kri.kri17.m.de
+2004700;WWW MM A99						kri.uz07_kri6.m.de
+2004701;WWW MM Holzkirchen				kri.kri16.m.de
+
+
+
+Übersetzung gemäß Tabelle Andea (Teams Chat 22.11.2022, 11:12): 
+
+WWW A9 Nord	UZ Freimann	KRI20, KRI189
+WWW A9 Sued	UZ Freimann	KRI20, KRI189
+WWW A92	UZ Freising	UZ06_KRI1-4                   UZ06_KRI4
+WWW A99	UZ Aschheim	UZ7 KRI1-6                    UZ07_KRI6
+WWW Aubing	UZ Aubing	KRI14;  UZ1 KRI1-7        UZ01_KRI7
+SBA A9 Freimann	UZ Freimann	KRI20, KRI189
+WWW MM A94	UZ Riem	KRI17
+WWW MM A99	UZ Aschheim	UZ7 KRI1-6                UZ07_KRI6
+WWW MM Holzkirchen	UZ Holzkirchen	KRI16
+
