@@ -1,0 +1,36 @@
+D:\vzh\binScript\importMDM_D2DataMapping>importDef_LVE_MDM_MMT2.cmd 1
+
+D:\vzh\binScript\importMDM_D2DataMapping>set HBOUTIMMEDIATE=1
+
+D:\vzh\binScript\importMDM_D2DataMapping>"C:\Program Files (x86)\Java\jre7\bin\java" -Xmx1024m -Dorg.omg.CORBA.ORBClass=
+org.jacorb.orb.ORB -Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton -DORBInitRef.NameService=corbaloc::he2-
+w7v:9923/NameService -cp ../../jarsIntegrated/datex2MSTBuilder_MDM/*; de.heuboe.datex2.mst.builder.client.MSTDefinitionI
+mporterClient @importDef_LVE_MDM_MMT2.arg -xmlDefFile=data\mstDefinitionLVE_MDM_MMT2.xml -defVersion=1
+2015-10-15 11:36:47,561 [main] INFO root  - Load default configuration for log4j
+2015-10-15 11:36:47,563 [main] DEBUG de.heuboe  - Set log level for logger de.heuboe to DEBUG
+2015-10-15 11:36:47,563 [main] DEBUG de.heuboe  - Set log level for root logger to INFO
+dbms=postgres   (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+db=vzhdb04      (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+server=dbsrv7-2k8       (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+user=postgres   (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+passwd=postgres (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+env=he2-w7v:5623:vzh    (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+program=MSTDefinitionImporterClient     (DefaultValues)
+special=ps      (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+mstId=LVE_MDM_MMT2      (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+defVersion=1    (CommandLine)
+d2Version=2.1_MDM_MMT2  (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+xmlDefFile=data\mstDefinitionLVE_MDM_MMT2.xml   (CommandLine)
+schemaFile=MDM-Profile_MeasurementSiteTable_Ext_V_Q.xsd (ArgumentFile+importDef_LVE_MDM_MMT2.arg)
+[11:36:48.110] Initial call of beforeActivation
+[11:36:48.458] DB is not write protected
+[11:36:49.349] Detected CLOB part count column: 'count'
+[11:36:49.357] Detected primary key columns:
+[11:36:49.367] mst
+[11:36:49.371] defVersion
+[11:36:49.379] Import CLOB with ID 'LVE_MDM_MMT2;1'
+
+Import successfully finished !
+
+
+D:\vzh\binScript\importMDM_D2DataMapping>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<def:mstDefinition
+    xmlns:def="http://www.heuboe.de/mst/definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.heuboe.de/mst/definition mstDefinition.xsd ">
+  <def:name>UFD</def:name>
+  <def:description>Umfelddaten</def:description>
+  <def:defVersion>1</def:defVersion>
+  <def:columnEntries>
+
+    <def:item>
+      <def:datakindName>DaUFDSichtWeite</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDWFD</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDNiederInten</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDLuftTemp</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDWindGeschw</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDWindGeschwMax</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDNiederArt</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDFBZ</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaUFDFBOberFlaeche</def:datakindName>
+      <def:column>Messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+  </def:columnEntries>
+
+  <def:active>false</def:active>
+</def:mstDefinition>

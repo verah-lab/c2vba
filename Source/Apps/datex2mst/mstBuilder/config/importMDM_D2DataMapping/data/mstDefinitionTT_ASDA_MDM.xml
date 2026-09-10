@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<def:mstDefinition
+    xmlns:def="http://www.heuboe.de/mst/definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.heuboe.de/mst/definition mstDefinition.xsd ">
+  <def:name>TT_ASDA_MDM</def:name>
+  <def:description>ASDA/FOTO Reise-und Verlustzeiten auf RDS-Segmenten</def:description>
+  <def:defVersion>1</def:defVersion>
+  <def:qNameMode>qkurz</def:qNameMode>
+  <def:columnEntries>
+    <def:item>
+      <def:datakindName>aca_losstime_ext</def:datakindName>
+      <def:column>free_travel_time</def:column>
+      <def:columnCharacteristic/>
+      <def:validInterval>300</def:validInterval>
+      <def:period>60</def:period>
+    </def:item>
+  </def:columnEntries>
+
+
+  <def:active>false</def:active>
+</def:mstDefinition>

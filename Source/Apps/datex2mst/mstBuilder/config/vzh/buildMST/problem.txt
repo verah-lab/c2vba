@@ -1,0 +1,2 @@
+Die MST-Definitionen (datex2MSTDefinition, datex2MSTDefinitionDetail) für die MSTs LVe und UFD sind veraltet. 
+Auf dieser Grundlage lassen sich keine neuen MST-Instanzen mehr erstellen!

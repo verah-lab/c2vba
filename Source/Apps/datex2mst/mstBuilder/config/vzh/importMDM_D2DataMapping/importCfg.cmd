@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Java\jre7\bin\java" -Xmx1024m  -cp ../../jarsIntegrated/jhbCLOB2DB/*; de.heuboe.ddp.clob.importer.Importer @importCfg.arg

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<def:mstDefinition
+    xmlns:def="http://www.heuboe.de/mst/definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.heuboe.de/mst/definition mstDefinition.xsd ">
+  <def:name>LVE</def:name>
+  <def:description>Querschnitssbezogene Verkehrsdaten</def:description>
+  <def:defVersion>1</def:defVersion>
+  <def:columnEntries>
+
+    <def:item>
+      <def:datakindName>DaLVEAnalyseWerteOpt0</def:datakindName>
+      <def:column>QLKW</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaLVEAnalyseWerteOpt0</def:datakindName>
+      <def:column>VLKW</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaLVEAnalyseWerteOpt0</def:datakindName>
+      <def:column>QPKW</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaLVEAnalyseWerteOpt0</def:datakindName>
+      <def:column>VPKW</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaLVEAnalyseWerteOpt0</def:datakindName>
+      <def:column>QKFZ</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaLVEAnalyseWerteOpt0</def:datakindName>
+      <def:column>VKFZ</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>DaLVEAnalyseWerteOpt0</def:datakindName>
+      <def:column>K</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+
+  </def:columnEntries>
+
+  <def:active>false</def:active>
+</def:mstDefinition>

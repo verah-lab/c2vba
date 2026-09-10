@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mstm:mappingConfig
+           xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+					 xmlns:mstm="http://www.heuboe.de/mst/config"
+					 xs:schemaLocation="http://www.heuboe.de/mst/config mstConfig.xsd"
+	>
+
+  <mstm:datakindMapping>
+
+    <mstm:datakindDesc>
+      <mstm:datakind>DaLVEKurzInterpolOpt0</mstm:datakind>
+      <mstm:idColumn>eaid</mstm:idColumn>
+      <mstm:description>Messwertersetzte Verkehrsdaten fahrstreifenbezogen</mstm:description>
+      <mstm:referenceType>TLS</mstm:referenceType>
+      <mstm:objectType>tr_detection_site</mstm:objectType>
+      <mstm:subType>0</mstm:subType>
+      <mstm:subType>1</mstm:subType>
+      <mstm:subType>2</mstm:subType>
+      <mstm:subType>3</mstm:subType>
+      <mstm:subType>4</mstm:subType>
+      <mstm:subType>5</mstm:subType>
+
+      <mstm:column>
+        <mstm:valColumn>qKFZ</mstm:valColumn>
+        <mstm:valColumnDescription>Verkehrsstärke Kfz</mstm:valColumnDescription>
+        <mstm:validColumn>qKFZ</mstm:validColumn>
+        <mstm:invalidValue>-1</mstm:invalidValue>
+      </mstm:column>
+
+      <mstm:column>
+        <mstm:valColumn>qLKW</mstm:valColumn>
+        <mstm:valColumnDescription>Verkehrsstärke Lkw</mstm:valColumnDescription>
+        <mstm:validColumn>qLKW</mstm:validColumn>
+        <mstm:invalidValue>-1</mstm:invalidValue>
+      </mstm:column>
+
+      <mstm:column>
+        <mstm:valColumn>vPKW</mstm:valColumn>
+        <mstm:valColumnDescription>Geschwindigkeit Pkw</mstm:valColumnDescription>
+        <mstm:validColumn>vPKW</mstm:validColumn>
+        <mstm:invalidValue>255</mstm:invalidValue>
+      </mstm:column>
+
+      <mstm:column>
+        <mstm:valColumn>vLKW</mstm:valColumn>
+        <mstm:valColumnDescription>Geschwindigkeit Lkw</mstm:valColumnDescription>
+        <mstm:validColumn>vLKW</mstm:validColumn>
+        <mstm:invalidValue>255</mstm:invalidValue>
+      </mstm:column>
+
+    </mstm:datakindDesc>
+
+    <mstm:mapping>
+
+      <mstm:in>
+        <mstm:valColumn>qKFZ</mstm:valColumn>
+      </mstm:in>
+      <mstm:mappingType>period2HourWeighted</mstm:mappingType>
+
+      <mstm:out>
+        <mstm:valueType>trafficFlow</mstm:valueType>
+        <mstm:vehType>anyVehicle</mstm:vehType>
+        <mstm:basicDataType>TrafficFlow</mstm:basicDataType>
+        <mstm:valueElement>vehicleFlow</mstm:valueElement>
+        <mstm:value>vehicleFlowRate</mstm:value>
+      </mstm:out>
+
+    </mstm:mapping>
+
+    <mstm:mapping>
+
+      <mstm:in>
+        <mstm:valColumn>qLKW</mstm:valColumn>
+      </mstm:in>
+      <mstm:mappingType>period2HourWeighted</mstm:mappingType>
+
+      <mstm:out>
+        <mstm:valueType>trafficFlow</mstm:valueType>
+        <mstm:vehType>lorry</mstm:vehType>
+        <mstm:basicDataType>TrafficFlow</mstm:basicDataType>
+        <mstm:valueElement>vehicleFlow</mstm:valueElement>
+        <mstm:value>vehicleFlowRate</mstm:value>
+      </mstm:out>
+
+    </mstm:mapping>
+
+    <mstm:mapping>
+
+      <mstm:in>
+        <mstm:valColumn>vLKW</mstm:valColumn>
+      </mstm:in>
+      <mstm:mappingType>copy</mstm:mappingType>
+
+      <mstm:out>
+        <mstm:valueType>trafficSpeed</mstm:valueType>
+        <mstm:vehType>lorry</mstm:vehType>
+        <mstm:basicDataType>TrafficSpeed</mstm:basicDataType>
+        <mstm:valueElement>averageVehicleSpeed</mstm:valueElement>
+        <mstm:value>speed</mstm:value>
+      </mstm:out>
+
+    </mstm:mapping>
+
+    <mstm:mapping>
+
+      <mstm:in>
+        <mstm:valColumn>vPKW</mstm:valColumn>
+      </mstm:in>
+      <mstm:mappingType>copy</mstm:mappingType>
+
+      <mstm:out>
+        <mstm:valueType>trafficSpeed</mstm:valueType>
+        <mstm:vehType>car</mstm:vehType>
+        <mstm:basicDataType>TrafficSpeed</mstm:basicDataType>
+        <mstm:valueElement>averageVehicleSpeed</mstm:valueElement>
+        <mstm:value>speed</mstm:value>
+      </mstm:out>
+
+    </mstm:mapping>
+
+
+  </mstm:datakindMapping>
+
+  <mstm:datakindMapping>
+    <mstm:datakindDesc>
+
+      <mstm:datakind>aca_losstime_ext</mstm:datakind>
+      <mstm:idColumn>id</mstm:idColumn>
+      <mstm:description>Verlustzeiten ASDA/FOTO pro RDS Segment mit RDS-Ortsreferenzierung</mstm:description>
+      <mstm:equipment>high-tech</mstm:equipment>
+      <mstm:referenceType>GEODYN2_REF_NON_Q</mstm:referenceType>
+      <mstm:objectType>tr_rds_segment</mstm:objectType>
+ 
+      <mstm:column>
+        <mstm:valColumn>free_travel_time</mstm:valColumn>
+        <mstm:valColumnDescription>Normale Reisezeit</mstm:valColumnDescription>
+      </mstm:column>
+
+    </mstm:datakindDesc>
+
+    <mstm:mapping>
+      <mstm:in>
+        <mstm:valColumn>free_travel_time</mstm:valColumn>
+      </mstm:in>
+      <mstm:mappingType>function</mstm:mappingType>
+      <mstm:mappingName>travelTimeFromLossTime</mstm:mappingName>
+      <mstm:mappingData>loss_time</mstm:mappingData>
+      <mstm:out>
+        <mstm:valueType>travelTimeInformation</mstm:valueType>
+        <mstm:vehType>anyVehicle</mstm:vehType>
+        <mstm:basicDataType>TravelTimeDataFromLossTime</mstm:basicDataType>
+      </mstm:out>
+    </mstm:mapping>
+
+  </mstm:datakindMapping>
+
+
+  <mstm:datakindMapping>
+    <mstm:datakindDesc>
+
+      <mstm:datakind>vzh_losstime_ext</mstm:datakind>
+      <mstm:idColumn>id</mstm:idColumn>
+      <mstm:description>Mittels Bluetooth oder ASDA-Foto berechneten Reise-und Verlustzeiten auf RDS-Segmenten.</mstm:description>
+      <mstm:equipment>high-tech</mstm:equipment>
+      <mstm:referenceType>GEODYN2_REF_NON_Q</mstm:referenceType>
+      <mstm:objectType>tr_rds_segment</mstm:objectType>
+
+      <mstm:column>
+        <mstm:valColumn>free_travel_time</mstm:valColumn>
+        <mstm:valColumnDescription>Normale Reisezeit</mstm:valColumnDescription>
+        <mstm:validColumn>free_travel_time</mstm:validColumn>
+        <mstm:invalidValue>-1</mstm:invalidValue>
+      </mstm:column>
+
+    </mstm:datakindDesc>
+
+    <mstm:mapping>
+      <mstm:in>
+        <mstm:valColumn>free_travel_time</mstm:valColumn>
+      </mstm:in>
+      <mstm:mappingType>function</mstm:mappingType>
+      <mstm:mappingName>travelTimeFromLossTime</mstm:mappingName>
+      <mstm:mappingData>loss_time</mstm:mappingData>
+      <mstm:out>
+        <mstm:valueType>travelTimeInformation</mstm:valueType>
+        <mstm:vehType>anyVehicle</mstm:vehType>
+        <mstm:basicDataType>TravelTimeDataFromLossTime</mstm:basicDataType>
+      </mstm:out>
+    </mstm:mapping>
+
+  </mstm:datakindMapping>
+
+
+</mstm:mappingConfig>
+
+

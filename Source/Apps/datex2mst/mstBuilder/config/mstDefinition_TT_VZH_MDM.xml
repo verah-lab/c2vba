@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<def:mstDefinition
+    xmlns:def="http://www.heuboe.de/mst/definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.heuboe.de/mst/definition mstDefinition.xsd ">
+  <def:name>TT_VZH_MDM</def:name>
+  <def:description>VZH Reise-und Verlustzeiten auf RDS-Segmenten</def:description>
+  <def:defVersion>1</def:defVersion>
+  <def:columnEntries>
+    <def:item>
+      <def:datakindName>vzh_losstime_ext</def:datakindName>
+      <def:column>free_travel_time</def:column>
+      <def:columnCharacteristic/>
+      <def:validInterval>300</def:validInterval>
+      <def:period>60</def:period>
+    </def:item>
+  </def:columnEntries>
+  
+ <!-- 
+  <def:filter>
+    <def:subObjType>hugo</def:subObjType>
+    <def:objFilters>
+      <def:item>
+        <def:id>5</def:id>
+        <def:subObjIds>
+          <def:item>eins</def:item>
+          <def:item>zwei</def:item>
+        </def:subObjIds>
+      </def:item>
+    </def:objFilters>
+    <def:roadFilters>
+      <def:item>
+        <def:name>otto1</def:name>
+        <def:startOffset>1</def:startOffset>
+        <def:endOffset>2</def:endOffset>
+      </def:item>
+      <def:item>
+        <def:name>otto2</def:name>
+        <def:startOffset>3</def:startOffset>
+        <def:endOffset>4</def:endOffset>
+      </def:item>
+    </def:roadFilters>
+  </def:filter>
+-->
+  <def:active>false</def:active>
+</def:mstDefinition>

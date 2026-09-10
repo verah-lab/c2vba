@@ -1,0 +1,10 @@
+-program=CLOBImporter
+-user=postgres
+-passwd=postgres
+-special=ps
+-dbms=postgres
+-server=dbsrv7-2k8
+-db=vzhdb04
+-env=he2-w7v:5623:vzh
+-d2Version=myTest
+-xmlCfgFile=data\mstConfigMDM.xml

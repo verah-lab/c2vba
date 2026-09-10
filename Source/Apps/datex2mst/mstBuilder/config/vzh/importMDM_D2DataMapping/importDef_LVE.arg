@@ -1,0 +1,12 @@
+-user=postgres
+-passwd=postgres
+-special=ps
+-dbms=postgres
+-server=dbsrv7-2k8
+-db=vzhdb04
+-env=he2-w7v:5623:vzh 
+-mstId=LVE
+-d2Version=2.0RC2
+-schemaFile=DATEXIISchema_2_2_3.xsd
+--
+

@@ -1,0 +1,75 @@
+<project name="MSTBUILDER-IDL" default="dist" basedir=".">
+  <!-- set global properties for this build, 
+	  !!! can be overruled by external settings -->
+  <property environment="env"/>
+  <property name="JavaBin"     location="${env.JAVA_HOME}/bin"/>
+  <property name="JavaSrcVer"  value="1.6"/>
+  <!-- set global properties for this build -->
+  <property name="bin"      location="bin"/>
+  <property name="src"      location="src"/>
+  <property name="rootDir"   location="../../../../.." />
+  <property name="corba"    location=".."/>
+  <property name="jar"      location="${rootDir}/jar"/>
+  <property name="classpath" location="${jar}/vmis.jar"/>  
+  
+  <property name="pkgPrefix" value="-pkgTranslate mstBuilder de.heuboe.datex2.mstBuilder"/>
+  <property name="idlFile"   location="${corba}/mstBuilder.idl"/>
+  <property name="jarFile"   location="${jar}/mstBuilderLib.jar"/>
+  
+
+  <target name="testReady">
+    <uptodate property="testReady" srcfile="${idlFile}" targetfile="${src}/de/heuboe/tim"/>
+  </target>
+
+  <!-- Compile idls -->
+  <target name="idl-compile" depends="testReady" unless="testReady">
+    <mkdir dir="${src}"/>
+	<exec executable="${JavaBin}/idlj.exe">
+	  <arg line="-v -fall ${pkgPrefix} -td ${src} -i ${corba} ${idlFile}"/>
+	</exec>
+  </target>
+
+  <!-- Compile the java code from ${src} into ${bin} -->
+  <target name="compile" depends="idl-compile"  description="compile the source" >
+    <mkdir dir="${bin}"/>
+    <javac srcdir="${src}" destdir="${bin}" 
+    	fork="yes"
+		source="${JavaSrcVer}"
+    	executable="${JavaBin}/javac.exe"
+    	classpath="${classpath}"/>
+  </target>
+  
+	  <!-- Compile the java code from ${src} into ${bin} -->
+	  <target name="compile_dbg" depends="idl-compile"  description="compile the source" >
+	    <mkdir dir="${bin}"/>
+	    <javac srcdir="${src}" destdir="${bin}" 
+	    	fork="yes"
+			source="${JavaSrcVer}"
+	    	debug="on"
+	    	deprecation="on"
+	    	executable="${JavaBin}/javac" 
+	    	classpath="${classpath}"/>
+	  </target>
+	
+  <!-- Put everything in ${bin} into the jar file -->
+  <target name="dist" depends="compile" description="generate the distribution" >
+    <jar destfile="${jarFile}">
+	  <fileset dir="${bin}" />
+    </jar>
+  </target>
+
+  <target name="dist_dbg" depends="compile_dbg" description="generate the distribution with debug information" >
+    <jar destfile="${jarFile}">
+	  <fileset dir="${bin}" />
+    </jar>
+  </target>
+	
+  <!-- Clean -->
+  <target name="clean" description="clean" >
+    <delete dir="${src}" />
+	<delete dir="${bin}" />
+	<delete file="${jarFile}" />
+  </target>
+  
+</project>
+

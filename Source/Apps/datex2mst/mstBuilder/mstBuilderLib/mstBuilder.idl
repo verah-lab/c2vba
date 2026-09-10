@@ -1,0 +1,159 @@
+#ifndef __MST_BUILDER_IDL__
+#define __MST_BUILDER_IDL__
+
+#ifdef _MSC_VER
+#include "tao/orb.idl" 
+#endif
+
+module mstBuilder {
+
+
+	//describes the column of a datakind;
+	struct mstColumn 
+	{
+		string name;
+		string characteristic;
+		string description;
+		long   defaultValidInterval;     //default validity interval for 'old' data. Can be overwritten
+	};
+	
+	typedef sequence<mstColumn> mstColumns;
+	
+	struct mstDatakind 
+	{
+		string name;			//name of datakind
+		string description;	 
+		mstColumns columns;
+	};
+	
+	typedef sequence<mstDatakind> mstDatakinds;
+	typedef sequence<string> values;
+	typedef sequence<string> names;
+
+	struct mstEntry 
+	{
+		string datakindName;			// must refer to a mstDatakind->name
+		string column;					// must refer to a mstColumn->name of the above datakind
+		string columnCharacteristic;	// must refer to a mstColumn->Characteristic of the above datakind
+										// (empty in nearly all cases)
+		long   validInterval;
+
+        long period;
+        string filterColumn;
+        values filterValue;
+	};
+
+	typedef sequence<mstEntry> mstEntries;
+	
+	
+	struct subObjNames
+	{
+		names item;
+	};
+
+	struct mstObjFilter
+	{
+		boolean excluded; 
+		string referenceType;
+		string type;
+		string id;
+		string name;
+		subObjNames subObjIds;
+	};
+	typedef sequence<mstObjFilter> mstObjFilters;
+
+	const long NO_OFFSET = -999999999;
+
+	struct mstRoadFilter 
+	{
+		string name;
+		long startOffset;
+		long endOffset;
+	};
+	typedef sequence<mstRoadFilter> mstRoadFilters;
+
+	struct mstFilter 
+	{
+		mstObjFilters 	objFilters;
+		mstRoadFilters 	roadFilters;
+	};
+	
+	enum state 
+	{
+		unknown,
+		buildQueued,
+		buildStarted,
+		configurationParsed,
+		savingRecords,
+		recordBuildingFinished,
+		buildFailed,
+		buildAborted,
+		finished
+	};
+	
+	struct mstState 
+	{
+		state  currentState;
+		long   buildHasStarted;
+		string error;
+	};
+	
+	struct mstBuilderState 
+	{
+		string name;			     //name of mst currently processed
+		string version;				 //version of mst currently processed
+		mstState state;				 //state information	
+	};
+	
+	struct mstDefinition 
+	{
+		string name;
+		string description;
+		string refVersion;
+		string version;
+		string lclVersion;
+		string qNameMode;			// 'qkurz' or 'qname'
+		mstEntries columnEntries;
+		mstFilter filter; 
+		boolean active;
+	};
+	
+	struct mstInfo 
+	{
+		mstDefinition mstData;
+		mstState mstState;
+	};
+	
+	typedef sequence<mstInfo> mstInfos;
+
+	const long MB_UNKNOWN_MST_ID = 1001;
+		
+	//do we need an enumeration of the type ?
+	exception mstBuilderException 
+	{
+		long code;
+		string source;
+		string description;
+	};
+	
+	interface Builder 
+	{
+		mstDatakinds getAllDatakinds() 
+			raises (mstBuilderException);
+		mstInfos getAllMST() 
+			raises (mstBuilderException);
+		void writeMST( in mstDefinition oneMST ) 
+			raises (mstBuilderException);
+		void createMST( in string mstId, in string version, 
+						in string defVersion, in string refVersion,
+						in mstFilter filter ) 
+			raises (mstBuilderException);
+		void deleteMST( in string mstName, in string version ) 
+			raises (mstBuilderException);
+		mstBuilderState getStatus( in string mstName, in string version ) 
+			raises (mstBuilderException);
+	};
+		
+};
+
+#endif
