@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0"
+              	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              	modelBaseVersion="2"
+              	xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../schema/DATEXIISchema_2_2_3_vms.xsd">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+	</exchange>
+	<payloadPublication xsi:type="VmsTablePublication" lang="de">
+		<publicationTime>2022-11-18T16:54:29.322+01:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+		<headerInformation>
+			<confidentiality>noRestriction</confidentiality>
+			<informationStatus>real</informationStatus>
+		</headerInformation>
+		<vmsUnitTable id="WWW" version="1">
+			<vmsUnitTableIdentification>BY-C2VBA-WWW</vmsUnitTableIdentification>
+			<vmsUnitRecord id="S1" version="1">
+				<numberOfVms>1</numberOfVms>
+				<vmsRecord vmsIndex="0">
+					<vmsRecord>
+						<vmsDescription>
+							<values>
+								<value lang="de">Wechselwegweiser aq.aq8-100-mch.m.de</value>
+							</values>
+						</vmsDescription>
+						<vmsTypeCode>WWW</vmsTypeCode>
+						<vmsPictogramDisplayCharacteristics pictogramDisplayAreaIndex="0">
+							<vmsPictogramDisplayCharacteristics>
+								<vmsPictogramDisplayCharacteristicsExtension>
+									<vmsPictogramDisplayCharacteristicsExtended>
+										<pictogramCodeType>tls</pictogramCodeType>
+									</vmsPictogramDisplayCharacteristicsExtended>
+								</vmsPictogramDisplayCharacteristicsExtension>
+							</vmsPictogramDisplayCharacteristics>
+						</vmsPictogramDisplayCharacteristics>
+						<vmsLocation xsi:type="Point">
+							<supplementaryPositionalDescription>
+								<affectedCarriagewayAndLanes>
+									<carriageway>mainCarriageway</carriageway>
+									<lane>allLanesCompleteCarriageway</lane>
+								</affectedCarriagewayAndLanes>
+							</supplementaryPositionalDescription>
+							<alertCPoint xsi:type="AlertCMethod4Point">
+								<alertCLocationCountryCode>D</alertCLocationCountryCode>
+								<alertCLocationTableNumber>01</alertCLocationTableNumber>
+								<alertCLocationTableVersion>20.0</alertCLocationTableVersion>
+								<alertCDirection>
+									<alertCDirectionCoded>negative</alertCDirectionCoded>
+								</alertCDirection>
+								<alertCMethod4PrimaryPointLocation>
+									<alertCLocation>
+										<specificLocation>12572</specificLocation>
+									</alertCLocation>
+									<offsetDistance>
+										<offsetDistance>3333</offsetDistance>
+									</offsetDistance>
+								</alertCMethod4PrimaryPointLocation>
+							</alertCPoint>
+							<pointByCoordinates>
+								<bearing>334</bearing>
+								<pointCoordinates>
+									<latitude>47.999912</latitude>
+									<longitude>11.675263</longitude>
+								</pointCoordinates>
+							</pointByCoordinates>
+							<pointExtension>
+								<openlrExtendedPoint>
+									<openlrPointLocationReference>
+										<openlrPointAlongLine>
+											<openlrSideOfRoad>right</openlrSideOfRoad>
+											<openlrOrientation>withLineDirection</openlrOrientation>
+											<openlrPositiveOffset>2332</openlrPositiveOffset>
+											<openlrLocationReferencePoint>
+												<openlrCoordinate>
+													<latitude>47.97984</latitude>
+													<longitude>11.68406</longitude>
+												</openlrCoordinate>
+												<openlrLineAttributes>
+													<openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+													<openlrFormOfWay>motorway</openlrFormOfWay>
+													<openlrBearing>348</openlrBearing>
+												</openlrLineAttributes>
+												<openlrPathAttributes>
+													<openlrLowestFRCToNextLRPoint>FRC0</openlrLowestFRCToNextLRPoint>
+													<openlrDistanceToNextLRPoint>3984</openlrDistanceToNextLRPoint>
+												</openlrPathAttributes>
+											</openlrLocationReferencePoint>
+											<openlrLastLocationReferencePoint>
+												<openlrCoordinate>
+													<latitude>48.01341</latitude>
+													<longitude>11.66569</longitude>
+												</openlrCoordinate>
+												<openlrLineAttributes>
+													<openlrFunctionalRoadClass>FRC0</openlrFunctionalRoadClass>
+													<openlrFormOfWay>motorway</openlrFormOfWay>
+													<openlrBearing>154</openlrBearing>
+												</openlrLineAttributes>
+											</openlrLastLocationReferencePoint>
+										</openlrPointAlongLine>
+									</openlrPointLocationReference>
+								</openlrExtendedPoint>
+							</pointExtension>
+						</vmsLocation>
+						<vmsRecordExtension>
+							<vmsRecordExtended>
+								<vmsRecordFunctionalType>overview</vmsRecordFunctionalType>
+								<addressedTrafficFlow>all</addressedTrafficFlow>
+							</vmsRecordExtended>
+						</vmsRecordExtension>
+					</vmsRecord>
+				</vmsRecord>
+				<vmsUnitRecordExtension>
+					<vmsUnitRecordExtended>
+						<vmisUnitType>wwwSite</vmisUnitType>
+					</vmsUnitRecordExtended>
+				</vmsUnitRecordExtension>
+			</vmsUnitRecord>
+		</vmsUnitTable>
+	</payloadPublication>
+</d2LogicalModel>

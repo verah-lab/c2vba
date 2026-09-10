@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0"
+              	modelBaseVersion="2"
+              	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../schema/MeasurementSite_2017_01-00-00.xsd">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+	</exchange>
+	<payloadPublication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  		xsi:type="MeasurementSiteTablePublication"
+                  		lang="de">
+		<publicationTime>2022-08-30T15:14:16.025+02:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+		<headerInformation>
+			<confidentiality>noRestriction</confidentiality>
+			<informationStatus>real</informationStatus>
+		</headerInformation>
+        <measurementSiteTable id="LVE" version="1">
+            <measurementSiteTableIdentification>Messwertersetzte Verkehrsdaten fahrstreifenbezogen</measurementSiteTableIdentification>
+            <measurementSiteRecord id="S1" version="1">
+                <measurementEquipmentTypeUsed>
+                    <values>
+                        <value lang="de">TLS-Erfassung</value>
+                    </values>
+                </measurementEquipmentTypeUsed>
+                <measurementSiteIdentification>A073B063,3@LVE-Hirschaid</measurementSiteIdentification>
+                <measurementSpecificCharacteristics index="1">
+                    <measurementSpecificCharacteristics>
+                        <period>60</period>
+                        <specificLane>lane1</specificLane>
+                        <specificMeasurementValueType>trafficFlow</specificMeasurementValueType>
+                        <specificVehicleCharacteristics>
+                            <vehicleType>anyVehicle</vehicleType>
+                        </specificVehicleCharacteristics>
+                    </measurementSpecificCharacteristics>
+                </measurementSpecificCharacteristics>
+                <measurementSiteLocation xsi:type="Point">
+                    <supplementaryPositionalDescription>
+                        <affectedCarriagewayAndLanes>
+                            <carriageway>mainCarriageway</carriageway>
+                            <lane>lane1</lane>
+                        </affectedCarriagewayAndLanes>
+                    </supplementaryPositionalDescription>
+                    <pointByCoordinates>
+                        <pointCoordinates>
+                            <latitude>49.8221778869629</latitude>
+                            <longitude>11.0104866027832</longitude>
+                        </pointCoordinates>
+                    </pointByCoordinates>
+                </measurementSiteLocation>
+            </measurementSiteRecord>
+        </measurementSiteTable>
+	</payloadPublication>
+</d2LogicalModel>
