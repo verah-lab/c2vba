@@ -1,0 +1,24 @@
+-appl=d2MSTPubDBBuilder
+-dbms=postgres
+-db=vzhdb03
+-dbserver=tevzhw8ap01
+-usr=postgres
+-pwd=postgres
+-env=tevzhw8ap01:5623:vzh
+-special=pspsps
+-defFile=def_lane.xml
+-jfile=join_mpt.txt
+-schemaLocation=X:/linkVobW/Datex2-VZH/src/datex2MeasurementSiteTablePublicationEncoder/dbBuilder/MSTDef.xsd
+-ORBInitRef NameService=iioploc://vzh1:9999/NameService 
+-ORBSvcConfDirective "static Server_Strategy_Factory '-ORBconcurrency thread-per-connection'"
++log=1A1
++log=1B1
++log=1C1 
++log=1D1 
++log=1E1 
++log=1F2 
++log=1G1
++log=1H1 
+--
+
+

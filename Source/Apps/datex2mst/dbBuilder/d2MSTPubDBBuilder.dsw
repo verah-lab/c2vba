@@ -1,0 +1,301 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "d2MSTDbBuilderIface"=".\d2MSTDbBuilderIface\d2MSTDbBuilderIface.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    d2MSTDbBuilderIface
+    .\d2MSTDbBuilderIface
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "d2MSTPubDBBuilder"=".\d2MSTPubDBBuilder.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    d2MSTPubDBBuilder
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "dblist"="..\..\geodyn2\utils\dblist\dblist.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    dblist
+    ..\..\geodyn2\utils\dblist
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ddp_api"="..\..\ddp\api\ddp.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    ddp_api
+    ..\..\ddp\api
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name hbComm
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name hbDb
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "hbCORBA"="..\..\hbCORBA\hbCORBA.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    hbCORBA
+    ..\..\hbCORBA
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "hbComm"="..\..\hbComm\hbComm.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    hbComm
+    ..\..\hbComm
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name hblib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "hbDb"="..\..\hbDb\hbDb.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    hbDb
+    ..\..\hbDb
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name hbComm
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "hblib"="..\..\hblib\hblib.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    hblib
+    ..\..\hblib
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "lm_api"="..\..\geodyn2\lm_api\lm_api.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    lm_api
+    ..\..
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dblist
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "locServerLib"="..\..\locServer\locServerLib\locServerLib.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    locServerLib
+    ..\..\locServer\locServerLib
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "loc_man"="..\..\geodyn2\loc_man\loc_man.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    loc_man
+    ..\..\geodyn2\loc_man
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ddp_api
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name lm_api
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name polyline
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "loc_man_client"="..\..\geodyn2\loc_man_client\loc_man_client.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    loc_man_client
+    ..\..\geodyn2\loc_man_client
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "polyline"="..\..\geodyn2\utils\polyline\polyline.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    polyline
+    ..\..\geodyn2\utils\polyline
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "timBase"="..\..\Verkehrsinformationsmanagement\timLib\timBase\timBase.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    timBase
+    ..\..\Verkehrsinformationsmanagement\timLib\timBase
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "timCORBA"="..\..\Verkehrsinformationsmanagement\timSrv\timCORBA\timCORBA.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    timCORBA
+    ..\..\Verkehrsinformationsmanagement\timSrv\timCORBA
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "timConcurrency"="..\..\Verkehrsinformationsmanagement\timSrv\timConcurrency\timConcurrency.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    timConcurrency
+    ..\..\Verkehrsinformationsmanagement\timSrv\timConcurrency
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    evcLib
+    ..\..\datex2MeasurementSiteTablePublicationEncode\dbBuilder
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

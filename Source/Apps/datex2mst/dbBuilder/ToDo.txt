@@ -1,0 +1,26 @@
+ToDos:
+
+erledigt:
+
+
+1. Member von 'handler' nicht statisch
+
+2. 'vehClass' bestimmen
+
+3. 'dataType' bestimmen
+
+4. Location-Schlüssel erweitern
+
+6. Location-Objekte attribut-übergreifend
+
+5. 	// @@@ Für Location-Datenarten wird offensichtlich angenommen, dass sie Attribute
+	//     von 'tr_detection_site'-Objekten sind ...
+
+11. CORBA-Implementierung
+
+
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?> <mst:MSTDef xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns:mst="http://www.heuboe.de/d2defMST" xs:schemaLocation=" http://www.heuboe.de/d2defMST MSTDef.xsd"name="MST_Q" version="0100"><mst:Description>Das ist meine MST</mst:Description><mst:DatakindItem><mst:DatakindName>DaLVEKurzInterpolOpt0</mst:DatakindName><mst:DatakindIdCol>eaid</mst:DatakindIdCol><mst:DatakindValueCol>vPKW</mst:DatakindValueCol><mst:DatakindStateCol>vPKW</mst:DatakindStateCol><mst:DatakindInvalidVal>255</mst:DatakindInvalidVal><mst:VehicleClass>PKW</mst:VehicleClass><mst:ValueUnit>km/h</mst:ValueUnit><mst:ValidInterval>240</mst:ValidInterval></mst:DatakindItem></mst:MSTDef>
+
+

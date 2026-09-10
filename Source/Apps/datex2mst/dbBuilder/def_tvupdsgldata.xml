@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mst:MSTDef
+					 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+					 xmlns:mst="http://www.heuboe.de/d2configMST"
+					 xs:schemaLocation="
+					 http://www.heuboe.de/d2configMST configMST.xsd"
+
+	name="myMST2" version="0100">
+
+	<mst:Description>Das ist meine MST</mst:Description>
+<!--	<mst:RoadFilter startOffset="1000" endOffset="2000" direction="N">A  5</mst:RoadFilter>  -->
+	<mst:DatakindItem>
+		<mst:DatakindName>tv_up_ds_gl_data</mst:DatakindName>
+		<mst:DatakindIdCol>id</mst:DatakindIdCol>
+		<mst:DatakindValueCol>ivh_volume</mst:DatakindValueCol>
+		<mst:DatakindStateCol>ivh_vol_state</mst:DatakindStateCol>
+		<mst:DatakindInvalidVal>2</mst:DatakindInvalidVal>
+		<mst:VehicleClass>PKW</mst:VehicleClass>
+		<mst:ValueUnit>Fzg/h</mst:ValueUnit>
+		<mst:ValidInterval>240</mst:ValidInterval>
+	</mst:DatakindItem>
+</mst:MSTDef>
+
+

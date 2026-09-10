@@ -1,0 +1,2 @@
+string lookup_loc("DaLVEKurzInterpolOpt0\n
+gd_loc_q;(id_loc,id_q);q;(listglane,listglid);listlane;(glaneid,glaneid);glane;(listlane,listlid);listlane;(laneid,laneid);lanedesc;(listdea,listeaid);listdea;(eaid,eaid);ea");

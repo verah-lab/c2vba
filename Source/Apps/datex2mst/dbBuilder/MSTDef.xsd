@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema 
+	xmlns:mst="http://www.heuboe.de/d2defMST" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.heuboe.de/d2defMST" 
+	elementFormDefault="qualified">
+
+	<!-- Definiert 'measurement site table' (Datex 2)				-->
+
+	<xs:simpleType name="EnumDirection">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>						<!-- alle Richtugen  -->
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="W"/>
+			<xs:enumeration value="O"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="EnumVehicleClass">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KFZ"/>						
+			<xs:enumeration value="LKW"/>
+			<xs:enumeration value="PKW"/>
+			<xs:enumeration value="NoVehicle"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="EnumDataUnit">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="km/h"/>						
+			<xs:enumeration value="Fzg/h"/>
+			<xs:enumeration value="Fzg/I"/>
+			<xs:enumeration value="Fzg/5Min"/>
+			<xs:enumeration value="NoUnit"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MSTName">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z]([0-9a-zA-Z]|_)*"/>
+  		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Es werden nur Objekte auf einem durch einen RoadFilter gegebenen Straßenstück berücksichtigt    -->
+	<xs:complexType name="RoadFilterType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<!-- name: gemäss 'tr_road_rn' bzw. 'tr_road'	-->
+				<xs:attribute name="direction" type="mst:EnumDirection" default="A"/>	
+
+
+				<!-- Offset-Filterung noch nicht implementiert -->
+
+				<xs:attribute name="startOffset" type="xs:integer" default="-1"/>			<!-- Kilometrierung (in Metern) -->
+				<xs:attribute name="endOffset" type="xs:integer" default="-1"/>				<!-- Kilometrierung (in Metern) -->
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- Ist auch ein RoadFilter definiert, werden diese Objekte zusätzlich berücksichtigt
+	     Ist keine laneId aufgeführt, matchen alle Spuren des Querschnitts								-->
+	<xs:complexType name="ObjNameFilterType">
+		<xs:sequence>
+			<!-- Geodyn2-Permanent-Id	-->
+
+			<xs:element name="Name" type="xs:string"></xs:element>
+
+			<!-- LaneId-Filterung noch nicht implementiert -->
+
+			<xs:element name="LaneId" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="DatakindItemType">
+		<xs:sequence>
+			<!-- Geodyn2-Datenart								-->
+			<xs:element name="DatakindName" type="xs:string"></xs:element>				
+
+			<!-- Id-Spalte der Datenart							-->
+			<xs:element name="DatakindIdCol" type="xs:string"></xs:element>
+
+			<!-- Wert-Spalte der Datenart						-->
+			<xs:element name="DatakindValueCol" type="xs:string"></xs:element>
+
+			<!-- Status-Spalte der Datenart						-->
+			<xs:element name="DatakindStateCol" type="xs:string"></xs:element>
+
+			<!-- Statuswert, der die Ungültigkeit des Verkehrswerts anzeigt -->
+			<xs:element name="DatakindInvalidVal" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+
+			<!-- Fahrzeugart									-->
+			<xs:element name="VehicleClass" type="mst:EnumVehicleClass"></xs:element>
+
+			<!-- Einheit des Messwerts							-->
+			<xs:element name="ValueUnit" type="mst:EnumDataUnit"></xs:element>
+
+			<!-- Gültigkeitsdauer des Messwerts in Sekunden		-->
+			<xs:element name="ValidInterval" type="xs:nonNegativeInteger"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:element name="MSTDef" type="mst:MSTDefType"/>
+	<xs:complexType name="MSTDefType">
+		<xs:sequence>
+			<xs:element name="Description" type="xs:string"></xs:element>
+			<xs:element name="RoadFilter" type="mst:RoadFilterType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="ObjNameFilter" type="mst:ObjNameFilterType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="DatakindItem" type="mst:DatakindItemType" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+
+		<xs:attribute name="name" type="mst:MSTName"/>
+		<xs:attribute name="version" type="xs:nonNegativeInteger"/>
+	</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,4 @@
+DaLVEKurzInterpolOpt0
+(eaid,listdea,listeaid):(listdea,lanedesc,laneid):(laneid,listlane,listlid):(listlane,glane,glaneid):(glaneid,listglane,listglid):(listglane,q,qid)
+DaLVE16Bit_FehlerOpt0
+(eaid,listdea,listeaid):(listdea,lanedesc,laneid):(laneid,listlane,listlid):(listlane,glane,glaneid):(glaneid,listglane,listglid):(listglane,q,qid)

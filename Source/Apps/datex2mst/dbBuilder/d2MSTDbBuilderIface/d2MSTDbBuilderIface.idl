@@ -1,0 +1,45 @@
+// ******************************************************************************************
+//
+//	Author   : P. Schmitz/Heusch-Boesefeldt GmbH
+//	Kommentar: CORBA-Schnittstelle
+//
+// ******************************************************************************************
+
+
+
+module d2MSTDbBuilderIface
+{
+	exception Error
+	{
+		// Fehler-Quelle
+	    	string			source;					
+
+		// Fehler-Code
+ 		long			number;					
+
+		// Fehlermeldung
+    		string			message;				
+  	};
+
+	// Fehler-Codes
+	const long ERR_MST_PARSE_DEF	= 1;
+	const long ERR_MST_CONTENT		= 2;
+	const long ERR_MST_UNKNOWN_ID	= 3;
+	const long ERR_MST_DB_ERR		= 4;
+
+
+	typedef string mstDef;
+	typedef string mstId;
+
+	interface Server				
+	{
+		// 'mst' ist eine MST-Definition gem‰ﬂ 'http://www.heuboe.de/d2defMST'
+		void createMST( in mstDef mst ) raises( Error );
+
+		// 'id' ist der Wert des Attributs 'MSTDef::MSTName' in einer MST-Definition
+		void deleteMST( in mstId id ) raises( Error );
+	};
+
+};
+
+

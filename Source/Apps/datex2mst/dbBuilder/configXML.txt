@@ -1,0 +1,29 @@
+<MSTDef name="myMST" version="0100">
+	<Description>das ist meine MST</Description>
+	<RoadFilter offStart=1000 offEnd=2000>A5_N</RoadFilter>
+	<ObjNameFilter>MyObject</ObjNameFilter>
+	<DatakindItem>
+		<DatakindName>DaLVEKurzInterpolOpt0</DatakindName>
+		<DatakindValueCol>vPKW</DatakindValueCol>
+		<DatakindStateCol>vPKW</DatakindStateCol>
+		<DatakindInvalidVal>255</DatakindInvalidVal>
+		<VehicleClass>PKW</VehicleClass>
+		<VehicleClass>PKW</VehicleClass>
+	</DatakindItem>
+</MSTDef>
+
+
+#mpt;300;Fzg./h;DaLVEKurzInterpolOpt0;id;qKFZ;qKFZ;(-1);KFZ
+#mpt;60;Fzg./h;DaLVE16Bit_FehlerOpt0;id;qKFZ;qKFZ;(-1);KFZ
+PetersMPTtest;300;Fzg./h;tv_up_ds_gl_data;id;vehicle_volume;vehicle_vol_state;(2,3);PKW
+#mpt;300;Fzg./h;tv_up_ds_gl_data;id;truck_volume;truck_vol_state;(2,3);LKW
+#mpt;300;km/h;tv_up_ds_gl_data;id;vehicle_speed;veh_speed_state;(2,3);PKW
+#mpt;300;km/h;tv_up_ds_gl_data;id;truck_speed;truck_speed_state;(2,3);LKW
+
+#mpt;300;km/h;DaLVEKurzInterpolOpt0;id;vPKW;vPKW;(255);PKW
+
+#mpt;300;Fzg./h;DaLVEKurzInterpolOpt0;id;qLKW;qLKW;(-1);LKW
+#mpt;300;km/h;DaLVEKurzInterpolOpt0;id;vLKW;vLKW;(255);LKW
+#mpt;300;km/h;DaLVE16Bit_FehlerOpt0;id;vPKW;vPKW;(255);PKW
+#mpt;300;Fzg./h;DaLVE16Bit_FehlerOpt0;id;qLKW;qLKW;(-1);LKW
+#mpt;300;km/h;DaLVE16Bit_FehlerOpt0;id;vLKW;vLKW;(255);LKW

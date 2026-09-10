@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<mst:MSTDef name="MST_VQ_anQuerschnitten" version="1" xmlns:mst="http://www.heuboe.de/d2defMST" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="http://www.heuboe.de/d2defMST MSTDef.xsd">
+    <mst:Description>VQ an Querschnitten</mst:Description>
+    <mst:DatakindItem>
+        <mst:DatakindName>DaLVEAnalyseWerteOpt0</mst:DatakindName>
+        <mst:DatakindIdCol>eaid</mst:DatakindIdCol>
+        <mst:DatakindValueCol>QKFZ</mst:DatakindValueCol>
+        <mst:DatakindStateCol>QKFZ</mst:DatakindStateCol>
+        <mst:DatakindInvalidVal>-1</mst:DatakindInvalidVal>
+        <mst:VehicleClass>KFZ</mst:VehicleClass>
+        <mst:ValueUnit>Fzg/h</mst:ValueUnit>
+        <mst:ValidInterval>7200</mst:ValidInterval>
+    </mst:DatakindItem>
+    <mst:DatakindItem>
+        <mst:DatakindName>DaLVEAnalyseWerteOpt0</mst:DatakindName>
+        <mst:DatakindIdCol>eaid</mst:DatakindIdCol>
+        <mst:DatakindValueCol>VKFZ</mst:DatakindValueCol>
+        <mst:DatakindStateCol>VKFZ</mst:DatakindStateCol>
+        <mst:DatakindInvalidVal>255</mst:DatakindInvalidVal>
+        <mst:VehicleClass>KFZ</mst:VehicleClass>
+        <mst:ValueUnit>km/h</mst:ValueUnit>
+        <mst:ValidInterval>7200</mst:ValidInterval>
+    </mst:DatakindItem>
+    <mst:DatakindItem>
+        <mst:DatakindName>DaLVEAnalyseWerteOpt0</mst:DatakindName>
+        <mst:DatakindIdCol>eaid</mst:DatakindIdCol>
+        <mst:DatakindValueCol>QLKW</mst:DatakindValueCol>
+        <mst:DatakindStateCol>QLKW</mst:DatakindStateCol>
+        <mst:DatakindInvalidVal>-1</mst:DatakindInvalidVal>
+        <mst:VehicleClass>LKW</mst:VehicleClass>
+        <mst:ValueUnit>Fzg/h</mst:ValueUnit>
+        <mst:ValidInterval>7200</mst:ValidInterval>
+    </mst:DatakindItem>
+    <mst:DatakindItem>
+        <mst:DatakindName>DaLVEAnalyseWerteOpt0</mst:DatakindName>
+        <mst:DatakindIdCol>eaid</mst:DatakindIdCol>
+        <mst:DatakindValueCol>VLKW</mst:DatakindValueCol>
+        <mst:DatakindStateCol>VLKW</mst:DatakindStateCol>
+        <mst:DatakindInvalidVal>255</mst:DatakindInvalidVal>
+        <mst:VehicleClass>LKW</mst:VehicleClass>
+        <mst:ValueUnit>km/h</mst:ValueUnit>
+        <mst:ValidInterval>7200</mst:ValidInterval>
+    </mst:DatakindItem>
+    <mst:DatakindItem>
+        <mst:DatakindName>DaLVEAnalyseWerteOpt0</mst:DatakindName>
+        <mst:DatakindIdCol>eaid</mst:DatakindIdCol>
+        <mst:DatakindValueCol>QPKW</mst:DatakindValueCol>
+        <mst:DatakindStateCol>QPKW</mst:DatakindStateCol>
+        <mst:DatakindInvalidVal>-1</mst:DatakindInvalidVal>
+        <mst:VehicleClass>PKW</mst:VehicleClass>
+        <mst:ValueUnit>Fzg/h</mst:ValueUnit>
+        <mst:ValidInterval>7200</mst:ValidInterval>
+    </mst:DatakindItem>
+    <mst:DatakindItem>
+        <mst:DatakindName>DaLVEAnalyseWerteOpt0</mst:DatakindName>
+        <mst:DatakindIdCol>eaid</mst:DatakindIdCol>
+        <mst:DatakindValueCol>VPKW</mst:DatakindValueCol>
+        <mst:DatakindStateCol>VPKW</mst:DatakindStateCol>
+        <mst:DatakindInvalidVal>255</mst:DatakindInvalidVal>
+        <mst:VehicleClass>PKW</mst:VehicleClass>
+        <mst:ValueUnit>km/h</mst:ValueUnit>
+        <mst:ValidInterval>7200</mst:ValidInterval>
+    </mst:DatakindItem>
+
+
+</mst:MSTDef>
