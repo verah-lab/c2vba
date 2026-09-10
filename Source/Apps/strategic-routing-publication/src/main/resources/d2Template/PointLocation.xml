@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<location
+	xmlns="http://datex2.eu/schema/2/2_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../d2Schema/StrategicRouting.xsd"
+	xsi:type="Point">
+	<alertCPoint xsi:type="AlertCMethod4Point">
+		<alertCLocationCountryCode>D</alertCLocationCountryCode>
+		<alertCLocationTableNumber>1</alertCLocationTableNumber>
+		<alertCLocationTableVersion>15.1</alertCLocationTableVersion>
+		<alertCDirection>
+			<alertCDirectionCoded>positive</alertCDirectionCoded>
+		</alertCDirection>
+		<alertCMethod4PrimaryPointLocation>
+			<alertCLocation>
+				<alertCLocationName>
+					<values>
+						<value lang="de">München-Freimann</value>
+					</values>
+				</alertCLocationName>
+				<specificLocation>12724</specificLocation>
+			</alertCLocation>
+			<offsetDistance>
+				<offsetDistance>0</offsetDistance>
+			</offsetDistance>
+		</alertCMethod4PrimaryPointLocation>
+	</alertCPoint>
+    <pointByCoordinates>
+		<pointCoordinates>
+		    <latitude>48.196925 </latitude>
+		    <longitude>11.617311</longitude>
+		</pointCoordinates>
+    </pointByCoordinates>
+		
+</location>

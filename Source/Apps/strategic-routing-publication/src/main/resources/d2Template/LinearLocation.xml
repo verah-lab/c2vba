@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<location
+	xmlns="http://datex2.eu/schema/2/2_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../d2Schema/StrategicRouting.xsd"
+	xsi:type="Linear">
+		
+</location>

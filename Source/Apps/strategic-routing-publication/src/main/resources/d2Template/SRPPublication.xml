@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d2LogicalModel 
+modelBaseVersion="2" 
+xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../d2Schema/StrategicRouting.xsd" 
+xmlns="http://datex2.eu/schema/2/2_0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+	</exchange>
+	<payloadPublication xsi:type="SituationPublication" lang="de">
+		<publicationTime>1980-01-01T00:00:00+01:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+	</payloadPublication>
+</d2LogicalModel>

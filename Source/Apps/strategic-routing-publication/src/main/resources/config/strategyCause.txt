@@ -1,0 +1,9 @@
+Cause 1
+nameDe=Optimierte Zielführung zum Parkhaus Arena
+nameEn=improved distribution in parking garage Arena
+strategies=S-01,S-02,S-03,S-04,S-05,S-06,S-07,S-08			
+
+Cause 2
+nameDe=Optimierte Zielführung zu den Parkplätzen Messe
+nameEn=improved routing to parking area Munich Trade Fair
+strategies=S-10a,S-11a,S-11b,S-11c,S-12a,S-12b,S-12c,S-13a,S-13b,S-13c,S-14a,S-14b,S-14c,S-14d,S-15a,S-15b,S-15c,S-15d,S-16a,S-16b,S-16c,S-16d

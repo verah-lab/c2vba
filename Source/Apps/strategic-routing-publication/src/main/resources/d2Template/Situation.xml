@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<situation 
+	xmlns="http://datex2.eu/schema/2/2_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../d2Schema/StrategicRouting.xsd"
+	id="S1" version="1">
+			<situationVersionTime>1980-01-01T00:00:00+01:00</situationVersionTime>
+			<headerInformation>
+				<confidentiality>noRestriction</confidentiality>
+				<informationStatus>real</informationStatus>
+			</headerInformation>
+			<situationRecord xsi:type="GeneralNetworkManagement" id="SR!" version="1">
+				<situationRecordCreationTime>1980-01-01T00:00:00+01:00</situationRecordCreationTime>
+				<situationRecordVersionTime>1980-01-01T00:00:00+01:00</situationRecordVersionTime>
+				<probabilityOfOccurrence>certain</probabilityOfOccurrence>
+				<validity>
+					<validityStatus>definedByValidityTimeSpec</validityStatus>
+					<validityTimeSpecification>
+						<overallStartTime>1980-01-01T00:00:00+01:00</overallStartTime>
+						<overallEndTime>1980-01-01T00:00:00+01:00</overallEndTime>
+					</validityTimeSpecification>
+				</validity>
+				<cause xsi:type="NonManagedCause">
+					<causeDescription>
+						<values>
+							<value lang="de">german</value>
+							<value lang="en">english</value>
+						</values>
+					</causeDescription>
+					<causeType>other</causeType>
+				</cause>
+				
+				<groupOfLocations xsi:type="Area">
+					<alertCArea>
+						<alertCLocationCountryCode>D</alertCLocationCountryCode>
+						<alertCLocationTableNumber>1</alertCLocationTableNumber>
+						<alertCLocationTableVersion>15.1</alertCLocationTableVersion>
+						<areaLocation>
+						<alertCLocationName>
+							<values>
+								<value lang="de">Großraum München</value>
+							</values>
+						</alertCLocationName>
+						<specificLocation>1</specificLocation>
+						</areaLocation>
+					</alertCArea>
+				</groupOfLocations>
+				<operatorActionStatus>implemented</operatorActionStatus>
+				<complianceOption>advisory</complianceOption>
+				<generalNetworkManagementType>other</generalNetworkManagementType>
+				<generalNetworkManagementExtension>
+					<generalNetworkManagementExtended xsi:type="StrategicRouteManagement">
+						<triggerOrigin>
+							<triggerDescription>A52 Abfahrt Büderich</triggerDescription>
+							<location xsi:type="Point">
+								<alertCPoint xsi:type="AlertCMethod2Point">
+									<alertCLocationCountryCode>D</alertCLocationCountryCode>
+									<alertCLocationTableNumber>1</alertCLocationTableNumber>
+									<alertCLocationTableVersion>11.0</alertCLocationTableVersion>
+									<alertCDirection>
+										<alertCDirectionCoded>positive</alertCDirectionCoded>
+									</alertCDirection>
+									<alertCMethod2PrimaryPointLocation>
+										<alertCLocation>
+											<specificLocation>11669</specificLocation>
+										</alertCLocation>
+									</alertCMethod2PrimaryPointLocation>
+								</alertCPoint>
+							</location>
+						</triggerOrigin>
+						<route>
+							<nameOfRoute>
+								<values>
+									<value lang="de">Rheinkniebrücke</value>
+								</values>
+							</nameOfRoute>
+							<originalRoute>true</originalRoute>
+							<weightingAndVehicleClassification index="0">
+								<weightingAndVehicleClassification>
+									<weight>100</weight>
+									<validForVehiclesWithCharacteristics>
+										<vehicleType>anyVehicle</vehicleType>
+									</validForVehiclesWithCharacteristics>	
+								</weightingAndVehicleClassification>
+							</weightingAndVehicleClassification>
+							<itinerary xsi:type="ItineraryByReference">
+								<predefinedItineraryReference id="OR" version="1" targetClass="PredefinedItinerary"></predefinedItineraryReference>
+							</itinerary>
+						</route>
+						<route>
+							<nameOfRoute>
+								<values>
+									<value lang="de">Nord über Theodor-Heuss Brücke</value>
+								</values>
+							</nameOfRoute>
+							<originalRoute>false</originalRoute>
+							<weightingAndVehicleClassification index="0">
+								<weightingAndVehicleClassification>
+									<weight>100</weight>
+									<validForVehiclesWithCharacteristics>
+										<vehicleType>anyVehicle</vehicleType>
+									</validForVehiclesWithCharacteristics>	
+								</weightingAndVehicleClassification>
+							</weightingAndVehicleClassification>
+							<itinerary xsi:type="ItineraryByReference">
+								<predefinedItineraryReference id="AR" version="1" targetClass="PredefinedItinerary"></predefinedItineraryReference>
+							</itinerary>
+						</route>
+					</generalNetworkManagementExtended>
+				</generalNetworkManagementExtension>
+			</situationRecord>
+		</situation>

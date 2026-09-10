@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<location
+	xmlns="http://datex2.eu/schema/2/2_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../d2Schema/StrategicRouting.xsd"
+	xsi:type="Area">
+	<alertCArea>
+		<alertCLocationCountryCode>D</alertCLocationCountryCode>
+		<alertCLocationTableNumber>1</alertCLocationTableNumber>
+		<alertCLocationTableVersion>15.1</alertCLocationTableVersion>
+		<areaLocation>
+			<alertCLocationName>
+				<values>
+					<value lang="de">Großraum München</value>
+				</values>
+			</alertCLocationName>
+		<specificLocation>548</specificLocation>
+		</areaLocation>
+	</alertCArea>
+	<areaExtension>
+		<areaExtended>
+			<polygonArea>
+				<sectionName>
+					<values>
+						<value lang="de">Großraum München</value>
+					</values>
+				</sectionName>
+				<pointCoordinates index="1">
+					<pointCoordinates>
+						<latitude>48.140748</latitude>
+						<longitude>11.539407</longitude>
+					</pointCoordinates>
+				</pointCoordinates>
+			</polygonArea>
+		</areaExtended>
+	</areaExtension>
+		
+</location>

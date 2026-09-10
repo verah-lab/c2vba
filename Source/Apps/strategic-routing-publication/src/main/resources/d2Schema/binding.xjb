@@ -1,0 +1,17 @@
+<jaxb:bindings
+   xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   version="2.0">
+   <jaxb:bindings>
+      <jaxb:globalBindings underscoreBinding="asCharInWord">
+      		<jaxb:javaType name="java.util.Date" xmlType="xs:date"
+				parseMethod="de.heuboe.datex2.schema.DateTypeAdapter.parseDateTime"
+				printMethod="de.heuboe.datex2.schema.DateTypeAdapter.printDateTime" />
+			<jaxb:javaType name="java.util.Date" xmlType="xs:dateTime"
+				parseMethod="de.heuboe.datex2.schema.DateTypeAdapter.parseDateTime"
+				printMethod="de.heuboe.datex2.schema.DateTypeAdapter.printDateTime" />
+	</jaxb:globalBindings>
+      
+   </jaxb:bindings>
+</jaxb:bindings>
+
