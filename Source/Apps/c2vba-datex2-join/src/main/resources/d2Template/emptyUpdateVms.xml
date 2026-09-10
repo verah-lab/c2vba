@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0"
+              	modelBaseVersion="2">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+		<subscription>
+			<operatingMode>operatingMode1</operatingMode>
+			<subscriptionStartTime>2022-08-30T02:38:48.613+02:00</subscriptionStartTime>
+			<subscriptionState>active</subscriptionState>
+			<updateMethod>allElementUpdate</updateMethod>
+			<target>
+				<address>MDM</address>
+				<protocol>SOAP</protocol>
+			</target>
+		</subscription>
+	</exchange>
+	<payloadPublication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  		xsi:type="VmsPublication"
+                  		lang="de">
+		<publicationTime>2022-08-30T15:14:16.025+02:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+		<headerInformation>
+			<confidentiality>noRestriction</confidentiality>
+			<informationStatus>real</informationStatus>
+		</headerInformation>
+		<vmsUnit>
+			<vmsUnitTableReference targetClass="VmsUnitTable"
+                     				id="IDUT"
+                     				version="1"/>
+			<vmsUnitReference targetClass="VmsUnitRecord"
+                				id="IDUR"
+                				version="25"/>
+			<vms vmsIndex="0">
+				<vms>
+					<vmsWorking>true</vmsWorking>
+					<vmsMessage messageIndex="0">
+						<vmsMessage>
+							<timeLastSet>2022-08-25T04:00:23+02:00</timeLastSet>
+							<vmsPictogramDisplayArea pictogramDisplayAreaIndex="0">
+								<vmsPictogramDisplayArea>
+									<vmsPictogram pictogramSequencingIndex="0">
+										<vmsPictogram>
+											<pictogramUrl>http://a.b.de/image.png</pictogramUrl>
+											<presenceOfRedTriangle>false</presenceOfRedTriangle>
+										</vmsPictogram>
+									</vmsPictogram>
+								</vmsPictogramDisplayArea>
+							</vmsPictogramDisplayArea>
+						</vmsMessage>
+					</vmsMessage>
+				</vms>
+			</vms>
+		</vmsUnit>
+	</payloadPublication>
+</d2LogicalModel>

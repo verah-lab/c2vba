@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0"
+              	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              	modelBaseVersion="2"
+              	xsi:schemaLocation="http://datex2.eu/schema/2/2_0 StrategicRouting.xsd">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+	</exchange>
+	<payloadPublication xsi:type="SituationPublication"
+                  		lang="de">
+		<publicationTime>2022-11-01T23:00:00+01:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+		<situation id="S1667340008301"
+         			version="1">
+			<situationVersionTime>2022-11-01T23:00:00+01:00</situationVersionTime>
+			<headerInformation>
+				<confidentiality>noRestriction</confidentiality>
+				<informationStatus>real</informationStatus>
+			</headerInformation>
+			<situationRecord xsi:type="GeneralNetworkManagement"
+               				id="1"
+               				version="1">
+				<situationRecordCreationTime>2022-11-01T23:00:00+01:00</situationRecordCreationTime>
+				<situationRecordVersionTime>2022-11-01T23:00:00+01:00</situationRecordVersionTime>
+				<probabilityOfOccurrence>certain</probabilityOfOccurrence>
+				<validity>
+					<validityStatus>definedByValidityTimeSpec</validityStatus>
+					<validityTimeSpecification>
+						<overallStartTime>2022-11-01T23:00:00+01:00</overallStartTime>
+						<overallEndTime>2022-11-01T23:02:00+01:00</overallEndTime>
+					</validityTimeSpecification>
+				</validity>
+				<groupOfLocations xsi:type="Area">
+					<alertCArea>
+						<alertCLocationCountryCode>D</alertCLocationCountryCode>
+						<alertCLocationTableNumber>1</alertCLocationTableNumber>
+						<alertCLocationTableVersion>20.0</alertCLocationTableVersion>
+						<areaLocation>
+							<alertCLocationName>
+								<values>
+									<value lang="de">Großraum München</value>
+								</values>
+							</alertCLocationName>
+							<specificLocation>548</specificLocation>
+						</areaLocation>
+					</alertCArea>
+				</groupOfLocations>
+				<actionPlanIdentifier>1</actionPlanIdentifier>
+				<complianceOption>advisory</complianceOption>
+				<generalNetworkManagementType>other</generalNetworkManagementType>
+			</situationRecord>
+		</situation>
+	</payloadPublication>
+</d2LogicalModel>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0"
+              	modelBaseVersion="2"
+              	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:schemaLocation="http://datex2.eu/schema/2/2_0 ../schema/MeasuredData_2017_01-00-00.xsd">
+	<exchange>
+		<supplierIdentification>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</supplierIdentification>
+		<subscription>
+			<operatingMode>operatingMode1</operatingMode>
+			<subscriptionStartTime>2022-08-30T02:38:48.613+02:00</subscriptionStartTime>
+			<subscriptionState>active</subscriptionState>
+			<updateMethod>allElementUpdate</updateMethod>
+			<target>
+				<address>MDM</address>
+				<protocol>SOAP</protocol>
+			</target>
+		</subscription>
+	</exchange>
+	<payloadPublication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  		xsi:type="MeasuredDataPublication"
+                  		lang="de">
+		<publicationTime>2022-08-30T15:14:16.025+02:00</publicationTime>
+		<publicationCreator>
+			<country>de</country>
+			<nationalIdentifier>DE-NAP-Die Autobahn GmbH des Bundes</nationalIdentifier>
+		</publicationCreator>
+        <measurementSiteTableReference id="LVE_MDM" version="2" targetClass="MeasurementSiteTable"></measurementSiteTableReference>
+		<headerInformation>
+			<confidentiality>noRestriction</confidentiality>
+			<informationStatus>real</informationStatus>
+		</headerInformation>
+        <siteMeasurements>
+            <measurementSiteReference id="R2000000" version="2" targetClass="MeasurementSiteRecord" />
+            <measurementTimeDefault>2018-11-28T15:09:00.000+01:00</measurementTimeDefault>
+            <measuredValue index="1">
+                <measuredValue>
+					<measuredValueExtension>
+					<measuredValues xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  		       xsi:type="MeasuredValues">  
+							   
+                    <basicData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  		       xsi:type="TrafficFlow">
+                        <vehicleFlow>
+                            <vehicleFlowRate>720</vehicleFlowRate>
+                        </vehicleFlow>
+                    </basicData>
+					</measuredValues>
+					</measuredValueExtension>
+                </measuredValue>
+            </measuredValue>
+        </siteMeasurements>
+	</payloadPublication>
+</d2LogicalModel>

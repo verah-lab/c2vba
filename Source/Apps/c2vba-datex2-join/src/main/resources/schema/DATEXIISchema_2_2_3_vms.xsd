@@ -1,0 +1,2150 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" version="2.3" targetNamespace="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="location" type="D2LogicalModel:Location"/>
+
+  <xs:complexType name="_AreaExtensionType">
+    <xs:sequence>
+      <xs:element name="openlrExtendedArea" type="D2LogicalModel:OpenlrExtendedArea" minOccurs="0" />
+      <xs:element name="areaExtended" type="D2LogicalModel:AreaExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_ExtensionType">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_IntermediatePointOnLinearElement">
+    <xs:sequence>
+      <xs:element name="referent" type="D2LogicalModel:Referent" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_LinearExtensionType">
+    <xs:sequence>
+      <xs:element name="openlrExtendedLinear" type="D2LogicalModel:OpenlrExtendedLinear" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_PointExtensionType">
+    <xs:sequence>
+      <xs:element name="openlrExtendedPoint" type="D2LogicalModel:OpenlrExtendedPoint" minOccurs="0" />
+      <xs:element name="pointExtended" type="D2LogicalModel:PointExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_PolygonAreaIndexPointCoordinates">
+    <xs:sequence>
+      <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_PredefinedLocationVersionedReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:VersionedReference">
+        <xs:attribute name="targetClass" use="required" fixed="PredefinedLocation" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="_TextPage">
+    <xs:sequence>
+      <xs:element name="vmsText" type="D2LogicalModel:VmsText" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="pageNumber" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsDynamicCharacteristicsPictogramDisplayAreaIndexVmsPictogramDisplayCharacteristics">
+    <xs:sequence>
+      <xs:element name="vmsPictogramDisplayCharacteristics" type="D2LogicalModel:VmsPictogramDisplayCharacteristics" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="pictogramDisplayAreaIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsMessageIndexVmsMessage">
+    <xs:sequence>
+      <xs:element name="vmsMessage" type="D2LogicalModel:VmsMessage" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="messageIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsMessagePictogramDisplayAreaIndexVmsPictogramDisplayArea">
+    <xs:sequence>
+      <xs:element name="vmsPictogramDisplayArea" type="D2LogicalModel:VmsPictogramDisplayArea" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="pictogramDisplayAreaIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsPictogramDisplayAreaIndexPictogramDisplayAreaSettings">
+    <xs:sequence>
+      <xs:element name="pictogramDisplayAreaSettings" type="D2LogicalModel:PictogramDisplayAreaSettings" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="pictogramDisplayAreaIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsPictogramDisplayAreaPictogramSequencingIndexVmsPictogram">
+    <xs:sequence>
+      <xs:element name="vmsPictogram" type="D2LogicalModel:VmsPictogram" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="pictogramSequencingIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsPictogramDisplayCharacteristicsExtensionType">
+    <xs:sequence>
+      <xs:element name="vmsPictogramDisplayCharacteristicsExtended" type="D2LogicalModel:VmsPictogramDisplayCharacteristicsExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_VmsPictogramExtensionType">
+    <xs:sequence>
+      <xs:element name="vmsPictogramExtended" type="D2LogicalModel:VmsPictogramExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_VmsRecordExtensionType">
+    <xs:sequence>
+      <xs:element name="vmsRecordExtended" type="D2LogicalModel:VmsRecordExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_VmsRecordPictogramDisplayAreaIndexVmsPictogramDisplayCharacteristics">
+    <xs:sequence>
+      <xs:element name="vmsPictogramDisplayCharacteristics" type="D2LogicalModel:VmsPictogramDisplayCharacteristics" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="pictogramDisplayAreaIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsTextLineIndexVmsTextLine">
+    <xs:sequence>
+      <xs:element name="vmsTextLine" type="D2LogicalModel:VmsTextLine" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="lineIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsUnitRecordExtensionType">
+    <xs:sequence>
+      <xs:element name="vmsUnitRecordExtended" type="D2LogicalModel:VmsUnitRecordExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_VmsUnitRecordVersionedReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:VersionedReference">
+        <xs:attribute name="targetClass" use="required" fixed="VmsUnitRecord" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="_VmsUnitRecordVmsIndexVmsRecord">
+    <xs:sequence>
+      <xs:element name="vmsRecord" type="D2LogicalModel:VmsRecord" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="vmsIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_VmsUnitTableVersionedReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:VersionedReference">
+        <xs:attribute name="targetClass" use="required" fixed="VmsUnitTable" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="_VmsUnitVmsIndexVms">
+    <xs:sequence>
+      <xs:element name="vms" type="D2LogicalModel:Vms" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="vmsIndex" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="AddressedTrafficFlow">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="all" />
+      <xs:enumeration value="mainCarriagewayFollowingTraffic" />
+      <xs:enumeration value="rightDirectionFollowingTraffic" />
+      <xs:enumeration value="leftDirectionFollowingTraffic" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AffectedCarriagewayAndLanes">
+    <xs:sequence>
+      <xs:element name="carriageway" type="D2LogicalModel:CarriagewayEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="lane" type="D2LogicalModel:LaneEnum" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="footpath" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="lengthAffected" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="affectedCarriagewayAndLanesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCArea">
+    <xs:sequence>
+      <xs:element name="alertCLocationCountryCode" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableNumber" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableVersion" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="areaLocation" type="D2LogicalModel:AlertCLocation" />
+      <xs:element name="alertCAreaExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCDirection">
+    <xs:sequence>
+      <xs:element name="alertCDirectionCoded" type="D2LogicalModel:AlertCDirectionEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCDirectionNamed" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="alertCDirectionSense" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="alertCDirectionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlertCDirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="both" />
+      <xs:enumeration value="negative" />
+      <xs:enumeration value="positive" />
+      <xs:enumeration value="unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertCLinear" abstract="true">
+    <xs:sequence>
+      <xs:element name="alertCLocationCountryCode" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableNumber" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableVersion" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLinearExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCLinearByCode">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:AlertCLinear">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="D2LogicalModel:AlertCDirection" />
+          <xs:element name="locationCodeForLinearLocation" type="D2LogicalModel:AlertCLocation" />
+          <xs:element name="alertCLinearByCodeExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCLocation">
+    <xs:sequence>
+      <xs:element name="alertCLocationName" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="specificLocation" type="D2LogicalModel:AlertCLocationCode" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlertCLocationCode">
+    <xs:restriction base="D2LogicalModel:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="AlertCMethod2Linear">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:AlertCLinear">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="D2LogicalModel:AlertCDirection" />
+          <xs:element name="alertCMethod2PrimaryPointLocation" type="D2LogicalModel:AlertCMethod2PrimaryPointLocation" />
+          <xs:element name="alertCMethod2SecondaryPointLocation" type="D2LogicalModel:AlertCMethod2SecondaryPointLocation" />
+          <xs:element name="alertCMethod2LinearExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod2Point">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:AlertCPoint">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="D2LogicalModel:AlertCDirection" />
+          <xs:element name="alertCMethod2PrimaryPointLocation" type="D2LogicalModel:AlertCMethod2PrimaryPointLocation" />
+          <xs:element name="alertCMethod2PointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod2PrimaryPointLocation">
+    <xs:sequence>
+      <xs:element name="alertCLocation" type="D2LogicalModel:AlertCLocation" />
+      <xs:element name="alertCMethod2PrimaryPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod2SecondaryPointLocation">
+    <xs:sequence>
+      <xs:element name="alertCLocation" type="D2LogicalModel:AlertCLocation" />
+      <xs:element name="alertCMethod2SecondaryPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod4Linear">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:AlertCLinear">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="D2LogicalModel:AlertCDirection" />
+          <xs:element name="alertCMethod4PrimaryPointLocation" type="D2LogicalModel:AlertCMethod4PrimaryPointLocation" />
+          <xs:element name="alertCMethod4SecondaryPointLocation" type="D2LogicalModel:AlertCMethod4SecondaryPointLocation" />
+          <xs:element name="alertCMethod4LinearExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod4Point">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:AlertCPoint">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="D2LogicalModel:AlertCDirection" />
+          <xs:element name="alertCMethod4PrimaryPointLocation" type="D2LogicalModel:AlertCMethod4PrimaryPointLocation" />
+          <xs:element name="alertCMethod4PointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod4PrimaryPointLocation">
+    <xs:sequence>
+      <xs:element name="alertCLocation" type="D2LogicalModel:AlertCLocation" />
+      <xs:element name="offsetDistance" type="D2LogicalModel:OffsetDistance" />
+      <xs:element name="alertCMethod4PrimaryPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCMethod4SecondaryPointLocation">
+    <xs:sequence>
+      <xs:element name="alertCLocation" type="D2LogicalModel:AlertCLocation" />
+      <xs:element name="offsetDistance" type="D2LogicalModel:OffsetDistance" />
+      <xs:element name="alertCMethod4SecondaryPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCPoint" abstract="true">
+    <xs:sequence>
+      <xs:element name="alertCLocationCountryCode" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableNumber" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableVersion" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AngleInDegrees">
+    <xs:restriction base="D2LogicalModel:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="Area">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Location">
+        <xs:sequence>
+          <xs:element name="alertCArea" type="D2LogicalModel:AlertCArea" minOccurs="0" />
+          <xs:element name="tpegAreaLocation" type="D2LogicalModel:TpegAreaLocation" minOccurs="0" />
+          <xs:element name="areaExtension" type="D2LogicalModel:_AreaExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AreaDestination">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Destination">
+        <xs:sequence>
+          <xs:element name="area" type="D2LogicalModel:Area" />
+          <xs:element name="areaDestinationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AreaExtended">
+    <xs:sequence>
+      <xs:element name="namedArea" type="D2LogicalModel:NamedArea" minOccurs="0" />
+      <xs:element name="polygonArea" type="D2LogicalModel:PolygonArea" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AreaOfInterestEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="continentWide" />
+      <xs:enumeration value="national" />
+      <xs:enumeration value="neighbouringCountries" />
+      <xs:enumeration value="notSpecified" />
+      <xs:enumeration value="regional" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Boolean">
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="CarriagewayEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="connectingCarriageway" />
+      <xs:enumeration value="entrySlipRoad" />
+      <xs:enumeration value="exitSlipRoad" />
+      <xs:enumeration value="flyover" />
+      <xs:enumeration value="leftHandFeederRoad" />
+      <xs:enumeration value="leftHandParallelCarriageway" />
+      <xs:enumeration value="mainCarriageway" />
+      <xs:enumeration value="oppositeCarriageway" />
+      <xs:enumeration value="parallelCarriageway" />
+      <xs:enumeration value="rightHandFeederRoad" />
+      <xs:enumeration value="rightHandParallelCarriageway" />
+      <xs:enumeration value="roundabout" />
+      <xs:enumeration value="serviceRoad" />
+      <xs:enumeration value="slipRoads" />
+      <xs:enumeration value="underpass" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CatalogueReference">
+    <xs:sequence>
+      <xs:element name="keyCatalogueReference" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="catalogueReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ChangedFlagEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="catalogue" />
+      <xs:enumeration value="filter" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CodedReasonForSettingMessageEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="situation" />
+      <xs:enumeration value="operatorCreated" />
+      <xs:enumeration value="trafficManagement" />
+      <xs:enumeration value="travelTime" />
+      <xs:enumeration value="campaign" />
+      <xs:enumeration value="default" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ColourEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="amber" />
+      <xs:enumeration value="blue" />
+      <xs:enumeration value="green" />
+      <xs:enumeration value="red" />
+      <xs:enumeration value="white" />
+      <xs:enumeration value="whiteYellow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ConfidentialityValueEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="internalUse" />
+      <xs:enumeration value="noRestriction" />
+      <xs:enumeration value="restrictedToAuthorities" />
+      <xs:enumeration value="restrictedToAuthoritiesAndTrafficOperators" />
+      <xs:enumeration value="restrictedToAuthoritiesTrafficOperatorsAndPublishers" />
+      <xs:enumeration value="restrictedToAuthoritiesTrafficOperatorsAndVms" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CountryEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="at" />
+      <xs:enumeration value="be" />
+      <xs:enumeration value="bg" />
+      <xs:enumeration value="ch" />
+      <xs:enumeration value="cs" />
+      <xs:enumeration value="cy" />
+      <xs:enumeration value="cz" />
+      <xs:enumeration value="de" />
+      <xs:enumeration value="dk" />
+      <xs:enumeration value="ee" />
+      <xs:enumeration value="es" />
+      <xs:enumeration value="fi" />
+      <xs:enumeration value="fo" />
+      <xs:enumeration value="fr" />
+      <xs:enumeration value="gb" />
+      <xs:enumeration value="gg" />
+      <xs:enumeration value="gi" />
+      <xs:enumeration value="gr" />
+      <xs:enumeration value="hr" />
+      <xs:enumeration value="hu" />
+      <xs:enumeration value="ie" />
+      <xs:enumeration value="im" />
+      <xs:enumeration value="is" />
+      <xs:enumeration value="it" />
+      <xs:enumeration value="je" />
+      <xs:enumeration value="li" />
+      <xs:enumeration value="lt" />
+      <xs:enumeration value="lu" />
+      <xs:enumeration value="lv" />
+      <xs:enumeration value="ma" />
+      <xs:enumeration value="mc" />
+      <xs:enumeration value="mk" />
+      <xs:enumeration value="mt" />
+      <xs:enumeration value="nl" />
+      <xs:enumeration value="no" />
+      <xs:enumeration value="pl" />
+      <xs:enumeration value="pt" />
+      <xs:enumeration value="ro" />
+      <xs:enumeration value="se" />
+      <xs:enumeration value="si" />
+      <xs:enumeration value="sk" />
+      <xs:enumeration value="sm" />
+      <xs:enumeration value="tr" />
+      <xs:enumeration value="va" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="d2LogicalModel" type="D2LogicalModel:D2LogicalModel">
+    <xs:unique name="_d2LogicalModelVmsUnitTableConstraint">
+      <xs:selector xpath=".//D2LogicalModel:vmsUnitTable" />
+      <xs:field xpath="@id" />
+      <xs:field xpath="@version" />
+    </xs:unique>
+    <xs:unique name="_d2LogicalModelVmsUnitRecordConstraint">
+      <xs:selector xpath=".//D2LogicalModel:vmsUnitRecord" />
+      <xs:field xpath="@id" />
+      <xs:field xpath="@version" />
+    </xs:unique>
+  </xs:element>
+  <xs:complexType name="D2LogicalModel">
+    <xs:sequence>
+      <xs:element name="exchange" type="D2LogicalModel:Exchange" />
+      <xs:element name="payloadPublication" type="D2LogicalModel:PayloadPublication" minOccurs="0" />
+      <xs:element name="d2LogicalModelExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="modelBaseVersion" use="required" fixed="2" />
+  </xs:complexType>
+  <xs:simpleType name="DateTime">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="DenyReasonEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unknownReason" />
+      <xs:enumeration value="wrongCatalogue" />
+      <xs:enumeration value="wrongFilter" />
+      <xs:enumeration value="wrongOrder" />
+      <xs:enumeration value="wrongPartner" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Destination" abstract="true">
+    <xs:sequence>
+      <xs:element name="destinationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="allDirections" />
+      <xs:enumeration value="bothWays" />
+      <xs:enumeration value="clockwise" />
+      <xs:enumeration value="anticlockwise" />
+      <xs:enumeration value="innerRing" />
+      <xs:enumeration value="outerRing" />
+      <xs:enumeration value="northBound" />
+      <xs:enumeration value="northEastBound" />
+      <xs:enumeration value="eastBound" />
+      <xs:enumeration value="southEastBound" />
+      <xs:enumeration value="southBound" />
+      <xs:enumeration value="southWestBound" />
+      <xs:enumeration value="westBound" />
+      <xs:enumeration value="northWestBound" />
+      <xs:enumeration value="inboundTowardsTown" />
+      <xs:enumeration value="outboundFromTown" />
+      <xs:enumeration value="unknown" />
+      <xs:enumeration value="opposite" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DistanceAlongLinearElement" abstract="true">
+    <xs:sequence>
+      <xs:element name="distanceAlongLinearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DistanceFromLinearElementReferent">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DistanceAlongLinearElement">
+        <xs:sequence>
+          <xs:element name="distanceAlong" type="D2LogicalModel:MetresAsFloat" minOccurs="1" maxOccurs="1" />
+          <xs:element name="fromReferent" type="D2LogicalModel:Referent" />
+          <xs:element name="towardsReferent" type="D2LogicalModel:Referent" minOccurs="0" />
+          <xs:element name="distanceFromLinearElementReferentExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DistanceFromLinearElementStart">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DistanceAlongLinearElement">
+        <xs:sequence>
+          <xs:element name="distanceAlong" type="D2LogicalModel:MetresAsFloat" minOccurs="1" maxOccurs="1" />
+          <xs:element name="distanceFromLinearElementStartExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Exchange">
+    <xs:sequence>
+      <xs:element name="changedFlag" type="D2LogicalModel:ChangedFlagEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="clientIdentification" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="deliveryBreak" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="denyReason" type="D2LogicalModel:DenyReasonEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="historicalStartDate" type="D2LogicalModel:DateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="historicalStopDate" type="D2LogicalModel:DateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="keepAlive" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="requestType" type="D2LogicalModel:RequestTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="response" type="D2LogicalModel:ResponseEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="subscriptionReference" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplierIdentification" type="D2LogicalModel:InternationalIdentifier" />
+      <xs:element name="target" type="D2LogicalModel:Target" minOccurs="0" />
+      <xs:element name="subscription" type="D2LogicalModel:Subscription" minOccurs="0" />
+      <xs:element name="exchangeExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExternalReferencing">
+    <xs:sequence>
+      <xs:element name="externalLocationCode" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="externalReferencingSystem" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="externalReferencingExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fault">
+    <xs:sequence>
+      <xs:element name="faultIdentifier" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="faultDescription" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="faultCreationTime" type="D2LogicalModel:DateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="faultLastUpdateTime" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="faultSeverity" type="D2LogicalModel:FaultSeverityEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="faultExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FaultSeverityEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="low" />
+      <xs:enumeration value="medium" />
+      <xs:enumeration value="high" />
+      <xs:enumeration value="unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FilterReference">
+    <xs:sequence>
+      <xs:element name="deleteFilter" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="filterOperationApproved" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="keyFilterReference" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="filterReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Float">
+    <xs:restriction base="xs:float" />
+  </xs:simpleType>
+  <xs:complexType name="GroupOfLocations" abstract="true">
+    <xs:sequence>
+      <xs:element name="groupOfLocationsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeaderInformation">
+    <xs:sequence>
+      <xs:element name="areaOfInterest" type="D2LogicalModel:AreaOfInterestEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="confidentiality" type="D2LogicalModel:ConfidentialityValueEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="informationStatus" type="D2LogicalModel:InformationStatusEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="urgency" type="D2LogicalModel:UrgencyEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="headerInformationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="HeightGradeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="aboveGrade" />
+      <xs:enumeration value="atGrade" />
+      <xs:enumeration value="belowGrade" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="InformationStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="real" />
+      <xs:enumeration value="securityExercise" />
+      <xs:enumeration value="technicalExercise" />
+      <xs:enumeration value="test" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InternationalIdentifier">
+    <xs:sequence>
+      <xs:element name="country" type="D2LogicalModel:CountryEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="nationalIdentifier" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="internationalIdentifierExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Junction">
+    <xs:sequence>
+      <xs:element name="junctionClassification" type="D2LogicalModel:JunctionClassificationEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="junctionName" type="D2LogicalModel:MultilingualString" minOccurs="1" maxOccurs="1" />
+      <xs:element name="junctionNumber" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="motorway" type="D2LogicalModel:Road" minOccurs="0" />
+      <xs:element name="destinationMotorway" type="D2LogicalModel:Road" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="junctionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="JunctionClassificationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="threeWayInterchange" />
+      <xs:enumeration value="interchange" />
+      <xs:enumeration value="motorwayConnection" />
+      <xs:enumeration value="junction" />
+      <xs:enumeration value="temporaryJunction" />
+      <xs:enumeration value="borderCrossing" />
+      <xs:enumeration value="junctionInOneDirection" />
+      <xs:enumeration value="operationalServiceJunction" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="KilometresPerHour">
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:simpleType name="LaneEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="allLanesCompleteCarriageway" />
+      <xs:enumeration value="busLane" />
+      <xs:enumeration value="busStop" />
+      <xs:enumeration value="carPoolLane" />
+      <xs:enumeration value="centralReservation" />
+      <xs:enumeration value="crawlerLane" />
+      <xs:enumeration value="emergencyLane" />
+      <xs:enumeration value="escapeLane" />
+      <xs:enumeration value="expressLane" />
+      <xs:enumeration value="hardShoulder" />
+      <xs:enumeration value="heavyVehicleLane" />
+      <xs:enumeration value="lane1" />
+      <xs:enumeration value="lane2" />
+      <xs:enumeration value="lane3" />
+      <xs:enumeration value="lane4" />
+      <xs:enumeration value="lane5" />
+      <xs:enumeration value="lane6" />
+      <xs:enumeration value="lane7" />
+      <xs:enumeration value="lane8" />
+      <xs:enumeration value="lane9" />
+      <xs:enumeration value="layBy" />
+      <xs:enumeration value="leftHandTurningLane" />
+      <xs:enumeration value="leftLane" />
+      <xs:enumeration value="localTrafficLane" />
+      <xs:enumeration value="middleLane" />
+      <xs:enumeration value="opposingLanes" />
+      <xs:enumeration value="overtakingLane" />
+      <xs:enumeration value="rightHandTurningLane" />
+      <xs:enumeration value="rightLane" />
+      <xs:enumeration value="rushHourLane" />
+      <xs:enumeration value="setDownArea" />
+      <xs:enumeration value="slowVehicleLane" />
+      <xs:enumeration value="throughTrafficLane" />
+      <xs:enumeration value="tidalFlowLane" />
+      <xs:enumeration value="turningLane" />
+      <xs:enumeration value="verge" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Language">
+    <xs:restriction base="xs:language" />
+  </xs:simpleType>
+  <xs:complexType name="Linear">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:NetworkLocation">
+        <xs:sequence>
+          <xs:element name="tpegLinearLocation" type="D2LogicalModel:TpegLinearLocation" minOccurs="0" />
+          <xs:element name="alertCLinear" type="D2LogicalModel:AlertCLinear" minOccurs="0" />
+          <xs:element name="linearWithinLinearElement" type="D2LogicalModel:LinearWithinLinearElement" minOccurs="0" />
+          <xs:element name="linearExtension" type="D2LogicalModel:_LinearExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LinearElement">
+    <xs:sequence>
+      <xs:element name="roadName" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="roadNumber" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="linearElementReferenceModel" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="linearElementReferenceModelVersion" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="linearElementNature" type="D2LogicalModel:LinearElementNatureEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="linearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinearElementByCode">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:LinearElement">
+        <xs:sequence>
+          <xs:element name="linearElementIdentifier" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+          <xs:element name="linearElementByCodeExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LinearElementByPoints">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:LinearElement">
+        <xs:sequence>
+          <xs:element name="startPointOfLinearElement" type="D2LogicalModel:Referent" />
+          <xs:element name="intermediatePointOnLinearElement" type="D2LogicalModel:_IntermediatePointOnLinearElement" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="endPointOfLinearElement" type="D2LogicalModel:Referent" />
+          <xs:element name="linearElementByPointsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="LinearElementNatureEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="road" />
+      <xs:enumeration value="roadSection" />
+      <xs:enumeration value="slipRoad" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LinearReferencingDirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="both" />
+      <xs:enumeration value="opposite" />
+      <xs:enumeration value="aligned" />
+      <xs:enumeration value="unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LinearWithinLinearElement">
+    <xs:sequence>
+      <xs:element name="administrativeAreaOfLinearSection" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="directionBoundOnLinearSection" type="D2LogicalModel:DirectionEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="directionRelativeOnLinearSection" type="D2LogicalModel:LinearReferencingDirectionEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="heightGradeOfLinearSection" type="D2LogicalModel:HeightGradeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="linearElement" type="D2LogicalModel:LinearElement" />
+      <xs:element name="fromPoint" type="D2LogicalModel:DistanceAlongLinearElement" />
+      <xs:element name="toPoint" type="D2LogicalModel:DistanceAlongLinearElement" />
+      <xs:element name="linearWithinLinearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Location" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:GroupOfLocations">
+        <xs:sequence>
+          <xs:element name="externalReferencing" type="D2LogicalModel:ExternalReferencing" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="locationForDisplay" type="D2LogicalModel:PointCoordinates" minOccurs="0" />
+          <xs:element name="locationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocationByReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Location">
+        <xs:sequence>
+          <xs:element name="predefinedLocationReference" type="D2LogicalModel:_PredefinedLocationVersionedReference" minOccurs="1" maxOccurs="1" />
+          <xs:element name="locationByReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="LocationDescriptorEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="aroundABendInRoad" />
+      <xs:enumeration value="atMotorwayInterchange" />
+      <xs:enumeration value="atRestArea" />
+      <xs:enumeration value="atServiceArea" />
+      <xs:enumeration value="atTollPlaza" />
+      <xs:enumeration value="atTunnelEntryOrExit" />
+      <xs:enumeration value="inbound" />
+      <xs:enumeration value="inGallery" />
+      <xs:enumeration value="inTheCentre" />
+      <xs:enumeration value="inTheOppositeDirection" />
+      <xs:enumeration value="inTunnel" />
+      <xs:enumeration value="onBorder" />
+      <xs:enumeration value="onBridge" />
+      <xs:enumeration value="onConnector" />
+      <xs:enumeration value="onElevatedSection" />
+      <xs:enumeration value="onFlyover" />
+      <xs:enumeration value="onIceRoad" />
+      <xs:enumeration value="onLevelCrossing" />
+      <xs:enumeration value="onLinkRoad" />
+      <xs:enumeration value="onPass" />
+      <xs:enumeration value="onRoundabout" />
+      <xs:enumeration value="onTheLeft" />
+      <xs:enumeration value="onTheRight" />
+      <xs:enumeration value="onTheRoadway" />
+      <xs:enumeration value="onUndergroundSection" />
+      <xs:enumeration value="onUnderpass" />
+      <xs:enumeration value="outbound" />
+      <xs:enumeration value="overCrestOfHill" />
+      <xs:enumeration value="withinJunction" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MetresAsFloat">
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:simpleType name="MetresAsNonNegativeInteger">
+    <xs:restriction base="D2LogicalModel:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="MultilingualString">
+    <xs:sequence>
+      <xs:element name="values">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value" type="D2LogicalModel:MultilingualStringValue" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultilingualStringValue">
+    <xs:simpleContent>
+      <xs:extension base="D2LogicalModel:MultilingualStringValueType">
+        <xs:attribute name="lang" type="xs:language" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MultilingualStringValueType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NamedArea">
+    <xs:sequence>
+      <xs:element name="country" type="D2LogicalModel:CountryEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="nation" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="county" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="areaName" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="policeForceControlArea" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="roadOperatorControlArea" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="namedAreaExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NetworkLocation" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Location">
+        <xs:sequence>
+          <xs:element name="supplementaryPositionalDescription" type="D2LogicalModel:SupplementaryPositionalDescription" minOccurs="0" />
+          <xs:element name="destination" type="D2LogicalModel:Destination" minOccurs="0" />
+          <xs:element name="networkLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NonNegativeInteger">
+    <xs:restriction base="xs:nonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="OffsetDistance">
+    <xs:sequence>
+      <xs:element name="offsetDistance" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="offsetDistanceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrAreaLocationReference">
+    <xs:sequence>
+      <xs:element name="openlrAreaLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrBaseLocationReferencePoint" abstract="true">
+    <xs:sequence>
+      <xs:element name="openlrCoordinate" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="openlrLineAttributes" type="D2LogicalModel:OpenlrLineAttributes" />
+      <xs:element name="openlrBaseLocationReferencePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrBasePointLocation" abstract="true">
+    <xs:sequence>
+      <xs:element name="openlrSideOfRoad" type="D2LogicalModel:OpenlrSideOfRoadEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrOrientation" type="D2LogicalModel:OpenlrOrientationEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrPositiveOffset" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="openlrLocationReferencePoint" type="D2LogicalModel:OpenlrLocationReferencePoint" />
+      <xs:element name="openlrLastLocationReferencePoint" type="D2LogicalModel:OpenlrLastLocationReferencePoint" />
+      <xs:element name="openlrBasePointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrCircleLocationReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="radius" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="1" maxOccurs="1" />
+          <xs:element name="openlrGeoCoordinate" type="D2LogicalModel:OpenlrGeoCoordinate" />
+          <xs:element name="openlrCircleLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrClosedLineLocationReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrLocationReferencePoint" type="D2LogicalModel:OpenlrLocationReferencePoint" maxOccurs="unbounded" />
+          <xs:element name="openlrLastLine" type="D2LogicalModel:OpenlrLineAttributes" />
+          <xs:element name="openlrClosedLineLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrExtendedArea">
+    <xs:sequence>
+      <xs:element name="openlrAreaLocationReference" type="D2LogicalModel:OpenlrAreaLocationReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrExtendedLinear">
+    <xs:sequence>
+      <xs:element name="firstDirection" type="D2LogicalModel:OpenlrLineLocationReference" />
+      <xs:element name="oppositeDirection" type="D2LogicalModel:OpenlrLineLocationReference" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrExtendedPoint">
+    <xs:sequence>
+      <xs:element name="openlrPointLocationReference" type="D2LogicalModel:OpenlrPointLocationReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="OpenlrFormOfWayEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="undefined" />
+      <xs:enumeration value="motorway" />
+      <xs:enumeration value="multipleCarriageway" />
+      <xs:enumeration value="singleCarriageway" />
+      <xs:enumeration value="roundabout" />
+      <xs:enumeration value="slipRoad" />
+      <xs:enumeration value="trafficSquare" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OpenlrFunctionalRoadClassEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FRC0" />
+      <xs:enumeration value="FRC1" />
+      <xs:enumeration value="FRC2" />
+      <xs:enumeration value="FRC3" />
+      <xs:enumeration value="FRC4" />
+      <xs:enumeration value="FRC5" />
+      <xs:enumeration value="FRC6" />
+      <xs:enumeration value="FRC7" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OpenlrGeoCoordinate">
+    <xs:sequence>
+      <xs:element name="openlrCoordinate" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="openlrGeoCoordinateExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrGridAttributes">
+    <xs:sequence>
+      <xs:element name="openlrNumColumns" type="D2LogicalModel:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrNumRows" type="D2LogicalModel:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrGridAttributesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrGridLocationReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrRectangle" type="D2LogicalModel:OpenlrRectangle" />
+          <xs:element name="openlrGridAttributes" type="D2LogicalModel:OpenlrGridAttributes" />
+          <xs:element name="openlrGridLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLastLocationReferencePoint">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBaseLocationReferencePoint">
+        <xs:sequence>
+          <xs:element name="openlrLastLocationReferencePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLineAttributes">
+    <xs:sequence>
+      <xs:element name="openlrFunctionalRoadClass" type="D2LogicalModel:OpenlrFunctionalRoadClassEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrFormOfWay" type="D2LogicalModel:OpenlrFormOfWayEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrBearing" type="D2LogicalModel:AngleInDegrees" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrLineAttributesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLineLocationReference">
+    <xs:sequence>
+      <xs:element name="openlrLocationReferencePoint" type="D2LogicalModel:OpenlrLocationReferencePoint" maxOccurs="unbounded" />
+      <xs:element name="openlrLastLocationReferencePoint" type="D2LogicalModel:OpenlrLastLocationReferencePoint" />
+      <xs:element name="openlrOffsets" type="D2LogicalModel:OpenlrOffsets" minOccurs="0" />
+      <xs:element name="openlrLineLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLocationReferencePoint">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBaseLocationReferencePoint">
+        <xs:sequence>
+          <xs:element name="openlrPathAttributes" type="D2LogicalModel:OpenlrPathAttributes" />
+          <xs:element name="openlrLocationReferencePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrOffsets">
+    <xs:sequence>
+      <xs:element name="openlrPositiveOffset" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="openlrNegativeOffset" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="openlrOffsetsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="OpenlrOrientationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="noOrientationOrUnknown" />
+      <xs:enumeration value="withLineDirection" />
+      <xs:enumeration value="againstLineDirection" />
+      <xs:enumeration value="both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OpenlrPathAttributes">
+    <xs:sequence>
+      <xs:element name="openlrLowestFRCToNextLRPoint" type="D2LogicalModel:OpenlrFunctionalRoadClassEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrDistanceToNextLRPoint" type="D2LogicalModel:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrPathAttributesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPointAlongLine">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBasePointLocation">
+        <xs:sequence>
+          <xs:element name="openlrPointAlongLineExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPointLocationReference">
+    <xs:sequence>
+      <xs:element name="openlrGeoCoordinate" type="D2LogicalModel:OpenlrGeoCoordinate" minOccurs="0" />
+      <xs:element name="openlrPoiWithAccessPoint" type="D2LogicalModel:OpenlrPoiWithAccessPoint" minOccurs="0" />
+      <xs:element name="openlrPointAlongLine" type="D2LogicalModel:OpenlrPointAlongLine" minOccurs="0" />
+      <xs:element name="openlrPointLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPoiWithAccessPoint">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrBasePointLocation">
+        <xs:sequence>
+          <xs:element name="openlrCoordinate" type="D2LogicalModel:PointCoordinates" />
+          <xs:element name="openlrPoiWithAccessPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPolygonCorners">
+    <xs:sequence>
+      <xs:element name="openlrCoordinate" type="D2LogicalModel:PointCoordinates" minOccurs="3" maxOccurs="unbounded" />
+      <xs:element name="openlrPolygonCornersExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPolygonLocationReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrPolygonCorners" type="D2LogicalModel:OpenlrPolygonCorners" />
+          <xs:element name="openlrPolygonLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrRectangle">
+    <xs:sequence>
+      <xs:element name="openlrLowerLeft" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="openlrUpperRight" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="openlrRectangleExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrRectangleLocationReference">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrRectangle" type="D2LogicalModel:OpenlrRectangle" />
+          <xs:element name="openlrRectangleLocationReferenceExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="OpenlrSideOfRoadEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="onRoadOrUnknown" />
+      <xs:enumeration value="right" />
+      <xs:enumeration value="left" />
+      <xs:enumeration value="both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OperatingModeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="operatingMode0" />
+      <xs:enumeration value="operatingMode1" />
+      <xs:enumeration value="operatingMode2" />
+      <xs:enumeration value="operatingMode3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PayloadPublication" abstract="true">
+    <xs:sequence>
+      <xs:element name="publicationTime" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="publicationCreator" type="D2LogicalModel:InternationalIdentifier" />
+      <xs:element name="payloadPublicationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="lang" type="D2LogicalModel:Language" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="Percentage">
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:complexType name="PercentageDistanceAlongLinearElement">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:DistanceAlongLinearElement">
+        <xs:sequence>
+          <xs:element name="percentageDistanceAlong" type="D2LogicalModel:Percentage" minOccurs="1" maxOccurs="1" />
+          <xs:element name="percentageDistanceAlongLinearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="PhysicalMountingEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="centralReservationMounted" />
+      <xs:enumeration value="gantryMounted" />
+      <xs:enumeration value="overheadBridgeMounted" />
+      <xs:enumeration value="roadsideCantileverMounted" />
+      <xs:enumeration value="roadsideMounted" />
+      <xs:enumeration value="trailerMounted" />
+      <xs:enumeration value="tunnelEntranceMounted" />
+      <xs:enumeration value="vehicleMounted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PictogramCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tls" />
+      <xs:enumeration value="stvo" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PictogramDisplayAreaSettings">
+    <xs:sequence>
+      <xs:element name="pictogramLanternsOn" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramLuminanceOverride" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramLuminanceLevel" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramLuminanceLevelName" type="D2LogicalModel:VmsLuminanceLevelEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramDisplayAreaSettingsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Point">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:NetworkLocation">
+        <xs:sequence>
+          <xs:element name="tpegPointLocation" type="D2LogicalModel:TpegPointLocation" minOccurs="0" />
+          <xs:element name="alertCPoint" type="D2LogicalModel:AlertCPoint" minOccurs="0" />
+          <xs:element name="pointAlongLinearElement" type="D2LogicalModel:PointAlongLinearElement" minOccurs="0" />
+          <xs:element name="pointByCoordinates" type="D2LogicalModel:PointByCoordinates" minOccurs="0" />
+          <xs:element name="pointExtension" type="D2LogicalModel:_PointExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PointAlongLinearElement">
+    <xs:sequence>
+      <xs:element name="administrativeAreaOfPoint" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="directionBoundAtPoint" type="D2LogicalModel:DirectionEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="directionRelativeAtPoint" type="D2LogicalModel:LinearReferencingDirectionEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="heightGradeOfPoint" type="D2LogicalModel:HeightGradeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="linearElement" type="D2LogicalModel:LinearElement" />
+      <xs:element name="distanceAlongLinearElement" type="D2LogicalModel:DistanceAlongLinearElement" />
+      <xs:element name="pointAlongLinearElementExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointByCoordinates">
+    <xs:sequence>
+      <xs:element name="bearing" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" />
+      <xs:element name="pointByCoordinatesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointCoordinates">
+    <xs:sequence>
+      <xs:element name="latitude" type="D2LogicalModel:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="longitude" type="D2LogicalModel:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="pointCoordinatesExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointDestination">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Destination">
+        <xs:sequence>
+          <xs:element name="point" type="D2LogicalModel:Point" />
+          <xs:element name="pointDestinationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PointExtended">
+    <xs:sequence>
+      <xs:element name="description" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="junction" type="D2LogicalModel:Junction" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PolygonArea">
+    <xs:sequence>
+      <xs:element name="sectionName" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pointCoordinates" type="D2LogicalModel:_PolygonAreaIndexPointCoordinates" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="polygonAreaExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PositionAbsoluteEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="onLeft" />
+      <xs:enumeration value="onRight" />
+      <xs:enumeration value="atTop" />
+      <xs:enumeration value="atBottom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PositionRelativeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="above" />
+      <xs:enumeration value="below" />
+      <xs:enumeration value="toTheLeft" />
+      <xs:enumeration value="toTheRight" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Referent">
+    <xs:sequence>
+      <xs:element name="referentIdentifier" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="referentName" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="referentType" type="D2LogicalModel:ReferentTypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="referentDescription" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" minOccurs="0" />
+      <xs:element name="referentExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ReferentTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="boundary" />
+      <xs:enumeration value="intersection" />
+      <xs:enumeration value="referenceMarker" />
+      <xs:enumeration value="landmark" />
+      <xs:enumeration value="roadNode" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RequestTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="catalogue" />
+      <xs:enumeration value="filter" />
+      <xs:enumeration value="requestData" />
+      <xs:enumeration value="requestHistoricalData" />
+      <xs:enumeration value="subscription" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ResponseEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="acknowledge" />
+      <xs:enumeration value="catalogueRequestDenied" />
+      <xs:enumeration value="filterRequestDenied" />
+      <xs:enumeration value="requestDenied" />
+      <xs:enumeration value="subscriptionRequestDenied" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Road">
+    <xs:sequence>
+      <xs:element name="nameOfRoad" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="roadIdentifier" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="typeOfRoad" type="D2LogicalModel:RoadTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="roadDestination" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="roadOrigination" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="distanceToThisRoad" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="roadExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoadNode">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Road">
+        <xs:sequence>
+          <xs:element name="junctionName" type="D2LogicalModel:MultilingualString" minOccurs="1" maxOccurs="1" />
+          <xs:element name="roadNodeExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="motorway" />
+      <xs:enumeration value="trunkRoad" />
+      <xs:enumeration value="mainRoad" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Seconds">
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:simpleType name="String">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Subscription">
+    <xs:sequence>
+      <xs:element name="deleteSubscription" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="deliveryInterval" type="D2LogicalModel:Seconds" minOccurs="0" maxOccurs="1" />
+      <xs:element name="operatingMode" type="D2LogicalModel:OperatingModeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="subscriptionStartTime" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="subscriptionState" type="D2LogicalModel:SubscriptionStateEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="subscriptionStopTime" type="D2LogicalModel:DateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="updateMethod" type="D2LogicalModel:UpdateMethodEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="target" type="D2LogicalModel:Target" maxOccurs="unbounded" />
+      <xs:element name="filterReference" type="D2LogicalModel:FilterReference" minOccurs="0" />
+      <xs:element name="catalogueReference" type="D2LogicalModel:CatalogueReference" minOccurs="0" />
+      <xs:element name="subscriptionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SubscriptionStateEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="active" />
+      <xs:enumeration value="suspended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SupplementaryPositionalDescription">
+    <xs:sequence>
+      <xs:element name="locationDescriptor" type="D2LogicalModel:LocationDescriptorEnum" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="sequentialRampNumber" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="affectedCarriagewayAndLanes" type="D2LogicalModel:AffectedCarriagewayAndLanes" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="supplementaryPositionalDescriptionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="locationPrecision" type="D2LogicalModel:MetresAsNonNegativeInteger" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="Target">
+    <xs:sequence>
+      <xs:element name="address" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="protocol" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="targetExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TextDisplayAreaSettings">
+    <xs:sequence>
+      <xs:element name="textLanternsOn" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textLuminanceOverride" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textLuminanceLevel" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textLuminanceLevelName" type="D2LogicalModel:VmsLuminanceLevelEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textDisplayAreaSettingsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Tonnes">
+    <xs:restriction base="D2LogicalModel:Float" />
+  </xs:simpleType>
+  <xs:complexType name="TpegAreaDescriptor">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegAreaDescriptorType" type="D2LogicalModel:TpegLoc03AreaDescriptorSubtypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="tpegAreaDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegAreaLocation" abstract="true">
+    <xs:sequence>
+      <xs:element name="tpegAreaLocationType" type="D2LogicalModel:TpegLoc01AreaLocationSubtypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="tpegHeight" type="D2LogicalModel:TpegHeight" minOccurs="0" />
+      <xs:element name="tpegAreaLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegDescriptor" abstract="true">
+    <xs:sequence>
+      <xs:element name="descriptor" type="D2LogicalModel:MultilingualString" minOccurs="1" maxOccurs="1" />
+      <xs:element name="tpegDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegFramedPoint">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointLocation">
+        <xs:sequence>
+          <xs:element name="tpegFramedPointLocationType" type="D2LogicalModel:TpegLoc01FramedPointLocationSubtypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="framedPoint" type="D2LogicalModel:TpegNonJunctionPoint" />
+          <xs:element name="to" type="D2LogicalModel:TpegPoint" />
+          <xs:element name="from" type="D2LogicalModel:TpegPoint" />
+          <xs:element name="tpegFramedPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegGeometricArea">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegAreaLocation">
+        <xs:sequence>
+          <xs:element name="radius" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="1" maxOccurs="1" />
+          <xs:element name="centrePoint" type="D2LogicalModel:PointCoordinates" />
+          <xs:element name="name" type="D2LogicalModel:TpegAreaDescriptor" minOccurs="0" />
+          <xs:element name="tpegGeometricAreaExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegHeight">
+    <xs:sequence>
+      <xs:element name="height" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="heightType" type="D2LogicalModel:TpegLoc04HeightTypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="tpegHeightExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegIlcPointDescriptor">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegIlcPointDescriptorType" type="D2LogicalModel:TpegLoc03IlcPointDescriptorSubtypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="tpegIlcPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegJunction">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPoint">
+        <xs:sequence>
+          <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" />
+          <xs:element name="name" type="D2LogicalModel:TpegJunctionPointDescriptor" minOccurs="0" />
+          <xs:element name="ilc" type="D2LogicalModel:TpegIlcPointDescriptor" maxOccurs="3" />
+          <xs:element name="otherName" type="D2LogicalModel:TpegOtherPointDescriptor" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="tpegJunctionExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegJunctionPointDescriptor">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegJunctionPointDescriptorType" type="D2LogicalModel:TpegLoc03JunctionPointDescriptorSubtypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="tpegJunctionPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegLinearLocation">
+    <xs:sequence>
+      <xs:element name="tpegDirection" type="D2LogicalModel:DirectionEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="tpegLinearLocationType" type="D2LogicalModel:TpegLoc01LinearLocationSubtypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="to" type="D2LogicalModel:TpegPoint" />
+      <xs:element name="from" type="D2LogicalModel:TpegPoint" />
+      <xs:element name="tpegLinearLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TpegLoc01AreaLocationSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="largeArea" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc01FramedPointLocationSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="framedPoint" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc01LinearLocationSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="segment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc01SimplePointLocationSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="intersection" />
+      <xs:enumeration value="nonLinkedPoint" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc03AreaDescriptorSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="administrativeAreaName" />
+      <xs:enumeration value="administrativeReferenceName" />
+      <xs:enumeration value="areaName" />
+      <xs:enumeration value="countyName" />
+      <xs:enumeration value="lakeName" />
+      <xs:enumeration value="nationName" />
+      <xs:enumeration value="policeForceControlAreaName" />
+      <xs:enumeration value="regionName" />
+      <xs:enumeration value="seaName" />
+      <xs:enumeration value="townName" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc03IlcPointDescriptorSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tpegIlcName1" />
+      <xs:enumeration value="tpegIlcName2" />
+      <xs:enumeration value="tpegIlcName3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc03JunctionPointDescriptorSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="junctionName" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc03OtherPointDescriptorSubtypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="administrativeAreaName" />
+      <xs:enumeration value="administrativeReferenceName" />
+      <xs:enumeration value="airportName" />
+      <xs:enumeration value="areaName" />
+      <xs:enumeration value="buildingName" />
+      <xs:enumeration value="busStopIdentifier" />
+      <xs:enumeration value="busStopName" />
+      <xs:enumeration value="canalName" />
+      <xs:enumeration value="countyName" />
+      <xs:enumeration value="ferryPortName" />
+      <xs:enumeration value="intersectionName" />
+      <xs:enumeration value="lakeName" />
+      <xs:enumeration value="linkName" />
+      <xs:enumeration value="localLinkName" />
+      <xs:enumeration value="metroStationName" />
+      <xs:enumeration value="nationName" />
+      <xs:enumeration value="nonLinkedPointName" />
+      <xs:enumeration value="parkingFacilityName" />
+      <xs:enumeration value="pointName" />
+      <xs:enumeration value="pointOfInterestName" />
+      <xs:enumeration value="railwayStation" />
+      <xs:enumeration value="regionName" />
+      <xs:enumeration value="riverName" />
+      <xs:enumeration value="seaName" />
+      <xs:enumeration value="serviceAreaName" />
+      <xs:enumeration value="tidalRiverName" />
+      <xs:enumeration value="townName" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TpegLoc04HeightTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="above" />
+      <xs:enumeration value="aboveSeaLevel" />
+      <xs:enumeration value="aboveStreetLevel" />
+      <xs:enumeration value="at" />
+      <xs:enumeration value="atSeaLevel" />
+      <xs:enumeration value="atStreetLevel" />
+      <xs:enumeration value="below" />
+      <xs:enumeration value="belowSeaLevel" />
+      <xs:enumeration value="belowStreetLevel" />
+      <xs:enumeration value="undefined" />
+      <xs:enumeration value="unknown" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TpegNamedOnlyArea">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegAreaLocation">
+        <xs:sequence>
+          <xs:element name="name" type="D2LogicalModel:TpegAreaDescriptor" maxOccurs="unbounded" />
+          <xs:element name="tpegNamedOnlyAreaExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegNonJunctionPoint">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPoint">
+        <xs:sequence>
+          <xs:element name="pointCoordinates" type="D2LogicalModel:PointCoordinates" />
+          <xs:element name="name" type="D2LogicalModel:TpegOtherPointDescriptor" maxOccurs="unbounded" />
+          <xs:element name="tpegNonJunctionPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegOtherPointDescriptor">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegOtherPointDescriptorType" type="D2LogicalModel:TpegLoc03OtherPointDescriptorSubtypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="tpegOtherPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegPoint" abstract="true">
+    <xs:sequence>
+      <xs:element name="tpegPointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegPointDescriptor" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegDescriptor">
+        <xs:sequence>
+          <xs:element name="tpegPointDescriptorExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TpegPointLocation" abstract="true">
+    <xs:sequence>
+      <xs:element name="tpegDirection" type="D2LogicalModel:DirectionEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="tpegPointLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpegSimplePoint">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:TpegPointLocation">
+        <xs:sequence>
+          <xs:element name="tpegSimplePointLocationType" type="D2LogicalModel:TpegLoc01SimplePointLocationSubtypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="point" type="D2LogicalModel:TpegPoint" />
+          <xs:element name="tpegSimplePointExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="UpdateMethodEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="allElementUpdate" />
+      <xs:enumeration value="singleElementUpdate" />
+      <xs:enumeration value="snapshot" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UrgencyEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="extremelyUrgent" />
+      <xs:enumeration value="urgent" />
+      <xs:enumeration value="normalUrgency" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Url">
+    <xs:restriction base="xs:anyURI" />
+  </xs:simpleType>
+  <xs:complexType name="UrlLink">
+    <xs:sequence>
+      <xs:element name="urlLinkAddress" type="D2LogicalModel:Url" minOccurs="1" maxOccurs="1" />
+      <xs:element name="urlLinkDescription" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="urlLinkType" type="D2LogicalModel:UrlLinkTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="urlLinkExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="UrlLinkTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="documentPdf" />
+      <xs:enumeration value="html" />
+      <xs:enumeration value="image" />
+      <xs:enumeration value="rss" />
+      <xs:enumeration value="videoStream" />
+      <xs:enumeration value="voiceStream" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VersionedReference">
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Vms">
+    <xs:sequence>
+      <xs:element name="vmsWorking" type="D2LogicalModel:Boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="vmsMessageSequencingInterval" type="D2LogicalModel:Seconds" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsMessage" type="D2LogicalModel:_VmsMessageIndexVmsMessage" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="textDisplayAreaSettings" type="D2LogicalModel:TextDisplayAreaSettings" minOccurs="0" />
+      <xs:element name="pictogramDisplayAreaSettings" type="D2LogicalModel:_VmsPictogramDisplayAreaIndexPictogramDisplayAreaSettings" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsLocationOverride" type="D2LogicalModel:Location" minOccurs="0" />
+      <xs:element name="managedLogicalLocationOverride" type="D2LogicalModel:VmsManagedLogicalLocation" minOccurs="0" />
+      <xs:element name="vmsDynamicCharacteristics" type="D2LogicalModel:VmsDynamicCharacteristics" minOccurs="0" />
+      <xs:element name="vmsFault" type="D2LogicalModel:VmsFault" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VmsDatexPictogramEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="accident" />
+      <xs:enumeration value="advisorySpeed" />
+      <xs:enumeration value="animalsOnRoad" />
+      <xs:enumeration value="blankVoid" />
+      <xs:enumeration value="bridgeClosed" />
+      <xs:enumeration value="bridgeSwingInOperation" />
+      <xs:enumeration value="carParkFull" />
+      <xs:enumeration value="carParkSpacesAvailable" />
+      <xs:enumeration value="carriagewayNarrows" />
+      <xs:enumeration value="carriagewayNarrowsOnTheLeft" />
+      <xs:enumeration value="carriagewayNarrowsOnTheRight" />
+      <xs:enumeration value="carriagewayReducedToOneLane" />
+      <xs:enumeration value="carriagewayReducedToTwoLanes" />
+      <xs:enumeration value="carriagewayReducedToThreeLanes" />
+      <xs:enumeration value="chainsOrSnowTyresRecommended" />
+      <xs:enumeration value="compulsoryMinimumSpeed" />
+      <xs:enumeration value="crossWind" />
+      <xs:enumeration value="dangerOfFire" />
+      <xs:enumeration value="drivingOfVehiclesLessThanXMetresApartProhibited" />
+      <xs:enumeration value="endOfAdvisorySpeed" />
+      <xs:enumeration value="endOfCompulsoryMinimumSpeed" />
+      <xs:enumeration value="endOfProhibitionOfOvertaking" />
+      <xs:enumeration value="endOfProhibitionOfOvertakingForGoodsVehicles" />
+      <xs:enumeration value="endOfSpeedLimit" />
+      <xs:enumeration value="exitClosed" />
+      <xs:enumeration value="fallingRocks" />
+      <xs:enumeration value="fastenChildrensSeatBelts" />
+      <xs:enumeration value="fastenYourSeatBelt" />
+      <xs:enumeration value="fire" />
+      <xs:enumeration value="floodingOrFlashFloods" />
+      <xs:enumeration value="fog" />
+      <xs:enumeration value="footballMatch" />
+      <xs:enumeration value="hardShoulderNotRunning" />
+      <xs:enumeration value="hardShoulderRunning" />
+      <xs:enumeration value="keepASafeDistance" />
+      <xs:enumeration value="keepLeft" />
+      <xs:enumeration value="keepRight" />
+      <xs:enumeration value="lane1ClosedOf2" />
+      <xs:enumeration value="lane2ClosedOf2" />
+      <xs:enumeration value="lane1ClosedOf3" />
+      <xs:enumeration value="lane3ClosedOf3" />
+      <xs:enumeration value="lanes1And2ClosedOf3" />
+      <xs:enumeration value="lanes2And3ClosedOf3" />
+      <xs:enumeration value="lane1ClosedOf4" />
+      <xs:enumeration value="lane4ClosedOf4" />
+      <xs:enumeration value="lanes1And2ClosedOf4" />
+      <xs:enumeration value="lanes3And4ClosedOf4" />
+      <xs:enumeration value="lanes1And2And3ClosedOf4" />
+      <xs:enumeration value="lanes2And3And4ClosedOf4" />
+      <xs:enumeration value="laneClosed" />
+      <xs:enumeration value="laneDeviationToLeft" />
+      <xs:enumeration value="laneDeviationToRight" />
+      <xs:enumeration value="laneOpen" />
+      <xs:enumeration value="leftHandLaneClosed" />
+      <xs:enumeration value="lightSignals" />
+      <xs:enumeration value="looseGravel" />
+      <xs:enumeration value="maintenanceVehicleInAction" />
+      <xs:enumeration value="maximumSpeedLimitedToTheFigureIndicated" />
+      <xs:enumeration value="narrowLanesAead" />
+      <xs:enumeration value="noEntry" />
+      <xs:enumeration value="noEntryForAnyPowerDrivenVehicleDrawingATrailer" />
+      <xs:enumeration value="noEntryForAnyPowerDrivenVehicleDrawingATrailerOtherThanASemiTrailerOrASingleAxleTrailer" />
+      <xs:enumeration value="noEntryForGoodsVehicles" />
+      <xs:enumeration value="noEntryForVehiclesExceedingXTonnesLadenMass" />
+      <xs:enumeration value="noEntryForVehiclesHavingAMassExceedingXTonnesOnOneAxle" />
+      <xs:enumeration value="noEntryForVehiclesHavingAnOverallHeightExceedingXMetres" />
+      <xs:enumeration value="noEntryForVehiclesHavingAnOverallLengthExceedingXMetres" />
+      <xs:enumeration value="noEntryForVehiclesHavingAnOverallWidthExceedingXMetres" />
+      <xs:enumeration value="noEntryForVehiclesCarryingDangerousGoods" />
+      <xs:enumeration value="otherDangers" />
+      <xs:enumeration value="overtakingByGoodsVehiclesProhibited" />
+      <xs:enumeration value="overtakingProhibited" />
+      <xs:enumeration value="pollutionOrSmogAlert" />
+      <xs:enumeration value="queue" />
+      <xs:enumeration value="rain" />
+      <xs:enumeration value="rightHandLaneClosed" />
+      <xs:enumeration value="roadClosedAhead" />
+      <xs:enumeration value="roadworks" />
+      <xs:enumeration value="slipperyRoad" />
+      <xs:enumeration value="smoke" />
+      <xs:enumeration value="snow" />
+      <xs:enumeration value="snowChainsCompulsory" />
+      <xs:enumeration value="snowTyresCompulsory" />
+      <xs:enumeration value="snowPloughInAction" />
+      <xs:enumeration value="speedCamerasInAction" />
+      <xs:enumeration value="trafficCongestion" />
+      <xs:enumeration value="trafficDeviatedToOppositeCarriagewayAhead" />
+      <xs:enumeration value="trafficPartiallyDeviatedToOppositeCarriagewayAhead" />
+      <xs:enumeration value="tunnelClosed" />
+      <xs:enumeration value="turnLeft" />
+      <xs:enumeration value="turnRight" />
+      <xs:enumeration value="twoWayTraffic" />
+      <xs:enumeration value="unevenRoad" />
+      <xs:enumeration value="vehicleFire" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VmsDatexSupplementalPictogramEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="distanceToTheBeginningofTheApplicationZone" />
+      <xs:enumeration value="exceptAnyPowerDrivenVehicleDrawingTrailer" />
+      <xs:enumeration value="exceptBus" />
+      <xs:enumeration value="exceptGoodsVehicles" />
+      <xs:enumeration value="exceptSemiTrailer" />
+      <xs:enumeration value="exceptVehiclesCarryingDangerousGoods" />
+      <xs:enumeration value="inCaseOfIceOrSnow" />
+      <xs:enumeration value="lengthOfTheApplicationZone" />
+      <xs:enumeration value="restrictedToAnyPowerDrivenVehicleDrawingTrailer" />
+      <xs:enumeration value="restricetdToBus" />
+      <xs:enumeration value="restrictedToGoodsVehicles" />
+      <xs:enumeration value="restrictedToSemiTrailer" />
+      <xs:enumeration value="restrictedToVehiclesCarryingDangerousGoods" />
+      <xs:enumeration value="maintenanceVehicles" />
+      <xs:enumeration value="snowPloughs" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VmsDynamicCharacteristics">
+    <xs:sequence>
+      <xs:element name="numberOfPictogramDisplayAreas" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextDisplayCharacteristics" type="D2LogicalModel:VmsTextDisplayCharacteristics" minOccurs="0" />
+      <xs:element name="vmsPictogramDisplayCharacteristics" type="D2LogicalModel:_VmsDynamicCharacteristicsPictogramDisplayAreaIndexVmsPictogramDisplayCharacteristics" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsDynamicCharacteristicsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsFault">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Fault">
+        <xs:sequence>
+          <xs:element name="vmsFault" type="D2LogicalModel:VmsFaultEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="vmsFaultExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="VmsFaultEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="communicationsFailure" />
+      <xs:enumeration value="incorrectMessageDisplayed" />
+      <xs:enumeration value="incorrectPictogramDisplayed" />
+      <xs:enumeration value="outOfService" />
+      <xs:enumeration value="powerFailure" />
+      <xs:enumeration value="unableToClearDown" />
+      <xs:enumeration value="unknown" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VmsLuminanceLevelEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="switchedOff" />
+      <xs:enumeration value="testing" />
+      <xs:enumeration value="night" />
+      <xs:enumeration value="overcast" />
+      <xs:enumeration value="broadDaylight" />
+      <xs:enumeration value="sunInEyes" />
+      <xs:enumeration value="sunOnBack" />
+      <xs:enumeration value="foggyDay" />
+      <xs:enumeration value="foggyNight" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VmsManagedLogicalLocation">
+    <xs:sequence>
+      <xs:element name="managedLogicalLocation" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="distanceFromLogicalLocation" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="managedLocation" type="D2LogicalModel:Location" minOccurs="0" />
+      <xs:element name="vmsManagedLogicalLocationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsMessage">
+    <xs:sequence>
+      <xs:element name="associatedManagementOrDiversionPlan" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="messageSetBy" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="setBySystem" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="reasonForSetting" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="codedReasonForSetting" type="D2LogicalModel:CodedReasonForSettingMessageEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsMessageInformationType" type="D2LogicalModel:VmsMessageInformationTypeEnum" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="primarySetting" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="mareNostrumCompliant" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="timeLastSet" type="D2LogicalModel:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="requestedBy" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="situationToWhichMessageIsRelated" type="D2LogicalModel:VersionedReference" minOccurs="0" maxOccurs="1" />
+      <xs:element name="situationRecordToWhichMessageIsRelated" type="D2LogicalModel:VersionedReference" minOccurs="0" maxOccurs="1" />
+      <xs:element name="distanceFromSituationRecord" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPictogramSequencingInterval" type="D2LogicalModel:Seconds" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPage" type="D2LogicalModel:_TextPage" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsPictogramDisplayArea" type="D2LogicalModel:_VmsMessagePictogramDisplayAreaIndexVmsPictogramDisplayArea" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsMessageExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VmsMessageInformationTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="campaignMessage" />
+      <xs:enumeration value="dateTime" />
+      <xs:enumeration value="futureInformation" />
+      <xs:enumeration value="instructionOrMessage" />
+      <xs:enumeration value="situationWarning" />
+      <xs:enumeration value="temperature" />
+      <xs:enumeration value="trafficManagement" />
+      <xs:enumeration value="travelTime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VmsPictogram">
+    <xs:sequence>
+      <xs:element name="pictogramDescription" type="D2LogicalModel:VmsDatexPictogramEnum" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="pictogramCode" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramUrl" type="D2LogicalModel:Url" minOccurs="0" maxOccurs="1" />
+      <xs:element name="additionalPictogramDescription" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramFlashing" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramInInverseColour" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="presenceOfRedTriangle" type="D2LogicalModel:Boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="viennaConventionCompliant" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="distanceAttribute" type="D2LogicalModel:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="heightAttribute" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="lengthAttribute" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="speedAttribute" type="D2LogicalModel:KilometresPerHour" minOccurs="0" maxOccurs="1" />
+      <xs:element name="weightAttribute" type="D2LogicalModel:Tonnes" minOccurs="0" maxOccurs="1" />
+      <xs:element name="weightPerAxleAttribute" type="D2LogicalModel:Tonnes" minOccurs="0" maxOccurs="1" />
+      <xs:element name="widthAttribute" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsSupplementaryPanel" type="D2LogicalModel:VmsSupplementaryPanel" minOccurs="0" />
+      <xs:element name="vmsPictogramExtension" type="D2LogicalModel:_VmsPictogramExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsPictogramDisplayArea">
+    <xs:sequence>
+      <xs:element name="synchronizedSequencingWithTextPages" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsPictogram" type="D2LogicalModel:_VmsPictogramDisplayAreaPictogramSequencingIndexVmsPictogram" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsPictogramDisplayAreaExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsPictogramDisplayCharacteristics">
+    <xs:sequence>
+      <xs:element name="pictogramLanternsPresent" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramSequencingCapable" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramPixelsAcross" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramPixelsDown" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramDisplayHeight" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramDisplayWidth" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramCodeListIdentifier" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxPictogramLuminanceLevel" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramNumberOfColours" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxNumberOfSequentialPictograms" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramPositionAbsolute" type="D2LogicalModel:PositionAbsoluteEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramPositionX" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramPositionY" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramPositionRelativeToText" type="D2LogicalModel:PositionRelativeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsSupplementaryPanelCharacteristics" type="D2LogicalModel:VmsSupplementaryPanelCharacteristics" minOccurs="0" />
+      <xs:element name="vmsPictogramDisplayCharacteristicsExtension" type="D2LogicalModel:_VmsPictogramDisplayCharacteristicsExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsPictogramDisplayCharacteristicsExtended">
+    <xs:sequence>
+      <xs:element name="pictogramCodeType" type="D2LogicalModel:PictogramCodeType" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsPictogramExtended">
+    <xs:sequence>
+      <xs:element name="pictogramAlternativeWording" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramCodeType" type="D2LogicalModel:PictogramCodeType" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsPublication">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:PayloadPublication">
+        <xs:sequence>
+          <xs:element name="headerInformation" type="D2LogicalModel:HeaderInformation" />
+          <xs:element name="vmsUnit" type="D2LogicalModel:VmsUnit" maxOccurs="unbounded" />
+          <xs:element name="vmsPublicationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VmsRecord">
+    <xs:sequence>
+      <xs:element name="vmsDescription" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsOwner" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsPhysicalMounting" type="D2LogicalModel:PhysicalMountingEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsType" type="D2LogicalModel:VmsTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTypeCode" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="numberOfPictogramDisplayAreas" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="dynamicallyConfigurableDisplayAreas" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsDisplayHeight" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsDisplayWidth" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsHeightAboveRoadway" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextDisplayCharacteristics" type="D2LogicalModel:VmsTextDisplayCharacteristics" minOccurs="0" />
+      <xs:element name="vmsPictogramDisplayCharacteristics" type="D2LogicalModel:_VmsRecordPictogramDisplayAreaIndexVmsPictogramDisplayCharacteristics" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsLocation" type="D2LogicalModel:Location" minOccurs="0" />
+      <xs:element name="vmsManagedLogicalLocation" type="D2LogicalModel:VmsManagedLogicalLocation" minOccurs="0" />
+      <xs:element name="backgroundImageUrl" type="D2LogicalModel:UrlLink" minOccurs="0" />
+      <xs:element name="vmsRecordExtension" type="D2LogicalModel:_VmsRecordExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsRecordExtended">
+    <xs:sequence>
+      <xs:element name="vmsRecordFunctionalType" type="D2LogicalModel:VmsRecordFunctionalType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="addressedDestination" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="addressedTrafficFlow" type="D2LogicalModel:AddressedTrafficFlow" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VmsRecordFunctionalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="detail" />
+      <xs:enumeration value="overview" />
+      <xs:enumeration value="functionalDetail" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VmsSetting" abstract="true">
+    <xs:sequence>
+      <xs:element name="vmsSettingExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsSupplementaryPanel">
+    <xs:sequence>
+      <xs:element name="supplementaryMessageDescription" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsSupplementaryPictogram" type="D2LogicalModel:VmsSupplementaryPictogram" minOccurs="0" />
+      <xs:element name="vmsSupplementaryText" type="D2LogicalModel:VmsTextLine" minOccurs="0" />
+      <xs:element name="vmsSupplementaryPanelExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsSupplementaryPanelCharacteristics">
+    <xs:sequence>
+      <xs:element name="supplementaryPictogramCodeListIdentifier" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPanelPixelsAcross" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPanelPixelsDown" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPanelDisplayHeight" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPanelDisplayWidth" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPanelPositionX" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPanelPositionY" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="relativePositionToPictogramArea" type="D2LogicalModel:PositionRelativeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsSupplementaryPanelCharacteristicsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsSupplementaryPictogram">
+    <xs:sequence>
+      <xs:element name="supplementaryPictogramDescription" type="D2LogicalModel:VmsDatexSupplementalPictogramEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPictogramCode" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="supplementaryPictogramUrl" type="D2LogicalModel:Url" minOccurs="0" maxOccurs="1" />
+      <xs:element name="additionalSupplementaryPictogramDescription" type="D2LogicalModel:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pictogramFlashing" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsSupplementaryPictogramExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsTablePublication">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:PayloadPublication">
+        <xs:sequence>
+          <xs:element name="headerInformation" type="D2LogicalModel:HeaderInformation" />
+          <xs:element name="vmsUnitTable" type="D2LogicalModel:VmsUnitTable" maxOccurs="unbounded" />
+          <xs:element name="vmsTablePublicationExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VmsText">
+    <xs:sequence>
+      <xs:element name="vmsLegendCode" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextImageUrl" type="D2LogicalModel:Url" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextLine" type="D2LogicalModel:_VmsTextLineIndexVmsTextLine" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsTextExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsTextDisplayCharacteristics">
+    <xs:sequence>
+      <xs:element name="textLanternsPresent" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPageSequencingCapable" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPixelsAcross" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPixelsDown" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textDisplayHeight" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textDisplayWidth" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxNumberOfCharacters" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxNumberOfRows" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="legendCodeListIdentifier" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxFontHeight" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="minFontHeight" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxFontWidth" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="minFontWidth" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxFontSpacing" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="minFontSpacing" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxTextLuminanceLevel" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="maxNumberOfSequentialPages" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPositionAbsolute" type="D2LogicalModel:PositionAbsoluteEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPositionX" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="textPositionY" type="D2LogicalModel:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextDisplayCharacteristicsExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsTextLine">
+    <xs:sequence>
+      <xs:element name="vmsTextLine" type="D2LogicalModel:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="vmsTextLineLanguage" type="D2LogicalModel:Language" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextLineColour" type="D2LogicalModel:ColourEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextLineFlashing" type="D2LogicalModel:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextLineHtml" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsTextLineExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VmsTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="colourGraphic" />
+      <xs:enumeration value="continuousSign" />
+      <xs:enumeration value="monochromeGraphic" />
+      <xs:enumeration value="matrixSign" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VmsUnit">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:VmsSetting">
+        <xs:sequence>
+          <xs:element name="vmsUnitTableReference" type="D2LogicalModel:_VmsUnitTableVersionedReference" minOccurs="1" maxOccurs="1" />
+          <xs:element name="vmsUnitReference" type="D2LogicalModel:_VmsUnitRecordVersionedReference" minOccurs="1" maxOccurs="1" />
+          <xs:element name="vms" type="D2LogicalModel:_VmsUnitVmsIndexVms" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="vmsUnitFault" type="D2LogicalModel:VmsUnitFault" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="vmsUnitExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VmsUnitFault">
+    <xs:complexContent>
+      <xs:extension base="D2LogicalModel:Fault">
+        <xs:sequence>
+          <xs:element name="vmsUnitFault" type="D2LogicalModel:VmsFaultEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="vmsUnitFaultExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VmsUnitRecord">
+    <xs:sequence>
+      <xs:element name="numberOfVms" type="D2LogicalModel:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsUnitIdentifier" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsUnitIPAddress" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsUnitElectronicAddress" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsRecord" type="D2LogicalModel:_VmsUnitRecordVmsIndexVmsRecord" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="vmsUnitRecordExtension" type="D2LogicalModel:_VmsUnitRecordExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="VmsUnitRecordExtended">
+    <xs:sequence>
+      <xs:element name="vmisUnitType" type="D2LogicalModel:VmsUnitType" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VmsUnitTable">
+    <xs:sequence>
+      <xs:element name="vmsUnitTableIdentification" type="D2LogicalModel:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="vmsUnitRecord" type="D2LogicalModel:VmsUnitRecord" maxOccurs="unbounded" />
+      <xs:element name="vmsUnitTableExtension" type="D2LogicalModel:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="VmsUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="wvzSite" />
+      <xs:enumeration value="wwwSite" />
+      <xs:enumeration value="dWiStaSite" />
+      <xs:enumeration value="varioTable" />
+      <xs:enumeration value="parkingOccupancyBoard" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

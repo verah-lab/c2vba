@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+	<Properties>
+		<!-- global layout pattern; designed to show log patterns in fixed sized 
+			columns -->
+		<!-- see: https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout -->
+        <Property name="layoutPattern">%date{ABSOLUTE} | %5.5level | %30.30class{1.}(%line) |> %message%n</Property>
+	</Properties>
+
+	<Appenders>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>${layoutPattern}</pattern>
+			</PatternLayout>
+		</Console>
+
+		<RollingFile name="LogFile" fileName="log/c2vba-datex2-kafka.log"
+			filePattern="log/c2vba-datex2-kafka-%i.log">
+			<PatternLayout>
+				<pattern>${layoutPattern}</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+	</Appenders>
+	<Loggers>
+		<Root level="warn">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="LogFile" />
+		</Root>
+		<Logger name="de.heuboe" level="info" additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="LogFile" />
+		</Logger>
+
+
+	</Loggers>
+</Configuration>
+
