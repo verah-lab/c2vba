@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.heuboe.datex2</groupId>
+ 	<artifactId>datex2MSTActivator</artifactId>
+	
+ 	<parent>
+		<groupId>de.heuboe.datex2.mst</groupId>
+	 	<artifactId>datex2MSTParent</artifactId>
+ 		<version>5.0.0-SNAPSHOT</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+	
+ 
+ 	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<additionalparam>-Xdoclint:none</additionalparam>
+	</properties>
+	
+
+ 	<dependencies>
+		 	
+		<dependency>
+			<groupId>de.heuboe.datex2</groupId>
+		 	<artifactId>datex2MSTBuilder</artifactId>
+			<version>${datex2.mst.version}</version>
+			<exclusions>
+				<exclusion>
+				    <groupId>de.heuboe.base</groupId>
+				    <artifactId>jhbBase</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<!-- for testing only -->
+
+		<dependency>
+			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+  			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+        
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbTest</artifactId>
+			<version>2.7.2</version>
+			<scope>test</scope>
+			
+			<exclusions>
+				<exclusion>
+				    <groupId>com.sun.xml.bind</groupId>
+				    <artifactId>jaxb-impl</artifactId>
+				</exclusion>
+				<exclusion>
+				    <groupId>com.sun.xml.bind</groupId>
+				    <artifactId>jaxb-api</artifactId>
+				</exclusion>
+			</exclusions>
+			
+		</dependency>
+		
+ 	</dependencies>
+</project>
