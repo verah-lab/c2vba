@@ -1,0 +1,15 @@
+
+Update Version aller Module:
+
+	mvn versions:set -DnewVersion=x.y.z
+
+	
+Install:
+
+   mvn clean install -DskipTests
+   
+   
+Deploy:
+
+
+   mvn clean deploy -DskipTests

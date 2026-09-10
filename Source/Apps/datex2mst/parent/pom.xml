@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.heuboe.datex2.mst</groupId>
+ 	<artifactId>datex2MSTParent</artifactId>
+	<version>5.0.2</version>
+	<packaging>pom</packaging>
+	
+    <parent>
+		<artifactId>wls-kernel-parent</artifactId>
+		<groupId>de.heuboe.wls</groupId>
+		<version>4.5.5</version>
+    </parent>
+	
+	<properties>
+		<java.version>11</java.version>
+		<datex2.mst.version>${project.version}</datex2.mst.version>
+		<datex2.base.version>1.3.4</datex2.base.version>
+		
+		<heuboe.pdb.skip>true</heuboe.pdb.skip>  
+	</properties>
+	
+    <dependencies>
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbBase</artifactId>
+		</dependency> 
+		
+	    <!--  JAXB, JAXWS dependencies -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jaxb</groupId>
+		    <artifactId>jaxb-runtime</artifactId>
+		</dependency>      
+		<dependency>
+    		<groupId>javax.xml.ws</groupId>
+    		<artifactId>jaxws-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>javax.jws</groupId>
+		    <artifactId>jsr181-api</artifactId>
+		    <version>1.0-MR1</version>
+		</dependency>		
+		<dependency>
+			<groupId>javax.xml.ws</groupId>
+			<artifactId>jaxws-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
+		 
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jddp</artifactId>
+		</dependency>  
+    </dependencies>
+
+	
+	<modules>
+		<module>../mstConfig</module>
+		<module>../mstLocServiceBuilder</module>
+		<module>../mstLocServiceInterface</module>
+		<module>../pubBuilder</module>
+	</modules>
+	
+
+</project>
