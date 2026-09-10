@@ -1,0 +1,65 @@
+I) strategicRoutingPublication
+
+1) bisher kein Test.
+
+2) Konzept:
+
+
+a) Vorbereitung:
+
+class Reader
+
+i) private Map<String,SdbbyStrategy> strategyLocations = new HashMap<>();
+
+XML-serialisieren: JAXB
+
+ii) StrategySet serialisieren
+
+
+b) 
+
+i) Reader initialisiert 'strategyLocations' aus Datei
+
+ii) Test
+
+WebLocationServer-Mock: liefert nur 'strategyLocations' aus Datei
+SdbbyService-Mock: 	liefert nur StrategySet uas Datei
+
+c)
+
+Erzeugte Publication: checkResult()
+
+
+
+II) vmsTablePublication
+
+1) bisher kein Test.
+
+
+2) Konzept
+
+a) Vorbereitung:
+
+List<D2VMSUnit> serialisieren
+
+
+b) 
+
+VMSService-Mock anlegen, Methoden:
+
+getD2VMSUnits()
+getNextTableVersion()
+saveVMSTable()
+
+
+c)
+
+Erzeugte Publication: checkResult()
+
+
+
+
+III) vmsStatusPublicaton
+
+
+ 

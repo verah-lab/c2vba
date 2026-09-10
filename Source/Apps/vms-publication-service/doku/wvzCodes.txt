@@ -1,0 +1,35 @@
+CfgDevice
+
+type/wzgType
+
+WzgA
+WzgB
+WzgC	
+WzgD
+WzgE
+WzgZA
+PIKT
+TEXT
+
+
+KoMoDnext:
+
+type:
+
+WZGA
+WZGB
+
+
+wzgType:
+
+WZG_A
+WZG_B
+
+
+
+
+rechts neben dem rechten Randstreifen; 	AS                      
+Pannensteifen; 				AbS  -->  PS	
+Pannensteifen/F1; 			AbSF1  --> F1/PS
+links neben dem linken Randstreifen;	Is --> IS:				
+

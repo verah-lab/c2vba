@@ -1,0 +1,19 @@
+
+ToDo:
+.....
+
+
+2) Liefert convertLocations( TargetType: TmcRefLocation ) zu einer AQ-Location ? 
+
+
+Done:
+-----
+
+
+1) In Datex2-Point-Locations (zu AQs) Richtung ('bearing') ergänzen:
+
+   Matchendes RoadElement bestimmen ...
+   
+   
+   
+   
