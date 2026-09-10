@@ -1,1 +1,0 @@
-"C:\Program Files (x86)\Java\jre7\bin\java" -Xmx1024m -Dorg.omg.CORBA.ORBClass=org.jacorb.orb.ORB -Dorg.omg.CORBA.ORBSingletonClass=org.jacorb.orb.ORBSingleton -DORBInitRef.NameService=corbaloc::tevzhw8ap01:9923/NameService -cp jar/*; de.heuboe.datex2.mst.builder.client.MSTBuilderClient LVE_MDM %1
