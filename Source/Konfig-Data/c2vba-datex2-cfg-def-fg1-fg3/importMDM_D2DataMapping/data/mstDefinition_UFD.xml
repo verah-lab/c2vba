@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<def:mstDefinition
+    xmlns:def="http://www.heuboe.de/mst/definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.heuboe.de/mst/definition mstDefinition.xsd ">
+  <def:name>UFD</def:name>
+  <def:description>Umfelddaten</def:description>
+  <def:defVersion>1</def:defVersion>
+  <def:columnEntries>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDSichtweite</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDWasserfilmdicke</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDNiederschlagsintensitaet</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDLufttemperatur</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDWindgeschwindigkeit</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDWindgeschwindigkeitMax</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDNiederschlagsart</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDZustandFahrbahnoberflaeche</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+	
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDGefriertemperatur</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDTaupunkttemperatur</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDWindrichtung</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+    <def:item>
+      <def:datakindName>C2VBA-tlsin-UFDTaustoffkonzentration</def:datakindName>
+      <def:column>messwert</def:column>
+      <def:validInterval>900</def:validInterval>
+    </def:item>
+	
+
+  </def:columnEntries>
+
+  <def:active>false</def:active>
+</def:mstDefinition>

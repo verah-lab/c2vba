@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mstm:mappingConfig xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+                  	xmlns:mstm="http://www.heuboe.de/mst/config"
+                  	xs:schemaLocation="http://www.heuboe.de/mst/config mstConfig.xsd"
+                  	>
+					
+	<mstm:enumDefinition name="RoadSurfacePrecipitationCoveringType">
+			<mstm:item name="dry" value="0"/>
+			<mstm:item name="wetSnowHoarfrostIce" value="1"/>
+			<mstm:item name="wet" value="32"/>
+			<mstm:item name="snowHoarfrostIce" value="64"/>
+			<mstm:item name="snow" value="65"/>
+			<mstm:item name="ice" value="66"/>
+			<mstm:item name="hoarfrost" value="67"/>
+			<mstm:item name="ice" value="128"/>
+			<mstm:item name="dryIce" value="129"/>
+			<mstm:item name="wetSnow" value="130"/>
+			<mstm:item name="hoarfrost" value="131"/>
+			<mstm:item name="residualSalt" value="132"/>
+	</mstm:enumDefinition>					
+					
+	<mstm:enumDefinition name="RoadSurfaceSnowCoveringType">
+			<mstm:item name="dryNoSnow" value="0"/>
+			<mstm:item name="wetNoSnow" value="1"/>
+			<mstm:item name="drySnow" value="2"/>
+			<mstm:item name="wetSnow" value="3"/>
+			<mstm:item name="unknown" value="65"/>
+	</mstm:enumDefinition>					
+
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaLVEKurzInterpolOpt0</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Messwertersetzte Verkehrsdaten fahrstreifenbezogen</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>MQ</mstm:objectType>
+			<mstm:subType>0</mstm:subType>
+			<mstm:subType>1</mstm:subType>
+			<mstm:subType>2</mstm:subType>
+			<mstm:subType>3</mstm:subType>
+			<mstm:subType>4</mstm:subType>
+			<mstm:subType>5</mstm:subType>
+			<mstm:column>
+				<mstm:valColumn>qKFZ</mstm:valColumn>
+				<mstm:valColumnDescription>Verkehrsstärke Kfz</mstm:valColumnDescription>
+				<mstm:validColumn>qKFZ</mstm:validColumn>
+				<mstm:invalidValue>-1</mstm:invalidValue>
+			</mstm:column>
+			<mstm:column>
+				<mstm:valColumn>qLKW</mstm:valColumn>
+				<mstm:valColumnDescription>Verkehrsstärke Lkw</mstm:valColumnDescription>
+				<mstm:validColumn>qLKW</mstm:validColumn>
+				<mstm:invalidValue>-1</mstm:invalidValue>
+			</mstm:column>
+			<mstm:column>
+				<mstm:valColumn>vPKW</mstm:valColumn>
+				<mstm:valColumnDescription>Geschwindigkeit Pkw</mstm:valColumnDescription>
+				<mstm:validColumn>vPKW</mstm:validColumn>
+				<mstm:invalidValue>255</mstm:invalidValue>
+			</mstm:column>
+			<mstm:column>
+				<mstm:valColumn>vLKW</mstm:valColumn>
+				<mstm:valColumnDescription>Geschwindigkeit Lkw</mstm:valColumnDescription>
+				<mstm:validColumn>vLKW</mstm:validColumn>
+				<mstm:invalidValue>255</mstm:invalidValue>
+			</mstm:column>
+			<mstm:column>
+				<mstm:valColumn>Beleg</mstm:valColumn>
+				<mstm:valColumnDescription>Belegungsgrad</mstm:valColumnDescription>
+				<mstm:validColumn>Beleg</mstm:validColumn>
+				<mstm:invalidValue>255</mstm:invalidValue>
+			</mstm:column>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>qKFZ</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>period2HourWeighted</mstm:mappingType>
+			<mstm:out>
+				<mstm:valueType>trafficFlow</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>TrafficFlow</mstm:basicDataType>
+				<mstm:valueElement>vehicleFlow</mstm:valueElement>
+				<mstm:value>vehicleFlowRate</mstm:value>
+			</mstm:out>
+		</mstm:mapping>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>qLKW</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>period2HourWeighted</mstm:mappingType>
+			<mstm:out>
+				<mstm:valueType>trafficFlow</mstm:valueType>
+				<mstm:vehType>lorry</mstm:vehType>
+				<mstm:basicDataType>TrafficFlow</mstm:basicDataType>
+				<mstm:valueElement>vehicleFlow</mstm:valueElement>
+				<mstm:value>vehicleFlowRate</mstm:value>
+			</mstm:out>
+		</mstm:mapping>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>vLKW</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>copy</mstm:mappingType>
+			<mstm:out>
+				<mstm:valueType>trafficSpeed</mstm:valueType>
+				<mstm:vehType>lorry</mstm:vehType>
+				<mstm:basicDataType>TrafficSpeed</mstm:basicDataType>
+				<mstm:valueElement>averageVehicleSpeed</mstm:valueElement>
+				<mstm:value>speed</mstm:value>
+			</mstm:out>
+		</mstm:mapping>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>vPKW</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>copy</mstm:mappingType>
+			<mstm:out>
+				<mstm:valueType>trafficSpeed</mstm:valueType>
+				<mstm:vehType>car</mstm:vehType>
+				<mstm:basicDataType>TrafficSpeed</mstm:basicDataType>
+				<mstm:valueElement>averageVehicleSpeed</mstm:valueElement>
+				<mstm:value>speed</mstm:value>
+			</mstm:out>
+		</mstm:mapping>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Beleg</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>copy</mstm:mappingType>
+			<mstm:out>
+				<mstm:valueType>trafficConcentration</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>TrafficConcentration</mstm:basicDataType>
+				<mstm:valueElement>occupancy</mstm:valueElement>
+				<mstm:value>percentage</mstm:value>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDSichtWeite</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Sichtweite</mstm:description>
+			<mstm:referenceType>TLS_Q_COORD_SUPPLY</mstm:referenceType>
+			<mstm:objectType>UFD:43</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>Sichtweite [m]</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,10)</mstm:invalidValue>
+				<mstm:invalidValue>(5000,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>copy</mstm:mappingType>
+			<mstm:out>
+				<mstm:valueType>visibilityInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>VisibilityInformation</mstm:basicDataType>
+				<mstm:valueElement>visibility</mstm:valueElement>
+				<mstm:value>minimumVisibilityDistance</mstm:value>
+				<mstm:valueInner>integerMetreDistance</mstm:valueInner>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDWFD</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Wasserfilmdicke</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:840</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>Wasserfilmdicke [mm]</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,0)</mstm:invalidValue>
+				<mstm:invalidValue>(10000,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>constMultiplication</mstm:mappingType>
+			<mstm:valueDataType>double</mstm:valueDataType>
+			<mstm:factor>0.00001</mstm:factor>
+			<mstm:out>
+				<mstm:valueType>roadSurfaceConditionInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>RoadSurfaceConditionInformation</mstm:basicDataType>
+				<mstm:valueElement>roadSurfaceConditionMeasurements</mstm:valueElement>
+				<mstm:value>waterFilmThickness</mstm:value>
+				<mstm:valueInner>floatingPointMetreDistance</mstm:valueInner>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDNiederInten</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Niederschlagsintensität</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:36</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>Niederschlagsintensität [mm/h]</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,0)</mstm:invalidValue>
+				<mstm:invalidValue>(2000,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>constMultiplication</mstm:mappingType>
+			<mstm:valueDataType>double</mstm:valueDataType>
+			<mstm:factor>0.1</mstm:factor>
+			<mstm:out>
+				<mstm:valueType>precipitationInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>PrecipitationInformation</mstm:basicDataType>
+				<mstm:valueElement>precipitationDetail</mstm:valueElement>
+				<mstm:value>precipitationIntensity</mstm:value>
+				<mstm:valueInner>millimetresPerHourIntensity</mstm:valueInner>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDLuftTemp</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Lufttemperatur</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:31</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>Lufttemperatur [°C]</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,-250)</mstm:invalidValue>
+				<mstm:invalidValue>(600,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>constMultiplication</mstm:mappingType>
+			<mstm:valueDataType>double</mstm:valueDataType>
+			<mstm:factor>0.1</mstm:factor>
+			<mstm:out>
+				<mstm:valueType>temperatureInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>TemperatureInformation</mstm:basicDataType>
+				<mstm:valueElement>temperature</mstm:valueElement>
+				<mstm:value>airTemperature</mstm:value>
+				<mstm:valueInner>temperature</mstm:valueInner>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDWindGeschw</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>mittlere Windgeschwindigkeit</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:40</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>mittlere Windgeschwindigkeit [m/s]</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,0)</mstm:invalidValue>
+				<mstm:invalidValue>(350,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>constMultiplication</mstm:mappingType>
+			<mstm:valueDataType>double</mstm:valueDataType>
+			<mstm:factor>0.36</mstm:factor>
+			<mstm:out>
+				<mstm:valueType>windInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>WindInformation</mstm:basicDataType>
+				<mstm:valueElement>wind</mstm:valueElement>
+				<mstm:value>windSpeed</mstm:value>
+				<mstm:valueInner>speed</mstm:valueInner>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDWindGeschwMax</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>maximale Windgeschwindigkeit</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:47</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>maximale Windgeschwindigkeit [m/s]</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,0)</mstm:invalidValue>
+				<mstm:invalidValue>(350,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>constMultiplication</mstm:mappingType>
+			<mstm:valueDataType>double</mstm:valueDataType>
+			<mstm:factor>0.36</mstm:factor>
+			<mstm:out>
+				<mstm:valueType>windInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>WindInformation</mstm:basicDataType>
+				<mstm:valueElement>wind</mstm:valueElement>
+				<mstm:value>maximumWindSpeed</mstm:value>
+				<mstm:valueInner>speed</mstm:valueInner>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDNiederArt</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Niederschlagsart (Regenstufe)</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:46</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>Regen/Schnee/Regenstufe</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,0)</mstm:invalidValue>
+				<mstm:invalidValue>(3,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>providedEnum</mstm:mappingType>
+			<mstm:out>
+				<mstm:valueType>precipitationInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>PrecipitationInformation</mstm:basicDataType>
+				<mstm:valuePath>precipitationDetail/precipitationTypeEnum</mstm:valuePath>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDFBOberFlaeche</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Fahrbahnnässe (Stufe)</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:34</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>Fahrbahnnässe (Stufe)</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,0)</mstm:invalidValue>
+				<mstm:invalidValue>(3,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>providedEnum</mstm:mappingType>
+			<mstm:enumType>RoadSurfaceSnowCoveringType</mstm:enumType>
+			<mstm:out>
+				<mstm:valueType>roadSurfaceConditionInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>RoadSurfaceConditionInformation</mstm:basicDataType>
+				<mstm:valuePath>roadSurfaceConditionMeasurements/roadSurfaceConditionMeasurementsExtension/roadSurfaceSnowCoveringType</mstm:valuePath>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+	<mstm:datakindMapping>
+		<mstm:datakindDesc>
+			<mstm:datakind>DaUFDFBZ</mstm:datakind>
+			<mstm:idColumn>eaid</mstm:idColumn>
+			<mstm:description>Fahrbahnzustand</mstm:description>
+			<mstm:referenceType>SERVICE_PROVIDED</mstm:referenceType>
+			<mstm:objectType>UFD:838</mstm:objectType>
+			
+			<mstm:column>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+				<mstm:valColumnDescription>Fahrbahnzustand</mstm:valColumnDescription>
+				<mstm:validColumn>Messwert</mstm:validColumn>
+				<mstm:invalidValue>(-I,0)</mstm:invalidValue>
+				<mstm:invalidValue>[2,31]</mstm:invalidValue>
+				<mstm:invalidValue>[33,63]</mstm:invalidValue>
+				<mstm:invalidValue>[68,I)</mstm:invalidValue>
+			</mstm:column>
+			<mstm:defaultValidInterval>120</mstm:defaultValidInterval>
+		</mstm:datakindDesc>
+		<mstm:mapping>
+			<mstm:in>
+				<mstm:valColumn>Messwert</mstm:valColumn>
+			</mstm:in>
+			<mstm:mappingType>providedEnum</mstm:mappingType>
+			<mstm:enumType>RoadSurfaceSnowCoveringType</mstm:enumType>
+			<mstm:out>
+				<mstm:valueType>roadSurfaceConditionInformation</mstm:valueType>
+				<mstm:vehType>anyVehicle</mstm:vehType>
+				<mstm:basicDataType>RoadSurfaceConditionInformation</mstm:basicDataType>
+				<mstm:valuePath>roadSurfaceConditionMeasurements/roadSurfaceConditionMeasurementsExtension/roadSurfaceSnowCoveringType</mstm:valuePath>
+			</mstm:out>
+		</mstm:mapping>
+	</mstm:datakindMapping>
+</mstm:mappingConfig>

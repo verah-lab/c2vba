@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<def:mstDefinition
+    xmlns:def="http://www.heuboe.de/mst/definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.heuboe.de/mst/definition mstDefinition.xsd ">
+  <def:name>LVE_MDM</def:name>
+  <def:description>Messwertersetzte Verkehrsdaten fahrstreifenbezogen</def:description>
+  <def:defVersion>1</def:defVersion>
+  <def:columnEntries>
+    <def:item>
+      <def:datakindName>DaLVEKurzInterpolOpt0</def:datakindName>
+      <def:column>qKFZ</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+    <def:item>
+      <def:datakindName>DaLVEKurzInterpolOpt0</def:datakindName>
+      <def:column>qLKW</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+    <def:item>
+      <def:datakindName>DaLVEKurzInterpolOpt0</def:datakindName>
+      <def:column>vPKW</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+    <def:item>
+      <def:datakindName>DaLVEKurzInterpolOpt0</def:datakindName>
+      <def:column>vLKW</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+    <def:item>
+      <def:datakindName>DaLVEKurzInterpolOpt0</def:datakindName>
+      <def:column>Beleg</def:column>
+      <def:validInterval>1200</def:validInterval>
+    </def:item>
+  </def:columnEntries>
+  
+
+  <def:active>false</def:active>
+</def:mstDefinition>

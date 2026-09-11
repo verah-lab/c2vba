@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:mst="http://www.heuboe.de/mst/config" targetNamespace="http://www.heuboe.de/mst/config"
+	xmlns:d2="http://datex2.eu/schema/2/2_0" 
+	elementFormDefault="qualified">
+
+	<xs:import
+		namespace="http://datex2.eu/schema/2/2_0" 
+		schemaLocation="DATEXIISchema_2_2_3-FBZExt.xsd"
+	/>
+	
+	<xs:element name="mappingConfig" type="mst:MappingConfig"/>
+
+	<xs:complexType name="Column">
+		<xs:annotation>
+			<xs:documentation>
+				Describes one columne of a datakind that may be mapped to a MeasurementSiteRecord(index) entry 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="valColumn" 			 type="xs:string" />
+			<xs:element name="valColumnDescription"	 type="xs:string" />
+
+			<xs:element name="valColumnCharacteristic" 	 type="xs:string" minOccurs="0">
+                <xs:annotation>
+				    <xs:documentation>
+					    With this element multiple Datex II mappings for one column are supported
+					    It is part of the inMapping key (s. below)
+				    </xs:documentation>
+			    </xs:annotation>
+			</xs:element>
+
+			<xs:element name="valColumnCharacteristicDescription"	 type="xs:string" minOccurs="0">
+			    <xs:annotation>
+				    <xs:documentation>
+					    should also comprise a hint to Datex II mapping target )
+  				    </xs:documentation>
+  			    </xs:annotation>
+			</xs:element>
+
+			<xs:element name="validColumn" 			 type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="invalidValue"          type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="ReferenceType">
+		<xs:annotation>
+			<xs:documentation>
+				How does the datakind reference an object like detector, lane, etc. 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+
+			<!-- 
+				 datakind is TLS datakind:
+			     IDs retrieved by ZQL query
+				 Location data retrieval: Lookup of 'q' object  with ZQL, 
+				                          Associated GeoDyn2 location has ID 'q::qid' 
+			-->
+			<xs:enumeration value="TLS"/>
+
+
+			<!-- 
+				 datakind is TLS datakind:
+			     IDs retrieved by ZQL query
+				 Location data retrieval: Lookup of coordinates in special supply table 
+			-->
+			<xs:enumeration value="TLS_Q_COORD_SUPPLY"/>
+
+
+			<!-- 
+				 datakind is attribute datakind of GeoDyn2 location class
+			     IDs retrieved as IDs of Layer of GeoDyn2 location class
+			-->
+			<xs:enumeration value="GEODYN2_REF"/>
+
+
+			<!-- 
+				 datakind is attribute datakind of GeoDyn2 location class
+			     IDs retrieved as IDs of Layer of GeoDyn2 location class
+			-->
+			<xs:enumeration value="GEODYN2_REF_NON_Q"/>
+
+
+			<!-- 
+				 IDs retrieved by querying a LocationService
+				 for locations of all objects of type <objectType>
+				 (s. Artifact mstLocServiceInterface)
+			-->
+			<xs:enumeration value="SERVICE_PROVIDED"/>
+			
+			<!-- 
+			     The LocationService additionally provides
+			     an ExternalReferencing.
+			     In the MST the location is coded as coordinate point with
+			     an additional external reference. 
+			     (s. Datex2 ExternalReferencing, used in EVE system)
+			-->
+			<xs:enumeration value="SERVICE_PROVIDED_EXT_REF"/>
+			
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="DatakindDesc">
+		<xs:annotation>
+			<xs:documentation>
+				Describes one datakind inclusive column that may be mapped to a MeasurementSiteRecord(index) entry 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="datakind"  	 type="xs:string" />
+			<xs:element name="idColumn"	 	 type="xs:string" />
+			<xs:element name="description"	 type="xs:string" />
+			<xs:element name="equipment"	 type="xs:string" minOccurs="0" />
+			<xs:element name="referenceType" type="mst:ReferenceType" minOccurs="0"/>
+			<xs:element name="objectType"    type="xs:string"/>
+      		<xs:element name="subType"		 type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="column"		 type="mst:Column" minOccurs="1" maxOccurs="unbounded" />
+
+			<xs:element name="defaultValidInterval"  type="xs:integer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="InMapping">
+		<xs:annotation>
+			<xs:documentation>
+				Describes the input data which should be mapped to a MeasurementSiteRecord(index) entry 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						Must reference a column pair (valColumn/valColumnCharacteristic) out of this datakind.
+						If there is only one valColumnCharacteristic variant it may be omitted
+					</xs:documentation>
+				</xs:annotation>
+
+				<xs:element name="valColumn" 			     type="xs:string"/>
+				<xs:element name="valColumnCharacteristic" 	 type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OutMapping">
+		<xs:annotation>
+			<xs:documentation>
+				Describes a MeasurementSiteRecord(index) entry 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="valueType"	 type="d2:MeasuredOrDerivedDataTypeEnum" />
+			<xs:element name="vehType"	 	 type="d2:VehicleTypeEnum" minOccurs="0"/>
+
+			<xs:element name="basicDataType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						Which type (derived from BasicData e.g. TravelTimeData) is used.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+      <xs:choice>
+        <xs:sequence>
+          <xs:element name="valueElement"		 type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                Element inside 'BasicData' element.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element name="value"		 type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                Element inside 'valueElement' which holds data value
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element name="valueInner"		 type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                Optional further Element inside 'value' which holds data value
+                (Used if path {valueElement}/{value}/{valueInner} is too short)
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+
+        <xs:element name="valuePath"		 type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              This description may be alternatively used if the three
+              element sub path valueElement/value/valueInner do
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+
+    </xs:sequence>			
+	</xs:complexType>
+
+	<xs:simpleType name="EnumMappingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="copy"/>				
+			<xs:enumeration value="constMultiplication"/>
+			<xs:enumeration value="function"/>
+			<xs:enumeration value="period2HourWeighted"/>	
+			
+			<!-- 
+				Maps integer values to enum value literals
+				The enum type is provided by a EnumDefinition 
+				( The provided enum may use literals of a 
+				  Datex2 enum type )
+			 -->
+			<xs:enumeration value="providedEnum"/>
+			
+			<!-- 
+				Maps integer values to Datex2 enum value literals
+				The enum type is derived from basicDataType and valuePath 
+			 -->
+			<xs:enumeration value="d2Enum"/>
+
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="EnumValueDataType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="integer"/>				
+			<xs:enumeration value="double"/>
+			<xs:enumeration value="providedEnum"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="EnumValue">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="value" type="xs:int" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="EnumDefinition">
+		<xs:sequence>
+			<xs:element name="item" type="mst:EnumValue" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" use="required"/>
+		<xs:attribute name="d2Name"/>
+	</xs:complexType>
+
+	<xs:complexType name="Mapping">
+		<xs:annotation>
+			<xs:documentation>
+				Describes the mapping of a datakind/column to a certain type 
+				of BasicData of the MeasuredDataPublication
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="in" type="mst:InMapping"/>
+			<xs:element name="mappingType" type="mst:EnumMappingType" default="copy"/>
+			<xs:element name="mappingName" type="xs:string" minOccurs="0"/>
+			<xs:element name="mappingData" type="xs:string" minOccurs="0"/>
+			<xs:element name="valueDataType" type="mst:EnumValueDataType" default="integer"  minOccurs="0"/>
+			<xs:element name="factor" type="xs:float" default="1.0"  minOccurs="0"/>
+			<xs:element name="enumType" type="xs:string" minOccurs="0"/>
+			<xs:element name="out" type="mst:OutMapping"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DatakindMapping">
+		<xs:sequence>
+			<xs:element name="datakindDesc" type="mst:DatakindDesc"/>
+			<xs:element name="mapping" type="mst:Mapping" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="MappingConfig">
+		<xs:sequence>
+			<xs:element name="enumDefinition" type="mst:EnumDefinition" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="datakindMapping" type="mst:DatakindMapping" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<!--  Legacy definition -->	
+	<xs:element name="datakindMappings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="datakindMapping" type="mst:DatakindMapping" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>	
+	</xs:element>
+</xs:schema>
