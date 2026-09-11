@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+		<artifactId>wls-kernel-parent</artifactId>
+		<groupId>de.heuboe.wls</groupId>
+		<version>4.7.7</version>
+    </parent>
+
+    <groupId>de.heuboe.c2vba.base</groupId>
+    <artifactId>c2vba-base-parent</artifactId>
+    <version>0.0.2</version>
+    <packaging>pom</packaging>
+
+    <name>C2VBA ${project.artifactId}</name>
+    <description>Base parent POM for C2VBA projects</description>
+    <inceptionYear>2022</inceptionYear>
+
+    <organization>
+        <name>Heusch/Boesefeldt GmbH</name>
+        <url>https://www.heuboe.de</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>All rights reserved</name>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>PSc</id>
+            <name>Peter Schmitz</name>
+            <email>peter.schmitz@heuboe.de</email>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/C2VBA/c2vba-base-parent</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:C2VBA/c2vba-base-parent.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:C2VBA/c2vba-base-parent.git</developerConnection>
+    </scm>
+
+
+    <properties>
+        <java.version>11</java.version>
+
+        <!-- The Spring Boot version. Must be in sync with the version used in the parent declaration above! -->
+        <spring-boot.version>2.5.8</spring-boot.version>
+
+        <!-- Dependency Versions -->
+        <protobuf.version>3.19.1</protobuf.version>
+        <grpc.version>1.43.1</grpc.version>
+        <grpc-spring-boot.version>2.13.0.RELEASE</grpc-spring-boot.version>
+        <classindex.version>3.11</classindex.version>
+        <guava.version>31.0.1-jre</guava.version>
+        <gwtbase.version>1.12.0</gwtbase.version>
+        <gwt.version>2.9.0</gwt.version>
+        <gin.version>2.1.2</gin.version>
+        <!-- update logging backends to fix several security issues -->
+        <log4j2.version>2.17.1</log4j2.version>
+        <logback.version>1.2.10</logback.version> <!-- normally not used in KoMoDnext -->
+
+        <!-- Plugin Versions -->
+        <dependency-check-maven.version>6.5.2</dependency-check-maven.version>
+        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <jib-maven-plugin.version>3.1.4</jib-maven-plugin.version>
+        <license-maven-plugin.version>2.0.0</license-maven-plugin.version>
+        <maven.version>3.6.0</maven.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-scm-plugin.version>1.12.2</maven-scm-plugin.version>
+        <maven-site-plugin.version>3.10.0</maven-site-plugin.version>
+        <maven-surefire-report-plugin.version>3.0.0-M5</maven-surefire-report-plugin.version>
+        <pdb-maven-plugin.version>2.1.2</pdb-maven-plugin.version>
+        <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <templating-maven-plugin.version>1.0.0</templating-maven-plugin.version>
+        
+        <postgresql.version>42.3.5</postgresql.version>
+
+        <!-- Settings -->
+        <!-- format of the the build timestamp (maven-jar-plugin) -->
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <!-- Build security -->
+                <plugin>
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>${dependency-check-maven.version}</version>
+                    <!-- Manually execute this check with: -->
+                    <!-- mvn org.owasp:dependency-check-maven:check -->
+                    <configuration>
+                        <formats>HTML,XML</formats>
+                        <autoUpdate>false</autoUpdate>
+                        <databaseDriverName>org.postgresql.Driver</databaseDriverName>
+                        <!-- Set via settings.xml -->
+                        <connectionString>${owasp-db.uri}</connectionString>
+                        <databaseUser>${owasp-db.username}</databaseUser>
+                        <databasePassword>${owasp-db.password}</databasePassword>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>cve-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.postgresql</groupId>
+                            <artifactId>postgresql</artifactId>
+                            <version>${postgresql.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <!-- Generate Sources -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>templating-maven-plugin</artifactId>
+                    <version>${templating-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>filtering-java-templates</id>
+                            <goals>
+                                <goal>filter-sources</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.xolstice.maven.plugins</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>${protobuf-maven-plugin.version}</version>
+                </plugin>
+                <!-- Generate build metadata -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <id>build-info</id>
+                            <goals>
+                                <goal>build-info</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>${git-commit-id-plugin.version}</version>
+                    <configuration>
+                        <verbose>false</verbose>
+                        <skipPoms>false</skipPoms>
+                        <dateFormat>yyyy-MM-dd'T'HH:mm:ss'Z'</dateFormat><!-- Required for dockering -->
+                        <dateFormatTimeZone>UTC</dateFormatTimeZone><!-- Required for dockering -->
+                        <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+                        <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                        <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+                        <excludeProperties>
+                            <!-- Requested to be excluded by colleague -->
+                            <excludeProperty>.*\.user\..*</excludeProperty>
+                            <!-- same here and we already have other build information files -->
+                            <excludeProperty>.*\.build\..*</excludeProperty>
+                        </excludeProperties>
+                    </configuration>
+                </plugin>
+                <!-- Dockerize -->
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>jib-maven-plugin</artifactId>
+                    <version>${jib-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>deploy</id>
+                            <phase>deploy</phase>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- GWT -->
+                <plugin>
+                    <!-- Used for some tooling such as i18n -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>gwt-maven-plugin</artifactId>
+                    <version>${gwt.version}</version>
+                </plugin>
+                <plugin>
+                    <!-- Used for the actual build -->
+                    <groupId>net.ltgt.gwt.maven</groupId>
+                    <artifactId>gwt-maven-plugin</artifactId>
+                    <version>1.0.0</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <sourceLevel>11</sourceLevel>
+                        <failOnError>true</failOnError>
+                    </configuration>
+                </plugin>
+                <!-- Reports -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>${maven-surefire-report-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <!-- Verify project -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- We need at least Maven 3.6.0 -->
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>${maven.version}</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- I failed this one too often -->
+                        <id>enforce-spring-parent</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <rules>
+                                <requireProperty>
+                                    <property>spring-boot.version</property>
+                                    <regex>\Q${spring-boot.version}\E</regex>
+                                    <regexMessage>Bad spring-boot.version: ${spring-boot.version} should be ${project.parent.version}</regexMessage>
+                                </requireProperty>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Build security -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+            </plugin>
+            <!-- Generate resources -->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-third-party</id>
+                        <goals>
+                            <goal>add-third-party</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <thirdPartyFilename>${project.artifactId}_ThirdPartyLicenses.txt</thirdPartyFilename>
+                    <sortArtifactByName>true</sortArtifactByName>
+                </configuration>
+            </plugin>
+            <!-- Packaging -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- generate jacoco coverage reports for unit and integration tests -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>prepare-agent-integration</id>
+                        <goals>
+                            <goal>prepare-agent-integration</goal>
+                        </goals>
+                    </execution>
+                    <!-- For sonar -->
+                    <execution>
+                        <id>generate-report</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-report-integration</id>
+                        <goals>
+                            <goal>report-integration</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <!-- Release and Deployment into Nexus -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <!-- Update SCM-plugin to fix git not committing before tagging -->
+            </plugin>
+            <plugin>
+                <!-- Execute release: mvn clean release:clean release:prepare release:perform -->
+                <!-- Deprecated: Use `pdb:release` instead -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version><!-- $NO-MVN-MAN-VER$ -->
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <goals>deploy sonar:sonar</goals>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.1.2</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>summary</report>
+                            <!-- <report>ci-management</report> -->
+                            <report>dependency-info</report>
+                            <report>dependencies</report>
+                            <report>dependency-convergence</report>
+                            <!-- <report>dependency-management</report> -->
+                            <!-- <report>distribution-management</report> -->
+                            <report>issue-management</report>
+                            <!-- <report>licenses</report> -->
+                            <!-- <report>mailing-lists</report> -->
+                            <report>modules</report>
+                            <!-- <report>plugin-management</report> -->
+                            <report>plugins</report>
+                            <!-- <report>scm</report> -->
+                            <!-- <report>team</report> -->
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+        <profile>
+            <id>HB</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.heuboe.maven.plugins</groupId>
+                        <artifactId>pdb-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>pdb-validate</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>validate</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>pdb-upsert</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>upsert</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>default-cli</id>
+                                <goals>
+                                    <goal>release</goal>
+                                </goals>
+                                <configuration>
+                                    <mvnVerifyGoals>clean,verify,sonar:sonar</mvnVerifyGoals>
+                                    <mvnDeployGoals>clean,git-commit-id:revision,pdb:upsert</mvnDeployGoals>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <repository>
+                    <id>hb-nexus</id>
+                    <name>HB Repository</name>
+                    <url>https://nexus.dmz1.heuboe.hbintern/repository/releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>hb-nexus</id>
+                    <name>HB Repository</name>
+                    <url>https://nexus.dmz1.heuboe.hbintern/repository/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+</project>

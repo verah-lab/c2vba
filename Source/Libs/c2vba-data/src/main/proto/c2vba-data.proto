@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package de.heuboe.c2vba.data;
+
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_package = "de.heuboe.c2vba.data";
+option java_outer_classname = "C2vbaData";
+option (.heuboe.protobuf.interface_version) = "0.0.2";
+
+
+// Status einer Strategie
+message StrategyState {
+    string id = 1;
+    bool active = 2;
+}
+
+// Status aller Strategien
+message StrategyStates {
+    string iid = 10;
+    google.protobuf.Timestamp time = 1;	  
+    repeated StrategyState strategy_state = 2;
+}
+
+// Kommunikations-Status einer SBA
+message CommState {
+    string id = 1;
+    int32 availability = 2;
+}
+
+// Kommunikations-Status aller SBAen
+message CommStates {
+    string iid = 10;
+    google.protobuf.Timestamp time = 1;	  
+    repeated CommState comm_state = 2;
+}
+
+// Container of DATEX-II content 
+//
+// Content size restrictions arise from MongoDB/Kafka environment 
+// e.g. the size of a MongoDB document may not exceed 16 MB    
+// Thus the option of partioning (chunkNum, chunkCount) has to be provided									          
+message DatexIIContent {
+    string iid = 1;
+    google.protobuf.Timestamp time = 2; // Creation time	  
+    string type = 3;					// e.g. 'D2LogicalModel' or 'Situation'
+    string pack = 4;					// Java binding package, e.g. eu.datex2.schema._2._2_0.D2LogicalModel
+    string schema = 5;					// DATEX-II schema
+    string id = 6;						// ID of object	
+    string version = 7;					// Version of object		
+	string xml_content = 8;				// DATEX-II content as XML
+	int32 chunkNum = 9;					// Chunk numbering: large XML content has to be partitioned into multiple DatexIIContent messages 
+	int32 chunkCount = 10;              // Number of all chunks  
+}

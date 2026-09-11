@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.heuboe.asfinag</groupId>
+		<artifactId>vmis2-protobuf-parent</artifactId>
+		<version>3.11.0</version>
+	</parent>
+
+	<groupId>de.heuboe.c2vba.data</groupId>
+	<artifactId>c2vba-data</artifactId>
+	<version>0.0.2</version>
+
+	<name>${project.artifactId}</name>
+	<description>C2VBA Protobuf data</description>
+	<inceptionYear>2022</inceptionYear>
+	
+	<organization>
+		<name>Heusch/Boesefeldt GmbH</name>
+		<url>http://www.heuboe.de</url>
+	</organization>
+
+	<scm>
+		<url>https://gitlab.heuboe.hbintern/c2vba/c2vba-data</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:c2vba/c2vba-data.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:c2vba/c2vba-data.git</developerConnection>
+	</scm>
+	
+
+	<properties>
+		<java.version>8</java.version>
+        <jprotoc.ignoreAbsentStereotype>true</jprotoc.ignoreAbsentStereotype>
+	</properties>
+
+	
+</project>
