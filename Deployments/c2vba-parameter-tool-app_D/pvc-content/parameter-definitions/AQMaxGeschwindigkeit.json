@@ -1,0 +1,59 @@
+{
+  "definitionSetId": "AQMaxGeschwindigkeit",
+  "activationTarget": {"type": "AQ"},
+  "propagationTarget": {"type": "AQ"},
+  "definitionType": "SCHALTBILDERMITTLUNG_LAENGSABGLEICH",
+  "viaGroupName": "Längsabgleich",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "Stunde_Tag_Beginn",
+      "caption": "Stunde_Tag_Beginn",
+      "tooltip": "Beginn des Tageszeitbereichs; Stundenanteil ",
+      "unit": "h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 23}}]}}
+    }, {
+      "parameterId": "Minute_Tag_Beginn",
+      "caption": "Minute_Tag_Beginn",
+      "tooltip": "Beginn des Tageszeitbereichs; Minutenanteil ",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 59}}]}}
+    }, {
+      "parameterId": "Stunde_Tag_Ende",
+      "caption": "Stunde_Tag_Ende",
+      "tooltip": "Ende des Tageszeitbereichs; Stundenanteil ",
+      "unit": "h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 23}}]}}
+    }, {
+      "parameterId": "Minute_Tag_Ende",
+      "caption": "Minute_Tag_Ende",
+      "tooltip": "Ende des Tageszeitbereichs; Minutenanteil ",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 59}}]}}
+    }, {
+      "parameterId": "max_v_tagsueber",
+      "caption": "max_v_tagsueber",
+      "tooltip": "Maximale Geschwindigkeit tagsüber",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"allowedValuesRestriction": {"values": {"intVals": {"values": [60, 70, 80, 90, 100, 110, 120, 130]}}}}
+    }, {
+      "parameterId": "max_v_nachts",
+      "caption": "max_v_nachts",
+      "tooltip": "Maximale Geschwindigkeit nachts",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"allowedValuesRestriction": {"values": {"intVals": {"values": [60, 70, 80, 90, 100, 110, 120, 130]}}}}
+    }
+  ]
+}

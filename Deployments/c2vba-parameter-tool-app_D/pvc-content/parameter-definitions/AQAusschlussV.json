@@ -1,0 +1,18 @@
+{
+  "definitionSetId": "AQAusschlussV",
+  "activationTarget": {"type": "AQ"},
+  "propagationTarget": {"type": "AQ"},
+  "definitionType": "SCHALTBILDERMITTLUNG_LAENGSABGLEICH",
+  "viaGroupName": "Längsabgleich",
+  "definitions": [
+    {
+      "parameterId": "AusschlussV",
+      "caption": "AusschlussV",
+      "tooltip": "Geschwindigkeiten, die bei der Trichterung / Längsabgleich nicht gesetzt werden dürfen",
+      "unit": "km/h",
+      "valueType": "INT_LIST",
+      "scope": "GLOBAL",
+      "valueRestriction": {"allowedValuesRestriction": {"values": {"intVals": {"values": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]}}}}
+    }
+  ]
+}

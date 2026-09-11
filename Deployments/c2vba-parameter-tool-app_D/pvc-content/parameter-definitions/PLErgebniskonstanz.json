@@ -1,0 +1,183 @@
+{
+  "definitionSetId": "PLErgebniskonstanz",
+  "activationTarget": {"type": "VDE_SENSOR"},
+  "propagationTarget": {"type": "VDE_SENSOR"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_qKFZ",
+      "caption": "minWert_qKFZ: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_qKFZ",
+      "caption": "maxKonstanz_qKFZ: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_qKFZ",
+      "caption": "pruefung_qKFZ",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_qLKW",
+      "caption": "minWert_qLKW: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_qLKW",
+      "caption": "maxKonstanz_qLKW: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_qLKW",
+      "caption": "pruefung_qLKW",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_qPKW",
+      "caption": "minWert_qPKW: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_qPKW",
+      "caption": "maxKonstanz_qPKW: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_qPKW",
+      "caption": "pruefung_qPKW",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_vKFZ",
+      "caption": "minWert_vKFZ: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_vKFZ",
+      "caption": "maxKonstanz_vKFZ: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_vKFZ",
+      "caption": "pruefung_vKFZ",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_vLKW",
+      "caption": "minWert_vLKW: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_vLKW",
+      "caption": "maxKonstanz_vLKW: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_vLKW",
+      "caption": "pruefung_vLKW",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_vPKW",
+      "caption": "minWert_vPKW: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_vPKW",
+      "caption": "maxKonstanz_vPKW: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_vPKW",
+      "caption": "pruefung_vPKW",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_s",
+      "caption": "minWert_s: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_s",
+      "caption": "maxKonstanz_s: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_s",
+      "caption": "pruefung_s",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "minWert_b",
+      "caption": "minWert_b: Eine Ergebniskonstanz wird nur bei Wertereihen geprüft, deren Einzelwerte diesen Grenzwert überschreiten",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "maxKonstanz_b",
+      "caption": "maxKonstanz_b: Maximale Konstanz der Messwerte in Minuten",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung_b",
+      "caption": "pruefung_b",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }
+  ]
+}

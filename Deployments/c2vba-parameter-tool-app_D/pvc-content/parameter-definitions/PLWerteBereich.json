@@ -1,0 +1,155 @@
+{
+  "definitionSetId": "PLWerteBereich",
+  "activationTarget": {"type": "VDE_SENSOR"},
+  "propagationTarget": {"type": "VDE_SENSOR"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "qKFZMax",
+      "caption": "Maximaler Wert für Kfz-Verkehrsstärke",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "qKFZMin",
+      "caption": "Minimaler Wert für Kfz-Verkehrsstärke",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "qLKWMax",
+      "caption": "Maximaler Wert für Verkehrsstärke Lkw-ähnliche Fz",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "qLKWMin",
+      "caption": "Minimaler Wert für Verkehrsstärke Lkw-ähnliche Fz",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "qPKWMax",
+      "caption": "Maximaler Wert für Verkehrsstärke Pkw-ähnliche Fz",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "qPKWMin",
+      "caption": "Minimaler Wert für Verkehrsstärke Pkw-ähnliche Fz",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vKFZMax",
+      "caption": "Maximaler Wert für Kfz-Geschwindigkeit",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vKFZMin",
+      "caption": "Minimaler Wert für Kfz-Geschwindigkeit",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vLKWMax",
+      "caption": "Maximaler Wert für Geschwindigkeit Lkw-ähnliche Fz",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vLKWMin",
+      "caption": "Minimaler Wert für Geschwindigkeit Lkw-ähnliche Fz",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vPKWMax",
+      "caption": "Maximaler Wert für Geschwindigkeit Pkw-ähnliche Fz",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vPKWMin",
+      "caption": "Minimaler Wert für Geschwindigkeit Pkw-ähnliche Fz",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "tNettoMax",
+      "caption": "Maximaler Wert für Nettozeitlücke",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "tNettoMin",
+      "caption": "Minimaler Wert für Nettozeitlücke",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "belegMax",
+      "caption": "Maximaler Wert für Belegung",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "belegMin",
+      "caption": "Minimaler Wert für Beleungg",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "standardabweichungMax",
+      "caption": "Maximaler Wert für Standardabweichung Kfz-Geschwindigkeit",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "standardabweichungMin",
+      "caption": "Minimaler Wert für Standardabweichung Kfz-Geschwindigkeit",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vKFZMittelMax",
+      "caption": "Maximaler Wert für Geglättete mittlere Kfz-Geschwindigkeit",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vKFZMittelMin",
+      "caption": "Minimaler Wert für Geglättete mittlere Kfz-Geschwindigkeit",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    }
+  ]
+}

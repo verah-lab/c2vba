@@ -1,0 +1,26 @@
+{
+  "definitionSetId": "LkwAufkommenKriteriumSichtSituationMapping",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "SITUATIONENMAPPING",
+  "version": {"minor": 2, "date": "2021-06-07T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "highTruckShareSituationClass",
+      "caption": "LKW Aufkommen bei Nebel - Hauptklasse",
+      "tooltip": "Bei der hier definierten Situationshauptklasse gehen die Verfahrensergebnisse in den Situationsabgleich",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "highTruckShareSubClass",
+      "caption": "LKW Aufkommen bei Nebel - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }
+  ]
+}

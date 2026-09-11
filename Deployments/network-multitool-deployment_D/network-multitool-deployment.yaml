@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-multitool-deployment
+  selfLink: /apis/extensions/v1beta1/namespaces/vmis2/deployments/network-multitool-deployment
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: network-multitool
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: network-multitool
+    spec:
+      containers:
+      - image: coreimages/nettools/network-multitool
+        imagePullPolicy: IfNotPresent
+        name: network-multitool
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - name: network-multitool
+          mountPath: /network-multitool
+      volumes:
+      - name: network-multitool
+        persistentVolumeClaim:
+          claimName: network-multitool
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

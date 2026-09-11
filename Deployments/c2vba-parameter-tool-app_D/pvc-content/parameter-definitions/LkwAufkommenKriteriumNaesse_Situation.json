@@ -1,0 +1,57 @@
+{
+  "definitionSetId": "LkwAufkommenKriteriumNässe",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "SITUATIONSERKENNUNGSVERFAHREN",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Aktivieren/deaktivieren des Verfahrens am ausgewählten Objekt",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "QLA_NASS_ein",
+      "caption": "QLA,nass,Ein",
+      "tooltip": "Bemessungsverkehrsstärke (Einschaltbedingung)",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "QLkw_LA_NASS_ein",
+      "caption": "QLkw,LA,nass,Ein",
+      "tooltip": "LKW-Verkehrsstärke (Einschaltbedingung)",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "QLA_NASS_aus",
+      "caption": "QLA,nass,Aus",
+      "tooltip": "Bemessungsverkehrsstärke (Ausschaltbedingung)",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "QLkw_LA_NASS_aus",
+      "caption": "QLkw,LA,nass,Aus",
+      "tooltip": "LKW-Verkehrsstärke (Ausschaltbedingung)",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "SNASS",
+      "caption": "Stufe_nass",
+      "tooltip": "Nässestufe, die mindestens erreicht sein muss (Arraywert aus der Stufenbildung NI-Stufe)",
+      "unit": "-",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

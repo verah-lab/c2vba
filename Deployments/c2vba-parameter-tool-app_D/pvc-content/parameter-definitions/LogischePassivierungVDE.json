@@ -1,0 +1,15 @@
+{
+  "definitionSetId": "LogischePassivierungVDE",
+  "activationTarget": {"type": "VDE_SENSOR"},
+  "propagationTarget": {"type": "VDE_SENSOR"},
+  "definitionType": "LOGISCHEPASSIVIERUNG",
+  "definitions": [
+    {
+      "parameterId": "log_passiv",
+      "caption": "Sensor ist logisch passiviert",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }
+  ]
+}

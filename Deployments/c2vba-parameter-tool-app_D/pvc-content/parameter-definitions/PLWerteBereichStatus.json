@@ -1,0 +1,15 @@
+{
+  "definitionSetId": "PLWerteBereichStatus",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "setzeStatusUnplausibel",
+      "caption": "setzeStatusUnplausibel: Setzt bei verdächtigen Werten den Status unplausibel, sonst „zu prüfen“",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }
+  ]
+}

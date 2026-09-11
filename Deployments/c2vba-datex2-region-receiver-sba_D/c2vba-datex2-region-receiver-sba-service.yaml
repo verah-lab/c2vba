@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: c2vba-datex2-region-receiver-sba
+spec:
+  ports:
+  - name: actuator
+    nodePort: 32690
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  - name: mdm-http
+    nodePort: 32691
+    port: 82
+    protocol: TCP
+    targetPort: mdm-http
+  - name: mdm-https
+    nodePort: 32692
+    port: 84
+    protocol: TCP
+    targetPort: mdm-https
+  - name: remote-debug
+    nodePort: 32693
+    port: 86
+    protocol: TCP
+    targetPort: remote-debug
+
+  selector:
+    app: c2vba-datex2-region-receiver-sba
+  type: NodePort

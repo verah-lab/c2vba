@@ -1,0 +1,1 @@
+kafkacli.exe updateTopics -s VRZ -u C2VBA --replicationFactorOverwrite=1 c2vba-topics.csv

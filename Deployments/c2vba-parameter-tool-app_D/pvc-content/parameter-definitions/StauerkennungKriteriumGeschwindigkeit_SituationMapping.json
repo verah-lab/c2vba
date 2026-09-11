@@ -1,0 +1,25 @@
+{
+  "definitionSetId": "StauerkennungKriteriumGeschwindigkeitSituationMapping",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "SITUATIONENMAPPING",
+  "definitions": [
+    {
+      "parameterId": "trafficStateClass",
+      "caption": "Verkehrszustand - Hauptklasse",
+      "tooltip": "Bei der hier definierten Situationshauptklasse gehen die Verfahrensergebnisse in den Situationsabgleich",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "jamSubClass",
+      "caption": "Stau_Geschwindigkeit - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }
+  ]
+}

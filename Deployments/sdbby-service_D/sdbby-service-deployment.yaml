@@ -1,0 +1,83 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "sdbby-service_D"
+    label.gitversion: "sdbby-service_D_1.0.3.3"
+    app: sdbby-service
+    log-type: spring-actuator
+  name: sdbby-service
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: sdbby-service
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: sdbby-service
+        log-type: spring-actuator
+    spec:
+      containers:
+      - name: app
+        image: heuboe/sdbby/sdbby-service:1.0.3
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        - containerPort: 8123
+          name: svc
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        env:
+        - name: "SPRING_PROFILES_ACTIVE"
+          value: "default,${SYSTEM_NAME}-${SYSTEM_STAGE},${SYSTEM_STAGE}"
+        - name: application.name
+          value: "sdbby-service"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75"
+          # value: "-Xmx300M"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        resources:
+          limits:
+            cpu: "1000m"
+            memory: 400Mi
+          requests:
+            cpu: "200m"
+            memory: 400Mi
+      volumes:
+      - name: config
+        configMap:
+          name: sdbby-service

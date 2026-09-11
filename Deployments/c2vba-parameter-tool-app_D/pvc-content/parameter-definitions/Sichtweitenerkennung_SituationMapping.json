@@ -1,0 +1,66 @@
+{
+  "definitionSetId": "SichtweitenerkennungSituationMapping",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "SITUATIONENMAPPING",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "visibilitySituationClass",
+      "caption": "Sichtverhältnisse - Hauptklasse",
+      "tooltip": "Bei der hier definierten Situationshauptklasse gehen die Verfahrensergebnisse in den Situationsabgleich",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "level0SubClass",
+      "caption": "Sicht_0 - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "level1SubClass",
+      "caption": "Sicht_1 - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "level2SubClass",
+      "caption": "Sicht_2 - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "level3SubClass",
+      "caption": "Sicht_3 - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "level4SubClass",
+      "caption": "Sicht_4 - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "level5SubClass",
+      "caption": "Sicht_5 - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }
+  ]
+}

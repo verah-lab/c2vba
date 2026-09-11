@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tls-sequencer
+spec:
+  ports:
+  - name: actuator
+    nodePort: 32610
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  selector:
+    app: tls-sequencer
+  type: NodePort

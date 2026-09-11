@@ -1,0 +1,28 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: site-config-service
+spec:
+  port:
+    targetPort: actuator
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: site-config-service
+# ---
+# apiVersion: route.openshift.io/v1
+# kind: Route
+# metadata:
+  # name: site-config-service-grpc
+# spec:
+  # port:
+    # targetPort: grpclb
+  # tls:
+    # insecureEdgeTerminationPolicy: Redirect
+    # termination: passthrough
+  # to:
+    # kind: Service
+    # name: site-config-service

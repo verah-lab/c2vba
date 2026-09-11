@@ -1,0 +1,17 @@
+{
+  "definitionSetId": "AQVerriegelung",
+  "activationTarget": {"type": "AQ"},
+  "propagationTarget": {"type": "AQ"},
+  "definitionType": "SCHALTBILDERMITTLUNG",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "standardAktiv",
+      "caption": "Standard aktiv",
+      "tooltip": "Ist der Standard aktiviert werden am AQ die folgenden zwei Prüfungen für die WZG-A durchgeführt: \n1) Auf zwei unmittelbar benachbarten Fahrstreifen dürfen zwei Gelbpfeile nicht aufeinander weisen. \n2) Auf zwei unmittelbar benachbarten Fahrstreifen darf ein Gelbpfeil nicht auf ein rotes Kreuz weisen.",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }
+  ]
+}

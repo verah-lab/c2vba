@@ -1,0 +1,94 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "c2vba-synchronize-vd-app_D"
+    label.gitversion: "c2vba-synchronize-vd-app_D_1.12.0.0"
+    app: c2vba-synchronize-vd-app
+  name: c2vba-synchronize-vd-app
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: c2vba-synchronize-vd-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: c2vba-synchronize-vd-app
+    spec:
+      containers:
+      - name: app
+        image: heuboe/vmis2/vmis2-synchronize-vd-app:1.12.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        env:
+        - name: application.name
+          value: "c2vba-synchronize-vd-app"
+#        - name: SPRING_PROFILES_ACTIVE
+#          value: "default"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=85"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        livenessProbe:
+          failureThreshold: 50
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "1500m"
+            memory: 2500Mi
+          requests:
+            cpu: "50m"
+            memory: 150Mi
+      volumes:
+      - name: config
+        configMap:
+          name: c2vba-synchronize-vd-app

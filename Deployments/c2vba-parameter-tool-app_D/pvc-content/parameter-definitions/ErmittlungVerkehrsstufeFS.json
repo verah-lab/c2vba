@@ -1,0 +1,41 @@
+{
+  "definitionSetId": "ErmittlungVerkehrsstufeFS",
+  "activationTarget": {"type": "VDE_SENSOR"},
+  "propagationTarget": {"type": "VDE_SENSOR"},
+  "definitionType": "DATENAUFBEREITUNG",
+  "definitions": [
+    {
+      "parameterId": "vFrei",
+      "caption": "vFrei",
+      "tooltip":"Grenzwert Geschwindigkeit „Freier Verkehr“",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "vStau",
+      "caption": "vStau",
+      "tooltip": "Grenzwert Geschwindigkeit „Stau“",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "dichteFrei",
+      "caption": "dichteFrei",
+      "tooltip": "Grenzwert Dichte „Freier Verkehr“",
+      "unit": "Kfz/km",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 9999}}]}}
+    }, {
+      "parameterId": "dichteStau",
+      "caption": "dichteStau",
+      "tooltip": "Grenzwert Dichte „Stau“",
+      "unit": "Kfz/km",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 9999}}]}}
+    }
+  ]
+}

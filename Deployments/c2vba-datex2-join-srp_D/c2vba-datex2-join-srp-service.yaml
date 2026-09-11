@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: c2vba-datex2-join-srp
+spec:
+  ports:
+  - name: actuator
+    nodePort: 32710
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  selector:
+    app: c2vba-datex2-join-srp
+  type: NodePort

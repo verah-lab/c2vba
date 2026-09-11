@@ -1,0 +1,113 @@
+{
+  "definitionSetId": "VdeGüteMesswertersetzung",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "plausibel",
+      "caption": "plausibel",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "zu_prüfen",
+      "caption": "zu prüfen",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "ersetzt_unspezifisch_andere_Verfahren",
+      "caption": "ersetzt (unspezifisch; andere Verfahren)",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "ersetzt_Aus_Nachbarfahrstreifen_gebildet",
+      "caption": "ersetzt; Aus Nachbarfahrstreifen gebildet",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "ersetzt_Aus_Nachbarquerschnitt_gebildet",
+      "caption": "ersetzt; Aus Nachbarquerschnitt gebildet",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "ersetzt_Messwert_wurde_fortgeschrieben",
+      "caption": "ersetzt; Messwert wurde fortgeschrieben",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "nicht_plausibel_Ersetzung_erfolglos",
+      "caption": "nicht plausibel , Ersetzung erfolglos",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "nicht_plausibel_Ersetzung_deaktiviert",
+      "caption": "nicht plausibel , Ersetzung deaktiviert",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "nicht_plausibel_Ersetzung_nicht_vorgesehen",
+      "caption": "nicht plausibel , Ersetzung nicht vorgesehen",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "Ausgefallen_bzw_nicht_ermittelbar_Ersetzung_erfolglos",
+      "caption": "Ausgefallen bzw, nicht ermittelbar, Ersetzung erfolglos",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "Ausgefallen_bzw_nicht_ermittelbar_Ersetzung_deaktiviert",
+      "caption": "Ausgefallen bzw, nicht ermittelbar, Ersetzung deaktiviert",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "Ausgefallen_bzw_nicht_ermittelbar_Ersetzung_nicht_vorgesehen",
+      "caption": "Ausgefallen bzw, nicht ermittelbar, Ersetzung nicht vorgesehen",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "Nicht_erwartet",
+      "caption": "Nicht erwartet",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }, {
+      "parameterId": "logisch_passiv",
+      "caption": "logisch passiv",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }
+  ]
+}

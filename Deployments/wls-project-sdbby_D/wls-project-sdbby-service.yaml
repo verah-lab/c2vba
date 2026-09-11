@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wls-project-sdbby
+spec:
+  ports:
+  - name: actuator
+    nodePort: 32393
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  - name: wls
+    nodePort: 32394
+    port: 82
+    protocol: TCP
+    targetPort: wls
+  - name: geo
+    nodePort: 32395
+    port: 84
+    protocol: TCP
+    targetPort: geo
+  selector:
+    app: wls-project-sdbby
+  type: NodePort

@@ -1,0 +1,40 @@
+{
+  "definitionSetId": "StauerkennungKriteriumBelegung",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "SITUATIONSERKENNUNGSVERFAHREN",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Aktivieren/deaktivieren des Verfahrens am ausgewählten Objekt",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "BStau_ein",
+      "caption": "Bstau,Ein",
+      "tooltip": "Belegungsgrad am Fahrstreifen",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "VStauB_ein",
+      "caption": "VstauB,Ein",
+      "tooltip": "Nebenbedingung; VKfz geglättet am Querschnitt",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "BStau_aus",
+      "caption": "Bstau,Aus",
+      "tooltip": "Belegungsgrad am Fahrstreifen",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

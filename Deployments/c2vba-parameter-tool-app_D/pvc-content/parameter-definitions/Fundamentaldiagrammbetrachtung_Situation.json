@@ -1,0 +1,160 @@
+{
+  "definitionSetId": "Fundamentaldiagrammbetrachtung",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "SITUATIONSERKENNUNGSVERFAHREN",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Aktivieren/deaktivieren des Verfahrens am ausgewählten Objekt",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "Qunruhe_ein",
+      "caption": "QB_unruhe,Ein",
+      "tooltip": "QB geglättet - Einschaltschwelle",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 99999}}]}}
+    }, {
+      "parameterId": "Qdicht_ein",
+      "caption": "QB_dicht,Ein",
+      "tooltip": "QB geglättet - Einschaltschwelle",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 99999}}]}}
+    }, {
+      "parameterId": "Qzähf_ein",
+      "caption": "QB_zähfließend,Ein",
+      "tooltip": "QB geglättet - Einschaltschwelle",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 99999}}]}}
+    }, {
+      "parameterId": "Vunruhe_ein",
+      "caption": "V_unruhe,Ein",
+      "tooltip": "V geglättet - Einschaltschwelle",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Vdicht_ein",
+      "caption": "V_dicht,Ein",
+      "tooltip": "V geglättet - Einschaltschwelle",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Vzähf_ein",
+      "caption": "V_zähfließend,Ein",
+      "tooltip": "V geglättet - Einschaltschwelle",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Dunruhe_ein",
+      "caption": "D_unruhe,Ein",
+      "tooltip": "D geglättet - Einschaltschwelle",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Ddicht_ein",
+      "caption": "D_dicht,Ein",
+      "tooltip": "D geglättet - Einschaltschwelle",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Dzähf_ein",
+      "caption": "D_zähfließend,Ein",
+      "tooltip": "D geglättet - Einschaltschwelle",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Qunruhe_aus",
+      "caption": "QB_unruhe,Aus",
+      "tooltip": "QB geglättet - Ausschaltschwelle",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 99999}}]}}
+    }, {
+      "parameterId": "Qdicht_aus",
+      "caption": "QB_dicht,Aus",
+      "tooltip": "QB geglättet - Ausschaltschwelle",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 99999}}]}}
+    }, {
+      "parameterId": "Qzähf_aus",
+      "caption": "QB_zähfließend,Aus",
+      "tooltip": "QB geglättet - Ausschaltschwelle",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 99999}}]}}
+    }, {
+      "parameterId": "Vunruhe_aus",
+      "caption": "V_unruhe,Aus",
+      "tooltip": "V geglättet - Ausschaltschwelle",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Vdicht_aus",
+      "caption": "V_dicht,Aus",
+      "tooltip": "V geglättet - Ausschaltschwelle",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Vzähf_aus",
+      "caption": "V_zähfließend,Aus",
+      "tooltip": "V geglättet - Ausschaltschwelle",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Dunruhe_aus",
+      "caption": "D_unruhe,Aus",
+      "tooltip": "D geglättet - Ausschaltschwelle",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Ddicht_aus",
+      "caption": "D_dicht,Aus",
+      "tooltip": "D geglättet - Ausschaltschwelle",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Dzähf_aus",
+      "caption": "D_zähfließend,Aus",
+      "tooltip": "D geglättet - Ausschaltschwelle",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

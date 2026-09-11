@@ -1,0 +1,104 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "vms-publication-service-c2vba_D"
+    label.gitversion: "vms-publication-service-c2vba_D_1.1.8.1"
+    app: vms-publication-service
+    log-type: spring-actuator
+  name: vms-publication-service
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: vms-publication-service
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: vms-publication-service
+        log-type: spring-actuator
+    spec:
+      containers:
+      - name: app
+        image: heuboe/datex2/vms/vms-publication-service:1.1.8
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        - containerPort: 8083
+          name: vmsservice
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        - secretRef:
+            name: vms-publication-service-environment
+        env:
+        - name: "SPRING_PROFILES_ACTIVE"
+          value: "default,${SYSTEM_NAME}-${SYSTEM_STAGE},${SYSTEM_STAGE}"
+        - name: application.name
+          value: "vms-publication-service"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75"
+          # value: "-Xmx2G"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        livenessProbe:
+          failureThreshold: 10
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 10
+          httpGet:
+            path: /ready
+            port: actuator
+            scheme: HTTP
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "800m"
+            memory: 1000Mi
+          requests:
+            cpu: "300m"
+            memory: 1000Mi
+      volumes:
+      - name: config
+        configMap:
+          name: vms-publication-service

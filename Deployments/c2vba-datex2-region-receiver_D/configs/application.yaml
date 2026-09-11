@@ -1,0 +1,47 @@
+#
+# 1) Remarks
+#
+# a) The url is only for information, but one should check if it is 'reachable'
+#    (<url>?wsdl in a web browser should return the WSDL content of the soap service)
+#    For consumerMode = PUSH and data provided by MDM the url has to provided in the corresponding MDM 'Bestellung' as 'Zielserver'
+# b) In production environment the available ports are restricted by
+#    i)  Firewall configurations 
+#    ii) Kubernetes node port definitions (the node ports may differ from the pod ports)
+# 
+#    Currently HB firewall routes ports 32731 and 32732 to master1.d.c2vba.heuboe.hbintern:32731 and 32732
+#    These are node ports of this app mapped to internal 4721 and 4722           
+# 
+# 2) Restrictions for consumerMode = PUSH
+#
+# a) For a single serverPort only one serverSchema shall be used
+# b) For a single serverPort different contexts shall be used
+#
+#
+regions:
+  region-configs:
+    -
+      name: vms-nord-srp
+      remote: SOAP
+      consumerMode: PUSH      
+      url: https://mdm-datex2.heuboe.de:32732/datex2/services/supplierPushService-srp-nord
+#      url: https://mdm-datex2.heuboe.de/datex2/services/supplierPushService-srp-nord
+#      url: https://io.bayerninfo.de:8443/c2vba/srp/services/supplierPushService-srp-nord
+#      url: https://c2vba.bayerninfo.de/srp/services/supplierPushService-srp-nord
+      context: /supplierPushService-srp-nord
+      keyStoreType: PKCS12
+      keyStoreFile: /mdm-certs/${SYSTEM_PRIVATE_KEY_FILE}
+      keyStorePassword: ${SYSTEM_PRIVATE_KEY_PW}
+      serverPort: 4722
+#      serverDomain: "mdm-datex2.heuboe.de"
+      serverDomain: ${MDM-PUSH-URL-DOMAIN}
+      topic: C2VBA-datex2-publication-srp-nord
+    -
+      name: vms-sued-srp
+      remote: SOAP      
+      consumerMode: PUSH      
+      url: http://mdm-datex2.heuboe.de:4721/datex2/services/supplierPushService-srp-sued
+      context: /supplierPushService-srp-sued
+      serverSchema: http
+      serverPort: 4721
+      serverDomain: "mdm-datex2.heuboe.de"
+      topic: C2VBA-datex2-publication-srp-sued      

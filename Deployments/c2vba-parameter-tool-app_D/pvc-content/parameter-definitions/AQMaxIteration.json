@@ -1,0 +1,26 @@
+{
+  "definitionSetId": "AQMaxIteration",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "SCHALTBILDERMITTLUNG",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "MaxIterLaengsQuer",
+      "caption": "MaxIterLängsQuer",
+      "tooltip": "Anzahl der Durchläufe des Längs- und Querabgleichs",
+      "unit": "-",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "MaxIterLaengsQuerAusfall",
+      "caption": "MaxIterLängsQuerAusfall",
+      "tooltip": "Anzahl der Durchläufe des kompletten Prüfzyklus inkl. Ausfallbehandlung",
+      "unit": "-",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

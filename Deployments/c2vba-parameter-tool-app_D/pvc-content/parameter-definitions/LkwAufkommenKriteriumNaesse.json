@@ -1,0 +1,34 @@
+{
+  "definitionSetId": "LkwAufkommenKriteriumNässeEinstellungen",
+  "activationTarget": {"type": "UZ"},
+  "propagationTarget": {"type": "UZ"},
+  "definitionType": "VERFAHRENSPARAMETER",
+  "version": {"major": 1, "minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "aggregationInterval",
+      "caption": "Aggregationsintervall",
+      "tooltip": "Aggregation der vom Verfahren genutzten Eingangsdaten",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_AGGREGATIONSINTERVAL"
+    }, {
+      "parameterId": "smoothAlg",
+      "caption": "Glättungsverfahren",
+      "tooltip": "Glättungsmethode der Eingangsdaten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM"
+    }, {
+      "parameterId": "algoQuality",
+      "caption": "Verfahrensgüte",
+      "tooltip": "Verfahrensgüte (Algorithmus-Qualität)",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }
+  ]
+}

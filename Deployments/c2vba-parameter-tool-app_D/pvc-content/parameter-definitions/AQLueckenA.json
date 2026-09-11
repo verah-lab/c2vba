@@ -1,0 +1,19 @@
+{
+  "definitionSetId": "AQLueckenA",
+  "activationTarget": {"type": "AQ"},
+  "propagationTarget": {"type": "AQ"},
+  "definitionType": "SCHALTBILDERMITTLUNG_LAENGSABGLEICH",
+  "viaGroupName": "Längsabgleich",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "MaxLueckenGroesseA",
+      "caption": "MaxLücke_A",
+      "tooltip": "Max. Anzahl der Nachfolger-WZG der zu füllenden Lücke für WZG-A. Wird immer in Fahrtrichtung interpretiert",
+      "unit": "-",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

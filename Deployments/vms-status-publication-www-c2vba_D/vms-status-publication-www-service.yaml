@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vms-status-publication-www
+spec:
+  ports:
+  - name: actuator
+    nodePort: 31331
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  - name: vmslisten
+    nodePort: 31332
+    port: 81
+    protocol: TCP
+    targetPort: vmslisten
+  selector:
+    app: vms-status-publication-www
+  type: NodePort

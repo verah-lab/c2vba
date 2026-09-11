@@ -1,0 +1,58 @@
+{
+  "definitionSetId": "PLBelegung",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "pruefung",
+      "caption": "Prüfung: Ja/Nein",
+      "tooltip": "Prüfung: Ja/Nein (Zur Aktivierung des PL Checks: Ja)",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "anzahlBereiche",
+      "caption": "Anzahl der parametrierten Bereiche",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "Beleg_von",
+      "caption": "Untere Grenze Belegungsgrad (inkludiert)",
+      "unit": "%",
+      "valueType": "INT_LIST",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "Beleg_bis",
+      "caption": "Obere Grenze Belegungsgrad (inkludiert)",
+      "unit": "%",
+      "valueType": "INT_LIST",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "quotientqb_von",
+      "caption": "Untere Grenze qKfz pro Stunde / b",
+      "unit": "qKfz/h/b",
+      "valueType": "DOUBLE_LIST",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "quotientqb_bis",
+      "caption": "Obere Grenze qKfz pro Stunde / b",
+      "unit": "qKfz/h/b",
+      "valueType": "DOUBLE_LIST",
+      "scope": "GLOBAL"
+    }
+  ]
+}

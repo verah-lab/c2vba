@@ -1,0 +1,143 @@
+de:
+    heuboe:
+        asfinag:
+            vmis2:
+                synchronize:
+                    vd:
+                        ################
+                        # common props #
+                        ################
+                        # write received data to files
+                        writeFileLog: false                    
+                        # UZ/rVMZ name as String to query the ConfigService or -ALL- (work for all items of type UZ)
+                        centreId: ${CENTRE_ID}
+                        # UZ/rVMZ short name as String for topic names
+                        centreTopic: ${SYSTEM_PREFIX}
+                        # Identification(shortcut) string for system-wide(default: "VRZ"). systemWideShortcut is used
+                        # for parameter topic name, for example.
+                        #systemWideShortcut: ${SYSTEM_NAME_UC}
+                        # If MQs have no roadId, the app could not handle them. Take this defaultRoadId for those MQs:
+                        # This field is nullable. If no defaultRoadId is set, MQs with empty roadId will be ignored.
+                        defaultRoadId:
+                        # road pattern to work for
+                        streets: .*
+                        # default error value of integers:
+                        defaultErrorValue: -1
+                        # default error value of floats (tNetto):
+                        defaultErrorValueFloat: -99999.0
+                        # boolean to indicate, if discarded data should be written or not
+                        writeDiscarded: true
+                        # boolean to indicate, if application should listen to single vehicle data
+                        # if true, app listens to tlsSingleVehDataTopicTemplate & tlsSingleVehCollectedDataTopicTemplate
+                        listenSingleVehicleData: true
+                        topicReplicationFactor: 2
+                        algoName: synchronize vehicle data
+                        algoShortName: SYNCVD
+                        # Fake infraParams from infrastructure
+                        fakeInfraParams: true
+                        instanceName: INSTANZ1
+                        # maximum numbers of retries to restart an actor before system.exit
+                        maxNrOfRestartRetries: 4
+                        # time range (in minutes) for actor restarts before system.exit.
+                        # 0=deactivate of system.exit cause of actor restarts
+                        restartsWithinTimeRange: 5
+                        # data change types that do an infrastructure reinitialization. for possible enum names, see:
+                        # eu.vmis_ehe.vmis2.configservice.pojo.PConfigItemType
+                        dataChangeType:
+                            - RST
+                            - VDE_SENSOR                    
+                        # Tls control sequence action to request a global time synchronization
+                        actionNrRequestGlobalTimeSync: 2002018
+                        # tls code of PKW_AE category:
+                        categoryPkw: 32
+                        # tls code of PKW_AE category:
+                        categoryLkw: 33
+                        # Default quality of the slowest vehicle data built on the basis of single vehicle data
+                        maxQualitySVDataInput: 100
+                        # Default quality of the slowest vehicle data built on the basis of traffic categories (Vers. 4)
+                        maxQualityTCDataInput: 80
+                        # Default quality, if speed of slowest vehicle could not be determined
+                        minQualityInputSlowV: 0
+                        ############
+                        # Topics   #
+                        ############
+                        # topics IN
+                        dataChangeTopicTemplate: 'VRZ-DataChange'
+                        parameterRoadTopics:
+                        - '{systemWideShortcut}-Parameter-LogischePassivierungVDE'
+                        parameterSystemTopics:
+                        - '{systemWideShortcut}-Parameter-Zeitsynchronisation'
+                        tlsChannelControlTopicTemplate: '{centreTopic}-tlsin-LVEKanalsteuerung'
+                        tlsErrorTopicTemplate: '{centreTopic}-tlsin-LVEDeFehler'
+                        tlsOperatingParamTopicTemplate: '{centreTopic}-tlsin-LVEBetriebsparameter'
+                        tlsSysErrorTopicTemplate: '{centreTopic}-tlsin-SYSFehlerDUE'
+                        tlsTrafficCategoriesParamTopicTemplate: '{systemWideShortcut}-tlsout-LVEGeschwindigkeitsklassenKurzSoll'
+                        tlsData0TopicTemplate: '{centreTopic}-tlsin-LVEErgebnisVersion0'
+                        tlsData1TopicTemplate: '{centreTopic}-tlsin-LVEErgebnisVersion1'
+                        tlsData2TopicTemplate: '{centreTopic}-tlsin-LVEErgebnisVersion2'
+                        tlsData3TopicTemplate: '{centreTopic}-tlsin-LVEErgebnisVersion3'
+                        tlsData4TopicTemplate: '{centreTopic}-tlsin-LVEErgebnisVersion4'
+                        tlsData5TopicTemplate: '{centreTopic}-tlsin-LVEErgebnisVersion5'
+                        tlsData6TopicTemplate: '{centreTopic}-tlsin-LVEErgebnisVersion6'
+                        tlsSingleVehDataTopicTemplate: '{centreTopic}-tlsin-LVEKfzEinzeldaten'
+                        tlsSingleVehCollectedDataTopicTemplate: '{centreTopic}-tlsin-LVEKfzEinzeldatenSammelmeldung'
+                        # topics OUT
+                        collectedDataLaneTopicTemplate: '{centreTopic}-ShortTermCollectedDataLane'
+                        collectedTrafficCategoriesLaneTopicTemplate: '{centreTopic}-ShortTermCollectedTrafficCategoriesLane'
+                        colletedOpcUaDataLaneTopicTemplate: '{centreTopic}-ShortTermCollectedOpcUaDataLane'
+                        discardedDataLaneTopicTemplate: '{centreTopic}-DiscardedShortTermCollectedDataLane'
+                        topicTmpltControlSequence: '{systemWideShortcut}-tlsout-SYSSteuerSequenz'
+                        ########################
+                        # Parameter constants  #
+                        ########################
+                        algo:
+                            param:
+                                names:
+                                    # Logical passivation
+                                    logPassive: log_passiv
+                                    # Logical passivation definition set id
+                                    logPassiveDefSetId: LogischePassivierungVDE
+                                    # String for waiting time in seconds to resend time synchronization
+                                    syncWaitSec: AbstandZeitsync
+                                    # Strings for upper/lower threshold in seconds to trigger synchronization
+                                    thresholdLower15Sec: zeitsyncUnten15
+                                    thresholdLower2Min: zeitsyncUnten2m
+                                    thresholdLower30Sec: zeitsyncUnten30
+                                    thresholdLower3Min: zeitsyncUnten3m
+                                    thresholdLower4Min: zeitsyncUnten4m
+                                    thresholdLower5Min: zeitsyncUnten5m
+                                    thresholdLower60Sec: zeitsyncUnten60
+                                    thresholdUpper15Sec: zeitsyncOben15
+                                    thresholdUpper2Min: zeitsyncOben2m
+                                    thresholdUpper30Sec: zeitsyncOben30
+                                    thresholdUpper3Min: zeitsyncOben3m
+                                    thresholdUpper4Min: zeitsyncOben4m
+                                    thresholdUpper5Min: zeitsyncOben5m
+                                    thresholdUpper60Sec: zeitsyncOben60
+                                    # definition set id for time sync
+                                    timeSyncDefSetId: Zeitsynchronisation
+                                    # String for timelead in seconds.
+                                    timelead: moeglicheVorlaufzeit
+                                    # Strings timeout
+                                    timeout15Secs: Timeout15
+                                    timeout30Secs: Timeout30
+                                    timeout60Secs: Timeout60
+                                    timeout2Min: Timeout2m
+                                    timeout3Min: Timeout3m
+                                    timeout4Min: Timeout4m
+                                    timeout5Min: Timeout5m
+                test:
+                    infra:
+                        testInfraJson: src/main/resources/TestInfraRoadS1.json
+grpc:
+    client:
+        ConfigService:
+            address: static://config-service.c2vba:9090
+            maxInboundMessageSize: 25000000
+            negotiationType: PLAINTEXT
+spring:
+    kafka:
+        bootstrap-servers: ${KAFKA_BOOTSTRAP}
+        client-id: c2vba-synchronize-vd-app-C2VBA
+        consumer:
+            group-id: SYNCHRONIZE-VD-GROUP-C2VBA

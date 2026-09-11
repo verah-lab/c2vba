@@ -1,0 +1,57 @@
+{
+  "definitionSetId": "FahrstreifenbezogeneKenngrößen",
+  "activationTarget": {"type": "VDE_SENSOR"},
+  "propagationTarget": {"type": "VDE_SENSOR"},
+  "definitionType": "DATENAUFBEREITUNG",
+  "definitions": [
+    {
+      "parameterId": "dKFZGrenz",
+      "caption": "dKFZGrenz",
+      "tooltip": "Zur Bestimmung der Dichte im Ausnahmefall",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "dKFZMax",
+      "caption": "dKFZMax",
+      "tooltip": "Zur Bestimmung der Dichte im Ausnahmefall",
+      "unit": "Kfz/km",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "dQBGrenz",
+      "caption": "dQBGrenz: Grenzwert Dichte qB",
+      "tooltip": "Grenzwert Dichte der qB. Wenn dieser Wert überschritt wird, gilt dQBMax",
+      "unit": "qB/km",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "dQBMax",
+      "caption": "dQBMax:  Maximaler Wert Dichte qB",
+      "tooltip": "Zur Bestimmung der Dichte im Ausnahmefall",
+      "unit": "qB/km",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "k1",
+      "caption": "k1",
+      "tooltip": "Zur Bestimmung der Bemessungsverkehrsstärke",
+      "unit": "-",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 9999}}]}}
+    }, {
+      "parameterId": "k2",
+      "caption": "k2",
+      "tooltip": "Zur Bestimmung der Bemessungsverkehrsstärke",
+      "unit": "-",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 9999}}]}}
+    }
+  ]
+}

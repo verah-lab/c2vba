@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" monitorInterval="60" status="warn">
+
+    <Properties>
+        <Property name="layoutPattern">%date{DEFAULT} | %5.5level | %20.20logger{1.} | &gt; %message%n</Property>
+        <Property name="applicationName">${env:application.name}</Property>
+        <Property name="applicationInstance">${env:application.instance}</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- console appender which logs an easy human readable line -->
+        <Appender type="Console" name="console">
+            <Layout type="PatternLayout" pattern="${layoutPattern}" />
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.apache.kafka" level="WARN" />
+        <Logger name="org.apache.kafka.common.metrics" level="WARN" />
+        <Logger name="org.springframework.data.convert.CustomConversions" level="ERROR" />
+        <Logger name="de.heuboe.tls.cfglib.Osi7CfgImpl" level="ERROR" />
+        <Logger name="de.heuboe.tls.parser.proto" level="WARN" />
+        <Logger name="de.heuboe.tls.kafka.operator" level="INFO" />
+        <Logger name="de.now.tls.legacy.data.converter" level="INFO" />
+
+        <Root level="warn">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+
+</Configuration>

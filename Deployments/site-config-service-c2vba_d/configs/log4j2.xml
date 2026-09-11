@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" monitorInterval="15" status="warn">
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %highlight{%5p} [%X{traceId},%X{spanId}] --- [%t] %-40.40c{1.} : %highlight{%m%n%xwEx}"
+                disableAnsi="false" />
+        </Console>
+    </Appenders>
+
+	<Loggers>
+		<Logger name="de.heuboe" level="info" />
+		<Logger name="org.springframework" level="warn" />
+
+		<Root level="warn">
+			<AppenderRef ref="console" />
+		</Root>
+	</Loggers>
+
+</Configuration>

@@ -1,0 +1,16 @@
+{
+  "definitionSetId": "GewichteteGleitendeMittelwertbildung",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "ALGORITHM",
+  "definitions": [
+    {
+      "parameterId": "W",
+      "caption": "W: Wichtungen der einzelnen Stützstellen",
+      "unit": "-",
+      "valueType": "INT_LIST",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 100}}]}}
+    }
+  ]
+}

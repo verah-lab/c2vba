@@ -1,0 +1,4 @@
+{
+  "brokers": ["master1.d.c2vba.heuboe.hbintern:32002"],
+  "logLevel": 2
+}

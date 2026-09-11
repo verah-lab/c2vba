@@ -1,0 +1,103 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "tls-sequencer_d"
+    label.gitversion: "c2vba-tls-sequencer_D_2.1.0.0"
+    app: tls-sequencer
+    log-type: spring-actuator
+  name: tls-sequencer
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: tls-sequencer
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: tls-sequencer
+    spec:
+      containers:
+      - name: app
+        image: 'heuboe/c2vba/c2vba-tls-sequencer:2.1.0'
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        envFrom:
+          - secretRef:
+              name: application-environment
+        env:
+        - name: application.name
+          value: "tls-sequencer"
+#        - name: SPRING_PROFILES_ACTIVE
+#          value: "default"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: config-data
+          mountPath: /config-data
+        livenessProbe:
+          failureThreshold: 15
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 50
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 3
+        readinessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: "2000m"
+            memory: 1200Mi
+          requests:
+            cpu: "750m"
+            memory: 700Mi
+      volumes:
+      - name: config
+        configMap:
+          name: tls-sequencer
+      - name: config-data
+        persistentVolumeClaim:
+          claimName: config-data

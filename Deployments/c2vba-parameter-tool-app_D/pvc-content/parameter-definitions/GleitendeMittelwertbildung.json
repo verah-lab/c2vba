@@ -1,0 +1,16 @@
+{
+  "definitionSetId": "GleitendeMittelwertbildung",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "ALGORITHM",
+  "definitions": [
+   {
+      "parameterId": "N",
+      "caption": "N: Anzahl Stützstellen",
+      "unit": "-",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

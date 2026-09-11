@@ -1,0 +1,116 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "geo-manager-c2vba_D"
+    label.gitversion: "geo-manager-c2vba_D_0.0.4.2"
+    app: geo-manager-c2vba
+    log-type: spring-actuator
+  name: geo-manager-c2vba
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: geo-manager-c2vba
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: geo-manager-c2vba
+        log-type: spring-actuator
+    spec:
+      containers:
+      - name: app
+        image: heuboe/geo/geo-manager-c2vba:0.0.4
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        - containerPort: 9080
+          name: grpc
+          protocol: TCP
+        - containerPort: 9090
+          name: grpc-ssl
+          protocol: TCP
+        - containerPort: 8085
+          name: wls
+          protocol: TCP
+        - containerPort: 4916
+          name: geo
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        env:
+        - name: "SPRING_PROFILES_ACTIVE"
+          value: "default,${SYSTEM_NAME}-${SYSTEM_STAGE},${SYSTEM_STAGE}"
+        - name: application.name
+          value: "geo-manager-c2vba"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75 --add-opens=java.base/java.time=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED"
+          # value: "-Xmx750m"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: map-geo-data
+          mountPath: /map
+        livenessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 120
+          httpGet:
+            path: /ready
+            port: actuator
+            scheme: HTTP
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "2000m"
+            memory: 4000Mi
+          requests:
+            cpu: "300m"
+            memory: 1000Mi
+      volumes:
+      - name: config
+        configMap:
+          name: geo-manager-c2vba
+      - name: map-geo-data
+        persistentVolumeClaim:
+          claimName: map-geo-data

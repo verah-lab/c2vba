@@ -1,0 +1,13 @@
+SRP-NORD-SUED-URL    https://139.2.223.157/BASt-MDM-Interface/srv/2522000/supplierPushService
+SBA-NORD-SUED-URL    https://139.2.223.157/BASt-MDM-Interface/srv/2523000/supplierPushService 
+WWW-NORD-SUED-URL    https://139.2.223.157/BASt-MDM-Interface/srv/2523001/supplierPushService
+FG1-NORD-SUED-URL    https://139.2.223.157/BASt-MDM-Interface/srv/2508000/supplierPushService
+FG3-NORD-SUED-URL    https://139.2.223.157/BASt-MDM-Interface/srv/2508001/supplierPushService
+
+
+FG1-NORD-URL         https://139.2.223.157/BASt-MDM-Interface/srv/4489000/clientPullService
+FG3-NORD-URL  	     https://139.2.223.157/BASt-MDM-Interface/srv/4582000/clientPullService
+
+
+MDM-PUSH-URL-DOMAIN   io.bayerninfo.de
+

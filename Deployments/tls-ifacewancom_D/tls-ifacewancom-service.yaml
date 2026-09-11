@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tls-ifacewancom-by-sued
+spec:
+  ports:
+  - name: actuator
+    nodePort: 31470
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  selector:
+    app: tls-ifacewancom-by-sued
+  type: NodePort

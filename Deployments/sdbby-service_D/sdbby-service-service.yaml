@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sdbby-service
+spec:
+  ports:
+  - name: actuator
+    nodePort: 32353
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  - name: svc
+    nodePort: 32354
+    port: 8123
+    protocol: TCP
+    targetPort: svc
+  selector:
+    app: sdbby-service
+  type: NodePort

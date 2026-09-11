@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: c2vba-synchronize-vd-app
+spec:
+  ports:
+  - name: actuator
+    nodePort: 32450
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  selector:
+    app: c2vba-synchronize-vd-app
+  type: NodePort

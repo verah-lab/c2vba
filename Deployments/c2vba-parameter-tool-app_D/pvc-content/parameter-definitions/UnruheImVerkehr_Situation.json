@@ -1,0 +1,64 @@
+{
+  "definitionSetId": "UnruheImVerkehr",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "SITUATIONSERKENNUNGSVERFAHREN",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Aktivieren/deaktivieren des Verfahrens am ausgewählten Objekt",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "SU_max",
+      "caption": "SU,max",
+      "tooltip": "Standardabweichung der gemessenen Kfz-Geschwindigkeiten der einzelnen Fahrstreifen",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "qU_max",
+      "caption": "qU,max",
+      "tooltip": "q des betroffenen Fahrstreifens",
+      "unit": "Kfz/min",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "QU_max",
+      "caption": "QU,max",
+      "tooltip": "Q des Messquerschnitts",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "SU_min",
+      "caption": "SU,min",
+      "tooltip": "Standardabweichung der gemessenen Kfz-Geschwindigkeiten der einzelnen Fahrstreifen",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "qU_min",
+      "caption": "qU,min",
+      "tooltip": "q des betroffenen Fahrstreifens",
+      "unit": "Kfz/min",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "QU_min",
+      "caption": "QU,min",
+      "tooltip": "Q des Messquerschnitts",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: vms-publication-service-environment
+type: Opaque
+data:
+#
+# echo -n 'vms-datex2' | base64
+  VMS_DATEX2_DB: dm1zLWRhdGV4Mg==
+

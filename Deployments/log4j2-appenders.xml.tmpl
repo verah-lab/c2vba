@@ -1,0 +1,18 @@
+<Appenders>
+	<!-- console appender which logs an easy human readable line -->
+	<Appender type="Console" name="console">
+		<Layout type="PatternLayout" pattern="${layoutPattern}" />
+	</Appender>
+	<!-- File appender which logs events an a JSON structured format as specified for KoMoDnext -->
+	<!-- RollingFile name="file" fileName="/logs/${applicationName}/${applicationInstance}.log"
+		filePattern="/logs/${applicationName}/${applicationInstance}_%d{yyyyMMdd-HHmmss}{UTC}.log.gz" >
+		<CustomJSONLayout />
+		<SizeBasedTriggeringPolicy size="10 MB" />
+		<DefaultRolloverStrategy>
+			<Delete basePath="/logs/${applicationName}" maxDepth="1">
+				<IfFileName glob="${applicationName}*.log" />
+				<IfLastModified age="3d" />
+			</Delete>
+		</DefaultRolloverStrategy>
+	</RollingFile -->
+</Appenders>

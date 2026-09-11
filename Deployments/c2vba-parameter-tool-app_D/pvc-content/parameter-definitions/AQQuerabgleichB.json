@@ -1,0 +1,32 @@
+{
+  "definitionSetId": "AQQuerabgleichB",
+  "activationTarget": {"type": "AQ"},
+  "propagationTarget": {"type": "AQ"},
+  "definitionType": "SCHALTBILDERMITTLUNG_QUERABGLEICH",
+  "viaGroupName": "Querabgleich",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "Quer_Gleichheit_WZGB",
+      "caption": "Quer_Gleichheit_WZGB",
+      "tooltip": "Querabgleich WZG-B aktivieren/deaktivieren ",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "Quer_Gleichheit_WZGC",
+      "caption": "Quer_Gleichheit_WZGC",
+      "tooltip": "Querabgleich WZG-C aktivieren/deaktivieren ",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "Quer_Abgleich_UV",
+      "caption": "Quer_Abgleich_UV",
+      "tooltip": "Querabgleich WZG-B Überholverbote aktivieren/deaktivieren",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }
+  ]
+}

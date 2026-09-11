@@ -1,0 +1,29 @@
+{
+  "definitionSetId": "PLLogisch",
+  "activationTarget": {"type": "VDE_SENSOR"},
+  "propagationTarget": {"type": "VDE_SENSOR"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "vGrenz",
+      "caption": "vGrenz: Grenzwert für die Prüfung 1.4.3.1.12",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    },
+    {
+      "parameterId": "bGrenz",
+      "caption": "bGrenz: Grenzwert für die Prüfung 1.4.3.1.12",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL"
+    }
+  ]
+}

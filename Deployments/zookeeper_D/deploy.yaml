@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zookeeper
+  labels:
+    app: zookeeper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zookeeper
+  template:
+    metadata:
+      labels:
+        app: zookeeper
+    spec:
+      containers:
+        - env:
+            - name: ZOO_MY_ID
+              value: '1'
+            - name: ZOO_SERVERS
+              value: 'server.1=zookeeper:2888:3888;2181'
+          image: zookeeper:3.8.0
+          imagePullPolicy: IfNotPresent
+          name: zookeeper
+          ports:
+            - containerPort: 2181
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /data
+              name: zookeeper-data
+            - mountPath: /datalog
+              name: zookeeper-datalog
+          securityContext:
+#            runAsUser: 1001
+            privileged: true
+      volumes:
+        - name: zookeeper-data
+          persistentVolumeClaim:
+            claimName: zookeeper-data
+        - name: zookeeper-datalog
+          persistentVolumeClaim:
+            claimName: zookeeper-datalog
+

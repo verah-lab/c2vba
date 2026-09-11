@@ -1,0 +1,41 @@
+{
+  "definitionSetId": "VerkehrszustandsstufeSituationMapping",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "SITUATIONENMAPPING",
+  "definitions": [
+    {
+      "parameterId": "trafficStateSituationClass",
+      "caption": "Verkehrszustand - Hauptklasse",
+      "tooltip": "Bei der hier definierten Situationshauptklasse gehen die Verfahrensergebnisse in den Situationsabgleich",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "jamSubClass",
+      "caption": "Stau Verkehrszustandsstufe - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "losSituationClass",
+      "caption": "Verkehrszustand - Hauptklasse",
+      "tooltip": "Bei der hier definierten Situationshauptklasse gehen die Verfahrensergebnisse in den Situationsabgleich",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "jamDangerLosSubClass",
+      "caption": "Staugefahr_LOS - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }
+  ]
+}

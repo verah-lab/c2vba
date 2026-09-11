@@ -1,0 +1,96 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "tls-legacy-data-converter_d"
+    label.gitversion: "c2vba-tls-legacy-data-converter_D_2.0.0.0"
+    app: tls-legacy-data-converter
+    log-type: spring-actuator
+  name: tls-legacy-data-converter
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: tls-legacy-data-converter
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: tls-legacy-data-converter
+    spec:
+      containers:
+      - name: app
+        image: 'heuboe/now/now-tls-legacy-data-converter:2.0.0'
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        env:
+        - name: application.name
+          value: "tls-legacy-data-converter"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75 -XX:+UseParallelGC"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        livenessProbe:
+          failureThreshold: 15
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 50
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 3
+        readinessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 40
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: "1000m"
+            memory: 1400Mi
+          requests:
+            cpu: "50m"
+            memory: 800Mi
+      volumes:
+      - name: config
+        configMap:
+          name: tls-legacy-data-converter

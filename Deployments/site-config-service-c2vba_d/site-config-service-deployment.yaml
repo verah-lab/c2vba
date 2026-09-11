@@ -1,0 +1,114 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "site-config-service-c2vba_d"
+    label.gitversion: "site-config-service-c2vba_d_1.24.4.5"
+    app: site-config-service
+  name: site-config-service
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: site-config-service
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: site-config-service
+    spec:
+      initContainers:
+      - name: copy-data
+        image: heuboe/c2vba/site-config-service-data-c2vba:1.24.4
+        command:
+        - /bin/sh
+        args:
+        - '-c'
+        - cp -R /app/resources/data/* /site-data
+        volumeMounts:
+        - name: site-data
+          mountPath: /site-data
+      containers:
+      - name: app
+        image: heuboe/sitesconfig/site-config-service:0.0.14
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        - containerPort: 9090
+          name: grpc
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        env:
+        - name: application.name
+          value: "site-config-service"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+#          value: "-XX:MaxRAMPercentage=65"
+          value: "-Xmx800m"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: site-data
+          mountPath: /site-data
+        # livenessProbe:
+          # failureThreshold: 5
+          # httpGet:
+            # path: /actuator/health
+            # port: actuator
+            # scheme: HTTP
+          # initialDelaySeconds: 120
+          # periodSeconds: 10
+          # timeoutSeconds: 3
+          # successThreshold: 1
+          # failureThreshold: 10
+        # readinessProbe:
+          # failureThreshold: 3
+          # httpGet:
+            # path: /actuator/health
+            # port: actuator
+            # scheme: HTTP
+          # initialDelaySeconds: 60
+          # periodSeconds: 10
+          # timeoutSeconds: 3
+          # successThreshold: 1
+          # failureThreshold: 5
+        resources:
+          limits:
+            cpu: "150m"
+            memory: 1000Mi
+          requests:
+            cpu: "50m"
+            memory: 600Mi
+      volumes:
+      - name: config
+        configMap:
+          name: site-config-service
+      - name: site-data
+        persistentVolumeClaim: 
+          claimName: site-data
+

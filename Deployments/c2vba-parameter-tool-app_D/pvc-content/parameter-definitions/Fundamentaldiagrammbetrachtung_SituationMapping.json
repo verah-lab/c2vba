@@ -1,0 +1,49 @@
+{
+  "definitionSetId": "FundamentaldiagrammbetrachtungSituationMapping",
+  "activationTarget": {"type": "VRZ"},
+  "propagationTarget": {"type": "VRZ"},
+  "definitionType": "SITUATIONENMAPPING",
+  "definitions": [
+    {
+      "parameterId": "trafficStateSituationClass",
+      "caption": "Verkehrszustand - Hauptklasse",
+      "tooltip": "Bei der hier definierten Situationshauptklasse gehen die Verfahrensergebnisse in den Situationsabgleich",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "freeFlowSubClass",
+      "caption": "freier Verkehr - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "turbulentSubClass",
+      "caption": "unruhiger Verkehr - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "thickSubClass",
+      "caption": "dichter Verkehr - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }, {
+      "parameterId": "slowMovingSubClass",
+      "caption": "zähfließender Verkehr - Nebenklasse",
+      "tooltip": "Mapping auf die ausgewählte Situationsnebenklasse",
+      "unit": "-",
+      "valueType": "STRING",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_SITUATIONCLASS"
+    }
+  ]
+}

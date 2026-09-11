@@ -1,0 +1,50 @@
+############################# Server Basics #############################
+broker.id=1
+
+############################# Socket Server Settings #############################
+listeners=INT://:9092, EXT://:9093
+advertised.listeners=INT://kafka:9092, EXT://master1.p.c2vba.heuboe.hbintern:32002
+listener.security.protocol.map=INT:PLAINTEXT, EXT:PLAINTEXT
+
+num.network.threads=3
+num.io.threads=8
+socket.send.buffer.bytes=102400
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=10485760
+
+############################# Log Basics #############################
+log.dirs=/kafka
+num.partitions=1
+num.recovery.threads.per.data.dir=1
+
+############################# Internal Topic Settings  #############################
+offsets.topic.replication.factor=1
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+
+############################# Log Retention Policy #############################
+
+log.retention.hours=168
+log.segment.bytes=1073741824
+log.retention.check.interval.ms=300000
+
+############################# Zookeeper #############################
+zookeeper.connect=zookeeper:2181
+zookeeper.connection.timeout.ms=6000
+
+############################# Group Coordinator Settings #############################
+group.initial.rebalance.delay.ms=0
+
+############################# etc #############################
+default.replication.factor=1
+max.connections=4096
+min.insync.replicas=1
+inter.broker.listener.name=INT
+replica.fetch.max.bytes=10485760
+advertised.host.name=master1.p.c2vba.heuboe.hbintern
+delete.topic.enable=true
+message.max.bytes=10485760
+log.roll.hours=1
+auto.create.topics.enable=true
+unclean.leader.election.enable=false
+log.message.timestamp.type=LogAppendTime

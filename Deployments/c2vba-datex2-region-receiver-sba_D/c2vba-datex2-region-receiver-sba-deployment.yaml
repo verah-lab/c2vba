@@ -1,0 +1,104 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "c2vba-datex2-region-receiver-sba_D"
+    label.gitversion: "c2vba-datex2-region-receiver-sba_D_0.1.2.4"
+    app: c2vba-datex2-region-receiver-sba
+    log-type: spring-actuator
+  name: c2vba-datex2-region-receiver-sba
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: c2vba-datex2-region-receiver-sba
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: c2vba-datex2-region-receiver-sba
+        log-type: spring-actuator
+    spec:
+      containers:
+      - name: app
+        image: heuboe/c2vba/datex2/c2vba-datex2-region-receiver:0.1.7
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        - containerPort: 4721
+          name: mdm-http
+          protocol: TCP
+        - containerPort: 4722
+          name: mdm-https
+          protocol: TCP
+        - containerPort: 4711
+          name: remote-debug
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        - secretRef:
+            name: mdm-certs-environment
+        - secretRef:
+            name: mdm-urls-environment
+        env:
+        - name: "SPRING_PROFILES_ACTIVE"
+          value: "default,${SYSTEM_NAME}-${SYSTEM_STAGE},${SYSTEM_STAGE}"
+        - name: application.name
+          value: "c2vba-datex2-region-receiver-sba"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75 -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=*:4711,server=y,suspend=n"
+          # value: "-Xmx300M"
+          # -Djavax.net.debug=all
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: files
+          mountPath: /files
+        - name: mdm-certs
+          mountPath: /mdm-certs
+        resources:
+          limits:
+            cpu: "1000m"
+            memory: 2000Mi
+          requests:
+            cpu: "200m"
+            memory: 1000Mi
+      volumes:
+      - name: config
+        configMap:
+          name: c2vba-datex2-region-receiver-sba
+      - name: mdm-certs
+        configMap:
+          name: mdm-certs
+      - name: files
+        persistentVolumeClaim:
+          claimName: region-receiver-sba-files

@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mdp-builder-fg1
+spec:
+  ports:
+  - name: actuator
+    nodePort: 31110
+    port: 80
+    protocol: TCP
+    targetPort: actuator
+  selector:
+    app: mdp-builder-fg1
+  type: NodePort

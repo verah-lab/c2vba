@@ -1,0 +1,163 @@
+{
+  "definitionSetId": "Aggregation",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "DATENAUFBEREITUNG",
+  "definitions": [
+    {
+      "parameterId": "aggStufe15Sek",
+      "caption": "AggegrationsStufe 15 Sekunden",
+      "tooltip": "Aggregation zu 15 Sekunden Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe15Sek_Verfahren",
+      "caption": "Liste der Glättungsverfahren für AggegrationsStufe 15 Sekunden",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe30Sek",
+      "caption": "AggegrationsStufe 30 Sekunden",
+      "tooltip": "Aggregation zu 30 Sekunden Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe30Sek_Verfahren",
+      "caption": "Liste der Glättungsverfahren für AggegrationsStufe 30 Sekunden",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe1Min",
+      "caption": "AggegrationsStufe 1 Minute",
+      "tooltip": "Aggregation zu 1 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe1Min_Verfahren",
+      "caption": "Liste der Glättungsverfahren für AggegrationsStufe 1 Minute",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe2Min",
+      "caption": "AggegrationsStufe 2 Minuten",
+      "tooltip": "Aggregation zu 2 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe2Min_Verfahren",
+      "caption": "Liste der Glättungsverfahren für AggegrationsStufe 2 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe3Min",
+      "caption": "AggegrationsStufe 3 Minuten",
+      "tooltip": "Aggregation zu 3 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe3Min_Verfahren",
+      "caption":  "Liste der Glättungsverfahren für AggegrationsStufe 3 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe4Min",
+      "caption": "AggegrationsStufe 4 Minuten",
+      "tooltip": "Aggregation zu 4 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe4Min_Verfahren",
+      "caption":  "Liste der Glättungsverfahren für AggegrationsStufe 4 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe5Min",
+      "caption": "AggegrationsStufe 5 Minuten",
+      "tooltip": "Aggregation zu 5 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe5Min_Verfahren",
+      "caption":  "Liste der Glättungsverfahren für AggegrationsStufe 5 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe10Min",
+      "caption": "AggegrationsStufe 10 Minuten",
+      "tooltip": "Aggregation zu 10 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe10Min_Verfahren",
+      "caption":  "Liste der Glättungsverfahren für AggegrationsStufe 10 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe15Min",
+      "caption": "AggegrationsStufe 15 Minuten",
+      "tooltip": "Aggregation zu 15 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe15Min_Verfahren",
+      "caption":  "Liste der Glättungsverfahren für AggegrationsStufe 15 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe30Min",
+      "caption": "AggegrationsStufe 30 Minuten",
+      "tooltip": "Aggregation zu 30 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe30Min_Verfahren",
+      "caption":  "Liste der Glättungsverfahren für AggegrationsStufe 30 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "aggStufe60Min",
+      "caption": "AggegrationsStufe 60 Minuten",
+      "tooltip": "Aggregation zu 60 Minuten Intervalle ja/nein",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    },{
+      "parameterId": "aggStufe60Min_Verfahren",
+      "caption":  "Liste der Glättungsverfahren für AggegrationsStufe 60 Minuten",
+      "unit": "Glättungsverfahren",
+      "valueType": "STRING_LIST",
+      "valueContent": "VALUE_CONTENT_SMOOTHING_ALGORITHM",
+      "scope": "GLOBAL"
+    }
+  ]
+}

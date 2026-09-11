@@ -1,0 +1,56 @@
+## --------------------------------------------------------------------------
+## Spring Kafka
+## --------------------------------------------------------------------------
+spring:
+  kafka:
+    # The Kafka servers to connect to
+    bootstrap-servers: ${KAFKA_BOOTSTRAP}
+
+    # ID to pass to the Kafka server when making requests. Used for server-side logging.
+    # If it is omitted, a (meaningless) default value is used with which this application can not be identified.
+    # It is therefore strongly recommended to set this value (for example to the application name or artifactId).
+    client-id: tls-legacy-data-converter
+
+    # The name of the consumer group for kafka.
+    # This is important because the progress/current index is saved using this name.
+    # Different applications that listen to kafka HAVE to use different group ids.
+    consumer:
+      group-id: tls-legacy-data-converter
+
+## --------------------------------------------------------------------------
+## Legacy Data Converter configuration
+## --------------------------------------------------------------------------
+de:
+  now:
+    tls:
+      legacy:
+        data:
+          converter:
+            config:
+              service:
+                change:
+                  # The name of the topic a config change will be published to.
+                  topic: ${SYSTEM_PREFIX}-DataChange
+                  # The group id of this service for the config change topic.
+                  groupId: tlsLegacyDataConverterChangeDetectorGrpId
+
+            topic:
+              prefix:
+                receive: ${SYSTEM_PREFIX}-tlsin-
+                send: VRZ-tlsout-
+
+            uzId: ${SYSTEM_PREFIX}
+
+  heuboe:
+    kafka:
+      producer:
+        name: LegacyDataConverter
+
+## --------------------------------------------------------------------------
+## GRPC ConfigService
+## --------------------------------------------------------------------------
+grpc:
+  client:
+    ConfigService:
+      address: static://config-service.c2vba:9090
+      negotiationType: PLAINTEXT

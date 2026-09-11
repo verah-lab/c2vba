@@ -1,0 +1,90 @@
+de:
+  heuboe:
+    parametertool:
+      ###########
+      # common  #
+      ###########
+      # system-wide id, like 'VRZ'
+      systemWideId: VRZ
+      # boolean: true/false
+      writeFileLog: false
+      # If detection sites (MQs) have no roadId, the app could not handle them. Take this
+      # defaultRoadId for those MQs:
+      # This field is nullable. If no defaultRoadId is set, MQs with empty roadId will be ignored.
+      # This roadId will also be set for incoming parameters, which do not have a roadId.
+      # possible value: 'NO_ROAD'.
+      defaultRoadId: NO_ROAD
+      # path to the values to use:
+      pathValues: "/parameter-data/parameter-values"
+      # maximum numbers of retries to restart an actor before system.exit
+      maxNrOfRestartRetries: 4
+      # time range (in minutes) for actor restarts before system.exit.
+      # 0=deactivate of system.exit cause of actor restarts
+      restartsWithinTimeRange: 5
+      # Data change types to listen for. If data change is detected, parameters will be published!
+      # For possible enum names, see: # eu.vmis_ehe.vmis2.configservice.pojo.PConfigItemType
+      # Attention: to listen to all data changes, use keyword 'KEY_ALL'!
+      dataChangeType:
+        - KEY_ALL
+      ####################################
+      # Topics                           #
+      #                                  #
+      # available template components:   #
+      # {systemWideId}                   #
+      ####################################
+      # name of config update topic as template
+      configServiceDataChangeTopicTemplate: VRZ-DataChange
+      # name of parameter publish task topic as template
+      paramPublishTaskTopicTemplate: '{systemWideId}-ParamterPublishTask'
+      ##########################
+      # REST Interface         #
+      ##########################
+
+      # Path where the parameter definitions are stored.
+      parameterDefinitionsPath: "parameter-data/parameter-definitions"
+      # Specific configurations for the tls parameter import.
+      tls:
+        # Path of the directory where the uploaded csv files should be stored (reading and writing).
+        csvDirectory: "/parameter-data/csv-files"
+        # Path of directory that contains the converter jars (only reading).
+        converterJarDirectory: "/parameter-data/converter-jars"
+        # Timeout for rest request using an actor (e.g. PT5S).
+        actorTimeout: PT5S
+        # Topic where the csv import configurations for default tls parameters to be stored.
+        defaultCsvImportConfigTopic: VRZ-Parameter-CsvImportConfig-Default
+        # Topic where the csv import configurations for fixed tls parameters to be stored.
+        fixedCsvImportConfigTopic: VRZ-Parameter-CsvImportConfig-Fix
+
+
+server:
+  # Indicates whether the server returns an error message or not.
+  error:
+    include-message: always
+
+grpc:
+  client:
+    # Data of the configuration service.
+    ConfigService:
+      address: static://config-service.c2vba:9090
+      maxInboundMessageSize: 25000000
+      negotiationType: PLAINTEXT
+
+spring:
+  servlet:
+    multipart:
+      # Max size of multi part file to be uploaded (csv files, etc.).
+      max-file-size: 5MB
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP}
+    client-id: c2vba-parameter-tool-app
+    consumer:
+      group-id: c2vba-parameter-tool-app
+    default:
+      api:
+        timeout:
+          ms: 80000
+    properties:
+      request:
+        timeout:
+          ms: 60000

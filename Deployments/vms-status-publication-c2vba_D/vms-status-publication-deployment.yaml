@@ -1,0 +1,97 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "vms-status-publication-c2vba_D"
+    label.gitversion: "vms-status-publication-c2vba_D_1.1.0.3"
+    app: vms-status-publication
+    log-type: spring-actuator
+  name: vms-status-publication
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: vms-status-publication
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: vms-status-publication
+        log-type: spring-actuator
+    spec:
+      containers:
+      - name: app
+        image: heuboe/datex2/vms/vms-status-publication:1.1.5
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        - containerPort: 4748
+          name: vmslisten
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        - secretRef:
+            name: mdm-certs-environment
+        - secretRef:
+            name: publication-version-environment
+        env:
+        - name: "SPRING_PROFILES_ACTIVE"
+          value: "default,${SYSTEM_NAME}-${SYSTEM_STAGE},${SYSTEM_STAGE}"
+        - name: application.name
+          value: "vms-status-publication"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75"
+          # value: "-Xmx300M"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: mdm-certs
+          mountPath: /mdm-certs
+        - name: files
+          mountPath: /files
+        resources:
+          limits:
+            cpu: "700m"
+            memory: 1000Mi
+          requests:
+            cpu: "200m"
+            memory: 500Mi
+      volumes:
+      - name: config
+        configMap:
+          name: vms-status-publication
+      - name: mdm-certs
+        configMap:
+          name: mdm-certs
+      - name: files
+        persistentVolumeClaim:
+          claimName: vms-status-files

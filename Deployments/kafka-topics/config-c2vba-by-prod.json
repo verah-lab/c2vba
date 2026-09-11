@@ -1,0 +1,4 @@
+{
+  "brokers": ["c2vba-m.bi.in:32002"],
+  "logLevel": 2
+}

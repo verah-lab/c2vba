@@ -1,0 +1,27 @@
+{
+  "definitionSetId": "AQMaxVDiff",
+  "activationTarget": {"type": "AQ"},
+  "propagationTarget": {"type": "AQ"},
+  "definitionType": "SCHALTBILDERMITTLUNG_LAENGSABGLEICH",
+  "viaGroupName": "Längsabgleich",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "TabelleDistanzVDiff_distanzNaechsterAQ",
+      "caption": "TabelleDistanzVDiff_distanzNächsterAQ",
+      "tooltip": "Ist die Distanz zum AQ (mit dem Nachfolger WZG) unterhalb dieser Grenze, dann darf…",
+      "unit": "-",
+      "valueType": "INT_LIST",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999999}}]}}
+    }, {
+      "parameterId": "TabelleDistanzVDiff_MaxVDiff",
+      "caption": "TabelleDistanzVDiff_MaxVDiff",
+      "tooltip": "…die Differenz der Geschwindigkeiten den hier eingestellten Wert nicht überschreiten",
+      "unit": "-",
+      "valueType": "INT_LIST",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

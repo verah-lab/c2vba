@@ -1,0 +1,10 @@
+SRP-NORD-SUED-URL    https://broker.mdm-portal.de/BASt-MDM-Interface/srv/3513000/supplierPushService
+SBA-NORD-SUED-URL    https://broker.mdm-portal.de/BASt-MDM-Interface/srv/3502000/supplierPushService 
+WWW-NORD-SUED-URL    https://broker.mdm-portal.de/BASt-MDM-Interface/srv/3464000/supplierPushService
+FG1-NORD-SUED-URL    https://broker.mdm-portal.de/BASt-MDM-Interface/srv/3509001/supplierPushService
+FG3-NORD-SUED-URL    https://broker.mdm-portal.de/BASt-MDM-Interface/srv/3512000/supplierPushService
+
+FG1-NORD-URL         https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4489000/clientPullService
+FG3-NORD-URL  	   https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4582000/clientPullService
+
+MDM-PUSH-URL-DOMAIN   io.bayerninfo.de

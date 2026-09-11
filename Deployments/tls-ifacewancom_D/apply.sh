@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+if   [ $# -gt 0 ];           then NAMESPACE=$1;     export NAMESPACE # das apply.sh wird mit (wenigstens) einem Aufrufparameter aufgerufen, der erste wird als Namespace genommen
+elif [ -f ../namespace.sh ]; then . ../namespace.sh                  # die namespace.sh Datei existiert, das Skript enthält das export Kommando für NAMESPACE
+else                              NAMESPACE=c2vba;  export NAMESPACE # fallback
+fi
+
+if [ -f ../build-env.sh ]; then . ../build-env.sh
+else                         BUILDENV=hb; export BUILDENV   # fallback
+fi
+
+
+echo "Applying tls-ifacewancom-by-sued"
+kubectl create cm tls-ifacewancom-by-sued --from-file=configs --dry-run=true -o yaml | kubectl apply -n $NAMESPACE -f -
+kubectl apply -n $NAMESPACE -f tls-ifacewancom-service.yaml
+kubectl apply -n $NAMESPACE -f tls-ifacewancom-deployment.yamlapply -n $NAMESPACE -f tls-ifacewancom-deployment.yaml
+
+if [ ${BUILDENV} == "prod" ]
+then
+	mkdir -p /nfs-data/config-data && chown -R heuboe:heuboe /nfs-data/config-data
+else
+	kubectl apply -f tls-ifacewancom-pvc.yaml -n ${NAMESPACE}
+fi
+
+

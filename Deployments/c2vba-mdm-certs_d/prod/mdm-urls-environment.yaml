@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mdm-urls-environment
+type: Opaque
+data:
+#
+  MDM-PUSH-URL-DOMAIN: bWRtLWRhdGV4Mi5oZXVib2UuZGU=
+# https://mobilithek.info:8443/mobilithek/api/v1.0/publication/soap/763374701385560064/supplierPushService 
+  SRP-NORD-SUED-URL: aHR0cHM6Ly9tb2JpbGl0aGVrLmluZm86ODQ0My9tb2JpbGl0aGVrL2FwaS92MS4wL3B1YmxpY2F0aW9uL3NvYXAvNzYzMzc0NzAxMzg1NTYwMDY0L3N1cHBsaWVyUHVzaFNlcnZpY2U=
+# https://mobilithek.info:8443/mobilithek/api/v1.0/publication/soap/748573584302952448/supplierPushService 
+  SBA-NORD-SUED-URL: aHR0cHM6Ly9tb2JpbGl0aGVrLmluZm86ODQ0My9tb2JpbGl0aGVrL2FwaS92MS4wL3B1YmxpY2F0aW9uL3NvYXAvNzQ4NTczNTg0MzAyOTUyNDQ4L3N1cHBsaWVyUHVzaFNlcnZpY2U=
+# https://mobilithek.info:8443/mobilithek/api/v1.0/publication/soap/763363692008886272/supplierPushService 
+  WWW-NORD-SUED-URL: aHR0cHM6Ly9tb2JpbGl0aGVrLmluZm86ODQ0My9tb2JpbGl0aGVrL2FwaS92MS4wL3B1YmxpY2F0aW9uL3NvYXAvNzYzMzYzNjkyMDA4ODg2MjcyL3N1cHBsaWVyUHVzaFNlcnZpY2U=
+# https://mobilithek.info:8443/mobilithek/api/v1.0/publication/soap/748580849261105152/supplierPushService 
+  FG1-NORD-SUED-URL: aHR0cHM6Ly9tb2JpbGl0aGVrLmluZm86ODQ0My9tb2JpbGl0aGVrL2FwaS92MS4wL3B1YmxpY2F0aW9uL3NvYXAvNzQ4NTgwODQ5MjYxMTA1MTUyL3N1cHBsaWVyUHVzaFNlcnZpY2U=
+# https://mobilithek.info:8443/mobilithek/api/v1.0/publication/soap/748579828661112832/supplierPushService 
+  FG3-NORD-SUED-URL: aHR0cHM6Ly9tb2JpbGl0aGVrLmluZm86ODQ0My9tb2JpbGl0aGVrL2FwaS92MS4wL3B1YmxpY2F0aW9uL3NvYXAvNzQ4NTc5ODI4NjYxMTEyODMyL3N1cHBsaWVyUHVzaFNlcnZpY2U=
+# https://mobilithek.info:8443/mobilithek/api/v1.0/subscription/soap/674265259931742208/clientPullService 
+  FG1-NORD-URL: aHR0cHM6Ly9tb2JpbGl0aGVrLmluZm86ODQ0My9tb2JpbGl0aGVrL2FwaS92MS4wL3N1YnNjcmlwdGlvbi9zb2FwLzY3NDI2NTI1OTkzMTc0MjIwOC9jbGllbnRQdWxsU2VydmljZQ==
+# https://mobilithek.info:8443/mobilithek/api/v1.0/subscription/soap/674264926769811456/clientPullService 
+  FG3-NORD-URL: aHR0cHM6Ly9tb2JpbGl0aGVrLmluZm86ODQ0My9tb2JpbGl0aGVrL2FwaS92MS4wL3N1YnNjcmlwdGlvbi9zb2FwLzY3NDI2NDkyNjc2OTgxMTQ1Ni9jbGllbnRQdWxsU2VydmljZQ==
+#
+#
+#
+# /datex2 
+  SERVER_SERVLET_CONTENT_PATH_FG1_FG3: L2RhdGV4Mg==
+# /c2vba/sba
+  SERVER_SERVLET_CONTENT_PATH_SBA: L2MydmJhL3NiYQ==
+# /c2vba/srp
+  SERVER_SERVLET_CONTENT_PATH_SRP: L2MydmJhL3NycA==
+# /c2vba/www 
+  SERVER_SERVLET_CONTENT_PATH_WWW: L2MydmJhL3d3dw==

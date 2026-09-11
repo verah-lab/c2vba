@@ -1,0 +1,30 @@
+{
+  "definitionSetId": "VdeMesswertersetzung",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "maximaleErsetzung",
+      "caption": "maximaleErsetzung",
+      "tooltip": "Maximale Dauer der Messwertersetzung in Minuten",
+      "unit": "m",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 1}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "Verfahren",
+      "caption": "Verfahren",
+      "tooltip": "Name des zu nutzenden Verfahrens (Voreinstellung: MWENachbarFSMQ)",
+      "unit": "",
+      "valueType": "STRING",
+      "scope": "GLOBAL"
+    }
+  ]
+}

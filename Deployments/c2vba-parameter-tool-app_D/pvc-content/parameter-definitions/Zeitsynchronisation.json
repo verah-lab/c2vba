@@ -1,0 +1,45 @@
+{
+  "definitionSetId": "Zeitsynchronisation",
+  "activationTarget": {"type": "UZ"},
+  "propagationTarget": {"type": "UZ"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "moeglicheVorlaufzeit",
+      "caption": "moeglicheVorlaufzeit",
+      "tooltip": "Intervalldaten werden bereits x Sekunden vor dem Ende des Erfassungszyklus akzeptiert",
+      "unit": "",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    },
+    {"parameterId": "Timeout15", "caption": "Timeout15", "tooltip": "Timeout für 15 Sekunden Intervalle", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "Timeout30", "caption": "Timeout30", "tooltip": "Timeout für 30 Sekunden Intervalle", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "Timeout60", "caption": "Timeout60", "tooltip": "Timeout für 60 Sekunden Intervalle", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "Timeout2m", "caption": "Timeout2m", "tooltip": "Timeout für 2 Minuten Intervalle", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "Timeout3m", "caption": "Timeout3m", "tooltip": "Timeout für 3 Minuten Intervalle", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "Timeout4m", "caption": "Timeout4m", "tooltip": "Timeout für 4 Minuten Intervalle", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "Timeout5m", "caption": "Timeout5m", "tooltip": "Timeout für 5 Minuten Intervalle", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "zeitsyncUnten15", "caption": "zeitsyncUnten15", "tooltip": "Untere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 15 Sekunden Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": -9999}, "max": {"intVal": 0}}]}}},
+    {"parameterId": "zeitsyncOben15", "caption": "zeitsyncOben15", "tooltip": "Obere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 15 Sekunden Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "zeitsyncUnten30", "caption": "zeitsyncUnten30", "tooltip": "Untere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 30 Sekunden Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": -9999}, "max": {"intVal": 0}}]}}},
+    {"parameterId": "zeitsyncOben30", "caption": "zeitsyncOben30", "tooltip": "Obere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 30 Sekunden Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "zeitsyncUnten60", "caption": "zeitsyncUnten60", "tooltip": "Untere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 60 Sekunden Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": -9999}, "max": {"intVal": 0}}]}}},
+    {"parameterId": "zeitsyncOben60", "caption": "zeitsyncOben60", "tooltip": "Obere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 60 Sekunden Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "zeitsyncUnten2m", "caption": "zeitsyncUnten2m", "tooltip": "Untere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 2 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": -9999}, "max": {"intVal": 0}}]}}},
+    {"parameterId": "zeitsyncOben2m", "caption": "zeitsyncOben2m", "tooltip": "Obere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 2 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "zeitsyncUnten3m", "caption": "zeitsyncUnten3m", "tooltip": "Untere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 3 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": -9999}, "max": {"intVal": 0}}]}}},
+    {"parameterId": "zeitsyncOben3m", "caption": "zeitsyncOben3m", "tooltip": "Obere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 3 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "zeitsyncUnten4m", "caption": "zeitsyncUnten4m", "tooltip": "Untere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 4 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": -9999}, "max": {"intVal": 0}}]}}},
+    {"parameterId": "zeitsyncOben4m", "caption": "zeitsyncOben4m", "tooltip": "Obere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 4 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "zeitsyncUnten5m", "caption": "zeitsyncUnten5m", "tooltip": "Untere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 5 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": -9999}, "max": {"intVal": 0}}]}}},
+    {"parameterId": "zeitsyncOben5m", "caption": "zeitsyncOben5m", "tooltip": "Obere Schranke in Sekunden ab dem eine Zeitsynchronisation notwendig wird für das 5 Minuten Intervall", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}},
+    {"parameterId": "AbstandZeitsync", "caption": "AbstandZeitsync", "tooltip": "Einzuhaltender Abstand in Sekunden zwischen zwei Synchronisationen", "unit": "s", "valueType": "INT", "scope": "GLOBAL", "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}}
+  ]
+}

@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: publication-version-environment
+type: Opaque
+data:
+# 125
+  SUED-MST-FG1-VERSION: MTI1
+# 125
+  SUED-MST-FG3-VERSION: MTI1
+# 125
+  SUED-VMS-SBA-VERSION: MTI1
+# 123
+  SUED-VMS-WWW-VERSION: MTIz
+#
+#  
+# 125_13
+  NORD-SUED-MST-FG1-VERSION: MTI1XzEz
+# 125_8
+  NORD-SUED-MST-FG3-VERSION: MTI1Xzg=
+# 125_11
+  NORD-SUED-VMS-SBA-VERSION: MTI1XzEx
+# 123_1
+  NORD-SUED-VMS-WWW-VERSION : MTIzXzE=

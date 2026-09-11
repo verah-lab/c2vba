@@ -1,0 +1,25 @@
+{
+  "definitionSetId": "WZGTags",
+  "activationTarget": {"type": "WZG"},
+  "propagationTarget": {"type": "WZG"},
+  "definitionType": "SCHALTBILDERMITTLUNG",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "wzgTypeAsTag",
+      "caption": "Standard (WZG-Typ) aktiv",
+      "tooltip": "Ist der Standard aktiviert, wird der WZG-Typ als Tag verwendet.",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "tags",
+      "caption": "Tags",
+      "tooltip": "Liste der Tags für den WZG",
+      "unit": "-",
+      "valueType": "STRING_LIST",
+      "scope": "GLOBAL",
+      "valueContent": "VALUE_CONTENT_WZG_TAGS"
+    }
+  ]
+}

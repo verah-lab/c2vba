@@ -1,0 +1,67 @@
+#
+# 1) Remarks
+#
+# a) The url is only for information, but one should check if it is 'reachable'
+#    (<url>?wsdl in a web browser should return the WSDL content of the soap service)
+#    For consumerMode = PUSH and data provided by MDM the url has to provided in the corresponding MDM 'Bestellung' as 'Zielserver'
+# b) In production environment the available ports are restricted by
+#    i)  Firewall configurations 
+#    ii) Kubernetes node port definitions (the node ports may differ from the pod ports)
+# 
+#    Currently HB firewall routes ports 32731 and 32732 to master1.d.c2vba.heuboe.hbintern:32731 and 32732
+#    These are node ports of this app mapped to internal 4721 and 4722           
+# 
+# 2) Restrictions for consumerMode = PUSH
+#
+# a) For a single serverPort only one serverSchema shall be used
+# b) For a single serverPort different contexts shall be used
+#
+#
+regions:
+  region-configs:
+    -
+      name: mdp-nord-fg1
+      remote: SOAP
+      consumerMode: PULL      
+#      url: https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4489000/clientPullService
+#      url: https://mobilithek.info:8443/mobilithek/api/v1.0/subscription/soap/671348181432152064/clientPullService
+      url: ${FG1-NORD-URL}
+#      trustStoreFile: /mdm-certs/${MDM_PUBLIC_CERT_FILE}
+#      trustStorePassword: ${MDM_PUBLIC_CERT_PW}
+      trustStoreFile: 
+      trustStorePassword: 
+      keyStoreFile: /mdm-certs/${SYSTEM_PRIVATE_KEY_FILE}
+      keyStorePassword: ${SYSTEM_PRIVATE_KEY_PW}
+      topic: C2VBA-datex2-publication-mdp-fg1-nord
+    -
+      name: mdp-nord-fg3
+      remote: SOAP
+      consumerMode: PULL      
+#      url: https://broker.mdm-portal.de/BASt-MDM-Interface/srv/4582000/clientPullService
+#      url: https://mobilithek.info:8443/mobilithek/api/v1.0/subscription/soap/671348635599802368/clientPullService
+      url: ${FG3-NORD-URL}
+#      trustStoreFile: /mdm-certs/${MDM_PUBLIC_CERT_FILE}
+#      trustStorePassword: ${MDM_PUBLIC_CERT_PW}
+      trustStoreFile: 
+      trustStorePassword: 
+      keyStoreFile: /mdm-certs/${SYSTEM_PRIVATE_KEY_FILE}
+      keyStorePassword: ${SYSTEM_PRIVATE_KEY_PW}
+      topic: C2VBA-datex2-publication-mdp-fg3-nord
+    -
+      name: mdp-sued-fg1
+      remote: SOAP
+      consumerMode: PUSH      
+      url: http://mdm-datex2.heuboe.de:4721/datex2/services/supplierPushService-fg1-sued
+      context: /supplierPushService-fg1-sued
+      serverSchema: http
+      serverPort: 4721
+      topic: C2VBA-datex2-publication-mdp-fg1-sued
+    -
+      name: mdp-sued-fg3
+      remote: SOAP
+      consumerMode: PUSH      
+      url: http://mdm-datex2.heuboe.de:4721/datex2/services/supplierPushService-fg3-sued
+      context: /supplierPushService-fg3-sued
+      serverSchema: http
+      serverPort: 4721
+      topic: C2VBA-datex2-publication-mdp-fg3-sued

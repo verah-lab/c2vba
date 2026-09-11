@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mdm-certs-environment
+type: Opaque
+data:
+#
+# echo -n '...' | base64
+# ID des Mobilithek-Accounts:
+# DE-NAP-Heusch/Boesefeldt GmbH
+  MDM_BY_ORGA_KEY: REUtTkFQLUhldXNjaC9Cb2VzZWZlbGR0IEdtYkg=    
+#
+#
+#
+#
+# mobi.hb.certificate.p12
+  SYSTEM_PRIVATE_KEY_FILE: bW9iaS5oYi5jZXJ0aWZpY2F0ZS5wMTI=
+# echo -n '...' | base64
+  SYSTEM_PRIVATE_KEY_PW: YjNBUGpXOERYbm4q
+#
+#
+#
+# echo -n '...' | base64
+# mobi.hb.certificate.p12
+  HB_PRIVATE_KEY_FILE: bW9iaS5oYi5jZXJ0aWZpY2F0ZS5wMTI=
+# echo -n '...' | base64
+  HB_PRIVATE_KEY_PW: YjNBUGpXOERYbm4q
+#
+#
+# echo -n '...' | base64
+  MDM_PUBLIC_CERT_FILE: ''
+# echo -n '...' | base64
+  MDM_PUBLIC_CERT_PW: ''
+

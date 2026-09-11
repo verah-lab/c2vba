@@ -1,0 +1,56 @@
+{
+  "definitionSetId": "Zusammenbruchswahrscheinlichkeit",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "DATENAUFBEREITUNG",
+  "definitions": [
+    {
+      "parameterId": "Q_min",
+      "caption": "q,min",
+      "unit": "Kfz/h/FS",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    },
+    {
+      "parameterId": "N_min",
+      "caption": "n,min",
+      "unit": "-",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    },
+    {
+      "parameterId": "P_min",
+      "caption": "p,min",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    },
+    {
+      "parameterId": "T_min",
+      "caption": "t,min",
+      "unit": "min",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    },
+    {
+      "parameterId": "V_AIX_Grenz",
+      "caption": "VAIX,grenz",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    },
+    {
+      "parameterId": "V_AIX_Diff",
+      "caption": "VAIX,diff",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

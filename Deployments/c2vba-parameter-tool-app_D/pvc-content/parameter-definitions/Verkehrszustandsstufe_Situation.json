@@ -1,0 +1,16 @@
+{
+  "definitionSetId": "Verkehrszustandsstufe",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "SITUATIONSERKENNUNGSVERFAHREN",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Aktivieren/deaktivieren des Verfahrens am ausgewählten Objekt",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }
+  ]
+}

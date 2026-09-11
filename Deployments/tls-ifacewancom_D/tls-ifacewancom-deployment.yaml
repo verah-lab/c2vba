@@ -1,0 +1,102 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "tls-ifacewancom_D"
+    label.gitversion: "c2vba-ifacewancom_1.1.0.2"
+    app: tls-ifacewancom-by-sued
+  name: tls-ifacewancom-by-sued
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: tls-ifacewancom-by-sued
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: tls-ifacewancom-by-sued
+    spec:
+      containers:
+      - name: app
+        image: heuboe/tls/e21x-tls-iface-wancom:1.1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        env:
+        - name: application.name
+          value: "tls-ifacewancom-by-sued"
+        - name: SPRING_PROFILES_ACTIVE
+          value: "default,${SYSTEM_NAME}"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: config-data
+          mountPath: /config-data
+        livenessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 75
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 3
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health
+            port: actuator
+            scheme: HTTP
+          initialDelaySeconds: 75
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: "900m"
+            memory: 1200Mi
+          requests:
+            cpu: "100m"
+            memory: 500Mi
+      volumes:
+      - name: config
+        configMap:
+          name: tls-ifacewancom-by-sued
+      - name: config-data
+        persistentVolumeClaim:
+          claimName: config-data

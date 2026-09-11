@@ -1,0 +1,153 @@
+/* ========================================================================== */
+/* FG 1 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von LVEDeFehler (self=true)
+{
+    if (((fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG) && (($DeNummer <= 192) || ($DeNummer >= 224))) {
+        SteuerSequenz.action via out.LVESteuerSequenz := LVE_DE_SENDEN_KANAL_STEUERUNG
+        SteuerSequenz.fg via out.LVESteuerSequenz := 1
+    }
+}
+
+Bei Eingang von SteuerSequenz via out.LVESteuerSequenz (self=true)
+{
+    if (action == LVE_DE_SENDEN_KANAL_STEUERUNG) {
+        SteuerSequenz.action via out.LVESteuerSequenz := LVE_DE_SENDEN_LVE_BETRIEBSPARAMETER
+        SteuerSequenz.fg via out.LVESteuerSequenz := 1
+    }
+}
+
+
+/* ========================================================================== */
+/* FG 2 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von AXLDeFehler (self=true)
+{
+    if (((fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG) && (($DeNummer <= 192) || ($DeNummer >= 224))) {
+        SteuerSequenz.action via out.AXLSteuerSequenz := AXL_DE_SENDEN_KANAL_STEUERUNG
+        SteuerSequenz.fg via out.AXLSteuerSequenz := 2
+    }
+}
+
+Bei Eingang von SteuerSequenz via out.AXLSteuerSequenz (self=true)
+{
+    if (action == AXL_DE_SENDEN_KANAL_STEUERUNG) {
+        SteuerSequenz.action via out.AXLSteuerSequenz := AXL_DE_SENDEN_BETRIEBSPARAMETER
+        SteuerSequenz.fg via out.AXLSteuerSequenz := 2
+    }
+}
+
+
+/* ========================================================================== */
+/* FG 3 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+Bei Eingang von UFDDeFehler (self=true)
+{
+    if (((fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG) && (($DeNummer <= 192) || ($DeNummer >= 224))) {
+        SteuerSequenz.action via out.UFDSteuerSequenz := UFD_DE_SENDEN_KANAL_STEUERUNG
+        SteuerSequenz.fg via out.UFDSteuerSequenz := 3
+    }
+}
+
+Bei Eingang von SteuerSequenz via out.UFDSteuerSequenz (self=true)
+{
+    if (action == UFD_DE_SENDEN_KANAL_STEUERUNG) {
+        SteuerSequenz.action via out.UFDSteuerSequenz := UFD_DE_SENDEN_BETRIEBSPARAMETER
+        SteuerSequenz.fg via out.UFDSteuerSequenz := 3
+    }
+}
+
+
+/* ========================================================================== */
+/* FG 4 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von WZGDeFehler (self=true)
+{
+    if ((fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG) {
+        if (($DeNummer > 192) && ($DeNummer < 224)) {
+            // Clusterkanal
+            SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_BETRIEBSART
+            SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+        } else {
+            // normales WZG
+            SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_KANAL_STEUERUNG
+            SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+        }
+    }
+}
+
+Bei Eingang von SteuerSequenz via out.WZGSteuerSequenz (self=true)
+{
+    if (action == WZG_DE_SENDEN_KANAL_STEUERUNG) {
+        SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_GRUNDEINSTELLUNG
+        SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+    }
+}
+
+
+/* ====================================================================================== */
+/* FG 4 (Meldung Autarkbetrieb)
+/*   Einbaugrund:
+/*   Eine KRI2C versendet zur Zeit bei Ruecknahme einer externen Steuerung
+/*   die Einstellung des Autarkbetriebs. (Die AQ sollen in die Grundeinstellung)
+/*   Damit die Betriebsart "Autakrbetrieb" nicht laengere Zeit anliegt wird nun hier sofort
+/*   die eigentlich eingestellte Betriebsart versendet. (siehe bug 1973)
+/*
+/*   Hinweis: Wird der Autarkbetrieb nach Übergang SSt tot -> lebt an die UZ versendet,
+/*            so wird nun in diesem Fall die Betriebsart zweimal an den Cluster
+/*            versendet.
+/* ====================================================================================== */
+
+Bei Eingang von WZGBetriebsart
+{
+	if (betriebsart == AUTARKBETRIEB)
+	{
+		SteuerSequenz.action via out.WZGSteuerSequenz := WZG_DE_SENDEN_BETRIEBSART
+		SteuerSequenz.fg via out.WZGSteuerSequenz := 4
+	}
+}
+
+
+/* ========================================================================== */
+/* FG 5 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von WWWDeFehler (self=true)
+{
+    if ((fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG) {
+        SteuerSequenz.action via out.WWWSteuerSequenz := WWW_DE_SENDEN_KANAL_STEUERUNG
+        SteuerSequenz.fg via out.WWWSteuerSequenz := 5
+    }
+}
+
+Bei Eingang von SteuerSequenz via out.WWWSteuerSequenz (self=true)
+{
+    if (action == WWW_DE_SENDEN_KANAL_STEUERUNG) {
+        SteuerSequenz.action via out.WWWSteuerSequenz := WWW_DE_SENDEN_BETRIEBSART
+        SteuerSequenz.fg via out.WWWSteuerSequenz := 5
+    }
+}
+
+
+/* ========================================================================== */
+/* FG 6 (DE-Gut-Meldung)                                                      */
+/* ========================================================================== */
+
+Bei Eingang von VLTDeFehler (self=true)
+{
+    if (((fehlercode & DE_STOER_BITS) == DE_GUT_MELDUNG) && (($DeNummer <= 192) || ($DeNummer >= 224))) {
+        SteuerSequenz.action via out.VLTSteuerSequenz  := VLT_DE_SENDEN_KANAL_STEUERUNG
+        SteuerSequenz.fg via out.VLTSteuerSequenz  := 6
+    }
+}
+
+Bei Eingang von SteuerSequenz via out.VLTSteuerSequenz (self=true)
+{
+    if (action == VLT_DE_SENDEN_KANAL_STEUERUNG) {
+        SteuerSequenz.action via out.VLTSteuerSequenz := VLT_DE_SENDEN_BETRIEBSPARAMETER
+        SteuerSequenz.fg via out.VLTSteuerSequenz  := 6
+    }
+}

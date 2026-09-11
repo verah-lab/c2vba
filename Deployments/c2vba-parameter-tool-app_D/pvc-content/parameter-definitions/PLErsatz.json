@@ -1,0 +1,63 @@
+{
+  "definitionSetId": "PLErsatz",
+  "activationTarget": {"type": "UZ"},
+  "propagationTarget": {"type": "UZ"},
+  "definitionType": "DATENUEBERNAHME",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parameter ist aktiv",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "MaxAbsDiff_qKFZ",
+      "caption": "MaxAbsDiff_qKFZ",
+      "tooltip": "Maximaler absoluter Betrag der Abweichung zwischen dem Messwert und berechneten Ersatzwert",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "MaxAbsDiff_qLKW",
+      "caption": "MaxAbsDiff_qLKW",
+      "tooltip": "Maximaler absoluter Betrag der Abweichung zwischen dem Messwert und berechneten Ersatzwert",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "MaxAbsDiff_qPKW",
+      "caption": "MaxAbsDiff_qPKW",
+      "tooltip": "Maximaler absoluter Betrag der Abweichung zwischen dem Messwert und berechneten Ersatzwert",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "MaxAbsDiff_vKFZ",
+      "caption": "MaxAbsDiff_vKFZ",
+      "tooltip": "Maximaler absoluter Betrag der Abweichung zwischen dem Messwert und berechneten Ersatzwert",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "MaxAbsDiff_vLKW",
+      "caption": "MaxAbsDiff_vLKW",
+      "tooltip": "Maximaler absoluter Betrag der Abweichung zwischen dem Messwert und berechneten Ersatzwert",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "MaxAbsDiff_vPKW",
+      "caption": "MaxAbsDiff_vPKW",
+      "tooltip": "Maximaler absoluter Betrag der Abweichung zwischen dem Messwert und berechneten Ersatzwert",
+      "unit": "km/h",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "definitionSetId": "LkwAufkommenBeiHohemVerkehrsaufkommen",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "SITUATIONSERKENNUNGSVERFAHREN",
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Aktivieren/deaktivieren des Verfahrens am ausgewählten Objekt",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "QLA_ein",
+      "caption": "QLA,Ein",
+      "tooltip": "Bemessungsverkehrsstärke (Einschaltbedingung)",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "ALA_ein",
+      "caption": "ALA,Ein",
+      "tooltip": "LKW-Anteil (Einschaltbedingung)",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "QLA_aus",
+      "caption": "QLA,Aus",
+      "tooltip": "Bemessungsverkehrsstärke (Ausschaltbedingung)",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }, {
+      "parameterId": "ALA_aus",
+      "caption": "ALA,Aus",
+      "tooltip": "LKW-Anteil (Ausschaltbedingung)",
+      "unit": "%",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

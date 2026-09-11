@@ -1,0 +1,9 @@
+/* ========================================================================== */
+/* Converts incoming SYSKommunikationsstatus messages to SYSFehlerDUE         */
+/* messages with manufacturer HeuBoe.                                         */
+/* ========================================================================== */
+Bei Eingang von SYSKommunikationsstatus
+{
+    SYSFehlerDUE.fehlercode := status
+    SYSFehlerDUE.hersteller := 6
+}

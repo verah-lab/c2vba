@@ -1,0 +1,61 @@
+{
+  "definitionSetId": "LkwAufkommenKriteriumSicht",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "SITUATIONSERKENNUNGSVERFAHREN",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Aktivieren/deaktivieren des Verfahrens am ausgewählten Objekt",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }, {
+      "parameterId": "QLA_SICHT_ein",
+      "caption": "QLA,sicht,Ein",
+      "tooltip": "Bemessungsverkehrsstärke (Einschaltbedingung)",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}},
+      "unavailableNumbers": [0]
+    }, {
+      "parameterId": "QLkw_LA_SICHT_ein",
+      "caption": "QLkw,LA,sicht,Ein",
+      "tooltip": "LKW-Verkehrsstärke (Einschaltbedingung)",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}},
+      "unavailableNumbers": [0]
+    }, {
+      "parameterId": "QLA_SICHT_aus",
+      "caption": "QLA,sicht,Aus",
+      "tooltip": "Bemessungsverkehrsstärke (Ausschaltbedingung)",
+      "unit": "Pkw-E/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}},
+      "unavailableNumbers": [0]
+    }, {
+      "parameterId": "QLkw_LA_SICHT_aus",
+      "caption": "QLkw,LA,sicht,Aus",
+      "tooltip": "LKW-Verkehrsstärke (Ausschaltbedingung)",
+      "unit": "Kfz/h",
+      "valueType": "INT",
+      "scope": "LANE_COUNT",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}},
+      "unavailableNumbers": [0]
+    }, {
+      "parameterId": "SSICHT",
+      "caption": "Stufe_sicht",
+      "tooltip": "Sichtweitenstufe, die mindestens erreicht sein muss (Arraywert aus der Stufenbildung SWE-Stufe)",
+      "unit": "-",
+      "valueType": "INT",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"intVal": 0}, "max": {"intVal": 9999}}]}}
+    }
+  ]
+}

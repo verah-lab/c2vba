@@ -1,0 +1,18 @@
+{
+  "definitionSetId": "AQAusreisser",
+  "activationTarget": {"type": "AQ"},
+  "propagationTarget": {"type": "AQ"},
+  "definitionType": "SCHALTBILDERMITTLUNG_LAENGSABGLEICH",
+  "viaGroupName": "Längsabgleich",
+  "version": {"minor": 1, "date": "2021-06-01T00:00:00Z"},
+  "definitions": [
+    {
+      "parameterId": "AKTIV",
+      "caption": "Parametersatz aktiv",
+      "tooltip": "Ausreißerbehandlung WZG-A aktivieren/deaktivieren",
+      "unit": "-",
+      "valueType": "BOOLEAN",
+      "scope": "GLOBAL"
+    }
+  ]
+}

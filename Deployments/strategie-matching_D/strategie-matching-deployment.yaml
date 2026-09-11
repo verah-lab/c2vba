@@ -1,0 +1,99 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    label.servicename: "strategie-matching_D"
+    label.gitversion: "strategie-matching_D_1.0.7.2"
+    app: strategie-matching
+    log-type: spring-actuator
+  name: strategie-matching
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: strategie-matching
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: strategie-matching
+        log-type: spring-actuator
+    spec:
+      initContainers:
+      - name: create-rules-sub-dir
+        image: heuboe/sdbby/strategie-matching:1.0.7
+        command:
+        - /bin/sh
+        args:
+        - '-c'
+        - >-
+          mkdir -p /files/rules && 
+          rm -f /files/rules/* && 
+          cp -R /app/resources/rules/* /files/rules
+        volumeMounts:
+        - name: files
+          mountPath: /files
+      containers:
+      - name: app
+        image: heuboe/sdbby/strategie-matching:1.0.7
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: actuator
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: application-environment
+        env:
+        - name: "SPRING_PROFILES_ACTIVE"
+          value: "default,${SYSTEM_NAME}-${SYSTEM_STAGE},${SYSTEM_STAGE}"
+        - name: application.name
+          value: "strategie-matching"
+        - name: application.instance
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.node.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: "info.kubernetes.pod.name"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: "info.kubernetes.pod.namespace"
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "JAVA_TOOL_OPTIONS"
+          value: "-XX:MaxRAMPercentage=75"
+          # value: "-Xmx300M"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: files
+          mountPath: /files
+        resources:
+          limits:
+            cpu: "200m"
+            memory: 400Mi
+          requests:
+            cpu: "100m"
+            memory: 400Mi
+      volumes:
+      - name: config
+        configMap:
+          name: strategie-matching
+      - name: files
+        persistentVolumeClaim:
+          claimName: strategie-files

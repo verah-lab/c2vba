@@ -1,0 +1,361 @@
+{
+  "definitionSetId": "GlättungUndTrendextrapolation",
+  "activationTarget": {"type": "MQ"},
+  "propagationTarget": {"type": "MQ"},
+  "definitionType": "ALGORITHM",
+  "definitions": [
+    {
+      "parameterId": "glättungStufe15Sek_AlphaQKFZSteigend",
+      "caption": "glättungStufe15Sek_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 15 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe15Sek_AlphaQKFZFallend",
+      "caption": "glättungStufe15Sek_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 15 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe15Sek_BetaQKFZSteigend",
+      "caption": "glättungStufe15Sek_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 15 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe15Sek_BetaQKFZFallend",
+      "caption": "glättungStufe15Sek_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 15 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Sek_AlphaQKFZSteigend",
+      "caption": "glättungStufe30Sek_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 30 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Sek_AlphaQKFZFallend",
+      "caption": "glättungStufe30Sek_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 30 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Sek_BetaQKFZSteigend",
+      "caption": "glättungStufe30Sek_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 30 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Sek_BetaQKFZFallend",
+      "caption": "glättungStufe30Sek_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 30 Sekunden Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe1Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe1Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 1 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe1Min_AlphaQKFZFallend",
+      "caption": "glättungStufe1Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 1 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe1Min_BetaQKFZSteigend",
+      "caption": "glättungStufe1Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 1 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe1Min_BetaQKFZFallend",
+      "caption": "glättungStufe1Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 1 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe2Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe2Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 2 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe2Min_AlphaQKFZFallend",
+      "caption": "glättungStufe2Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 2 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe2Min_BetaQKFZSteigend",
+      "caption": "glättungStufe2Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 2 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe2Min_BetaQKFZFallend",
+      "caption": "glättungStufe2Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 2 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe3Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe3Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 3 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe3Min_AlphaQKFZFallend",
+      "caption": "glättungStufe3Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 3 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe3Min_BetaQKFZSteigend",
+      "caption": "glättungStufe3Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 3 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe3Min_BetaQKFZFallend",
+      "caption": "glättungStufe3Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 3 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe4Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe4Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 4 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe4Min_AlphaQKFZFallend",
+      "caption": "glättungStufe4Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 4 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe4Min_BetaQKFZSteigend",
+      "caption": "glättungStufe4Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 4 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe4Min_BetaQKFZFallend",
+      "caption": "glättungStufe4Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 4 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe5Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe5Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 5 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe5Min_AlphaQKFZFallend",
+      "caption": "glättungStufe5Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 5 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe5Min_BetaQKFZSteigend",
+      "caption": "glättungStufe5Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 5 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe5Min_BetaQKFZFallend",
+      "caption": "glättungStufe5Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 5 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe10Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe10Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 10 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe10Min_AlphaQKFZFallend",
+      "caption": "glättungStufe10Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 10 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe10Min_BetaQKFZSteigend",
+      "caption": "glättungStufe10Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 10 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe10Min_BetaQKFZFallend",
+      "caption": "glättungStufe10Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 10 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe15Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe15Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 15 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe15Min_AlphaQKFZFallend",
+      "caption": "glättungStufe15Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 15 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe15Min_BetaQKFZSteigend",
+      "caption": "glättungStufe15Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 15 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe15Min_BetaQKFZFallend",
+      "caption": "glättungStufe15Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 15 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe30Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 30 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Min_AlphaQKFZFallend",
+      "caption": "glättungStufe30Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 30 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Min_BetaQKFZSteigend",
+      "caption": "glättungStufe30Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 30 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe30Min_BetaQKFZFallend",
+      "caption": "glättungStufe30Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 30 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe60Min_AlphaQKFZSteigend",
+      "caption": "glättungStufe60Min_AlphaQKFZSteigend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 60 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe60Min_AlphaQKFZFallend",
+      "caption": "glättungStufe60Min_AlphaQKFZFallend",
+      "tooltip": "Glättungsparameter alpha für steigende qKFZ und 60 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe60Min_BetaQKFZSteigend",
+      "caption": "glättungStufe60Min_BetaQKFZSteigend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 60 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }, {
+      "parameterId": "glättungStufe60Min_BetaQKFZFallend",
+      "caption": "glättungStufe60Min_BetaQKFZFallend",
+      "tooltip": "Glättungsparameter beta für fallende qKFZ und 60 Minuten Intervalle",
+      "unit": "",
+      "valueType": "DOUBLE",
+      "scope": "GLOBAL",
+      "valueRestriction": {"rangesRestriction": {"ranges": [{"min": {"doubleVal": 0}, "max": {"doubleVal": 1}}]}}
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: application-environment
+type: Opaque
+data:
+#
+# echo -n 'heuboeAdmin:c2vba@mongodb.c2vba.svc:27017' | base64 -w 120
+  MONGODB_AUTHORITY: aGV1Ym9lQWRtaW46YzJ2YmFAbW9uZ29kYi5jMnZiYS5zdmM6MjcwMTc=
+#
+# echo -n 'kafka.c2vba.svc:9092' | base64 -w 120
+  KAFKA_BOOTSTRAP: a2Fma2EuYzJ2YmEuc3ZjOjkwOTI=
+#
+# echo -n 'prod' | base64
+  NET_STAGE: cHJvZA==
+#  
+# echo -n 'prod' | base64
+  SYSTEM_STAGE: cHJvZA==
+#
+# echo -n 'vrz' | base64
+  NET_SYSTEM: dnJ6
+#
+# echo -n 'by' | base64
+  SYSTEM_NAME: Ynk=
+#
+# echo -n 'BY' | base64
+  SYSTEM_NAME_UC:  Qlk=
+#
+# echo -n 'Verkehrsrechnerzentrale' | base64
+  SYSTEM_NAME_LONG: VmVya2VocnNyZWNobmVyemVudHJhbGU=
+#
+#
+# echo -n 'C2VBA' | base64
+  SYSTEM_PREFIX: QzJWQkE=
+#
+# echo -n 'C2VBA' | base64
+  CENTRE_ID: QzJWQkE=
+#
+# echo -n 'https://c2v.sbvbz.de/c2vba/ImageServer/png' | base64
+  IMG-SVC-URL: aHR0cHM6Ly9jMnYuc2J2YnouZGUvYzJ2YmEvSW1hZ2VTZXJ2ZXIvcG5n
+
