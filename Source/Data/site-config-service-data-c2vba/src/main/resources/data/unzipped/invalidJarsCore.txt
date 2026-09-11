@@ -1,0 +1,21 @@
+invalid files and sites
+ check file 'LVR-UZ-KAA-KoMoD-1.23.0.jar'
+  check site 'LVR-UZ-KAA-KoMoD'
+    references invalid EQ 'MQ_57.210-Q-PFB_N_AB_ZU_P'
+     db devices missing in xml: [MQ_57.210-Q-PFB_N_AB_ZU_P_1]
+     xml devices missing in db: [MQ_57.210-Q-PFB_N_AB_ZU_NO_P_1]
+    references invalid EQ 'MQ_57.210-Q-PFB_N_ZU_ZU_P'
+     db devices missing in xml: [MQ_57.210-Q-PFB_N_ZU_ZU_P_1]
+     xml devices missing in db: [MQ_57.210-Q-PFB_N_ZU_ZU_NO_P_1]
+    references invalid EQ 'MQ_57.210-Q-PFB_S_AB_ZU_P'
+     db devices missing in xml: [MQ_57.210-Q-PFB_S_AB_ZU_P_1]
+     xml devices missing in db: [MQ_57.210-Q-PFB_S_AB_ZU_SW_P_1]
+    references invalid EQ 'MQ_57.210-Q-PFB_S_ZU_ZU_P'
+     db devices missing in xml: [MQ_57.210-Q-PFB_S_ZU_ZU_P_1]
+     xml devices missing in db: [MQ_57.210-Q-PFB_S_ZU_ZU_SW_P_1]
+Catalogue items in multiple jar files::
+ EQ:
+ UQ:
+ AQ:
+ VQ:
+ XQ:

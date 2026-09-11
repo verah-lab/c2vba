@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: frankl
+Build-Jdk: 1.8.0_131
+Implementation-Vendor: Heusch/Boesefeldt GmbH
+Specification-Title: siteCfgSvcTmpl
+Implementation-Title: siteCfgSvcTmpl
+Config: siteCfgTmpl.xml
+Implementation-Version: 1.0.0-SNAPSHOT
+

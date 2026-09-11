@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:config xmlns:ns2="http://www.heuboe.de/sitesconfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.heuboe.de/sitesconfig ../../../target/xsd/Config.xsd">
+	<site>
+		<desc valid="true" id="Template-Site" name="Template-Site" type="SITE" uzId="" svgSymbols="">
+			<topics>LBA</topics>
+			<babSeg babName="A0" babVon="-1" babBis="-2"/>
+		</desc>
+ 		<views>
+			<view>
+				<desc valid="true" id="Template-View" legendId="NO-Legend" name="" type="ZST" sbaId="" svgLayout="" hasPicker="false" direction="u" />
+				<legendDim w="-1" h="-1"/>
+				<pickerRect x="-1" y="-1" w="-1" h="-1"/>
+				<eqs>
+				</eqs>
+				<uqs>
+				</uqs>
+				<aqs>
+				</aqs>
+				<xqs>
+				</xqs>
+				<munits>
+				</munits>
+				<tsfs>
+				</tsfs>
+				<abws>
+				</abws>
+			</view>
+		</views>
+	</site>
+	<dkSets>
+	</dkSets>
+	<munits>
+	</munits>
+	<eqs>
+	</eqs>
+	<uqs>
+	</uqs>
+	<aqs>
+	</aqs>
+	<xqs>
+	</xqs>
+	<zss>
+	</zss>
+	<locks>
+	</locks>
+</ns2:config>

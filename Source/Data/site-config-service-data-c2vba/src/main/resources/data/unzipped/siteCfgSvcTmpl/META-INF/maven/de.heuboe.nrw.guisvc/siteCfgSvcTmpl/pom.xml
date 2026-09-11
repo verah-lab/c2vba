@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.heuboe.nrw.guisvc</groupId>
+	<artifactId>siteCfgSvcTmpl</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>de.heuboe.base</groupId>
+		<artifactId>jhbpom</artifactId>
+		<version>4.4.2</version>
+	</parent>
+
+	<organization>
+		<name>Heusch/Boesefeldt GmbH</name>
+		<url>http://www.heuboe.de</url>
+	</organization>
+
+	<properties>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss Z (z)</maven.build.timestamp.format>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>m2e</id>
+			<activation>
+				<property>
+					<name>m2e.version</name>
+				</property>
+			</activation>
+			<properties>
+				<maven.build.timestamp>whatever</maven.build.timestamp>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+     	<dependency>
+			<groupId>de.heuboe.nrw.guisvc</groupId>
+			<artifactId>siteCfgData</artifactId>
+			<version>1.13.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	
+    <build>
+        <plugins>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+                <version>2.1</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Config>siteCfgTmpl.xml</Config>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+        </plugins>
+    </build>
+ 	
+</project>
