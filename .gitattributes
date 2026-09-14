@@ -1,1 +1,2 @@
 Source/Konfig-Data/c2vba-datex2-cfg-def-fg1-fg3/createMST/datex2MSTLocServiceBuilder-5.0.0-SNAPSHOT.jar filter=lfs diff=lfs merge=lfs -text
+Source/Konfig-Data/c2vba-datex2-cfg-def-fg1-fg3/importMDM_D2DataMapping/datex2MSTBuilder-5.0.0-SNAPSHOT.jar filter=lfs diff=lfs merge=lfs -text
