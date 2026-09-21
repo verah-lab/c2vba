@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration strict="true" monitorInterval="15">
+    <Properties>
+        <!-- global layout pattern; designed to show log patterns in fixed sized columns -->
+        <!-- see: https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout -->
+        <!--
+            log message will look like this
+            2017-05-04 15:02:30,220 | DEBUG |            main | d.f.l.Slf4jWithLog4j2Test |      d.f.l.Slf4jWithLog4j2Test(13) |> Hello World!
+        <Property name="layoutPattern">%date{DEFAULT} | %5.5level | %15.15thread | %25.25logger{1.} | %30.30class{1.}(%line) |&gt; %message%n</Property>
+         -->
+        <Property name="layoutPattern">%date{DEFAULT} | %5.5level | %15.15thread | %30.30class{1.}(%line) |&gt; %message%n</Property>
+    </Properties>
+    <Appenders>
+        <Appender type="Console" name="Console">
+            <Layout type="PatternLayout" pattern="${layoutPattern}" />
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="graphElem" level="debug"/>
+        <Logger name="resObject" level="info"/>
+        <Logger name="resServer" level="info"/>
+        
+        <Logger name="de.heuboe.nrw.sitecfg.svc" level="info"/>
+        <Logger name="de.heuboe.nrw.sitecfg.svc.model" level="info"/>
+        <Logger name="de.heuboe.nrw.sitecfg.svc.server" level="info"/>
+        
+        <Root level="warn">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+
+</Configuration>
