@@ -1,0 +1,37 @@
+[ {
+  "section" : {
+    "roadId" : "B57 S",
+    "offset" : 828.54937,
+    "length" : 1008.58256,
+    "fromMetering" : null,
+    "toMetering" : null
+  },
+  "laneNumber" : 2
+}, {
+  "section" : {
+    "roadId" : "B57 S",
+    "offset" : 1837.13193,
+    "length" : 109.73373,
+    "fromMetering" : null,
+    "toMetering" : null
+  },
+  "laneNumber" : 3
+}, {
+  "section" : {
+    "roadId" : "B57 S",
+    "offset" : 1946.86566,
+    "length" : 1633.61518,
+    "fromMetering" : null,
+    "toMetering" : null
+  },
+  "laneNumber" : 2
+}, {
+  "section" : {
+    "roadId" : "B57 S",
+    "offset" : 3580.48083,
+    "length" : 187.39033,
+    "fromMetering" : null,
+    "toMetering" : null
+  },
+  "laneNumber" : 3
+} ]
