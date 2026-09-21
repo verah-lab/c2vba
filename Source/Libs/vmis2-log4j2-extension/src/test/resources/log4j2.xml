@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" monitorInterval="60" status="warn">
+
+    <Properties>
+        <Property name="layoutPattern">%date{DEFAULT} | %5.5level | %15.15thread | %20.20logger{1.} | %15.15class{1.}(%4.4line) | %marker | %X | &gt; %message%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- console appender which logs an easy human readable line -->
+        <Appender type="Console" name="console">
+            <Layout type="PatternLayout" pattern="${layoutPattern}" />
+        </Appender>
+        <!-- Used for tests -->
+        <File name="test" fileName="target/test.log">
+            <CustomJSONLayout />
+        </File>
+        <File name="test2" fileName="target/test2.log">
+            <CustomJSONLayout pretty="true" includeContextMap="false" includeMarker="false">
+                <KeyValuePair key="time" value="$${event:time}" />
+                <KeyValuePair key="level" value="$${event:level}" />
+                <KeyValuePair key="logger" value="$${event:logger}" />
+                <KeyValuePair key="message" value="$${event:message}" />
+                <KeyValuePair key="mdc" value="$${event:mdc}" />
+                <KeyValuePair key="threadId" value="$${event:threadId}" />
+                <KeyValuePair key="threadName" value="$${event:threadName}" />
+                <KeyValuePair key="exception" value="$${event:exception}" />
+                <KeyValuePair key="stacktrace" value="$${event:stacktrace}" />
+                <KeyValuePair key="simpleClass" value="$${event:simpleClass}" />
+                <KeyValuePair key="class" value="$${event:class}" />
+                <KeyValuePair key="method" value="$${event:method}" />
+                <KeyValuePair key="file" value="$${event:file}" />
+                <KeyValuePair key="line" value="$${event:line}" />
+            </CustomJSONLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="de.heuboe" level="info" />
+
+        <Root level="warn">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="test" />
+            <AppenderRef ref="test2" />
+        </Root>
+    </Loggers>
+
+</Configuration>

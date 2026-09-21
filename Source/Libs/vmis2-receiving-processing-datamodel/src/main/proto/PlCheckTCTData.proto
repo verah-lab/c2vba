@@ -1,0 +1,726 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.receiving.processing.data;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+import "PlCheckData.proto";         // because of PlCheckState
+
+option java_multiple_files = true;
+option java_outer_classname = "PlCheckTctDataProto";
+option (.heuboe.protobuf.interface_version) = "1.1.0";
+
+message FailedPlCheckTrafficControlData {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated FailedPlCheckData data = 1;
+    string id = 2;  // Identification of object
+}
+
+message FailedPlCheckTrafficControlDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated FailedPlCheckTrafficControlData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Fernüberwachung von lokaler Energieversorgung (Typ 57) 
+message TctLocaleEnergySupplyPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;
+    int32 value = 4;   // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+    // Value of charging current
+    double chargingCurrent = 6;
+    // State of plausibility of chargingCurrent
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState stateChargingCurrent = 7;
+    // Value of charging voltage
+    double chargingVoltage = 8;
+    // State of plausibility of charingVoltage
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState stateChargingVoltage = 9;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctLocaleEnergySupplyPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctLocaleEnergySupplyPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Türkontakt (Typ 48)  
+message TctDoorContactPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;
+    // Value of operating device state
+    int32 value = 4;
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctDoorContactPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctDoorContactPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term:  Temperaturüberwachung (Typ 49)  
+message TctTemperatureMonitoringPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane     
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;   // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctTemperatureMonitoringPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctTemperatureMonitoringPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Licht (Typ 50) 
+message TctLightPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;   // Value of operating device state
+     // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctLightPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctLightPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Stromversorgung (Typ 51)  
+message TctPowerSupplyPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;   // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctPowerSupplyPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctPowerSupplyPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Heizung (Typ 52)  
+message TctHeatingPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;   // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. 
+// to publish to a broker etc. 
+message TctHeatingPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctHeatingPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Lüftung (Typ 53)  
+message TctVentilationPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3; 
+    int32 value = 4;   // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctVentilationPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctVentilationPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Überspannungsschutz (Typ 54)  
+message TctOvervoltageProtectionPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;
+    int32 value = 4;   // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctOvervoltageProtectionPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctOvervoltageProtectionPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Diebstahl- und Vandalismusschutz (Typ 55)  
+message TctAntiTheftProtectionPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;
+    int32 value = 4;   // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctAntiTheftProtectionPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctAntiTheftProtectionPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// --- producer specific data: --- 
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: VideoEncoder (Typ 128)  
+message TctVideoEncoderPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+     // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;   
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctVideoEncoderPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctVideoEncoderPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Erdschluss (Typ 131)  
+message TctGroundFaultPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+     // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctGroundFaultPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctGroundFaultPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Brandmelder (Typ 223)  
+message TctFireDetectorPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctFireDetectorPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctFireDetectorPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Brandmeldung (Typ 133)  
+message TctFireDetectionPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctFireDetectionPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctFireDetectionPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: CO2 Wertüberschreitung (Typ 134)  
+message TctCO2ExceedancePlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;   
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctCO2ExceedancePlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctCO2ExceedancePlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Höhenkontrolle (Typ 132) 
+message TctHeightControlPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctHeightControlPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctHeightControlPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Leistungsmodem (Typ 129) 
+message TctPowerModemPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctPowerModemPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctPowerModemPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Notfall (Typ 136)  
+message TctEmergencyPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctEmergencyPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctEmergencyPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: NT Video USV (Typ 130)  
+message TctNtVideoUsvPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctNtVideoUsvPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctNtVideoUsvPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Richtungsbetriebsart (Typ 138) 
+message TctDirectionalOperationTypePlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctDirectionalOperationTypePlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctDirectionalOperationTypePlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Schlüsselschalter (Typ 222)  
+message TctKeylockPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctKeylockPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctKeylockPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: Sichttrübung (Typ 135)  
+message TctImpairedVisibilityPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctImpairedVisibilityPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctImpairedVisibilityPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output)
+// Specification term: UeBetrieb / Überwachung Betrieb (Typ 139)  
+message TctMonitoringOperationPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctMonitoringOperationPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctMonitoringOperationPlCheckedData data = 1;
+    string iid = 2;         // message id
+}
+
+// Traffic control technology data with PL recognition. (input and output) 
+// Specification term: Zu viele Fahrzeuge (Typ 137) 
+message TctTooManyVehiclesPlCheckedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;      // Identification of lane
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 3;  
+    int32 value = 4;    // Value of operating device state
+    // State of plausibility of value
+    eu.vmis_ehe.vmis2.receiving.processing.data.PlCheckState state = 5;
+}
+
+// List of traffic control technology PlCheckedData used e.g. to publish to a broker etc. 
+message TctTooManyVehiclesPlCheckedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated TctTooManyVehiclesPlCheckedData data = 1;
+    string iid = 2;         // message id
+}

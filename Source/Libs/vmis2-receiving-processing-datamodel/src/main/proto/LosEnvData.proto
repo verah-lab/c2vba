@@ -1,0 +1,205 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.receiving.processing.env.data.los;
+
+import "EnumerationsEnvironmentData.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "LosEnvDataProto";
+option (.heuboe.protobuf.interface_version) = "1.1.0";
+
+// Level of service (Z..) for the traffic conditons
+enum DarkBrightState {
+    DARK = 0;
+    BRIGHT = 1;
+}
+
+// Level of service of precipitation intensity detector.
+message PrecipitationIntensityLosData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detection site
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 3;
+    int32 interval_length = 4;                      // Interval length in seconds
+    int32 los_value = 5;                            // value of level of service of precipitation intensity
+    float quality = 6;                              // quality of determinated level of service
+    google.protobuf.Timestamp tls_time = 7;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message PrecipitationIntensityLosDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated PrecipitationIntensityLosData data = 1;
+    string iid = 2;
+}
+
+// Level of service of water film thickness detector.
+message WaterFilmThicknessLosData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detection site
+   // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 3;
+    int32 interval_length = 4;                      // Interval length in seconds
+    int32 los_value = 5;                            // value of level of service of water film thickness
+    float quality = 6;                              // quality of determinated level of service
+    google.protobuf.Timestamp tls_time = 7;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message WaterFilmThicknessLosDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated WaterFilmThicknessLosData data = 1;
+    string iid = 2;
+}
+
+// Level of service of visibility detector.
+message VisibilityLosData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detection site
+   // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 3;
+    int32 interval_length = 4;                      // Interval length in seconds
+    int32 los_value = 5;                            // value of level of service of visibility
+    float quality = 6;                              // quality of determinated level of service
+    google.protobuf.Timestamp tls_time = 7;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message VisibilityLosDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated VisibilityLosData data = 1;
+    string iid = 2;
+}
+
+// Level of service of luminosity detector.
+message LuminosityLosData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detection site
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 3;
+    int32 interval_length = 4;                      // Interval length in seconds
+    int32 los_value = 5;                            // value of level of service of luminosity
+    float quality = 6;                              // quality of determinated level of service
+    google.protobuf.Timestamp tls_time = 7;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message LuminosityLosDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated LuminosityLosData data = 1;
+    string iid = 2;
+}
+
+message DarkBrightDetectionLosData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detection site
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 3;
+    int32 interval_length = 4;                      // Interval length in seconds
+    DarkBrightState los_value = 5;                   // value of level of service of dark/bright detection.
+    float quality = 6;                              // quality of determinated level of service
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;  //State of dark/bright los
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message DarkBrightDetectionLosDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated DarkBrightDetectionLosData data = 1;
+    string iid = 2;
+}
+
+message HumidityLosData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of humidity los configuration.
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 2;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 3;
+    int32 los_value = 4;                            // value of level of service of humidity.
+    float quality = 5;                              // quality of determinated level of service
+    google.protobuf.Timestamp tls_time = 6;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message HumidityLosDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated HumidityLosData data = 1;
+    string iid = 2;
+}
+
+message LosStartData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;                                      // Identification of humidity los configuration.
+    google.protobuf.Timestamp humidity_los_start = 2;   /* The point in time when current humidity level of service
+                                                         * was detected for the first time. */
+    int32 los = 3;                                      // Determined level of service.
+}
+
+message LosStartDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated LosStartData data = 1;
+    string iid = 2;
+}

@@ -1,0 +1,210 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.receiving.processing.data.aggr;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "MeasurementAggregationDataProto";
+option (.heuboe.protobuf.interface_version) = "1.1.0";
+
+// State of measurement aggregation. 
+// ATTENTION: Do not change order of numbers! 'Higher enum number' means 'better state'.
+//  Worst state will be "-1" (unrecognized).S
+enum MeasurementAggrState {
+  INDETERMINATE = 0;              // Specification term: 'Nicht ermittelbar'
+  // Amount of missing input values is greater than 50%.
+  EXTRAPOLATE = 1;                // Specification term: 'Hochgerechnet'
+  // Amount of missing input values is lower than / equal 50%.
+  INTERPOLATE = 2;                // Specification term: 'Interpoliert'
+  // some values were 'replaced'. Data basis is 100%.
+  PLAUSIBLE = 3;                  // Specification term: 'Plausible'
+  // all values were 'plausible' or 'verify'. Data basis is 100%.
+}
+
+enum MeasurementAggrObject {
+  LANE = 0;
+  DETECTION_SITE = 1;
+}
+
+// Aggregated data of short term detection site measurements 
+// (output of measurement-aggregation-vd) 
+message ShortTermMeasurementAggregatedDataLane {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+
+  string id = 1;                                  // Identification of lane
+  // The point in time when an event or data record occurred,
+  // i.e. was originally created "at the source". Contains
+  // e.g. the interval time stamp of input values or
+  // aggregation time
+  google.protobuf.Timestamp event_time = 2;
+  // Processing time - The point in time when the event or data
+  // record happens to be processed by the processing application, i.e.
+  // when the record is being consumed. The processing time may be
+  // milliseconds, hours, or days etc. later than the original event time.
+  // This is something like setting a system_time from the database in old
+  // systems
+  google.protobuf.Timestamp processing_time = 3;
+  int32 interval_length = 4;                      // Aggregated interval length in seconds
+  /* Aggregation values */
+  int32 q_KFZ = 5;                                // Vehicle volume (per hour)
+  int32 q_PKW = 6;                                // Passenger cars volume (per hour)
+  int32 q_LKW = 7;                                // Heavy vehicle (truck) volume (per hour)
+  int32 a_LKW = 8;                                // Percentage of trucks
+  int32 d_KFZ = 9;                                // Vehicle density
+  int32 q_B = 10;                                 // specification term 'Bemessungsverkehrsstärke'
+  // measurement traffic  density
+  int32 b = 11;                                   // Vehicle occupancy rate in %
+  int32 b_max = 12;                               // max. vehicle occupancy per interval
+  int32 s_KFZ = 13;                               // Variance of vehicle speeds
+  int32 s_KFZ_max = 14;                           // max. variance of vehicle speeds
+  int32 s_KFZ_min = 15;                           // min. variance of vehicle speeds
+  int32 v_KFZ = 16;                               // Vehicle speed
+  int32 v_PKW = 17;                               // Passenger cars speed
+  int32 v_LKW = 18;                               // Heavy vehicle (truck) speed
+  /* Aggregation states */
+  MeasurementAggrState q_KFZ_state = 19;          // State of measurement aggregation of qKFZ
+  MeasurementAggrState q_PKW_state = 20;          // State of measurement aggregation of qPKW
+  MeasurementAggrState q_LKW_state = 21;          // State of measurement aggregation of qLKW
+  MeasurementAggrState v_KFZ_state = 22;          // State of measurement aggregation of vKFZ
+  MeasurementAggrState v_PKW_state = 23;          // State of measurement aggregation of vPKW
+  MeasurementAggrState v_LKW_state = 24;          // State of measurement aggregation of vLKW
+  MeasurementAggrState b_state = 25;              // State of measurement aggregation of b
+  MeasurementAggrState b_max_state = 26;          // State of measurement aggregation of bMax
+  MeasurementAggrState s_KFZ_state = 27;          // State of measurement aggregation of sKFZ
+  MeasurementAggrState s_KFZ_max_state = 28;      // State of measurement aggregation of sKFZMax
+  MeasurementAggrState s_KFZ_min_state = 29;      // State of measurement aggregation of sKFZMin
+  MeasurementAggrState d_KFZ_state = 30;          // State of measurement aggregation of dKFZ
+  MeasurementAggrState q_B_state = 31;            // State of measurement aggregation of qB
+  MeasurementAggrState a_LKW_state = 32;          // State of measurement aggregation of aLKW
+  /* Aggregation qualities */
+  int32 q_KFZ_quality = 33;                       // Quality in percent  (specification:  'Guete')
+  int32 q_PKW_quality = 34;                       // Quality in percent  (specification:  'Guete')
+  int32 q_LKW_quality = 35;                       // Quality in percent  (specification:  'Guete')
+  int32 v_KFZ_quality = 36;                       // Quality in percent  (specification:  'Guete')
+  int32 v_PKW_quality = 37;                       // Quality in percent  (specification:  'Guete')
+  int32 v_LKW_quality = 38;                       // Quality in percent  (specification:  'Guete')
+  int32 b_quality = 39;                           // Quality in percent  (specification:  'Guete')
+  int32 b_max_quality = 40;                       // Quality in percent  (specification:  'Guete')
+  int32 s_KFZ_quality = 41;                       // Quality in percent  (specification:  'Guete')
+  int32 s_KFZ_max_quality = 42;                   // Quality in percent  (specification:  'Guete')
+  int32 s_KFZ_min_quality = 43;                   // Quality in percent  (specification:  'Guete')
+  int32 d_KFZ_quality = 44;                       // Quality in percent  (specification:  'Guete')
+  int32 q_B_quality = 45;                         // Quality in percent  (specification:  'Guete')
+  int32 a_LKW_quality = 46;                       // Quality in percent  (specification:  'Guete')
+  int32 density_Q_B = 47;                  // density of the measurement traffic volume, Anzahl gewichtete Fahrzeugeinheiten pro km
+  MeasurementAggrState density_Q_B_state = 48;                  // State after value preparation of density qB
+  int32 density_Q_B_quality = 49;                  // Quality in percent  (specification:  'Guete')
+
+  google.protobuf.Timestamp tls_time_slow = 50;   // Time of passage of the slowest vehicle
+  int32 v_FZ_slow = 51;                           // Speed of the slowest vehicle
+  int32 vehicle_category_slow = 52;               // Vehicle category/class of the slowest vehicle  
+  MeasurementAggrState v_FZ_slow_state = 53;      // State of measurement aggregation of vFZSlow
+  int32 v_FZ_slow_quality = 54;                   // Quality in percent  (specification:  'Guete')   
+}
+
+// Aggregated data of short term detection site measurements 
+// (output of measurement-aggregation-vd) 
+message ShortTermMeasurementAggregatedDataDetSite {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+
+  string id = 1;                                  // Identification of detection site
+  // The point in time when an event or data record occurred,
+  // i.e. was originally created "at the source". Contains
+  // e.g. the interval time stamp of input values or
+  // aggregation time
+  google.protobuf.Timestamp event_time = 2;
+  // Processing time - The point in time when the event or data
+  // record happens to be processed by the processing application, i.e.
+  // when the record is being consumed. The processing time may be
+  // milliseconds, hours, or days etc. later than the original event time.
+  // This is something like setting a system_time from the database in old
+  // systems
+  google.protobuf.Timestamp processing_time = 3;
+  int32 interval_length = 4;                      // Aggregated interval length in seconds
+  /* Aggregation values */
+  int32 Q_KFZ = 5;                                // Vehicle volume (per hour)
+  int32 Q_PKW = 6;                                // Passenger cars volume (per hour)
+  int32 Q_LKW = 7;                                // Heavy vehicle (truck) volume (per hour)
+  int32 A_LKW = 8;                                // percentage of trucks
+  int32 D_KFZ = 9;                                // Vehicle density
+  int32 Q_B = 10;                                 // specification term 'Bemessungsverkehrsstärke'
+  // measurement traffic  density
+  int32 B = 11;                                   // Vehicle occupancy rate in %
+  int32 B_max = 12;                               // max. vehicle occupancy per interval
+  int32 S_KFZ = 13;                               // Variance of vehicle speeds
+  int32 S_KFZ_max = 14;                           // max. variance of vehicle speeds
+  int32 S_KFZ_min = 15;                           // min. variance of vehicle speeds
+  int32 V_KFZ = 16;                               // Vehicle speed
+  int32 V_PKW = 17;                               // Passenger cars speed
+  int32 V_LKW = 18;                               // Heavy vehicle (truck) speed
+
+  /* Aggregation states */
+  MeasurementAggrState Q_KFZ_state = 19;          // State of measurement aggregation of QKFZ
+  MeasurementAggrState Q_PKW_state = 20;          // State of measurement aggregation of QPKW
+  MeasurementAggrState Q_LKW_state = 21;          // State of measurement aggregation of QLKW
+  MeasurementAggrState V_KFZ_state = 22;          // State of measurement aggregation of VKFZ
+  MeasurementAggrState V_PKW_state = 23;          // State of measurement aggregation of VPKW
+  MeasurementAggrState V_LKW_state = 24;          // State of measurement aggregation of VLKW
+  MeasurementAggrState B_state = 25;              // State of measurement aggregation of B
+  MeasurementAggrState B_max_state = 26;          // State of measurement aggregation of BMax
+  MeasurementAggrState S_KFZ_state = 27;          // State of measurement aggregation of SKFZ
+  MeasurementAggrState S_KFZ_max_state = 28;      // State of measurement aggregation of SKFZMax
+  MeasurementAggrState S_KFZ_min_state = 29;      // State of measurement aggregation of SKFZMin
+  MeasurementAggrState D_KFZ_state = 30;          // State of measurement aggregation of DKFZ
+  MeasurementAggrState Q_B_state = 31;            // State of measurement aggregation of QB
+  MeasurementAggrState A_LKW_state = 32;          // State of measurement aggregation of ALKW 
+  /* Aggregation qualities */
+  int32 Q_KFZ_quality = 33;                       // Quality in percent  (specification:  'Guete')
+  int32 Q_PKW_quality = 34;                       // Quality in percent  (specification:  'Guete')
+  int32 Q_LKW_quality = 35;                       // Quality in percent  (specification:  'Guete')
+  int32 V_KFZ_quality = 36;                       // Quality in percent  (specification:  'Guete')
+  int32 V_PKW_quality = 37;                       // Quality in percent  (specification:  'Guete')
+  int32 V_LKW_quality = 38;                       // Quality in percent  (specification:  'Guete')
+  int32 B_quality = 39;                           // Quality in percent  (specification:  'Guete')
+  int32 B_max_quality = 40;                       // Quality in percent  (specification:  'Guete')
+  int32 S_KFZ_quality = 41;                       // Quality in percent  (specification:  'Guete')
+  int32 S_KFZ_max_quality = 42;                   // Quality in percent  (specification:  'Guete')
+  int32 S_KFZ_min_quality = 43;                   // Quality in percent  (specification:  'Guete')
+  int32 D_KFZ_quality = 44;                       // Quality in percent  (specification:  'Guete')
+  int32 Q_B_quality = 45;                         // Quality in percent  (specification:  'Guete')
+  int32 A_LKW_quality = 46;                       // Quality in percent  (specification:  'Guete')
+  int32 Density_Q_B = 47;                  // density of the measurement traffic volume, Anzahl gewichtete Fahrzeugeinheiten pro km
+  MeasurementAggrState Density_Q_B_state = 48;                  // State after value preparation of density qB
+  int32 Density_Q_B_quality = 49;                  // Quality in percent  (specification:  'Guete')
+
+  google.protobuf.Timestamp tls_time_slow = 50;   // Time of passage of the slowest vehicle
+  int32 v_FZ_slow = 51;                           // Speed of the slowest vehicle
+  int32 vehicle_category_slow = 52;               // Vehicle category/class of the slowest vehicle
+  // State of plausibility of vFZSlow
+  MeasurementAggrState v_FZ_slow_state = 53;      
+  int32 v_FZ_slow_quality = 54;                   // Quality in percent  (specification:  'Guete')
+
+  float v_KFZ_delta = 55;                         // Delta of vehicle speed from ShortTermMeasurementAggregatedDataLanes
+  MeasurementAggrState v_KFZ_delta_state = 56;    // state of delta (worst state of input vKfz-states)
+  int32 v_KFZ_delta_quality = 57;                 // Quality in percent  (specification:  'Guete') of delta
+  int32 v_KFZ_min = 58;                           // minimum of vehicle speed from ShortTermMeasurementAggregatedDataLanes
+  MeasurementAggrState v_KFZ_min_state = 59;      // state of minimum vKfz (worst state of input vKfz-states)
+  int32 v_KFZ_min_quality = 60;                   // Quality in percent  (specification:  'Guete') of minimum vKfz
+  int32 v_KFZ_max = 61;                           // maximum of vehicle speed from ShortTermMeasurementAggregatedDataLanes
+  MeasurementAggrState v_KFZ_max_state = 62;      // state of maximum vKfz (worst state of input vKfz-states)
+  int32 v_KFZ_max_quality = 63;                   // Quality in percent  (specification:  'Guete') of maximum vKfz
+}
+
+// List of ShortTermMeasurementAggregatedDataLane used e.g. to publish 
+// ShortTermMeasurementAggregatedDataLane-data to a broker etc. 
+message ShortTermMeasurementAggregatedDataLanes {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  repeated ShortTermMeasurementAggregatedDataLane data = 1;
+  string iid = 2;                                    // message id
+}
+
+// List of ShortTermMeasurementAggregatedDataDetSite used e.g. to publish 
+// ShortTermMeasurementAggregatedDataDetSites to a broker etc. 
+message ShortTermMeasurementAggregatedDataDetSites {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  repeated ShortTermMeasurementAggregatedDataDetSite data = 1;
+  string iid = 2;                                    // message id
+}

@@ -1,0 +1,320 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.receiving.processing.data;
+
+import "SyncCollectedData.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "LongTermDataProto";
+option (.heuboe.protobuf.interface_version) = "1.1.0";
+
+// VMIS2-S1ANF-119
+// Hour that is requested in the buffer request
+message BufferRequestHour {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+    int32 hour = 4;
+}
+
+// Information needed for each buffer request
+message BufferRequestInfo {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    // Interval time stamp of buffer request
+    google.protobuf.Timestamp event_time = 1;
+    // Hour that is requested in the TLS buffer request.
+    BufferRequestHour long_term_interval = 2;
+    // Counter for the number of buffer requests
+    int32 counter = 3;     
+    TlsDataVersion version = 4; // Data version 
+    int32 interval_length = 5;  // Recording interval length in seconds
+    // State of the lane detector at the initial creation of the request job
+    LongTermRecoverRequest.StateLogicalPassivation logical_passive = 6;                        
+}
+
+// vehicle class type
+enum VehicleType {
+        KFZ = 0;        // All vehicles, tls-code 64
+        LKW_AE = 1;     // Truck(heavy vehicle) similar vehicles, tls-code 33
+        PKW_G = 2;      // Passenger car group, tls-code 1       
+        PKW_A = 3;      // Passenger car with trailer, tls-code 2       
+        LKW = 4;        // Heavy vehicle, tls-code 3
+        LKW_K = 5;      // Heavy vehicle with trailer and Semi-articulated truck, tls-code 4
+        BUS = 6;        // Bus, tls-code 5
+        N_K_KFZ = 7;    // Non-classifiable vehicles, tls-code 6      
+        PKW = 8;        // Passenger car, tls-code 7  
+        LKW_A = 9;      // Heavy vehicle with trailer, tls-code 8
+        SATTEL_KFZ = 10;// Semi-articulated truck, tls-code 9
+        KRAD = 11;      // Motorbike, tls-code 10
+        LFW = 12;       // Vans up to 3,5 tons, tls-code 11
+        PKW_AE = 13;    // Passenger car similar vehicles, tls-code 32
+        // Heavy goods vehicles: heavy vehicle, heavy vehicle
+        // with trailer, semi-articulated truck, tls-code 34
+        SGV = 14;
+        BPA = 15;       // Buses and passenger car with trailer, tls-code 35        
+        // Light traffic without trailer: passenger car, 
+        // vans up to 3,5 tons, tls-code 36
+        LVO = 16;
+ }
+
+// VMIS2-S1ANF-160
+// VMIS2-S1ANF-119
+// State of long-term data requests for recovery
+message LongTermRecoverRequest {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    enum RequestState {
+        INITIAL = 0;    // The request job was created initially
+        PENDING = 1;    // The request telegram has been sent but not yet answered        
+        ANSWERED = 2;   // The request was answered correctly
+        // Request not successfully executed. A buffer request was entered
+        NOT_SUCCESSFULL = 3;
+        SUPPRESSED = 4; // Due to error conditions the request is suppressed
+    }
+    enum StateLogicalPassivation {
+        ACTIVE = 0;
+        LOGICALLY_PASSIVE = 1;
+        UNKNOWN = 2;      
+    }
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2;
+    string id = 3;                  // Identification of lane  
+    // Hour that is requested in the TLS buffer request.
+    BufferRequestHour long_term_interval = 4;
+    TlsDataVersion version = 5;     // Data version 
+    int32 interval_length = 6;      // Recording interval length in seconds
+    RequestState request_state = 7; // Request state
+    // State of the lane detector at the initial creation of the request job
+    StateLogicalPassivation logical_passive = 8; 
+}
+
+// List of LongTermRecoverRequest used e.g. to publish 
+// LongTermRecoverRequest-data to a broker etc. 
+message LongTermRecoverRequests {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated LongTermRecoverRequest data = 1;
+    string iid = 2;                                     // message id
+}
+
+// VMIS2-S1ANF-160
+// VMIS2-S1ANF-119
+// State of long-term data buffer requests for recovery
+message LongTermBufferRecoverRequest {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 1;
+    string id = 2;              // Identification of lane
+    // Information required for each buffer request per lane.
+    // Several requests may be necessary per lane.
+    repeated BufferRequestInfo buffer_request_infos = 3;
+ }
+
+// List of LongTermBufferRecoverRequest used e.g. to publish 
+// LongTermBufferRecoverRequest-data to a broker etc. 
+message LongTermBufferRecoverRequests {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated LongTermBufferRecoverRequest data = 1;
+    string iid = 2;                                     // message id
+}
+
+message LongTermDataLane {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    enum LongTermInputValueState {   
+        EXPECTED = 0;
+        NOT_EXPECTED = 1;       
+    }
+
+    message QVSInputValues {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        VehicleType type = 1;                       // Vehicle class
+        int32 q = 2;                                // Hourly volume
+        int32 v = 3;                                // Average speed
+        int32 s = 4;                                // Variance of speeds                                                  
+        LongTermInputValueState q_state = 5;        // Hourly volume state       
+        LongTermInputValueState v_state = 6;        // Average speed state         
+        LongTermInputValueState s_state = 7;        // Variance of speeds state
+    }
+
+    message SpeedClasses {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        VehicleType type = 1;                       // Vehicle class
+        int32 numVClasses = 2;                      // Number of speed classes for vehicle type/class
+        repeated int32 vClasses = 3;                // Speed classes for vehicle type/class
+    }
+
+    message SpeedClassesVersion24 {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;      
+        // int32 q = 2; is deleted, because is not needed for long term data version 24
+        // SpeedClasses speed_classes = 7; has been replaced by
+        // int32 numVClasses = 8; and
+        // repeated int32 vClasses = 9;
+        reserved 2, 7;
+
+        VehicleType type = 1;                       // Vehicle class
+        double v = 3;                               // Average speed
+        double s = 4;                               // Variance of speeds
+        int32 v85 = 5;                              // v85 speed
+        int32 v15 = 6;                              // v15 speed                    
+        int32 numVClasses = 8;                      // Number of speed classes for vehicle type/class
+        repeated int32 vClasses = 9;                // Speed classes for vehicle type/class
+    }
+       // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                   // Identification of lane
+
+    // Hourly volume, speed data, variance of speed and states for each vehicle class
+    // Hourly volume is not available for the following class of vehicle: 
+    // NkKfz (non-classifiable vehicles, tls-code 6) => q_state => NOT_EXPECTED
+    // Speed data and variance of speed are not available for the 
+    // following class of vehicle: PkwAe(passenger car similar vehicles, tls-code 32)
+    // => v_state and s_state => NOT_EXPECTED
+    // Variance of speed are not available for the following class
+    // of vehicle: Kfz (all vehicles tls-code 64) => s_state => NOT_EXPECTED
+    repeated QVSInputValues vehicle_values = 4; 
+    // v85 for passenger car similar vehicles or passenger car group/class
+    int32 v_85_pkw = 5;   
+    // v85 for passenger car similar vehicles                              
+    int32 v_85_pkw_ae = 6;
+    // v85 value state for passenger car similar vehicles or passenger car group/class 
+    LongTermInputValueState v_85_Pkw_state = 7;
+    // v85 value state for passenger car similar vehicles                              
+    LongTermInputValueState v_85_Pkw_ae_state = 8;
+
+    // The speed classes are set for version 17, 18, 22 and 24
+    repeated SpeedClasses speed_classes = 9;
+
+    // The speed classes are set for version 24
+    repeated SpeedClassesVersion24 speed_classes_version24 = 10;
+
+    TlsDataVersion version = 11;                    // Data version
+    int32 interval_length = 12;                     // Interval length in seconds (aggregation interval)
+
+    // State of the lane detector at the initial creation of the request job
+    LongTermRecoverRequest.StateLogicalPassivation logical_passive = 13; 
+}
+
+// List of LongTermDataLane used e.g. to publish 
+// LongTermDataLane-data to a broker etc. 
+message LongTermDataLaneList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated LongTermDataLane data = 1;
+    string iid = 2;                                     // message id
+}
+
+message LongTermDataDetSite {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    message QVSAggrValues {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        VehicleType type = 1;                                   // Vehicle class
+        int32 Q = 2;                                            // Hourly volume
+        int32 V = 3;                                            // Average speed
+        int32 S = 4;                                            // Variance of speeds                                                  
+        LongTermDataLane.LongTermInputValueState Q_state = 5;   // Hourly volume state       
+        LongTermDataLane.LongTermInputValueState V_state = 6;   // Average speed state         
+        LongTermDataLane.LongTermInputValueState S_state = 7;   // Variance of speeds state
+    }
+
+    message SpeedClasses {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        VehicleType type = 1;                       // Vehicle class
+        int32 numVClasses = 2;                      // Number of speed classes for vehicle type/class
+        repeated int32 VClasses = 3;                // Speed classes for vehicle type/class
+    }
+
+    message SpeedClassesVersion24 {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;        
+        VehicleType type = 1;                       // Vehicle class
+        double V = 2;                               // Average speed
+        double S = 3;                               // Variance of speeds
+        int32 V85 = 4;                              // v85 speed
+        int32 V15 = 5;                              // v15 speed                    
+        int32 numVClasses = 6;                      // Number of speed classes for vehicle type/class
+        repeated int32 VClasses = 7;                // Speed classes for vehicle type/class
+    }
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                   // Identification of lane
+
+    // Hourly volume, speed data, variance of speed and states for each vehicle class
+    // Hourly volume is not available for the following class of vehicle: 
+    // NkKfz (non-classifiable vehicles, tls-code 6) => q_state => NOT_EXPECTED
+    // Speed data and variance of speed are not available for the 
+    // following class of vehicle: PkwAe(passenger car similar vehicles, tls-code 32)
+    // => v_state and s_state => NOT_EXPECTED
+    // Variance of speed are not available for the following class
+    // of vehicle: Kfz (all vehicles tls-code 64) => s_state => NOT_EXPECTED
+    repeated QVSAggrValues vehicle_values = 4; 
+    // v85 for passenger car similar vehicles or passenger car group/class
+    int32 V_85_pkw = 5;   
+    // v85 for passenger car similar vehicles                              
+    int32 V_85_pkw_ae = 6;
+    // v85 value state for passenger car similar vehicles or passenger car group/class 
+    LongTermDataLane.LongTermInputValueState V_85_Pkw_state = 7;
+    // v85 value state for passenger car similar vehicles                              
+    LongTermDataLane.LongTermInputValueState V_85_Pkw_ae_state = 8;
+
+    // The speed classes are set for version 17, 18, 22 and 24
+    repeated SpeedClasses speed_classes = 9;
+
+    // The speed classes are set for version 24
+    repeated SpeedClassesVersion24 speed_classes_version24 = 10;
+
+    TlsDataVersion version = 11;                    // Data version
+    int32 interval_length = 12;                     // Interval length in seconds (aggregation interval)
+
+    // State of the lane detector at the initial creation of the request job
+    LongTermRecoverRequest.StateLogicalPassivation logical_passive = 13; 
+}
+
+// List of LongTermDataDetSite used e.g. to publish 
+// LongTermDataDetectionSite-data to a broker etc. 
+message LongTermDataDetSiteList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated LongTermDataDetSite data = 1;
+    string iid = 2;                                     // message id
+}

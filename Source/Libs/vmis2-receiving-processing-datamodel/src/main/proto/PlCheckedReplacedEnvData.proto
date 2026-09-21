@@ -1,0 +1,1249 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.receiving.processing.env.data.repl;
+
+import "EnumerationsEnvironmentData.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "PlCheckedReplacedEnvDataProto";
+option (.heuboe.protobuf.interface_version) = "1.1.0";
+
+// Measurement replaced data of the air temperature FG3 type 48
+message AirTemperatureReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2;  
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked air temperature in celsius FG3 type 48
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the road surface temperature FG3 type 49
+message RoadSurfaceTemperatureReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked road surface temperature in celsius FG3 type 49
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the residual salt content FG3 type 52
+message ResidualSaltContentReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked residual salt content in percent FG3 type 52
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the precipitation FG3 type 53
+message PrecipitationIntensityReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked precipitation intensity in millimeter per hour FG3 type 53
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the air pressure FG3 type 54
+message AirPressureReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked air pressure in millimeter per hour FG3 type 54
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the relative air humidity FG3 type 55
+message RelativeAirHumidityReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2;
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked relative air humidity in percent FG3 type 55
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the wind direction FG3 type 56
+message WindDirectionReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked wind direction in degrees FG3 type 56
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the wind speed average FG3 type 57
+message WindSpeedAverageReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked wind speed average in meter per second FG3 type 56
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the snow depth FG3 type 58
+message SnowDepthReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked snow depth in centimeter FG3 type 58
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the visibility FG3 type 60
+message VisibilityReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked visibility in meter FG3 type 60
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the luminosity FG3 type 61
+message LuminosityReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked luminosity in lux FG3 type 61
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the wind speed top FG3 type 64
+message WindSpeedTopReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked wind speed top in meter per second FG3 type 64
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the freezing temperature FG3 type 65
+message FreezingTemperatureReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked freezing temperature in celsius FG3 type 65
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the dew-point temperature FG3 type 66
+message DewPointTemperatureReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked dew point temperature in celsius FG3 type 66
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the ground temperature in depth 1 FG3 type 67
+message GroundTemperatureDepthOneReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked ground temperature depth one in celsius FG3 type 67
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the ground temperature in depth 2 FG3 type 68
+message GroundTemperatureDepthTwoReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked ground temperature depth two in celsius FG3 type 68
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the ground temperature in depth 3 FG3 type 69
+message GroundTemperatureDepthThreeReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked ground temperature depth three in celsius FG3 type 69
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the road surface condition FG3 type 70
+message RoadSurfaceConditionReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    RoadSurface.Condition value = 5;                // Plausibility checked road surface condition FG3 type 70
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the precipitation type FG3 type 71
+message PrecipitationTypeReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    Precipitation.Type value = 5;                   // Plausibility checked precipitation type FG3 type 71
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the water film thickness FG3 type 72
+message WaterFilmThicknessReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked water film thickness in millimeter FG3 type 72
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the de-icing grit concentration FG3 type 73
+message DeIcingGritConcentrationReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked de-icing grit concentration in percent FG3 type 73
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the de-icing grit concentration FG3 type 74
+message DeIcingGritPerM2ReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked de-icing grit per square meter in gram FG3 type 74
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the snow film thickness FG3 type 75
+message SnowFilmThicknessReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked snow film thickness in millimeter FG3 type 75
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the ice film thickness FG3 type 76
+message IceFilmThicknessReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked ice film thickness in millimeter FG3 type 76
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the grip FG3 type 77
+message GripReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked grip FG3 type 77
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the global solar radiation FG3 type 78
+message GlobalSolarRadiationReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked global solar radiation in watt per square meter FG3 type 78
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the road surface condition for winter services FG3 type 79
+message RoadSurfaceConditionWinterServicesReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    RoadSurfaceWinterService.Condition value = 5;   // Plausibility checked road surface condition for winter services FG3 type 79
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the nitrogen monoxide FG3 type 80
+message NitrogenMonoxideReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked nitrogen monoxide in milligram per cubic meter FG3 type 80
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the nitrogen dioxide FG3 type 81
+message NitrogenDioxideReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked nitrogen dioxide in milligram per cubic meter FG3 type 81
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the nitrogen oxide FG3 type 82
+message NitrogenOxideReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked nitrogen oxide in parts per million (ppm) FG3 type 82
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the particulate matter 10 FG3 type 83
+message PM10ReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked particulate matter 10 in milligram per cubic meter FG3 type 83
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the particulate matter 2.5 FG3 type 84
+message PM2_5ReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked particulate matter 2.5 in milligram per cubic meter FG3 type 84
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the particulate matter 1 FG3 type 85
+message PM1ReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked particulate matter 1 in milligram per cubic meter FG3 type 85
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the  A-weighted sound pressure level FG3 type 86
+message  A_WeightedSoundPressureLevelReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked A-weighted sound pressure level in decibel FG3 type 86
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the energy equivalent continuous sound pressure level FG3 type 87
+message  EnergyEquivalentContinuousSoundPressureLevelReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked energy equivalent continuous sound pressure level in decibel FG3 type 86
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the base sound level FG3 type 88
+message BaseSoundLevelReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked base sound level in decibel FG3 type 86
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+
+}
+
+// Measurement replaced data of the middle peak sound level FG3 type 89
+message MiddlePeakSoundLevelReplacedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data
+    // record happens to be processed by the stream processing application, 
+    // i.e. when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time 
+    // This is something like setting a system_time from the database in old 
+    // systems 
+    google.protobuf.Timestamp processing_time = 2; 
+    string id = 3;                                  // Identification of environment sensor
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Plausibility checked middle peak sound level in decibel FG3 type 89
+    int32 quality = 6;                              // Quality in percent  (specification:  'Guete')
+    // State of the plausibility checked replaced data
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 7;
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+// List of AirTemperature used e.g. to publish to a broker 
+message AirTemperatureReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated AirTemperatureReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of RoadSurfaceTemperatureReplacedData used e.g. to publish to a broker 
+message RoadSurfaceTemperatureReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated RoadSurfaceTemperatureReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of ResidualSaltContentReplacedData used e.g. to publish to a broker 
+message ResidualSaltContentReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated ResidualSaltContentReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of PrecipitationIntensityReplacedData used e.g. to publish to a broker 
+message PrecipitationIntensityReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated PrecipitationIntensityReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of AirPressureReplacedData used e.g. to publish to a broker 
+message AirPressureReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated AirPressureReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of RelativeAirHumidityReplacedData used e.g. to publish to a broker 
+message RelativeAirHumidityReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated RelativeAirHumidityReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of WindDirectionReplacedData used e.g. to publish to a broker 
+message WindDirectionReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated WindDirectionReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of WindSpeedAverageReplacedData used e.g. to publish to a broker 
+message WindSpeedAverageReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated WindSpeedAverageReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of SnowDepthReplacedData used e.g. to publish to a broker 
+message SnowDepthReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated SnowDepthReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of VisibilityReplacedData used e.g. to publish to a broker 
+message VisibilityReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated VisibilityReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of LuminosityReplacedData used e.g. to publish to a broker 
+message LuminosityReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated LuminosityReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of WindSpeedTopReplacedData used e.g. to publish to a broker 
+message WindSpeedTopReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated WindSpeedTopReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of FreezingTemperatureReplacedData used e.g. to publish to a broker 
+message FreezingTemperatureReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated FreezingTemperatureReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of DewPointTemperatureReplacedData used e.g. to publish to a broker 
+message DewPointTemperatureReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated DewPointTemperatureReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of GroundTemperatureDepthOneReplacedData used e.g. 
+// to publish to a broker 
+message GroundTemperatureDepthOneReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated GroundTemperatureDepthOneReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of GroundTemperatureDepthTwoReplacedData used e.g. 
+// to publish to a broker 
+message GroundTemperatureDepthTwoReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated GroundTemperatureDepthTwoReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of GroundTemperatureDepthThreeReplacedData used e.g. 
+// to publish to a broker 
+message GroundTemperatureDepthThreeReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated GroundTemperatureDepthThreeReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of RoadSurfaceConditionReplacedData used e.g. 
+// to publish to a broker 
+message RoadSurfaceConditionReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated RoadSurfaceConditionReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of PrecipitationTypeReplacedData used e.g. 
+// to publish to a broker 
+message PrecipitationTypeReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated PrecipitationTypeReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of WaterFilmThicknessReplacedData used e.g. 
+// to publish to a broker 
+message WaterFilmThicknessReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated WaterFilmThicknessReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of DeIcingGritConcentrationReplacedData used e.g. 
+// to publish to a broker 
+message DeIcingGritConcentrationReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated DeIcingGritConcentrationReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of DeIcingGritPerM2ReplacedData used e.g. 
+// to publish to a broker 
+message DeIcingGritPerM2ReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated DeIcingGritPerM2ReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of SnowFilmThicknessReplacedData used e.g. 
+// to publish to a broker 
+message SnowFilmThicknessReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated SnowFilmThicknessReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of IceFilmThicknessReplacedData used e.g. 
+// to publish to a broker 
+message IceFilmThicknessReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated IceFilmThicknessReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of GripReplacedData used e.g. to publish to a broker 
+message GripReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated GripReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of GlobalSolarRadiationReplacedData used e.g. 
+// to publish to a broker 
+message GlobalSolarRadiationReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated GlobalSolarRadiationReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of RoadSurfaceConditionWinterServicesReplacedData used e.g. 
+// to publish to a broker 
+message RoadSurfaceConditionWinterServicesReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated RoadSurfaceConditionWinterServicesReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of NitrogenMonoxideReplacedData used e.g. 
+// to publish to a broker 
+message NitrogenMonoxideReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated NitrogenMonoxideReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of NitrogenDioxideReplacedData used e.g. to publish to a broker 
+message NitrogenDioxideReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated NitrogenDioxideReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of NitrogenOxideReplacedData used e.g. to publish to a broker 
+message NitrogenOxideReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated NitrogenOxideReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of PM10ReplacedData used e.g. to publish to a broker 
+message PM10ReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated PM10ReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of PM2_5ReplacedData used e.g. to publish to a broker 
+message PM2_5ReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated PM2_5ReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of PM1ReplacedData used e.g. to publish to a broker 
+message PM1ReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated PM1ReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of A_WeightedSoundPressureLevelReplacedData used e.g. 
+// to publish to a broker 
+message A_WeightedSoundPressureLevelReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated A_WeightedSoundPressureLevelReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of EnergyEquivalentContinuousSoundPressureLevelReplacedData used e.g. 
+// to publish to a broker 
+message EnergyEquivalentContinuousSoundPressureLevelReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated EnergyEquivalentContinuousSoundPressureLevelReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of BaseSoundLevelReplacedData used e.g. 
+// to publish to a broker 
+message BaseSoundLevelReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated BaseSoundLevelReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}
+
+// List of MiddlePeakSoundLevelReplacedData used e.g. 
+// to publish to a broker 
+message MiddlePeakSoundLevelReplacedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated MiddlePeakSoundLevelReplacedData data = 1;   // environmental data
+    string iid = 2;                                 // message id
+}

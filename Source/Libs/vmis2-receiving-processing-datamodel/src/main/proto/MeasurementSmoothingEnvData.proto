@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.receiving.processing.env.data.smooth;
+
+import "EnumerationsEnvironmentData.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "MeasurementSmoothingEnvDataProto";
+option (.heuboe.protobuf.interface_version) = "1.1.0";
+
+// Measurement smoothed environmental data for precipitation intensity. (output)
+message PrecipitationIntensitySmoothedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detector.
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 2;  
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 3;
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Value of precipitation intensity in mm/h
+    // Smoothing state of precipitation intensity
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 6;  
+    float quality = 7;                              // Quality of smoothed value.
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message PrecipitationIntensitySmoothedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated PrecipitationIntensitySmoothedData data = 1;
+    string iid = 2;
+}
+
+// Measurement smoothed environmental data for water film thicknes. (output)
+message WaterFilmThicknessSmoothedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detector.
+   // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 2;  
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 3;
+    int32 intervallength = 4;                       // Interval length in seconds
+    float value = 5;                                // Value of water film thickness in mm
+    // Smoothing state of waterfilm thickness
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 6;  
+    float quality = 7;                              // Quality of smoothed value.
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message WaterFilmThicknessSmoothedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated WaterFilmThicknessSmoothedData data = 1;
+    string iid = 2;
+}
+
+// Measurement smoothed environmental data for precipitation intensity. (output)
+message VisibilitySmoothedData {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                  // Identification of detector.
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 2;  
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time
+    google.protobuf.Timestamp event_time = 3;
+    int32 intervallength = 4;                       // Interval length in seconds.
+    float value = 5;                                // Value of visibility in m.
+    // Smoothing state of visibility 
+    eu.vmis_ehe.vmis2.receiving.processing.env.data.DataStateEd state = 6;  
+    float quality = 7;                              // Quality of smoothed value.
+    google.protobuf.Timestamp tls_time = 8;         // Time that was sent with the TLS data via TLS timestamp
+}
+
+message VisibilitySmoothedDataList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated VisibilitySmoothedData data = 1;
+    string iid = 2;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.heuboe.asfinag</groupId>
+		<artifactId>vmis2-protobuf-parent</artifactId>
+		<version>3.17.0</version>
+	</parent>
+
+	<artifactId>vmis2-receiving-processing-datamodel</artifactId>
+	<version>1.1.0</version>
+
+	<name>VMIS2 Kern ${project.artifactId}</name>
+	<description>Control data model serve data structure for PL-Checked-, measurement-, preparation-, aggregated,- smoothed- and LOS Data.</description>
+	<url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+	<inceptionYear>2018</inceptionYear>
+
+	<scm>
+		<url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</developerConnection>
+		<tag>vmis2-receiving-processing-datamodel_1.1.0</tag>
+	</scm>
+
+	<properties>
+		<java.version>8</java.version>
+		<gitlab.path>VMIS2/data-receiving-and-processing/base/vmis2-receiving-processing-datamodel</gitlab.path>
+	</properties>
+
+	<developers>
+		<developer>
+			<name>Marion Keune</name>
+		</developer>
+	</developers>
+
+</project>
