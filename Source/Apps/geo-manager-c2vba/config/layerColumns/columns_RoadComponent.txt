@@ -1,0 +1,66 @@
+[ {
+  "name" : "Locationtyp",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Klasse",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "ID",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Name",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Length [km]",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "RouteNumber",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "JunctionName",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "UZ",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Destination",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "von km",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "bis km",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "BaseOffset",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "NumberJunctions",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+} ]

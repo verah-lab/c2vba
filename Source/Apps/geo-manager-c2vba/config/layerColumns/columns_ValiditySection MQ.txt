@@ -1,0 +1,46 @@
+[ {
+  "name" : "Klasse",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Typ",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "ID",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Name",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Road",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "von Offset",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "bis Offset",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "von km",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "bis km",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+} ]

@@ -1,0 +1,106 @@
+[ {
+  "name" : "Klasse",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Typ",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "ID",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Name",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Ort",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "AQType",
+  "description" : "",
+  "type" : "ENUM",
+  "alterable" : false
+}, {
+  "name" : "BAB",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "WINKEL",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "BABKM",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "FAHRTRICHTUNG",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "GeoRoad",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "RoadCandidates",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Road",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "GeoRoad",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "MainRoad",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "RcOffset",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "MainRoadId",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Heading",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "Offset [km]",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "predecessors",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "successors",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+} ]

@@ -1,0 +1,36 @@
+[ {
+  "name" : "Klasse",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "ID",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Name",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Offset",
+  "description" : "",
+  "type" : "DOUBLE",
+  "alterable" : false
+}, {
+  "name" : "Road",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "km",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Types",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+} ]

@@ -1,0 +1,51 @@
+[ {
+  "name" : "Klasse",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Direction",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Name",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "ID",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Typ",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Ort",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Straße",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Nachfolger",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "Vorgänger",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+}, {
+  "name" : "IntersectionCodes",
+  "description" : "",
+  "type" : "STRING",
+  "alterable" : false
+} ]

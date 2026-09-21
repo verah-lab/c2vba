@@ -1,0 +1,298 @@
+{
+	"geoLayerTypes": [{
+			"name": "RoadNet",
+			"description": "Straßennetz",
+			"locationType": "RoadElement",
+			"locationSubType": null,
+			"alterable": false
+		},
+		{
+			"name": "Road",
+			"description": "Kilometrierte Straßen",
+			"locationType": "LinRefRoad",
+			"locationSubType": null,
+			"alterable": false
+		},
+		{
+			"name": "RoadComponent",
+			"description": "Straßenkomponenten",
+			"locationType": "RoadComponent",
+			"locationSubType": null,
+			"alterable": false
+		},
+		{
+			"name": "DirectedNetRoad",
+			"description": "Straßen",
+			"locationType": "DirectedNetRoad",
+			"locationSubType": null,
+			"alterable": false
+		},
+		{
+			"name": "JunctionRoad",
+			"description": "Rampen",
+			"locationType": "de.heuboe.wls.roadmap.road.SubordinateRoadFeature",
+			"locationSubType": null,
+			"alterable": false
+		},
+		{
+			"name": "Segment",
+			"description": "Segment",
+			"locationType": "de.heuboe.wls.data.geomanager.Segment",
+			"locationSubType": null,
+			"zOrder": 100000,
+    		"color": "#008000",
+    		"strokeWeight": 1.3,
+			
+			"alterable": false
+		},
+		{
+			"name": "SegmentBorder",
+			"description": "Segmentgrenze",
+			"locationType": "de.heuboe.wls.data.geomanager.SegmentBorder",
+			"locationSubType": null,
+			"zOrder": 100001,
+			"icon": "blueSmallBall",
+			"alterable": false
+		},
+		{
+			"name": "Hardshoulder",
+			"description": "Pannenstreifen",
+			"locationType": "de.heuboe.wls.roadmap.segmented.attr.SegmentedAttrData",
+			"locationSubType": "HARDSHOULDER",
+			"zOrder": 100000,
+    		"color": "#761F1F",
+    		"strokeWeight": 2.0,
+			"alterable": false
+		},
+		{
+			"name": "MQ",
+			"description": "Messquerschnitte",
+			"locationType": "de.heuboe.geo.manager.data.GeoManagerGeoFeature",
+			"locationSubType": "MQ",
+			"icon": "mqIcon",
+			"selectedIcon": "selMqIcon",
+			"alterable": false,
+			"visibleFromLevel" : 8
+		},		
+		{
+			"name": "FCD",
+			"description": "FCDs",
+			"locationType": "de.heuboe.geo.manager.data.GeoManagerGeoFeature",
+			"locationSubType": "FCD",
+			"icon": "fcdIcon",
+			"selectedIcon": "selFcdIcon",
+			"alterable": false,
+			"visibleFromLevel" : 8
+		},		
+		{
+			"name": "AQ",
+			"description": "Anzeigequerschnitte",
+			"locationType": "GeoFeature",
+			"locationSubType": "AQ",
+			"icon": "gantryIcon",
+			"alterable": false,
+			"visibleFromLevel" : 8,
+			"columnDefinitions": [
+				{
+				  "name" : "AQType",
+				  "description" : "Typ",
+				  "type" : "ENUM"
+				}
+			]
+		},
+		{
+			"name": "UFD",
+			"description": "Wettersensoren (UFD)",
+			"locationType": "de.heuboe.geo.manager.data.GeoManagerGeoFeature",
+			"locationSubType": "UDE",
+			"subType": "!(UDE-Type:HK)",
+			"icon": "ufdIcon",
+			"alterable": false
+		},
+		{
+			"name": "Brightness",
+			"description": "Helligkeitssensoren (UDE)",
+			"locationType": "GeoFeature",
+			"locationSubType": "UDE",
+			"subType": "UDE-Type:HK",
+			"icon": "ufd_hkIcon",
+			"alterable": false
+		},
+		{
+			"name": "SSt",
+			"description": "Streckenstationen",
+			"locationType": "GeoFeature",
+			"locationSubType": "SM",
+			"icon": "sstIcon",
+			"selectedIcon": "selSstIcon",
+			"alterable": false
+		},		
+		{
+			"name": "Junctions",
+			"description": "Junctions",
+			"locationType": "SystemRoad/Junction",
+			"locationSubType": null,
+			"icon": "junctionIcon",
+			"selectedIcon": "selJunctionIcon",
+			"alterable": false
+		},
+		{
+			"name": "TmcNet",
+			"description": "RDS/TMC-Netz",
+			"locationType": "TmcRoadSegment",
+			"locationSubType": null,
+			"alterable": false,
+			"roadType" : "TMC"
+		},	
+		{
+			"name": "LCLPoint",
+			"description": "LCL-Punkte",
+			"locationType": "TmcLocation",
+			"locationSubType": null,
+			"alterable": false,
+			"roadType" : "TMC"
+		},	
+		{
+			"name": "TmcPoints",
+			"description": "Tmc-Punkte",
+			"locationType": "de.heuboe.wls.data.tmc.DirectedTmcLocation",
+			"locationSubType": null,
+			"icon": "tmcNoneIcon",
+			"alterable": true,
+			"roadType" : "TMC",
+			"shortNameFields": [ "Straße:", "Name", "(ID)" ],
+			"shortInfoFields": [ "Straße:", "Name", "(ID)" ]
+		},
+		{
+			"name": "RoadPoints",
+			"description": "Maßnahmengrenzen",
+			"locationType": "de.heuboe.vmis2.data.Vmis2PointOnRoad",
+			"locationSubType": "STOP",
+			"icon": "blueSmallBall",
+			"alterable": true,
+			"columnDefinitions": [
+				{
+				  "name" : "Description",
+				  "description" : "Typ",
+				  "type" : "STRING",
+				  "alterable": true
+				}
+			]
+		},
+		{
+			"name": "ValiditySection MQ",
+			"description": "Gültigkeitsbereiche MQ",
+			"locationType": "de.heuboe.geo.manager.data.VSGeoFeature",
+			"locationSubType": "MQ-ValiditySection",
+			"alterable": true,
+			"columnDefinitions": [
+				{
+				  "name" : "von Offset",
+				  "description" : "Start-Offset",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				},
+				{
+				  "name" : "bis Offset",
+				  "description" : "End-Offset",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				},
+				{
+				  "name" : "von km",
+				  "description" : "Start-Kilometer",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				},
+				{
+				  "name" : "bis km",
+				  "description" : "End-Kilometer",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				}
+			]
+			
+		},
+		{
+			"name": "ValiditySection FCD",
+			"description": "Gültigkeitsbereiche FCD",
+			"locationType": "de.heuboe.geo.manager.data.VSGeoFeature",
+			"locationSubType": "FCD-ValiditySection",
+			"alterable": true,
+			"columnDefinitions": [
+				{
+				  "name" : "von Offset",
+				  "description" : "Start-Offset",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				},
+				{
+				  "name" : "bis Offset",
+				  "description" : "End-Offset",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				},
+				{
+				  "name" : "von km",
+				  "description" : "Start-Kilometer",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				},
+				{
+				  "name" : "bis km",
+				  "description" : "End-Kilometer",
+				  "type" : "DOUBLE",
+				  "alterable": true
+				}
+			]
+			
+		},
+		{
+			"name": "ValiditySection AQ",
+			"description": "Gültigkeitsbereiche AQ",
+			"locationType": "de.heuboe.geo.manager.data.VSGeoFeature",
+			"locationSubType": "AQ-ValiditySection",
+			"alterable": false
+		},
+		{
+			"name": "ValiditySection UDE",
+			"description": "Gültigkeitsbereiche UDE",
+			"locationType": "de.heuboe.geo.manager.data.VSGeoFeature",
+			"locationSubType": "UDE-ValiditySection",
+			"alterable": false
+		},
+		{
+			"name": "TurnRestriction",
+			"description": "Abbiegeverbote",
+			"locationType": "TurnRestriction",
+			"locationSubType": "TurnRestriction",
+			"alterable": false
+		},
+		{
+			"name": "Strategie-Routen",
+			"description": "Strategie-Routen",
+			"locationType": "de.heuboe.wls.data.sdbby.SdbbyRoute",
+			"alterable": false,
+			"strokeWeight": 2.0
+		},
+		{
+			"name": "Strategie-Trigger",
+			"description": "Strategie-Trigger",
+			"locationType": "de.heuboe.geo.manager.control.c2vba.strategy.StrategyTrigger",
+			"icon": "triggerIcon",
+			"alterable": false,
+			"strokeWeight": 2.0
+		}
+	],
+	"hierarchyTypes": [
+		"Road/Junction/MQ",
+		"Road/Junction/AQ"
+	],
+	
+	"geoRoadTypes": [
+		"TMC",
+		"LINREF",
+		"ROAD",
+		"MAIN"
+	]
+}
