@@ -1,0 +1,8 @@
+
+Konfiguration_Tunnel_Kohlberg(Version 1 03) an VRZ_edit_SSP_V2.xlsx
+- Bezeichner für SSTs vergeben
+- je eigene Zeilen für AQ und Cluster angelegt (vorher gab es dafür nur eine Zeile)
+- automatisch hochgezählte BAB-Nummern auf A96 zurückgesetzt (war A97-A110…)
+- Dopplung von ID (Spalte Bemerkung) für "Cluster VLSA_SCH" aufgelöst, indem ID erweitert wurde:
+    -> es gibt nun Cluster VLSA_SCH_101_104     und   Cluster VLSA_SCH_201_204
+

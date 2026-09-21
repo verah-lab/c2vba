@@ -1,0 +1,14 @@
+Es ist aufgefallen, dass es in der KRI58 (LVE - UZ Memmingen) drei Knotennummern (osi7Address einer SSt) gibt, die auch unter anderen KRIs vorkommen:
+
+KnNr;KRIs
+9607888;KRI58, KRI174
+11015011;KRI58, UZ08_KRI1
+718940;KRI58, KRI164
+
+GMA - UZ Sulzberg [KRI164]
+Tunnel Kohlberg [KRI174]
+UZ Regensburg [UZ08_KRI1]
+
+
+
+
