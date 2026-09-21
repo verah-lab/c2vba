@@ -1,0 +1,293 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- me -->
+	<artifactId>geo-manager-c2vba</artifactId>
+	<version>0.0.4</version>
+ 
+    <name>GeoManager im C2VBA</name>
+
+	<!-- parent -->
+	<parent>
+		<artifactId>geo-manager-parent</artifactId>
+		<groupId>de.heuboe.geo</groupId>
+		<version>1.5.3</version>
+	</parent>
+
+	<scm>  
+		<url>https://gitlab.heuboe.hbintern/C2VBA/geo-manager-c2vba</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:C2VBA/geo-manager-c2vba.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:C2VBA/geo-manager-c2vba.git</developerConnection>
+    </scm>
+    
+	<properties>
+		<java.version>11</java.version>
+        <jackson_wls.version>2.11.1</jackson_wls.version>
+        <jmh.version>1.21</jmh.version>
+        <mainClass>de.heuboe.geo.manager.control.Main</mainClass>
+        <heuboe.pdb.skip>true</heuboe.pdb.skip>
+    </properties>
+
+	<!-- dependencies -->
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-1.2-api</artifactId>
+		</dependency>
+
+		<dependency>
+		  	<groupId>org.locationtech.spatial4j</groupId>
+		  	<artifactId>spatial4j</artifactId>
+		  	<version>0.7</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.geo</groupId>
+			<artifactId>geo-manager-control-base</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.heuboe.geo</groupId>
+			<artifactId>geo-manager-base</artifactId>
+		</dependency>
+	
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-roadmap-here</artifactId>
+			<version>0.1.1</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>de.heuboe.wls</groupId>
+			<artifactId>wls-sdbby</artifactId>
+			<version>4.5.0</version>
+		</dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
+		<!-- Testing -->
+		
+		<dependency>
+			<groupId>de.heuboe.base</groupId>
+			<artifactId>jhbRegressionTest</artifactId>
+			<version>0.2.8</version>
+			<scope>test</scope>
+		</dependency>
+	
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            
+            <exclusions>
+	            <exclusion>
+				    <groupId>com.vaadin.external.google</groupId>
+				    <artifactId>android-json</artifactId>
+	            </exclusion>
+            </exclusions>
+        </dependency>
+        
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-commons</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		  	<groupId>org.junit.jupiter</groupId>
+  			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+	
+		
+	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>fatjar</id>
+			
+			<build>
+				<plugins>
+					<!-- build an executable jar -->
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<mainClass>de.heuboe.geo.manager.c2vba.Main</mainClass>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+    <build>
+        <plugins>
+        
+        <plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+          	<configuration>
+            	<forceJavacCompilerUse>true</forceJavacCompilerUse> 
+          	</configuration>
+        </plugin>
+		<plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>prepare-agent</id>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>prepare-agent-integration</id>
+                    <goals>
+                        <goal>prepare-agent-integration</goal>
+                    </goals>
+                </execution>
+                <!-- For sonar -->
+                <execution>
+                    <id>generate-report</id>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+                	<execution>
+                    <id>generate-report-integration</id>
+                    <goals>
+                        <goal>report-integration</goal>
+                    </goals>
+                	</execution>
+            	</executions>
+         </plugin> 
+		 <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-javadoc-plugin</artifactId>
+		    <configuration>
+		      <source>8</source>
+		    </configuration>
+		  </plugin>
+
+
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<executions>
+					<!-- Optional -->
+					<!-- Build a tar file to allow local inspection -->
+					<execution>
+						<id>docker-build-tar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>buildTar</goal>
+						</goals>
+					</execution>
+					<!-- Required -->
+					<!-- Upload the image to the registry -->
+					<execution>
+						<id>docker-build</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<from>
+						<!-- ${docker.registry} is set via settings.xml -->
+						<image>${docker.registry}/eclipse-temurin:17-jre-alpine</image>
+					</from>
+					<to>
+						<!-- This change is important -->
+						<image>${docker.registry}/heuboe/geo/${project.artifactId}:${project.version}</image>
+					</to>
+					<container>
+						<jvmFlags>
+							<!-- Flags für Spring -->
+							<jvmFlag>-Dorg.apache.cxf.stax.maxChildElements=500000</jvmFlag>
+							<jvmFlag>-Dlogging.config=/config/log4j2.xml</jvmFlag>
+							<jvmFlag>-Dspring.config.location=file:/config/</jvmFlag>
+							<jvmFlag>-Dio.grpc.internal.DnsNameResolverProvider.enable_grpclb=true</jvmFlag>
+<!--  						
+							<jvmFlag>-Dcom.sun.management.jmxremote=true</jvmFlag>
+							<jvmFlag>-Dcom.Sun.management.jmxremote.local.only=false</jvmFlag>
+							<jvmFlag>-Dcom.sun.management.jmxremote.port=31305</jvmFlag>
+							<jvmFlag>-Dcom.sun.management.jmxremote.ssl=false</jvmFlag>
+							<jvmFlag>-Dcom.sun.management.jmxremote.authenticate=false</jvmFlag>
+							<jvmFlag>-Dcom.sun.management.jmxremote.rmi.port=31305</jvmFlag>
+							<jvmFlag>-Djava.rmi.server.hostname=master1.d.uz.komodnext.heuboe.hbintern</jvmFlag>
+-->								
+							<!-- Do not add flags such as -Xmx2G or other parameters here that might 
+								be changed later on -->
+						</jvmFlags>
+						<mainClass>${mainClass}</mainClass>
+						<ports>
+							<!-- Ports with their function -->
+							<port>8080</port><!-- actuator -->
+							<port>8085</port><!-- wls -->
+							<port>4916</port><!-- geo -->
+							<port>8095</port><!-- hierarchy -->
+							
+                            <port>9080</port><!-- grpc-plaintext -->
+                            <port>9090</port><!-- grpc -->
+							
+						</ports>
+						<labels>
+							<version>${project.version}</version>
+							<build.timestamp>${maven.build.timestamp}</build.timestamp>
+							<!-- Metadata-derived from the git-commit-id-plugin -->
+							<git.tags>${git.tags}</git.tags>
+							<git.commit.id.abbrev>${git.commit.id.abbrev}</git.commit.id.abbrev>
+							<git.commit.timestamp>${git.commit.time}</git.commit.timestamp>
+						</labels>
+						<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+						<filesModificationTime>${git.commit.time}</filesModificationTime>
+					</container>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<verbose>false</verbose>
+					<skipPoms>false</skipPoms>
+					<dateFormat>yyyy-MM-dd'T'HH:mm:ss'Z'</dateFormat><!-- Required for dockering -->
+					<dateFormatTimeZone>UTC</dateFormatTimeZone><!-- Required for dockering -->
+					<generateGitPropertiesFile>true</generateGitPropertiesFile>
+					<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+					<failOnNoGitDirectory>false</failOnNoGitDirectory>
+					<failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+					<excludeProperties>
+						<!-- Requested to be excluded by colleague -->
+						<excludeProperty>.*\.user\..*</excludeProperty>
+						<!-- same here and we already have other build information files -->
+						<excludeProperty>.*\.build\..*</excludeProperty>
+					</excludeProperties>
+				</configuration>
+			</plugin>
+       </plugins>
+	</build>	
+
+</project>

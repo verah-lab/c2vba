@@ -1,0 +1,22 @@
+WLS-Funktionalität 
+
+1) vms-publication-service
+
+GeoFeature lesen (AQ)
+OpenLR-Konvertierung (gibt es nicht im GeoManager)
+
+
+2) strategie-matching
+
+Strategien lesen
+
+
+3) strategic-routing-publication
+
+OpenLR-Konvertierung (gibt es nicht im GeoManager)
+Strategien lesen
+
+4) c2vba-datex2-mst-localisation
+
+GeoFeature lesen (MQ, UFD)
+OpenLR-Konvertierung (gibt es nicht im GeoManager)
