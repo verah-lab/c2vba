@@ -1,0 +1,318 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "ConfigBase.proto";
+import "ConfigVersions.proto";
+import "NotificationData.proto";
+import "google/protobuf/empty.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option java_outer_classname = "ConfigVersionServiceProto";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// ConfigVersionService main interface
+
+service ConfigVersionService {
+
+    // Creates one new TLS base data block from external data (doesn't change service's current data)
+    rpc ImportBaseData (ImportBaseDataRequest) returns (stream ImportBaseDataResponse) {}
+    rpc ImportBaseDataStream (stream ImportBaseDataStreamRequest) returns (stream ImportBaseDataResponse) {}
+
+    // Creates one new manual data block from external data (doesn't change service's current data)
+    rpc ImportManualData (ImportManualDataRequest) returns (stream ImportManualDataResponse) {}
+    rpc ImportManualDataStream (stream ImportManualDataStreamRequest) returns (stream ImportManualDataResponse) {}
+
+    // Imports tunnel data
+    // Deprecated; use below 'ImportData' methods (if at all) !
+    rpc ImportTunnelData (ImportTunnelDataRequest) returns (ImportTunnelDataResponse) {}
+    rpc ImportTunnelDataStream (stream ImportTunnelDataStreamRequest) returns (ImportTunnelDataResponse) {}
+
+    // Imports miscellaneous data into snapshot area of current manual data block (For now: Tunnel and VKP).
+    // Debug use only, use ConfigServices 'Import... ' methods for production !
+    rpc ImportData (ImportDataRequest) returns (ImportDataResponse) {}
+    rpc ImportDataStream (stream ImportDataStreamRequest) returns (ImportDataResponse) {}
+
+    // Creates new manual data for base versions (can use existing manual data as source)
+    rpc CreateManualData (CreateManualDataRequest) returns (stream CreateManualDataResponse) {}
+
+    // Creates a new persistent version from existing base and manual data
+    rpc CreateConfigVersion (CreateConfigVersionRequest) returns (stream CreateConfigVersionResponse) {}
+
+    // Pushes config data to other systems via KAFKA (staging mode only)
+    rpc PushConfigData(PushConfigDataRequest) returns (google.protobuf.Empty) {}
+
+    // Activates an existing persistent Version.
+    // In staging mode, can be used to create/activate a temporary version
+    // Pushes messages for data model changes
+    rpc ActivateVersion (ActivateVersionRequest) returns (stream ActivateVersionResponse) {}
+
+    // Checks manual data blocks against their base data, either for a persistent or a temporary version
+    // To check the currently active version, call this with empty parameters
+    rpc CheckVersion (CheckVersionRequest) returns (stream CheckVersionResponse) {}
+
+    // Merges manual data according to input into current manual data.
+    // Pushes messages for data model changes
+    rpc MergeManualData (MergeManualDataRequest) returns (stream MergeManualDataResponse) {}
+
+    // Creates new manual packages from current + snapshot data
+    rpc PersistSnapshots (PersistSnapshotsRequest) returns (google.protobuf.Empty) {}
+
+    // Dismiss snaphot manual data blocks (fall back to non-snapshot data)
+    // Pushes messages for data model changes
+    rpc DismissSnapshots (DismissSnapshotsRequest) returns (stream DismissSnapshotsResponse) {}
+
+    // Reports which config versions are currently available in service's DB
+    rpc GetAvailableVersions (google.protobuf.Empty) returns (GetAvailableVersionsResponse) {}
+
+    // Reports which data blocks are currently available in service's DB
+    rpc GetKnownData (google.protobuf.Empty) returns (GetKnownDataResponse) {}
+
+    // Reports which data versions are currently in use, including snapshot states for manual data
+    rpc GetCurrentVersion (google.protobuf.Empty) returns (GetCurrentVersionResponse) {}
+
+    // Deletes config versions from DB
+    // Deletes version descriptors only; use DeleteData() to remove data blocks
+    rpc DeleteVersions (DeleteVersionsRequest) returns (google.protobuf.Empty) {}
+
+    // Deletes data blocks from DB. Can only delete blocks not used by any version
+    rpc DeleteData (DeleteDataRequest) returns (google.protobuf.Empty) {}
+
+    // Creates defaults for manual data (needs up to date GeoManager to do so)
+    // DEBUG, can be called in STAGING mode only (usually done automatically when creating versions)
+    rpc CreateExtData (CreateExtDataRequest) returns (google.protobuf.Empty) {}
+}
+
+message ImportBaseDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string tls_data_path = 1;
+    string encoding = 2;                                // Optional, default: UTF-8
+}
+message ImportBaseDataStreamRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string base_data = 1;
+}
+message ImportBaseDataResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    BaseVersionKey base_version_key = 1;
+    string uz_name = 2;
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 3;
+}
+
+message ImportManualDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string manual_data_path = 1;
+    string encoding = 2;                                // Optional, default: UTF-8
+}
+message ImportManualDataStreamRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string manual_data = 1;
+}
+message ImportManualDataResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    VersionKey version_key = 1;
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 2;
+}
+
+message ImportTunnelDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string tunnel_data_path = 1;
+    string encoding = 2;                                // Optional, default: UTF-8
+    bool delete_existing = 3;                           // Optional, default: false
+}
+message ImportTunnelDataStreamRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string tunnel_data = 1;
+    bool delete_existing = 2;                           // Optional, default: false
+}
+message ImportTunnelDataResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string version_key = 1;
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 2;
+}
+
+message ImportDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    ConfigItemType type = 1;                            // type of data to import
+    string uz_id = 2;
+    string data_path = 3;
+    string user = 4;                                    // Optional, default: debug
+    string encoding = 5;                                // Optional, default: UTF-8
+    bool merge = 6;                                     // Optional, default: false
+}
+message ImportDataStreamRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string data = 1;                                    // streamed data
+
+    // 1. message only:
+    ConfigItemType type = 2;                            // type of data to import
+    string uz_id = 3;
+    string user = 4;                                    // Optional, default: debug
+    string encoding = 5;                                // Optional, default: UTF-8
+    bool merge = 6;                                     // Optional, default: false
+}
+message ImportDataResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string version_key = 1;
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 2;
+}
+
+message CreateManualDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    message ManVersionDesc {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+        VersionKey new_version = 1;
+        string ancestor_base_version_id = 2;            // Optional ancestor info; creates new empty version if missing
+        string ancestor_manual_version_id = 3;
+    }
+    repeated ManVersionDesc versions = 1;
+}
+message CreateManualDataResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 1;
+}
+
+message CreateConfigVersionRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string version_id = 1;                              // Version id
+    repeated VersionKey versions = 2;                   // Complete uz version key (base & manual)
+}
+message CreateConfigVersionResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 1;
+}
+
+message PushConfigDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    VersionHandle data = 1;
+}
+message ActivateVersionRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    VersionHandle version = 1;
+    bool delete_snapshots = 2;
+    string activation_token = 3;
+    string previous_version = 4;                        // Optional: When specified, diffs are calculated to this
+}                                                       // version (unstead of the current one)
+message ActivateVersionResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated VersionDesc versions = 1;                  // returns activated versions, together with snapshot info
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 2;
+    string activation_token = 3;
+}
+
+message CheckVersionRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    VersionHandle version = 1;
+}
+message CheckVersionResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 1;
+}
+
+message MergeManualDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    enum MergeType {
+        NEWEST = 0;
+        OVERRIDE = 1;
+    }
+    MergeType type = 1;
+    repeated VersionKey versions = 2;
+}
+message MergeManualDataResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated VersionDesc versions = 1;
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 2;
+}
+
+message PersistSnapshotsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string version_id = 1 [deprecated = true];              // ignored since service version 1.17.14
+    repeated VersionKey versions = 2;
+}
+
+message DismissSnapshotsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string version_id = 1;
+    repeated VersionKey versions = 2;
+}
+message DismissSnapshotsResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated de.heuboe.asfinag.vmis2.version.notifier.data.Notification warnings = 1;
+}
+
+message GetAvailableVersionsResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    VersionOverview versions = 1;
+}
+
+message GetKnownDataResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    message UzInfo {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+        BaseVersionKey key = 1;
+        string uz_name = 2;
+        bool has_base_data = 3;
+        bool has_extended_data = 4;
+    }
+    repeated UzInfo base_versions = 1;
+    repeated VersionDesc manual_versions = 2;
+}
+
+message GetCurrentVersionResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string version_id = 1;
+    repeated VersionDesc versions = 2;
+}
+
+message DeleteVersionsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated string version_ids = 1;
+}
+
+message DeleteDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated BaseVersionKey base_versions = 1;
+    repeated VersionKey manual_versions = 2;
+}
+
+message CreateExtDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated VersionKey keys = 1;
+    repeated string types = 2;
+}

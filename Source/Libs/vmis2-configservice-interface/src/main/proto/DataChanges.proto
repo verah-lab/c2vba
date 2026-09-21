@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "ConfigAqData.proto";
+import "ConfigBase.proto";
+import "ConfigMqUqVq.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// Changes in data occurred during version activation
+message DataChanges {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string iid = 4;
+    string version = 1;                                 // Current master version
+    string previous_version = 2;                        // Previous master version
+    string map_version = 6;						 	                // Active map version
+    string previous_map_version = 7;					          // Previous active map version
+    bool gip_changed = 5;								                // Changes between activated and last active version
+    bool all_changed = 9;                               // When set, clients should reload all config data instead of interpreting data changes
+    repeated DataChange data_changes = 3;               // Changes between current and previous version
+    string activation_token = 8;                        // Token used to track activation changes
+}
+// Changes for a single rVMZ
+message DataChange {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string r_vmz_id = 1;                                // same as config interface's UzId
+    repeated AreaChange road_changes = 2;
+}
+// Changes for a single road
+message AreaChange {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string road_id = 1;                                 // Road id = ID_ASFINAG
+    string road_component_id = 2;                       // Road component id
+    repeated ItemChange validity_section_changes = 3;   // Validity section changes
+    repeated ItemChange feature_changes = 4;            // Config item changes
+    repeated string relation_changes = 5;               // Relation type changes (contains relation type names from RelationType enum)
+    repeated GeoChange geo_changes = 6;                 // Additional geo-change types
+}
+enum GeoChange {
+    POINT_ON_ROAD = 0;    // Stop point on road
+    WRONG_WAY_DRIVER = 1; // Section for wrong way driver
+    WINTER_SERVICE = 2;   // Section for winter service
+}
+// Item types that changed their configuration
+message ItemChange {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    repeated ConfigItemType item_types = 3;
+    repeated CfgUdeSensor.UdeType ude_types = 4;        // Optional, when ConfigItemType UDE is present in item_types
+    repeated CfgAq.AqType aq_types = 5;                 // Optional, when ConfigItemType AQ is present in item_types
+
+}
+message ManualChange {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string iid = 1;
+    string uzId = 2;
+}
+
+// Message used to trigger data change messages without actual activation
+message DataChangeTrigger {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string iid = 1;
+    string version = 2;                                 // reported version
+    string activation_token = 3;                        // Token used to track activation changes
+    bool all_changed = 4;                               // When set, clients should reload all config data instead of interpreting data changes
+}
+
+// History log, stored by services into DB to be able to retrace users' interactions
+message HistLog {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    message HistKey {                                   // Key: Month/Year
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+        int32 month = 1;
+        int32 year = 2;
+    }
+
+    message HistEntry {                                 // Entry (meant to be used for one user interaction)
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+        google.protobuf.Timestamp time = 1;             // When
+        string user = 2;                                // Who
+        string action = 3;                              // What (service dependent)
+        repeated string content = 4;                    // Detailed description
+    }
+
+    string iid = 1;
+    HistKey key = 2;
+    google.protobuf.Timestamp created = 3;
+    repeated HistEntry logs = 4;
+}

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>1.16.26</Version>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>VMIS2.ConfigService.Interface</PackageId>
+    <PackageVersion>$(Version)</PackageVersion>
+    <Title>VMIS2 Kernsystem ConfigService Interface</Title>
+    <Authors>vmis-ehe</Authors>
+    <Description>C# Client-stubs und Protobuf-Messages fuer den ConfigService</Description>
+    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <IsTool>false</IsTool>
+    <RepositoryUrl>https://vmis-ehe.visualstudio.com/vmis2/_git/Kern_vmis2-configservice-interface</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.19.1"/>
+    <PackageReference Include="Grpc" Version="1.42.2"/>
+    <PackageReference Include="Grpc.Core" Version="1.42.2"/>
+    <PackageReference Include="Grpc.Tools" Version="1.42.2" PrivateAssets="all"/>
+    <PackageReference Include="Vmis2.version.notifier.datamodel" Version="1.0.1" PrivateAssets="all"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProtoBuf Include="ConfigAqData.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigBase.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigDbStuff.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigMiscData.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigDevicesData.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigMqUqVq.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigRelations.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigService.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigTlsData.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigTlsPhys.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigTunnel.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="ConfigVersions.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="DataChanges.proto" ProtoRoot="../src/main/proto/"/>
+    <ProtoBuf Include="VersionService.proto" ProtoRoot="../src/main/proto/"/>
+  </ItemGroup>
+</Project>

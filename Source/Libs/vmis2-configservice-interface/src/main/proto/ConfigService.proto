@@ -1,0 +1,336 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "ConfigAqData.proto";
+import "ConfigBase.proto";
+import "ConfigDevicesData.proto";
+import "ConfigMiscData.proto";
+import "ConfigMqUqVq.proto";
+import "ConfigRelations.proto";
+import "ConfigTlsData.proto";
+import "ConfigTlsPhys.proto";
+import "ConfigTunnel.proto";
+import "ConfigVersions.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option java_outer_classname = "ConfigServiceProto";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// ConfigService main interface
+
+service ConfigService {
+
+    // Returns version information about this service 
+    rpc GetServiceVersion(google.protobuf.Empty) returns (ServiceVersion) {}
+
+    // Returns a list of all config items of a given type, optionally filtered by type and/or uz
+    rpc GetAllItems(GetAllItemsRequest) returns (GetItemsReply) {}
+
+    // Returns a list of config items by type and ids.
+    // Should some of the ids given are invalid, returns items for the valid ones only;
+    // for the invalid ones, appropriate error messages will be returned instead. 
+    rpc GetItems(GetItemsRequest) returns (GetItemsReply) {}
+
+    // Returns generic item info on ids only
+    // Should some of the ids given are invalid, returns items for the valid ones only;
+    // for the invalid ones, appropriate error messages will be returned instead.
+    rpc GetItemInfos(GetItemInfosRequest) returns (GetItemInfosReply) {}
+
+    // Returns a list of relation infos by relation type and item ids.
+    // Should some of the ids given are invalid, returns items for the valid ones only;
+    // for the invalid ones, appropriate error messages will be returned instead.
+    // Returns 'empty' relations (without targets) for ids that are valid, but don't have a relation of 'type'.
+    // To get all relations of a given type, call this method without any ids.
+    rpc GetItemRelations(GetItemRelationsRequest) returns (GetItemRelationsReply) {}
+
+    // Sets a bunch of item relations. Throws exceptions for invalid requests.
+    // Can't be used to manipulate virtual sensor relations, use 'Set/RemoveVirtualSensors' instead.
+    rpc SetManualRelations(SetItemRelationsRequest) returns (google.protobuf.Empty) {}
+
+    // Removes relations. Throws exceptions for invalid requests.
+    // Can't be used to manipulate virtual sensor relations, use Create-/Update-/DeleteVirtualItems instead.
+    rpc RemoveManualRelations(RemoveItemRelationsRequest) returns (google.protobuf.Empty) {}
+
+    // Restores default virtual relations that where eclipsed by manual relations to their original state.
+    // Can't be used to manipulate virtual sensor relations, use RestoreVirtualDefaultItems instead.
+    rpc RestoreDefaultRelations(RestoreDefaultRelationsRequest) returns (RestoreDefaultRelationsResponse) {}
+
+    // Returns all virtual items for one relation type, optionally filtered by UZ
+    rpc ReadVirtualItems(ReadVirtualItemsRequest) returns (GetItemsReply) {}
+
+    // Creates new virtual items. Returns newly created items on success; throws exceptions otherwise.
+    // Doesn't create anything on errors; that is: GetItemsReply's errors aren't used here.
+    rpc CreateVirtualItems(CreateVirtualItemsRequest) returns (GetItemsReply) {}
+
+    // Updates existing virtual items. Returns changed items on success; throws exceptions otherwise.
+    // Doesn't change anything on errors; that is: GetItemsReply's errors aren't used here.
+    rpc UpdateVirtualItems(UpdateVirtualItemsRequest) returns (GetItemsReply) {}
+
+    // Deletes virtual items. Throws exceptions on errors.
+    // Doesn't delete anything on errors.
+    rpc DeleteVirtualItems(DeleteVirtualItemsRequest) returns (google.protobuf.Empty) {}
+
+    // Restores default virtual items that where eclipsed by Update/DeleteVirtualItems to their original state.
+    // Returns original items on success; throws exceptions otherwise.
+    // Doesn't change anything on errors; that is: GetItemsReply's errors aren't used here.
+    // (Use 'GetItemRelations' to find eclipsed virtual items)
+    rpc RestoreVirtualDefaultItems(RestoreVirtualDefaultItemsRequest) returns (GetItemsReply) {}
+
+    // Returns a partial DAG of TLS world's nodes
+    rpc GetTlsNodes( GetTlsNodesRequest ) returns (GetItemsReply) {} 
+
+    // Returns config data as XML/UTF8
+    rpc GetXml(GetXmlRequest) returns (stream GetXmlReply);
+
+    // Writes new tunnel data for one UZ, completely replacing that UZs tunnels with new data
+    // Accepted in staging mode only
+    rpc WriteTunnelData(WriteTunnelDataRequest) returns (google.protobuf.Empty) {}
+
+    // Writes new vkp data for one UZ, completely replacing that UZs vkps with new data
+    // Accepted in staging mode only
+    rpc WriteVkpData(WriteVkpDataRequest) returns (google.protobuf.Empty) {}
+
+    // Deprecated, ignored.
+    rpc SetItems(SetItemRequest) returns (google.protobuf.Empty) {}
+
+}
+
+// Interface and service version data
+message ServiceVersion {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string interface_version = 1;              // interface version, service must set this to option's 'interface_version' above
+    string service_version = 2;                // service version, created from build info (java: maven's ${project.version}) 
+    string config_version = 3;                 // active config version
+    google.protobuf.Timestamp config_activated = 5;   // time of config's last activation
+    string system = 4;                         // system identifier this service is running on
+    string mode = 6;                           // service's mode
+}
+
+message GetAllItemsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    ConfigItemType type = 1;                    // the config item type; determines which one of reply's oneof result will be used
+    string uz_id = 2 [(.heuboe.protobuf.required) = false];                     // Optional: Filter results by UZ
+    string item_type = 3 [(.heuboe.protobuf.required) = false];                 // Optional: Filter results by type where appropriate (e.g. CfgUdeSensor by UdeType)
+    repeated ChildOpt child_opts = 4 [(.heuboe.protobuf.required) = false];     // Optional: Determines if items should include their children, child ids, or nothing
+    repeated BaseVersionKey versions = 5 [(.heuboe.protobuf.required) = false]; // Optional: When specified, only items from given versions will be returned
+}
+
+message GetItemsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    ConfigItemType type = 1;                    // the config item type; determines which one of reply's result oneof will be used
+    repeated string ids = 2;                    // ids of items that should be returned
+    repeated ChildOpt child_opts = 3 [(.heuboe.protobuf.required) = false];     // Optional: Determines how child items should be included (default: ids only)
+    repeated BaseVersionKey versions = 4 [(.heuboe.protobuf.required) = false]; // Optional: When specified, only items from given versions will be returned
+}
+
+message ChildOpt {                              // Determines how an item's children are included for 'getItem' requests
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    enum Mode {
+        CHILD = 0;                              // include child as object
+        ID = 1;                                 // include child's id only
+        NONE = 2;                               // don't include anything
+    }
+	string parent_type = 1[(.heuboe.protobuf.required) = false];         // the type of item this description applies to (all item types if empty)
+	repeated string child_type = 2[(.heuboe.protobuf.required) = false]; // the type of child that should be included (all child types if empty)
+	Mode mode = 3;
+}
+
+message GetItemsReply {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    oneof result {
+        TlsNodes nodes = 1;
+
+        TlsDevices devices = 2;
+        TlsCables cables = 3;
+
+        CfgUzs uzs = 4;
+        CfgMqs mqs = 5;
+        CfgAqs aqs = 6;
+
+        CfgVdeSensors vde_sensors = 7;
+        CfgUdeSensors ude_sensors = 8;
+        CfgVltSensors vlt_sensors = 9;
+        CfgWzgs wzgs = 10;
+
+        CfgKris kris = 11;
+        CfgRouteStations route_stations = 12;
+
+        Tunnels tunnels = 13;
+        CfgFcds fcds = 14;
+        CfgGroups groups = 15;
+        VkpItems vkps = 16;
+    }
+    repeated string errors = 1000;              // a list of errors that where encountered while fulfilling the request, usually empty
+}                                               //   if filled, signifies other results might be incomplete
+
+message GetItemInfosRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated string ids = 1;                    // ids of items whose info should be returned
+}
+message GetItemInfosReply {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    message ItemInfo {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+        ConfigItemType type = 1;
+        string id = 2;
+        string name = 3;
+        string uz_id = 4;
+    }
+    repeated ItemInfo infos = 1;
+    repeated string errors = 1000;              // a list of errors that where encountered while fulfilling the request, usually empty
+}                                               //   if filled, signifies other results might be incomplete
+
+message GetItemRelationsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string type = 1;                            // requested relation type
+    repeated string ids = 2 [(.heuboe.protobuf.required) = false];  // relation source item ids; type depends on requested relation type
+                                                                    //   if 'ids' is empty, returns all relations for 'type'
+    string uz_id = 3 [(.heuboe.protobuf.required) = false];         // Optional: Filter results by UZ
+}
+message GetItemRelationsReply {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated Relation relations = 1;
+    repeated string errors = 1000;              // a list of errors that where encountered while fulfilling the request, usually empty
+}                                               //   if filled, signifies other results might be incomplete
+
+message SetItemRelationsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+    repeated Relation relations = 1;
+    string user = 2;                            // The user that initiated this request
+}
+message RemoveItemRelationsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+    repeated Relation relations = 1;
+    string user = 2;                            // The user that initiated this request
+}
+
+message RestoreDefaultRelationsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string type = 1;                            // relation type
+    repeated string ids = 2;                    // relation source item ids
+    string user = 3;                            // The user that initiated this request
+}
+message RestoreDefaultRelationsResponse {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated Relation relations = 1;
+}
+
+message ReadVirtualItemsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    ConfigItemType type = 1;                    // Virtual sensors' config item type
+    string relation_type = 2;                   // sensor's relation type
+    string uz_id = 3 [(.heuboe.protobuf.required) = false];  // Optional: Filter results by UZ
+}
+message CreateVirtualItemsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    message VCDef {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+        string relation_type = 1;                                   // sensor's relation type
+        string lane_pos = 2 [(.heuboe.protobuf.required) = false];  // Optional, use where appropriate
+        Location location = 3;
+        Heading heading = 4;
+        repeated string source_ids = 20;                            // The items that 'feed' this virtual item
+    }
+    ConfigItemType type = 1;                                        // Virtual sensors' config item type
+    repeated VCDef sensors = 2;
+    string user = 3;                                                // The user that initiated this request
+}
+message UpdateVirtualItemsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    message VUDef {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+        string id = 1;                                               // Virtual item's id
+        string lane_pos = 3 [(.heuboe.protobuf.required) = false];   // Optional, use 'empty' to keep current value, use "-" for 'none'
+        Location location = 4 [(.heuboe.protobuf.required) = false]; // Optional, skip to keep current value
+        Heading heading = 5 [(.heuboe.protobuf.required) = false];   // Optional, use UNRECOGNIZED to keep current value
+        repeated string source_ids = 20 [(.heuboe.protobuf.required) = false];  // Optional, use 'empty' to keep current sources
+    }
+    ConfigItemType type = 1;                                         // Virtual sensors' config item type
+    repeated VUDef sensors = 2;
+    string user = 3;                                                // The user that initiated this request
+}
+message DeleteVirtualItemsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    repeated string sensor_ids = 1;
+    string user = 2;                                                // The user that initiated this request
+}
+
+message RestoreVirtualDefaultItemsRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string relation_type = 1;                                        // sensor's relation type
+    ConfigItemType config_type = 2;                                  // sensors' config item type
+
+    repeated string sensor_ids = 3;
+    string user = 4;                                                // The user that initiated this request
+}
+
+message GetTlsNodesRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+	repeated string ids = 1;                    // ids of nodes to return
+	int32 recurse_level = 2;                    // 0: No children, 1: Direct children only, ..., -1: All descendants
+	repeated ConfigItemType types = 3 [(.heuboe.protobuf.required) = false];    // Optional child type filter, if set returns children of given types only
+}
+
+message GetXmlRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string uz_id = 1;
+    string base_version_id = 2;
+}
+message GetXmlReply {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+	string xml_data = 1;
+}
+
+message WriteTunnelDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string uz_id = 1;
+    string version = 2;
+    string user = 3;
+    repeated TunnelDirection tunnels = 4;
+}
+
+message WriteVkpDataRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    string uz_id = 1;
+    string version = 2;
+    string user = 3;
+    repeated VkpItem vkps = 4;
+}
+
+message SetItemRequest {
+    option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+    oneof items {
+        Tunnels tunnels = 13;
+    }
+}

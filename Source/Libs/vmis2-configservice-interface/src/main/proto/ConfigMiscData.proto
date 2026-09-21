@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// VKP Data: Returned from ConfigServices 'GetItems/GetAllItems' method; managed in manual data (see ConfigDbStuff)
+message VkpItem {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;
+    string name = 2;
+    string vkp_geo_id = 3;
+    string uz_id = 4;
+    string road_id = 5;
+    repeated string aq_ids = 6;
+    repeated string vkp_progs = 7;
+}
+
+message VkpItems {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated VkpItem vkps = 1;
+}

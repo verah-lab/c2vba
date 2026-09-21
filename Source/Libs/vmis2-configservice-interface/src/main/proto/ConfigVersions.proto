@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// Version description data types
+
+message VersionKey {                                    // Version info for one UZ
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string uz_id = 1;
+    string base_version_id = 2;
+    string manual_version_id = 3;
+}
+message VersionDbKey {                                  // Version info for one UZ, with ext data version
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string uz_id = 1;
+    string base_version_id = 2;
+    string manual_version_id = 3;
+    string extended_version_id = 4;
+}
+message VersionKeys {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated VersionKey keys = 1;
+}
+
+message VersionDesc {                                   // key & snapshot info
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string uz_id = 1;
+    string base_version_id = 2;
+    string manual_version_id = 3;
+    string extended_version_id = 5;
+    bool snapshot = 4;
+    string tunnel_version = 6;
+    string snapshot_tunnel_version = 7;
+    string vkp_version = 8;
+    string snapshot_vkp_version = 9;
+}
+
+message BaseVersionKey {                                // One UZ's base version info
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string uz_id = 1;
+    string base_version_id = 2;
+}
+
+message VersionDescriptor {                             // Describes the complete set of data used for one config version
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string iid = 1;                                     // version's unique id
+    repeated VersionDbKey versions = 2;                 // the data versions
+    google.protobuf.Timestamp activated = 3;            // time of last activation (if any), for tracking
+    google.protobuf.Timestamp created = 4;              // time of creation, for tracking
+    string activation_token = 5;                        // token used for activation tracking
+}
+
+message VersionHandle {                                 // used to either point to a complete version(by version id), or
+    option (.heuboe.protobuf.stereotype) = DATATYPE;    // to describe a temporary version (as list of data block keys)
+
+    oneof request {
+        string version_id = 1;                          // Id of complete version
+        VersionKeys keys = 2;                           // List of data block keys (manual data may be skipped here)
+    }
+}
+
+message VersionOverview {                               // pushed to KAFKA when version data content changes
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    message VersionEntry {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        VersionDescriptor version = 1;
+        bool valid = 2;
+        bool active = 3;
+        bool staging = 4;
+        bool snapshot = 5;
+    }
+    message BaseEntry {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        BaseVersionKey key = 1;
+        string uz_name = 2;
+    }
+    message ManEntry {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        VersionKey key = 1;
+        bool snapshot = 2;
+        int32 snapshot_count = 3;
+        string tunnel_version = 4;
+        string snapshot_tunnel_version = 5;
+        string vkp_version = 6;
+        string snapshot_vkp_version = 7;
+    }
+    string iid = 1;
+    repeated VersionEntry versions = 2;
+    repeated BaseEntry base_blocks = 3;
+    repeated ManEntry man_blocks = 4;
+    repeated VersionKey ext_blocks = 5;
+}

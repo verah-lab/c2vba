@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "ConfigBase.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// Structures/definitions for the 'physical' TLS world
+
+message TlsDevice {                             // Device: Main organizational unit; represents objects like VRZ, UZ, KRI, ...
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;
+    string name = 2;
+    ConfigItemType type = 3;
+    int32 osi7_address = 4;
+    string ip_address = 8;                      // Optional ip address <host>:<port>
+    string ip_address_alt = 9;                  // Optional alternative ip address <host>:<port>
+    int32 partner_id = 5;                       // from global partners lookup table
+    int32 iface_key = 1000;                     // marker for input process allocation
+    repeated TlsFg fgs = 6;
+    repeated TlsConPoint con_points = 7;        // connection points to cables
+    repeated CfgNvPair extra = 10;              // type dependant (e.G. KRI: ip config)
+}
+message TlsDevices {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated TlsDevice devices = 1;
+}
+
+message TlsConPoint {                           // Connection point, links devices to cables
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string cable_id = 1;
+    int32 osi2_port = 2;
+}
+
+message TlsCable {                              // Cable: Connects devices 
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string id = 1;
+    string name = 2;
+    repeated string device_ids = 3;             // Connection to devices
+}
+message TlsCables {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated TlsCable cables = 1;
+}
+
+message TlsFg {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    int32 number = 1;
+    repeated TlsEa eas = 2;
+    repeated TlsCluster clusters = 8;
+}
+
+message TlsCluster {                            // Cluster definition (EAs here are duplicates of owner FG's EAs !)
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    int32 number = 1;                           // EAK number
+    TlsEa cluster_ea = 2;                       // Cluster EA; e.g. EA Nr 193
+    repeated TlsEa grouped_eas = 3;             // Cluster content EAs
+}
+
+message TlsEa {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    enum MoreInfo {                             // Additional EA Info
+        UNKNOWN = 0;
+        Typ_48 = 48;
+    }
+
+    string eaid = 1;
+    int32 de_nummer = 2;
+    repeated string virtual_targets = 3;        // 'virtual' eas (where this ea's data is getting copied to)
+    repeated MoreInfo more = 4;
+}

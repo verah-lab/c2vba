@@ -1,0 +1,197 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "ConfigBase.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// Structures for VDE, UDE and VLT TLS devices
+
+// MQ 'MessQuerschnitt'
+message CfgMq {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;
+    string name = 2;
+    string uz_id = 3;
+    oneof vde_sensor {
+        CfgIds vde_sensor_ids = 4;
+        CfgVdeSensors vde_sensors = 5;
+    }
+    string cluster_id = 11;
+    Location location = 20;
+    Scope scope = 21;
+}
+message CfgMqs {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated CfgMq mqs = 1;
+}
+
+message CfgVdeSensor {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    enum VdeType {
+        UNKNOWN = 0;
+        T2 = 2;
+        T5 = 5;                 // Langzeitklassen 5+1
+        T8 = 8;                 // Langzeitklassen 8+1
+    }
+    string id = 1;
+    string name = 2;
+    string uz_id = 3;
+    VdeType type = 7;
+    LanePos lane_pos = 4;
+    Heading heading = 5;
+    string q_id = 6;
+    Location location = 20;
+    Scope scope = 21;
+}
+message CfgVdeSensors {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated CfgVdeSensor sensors = 1;
+}
+
+// Environment Sensor
+message CfgUdeSensor {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    enum UdeType {              // enum codes correspond to TLS type
+        UNKNOWN = 0;
+        LT = 48;                // Lufttemperatur in Grad Celsius
+        FBT = 49;               // Fahrbahntemperatur in Grad Celsius
+        FBF = 50;               // Fahrbahnfeuchte in Prozent (veraltet)
+        FBO = 51;               // Zustand Fahrbahnoberflaeche (veraltet) 
+        RS = 52;                // Restsalz in Prozent
+        NI = 53;                // Niederschlagsintensitaet Millimeter pro Stunde 
+        LD = 54;                // Luftdruck in Hekto-Pascal 
+        RLF = 55;               // relative Luftfeuchte in Prozent
+        WR = 56;                // Windrichtung in Grad
+        WGM = 57;               // mittlere Windgeschwindigkeit in Meter pro Sekunde 
+        SH = 58;                // Schneehoehe in Zentimeter
+        FBG = 59;               // Fahrbahnglätte
+        SWE = 60;               // Sichtweite in Meter
+        HK = 61;                // Helligkeit in Lux
+        NM = 62;                // Niederschlagsmenge
+        NA = 63;                // Niederschlagsart (veraltet)
+        WGS = 64;               // Windgeschwindigkeit Spitze in Meter pro Sekunde
+        GT = 65;                // Gefriertemperatur in Grad Celsius
+        TPT = 66;               // Taupunkttemperatur in Grad Celsius
+        TT1 = 67;               // Tiefentemperatur in Tiefe 1 in Grad Celsius
+        TT2 = 68;               // Tiefentemperatur in Tiefe 2 in Grad Celsius
+        TT3 = 69;               // Tiefentemperatur in Tiefe 3 in Grad Celsius
+        FBZ = 70;               // Fahrbahnzustand
+        NS = 71;                // Niederschlagsart
+        WFD = 72;               // Wasserfilmdicke
+        TSK = 73;               // Taustoffkonzentration in Prozent
+        TSQ = 74;               // Taustoff je Quadratmeter in Gramm pro Quadratmeter
+        SFD = 75;               // Schneefilmdicke in Millimeter
+        EFD = 76;               // Eisfilmdicke in Millimeter
+        GR = 77;                // Griffigkeit dimensionslos
+        GLS = 78;               // Globalstrahlung in Watt pro Quadratmeter
+        FZW = 79;               // Fahrbahnzustand Winterdienst
+        NO = 80;                // Stickstoffmonoxid in Mikrogramm pro Kubikmeter
+        NO2 = 81;               // Stickstoffdioxid in Mikrogramm pro Kubikmeter
+        NOX = 82;               // Stickstoffoxide in Mikrogramm pro Kubikmeter
+        PM10 = 83;              // Schadstoffe PM10 in Mikrogramm pro Kubikmeter 
+        PM2 = 84;               // Schadstoffe PM2.5 in Mikrogramm pro Kubikmeter
+        PM1 = 85;               // Schadstoffe PM1 in Mikrogramm pro Kubikmeter
+        LA = 86;                // Laerm: A-bewerteter Schalldruckpegel in Dezibel
+        LAEQ = 87;              // Laerm: energieaequivalenter Dauerschallpegel in Dezibel
+        LA95 = 88;              // Laerm: Basispegel in Dezibel
+        LAMS = 89;              // Laerm: mittlerer Spitzenpegel in Dezibel
+
+        FGW = 132;               //FB Glättewarnung (herstellerdefiniert)
+
+        LAERM = 203;            // Laerm in dbA (herstellerdefiniert)
+
+        VNA = 240;              // Virtuelle Nässestufe
+
+//      FSR                     // Staub, Rohdaten
+    }
+
+    string id = 1;
+    string name = 2;
+    string uz_id = 3;
+    UdeType type = 4;
+    Heading heading = 5;
+    repeated CfgItemRef virtual_sources = 6;    // Virtual sensors only
+    Location location = 20;
+    Scope scope = 21;
+}
+message CfgUdeSensors {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated CfgUdeSensor sensors = 1;
+}
+
+// Vlt Sensor
+message CfgVltSensor {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    enum VltType {
+        UNKNOWN = 0;
+
+        TUERK = 48;                     // Türkontakt
+        TMPUE = 49;                     // Temperaturüberwachung
+        LICHT = 50;                     // Licht
+        STRV = 51;                      // Stromversorgung
+        HZG = 52;                       // Heizung
+        LFTG = 53;                      // Lüftung
+        UESS = 54;                      // Überspannungsschutz
+        DVS = 55;                       // Diebstahl-/Vandalismusschutz
+        FSA = 56;                       // Fernüberwachung von Solaranlagen
+        LEV = 57;                       // Lokale Energieversorgung
+
+        LMDM = 129;                     // Leitungsmodem
+        USVNT = 130;                    // USV NT Video
+        VEA = 220;                      // Videoencoder
+        HK = 132;                       // Höhenkontrolle
+        EXTVKP = 222;                   // Steuerung VKP (Schlüsselschalter)
+        EXTSOS = 133;                   // Brandmeldenottaster
+        ESUE = 221;                     // Erdschluss
+
+        CO = 134;                       // CO - Wert
+        SICHT = 135;                    // Sichttrübung
+        NOTF = 136;                     // Notfall
+        ZVFZ = 137;                     // Zu viele Fahrzeuge
+        RBTR = 138;                     // Richtungsbetriebsart
+        VUE = 139;                      // VUE-Betrieb
+
+        BRAND = 223;                    // Brandmelder
+    }
+
+    string id = 1;
+    string name = 2;
+    string uz_id = 3;
+    VltType type = 4;
+    Heading heading = 5;
+    Location location = 20;
+    Scope scope = 21;
+}
+message CfgVltSensors {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated CfgVltSensor sensors = 1;
+}
+
+// FCD
+message CfgFcd {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;
+    string name = 2;
+    string uz_id = 3;
+    Location location = 20;
+}
+message CfgFcds {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated CfgFcd fcds = 1;
+}

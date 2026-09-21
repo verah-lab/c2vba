@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// object of one tunnel direction
+message TunnelDirection {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string id = 1;                                      // id of the tunnel direction object.
+    string name = 2;                                    // name of the tunnel direction object.
+    string tunnel_geo_id = 3;                           // id of tunnel at the geo manager
+    string uz_id = 4;                                   // id of uz/rvmz
+    repeated TrafficProgram programs = 5;               // tunnel programs
+    string road_id = 6;                                 // optional, filled by service
+}
+
+message Tunnels {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated TunnelDirection tunnels = 1;
+}
+
+// Traffic program that can be run in a tunnel direction
+message TrafficProgram {
+    option (.heuboe.protobuf.stereotype) = ENTITY ;
+
+    // enum to see for who the program is editable.
+    enum Editable {
+        NO_CHANGES_ALLOWED = 0;
+        OPERATOR = 1;
+        VT = 2;
+        NOT_RESTRICTED = 3;
+    };
+    // enum to see in which direction traffic mode the program is allowed.
+    enum DirectionTrafficMode {
+        UNKNOWN = 0;
+        NORMAL = 1;
+        ONCOMING_TUBE_1 = 2;                            // GV benutzt Röhre in Fahrtrichtung 1
+        ONCOMING_TUBE_2 = 3;                            // GV benutzt Röhre in Fahrtrichtung 2
+    };
+    // enum to see if a program is new or deactivated.
+    enum SwitchOffMethod {
+        UNKNOWN_METHOD = 0;
+        DEACTIVATING = 1;
+        NEW_PROGRAM = 2;
+    }
+    // enum to see if the programm is set manuel or automatic.
+    enum ProgramControlMethod {
+        UNKNOWN_CONTROL_METHOD = 0;
+        MAN = 1;
+        AUTO = 2;
+    }
+
+    string id = 1;                                      // id of the traffic program object.
+    string name = 2;                                    // name of the traffic programm
+    string description = 3;                             // description of the traffic programm
+    int32 prg_number = 4;                               // number of the traffic programm
+    string mapped_program_response = 5;                 // id of mapped program, default empty for no mapping
+    Editable is_editable = 6;                           // enum to see for who the program is editable.
+    bool control_system_availability = 7;               // flag to see if the program is available to the control system.
+    DirectionTrafficMode traffic_mode = 8;              // enum to see in which direction traffic mode is allowed.
+    SwitchOffMethod switch_off_method = 9;              // enum to see if a program is new or deactivated.
+    ProgramControlMethod control_method = 10;           // enum to see if the programm is set manuel or automatic.
+}

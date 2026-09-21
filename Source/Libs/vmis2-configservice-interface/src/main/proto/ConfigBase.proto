@@ -1,0 +1,142 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// Base types used by multiple entities
+
+// Config item type, used for both logical ('Cfg-') and electrical ('Tls-') items
+enum ConfigItemType {
+    UNKNOWN_TYPE = 0;
+
+    VRZ = 1;                        // VRZ
+    UVRZ = 2;
+    UZ = 3;                         // UZ
+    IB = 4;                         // Inselbus
+    RST = 5;                        // Roadside Station (Streckenstation)
+    KRI = 6;                        // Kri
+    CABLE = 7;                      // TLS connection
+    DEVICE = 8;                     // TLS Device
+
+    MQ = 10;
+    AQ = 11;
+    VDE_SENSOR = 12;
+    UDE_SENSOR = 13;
+    VLT_SENSOR = 14;
+    WZG = 15;
+    AXL_SENSOR = 16;
+    FCD = 17;
+
+    GRP = 50;                       // group of otherwise unrelated items
+
+    TUNNEL = 100;
+    VKP = 101;
+
+    SUB = 500;                      // E-type WZG component (internal use only)
+}
+
+message CfgIds {                    // list of ids (used for oneofs)
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated string ids = 1;
+}
+
+message CfgItemRef {                // one config item reference (id and type)
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    ConfigItemType type = 1;
+    string id = 2;
+}
+
+message CfgItemRefs {               // list of config item references (used for oneofs)
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated CfgItemRef refs = 1;
+}
+
+message CfgNvPair {                 // Name/Value pair used for some generic data
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string name = 1;
+    string value = 2;
+}
+
+// stuff used to describe where a sensor or WZG is positioned relative to a road's lanes
+message LanePos {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    enum LaneType {
+        UNKNOWN = 0;
+        MAIN = 1;                   // F, 'main' lane: use LanePos' h_index to describe which one, where '0' would be rightmost
+        EMERGENCY = 3;              // PS, rightmost breakdown/emergency lane
+        EDGE = 4;                   // RS, rightmost area (where PS would be, but too small)
+        RIGHTSHOULDER = 5;          // AS, anything right of main/emergency lanes
+        LEFTSHOULDER = 6;           // IS, anything left of main lanes
+        ENTRY = 7;                  // E
+        EXIT = 8;                   // A
+        MERGE = 9;                  // V
+        CUTOUT = 10;                // HB, 'Haltebucht'
+        PARKING = 11;               // KPP
+        ALL = 19;                   // affects all available lanes
+        MULTIPLE = 20;              // Above several lanes types (to complex to fit into this message
+                                    // (see description... usually WWW prisms)
+    }
+
+    string description = 1;         // short, user readable description, like F1 (for MAIN/0, or F3/F2 for MAIN/1/between)
+    LaneType lane_type = 2;         // lane type
+    int32 h_index = 3;              // index, counting from right: 0 = rightmost lane (where each lane type has its own index range)
+                                    //   values here correspond to actual lanes
+    int32 h_span = 4;               // used where items span additional lanes, counted 'to the right' (usually 0: just one lane)
+    int32 v_index = 5;              // used when there's more than one element at a specified position, e.g. when stacking
+                                    //   signs 'between' lanes, counting from bottom up
+    bool between = 6;               // between the two lanes [h_index+1/h_index
+    int32 global_h_index = 7;       // A 'global' index that can be used to sort one Q's items right to left. Items with
+                                    //  identical values here should differ in v_index. Does NOT correspond to any actual lanes !
+}
+
+enum Heading {                      // directional reference according to road offset
+    BOTH = 0;                       // independent of direction, or affects both directions
+    ASCENDING = 1;                  // in ascending offset direction
+    DESCENDING = 2;                 // in descending offset direction
+    LEFT = 3;                       // perpendicular to ascending, left
+    RIGHT = 4;                      // perpendicular to ascending, right
+}
+
+message Location {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    double latitude = 1;            // WGS84 coordinate
+    double longitude = 2;
+    string road_id = 3;             // ASFINAG-Id
+}
+
+message CfgGroup {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    enum GrpType {
+        UNKNOWN = 0;
+        WWW_CHAIN = 1;          // WWW - Kette
+    }
+    string id = 1;
+    string name = 2;
+    string uz_id = 3;
+    GrpType type = 4;
+    CfgIds child_ids = 5;
+}
+
+message CfgGroups {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    repeated CfgGroup groups = 1;
+}
+
+enum Scope {                        // Used to distinguish between traditional TLS items and new tunnel OPCUA ones
+    TLS = 0;
+    OPCUA = 1;
+}

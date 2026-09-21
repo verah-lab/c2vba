@@ -1,0 +1,1242 @@
+---
+- twoPartId:
+    objId: "TrafficState"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "STATEPRIORITYBASED"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "free"
+      iterationId: "1"
+    displayName: "freier Verkehr"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "turbulent"
+      iterationId: "1"
+    displayName: "unruhiger Verkehr"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "thick"
+      iterationId: "1"
+    displayName: "dichter Verkehr"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "jamDanger"
+      iterationId: "1"
+    displayName: "Staugefahr"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "slowMoving"
+      iterationId: "1"
+    displayName: "zähfließender Verkehr"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "jam"
+      iterationId: "1"
+    displayName: "Stau"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Verkehrszustand"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "LOS"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "STATEPRIORITYBASED"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "jamDangerLOS"
+      iterationId: "1"
+    displayName: "Staugefahr_LOS (Nebenbedingung)"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Verkehrszustand_LOS"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "HighCapacityUtilization"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "HighCapacityUtilizationSub"
+      iterationId: "1"
+    displayName: "Hohe Kapazitätsauslastung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Hohe Kapazitätsauslastung"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "HighTruckShare"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "HighTruckShareSub"
+      iterationId: "1"
+    displayName: "Hohes Lkw-Aufkommen"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Hohes Lkw-Aufkommen"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "CarriagewayCondition"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "STATEPRIORITYBASED"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "dry"
+      iterationId: "1"
+    displayName: "trocken"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "notDry"
+      iterationId: "1"
+    displayName: "nicht trocken"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "lightRain"
+      iterationId: "1"
+    displayName: "leichter Regen"
+    description: null
+    mergeSituations: false
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "rain"
+      iterationId: "1"
+    displayName: "mittlerer Regen"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "heavyRain"
+      iterationId: "1"
+    displayName: "Starkregen"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "downPour"
+      iterationId: "1"
+    displayName: "Platzregen"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "freezingRain"
+      iterationId: "1"
+    displayName: "Eisregen"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "snow"
+      iterationId: "1"
+    displayName: "Schneefall"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Fahrbahnzustand (Nässe)"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "ViewingCondition"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "STATEPRIORITYBASED"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "freeSight"
+      iterationId: "1"
+    displayName: "freie Sicht"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "limitedSight"
+      iterationId: "1"
+    displayName: "leicht eingeschränkte Sicht"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "lightFog"
+      iterationId: "1"
+    displayName: "leichter Nebel"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "moderateFog"
+      iterationId: "1"
+    displayName: "mässige Sicht"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "thickFog"
+      iterationId: "1"
+    displayName: "dichter Nebel"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "extremeFog"
+      iterationId: "1"
+    displayName: "extremer Nebel"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Sichtverhältnisse"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "crosswind"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "crosswindSubclass"
+      iterationId: "1"
+    displayName: "Seitenwind"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Seitenwind"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "roadConditionSlipperiness"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "roadConditionSlipperinessSubclass"
+      iterationId: "1"
+    displayName: "Fahrbahnzustand (Glätte)"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Fahrbahnzustand (Glätte)"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "criticalRoadwayTemperature"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "ciritcalRoadwayTemperatureSubclass"
+      iterationId: "1"
+    displayName: "kritische Fahrbahntemperatur"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "kritische Fahrbahntemperatur"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "ghostDriver"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+     objId: "noGhostDriver"
+     iterationId: "1"
+    displayName: "kein Geisterfahrer"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "advanceWarningGhostDriver"
+      iterationId: "1"
+    displayName: "Vorwarnung Geisterfahrer"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "ghostDriver"
+      iterationId: "1"
+    displayName: "Geisterfahrer"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Geisterfahrer"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "noise"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "noiseLevel0"
+      iterationId: "1"
+    displayName: "Stufe 0"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "noiseLevelA"
+      iterationId: "1"
+    displayName: "Stufe a"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "noiseLevelB"
+      iterationId: "1"
+    displayName: "Stufe b"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "noiseLevelC"
+      iterationId: "1"
+    displayName: "Stufe c"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Lärm"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "immission"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "normalImmission"
+      iterationId: "1"
+    displayName: "normales Niveau"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "criticalImmission"
+      iterationId: "1"
+    displayName: "kritisches Niveau"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "failureImmission"
+      iterationId: "1"
+    displayName: "Ausfallbehandlung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Schadstoffimmissionen"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "travelTime"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "normalTravelTime"
+      iterationId: "1"
+    displayName: "normale Reisezeit"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "extendedTravelTime"
+      iterationId: "1"
+    displayName: "verlängerte Reisezeit"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "greatlyExtendedTravelTime"
+      iterationId: "1"
+    displayName: "stark verlängerte Reisezeit"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Reisezeit"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "backwaterOnRamp"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "backwaterOnRampSubclass"
+      iterationId: "1"
+    displayName: "Rückstau auf Rampe"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Rückstau auf Rampe"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "slowMovingVehicles"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "slowMovingVehiclesSubclass"
+      iterationId: "1"
+    displayName: "Langsam fahrende Fahrzeuge"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Langsam fahrende Fahrzeuge"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "speedDifferenceOfConsecutiveVehicles"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "lowSpeedDifference"
+      iterationId: "1"
+    displayName: "gering"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "mediumSpeedDifference"
+      iterationId: "1"
+    displayName: "mittel"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "highSpeedDifference"
+      iterationId: "1"
+    displayName: "hoch"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Geschwindigkeitsdifferenz aufeinanderfolgender Fahrzeuge"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "Accident"
+    iterationId: "1"
+  description: "Unfall"
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "Accident"
+      iterationId: "1"
+    displayName: "Unfall"
+    description: "Unfall"
+    mergeSituations: false
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Unfall"
+  situationMergeGapInKm: 0.0
+- twoPartId:
+    objId: "Breakdown"
+    iterationId: "1"
+  description: "Panne"
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "Breakdown"
+      iterationId: "1"
+    displayName: "Panne"
+    description: "Panne"
+    mergeSituations: false
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Panne"
+  situationMergeGapInKm: 0.0
+- twoPartId:
+    objId: "specialTransport"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "specialTransportSubclass"
+      iterationId: "1"
+    displayName: "Sondertransport"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Sondertransport"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "buildingSite"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "technicalRepair"
+      iterationId: "1"
+    displayName: "Technische Instandsetzung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "maintenance"
+      iterationId: "1"
+    displayName: "Wartung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "bridgeInspection"
+      iterationId: "1"
+    displayName: "Brückeninspektion"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "structuralRepair"
+      iterationId: "1"
+    displayName: "Bauliche Instandsetzung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "newConstruction-Rehabilitation"
+      iterationId: "1"
+    displayName: "Neubau / Sanierung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "grass-pruning"
+      iterationId: "1"
+    displayName: "Gras / Baumschnitt"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "snowRemoval"
+      iterationId: "1"
+    displayName: "Schneeräumung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "tunnelCleaning"
+      iterationId: "1"
+    displayName: "Tunnelreinigung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "otherConservationMeasures"
+      iterationId: "1"
+    displayName: "Sonstige Erhaltungsmassnahmen"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Baustelle"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "event"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "practice"
+      iterationId: "1"
+    displayName: "Uebung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Veranstaltung"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "naturalPhenomenon"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "hail"
+      iterationId: "1"
+    displayName: "Hagel"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "avalanche"
+      iterationId: "1"
+    displayName: "Lawine"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "snowdrift"
+      iterationId: "1"
+    displayName: "Schneeverwehung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "rockfall"
+      iterationId: "1"
+    displayName: "Steinschlag"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "flooding-moor"
+      iterationId: "1"
+    displayName: "Überschwemmung / Mure"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "landslide"
+      iterationId: "1"
+    displayName: "Erdrutsch"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "treeThrow"
+      iterationId: "1"
+    displayName: "Baumwurf"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "otherNaturalEvent"
+      iterationId: "1"
+    displayName: "Sonstiges Naturereignis"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Naturereignis"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "trafficCheck"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "truckControl"
+      iterationId: "1"
+    displayName: "Lkw-Kontrolle"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "busControl"
+      iterationId: "1"
+    displayName: "Bus-Kontrolle"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "totalControl"
+      iterationId: "1"
+    displayName: "Gesamtkontrolle"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Verkehrskontrolle"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "fire"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "fireSubclass"
+      iterationId: "1"
+    displayName: "Brand"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Brand"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "blockedRoadway"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "peopleOrAnimalsOnTheRoad"
+      iterationId: "1"
+    displayName: "Personen oder Tiere auf der Fahrbahn"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "partsOnTheRoad"
+      iterationId: "1"
+    displayName: "Teile auf der Fahrbahn"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "stoppedVehicle"
+      iterationId: "1"
+    displayName: "stehengebliebenes Fahrzeug"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "lostCargo"
+      iterationId: "1"
+    displayName: "verlorenes Ladegut"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "otherBlocking"
+      iterationId: "1"
+    displayName: "sonstige Blockierung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "demonstration"
+      iterationId: "1"
+    displayName: "Demonstration"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "pollutedRoadway"
+      iterationId: "1"
+    displayName: "vermutzte Fahrbahn"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "transitSnowPlow"
+      iterationId: "1"
+    displayName: "Durchfahrt Schneepflug"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Blockierte Fahrbahn"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "medicalEmergency"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "medicalEmergencySubclass"
+      iterationId: "1"
+    displayName: "Medizinischer Notfall"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Medizinischer Notfall"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "criminalAssault"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "criminalAssaultSubclass"
+      iterationId: "1"
+    displayName: "Krimineller Übergriff"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Krimineller Übergriff"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "heightControl"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "heightControlSubclass"
+      iterationId: "1"
+    displayName: "Höhenkontrolle"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Höhenkontrolle"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "cloudyView"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "cloudyViewSubclass"
+      iterationId: "1"
+    displayName: "Trübsicht"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Trübsicht"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "hazardousSubstancesDischarge"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList: 
+  - twoPartId:
+      objId: "sulfurHexafluorideExit"
+      iterationId: "1"
+    displayName: "Austritt von Schwefelhexafluorid"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Austritt von Gefahrenstoffen"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "technicalDifficulties"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "power-failure"
+      iterationId: "1"
+    displayName: "Energieausfall"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "lighting-failure"
+      iterationId: "1"
+    displayName: "Ausfall der Beleuchtung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "ventilation-failure"
+      iterationId: "1"
+    displayName: "Ausfall der Lüftung"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "extinguishingWaterSystem-failure"
+      iterationId: "1"
+    displayName: "Ausfall der Löschwasseranlage"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "HDSNA-failure"
+      iterationId: "1"
+    displayName: "Ausfall der HDSNA"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "BZ-failure"
+      iterationId: "1"
+    displayName: "Ausfall der BZ"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  - twoPartId:
+      objId: "UZ-failure"
+      iterationId: "1"
+    displayName: "Ausfall der UZ"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Technische Störung"
+  situationMergeGapInKm: 2.0
+- twoPartId:
+    objId: "other"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "otherSubclass"
+      iterationId: "1"
+    displayName: "Sonstiges"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Sonstiges"
+  situationMergeGapInKm: 2.0
+# VMIS2-S1ANF-570 Maßnahmenkatalog Warnung vor Sperren (Sperre ist nicht im Situationskatalog, aber im Maßnahmenkatalog.)
+- twoPartId:
+    objId: "barrier"
+    iterationId: "1"
+  description: null
+  methodOfConflictAdjustment: "NONE"
+  geoRefType: null
+  subClassesList:
+  - twoPartId:
+      objId: "barrierSubclass"
+      iterationId: "1"
+    displayName: "Sperre"
+    description: null
+    mergeSituations: true
+    lifecycle:
+      order: "UPSTREAM"
+      mode: "GAP"
+      threshold: 10
+  attributeClassList: []
+  displayName: "Sonstiges"
+  situationMergeGapInKm: 2.0

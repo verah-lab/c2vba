@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "ConfigAqData.proto";
+import "ConfigBase.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// Structures/Definitions for Relations ('abgeleitete Stammdaten')
+
+// item relations info, used for manual and extended data
+message Relation {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    // Relation type: Specified as String, so custom relation types can be used without recompile.
+    // (For known relation types, see RelationType enum)
+    string type = 1 [(.heuboe.protobuf.extRef) = { type: "eu.vmis_ehe.vmis2.configservice.RelationType" }];
+
+    google.protobuf.Timestamp touched = 2;              // time of last change, for version/modification tracking
+    CfgItemRef source = 3;                              // relation source item
+    repeated CfgItemRef targets = 4;                    // related item(s)
+
+    bool manual = 5;                                    // (read only) True for user manipulated relations
+    bool eclipsing = 6;                                 // (read only) True where a manual relation eclipses a default one
+
+    string user = 7;                                    // user that created/changed this relation (if any)
+
+    oneof data {                                        // Optional additional data (used for some relation types only)
+        VirtualSensor virtual_sensor = 1000 [(.heuboe.protobuf.required) = false];  // REL_VIRTUAL_ITEM, REL_VIRTUAL_NS: Virtual EA attributes (read only)
+        AqLinkData aq_link_data = 1001 [(.heuboe.protobuf.required) = false];       // REL_LINKED_AQ
+    }
+}
+
+// Additional data used for REL_VIRTUAL_ITEM and REL_VIRTUAL_NS relations
+message VirtualSensor {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    ConfigItemType type = 1;        // Config Type
+    string item_type = 2;           // VLT-, UFD-, WZG- type where necessary
+    string name = 6;                // sensor's user readable name
+    string lane_pos = 3;            // description text from LanePos
+    Location location = 4;
+    Heading heading = 5;
+}
+
+// Additional data used for REL_LINKED_AQ relations
+message AqLinkData {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    message Codes {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        int32 source_code = 1;
+        int32 target_code = 2;
+    }
+    message AlWzgType {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        CfgWzg.WzgType source_type = 1;
+        CfgWzg.WzgType target_type = 2;
+        repeated Codes codes = 3;
+    }
+    message AlWzgTypeList {
+        option (.heuboe.protobuf.stereotype) = CONTAINER;
+        repeated AlWzgType types = 1;
+    }
+    message AlTarget {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string target_id = 1;
+        repeated AlWzgType wzg_types = 2;
+    }
+    repeated AlTarget targets = 1;
+}
+
+// relation type (for Situation config: 'SIT_' + <name>)
+enum RelationType {
+    UNKNOWN_RELATION_TYPE = 0;
+
+    REL_NEIGHBOUR_MQ = 1;                   // Nachbar-Querschnitte
+    REL_NEIGHBOUR_FS_QKFZ = 8;              // Nachbar-Fahrstreifen
+    REL_NEIGHBOUR_FS_VPKW = 9;
+
+    REL_FOLLOWER_AQ = 2;                    // AQ-Nachfolger
+    REL_FOLLOWER_WZG = 3;                   // WZG-Nachfolger
+    REL_SUPPLEMENTARY_WZG = 4;              // Zusatz_WZG
+    REL_WRONG_WAY_DRIVER = 5;               // Geisterfahrer-Querschnitte
+    REL_LINKED_AQ = 6;                      // AQ-Kopplung
+    REL_AQ_HK = 7;                          // Helligkeitssteuerung
+
+    REL_DFBT_FBT_NS = 100;                  // Differenzialkontrolle FBT -> NS
+
+    REL_LPL1_NS_LT = 111;                   // Logisch/physikalische Prüfungen
+    REL_LPL2_NS_NI = 112;
+    REL_LPL3_4_FBZ_WFD = 113;
+    REL_LPL5_NS_NI_RLF = 115;
+    REL_LPL6_NS_NI_RLF = 116;
+    REL_LPL7_NI_WFD_NS_RLF = 117;
+    REL_LPL8_NS_LT = 118;
+    REL_LPL9_SW_NS_RLF = 119;
+
+    REL_DPOS_NI_WFD_WFD = 200;              // Detektorvergleich standortbezogen
+
+    REL_DLA_NI = 210;                       // Detektor-Längsabgleich
+    REL_DLA_LT = 221;
+
+    REL_RPLU_NI = 500;                      // Ersatzwertbildung UDE
+    REL_RPLU_FBZ = 501;
+    REL_RPLU_NS = 502;
+    REL_RPLU_WFD = 503;
+    REL_RPLU_SWE = 504;
+    REL_RPLU_TPT = 505;
+    REL_RPLU_LT = 506;
+    REL_RPLU_FBT = 507;
+
+    REL_VIRTUAL_ITEM = 1000;                // Virtueller 'kopierter' EA
+    REL_VIRTUAL_NS = 1001;                  // Berechneter NS - UdeSensor
+
+    SIT_TSV = 10000;                        // Lkw-Aufkommen Kriterium Sicht: MQ -> UDE(SWE)
+    SIT_TSW = 10001;                        // Lkw-Aufkommen Kriterium Nässe: MQ -> UDE(VNA)
+    SIT_CWI = 10002;                        // Seitenwind: UDE(WGS) -> UDE(WR)
+    SIT_CCW = 10003;                        // Nässeerkennung der Fahrbahn: UDE (NI) -> UDE (WFD), UDE (FBZ)
+    SIT_AWD = 10004;                        // ErweiterteWitterungsbedingungen: UDE(SWE) -> UDE(NS), UDE(NI), UDE(RLF), UDE(LT), UDE(TPT), UDE(FBT)
+    SIT_IMM = 10005;                        // Immission
+    SIT_ATC = 10006;                        // FS-bezogene Analyse der Verkehrsverhältnisse MQ -> UDE(VNA), UDE(HK)
+    SIT_AID = 10007;                        // FS-bezogene Störfallerkennung
+    SIT_PMX = 10008;                        // Situationserkennungsverfahren PM10
+    SIT_NOI = 10009;                        // SituationsErkennungsverfahren Lärm
+
+    SIT_WCS = 10010;                        // APNass1vPKW APNass2vPKW
+
+    REL_VIRTUAL_MQ = 11000;
+}

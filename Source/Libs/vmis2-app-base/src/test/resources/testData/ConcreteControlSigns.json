@@ -1,0 +1,85 @@
+{
+  "iid": "1234CCS",
+  "controlSigns": [{
+    "id": {
+      "objId": "123",
+      "iterationId": "1"
+    },
+    "description": "",
+    "aqId": "AQ_A23_2_730_Q",
+    "measureClassId": "jam",
+    "concreteSignSpecification": [{
+      "panelId": "AQ_A23_2_730_Ab.A",
+      "content": {
+        "specification": {
+          "tlsCode": 21,
+          "tlsFunctionByte": 1
+        },
+        "freetext": "",
+        "componentSpecifications": [],
+        "required": false,
+        "priority": -1
+      }
+    }, {
+      "panelId": "AQ_A23_2_730_F1.A",
+      "content": {
+        "specification": {
+          "tlsCode": 21,
+          "tlsFunctionByte": 1
+        },
+        "freetext": "",
+        "componentSpecifications": [],
+        "required": false,
+        "priority": -1
+      }
+    }, {
+      "panelId": "AQ_A23_2_730_F2.A",
+      "content": {
+        "specification": {
+          "tlsCode": 21,
+          "tlsFunctionByte": 1
+        },
+        "freetext": "",
+        "componentSpecifications": [],
+        "required": false,
+        "priority": -1
+      }
+    }, {
+      "panelId": "AQ_A23_2_730_F3_F2.B",
+      "content": {
+        "specification": {
+          "tlsCode": 1,
+          "tlsFunctionByte": 1
+        },
+        "freetext": "",
+        "componentSpecifications": [],
+        "required": false,
+        "priority": -1
+      }
+    }, {
+      "panelId": "AQ_A23_2_730_F3_F2.C",
+      "content": {
+        "specification": {
+          "tlsCode": 66,
+          "tlsFunctionByte": 1
+        },
+        "freetext": "",
+        "componentSpecifications": [],
+        "required": false,
+        "priority": -1
+      }
+    }, {
+      "panelId": "AQ_A23_2_730_F3.A",
+      "content": {
+        "specification": {
+          "tlsCode": 21,
+          "tlsFunctionByte": 1
+        },
+        "freetext": "",
+        "componentSpecifications": [],
+        "required": false,
+        "priority": -1
+      }
+    }]
+  }]
+}

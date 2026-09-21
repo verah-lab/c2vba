@@ -1,0 +1,112 @@
+{
+  "instanceId": "INSTANZ1",
+  "definitionSetId": "Zeitsynchronisation",
+  "roadId": "",
+  "values": [{
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "Zeitsynchronisation",
+    "target": {
+      "itemType": {
+        "type": "VRZ",
+        "udeType": "UNKNOWN",
+        "vltType": "UNKNOWN"
+      },
+      "itemId": ""
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "moeglicheVorlaufzeit",
+      "value": {
+        "intVal": 5
+      }
+    }, {
+      "parameterId": "Timeout15",
+      "value": {
+        "intVal": 7
+      }
+    }, {
+      "parameterId": "Timeout30",
+      "value": {
+        "intVal": 15
+      }
+    }, {
+      "parameterId": "Timeout60",
+      "value": {
+        "intVal": 30
+      }
+    }, {
+      "parameterId": "Timeout2m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "Timeout3m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "Timeout4m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "Timeout5m",
+      "value": {
+        "intVal": 55
+      }
+    }, {
+      "parameterId": "zeitsync15",
+      "value": {
+        "intVal": 10
+      }
+    }, {
+      "parameterId": "Zeitsync30",
+      "value": {
+        "intVal": 20
+      }
+    }, {
+      "parameterId": "Zeitsync60",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "Zeitsync2m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "Zeitsync3m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "Zeitsync4m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "Zeitsync5m",
+      "value": {
+        "intVal": 50
+      }
+    }, {
+      "parameterId": "AnstandZeitsync",
+      "value": {
+        "intVal": 360
+      }
+    }],
+    "numberedValues": [],
+    "valueSource": "VRZ",
+    "comment": "",
+    "timestamp": "1584102507864",
+    "userId": "",
+    "reset": false,
+    "iid": "mVnmmAEMHJ5NO+1xP2I36g",
+    "previousIid": ""
+  }],
+  "iid": "IQ/g3ElVTKcHFeii7Z4U4Q"
+}

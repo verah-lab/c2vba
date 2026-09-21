@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>1.0.0</Version> <!-- azure csharp pipeline will set its own value, no need to change it -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>VMIS2.ConfigService.Interface.Proto</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ContentTargetFolders>proto</ContentTargetFolders>
+    <AssemblyName>VMIS2.ConfigService.Interface.Proto</AssemblyName>
+    <PackageVersion>$(Version)</PackageVersion>
+    <Title>VMIS2 Kernsystem ConfigService Interface</Title>
+    <Authors>vmis-ehe</Authors>
+    <Description>C# Proto-Files für das ConfigService</Description>
+    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <IsTool>false</IsTool>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="VMIS2.Transfer.Interface" Version="4.6.0" GeneratePathProperty="true" />
+    <PackageReference Include="VMIS2.VersionNotifier.Datamodel.Proto" Version="1.0.1" GeneratePathProperty="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\src\main\proto\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
+

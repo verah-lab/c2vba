@@ -1,0 +1,3251 @@
+{
+  "instanceId": "INSTANZ1",
+  "definitionSetId": "PLBelegung",
+  "roadId": "A23_1",
+  "values": [{
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_874_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_874_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_020_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_020_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_020_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_040_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_040_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_040_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_120_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_120_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_120_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_120_F4"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_200_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_200_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_200_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_194_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_194_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_194_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_120_V1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_070_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_070_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_070_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_832_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_832_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_090_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_090_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_080_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_080_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_080_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_150_V1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_075_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_075_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_075_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_194_A1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_194_A2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_010_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_010_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_025_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_025_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_025_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_030_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_030_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_030_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_070_E1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_150_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_150_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_150_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_150_F4"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_860_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_860_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_080_V1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_163_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_163_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_163_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_163_F4"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_170_F1"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_170_F2"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_170_F3"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }, {
+    "instanceId": "INSTANZ1",
+    "definitionSetId": "PLBelegung",
+    "target": {
+      "itemType": {
+        "type": "VDE_SENSOR"
+      },
+      "itemId": "MQ_A23_1_170_F4"
+    },
+    "values": [{
+      "parameterId": "AKTIV",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "pruefung",
+      "value": {
+        "booleanVal": true
+      }
+    }, {
+      "parameterId": "anzahlBereiche",
+      "value": {
+        "intVal": 4
+      }
+    }, {
+      "parameterId": "Beleg_von",
+      "value": {
+        "intVals": {
+          "values": [0, 10, 20, 30]
+        }
+      }
+    }, {
+      "parameterId": "Beleg_bis",
+      "value": {
+        "intVals": {
+          "values": [10, 20, 30, 40]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_von",
+      "value": {
+        "doubleVals": {
+          "values": [250.0, 125.0, 83.0, 62.0]
+        }
+      }
+    }, {
+      "parameterId": "quotientqb_bis",
+      "value": {
+        "doubleVals": {
+          "values": [2500.0, 250.0, 125.0, 83.0]
+        }
+      }
+    }],
+    "valueSource": "VRZ",
+    "timestamp": "1568901749279"
+  }]
+}

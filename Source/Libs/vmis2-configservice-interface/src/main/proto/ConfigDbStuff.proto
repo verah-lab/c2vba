@@ -1,0 +1,194 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.configservice;
+
+import "ConfigBase.proto";
+import "ConfigMiscData.proto";
+import "ConfigRelations.proto";
+import "ConfigTlsData.proto";
+import "ConfigTunnel.proto";
+import "ConfigVersions.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option csharp_namespace = "eu.vmis_ehe.vmis2.configservice";
+option (.heuboe.protobuf.interface_version) = "1.16.27";
+
+// Structures/Definitions used for DB storage and broker communication
+
+message BaseData {                                      // TLS config, stored by UZ
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+	string iid = 1;
+    BaseVersionKey key = 2;
+    int32 chunk_num = 5;                                // for splitted saves, running block number
+    int32 chunk_count = 6;                              // for splitted saves, number of blocks
+    string uz_name = 3;
+    repeated TlsNode nodes = 4;
+}
+
+message TunnelData {                                    // Tunnel data, stored by UZ in relation data
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string version = 1;
+    string user = 2;
+    google.protobuf.Timestamp created = 3;
+    repeated TunnelDirection tunnels = 4;
+}
+
+message VkpData {                                       // VKP data, stored by UZ in relation data
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    string version = 1;
+    string user = 2;
+    google.protobuf.Timestamp created = 3;
+    repeated VkpItem vkps = 4;
+}
+
+message RelationData {                                  // Item relations, stored by UZ
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string iid = 1;
+    VersionKey key = 2;
+    VersionKey extKey = 3;
+    google.protobuf.Timestamp created = 4;
+    repeated Relation relations = 5;
+    TunnelData tunnels = 6;
+    VkpData vkps = 7;
+}
+
+message SnapshotUpdate {                                // Snapshot relations update VRZ -> rVmz
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    enum Origin {
+        USER = 0;
+        SYSTEM = 1;
+    }
+    string iid = 1;
+    google.protobuf.Timestamp created = 2;
+    repeated RelationData blocks = 3;
+    Origin origin = 4;                                  // Message origin: user interaction, or version management
+}
+
+enum CfgChangeMode {                                    // Config update type:
+    ADDED = 0;
+    REMOVED = 1;
+    TOUCHED = 2;
+}
+
+message ItemUpdates {                                   // pushed on base data updates (configuration change)
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    message UpdDesc {                                   // descriptor used for both roads and uzs
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string id = 1;                                  // road/uz id
+        repeated ConfigItemType type = 2;               // item types that where changed
+    }
+    string iid = 10;
+    string version_id = 1;                              // new version id
+    string previous_version_id = 2;                     // id of version that was active before
+    repeated UpdDesc touched_roads = 4;                 // roads where items changed
+    repeated UpdDesc touched_uzs = 5;                   // uzs that have changed items
+}
+
+message RelationUpdates {                               // pushed on manual data updates (configuration change, and user interaction)
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    message UpdRelation {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string type = 1;                                // Relation type
+        string id = 2;                                  // Relation source id
+        CfgChangeMode mode = 3;
+        string road_id = 4;
+        string uz_id = 5;
+    }
+    string iid = 10;
+    string version_id = 1;                              // new version id
+    string previous_version_id = 2;                     // id of version that was active before
+    repeated UpdRelation relations = 3;                 // touched items
+    repeated string touched_roads = 4;                  // shortcut: Ids of roads where items changed
+    repeated string touched_uzs = 5;                    // shortcut: Ids of uzs that have changed items
+    repeated string touched_types = 6;                  // shortcut: Relation types that had changes
+}
+
+message ActivateVersion {                               // pushed from a version service to activate stuff via KAFKA
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+
+    string iid = 1;
+    VersionHandle version = 2;
+    bool delete_snapshots = 3;
+    string activation_token = 4;
+    string previous_version = 5;
+}
+
+// global partner lookup table
+message Partners {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    string version_id = 1;
+    repeated Partner partners = 2;
+}
+message Partner {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    int32 partnerId = 1;
+    string partnerName = 2;
+}
+
+message Versions {                                      // 'all versions' overview, sorted by UZ (used internal only)
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    message ManVersion {                                // internal only
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string id = 1;
+        bool snapshot = 2;
+        bool active = 3;
+    }
+    message UzVersion {                                 // internal only
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string id = 1;
+        bool has_base = 2;
+        bool has_extended = 3;
+        repeated ManVersion man_versions = 4;
+        bool active = 5;
+    }
+    message UzData {                                    // internal only
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string id = 1;
+        string name = 2;
+        string activeBase = 4;
+        string activeMan = 5;
+        bool snapshot = 6;
+        repeated UzVersion versions = 7;
+    }
+    repeated UzData uzs = 1;
+}
+
+message ItemInfo {                                      // internal only
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    string id = 1;
+    string name = 2;
+    ConfigItemType type = 3;
+    string item_type = 4;
+    Location location = 5;
+    string desc = 6;
+    repeated ItemInfo children = 7;
+}
+
+message Relations {                                     // relations data (used internal only)
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+    message RelInfo {                                   // internal only
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string type = 1;
+        ItemInfo source = 2;
+        repeated ItemInfo targets = 3;
+        bool manual = 4;
+        bool eclipsing = 5;
+        string user = 6;
+        google.protobuf.Timestamp touched = 7;
+    }
+    repeated RelInfo relations = 1;
+}
