@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "TimeBasedCrossSectionEventPatternProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// List of time-based cross section event patterns.
+message TimeBasedCrossSectionEventPatternList {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+  string iid = 1;        // message id
+  google.protobuf.Timestamp requestTime = 2; // request time of the time based cross section event patterns
+  repeated TimeBasedCrossSectionEventPattern timeBasedCrossSectionEventPatterns = 3; // List of time-based cross section event patterns.
+}
+
+// Time-based cross section event pattern. Tagestypenganglinie (Ereignisganglinie)
+message TimeBasedCrossSectionEventPattern {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  Date day = 1;        // day
+  string event_id = 2; //Id of the referenced event
+  string crosssection_id = 3; //ID of the cross-section
+  repeated LaneSeries lane_series = 4; //data-series separated by sensorId
+  string event_category = 5; // the event's category - a simple grouping mechanism for events.
+}
+
+//General data-type for arbitrary series of data
+message DataSeries {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  string name = 1; // name of the data series
+  bool valid = 2; //Validity
+  repeated double values = 3; //all values inside the series; for missing or bad entries contains a value, which is clearly meaningless for the quantity of measurement (-1 for q&v)
+  string unit = 4; //unit of the measurement (for q 'Kfz/h', for v 'km/h')
+  repeated int32 missing_indices = 5; //a list of missing / erroneous values. If an index is contained in this list, the corresponding value in the values-list should be interpreted as an error independent of the concrete value.
+  int32 aggregation_interval = 6; //aggregation interval [min]
+}
+
+//Series for a single lane
+message LaneSeries {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  string sensor_id = 1; //ID of the VDE sensor (or empty for cross-section)
+  repeated DataSeries series = 2; //different quantities for the lane, e.g., q, v
+}
+
+// Represents a calendar date
+message Date {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+  int32 year = 1; // Must be from 1 to 9999.
+  int32 month = 2; // Must be from 1 to 12.
+  int32 day = 3; // Must be from 1 to 31 and valid for the year and month.
+}

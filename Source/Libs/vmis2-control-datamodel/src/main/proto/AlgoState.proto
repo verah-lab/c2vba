@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "Situation.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "AlgoStateProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// VMIS2-S1ANF-642
+message SiteState {
+ option (.heuboe.protobuf.stereotype) = ENTITY;
+ string id = 1; //id of measurement site
+ // could be not set if site state only ends an existing situation
+ Situation situation = 2 [(.heuboe.protobuf.required) = false];
+ Situation endedSituation = 3 [(.heuboe.protobuf.required) = false]; //will be set if a previous situation is ended
+}
+
+// List of SiteStates used e.g. to publish AlgoState 
+// to a broker etc. 
+message AlgoState {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    // The unique identifier of this message instance (also called 'instance identifier').
+    string iid = 1;
+    repeated SiteState siteStates = 2;
+    google.protobuf.Timestamp start_time = 3;
+}

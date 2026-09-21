@@ -1,0 +1,466 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "Attribute.proto";
+import "CommonControlData.proto";
+import "GeoReference.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "ControlSignProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// logical operation modes
+enum LogicalOperationMode {
+  NONE = 0;
+  NORMAL_CONTROL_FROM_AUTO_MEASURE_OBJ = 1; // 1 – normale St. aus automatischen M-Ob
+  NORMAL_CONTROL_FROM_EXTERNAL_MEASURE_OBJ = 2 ; // 2 – normale St. aus externem M-Obj
+  NORMAL_CONTROL_FROM_MANUEL_MEASURE_OBJ = 3; // 3 – normale St. aus manuellem M-Obj
+  PRIORITISED_CONTROL_FROM_AUTO_MEASURE_OBJ = 4; // 4 – priorisierte St. aus auto. M-Obj
+  PRIORITISED_CONTROL_FROM_EXTERNAL_MEASURE_OBJ = 5; // 5 – priorisierte St. aus externem. M-Obj
+  PRIORITISED_CONTROL_FROM_MANUEL_MEASURE_OBJ = 6; // 6 – priorisierte St. aus manuellem M-Obj
+  LOCKED = 7; // 7 – Verriegelt
+  EXTERNAL = 8; // 8 – externer Betrieb / Vorortbetrieb
+  AUTONOMOUS = 9; // 9 - Autarker Betrieb
+}
+
+// Type of the control sign
+enum ControlSignType{
+  LOCATION_INDEPENDENT = 0;  // location independent control sign type
+  LOCATION_DEPENDENT = 1;    // location dependent control sign type
+  CONCRETE_FOR_AQ = 2;      // concrete control sign type for an display panel
+  CONCRETE_FOR_SECTION = 3;      // concrete control sign type an validity section
+  ALGO_DLZ = 4; // from algorithm to set DLZ in pevious funnel
+  ALGO_WZG_A = 5; // from algorithm to change speed in main funnel
+  ALGO_WZG_BC = 6; // from algorithm to change B/C combination in main funnel
+  AUTOMATIC_INFO = 7;       // Algo for INFO-Measure
+}
+
+// Source of the control sign measures
+enum ControlSignMeasureSource{
+  CONTROL_SIGN_MEASURE = 0;  // the source of the control sign measure is the process chain.
+  EXTERNAL_MEASURE = 1;  //  the source of the control sign measure is a external measure.
+  OPERATOR = 2;     //  the source of the control sign measure is a of the operator.
+  CONTROL_SIGN_INFOMEASURE = 3;  // source automatic info measure
+}
+
+// Funnel of control signs.
+enum Funnel{
+  MAIN_FUNNEL = 0;          // main funnel
+  PREV_FUNNEL = 1;        // previous funnel
+  NEXT_FUNNEL = 2;             // next funnel
+  CONCRETE_CONTROL_SIGN = 3;  // no funnel is involved, control sign came from a concrete control sign.
+  ALT_PREV_FUNNEL = 4;   // alternative previous funnel
+  WTX_POSTYPE_1_1A = 5; // WTX before Measure; WTX in Section of End
+  WTX_POSTYPE_1_1B = 6; // WTX in Measure    ; WTX in Section of End
+  WTX_POSTYPE_2_2  = 7; // WTX before Measure; WTX NOT in Section of Start and End
+  WTX_POSTYPE_2_1A = 8; // WTX before Measure; WTX in Section of Start NOT in End
+  WTX_POSTYPE_2_1B = 9; // WTX in Measure    ; WTX in Section of Start NOT in End
+  WTX_POSTYPE_3_3  = 10; // WTX before Measure; WTX on other Route
+}
+
+// Measure state for wtv wta priority tables
+enum MeasureStateWtaWtvPriorityTables{
+  UNUSED = 0;          // measure state not used
+  NORMAL = 1;          // normal
+  PRIORITISED = 2;      // prioritised
+}
+
+// List of control signs used e.g. to publish ControlSigns to a broker etc.
+message ControlSigns {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1;                               // message id
+  repeated ControlSign control_signs = 2;        // List of control signs
+  string user = 3; // user how changed values.
+  google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+  string comment = 5; // comment of user what was changed values.
+}
+
+// Type of a control sign
+message ControlSign {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  TwoPartIdentification id = 1;                      // two part id of the control sign
+  string name = 2;                                   // name of the control sign
+  ControlSignType type = 3;                          // type of the control sign
+  repeated string measure_class_ids = 4;             // measures classes which are linked to the control sign
+  repeated ValiditySection validity_section = 5;     // validity section of control sign
+  reserved 6 to 10; // was used for main_funnel, prev_funnel, next_funnel, user and changed_at, this is know move to attribute catalogue
+  string description = 11;  // description of the control sign.
+  bool active = 12; // flag to see if sign is active.
+  WTVFunnel funnel_wtv = 13;                        // funnels for wtv aqs of the control sign
+  SBAFunnel funnel_sba = 14;                        // unnels for sba aqs of  the control sign
+
+}
+// List of concrete control signs used e.g. to publish ConcreteControlSign to a broker etc.
+message ConcreteControlSigns {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1;                               // message id
+  repeated ConcreteControlSign control_signs = 2;        // List of concrete control signs
+  string user = 3; // user how changed values.
+  google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+  string comment = 5; // comment of user what was changed values.
+}
+
+// Type of a concrete control sign
+message ConcreteControlSign {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  TwoPartIdentification id = 1;                      // two part id of the concrete control sign.
+  string description = 2;                            // description of the concrete control sign.
+  string measure_class_id = 4;                  // measures class id which for that the concrete control is used.
+  repeated DevicePanelContent concreteSignSpecification = 5;     // validity section of control sign
+  reserved 3, 6 to 7; // was used for user and changed_at, this is know move to attribute catalogue
+  oneof anchor{
+    string aqId = 8; // display panel id for that the concrete control sign is used.
+    Section sections = 9; //sections for that the concrete control sign is used.
+  }
+  string name = 10; // name of the concrete control sign
+  bool active = 11; // flag to see if sign is active.
+  repeated TunnelContent tunnelContent = 12; // content for tunnel
+  // sequence of device panel content for the progression
+  DevicePanelContentSequence devicePanelContentSequence = 13;
+}
+
+// container of a validity section, used for an anchor
+message Section {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  repeated ValiditySection sections = 1; // validity section of concrete control sign
+}
+// Funnel for wtv aqs
+message WTVFunnel{
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  FunnelDefinition prev_funnel = 1 [(.heuboe.protobuf.required) = false]; //previous funnel for WTVs
+  ListTagPanelContent main_funnel = 2 [(.heuboe.protobuf.required) = false]; // main funnel for WTVs
+}
+
+// Funnel for sba aqs
+message SBAFunnel {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  FunnelDefinition prev_funnel = 1 [(.heuboe.protobuf.required) = false];//previous funnel for SBAs
+  FunnelDefinition alternative_prev_funnel = 2 [(.heuboe.protobuf.required) = false]; //alternative previous funnel for SBAs
+  ListTagPanelContent main_funnel = 3 [(.heuboe.protobuf.required) = false]; // main funnel for SBAs
+  FunnelDefinition next_funnel = 4 [(.heuboe.protobuf.required) = false];// next funnel for SBAs
+}
+
+// funnel definition of a control sign
+message FunnelDefinition{
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  // List of level of lists of device panel tags,
+  // to configure the device panel tags for an predecessor or successor display panel.
+  repeated ListTagPanelContent control_sign_specification = 1;
+  // length of the funnel in kilometer.
+  double length_in_km = 2;
+}
+
+message ListTagPanelContent{
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  repeated TagPanelContent tag_panel_content = 1;
+}
+
+// List of device panel tags, to make the relation 
+// between control sign and device panel.
+message TagPanelContent {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  string tag = 1;
+  PanelContent panel_content = 2;
+}
+
+// Control sign of a measure
+message ControlSignMeasure {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  // Reference to the measure object
+  TwoPartIdentification measure_id = 1 [(.heuboe.protobuf.extRef) =
+  {type: "eu.vmis_ehe.vmis2.control.data.Measure", field: "two_part_id"}];
+  // Measure class of the measure
+  string measure_class_id = 2;
+  // Measure Priority Mode
+  MeasurePriorityModeWrapper.MeasurePriorityMode measure_priority_mode = 3;
+  // Contains time stamp of last change of the control sign
+  google.protobuf.Timestamp processing_time = 4;
+  // Automatically computed control recommendation
+  VersionedDevicePanelContent control_recommendation = 5;
+  // Manually corrections by the operator (empty = no sign affected)
+  VersionedDevicePanelContent control_correction = 6;
+  // Use correction instead recommendation even it is empty
+  bool correction_active = 7;
+  // Time specification for the validity of the control sign measure
+  Timespec validity_timespec = 8;
+  // Current state of the measure (ACTIVE or INACTIVE)
+  MeasureState measure_state = 9;
+  // description of the measure
+  string measure_description = 10;
+  // fix attibutes from source of the measure
+  repeated FixAttributes fix_attributes = 11;
+  // sequence of device panel content for the progression
+  DevicePanelContentSequence devicePanelContentSequence = 12;
+
+  repeated ValiditySection measure_validity_sections = 13;
+  // true if operator has changed proposal of sign-preperation
+  bool operator_adjusted = 14;
+  // true if control sign measure is deleted.
+  bool deleted = 15;
+
+  MeasureType measure_type = 16;  // Type of measure M_CALCULATED/M_EXTERNAL/M_MANUAL
+  // flag if CSM was created in autarky or not
+  bool autarky = 17;
+}
+
+// List of the Control signs for measures
+message ControlSignMeasures {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1;                                         // message id
+  repeated ControlSignMeasure control_sign_measures = 2;  // list of control signs for measures
+}
+// Specification of panel content
+message DevicePanelContent {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  string panel_id = 1;                 // Reference to the device panel
+  PanelContent content = 2;            // content of the panel
+  OriginControlSignMeasure origin = 3; // origin of the control sign measure
+}
+
+//Specification of Modifier for SignOverlay Algorithms
+message ControlSignModifier {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  bool noEndOf = 1;		// no End Of
+  bool noLinkage = 2;		// no linkage
+  bool noFunnel = 3;		// no speed funnel (VMIS2-S1ANF-388)
+  bool noGapFilling = 4;		// no gap fill for WZG-A (VMIS2-S1ANF-389)
+  bool noMaxReducing = 5;      // no max reduction for WZG-A (VMIS2-S1ANF-390)
+}
+
+// Versioned panel content
+message VersionedDevicePanelContent  {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  int32 version_number_ = 1;                  // consecutive version number
+  repeated DevicePanelContent devicePanelContent = 2;  // device panel content
+  repeated TunnelContent tunnelContent = 3; // content for tunnel
+  ControlSignModifier modifier = 4; //to modify behaviour of algorithms
+}
+
+// Origin of the control sign measure
+message OriginControlSignMeasure {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  ControlSignMeasureSource source = 1;// involved source of the control sign measure.
+  int32 default_priority = 2;         // if equals -1 the default priority is used.
+  Funnel funnel = 3;                  // involved funnel of the control sign measure.
+  ControlSignType type = 4;             // involved control sign type of the control sign measure.
+  TwoPartIdentification control_sign_id = 5;       // two part id of the (concrete) control sign.
+  string description = 6;             // description of the (concrete) control sign.
+  string name = 7;                                   // name of the (concrete) control sign
+  int32 distance = 8;   // distance to start of measure, 0 if it does not matter
+}
+// Origin of the tunnel content
+message OriginTunnelContent {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  string tunnelTrafficProgramId = 1 ; //tunnel traffic program id.
+  TwoPartIdentification control_sign_id = 2;       // two part id of the (concrete) control sign.
+  ControlSignMeasureSource source = 3;// involved source of the control sign measure.
+  ControlSignType type = 4;             // involved control sign type of the control sign measure.
+  string description = 5;             // description of the (concrete) control sign.
+  string name = 6;                                   // name of the (concrete) control sign
+}
+
+// Content of a variable traffic panel or a display panel
+message PanelContent  {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  TlsSpecification specification = 1;                 // Specification of the panel content
+  // Only for display principle c and d, tlsCode has to be 0
+  string freetext = 2 [(.heuboe.protobuf.required) = false];
+  // Specification of each component (only for display principle e:
+  // roadside variable message sign (WWW)), tlsCode has to be 0
+  repeated TlsSpecification component_specifications = 3;
+  bool required = 4;                                  // Marker of an important control measure specification
+  int32 priority = 5;                                 // Default: -1; otherwise a special given priority
+}
+
+// TLS Specification
+message TlsSpecification {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  int32 tls_code = 1;                     // TLS code to display
+  int32 tls_function_byte = 2;            // Off, on, flashing light
+}
+
+// Result of sign overlay algorithm for one variable traffic panel 
+message ResultingPanelContent {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  // id of measure which was reason for panel content
+  TwoPartIdentification measure_id = 1 [(.heuboe.protobuf.extRef) =
+  {type: "eu.vmis_ehe.vmis2.control.data.Measure", field: "two_part_id"}];
+  // measure class of measure which was reason for
+  // panel content (convenience repetition)
+  string measure_class_id = 2;
+  // al operating mode of measure (convenience repetition)
+  MeasurePriorityModeWrapper.MeasurePriorityMode measure_priority_mode = 3;
+  DevicePanelContent device_panel_content = 4;            // panel content
+}
+
+// Reason of a panel's control sign
+message ControlSignReason {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  string panel_id = 1;                                            // Reference to the device panel
+  // list of all reasons from measures ... maybe stripped
+  // to a numer of elements (10)
+  repeated OneControlSignReasonMeasure control_sign_reasons_measure = 2;
+  bool reasons_are_stripped = 3;                                  // true if the obove list is stripped
+  // Fuer Laengs- Querabgleich, Ausfallbehandlung und Aufhebungen
+  OneControlSignReasonOther control_sign_reason_other = 4 [(.heuboe.protobuf.required) = false];
+  // Contains time stamp of last change of the control sign
+  google.protobuf.Timestamp processing_time = 5;
+  ControlSignModifier modifier = 6; // to modify behaviour of algorithms
+}
+
+// A reason from a measure
+message OneControlSignReasonMeasure {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  // Reference to the measure object
+  TwoPartIdentification measure_id = 1 [(.heuboe.protobuf.extRef) =
+  {type: "eu.vmis_ehe.vmis2.control.data.Measure", field: "two_part_id"}];
+  PanelContent panel_content = 2;                                 // the given panel content with priority
+  // Measure Priority Mode (convenience repetition)
+  MeasurePriorityModeWrapper.MeasurePriorityMode measure_priority_mode = 3;
+  // measure class of measure (convenience repetition)
+  string measure_class_id = 4;
+  // origin of the control sign measure
+  OriginControlSignMeasure origin = 5;
+}
+
+// Another reason (not from measure)
+message OneControlSignReasonOther {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  // desciption; name of the algorithm that changes the
+  // panel content ( "Laengs Geschwindigkeit" "Quer Geschwindigkeit" )
+  string reason = 1;
+  // the new panel content given from the algorithm
+  PanelContent panel_content = 2;
+}
+
+// Reason of a panel's control sign used e.g. 
+// to publish ControlSignReason to a broker etc.
+message ControlSignReasonMsg {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1;                      // message id
+  ControlSignReason reason = 2;        // reason object
+}
+// List of priority tables used e.g. 
+// to publish  priority tables to a broker etc.
+message PriorityTables {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1;          //message id
+  repeated PriorityTable priority_table = 2;  //List of priority tables
+  string user = 3; // user how changed values.
+  google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+  string comment = 5; // comment of user what was changed values.
+}
+
+//Priority table to define the priorities of control sign for wvz.
+message PriorityTable {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  string id = 1;              //id of the priority table.
+  string description = 2;        // description for what the priority table is used.
+  repeated PriorityEntry priorities = 3;  // table of priorities.
+  reserved 4 to 5; // was used for user and changed_at, this is know move to priority tables
+}
+
+//Priority entry to define a priority of a control sign for wvz.
+message PriorityEntry {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  int32 priority = 1;        // priority of the sign request preparation.
+  int32 tlsCode = 2;          // tls code of sign request preparation.
+  string other_description = 3 [(.heuboe.protobuf.required) = false];      // other description as tls 2012.
+  repeated string measure_reference = 4;  // default empty or a list of measure class object ids, for which the priority should used.
+}
+
+//Matrices to lock control sign for wvz on display panels.
+message DisplayPanelLockMatrices {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1 [(.heuboe.protobuf.required) = true];        //message id
+  repeated DisplayPanelLockMatrix matrix = 2 [(.heuboe.protobuf.required) = true]; // List of matrices to lock control sign for wvz on display panels.
+  string user = 3; // user how changed values.
+  google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+  string comment = 5; // comment of user what was changed values.
+}
+
+//Matrix to lock control sign for wvz on display panels.
+message DisplayPanelLockMatrix {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  string id = 1 [(.heuboe.protobuf.required) = true];      // id of the aq for which the matrix assigned.
+  repeated DisplayPanelLockRow row = 2 [(.heuboe.protobuf.required) = true]; // List of lock entries to define combination of wvz that are not allow on a display panel.
+}
+
+//Row to combinated entries which not allow to get.
+message DisplayPanelLockRow {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  repeated DisplayPanelLockEntry entry = 1 [(.heuboe.protobuf.required) = true];  //List of DisplayLockEntries.
+}
+
+//Lock entry to define tls codes on a wzg that are not allow in combination with other tls code on a wzg.
+message DisplayPanelLockEntry {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  string id = 1 [(.heuboe.protobuf.required) = true];      // id of a variable traffic panel on the corresponding aq.
+  int32 tls_code = 2 [(.heuboe.protobuf.required) = true]; // tls code that is visible on the variable traffic panel.
+}
+
+// List of logical operation mode of an display panel used e.g.
+// to publish them to a broker etc.
+message DisplayPanelLogicalOperationModeMsg {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1;          //message id
+  DisplayPanelLogicalOperationMode displayPanelLogicalOperationMode = 2;
+}
+
+//logical operation mode of an display panel
+message DisplayPanelLogicalOperationMode {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  string id = 1 [(.heuboe.protobuf.required) = true];      // id of the aq.
+  LogicalOperationMode logical_operation_mode = 2 [(.heuboe.protobuf.required) = true]; // logical operation mode of an display panel.
+  google.protobuf.Timestamp processing_time = 3;
+}
+// List of wta wtv priority tables used e.g.
+// to publish wta wtv priority tables to a broker etc.
+message WtaWtvPriorityTables {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1 ;      //message id
+  repeated WtaWtvPriorityTable tables = 2; // wta wtv priority tables.
+}
+
+// Wta wtv priority table to document the priorities of wta wtvs.
+message WtaWtvPriorityTable {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+  string id = 1 ;      // id of the aq.
+  repeated WtaWtvPriorityEntry entries = 2; // wta wtv priority entries.
+}
+
+//Priority entry to document a priority of wta wtvs.
+message WtaWtvPriorityEntry {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  string measure_class = 1 ;      // measure class of priority entry.
+  string description = 2; // description of priority entry.
+  MeasureStateWtaWtvPriorityTables  mode = 3; // measure priority mode of priority entry.
+  int32 priority = 4; // priority of priority entry.
+}
+
+message TunnelContent {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  string tunnel_direction_id = 1;  // tunnel direction id
+  reserved  2; // was used for origin of the tunnel content with OriginControlSignMeasure.
+  repeated string tunnelTrafficProgramIds = 3; //
+  repeated OriginTunnelContent originTunnel = 4; // origin of the tunnel content
+}
+
+message DevicePanelContentSequence {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+  repeated DevicePanelContentSequenceElement sequence_ON = 1;  // on sequence of device panel content
+  repeated DevicePanelContentSequenceElement sequence_OFF = 2;  //off sequence of device panel content
+}
+
+message DevicePanelContentSequenceElement {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  int32 absolute_execution_time = 1;   // execution time in seconds after start of a sequence
+  repeated DevicePanelContent device_panel_content = 2;  // device panel content
+  repeated TunnelContent tunnel_content = 3;            // content for tunnel
+}

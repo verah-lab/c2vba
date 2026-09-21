@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "ControlSign.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "CommonSituationMeasureProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+enum ModifyApprovalMode {
+  MODIFY_NO_MODIFICATION = 0;    //chooses the default approval mode for the measure class
+  MODIFY_NO_APPROVAL = 1;        //the created-measure must not be approved (this ignores adjustments of the measure class)
+  MODIFY_APPROVE_ACTIVATION = 2; //the created-measure must be approved (this ignores adjustments of the measure class)
+}
+
+// a manuel situation can obtain information to
+// 1) change the approval Mode behaviour of a created measure
+// 2) info to overwrite the result of the sign request preparation app
+message ModifyMeasure {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  ModifyApprovalMode modify_measure_approval_mode = 1;
+  bool modify_wzga_active = 2;  // if active
+  PanelContent modify_wzga = 3; // the given content overwrites all contents of WZG-A in the main funnel
+  bool modify_wzgb_active = 4;  // if active
+  PanelContent modify_wzgb = 5; // the given content overwrites all contents of WZG-B in the main funnel
+  bool modify_wzgc_active = 6;  // if active (should be true only if also if modify_wzgb_active is true)
+  PanelContent modify_wzgc = 7; // the given content overwrites all contents of WZG-C in the main funnel
+  // if a freetext is given, the priority will be relevant
+}

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "TrafficTimeSeriesProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+//VMIS2-S1ANF-339
+// Traffic time series data structure from VMIS1
+message TrafficTimeSeries {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time of the measure 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 2;     
+    string id = 3;                                  // ID 
+   	string event_id = 4;                            // Day event id
+    repeated TTSQuantities q = 5;                   // Quantity of all TrafficTimeSeries
+}
+
+// list of traffic time series (first entry for today, next for tomorrow,...)
+message TrafficTimeSeriesList {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;                                 // message id
+    string id = 2;                                  // sensor/system ID
+    repeated TrafficTimeSeries series = 3;            // Quantity of all TrafficTimeSeries
+}
+
+// Traffic prognosis quantities from traffic time series
+message TTSQuantities {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    int32 q_LKW = 1;                                // Quantity of trucks
+    int32 q_PKW = 2;                                // Quantity of cars
+    double q_LKW_factor = 3;                        // Quantity factor for trucks
+    double q_PKW_factor = 4;                        // Quantity factor for cars
+}

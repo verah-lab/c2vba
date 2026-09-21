@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "VariableTrafficPanelMonitoringStateProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// Type of a variable traffic panel monitoring state
+message VariableTrafficPanelMonitoringState {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+	string iid = 1;        // message id
+	string id = 2;         // id of the variable traffic panel
+	StateType state = 3;   // The state of the variable traffic panel regarding the monitoring.
+}
+
+// The state of the variable traffic panel regarding the monitoring.
+enum StateType {
+    // The monitoring of the display panel of the variable traffic panel is deactivated.
+	NOT_MONITORED_DUE_TO_PARAMETER = 0;
+	// There exist an invalid tls state concerning the variable traffic panel.
+	NOT_MONITORED_DUE_TO_TSL_STATES = 1; 
+	// The last actuating command of the variable traffic panel was responded correctly.
+	CORRECTLY_RESPONDED = 2;
+	// The variable traffic panel was re-switched.
+	RE_SWITCHED = 3;
+	// The re-switching of the variable traffic panel was aborted because the maximum number of re-switches was reached.
+	UNSUCCESSFULLY_RE_SWITCHED = 4;
+}

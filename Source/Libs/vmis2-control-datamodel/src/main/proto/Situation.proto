@@ -1,0 +1,332 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "Attribute.proto";
+import "CommonControlData.proto";
+import "CommonSituationMeasure.proto";
+import "ConfigBase.proto";
+import "ConfigMqUqVq.proto";
+import "GeoReference.proto";
+import "EDBInterface.proto"; //Attributes used for new EDB-Handling
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "SituationProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// VMIS2-S1ANF-622
+message MergedTypeWrapper {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    enum MergedType {
+        COMPLETELY = 0;
+        PARTIALLY = 1;
+        DISPLACED = 2;
+    }
+}
+
+// Value type of an attribute
+message ValTypeWrapper {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    enum ValType {
+        STRING = 0;
+        BOOLEAN = 1;
+        INTEGER = 2;
+        FLOAT = 3;
+        ENUM = 4;
+    }
+}
+
+// VMIS2-S1ANF-788
+// VMIS2-S1ANF-789
+// Siuation class represents one entry in the situation catalogue
+message SituationClass {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    enum MethodOfConflictAdjustment {
+        NONE = 0;
+        STATEPRIORITYBASED = 1;
+        QUALITYBASED = 2;
+    }
+    message SituationSubClass {
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        TwoPartIdentification two_part_id = 1;              // Unique two-part identification of a situation sub class
+        string display_name = 2;                            // Display name
+        string description = 3;                             // Decription of the situation class
+        bool merge_situations = 4;                          // true, if neighboured situations of this sub class has to 
+                                                            // be merged (see VMIS2-S1ANF-559)
+        // Properties of lifecycle algorithm for situations 
+        // of that sub class
+        LifecycleProperties lifecycle = 5;
+        // True, if operator is able to create situations of this class (VM2-26095)
+        bool manual_handling = 6;
+        reserved 7 to 8; // was used for user and changed_at, this is know move to attribute catalogue
+
+    }
+    TwoPartIdentification two_part_id = 1;                  // Unique two-part identification of a situation class
+    string description = 2;                                 // Decription of the situation class
+    // conflicts of situation objects of this situation 
+    // class have to be resolved, method how they are 
+    // resolved, NONE for no conflict adjustment. 
+    MethodOfConflictAdjustment method_of_conflict_adjustment = 3;    
+
+    // Type of geo reference (point, line, net)
+    GeoReferenceTypeWrapper.GeoReferenceType geo_ref_type = 4;
+    repeated SituationSubClass sub_classes = 5;             // Associated sub classes
+    repeated string attribute_class = 6;                    // Additional attribute types
+    string display_name = 7;                                // Displayname of the situation class
+    double situation_merge_gap_in_km = 8;                   // Maximum gap between situations to merge (VMIS2-S1ANF-559)
+    // For the limit from the product of the qualities, 
+    // result quality minimum => 0-100 int32
+    int32 situation_quality_minimum = 9;                    
+    int32 algorithm_quality_minimum = 10;                   // Minimum quality of algorithm => 0-100 int32
+    // reserved 11 (manual_handling removed)
+    bool enable_lane_reference = 12;                        // true if situations of this class are able to reference a specific lane (VMIS2-S1ANF-789)
+}
+
+// VMIS2-BR-83
+// VMIS2-S1ANF-788
+// Situation catalogue lists all situation classes in priority 
+// sequence. (the first is the most important)
+message SituationCatalogue {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated SituationClass situation_classes = 1;          // List of situation classes
+    string iid = 2;                                         // message id
+    string user = 3; // user how changed values.
+    google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+    string comment = 5; // comment of user what was changed values.
+}
+// VMIS2-S1ANF-549
+// VMIS2-S1ANF-622
+// Attributes of an external or a manual situation
+message ExManSituation {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+    //field comment has been deleted
+    //field danger_ahead has been deleted
+    reserved 3,4;
+
+    string source = 1;                              // Souce (e.g. EDB, BMS2012, Polizei ...)
+    string name = 2;                                // Name of creator
+    EDBAttributes edb_attributes = 10;              // Attributes for new EDB handling
+}
+
+// VMIS2-S1ANF-622
+// Source situation object which has entered in a merged situation object
+message SourceSituation {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    // Unique two-part identification of a situation   
+    TwoPartIdentification two_part_id = 1 [(.heuboe.protobuf.extRef) = 
+        { type: "eu.vmis_ehe.vmis2.control.data.Situation", field: "two_part_id" }];           
+    MergedTypeWrapper.MergedType merge_type = 2;    // Merging type
+    repeated ValiditySection validity_section = 3;  // Area of validity
+    FixAttributes fix_attributes =4;
+}
+
+// Id and type of a sensor
+message Sensor {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    string id = 1;                                      // id of detection site or sensor
+    configservice.ConfigItemType type = 2;              // e.g. "MQ", "UDE_SENSOR"
+    configservice.CfgUdeSensor.UdeType ude_type = 3 [(.heuboe.protobuf.required) = false]; // type of environment data sensor - only relevant if type = UDE_SENSOR
+}
+
+// VMIS2-S1ANF-548
+// VMIS2-S1ANF-549
+// VMIS2-S1ANF-105
+// VMIS2-S1ANF-622
+// VMIS2-S1ANF-560
+// VMIS2-S1ANF-785
+// The result of a situation detection algorithm or
+// the result of merging situation objects 
+message Situation {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    // Field repeated string situation_ref = 14 is deleted
+    // Field repeated google.protobuf.Timestamp check_time = 15 is deleted
+    // Filed repeated SourceSituation source_situations = 18 is deleted
+    // => deleted field values are reserved for compatibility reasons
+    reserved 14, 15, 18;
+
+    // Different types of situations that are stored in the situation message
+    enum SituationType {
+        CALCULATED = 0; 
+        EXTERNAL = 1;
+        MANUAL = 2;
+        MERGED = 3;
+    }
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time of the measure 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 2;  
+    TwoPartIdentification two_part_id = 3;              // Unique two-part identification of a situation
+    SituationType situation_type = 4;                   // Type of situation
+    google.protobuf.Timestamp start_time = 5;           // Start time of the situation
+    google.protobuf.Timestamp end_time = 6 [(.heuboe.protobuf.required) = false]; // Proposed end time
+    // The situation class (VMIS2-S1ANF-641)
+    string situation_class_id = 7 [(.heuboe.protobuf.extRef) = 
+        { type: "eu.vmis_ehe.vmis2.control.data.SituationClass", field: "~two_part_id.obj_id" }];                       
+    // Sub class of a situation (VMIS2-S1ANF-641)
+    string situation_sub_class_id = 8 [(.heuboe.protobuf.extRef) = 
+        { type: "eu.vmis_ehe.vmis2.control.data.SituationClass.SituationSubClass", field: "~two_part_id.obj_id" }];                
+    float result_quality = 9;                           // Quality based on input data in percent 
+    float algorithm_quality = 10;                       // Quality based on the algorithm in percent
+    string algorithm_name = 11;                         // Name of the algorithm
+    // Status of the situation
+    CalculationStateWrapper.CalculationState calculation_state = 12;
+    repeated Attribute attributes = 13;                 // Additional attributes
+    ExManSituation external_manual_situation = 16  [(.heuboe.protobuf.required) = false]; // Additional attributes
+                                                        // if an external or a manual situation has been enforced
+    // Identifier of the object from the source,
+    // system, e.g. event ticket id VMIS2-S1ANF-549 
+    string source_system_id = 17 [(.heuboe.protobuf.required) = false];
+    // Components of an explanation (VMIS2-S1ANF-105): 
+    // For each situation object the system must document 
+    // the reasons why it was created   
+    string explanation = 19;                            
+    repeated ValiditySection validity_sections = 20;    // Area of validity
+    repeated Sensor source_sensors = 21;                // list of main and secondary sensors causing the situation
+    // VMIS2-S1ANF-785, list of referenced lane positions (can only be set if enable_lane_reference of situation class is set)
+    repeated configservice.LanePos lane_reference = 22  [(.heuboe.protobuf.required) = false];
+    //additional information for tracking
+    // aggregation interval of input data (optional)
+    string aggregation_interval = 23 [(.heuboe.protobuf.required) = false];
+    // smoothing algorithm of input data (optional)
+    string smoothing_algo = 24 [(.heuboe.protobuf.required) = false];
+    // instance of situation recognition algorithm
+    string instance = 25;
+    // number to increment if twoPartId.iterationId is changing
+    int32 sequential_number = 26;
+    // flag if situation was created in autarky or not
+    bool autarky = 27;
+    // to modify measure behaviour
+    ModifyMeasure modifyMeasure = 28;
+}
+
+// VMIS2-S1ANF-559
+/* The result of merging situation objects */
+message MergedSituation {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    // Different types of MergedSituations
+    enum Type {
+        // MergedSituation was created because referenced 
+        // situations were merged
+        MERGE = 0;
+        // Situations of situation classes whose conflicts 
+        // must not be adjusted and situation sub classes 
+        // whose must not be merged will be wrap in a 
+        // MergedSituation (id and all other attributes are c
+        // opied to this MergedSituation)                                     
+        WRAP = 1;                                       
+    }
+    // The point in time when an event or data record occurred,
+    // i.e. was originally created "at the source". Contains
+    // e.g. the interval time stamp of input values or 
+    // aggregation time of the measure 
+    google.protobuf.Timestamp event_time = 1;
+    // Processing time - The point in time when the event or data  
+    // record happens to be processed by the processing application, i.e.
+    // when the record is being consumed. The processing time may be 
+    // milliseconds, hours, or days etc. later than the original event time. 
+    // This is something like setting a system_time from the database in old 
+    // systems
+    google.protobuf.Timestamp processing_time = 2; 
+    // Unique two-part identification of the merged 
+    // situation
+    TwoPartIdentification two_part_id = 3;              
+    google.protobuf.Timestamp start_time = 4;           // Start time of the situation
+    google.protobuf.Timestamp end_time = 5 [(.heuboe.protobuf.required) = false]; // Proposed end time
+    // The situation class (VMIS2-S1ANF-641)
+    string situation_class_id = 6 [(.heuboe.protobuf.extRef) = 
+        { type: "eu.vmis_ehe.vmis2.control.data.SituationClass", field: "~two_part_id.obj_id" }];                      
+    // Sub class of a situation (VMIS2-S1ANF-641)
+    string sub_class_id = 7 [(.heuboe.protobuf.extRef) = 
+        { type: "eu.vmis_ehe.vmis2.control.data.SituationClass.SituationSubClass", field: "~two_part_id.obj_id" }];  
+    Type type = 8;                                      // Type of this merged situation
+    // VMIS2-S1ANF-622: References to the merged 
+    // situation objects (which were displaced if 
+    // necessary)
+    repeated SourceSituation source_situations = 9;     
+    repeated ValiditySection validity_sections = 10;    // Area of validity
+    repeated Attribute attributes = 11;                 // Additional attributes
+    // Ids of MergedSituations that are causes of  
+    // this one (CausalLink)
+    repeated string causeIds = 12;
+    // Ids of MergedSituations this on is the cause
+    // of (CausalLink)                  
+    repeated string impactIds = 13;                     
+    EDBAttributes edb_attributes = 20 [(.heuboe.protobuf.required) = false]; // Attributes for new EDB handling
+    repeated Sensor source_sensors = 21;                // list of main and secondary sensors of all source situations which are not displaced
+
+    repeated SourceSituation manual_situations = 22; //list of contained manual (source) situations. This situations are also contained in source_situations
+    // VMIS2-S1ANF-785, list of referenced lane positions (can be set only for WRAP-situations)
+    repeated configservice.LanePos lane_reference = 23  [(.heuboe.protobuf.required) = false];
+    //flag for deleted situations
+    bool deleted = 24;
+    // number to increment if twoPartId.iterationId is changing
+    int32 sequential_number = 25;
+
+    // type of situation
+    enum SituationType {
+        CALCULATED = 0;
+        EXTERNAL = 1;
+        MANUAL = 2;
+    }
+    SituationType situation_type = 26;  // Type of situation
+    // flag if situation was created in autarky or not
+    bool autarky = 27;
+    // to modify measure behaviour
+    ModifyMeasure modifyMeasure = 28;
+}
+
+/* List of Situations used e.g. to publish Situations to a broker etc. */
+message Situations {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated Situation situations = 1; // List of Situations
+    string iid = 2;                    // message id
+}
+
+/* List of MergedSituations used e.g. to publish Situations to a broker etc. */
+message MergedSituations {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated MergedSituation mergedSituations = 1;
+    string iid = 2;                     // message id
+}
+
+// VMIS2-S1ANF-572
+// Validity section catalogue for situation recognition
+message SituationRecognitionValiditySectionsCatalogue {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    // list of validity section definitions per situation recognition algorithm instance
+    repeated SituationRecognitionValiditySections sections = 1;
+    // message id
+    string iid = 2;
+    // user how changed values.
+    string user = 3;
+    // timestamp at the user changed something
+    google.protobuf.Timestamp changed_at = 4;
+    // comment of user what was changed values.
+    string comment = 5;
+}
+
+// definition of validity section of a situation recognition algorithm
+message SituationRecognitionValiditySections {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    // id of situation recognition algorithm parameter set
+    string parameter_definition_set_id = 1;
+    // instance id of situation recognition algorithm
+    string instance_id = 2;
+    // validity sections, the situation recognition algorithm has to work for
+    repeated ValiditySection positive_list = 3;
+    // validity sections, the situation recognition algorithm must NOT work for
+    repeated ValiditySection negative_list = 4;
+}

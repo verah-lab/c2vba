@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "validitySection.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "GeoReferenceProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// Temporary definition of a geo reference type
+message GeoReferenceTypeWrapper {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    enum GeoReferenceType {
+        POINT = 0;
+        LINE = 1;
+        NET = 2;
+    }
+}
+
+// Logical validity section
+message ValiditySection {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    // start point (inclusive)
+    double log_km_from = 1;
+    // end point (exclusive)
+    double log_km_to = 2;
+    // id of road
+    string road_id = 3;
+    // 4: reserved for map_version
+    // contains op-metering and coordinates
+    geomanager.validitySection.Section section = 5;
+}

@@ -1,0 +1,203 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "ConfigAqData.proto";
+import "features.proto";
+import "GeoReference.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "CommonControlDataProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// VMIS2-S1ANF-715
+// Temporary definition of a simple time specification
+message Timespec {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    google.protobuf.Timestamp start_time = 6;       // Start time of the validity
+    google.protobuf.Timestamp end_time = 7;         // End time of of the validity
+}
+
+// State if the calculation result is new, only updated or deleted
+message CalculationStateWrapper {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    enum CalculationState {
+        NEW = 0;
+        UPDATED = 1;
+        DELETED = 2;
+        UNCHANGED = 3;
+    }
+}
+
+// Unique two-part identification of a situation class, situation object,
+// measure class or measure object
+message TwoPartIdentification {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    // Object id is created, if for example a situation class or 
+    // object is created first
+    string obj_id = 1;          
+    // IterationId is set if a new object (e.g. situation, measure) is 
+    // created (CalculationState.NEW). IterationId is changed if the object  
+    // is updated or unchanged (CalculationState.UNCHANGED, 
+    // CalculationState.UPDATED)
+    string iteration_id = 2;
+}
+
+// Properties of lifecycle algorithm, can be configured 
+// for each situation sub class and for measures
+message LifecycleProperties {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    enum LifecycleProcessingSequence {
+        UPSTREAM = 0;                               // Sort by validity sections kilometers upstream
+        DOWNSTREAM = 1;                             // Sort by validity sections kilometers downstream
+        LARGETOSMALL = 2;                           // Sort by validity sections size
+    }
+    enum LifecycleMode {
+        GAP = 0;                                    // Merge on gaps
+        OVERLAP = 1;                                // Merge when overlapping occurs
+    }
+    LifecycleProcessingSequence order = 5;          // Processing order of lifecycle algorithm
+    LifecycleMode mode = 6;                         // Merge mode in lifecycle algorithm
+    int32 threshold = 7;                            // Threshold for given lifecycle mode in percent
+}
+
+// VMIS2-S1ANF-452
+// Temporary definition of a Measure Priority Mode
+message MeasurePriorityModeWrapper {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    enum MeasurePriorityMode {
+        NORMAL = 0;
+        PRIORITISED = 1;
+        EXTERNAL = 2;
+    }
+}
+
+enum MeasureState {
+    UNSPECIFIED = 0; //due to protobuf styleguide
+    INACTIVE = 1;
+    ACTIVE = 2;
+}
+
+// Different types of measures that are stored in the measure message
+enum MeasureType {
+    M_CALCULATED = 0;
+    M_EXTERNAL = 1;
+    M_MANUAL = 2;
+    M_INFO = 3;
+}
+// msg to publish infrastructure object to the broker
+message InfrastructureObjectMsg{
+
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated InfrastructureObject infrastruture_objects= 2;
+}
+// msg to publish config service aqs to the broker
+message CfgAqMsg{
+
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated eu.vmis_ehe.vmis2.configservice.CfgAq cfg_aq= 2;
+
+}
+// msg to publish several strings to the broker
+message StringListMsg{
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated string strings = 2;
+}
+// msg to publish gei features to the broker
+message GeoFeatureMsg{
+
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated geomanager.features.GeoFeature geo_feature= 2;
+}
+
+// Infrastructure Object hold all data of object that are initialized in app
+message InfrastructureObject {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    string id = 1;                      //Id of the communication controller
+    string type = 2;                    //Type of the infrastructure object.
+    string name = 3;                    //Name of the communication controller
+    string short_name = 4;              //Short name of the communication controller or null
+    string version = 5;                 //Configuration version
+    LineReference line_reference = 6;  //Line reference or null
+    repeated InfrastructureObject references = 7;            // list of related InfrastructureObject or null
+    repeated AttachedData attachedData = 8;  //An infrastructureObject may have attached data of a certain class
+    message AttachedData{
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+       string class_name =1;
+       string value =2;
+    }
+
+    message LineReference{
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string road_id =1;
+        double km_from =2;
+        double km_to = 3;
+        string map_version=4;
+        ValiditySection validity_section =5;
+        geomanager.features.PointRoadReference point_road_reference =6;
+
+    }
+}
+// Message to publish used map and config versions
+message VersionMsg{
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    VersionData data = 2;
+}
+
+// Versions of map and config used by an app
+message VersionData {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    // Timestamp of VersionData object creation
+    google.protobuf.Timestamp processing_time = 1;
+    // Version of config the app works with
+    string config_version_used = 2;
+    // Version of map the app works with
+    string map_version_used = 3;
+    // Version of config in last received data change
+    // If this is newer than config_version_used, then the app is not interested in the latest changes
+    // At app start this is identical with config_version_used
+    string config_version_data_change = 4;
+    // Version of map in last received data change
+    // If this is newer than map_version_used, then the app is not interested in the latest changes
+    // At app start this is identical with map_version_used
+    string map_version_data_change = 5;
+}
+
+// msg to publish infrastructure object harmonic section to the broker
+message InfrastructureObjectHarmonicSectionMsg{
+
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    string iid = 1;
+    repeated InfrastructureObjectHarmonicSection infrastruture_objects= 2;
+}
+   // Infrastructure Object hold all data of object that are initialized in app
+message InfrastructureObjectHarmonicSection {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    string id = 1;                      //Id of the communication controller
+    string type = 2;                    //Type of the infrastructure object.
+    LineReferenceHarmonicSection line_reference = 6;  //Line reference or null
+    repeated InfrastructureObjectHarmonicSection references = 7;            // list of related InfrastructureObject or null
+    repeated AttachedData attachedData = 8;  //An infrastructureObject may have attached data of a certain class
+    message AttachedData{
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string class_name = 1;
+        string value = 2;
+    }
+
+    message LineReferenceHarmonicSection{
+        option (.heuboe.protobuf.stereotype) = DATATYPE;
+        string road_id = 1;
+        double km_from = 2;
+        double km_to = 3;
+
+    }
+}

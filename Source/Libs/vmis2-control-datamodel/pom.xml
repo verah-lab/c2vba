@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.asfinag</groupId>
+        <artifactId>vmis2-protobuf-parent</artifactId>
+        <!-- Don't forget to update the jprotoc dependency in csharp/protoNuget.csproj (not for SNAPSHOTs) -->
+        <version>3.19.0</version>
+    </parent>
+
+    <name>VMIS2 Kern ${project.artifactId}</name>
+    <groupId>de.heuboe.asfinag</groupId>
+    <artifactId>vmis2-control-datamodel</artifactId>
+    <version>3.5.1</version>
+    <description>Control data model serve data structure for situations, measures and there input datas.</description>
+    <url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+    <inceptionYear>2018</inceptionYear>
+
+    <developers>
+        <developer>
+            <name>Marion Keune</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</developerConnection>
+        <tag>vmis2-control-datamodel_3.0.2</tag>
+    </scm>
+
+    <properties>
+        <java.version>8</java.version>
+        <gitlab.path>VMIS2/control/base/vmis2-control-datamodel</gitlab.path>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-receiving-processing-datamodel</artifactId>
+            <!-- Don't forget to update the vmis2-receiving-processing-interface dependency in csharp/protoNuget.csproj (not for SNAPSHOTs) -->
+            <version>0.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-configservice-interface</artifactId>
+            <!-- Don't forget to update the vmis2-configservice-interface dependency in csharp/protoNuget.csproj (not for SNAPSHOTs) -->
+            <!-- Don't forget to update the VMIS2.Transfer.Interface comes as vmis2-configservice-interface dependency in csharp/protoNuget.csproj (not for SNAPSHOTs) -->
+            <version>1.16.23</version>
+        </dependency>
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-grpc-interface-geomanager</artifactId>
+            <!-- Don't forget to update the vmis2-grpc-interface-geomanager dependency in csharp/protoNuget.csproj (not for SNAPSHOTs) -->
+            <version>4.1.9</version>
+        </dependency>
+
+        <!-- testing only -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

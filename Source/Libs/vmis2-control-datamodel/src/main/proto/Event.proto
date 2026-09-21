@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "TimeBasedCrossSectionEventPattern.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "EventProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// List of event days.
+message EventDayList {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+  // Iid of the message.
+  string iid = 1;
+  // Request timestamp of the event days.
+  google.protobuf.Timestamp request_time = 2;
+  // List of event days.
+  repeated EventDay event_days = 3;
+}
+
+// Day on which events occur.
+message EventDay {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+  // Day
+  Date day = 1;
+  // Events that occur on this day.
+  repeated Event events = 2;
+}
+
+// An event.
+message Event {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+
+  // Event id.
+  string id = 1;
+  // Name of the event.
+  string name = 2;
+  // Category of the event. Can be used for grouping events.
+  string category = 3;
+  // Level of the event. Can be used to sort events.
+  int32 level = 4;
+}

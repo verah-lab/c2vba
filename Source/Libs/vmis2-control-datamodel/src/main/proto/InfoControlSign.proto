@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "CommonControlData.proto";
+import "ControlSign.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "InfoControlSignProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// WTX Position Type
+enum WTXPositionType{
+  UNKNOWN = 0;
+  POSTYPE_1_1A = 1; // WTX before Measure; WTX in Section of End
+  POSTYPE_1_1B = 2; // WTX in Measure    ; WTX in Section of End
+  POSTYPE_2_2  = 3; // WTX before Measure; WTX NOT in Section of Start and End
+  POSTYPE_2_1A = 4; // WTX before Measure; WTX in Section of Start NOT in End
+  POSTYPE_2_1B = 5; // WTX in Measure    ; WTX in Section of Start NOT in End
+  POSTYPE_3_3  = 6; // WTX before Measure; WTX on other Route
+}
+
+// sign request definitions for one or more WTX Positions
+message WTXControlSigns {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  WTXPositionType posType = 1;
+  int32 priority = 2;
+  repeated ListTagPanelContent wtx_sign_specification = 3;
+}
+
+//one InfoMeasureControlSign entry of the catalog
+message InfoMeasureControlSigns {
+option (.heuboe.protobuf.stereotype) = DATATYPE;
+  TwoPartIdentification two_part_id = 1; // Unique two-part identification of the InfoMeasureControlSigns
+  string measure_class = 2;             // linked measure class
+  int32 default_priority = 3;  // default priority for all PanelContents
+  int32 search_distance = 4;   // search WTX with less distance than
+  repeated WTXControlSigns wtxControlSigns = 5;
+  string description = 6;
+}
+
+//Catalog for the infoMeasureControlSign entries
+message InfoMeasureControlSignCatalogue {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  string iid = 1;                               // message id
+  repeated InfoMeasureControlSigns info_control_signs = 2;
+
+  string user = 3; // user how changed values.
+  google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+  string comment = 5; // comment of user what was changed values.
+}

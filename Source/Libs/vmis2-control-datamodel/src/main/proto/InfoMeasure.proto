@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "CommonControlData.proto";
+import "GeoReference.proto";
+import "Measure.proto";
+import "Situation.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "InfoMeasureProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+// Info Measure class represents one entry in the measure catalogue
+message InfoMeasureClass {
+  option (.heuboe.protobuf.stereotype) = ENTITY;
+
+  TwoPartIdentification two_part_id = 1; // Unique identification of a measure class
+  string display_name = 2;               // Display name
+  string description = 3;                // Description of the measure class
+
+  // Situations that must be linked with causal Links to create the measure
+  repeated string situation_sub_class_ids = 4;
+
+  // used to filter input Situations; if empty:all sit are used, if not:only situations that intersect theses areas are used
+  repeated ValiditySection sections_of_use = 5;
+
+  // used to filter input Situations; if empty:none are ignored, int not: situations that intersect these areas are ignored
+  repeated ValiditySection sections_of_not_use = 6;
+
+  // Additional attribute types
+  repeated string attribute_class = 7;
+
+  // Logical operating mode
+  MeasurePriorityModeWrapper.MeasurePriorityMode  measure_priority_mode = 8;
+
+  // if and how a measure must be approved before it get active
+  MeasureApprovalMode approval_mode = 9;
+
+  // True, if the operator is able to change measure objects
+  bool changeable = 10;
+
+  // measure category to group measures.
+  string measure_category = 11;
+
+  //should measure selection run for this measure class
+  bool measure_selection_active = 12;
+
+  // array of time specifications for the validity; each in ical RFC-2445 format.
+  repeated string recurrent_validity_timespecs = 13;
+
+  // false: timespec is valid only when day has valid event
+  // true:  timespec is valid only when day has not valid event
+  bool validity_timespec_event_negation = 14;
+
+  // id of event which is tested
+  string validity_timespec_event_definition_id = 15;
+}
+
+// List of Measures used e.g. to publish Situations to a broker etc.
+message InfoMeasures {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  repeated InfoMeasureWithCause infoMeasures = 1; // List of Info Measures
+  string iid = 2; // message id
+}
+
+//InfoMeasure with causes situations
+message InfoMeasureWithCause {
+  option (.heuboe.protobuf.stereotype) = DATATYPE;
+  Measure measure = 1; // Info Measure
+  repeated MergedSituation situations = 2; // All situations that caused the Measure
+  // panel correction only necessary for manual operations
+  PanelContentCorrection panelContentCorrection = 3 [(.heuboe.protobuf.required) = false];
+}
+
+// InfoMeasure catalogue lists all measures in priority sequence.
+// (the last is the most important)
+message InfoMeasureCatalogue {
+  option (.heuboe.protobuf.stereotype) = CONTAINER;
+  repeated InfoMeasureClass measure_classes = 1;      // List of measures
+  string iid = 2;                                 // message id
+  string user = 3; // user who changed values.
+  google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+  string comment = 5; // comment of user what are the changed values.
+}

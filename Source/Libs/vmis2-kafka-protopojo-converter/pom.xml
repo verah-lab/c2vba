@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.asfinag</groupId>
+        <artifactId>vmis2-base-parent</artifactId>
+        <version>4.1.0</version>
+    </parent>
+
+    <groupId>de.heuboe.asfinag</groupId>
+    <artifactId>vmis2-kafka-protopojo-converter</artifactId>
+    <version>2.0.0</version>
+
+    <name>VMIS2 Kern ${project.artifactId}</name>
+    <description>Library that provides an easy to use Spring-Kafka-Message converter.</description>
+    <url>http://pdb.heuboe.hbintern/pdb/#product;id=5571</url>
+    <inceptionYear>2018</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>DTh</id>
+            <name>Daniel Theuke</name>
+            <email>daniel.theuke@heuboe.de</email>
+        </developer>
+        <developer>
+            <id>PhEg</id>
+            <name>Philipp Egert</name>
+            <email>philipp.egert@heuboe.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/VMIS2/internal/basis/vmis2-kafka-protopojo-converter</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:VMIS2/internal/basis/vmis2-kafka-protopojo-converter.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:VMIS2/internal/basis/vmis2-kafka-protopojo-converter.git</developerConnection>
+    </scm>
+
+    <properties>
+
+        <!-- Java Proto Pojo -->
+        <jprotoc.version>4.6.1</jprotoc.version>
+
+        <vmis2-protoversion-maven-plugin.version>1.1.0</vmis2-protoversion-maven-plugin.version>
+
+        <!-- Perf -->
+        <jmh.version>1.36</jmh.version>
+    </properties>
+
+    <dependencies>
+        <!-- HeuBoe -->
+        <dependency>
+            <groupId>de.heuboe.asfinag</groupId>
+            <artifactId>vmis2-jprotoc-transferinterface</artifactId>
+            <version>${jprotoc.version}</version>
+        </dependency>
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <!-- This conflicts with some tests -->
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.module</groupId>
+                    <artifactId>jackson-module-scala_2.13</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Other -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Perf -->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.6.2</version>
+            </extension>
+        </extensions>
+
+        <plugins>
+            <!-- Update proto-files with the correct interfaceVersion -->
+            <plugin>
+                <groupId>de.heuboe.asfinag.maven.plugins</groupId>
+                <artifactId>vmis2-protoversion-maven-plugin</artifactId>
+                <version>${vmis2-protoversion-maven-plugin.version}</version>
+            </plugin>
+            <!-- Generate protobuf classes for tests -->
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <executions>
+                    <!-- Eclipse might complain here - just ignore that -->
+                    <execution>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <clearOutputDirectory>false</clearOutputDirectory>
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
+                    <protocPlugins>
+                        <protocPlugin>
+                            <id>vmis2</id>
+                            <groupId>de.heuboe.asfinag</groupId>
+                            <artifactId>vmis2-jprotoc-plugin</artifactId>
+                            <version>${jprotoc.version}</version>
+                            <mainClass>de.heuboe.vmis2.jprotoc.Proto2PojoGenerator</mainClass>
+                            <args>
+                                <arg>--assertVersion=${project.version}</arg>
+                                <arg>--ignoreAbsentStereotype=true</arg>
+                            </args>
+                        </protocPlugin>
+                    </protocPlugins>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>HB</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.heuboe.maven.plugins</groupId>
+                        <artifactId>pdb-maven-plugin</artifactId>
+                        <version>${pdb-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>default-cli</id>
+                                <goals>
+                                    <goal>release</goal>
+                                </goals>
+                                <configuration>
+                                    <mvnNextDevelopmentGoals>clean,vmis2-protoversion:upsert</mvnNextDevelopmentGoals>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

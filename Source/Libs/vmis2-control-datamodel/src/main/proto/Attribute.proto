@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package eu.vmis_ehe.vmis2.control.data;
+
+import "CommonControlData.proto";
+import "google/protobuf/timestamp.proto";
+import "heuboe/protobuf/Documentation.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "AttributeProto";
+option csharp_namespace = "eu.vmis_ehe.vmis2.control.data";
+option (.heuboe.protobuf.interface_version) = "3.5.1";
+
+message AttributeTypeWrapper {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    // Value type of an attribute
+    enum ValType {
+        STRING = 0;
+        BOOLEAN = 1;
+        INTEGER = 2;
+        FLOAT = 3;
+        ENUM = 4;
+    }
+
+    enum AggregationBehavior {
+    	IGNORE = 0;
+    	DISJOINT = 1;
+    }
+}
+
+// AttributeClass represents one entry in the situation attribute catalogue
+message AttributeClass {
+    option (.heuboe.protobuf.stereotype) = ENTITY;
+    // Unique two-part identification of a attribute class 
+    TwoPartIdentification two_part_id = 1;                  
+    string name = 2;                                 		// Name of the attribute class
+    string description = 3;                              	// Description of the attribute class
+    AttributeTypeWrapper.ValType val_type = 4;              // Value type of attribute class
+    repeated string enum_types = 5;                 		// Enum types, if value type is ENUM
+    // Enum to define the aggregation behavoir
+    AttributeTypeWrapper.AggregationBehavior agg_behavior = 6;
+    // Flag to define that the attribute is only for measure
+    bool only_measure_attribute = 7;
+    reserved 8 to 9; // was used for user and changed_at, this is know move to attribute catalogue
+}
+
+// Attribute catalogue lists all attribute classes 
+message AttributeCatalogue {
+    option (.heuboe.protobuf.stereotype) = CONTAINER;
+    repeated AttributeClass attribute_classes = 1;           // List of attribute classes
+    string iid = 2;                                          // message id
+    string user = 3; // user how changed values.
+    google.protobuf.Timestamp changed_at = 4; // timestamp at the user changed something
+    string comment = 5; // comment of user what was changed values.
+}
+
+// Attribute
+message Attribute {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    AttributeClass type = 1;                                // Type (description) of the attribute
+    // Value of attribute in first index of the list and 
+    // if available, aggregated values of attributes from 
+    // displaced or merged objects, in the following indexes.
+    repeated string value = 2;                             
+    bool aggregated = 3;                                    // Flag to show attribute was aggregated
+}
+
+// fix attributes for source situations and measures
+message FixAttributes {
+    option (.heuboe.protobuf.stereotype) = DATATYPE;
+    // name of source
+    string source =1;
+    // id of source
+    string source_system_id =2;
+    // name of source system author
+    string user_name =3;
+    // flag if source situation is displaced.
+    bool displaced =4;
+}

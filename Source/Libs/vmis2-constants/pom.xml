@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.heuboe.asfinag</groupId>
+		<artifactId>vmis2-base-parent</artifactId>
+		<version>2.16.3</version>
+	</parent>
+
+	<artifactId>vmis2-constants</artifactId>
+	<version>0.0.6</version>
+
+
+	<name>VMIS2 Kern ${project.artifactId}</name>
+
+	<description>MIS2 common constants</description>
+	<url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+	<inceptionYear>2019</inceptionYear>
+
+	<properties>
+		<gitlabProject>VMIS2/base/vmis2-constants</gitlabProject>
+		<java.version>8</java.version>
+		<gitlab.path>VMIS2/base/vmis2-constants</gitlab.path>
+	</properties>
+
+	<organization>
+		<name>Heusch/Boesefeldt GmbH</name>
+		<url>http://www.heuboe.de</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>All rights reserved</name>
+		</license>
+	</licenses>
+
+
+	<issueManagement>
+		<system>https://www.heuboe.de</system>
+		<url>https://www.heuboe.de</url>
+	</issueManagement>
+
+	<scm>
+		<url>https://gitlab.heuboe.hbintern/VMIS2/base/vmis2-constants</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:VMIS2/base/vmis2-constants.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:VMIS2/base/vmis2-constants.git</developerConnection>
+		<tag>vmis2-constants_0.0.6</tag>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+
+</project>
