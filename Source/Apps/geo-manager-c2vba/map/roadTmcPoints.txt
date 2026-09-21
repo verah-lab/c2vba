@@ -1,0 +1,651 @@
+[ {
+  "rcId" : "A99 S 1",
+  "rcOffset" : 4434.513779929204,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 681480.4900532719,
+    "y" : 5341846.926709869,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31679"
+}, {
+  "rcId" : "A99 S 1",
+  "rcOffset" : 801.1234412141193,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 677853.0688766135,
+    "y" : 5342031.690656695,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31678"
+}, {
+  "rcId" : "A99 S 2",
+  "rcOffset" : 8917.947955155309,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 678322.030672423,
+    "y" : 5334453.757715895,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "36239"
+}, {
+  "rcId" : "A99 S 2",
+  "rcOffset" : 280.80617144137483,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 681478.6462495802,
+    "y" : 5341854.121183612,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31513"
+}, {
+  "rcId" : "A99 S 2",
+  "rcOffset" : 4064.5284820929587,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 680248.3729989893,
+    "y" : 5338500.4384646155,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31954"
+}, {
+  "rcId" : "A99 S 2",
+  "rcOffset" : 8014.171076220587,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 678064.341236256,
+    "y" : 5335315.93376361,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "36238"
+}, {
+  "rcId" : "A99 S 2",
+  "rcOffset" : 3080.623804867211,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 680811.5664899973,
+    "y" : 5339305.223014736,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31512"
+}, {
+  "rcId" : "A99 S 2",
+  "rcOffset" : 5840.7371031365865,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 679040.9693220105,
+    "y" : 5337198.53150309,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "42385"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 51135.06772747855,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 699759.2204971905,
+    "y" : 5324207.024830901,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12987"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 10863.120803292932,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 682837.8370958462,
+    "y" : 5342236.122854271,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31620"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 3862.0993852357406,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 679052.1973811196,
+    "y" : 5337189.0469372785,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "42385"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 24162.281592068015,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 695282.5940251425,
+    "y" : 5344203.785091178,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12979"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 9413.917740075758,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 681483.9875176245,
+    "y" : 5341841.115022568,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31513"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 5638.546356711255,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 680259.4124643228,
+    "y" : 5338491.434000544,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31954"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 47602.96398916231,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 701919.5294621399,
+    "y" : 5326921.940161952,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12986"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 29979.39269306828,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 700189.7748751327,
+    "y" : 5341244.287382307,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12980"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 53330.44808442684,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 698124.0000373267,
+    "y" : 5322785.097841648,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12988"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 17475.579965161276,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 688778.21812723,
+    "y" : 5344557.226138293,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12977"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 20794.556213456883,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 692073.1716621147,
+    "y" : 5344930.597357713,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12978"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 37641.377828109566,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 705133.3475927027,
+    "y" : 5335837.247866899,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12983"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 46485.6084408619,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 702761.9551801659,
+    "y" : 5327654.636646652,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "8137"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 42163.18789386569,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 704892.0148684176,
+    "y" : 5331362.833147345,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12985"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 39808.68293385136,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 705275.7583562282,
+    "y" : 5333680.229811634,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12984"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 801.448356961112,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 678335.523073843,
+    "y" : 5334459.12127273,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "36239"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 6624.806370630614,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 680823.0377592893,
+    "y" : 5339298.779489745,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31512"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 12770.707626249487,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 684643.1011035608,
+    "y" : 5342519.117050931,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12976"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 19445.493370008546,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 690740.4342504272,
+    "y" : 5344723.36760842,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "60818"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 23196.12811969429,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 694430.3057987458,
+    "y" : 5344655.059114748,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "35121"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 34409.14003328696,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 703644.9586188894,
+    "y" : 5338682.85768265,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12981"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 1700.1575522696194,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 678080.9065504423,
+    "y" : 5335316.863452743,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "36238"
+}, {
+  "rcId" : "A99 S 3",
+  "rcOffset" : 32873.03400346236,
+  "routeNumber" : "A99",
+  "orientation" : "NORTH_2_SOUTH",
+  "coordinate" : {
+    "x" : 702695.765197931,
+    "y" : 5339889.126759082,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "60819"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 48733.37494362783,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 677871.9162662892,
+    "y" : 5342082.974891523,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31678"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 6865.168440629038,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 701930.0072870951,
+    "y" : 5326908.336664969,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12986"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 1131.7905748139874,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 698129.7625441853,
+    "y" : 5322768.632367371,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12988"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 21636.281200543854,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 702714.6107879084,
+    "y" : 5339907.0857331455,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "60819"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 33737.23271917918,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 692070.4435795911,
+    "y" : 5344950.83482429,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12978"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 35086.32918905167,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 690738.294044963,
+    "y" : 5344739.117990169,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "60818"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 3337.808141936848,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 699776.2370517891,
+    "y" : 5324195.270674731,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12987"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 20096.058736724506,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 703666.0866185317,
+    "y" : 5338697.829378956,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12981"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 45118.72364164106,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 681473.806851179,
+    "y" : 5341892.738021167,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31679"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 43677.929294237285,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 682825.6315754148,
+    "y" : 5342248.591962592,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "31620"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 14678.679236951899,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 705303.9081686971,
+    "y" : 5333678.752771717,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12984"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 7984.628343047639,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 702773.7964593789,
+    "y" : 5327642.700354928,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "8137"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 41759.97214261564,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 684642.5615927019,
+    "y" : 5342535.787796012,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12976"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 12317.131817298092,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 704918.8975694394,
+    "y" : 5331354.344725814,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12985"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 24542.80887075149,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 700196.1423151055,
+    "y" : 5341268.185619844,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12980"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 31323.869674395435,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 694439.9651755271,
+    "y" : 5344678.785027461,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "35121"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 37056.47622373368,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 688775.9168610424,
+    "y" : 5344572.926195084,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12977"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 30352.7644577003,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 695295.5056062452,
+    "y" : 5344222.961764227,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12979"
+}, {
+  "rcId" : "A99 N 1",
+  "rcOffset" : 16853.420984885808,
+  "routeNumber" : "A99",
+  "orientation" : "SOUTH_2_NORTH",
+  "coordinate" : {
+    "x" : 705159.511665246,
+    "y" : 5335843.230816247,
+    "z" : "NaN",
+    "m" : 0.0
+  },
+  "operationalMeter" : null,
+  "lclCode" : "12983"
+} ]
