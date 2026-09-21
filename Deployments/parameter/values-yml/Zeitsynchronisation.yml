@@ -1,0 +1,35 @@
+-
+  definitionSetId: Zeitsynchronisation
+  instanceId: INSTANZ1
+  target: 
+    itemId:
+    type: UZ
+    udeType: UNKNOWN
+    vltType: UNKNOWN
+    wzgType: UNKNOWN
+  values: 
+    AKTIV: true
+    moeglicheVorlaufzeit: 10
+    Timeout15: 12
+    Timeout30: 15
+    Timeout60: 40
+    Timeout2m: 55
+    Timeout3m: 55
+    Timeout4m: 55
+    Timeout5m: 55
+    zeitsyncUnten15: -10
+    zeitsyncOben15: 10
+    zeitsyncUnten30: -20
+    zeitsyncOben30: 20
+    zeitsyncUnten60: -11
+    zeitsyncOben60: 26
+    zeitsyncUnten2m: -50
+    zeitsyncOben2m: 50
+    zeitsyncUnten3m: -50
+    zeitsyncOben3m: 50
+    zeitsyncUnten4m: -50
+    zeitsyncOben4m: 50
+    zeitsyncUnten5m: -50
+    zeitsyncOben5m: 50
+    AbstandZeitsync: 360
+

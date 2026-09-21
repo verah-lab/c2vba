@@ -1,0 +1,1 @@
+java -jar heuboe-parameter-cli-1.1.0.jar parameter-set upload values-yml/Zeitsynchronisation.yml Zeitsynchronisation
