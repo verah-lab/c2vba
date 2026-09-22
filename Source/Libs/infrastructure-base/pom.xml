@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.heuboe.asfinag</groupId>
+		<artifactId>vmis2-base-parent</artifactId>
+		<version>5.2.0</version>
+	</parent>
+
+	<artifactId>vmis2-infrastructure-base</artifactId>
+	<version>2.0.1</version>
+	<description>Serve the base for the infrastructure for all projects.</description>
+	<url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+	<inceptionYear>2018</inceptionYear>
+
+	<scm>
+		<url>https://gitlab.heuboe.hbintern/${gitlab.path}</url>
+		<connection>scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</connection>
+		<developerConnection>scm:git:git@gitlab.heuboe.hbintern:${gitlab.path}.git</developerConnection>
+	  <tag>HEAD</tag>
+  </scm>
+
+	<properties>
+		<gitlab.path>VMIS2/control/base/infrastructure-base</gitlab.path>
+	</properties>
+	<!-- readable name in UpperCamelCase -->
+	<name>VMIS2 Kern ${project.artifactId}</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.heuboe.asfinag</groupId>
+			<artifactId>vmis2-control-datamodel</artifactId>
+			<version>3.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>de.heuboe.asfinag</groupId>
+			<artifactId>vmis2-configservice-interface</artifactId>
+			<version>1.16.27</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util -->
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java-util</artifactId>
+		</dependency>
+	</dependencies>
+</project>
