@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>0.0.1-setGitTag</Version> <!-- azure csharp pipeline will set its own value, no need to change it -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>VMIS2.TLS.Resources.Proto</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ContentTargetFolders>proto</ContentTargetFolders>
+    <AssemblyName>VMIS2.TLS.Resources.Proto</AssemblyName>
+    <PackageVersion>$(Version)</PackageVersion>
+    <Title>VMIS2 Kernsystem TLS Resource Proto Files</Title>
+    <Authors>vmis-ehe</Authors>
+    <Description>C# Proto-Files für Tls-Resources</Description>
+    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <RepositoryUrl>https://vmis-ehe.visualstudio.com/vmis2/_git/Kern_vmis2-tls-resources</RepositoryUrl>
+    <IsTool>false</IsTool>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="VMIS2.Transfer.Interface" Version="3.2.2.14" GeneratePathProperty="true" />
+    <PackageReference Include="TLS.Resources.Proto" Version="1.0.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\**\*.proto">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
+

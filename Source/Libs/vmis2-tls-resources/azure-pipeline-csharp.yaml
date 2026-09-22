@@ -1,0 +1,10 @@
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Kern_azuredevops-pipeline-config
+jobs:
+  - template: build_pipeline_csharp.yaml@templates
+trigger:
+  - refs/tags/*
+  

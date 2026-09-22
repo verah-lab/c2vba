@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>0.0.1-setGitTag</Version> <!-- azure csharp pipeline will set its own value, no need to change it -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>VMIS2.TLS.Resources</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageVersion>$(Version)</PackageVersion>
+    <Title>VMIS2 Kernsystem Tls Resources</Title>
+    <Authors>vmis-ehe</Authors>
+    <Description>C# Client-stubs und Protobuf-Messages fuer den ConfigService</Description>
+    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <IsTool>false</IsTool>
+    <RepositoryUrl>https://vmis-ehe.visualstudio.com/vmis2/_git/Kern_vmis2-tls-resources</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.11.2" />
+    <PackageReference Include="Grpc" Version="2.23.0" />
+    <PackageReference Include="Grpc.Core" VersioN="2.23.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.23.0" />
+    <PackageReference Include="VMIS2.TLS.Resources.Proto" Version="0.0.1" GeneratePathProperty="true"/>
+    <PackageReference Include="VMIS2.Transfer.Interface" Version="3.2.2.14" GeneratePathProperty="true"/>
+  </ItemGroup>
+    <ItemGroup>
+  <!-- This line works if the protofiles used in the package are added as content files and on pakckage reference 'GeneratePathProperty="true"' is used-->
+    <ProtoBuf Include="FgCustom.proto" ProtoRoot="../src/main/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/;$(PkgVMIS2_TLS_Resources_Proto)/proto/"/>
+    <ProtoBuf Include="SendCustom.proto" ProtoRoot="../src/main/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/;$(PkgVMIS2_TLS_Resources_Proto)/proto/"/>
+  </ItemGroup>
+    <!-- You need to add all files to generate proto client lib because you don´t want to depend on multiple client versions-->
+  <ItemGroup>
+    <ProtoBuf Include="InterfaceVersion.proto" ProtoRoot="$(PkgVMIS2_Transfer_Interface)/proto/heuboe/protobuf" GrpcServices="none" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProtoBuf Include="Fg1.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+    <ProtoBuf Include="Fg2.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+    <ProtoBuf Include="Fg3.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+    <ProtoBuf Include="Fg4.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+    <ProtoBuf Include="Fg6.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+    <ProtoBuf Include="Fg9.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+    <ProtoBuf Include="Fg254.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+    <ProtoBuf Include="Send.proto" ProtoRoot="$(PkgVMIS2_TLS_Resources_Proto)/proto/" AdditionalImportDirs="$(PkgVMIS2_Transfer_Interface)/proto/"/>
+  </ItemGroup>
+</Project>

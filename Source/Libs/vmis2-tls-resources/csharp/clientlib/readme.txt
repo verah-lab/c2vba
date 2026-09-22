@@ -1,0 +1,1 @@
+this nuget is not pushed. Use just proto nugets with protofiles in it and produce the assembly in your repository.
