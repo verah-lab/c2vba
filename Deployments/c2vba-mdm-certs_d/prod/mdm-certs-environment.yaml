@@ -17,8 +17,8 @@ data:
 # mobi.autobahn.certificate.p12
   SYSTEM_PRIVATE_KEY_FILE: bW9iaS5hdXRvYmFobi5jZXJ0aWZpY2F0ZS5wMTI=
 # echo -n '...' | base64
-# 61rNFix8zgpM
-  SYSTEM_PRIVATE_KEY_PW: NjFyTkZpeDh6Z3BN
+# 6LGjCchgzG3e
+  SYSTEM_PRIVATE_KEY_PW: NkxHakNjaGd6RzNl
 #
 #
 # echo -n '...' | base64
