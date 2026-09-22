@@ -1,0 +1,1537 @@
+LocCode;RouteNumber;Name;ShortName
+10789;A3;Suben;Sub
+60421;A3;Neuhaus am Inn;NeuI
+10790;A3;Pocking;Poc
+60422;A3;Rottal-West;RotW
+60423;A3;Rottal-Ost;RotO
+10791;A3;Passau-Süd;PasS
+60424;A3;Brentermais;Bre
+60425;A3;Hammerbach;Ham
+10792;A3;Passau-Mitte;PasM
+10793;A3;Donautal;Don
+10794;A3;Passau-Nord;PasN
+60426;A3;Eichet;Eic
+60427;A3;Buch;Buc
+60428;A3;Jägerhölzl;Jae
+60429;A3;Stierwaid;Sti
+10795;A3;Aicha vorm Wald;AicW
+8153;A3;Geißberg;Gei2
+60431;A3;Schaufelholz;Sch2
+10796;A3;Garham/Vilshofen;GarV
+60432;A3;Frommerding;Fro1
+10797;A3;Iggensbach;Igg
+60433;A3;Schwanenkirchen;Sch1
+60436;A3;Manzing;Man1
+10798;A3;Hengersberg;Hen
+60438;A3;Seebach;See1
+60439;A3;Isarblick;Isa
+10799;A3;Deggendorf;Deg
+10800;A3;Metten;Met
+60441;A3;Offenberg;Off
+10801;A3;Schwarzach;Sch4
+10802;A3;Bogen;Bog
+10803;A3;Bayerischer Wald;BayW
+10804;A3;Straubing;Str
+10805;A3;Kirchroth;Kir
+8063;A3;Wellerbach;Wel
+60443;A3;Wiesenttal;Wie
+10806;A3;Wörth an der Donau-Ost;WoeO
+10807;A3;Wörth an der Donau/Wiesent;WoeW
+10808;A3;Rosenhof;Ros
+10810;A3;Neutraubling;Neu1
+60444;A3;Augraben-Nord;AugN
+60445;A3;Augraben-Süd;AugS
+10811;A3;Regensburg-Ost;RegO
+10813;A3;Regensburg-Burgweinting;RegB
+31794;A3;Regensburg-Universität;RegU
+10814;A3;Regensburg;Reg
+60446;A3;Sparlberg;Spa
+10815;A3;Sinzing;Sin
+60448;A3;Erlgrund;Erl
+10816;A3;Nittendorf;Nit
+60449;A3;Birkach;Bir
+60450;A3;Riedtal;Rie
+10817;A3;Laaber;Laa
+60451;A3;Hofschlag;Hof
+60452;A3;Lindaholz;Lin
+10818;A3;Beratzhausen;Ber
+60453;A3;Kühberg;Kue
+60456;A3;Höll;Hoe
+7517;A3;Hüttberg;Hue
+10819;A3;Parsberg;Par
+60457;A3;Spitzig Berg;SpiB
+60458;A3;Adelsburg;Ade
+60459;A3;Kalkhofen;Kal
+60460;A3;Maierholz;Mai
+10820;A3;Velburg;Vel
+60461;A3;Deusmauerer Moor;DeuM
+10821;A3;Jura;Jur
+7613;A3;Neumarkt-Ost;NeuO
+60463;A3;Rödlberg;Roe1
+60464;A3;Wolfstein;Wol
+10822;A3;Neumarkt/Oberpfalz;NeuO1
+60465;A3;Eichenäcker;Eic1
+10823;A3;Oberölsbach;Obe1
+60466;A3;Klosterblick;Klo
+10824;A3;Altdorf/Burgthann;AltB
+60467;A3;Vogelherd;Vog
+10825;A3;Altdorf;Alt
+60468;A3;Fuchsmühle;Fuc
+60469;A3;Ludergraben;Lud
+10826;A3;Nürnberg;Nue
+10827;A3;Nürnberg-Mögeldorf;NueM
+10828;A3;Nürnberg/Behringersdorf;NueB
+10829;A3;Nürnberg-Nord;NueN
+60471;A3;Neunhof;Neu
+10830;A3;Erlangen-Tennenlohe;ErlT
+10831;A3;Fürth/Erlangen;FueE
+10832;A3;Erlangen-Frauenaurach;ErlF
+10833;A3;Aurach;Aur
+60472;A3;Kleinauweiher;Kle
+60473;A3;Lachgraben;Lac
+10834;A3;Erlangen-West;ErlW
+60474;A3;Röhrhölzer;Roe
+60475;A3;Geierbusch;Gei
+60477;A3;Brandweiher;Bra
+60478;A3;Seeleite;See
+60479;A3;Hummelberg;Hum
+10835;A3;Höchstadt-Ost;HoeO
+60480;A3;Steinknuck;Ste
+60481;A3;Vögelsacker;Voe
+10836;A3;Pommersfelden;Pom
+60482;A3;Limbacher Leiten;LimL
+10837;A3;Höchstadt-Nord;HoeN
+60483;A3;Flurholz;Flu
+10838;A3;Steigerwald;Ste2
+60484;A3;Schwarze Föhre;SchF
+60485;A3;Elsendorf;Els
+10839;A3;Schlüsselfeld;Sch3
+60486;A3;Heuchelsheim;Heu
+60487;A3;Mannlehen;Man
+60488;A3;Äppeleinsholz;Aep
+60489;A3;Wasserberndorf;Was
+10840;A3;Geiselwind;Gei1
+60490;A3;Schloßacker;Sch
+60491;A3;Steigerwaldhöhe;Ste1
+60493;A3;Wildpark;Wil
+60492;A3;Friedrichsberg;Fri
+10841;A3;Wiesentheid;Wie1
+60494;A3;Steigerwald-Blick;SteB
+60495;A3;Feuerbach;Feu
+10842;A3;Haidt;Hai1
+10843;A3;Kitzingen/Schwarzach;KitS
+60496;A3;Hunnenhügel;Hun
+10844;A3;Biebelried;Bie
+10845;A3;Rottendorf;Rot
+60498;A3;Sandgraben;San
+10846;A3;Würzburg/Randersacker;WueR
+10847;A3;Würzburg;Wue
+10848;A3;Würzburg-Heidingsfeld;WueH
+10849;A3;Würzburg/Kist;WueK
+10850;A3;Würzburg-West;WueW
+10851;A3;Helmstadt;Hel
+60503;A3;Fronberg;Fro
+10852;A3;Wertheim/Lengfurt;WerL
+10853;A3;Marktheidenfeld;Mar
+60512;A3;Kohlsberg;Koh
+60513;A3;Bärenroth;Bae
+10854;A3;Spessart;Spe
+10855;A3;Rohrbrunn;Roh
+10856;A3;Weibersbrunn;Wei
+13449;A3;Röthenwald;Roe2
+10857;A3;Bessenbach/Waldaschaff;BesW
+60631;A3;Birkenhain;Bir1
+10858;A3;Hösbach;Hoe1
+42397;A3;Einhausung Ost;EinO
+35193;A3;Goldbach;Gol
+42398;A3;Einhausung West;EinW
+10860;A3;Aschaffenburg-Ost;AscO
+60634;A3;Strietwald-Nord;StrN
+8065;A3;Strietwald-Süd;StrS
+10861;A3;Aschaffenburg;Asc
+10862;A3;Stockstadt;Sto
+10863;A3;Seligenstädter Dreieck;SelD
+59626;A3;Mainhausen;Mai1
+10864;A3;Seligenstadt;Sel
+10865;A3;Weiskirchen;Wei1
+10866;A3;Hanau;Han
+10867;A3;Obertshausen;Obe
+59627;A3;Hainbach;Hai
+11383;A45;Seligenstädter Dreieck;SelD
+11384;A45;Mainhausen;Mai
+42399;A45;Kleinostheim;Kle
+11385;A45;Karlstein;Kar
+42488;A45;Alzenau-Mitte;AlzM
+11386;A45;Alzenau-Nord;AlzN
+11387;A45;Hanauer Kreuz;HanK
+11388;A45;Langenselbolder Dreieck;LanD
+11390;A45;Langenselbold-West;LanW
+59663;A45;Auf der Pfingstweide;Pfi
+45085;A45;Hammersbach;Ham
+11389;A45;Langen-Bergheim;LanB
+11392;A45;Altenstadt;Alt
+11393;A45;Florstadt;Flo
+59664;A45;Hohe Berg;HohB
+59665;A45;Auf der Nachtweide;Nac
+11394;A45;Wölfersheim;Woe
+59666;A45;Stauferburg;Sta
+11884;A6;Sinsheim;Sin
+11885;A6;Kraichgau;Kra
+54976;A6;Sinsheim-Süd;SinS1
+11886;A6;Sinsheim-Steinsfurt;SinS
+14229;A6;Bauernwald;Bau
+11887;A6;Bad Rappenau;Rap
+11888;A6;Heilbronn/Untereisesheim;HeiU
+11889;A6;Heilbronn/Neckarsulm;HeiN
+14230;A6;Sulmtal;Sul
+11890;A6;Weinsberg;Wei
+11891;A6;Bretzfeld;Bre
+14231;A6;Sommerhalden;Som
+15346;A6;Öhringen;Oeh1
+11892;A6;Öhringen;Oeh
+11893;A6;Neuenstein;Neu
+11894;A6;Hohenlohe;Hoh
+11895;A6;Kupferzell;Kup
+11896;A6;Schwäbisch Hall;SchH
+41314;A6;Kochertalbrücke;Koc
+57877;A6;Kochertalbrücke;Koc1
+11897;A6;Ilshofen/Wolpertshausen;IlsW
+11898;A6;Kirchberg;Kir
+57878;A6;Reußenberg;Reu
+11899;A6;Crailsheim;Cra
+14232;A6;Bronnholzheim;Bro
+60635;A6;Ochsenberg;Och
+60636;A6;Schleehardt;Sch
+11900;A6;Schnelldorf;Sch1
+60637;A6;Rothensteig;Rot
+11901;A6;Feuchtwangen/Crailsheim;FeuC
+11902;A6;Feuchtwangen-Nord;FeuN
+11903;A6;Frankenhöhe;Fra
+60639;A6;Hasenzagel;Has
+60640;A6;Waltersberg;Wal
+11904;A6;Aurach;Aur
+60641;A6;Bei den Eichen;BeiE
+60642;A6;Bürger-Wald;BueW
+11905;A6;Herrieden;Her
+60644;A6;Silberbach;Sil
+11906;A6;Ansbach;Ans
+60645;A6;Hohe Fichte;HohF
+60646;A6;Kohnweiher;Koh
+60647;A6;Im Strud;Str
+60649;A6;Geisberg;Gei
+11907;A6;Lichtenau;Lic
+60650;A6;Lerchenbuck;Ler
+60651;A6;Klosterwald;Klo
+11908;A6;Neuendettelsau;Neu1
+60653;A6;Auergründel;Aue
+60655;A6;Dechenwald;Dec
+60654;A6;Hochstraße (Nord);HocN
+43059;A6;Kammersteiner Land;KamL
+11909;A6;Schwabach-West;SchW
+11910;A6;Schwabach-Süd;SchS
+11911;A6;Roth;Rot1
+11912;A6;Nürnberg-Süd;NueS
+11913;A6;Nürnberg-Langwasser;NueL
+11914;A6;Nürnberg-Ost;NueO
+11915;A6;Altdorf;Alt
+60656;A6;Lochgraben;Loc
+60657;A6;Röthenbach;Roe
+11916;A6;Altdorf/Leinburg;AltL
+60658;A6;Unterrieden;Unt
+60659;A6;Rehberg;Reh
+60660;A6;Hölle;Hoe
+60661;A6;Haide;Hai
+60663;A6;Zankschlag;Zan
+11917;A6;Alfeld;Alf
+60664;A6;Rehwinkel;Reh1
+60665;A6;Poppberg;Pop
+60666;A6;Hochstraße (Süd);HocS
+60667;A6;Am Hoch;Hoc
+11918;A6;Sulzbach-Rosenberg;SulR
+43060;A6;Oberpfälzer Alb;ObeA
+60668;A6;Brunnberg;Bru
+11919;A6;Amberg-West;AmbW
+60670;A6;Laubenschlag;Lau
+11920;A6;Amberg-Süd;AmbS
+11921;A6;Amberg-Ost;AmbO
+43061;A6;Schmidgaden;Sch2
+60672;A6;Stocker Holz;StoH
+43062;A6;Nabburg-West;NabW
+36072;A6;Oberpfälzer Wald;ObeW
+35300;A6;Wernberg-Ost;WerO
+60673;A6;Wittschauer Höhe;WitH
+35295;A6;Leuchtenberg;Leu
+35294;A6;Vohenstrauß-West;VohW
+35293;A6;Vohenstrauß-Ost;VohO
+31811;A6;Pleystein;Ple
+60675;A6;Ulrichsberg;Ulr
+31812;A6;Waidhaus;Wai
+31500;A6;Waidhaus-Autobahn;WaiA
+31785;A7;Grenztunnel Füssen;GreF
+31786;A7;Füssen;Fue
+7555;A7;Reinertshofertunnel;Rei
+12247;A7;Nesselwang;Nes
+12248;A7;Oy-Mittelberg;Oy-M
+60678;A7;Rottachtal;Rot1
+12249;A7;Allgäu;All
+60679;A7;Vorwald;Vor
+12250;A7;Betzigau;Bet
+12251;A7;Kempten;Kem
+12252;A7;Kempten-Leubas;KemL
+60682;A7;Leubastal;Leu
+60683;A7;Seebach;See
+12253;A7;Dietmannsried;Die
+12254;A7;Allgäuer Tor;AllT
+12255;A7;Bad Grönenbach;Gro1
+60684;A7;Darastfeld;Dar
+12256;A7;Woringen;Wor
+60685;A7;Königsrain;Koe
+12257;A7;Memmingen-Süd;MemS
+60687;A7;Buxachtal;Bux
+12258;A7;Memmingen;Mem
+60689;A7;Aumühle;Aum
+12259;A7;Berkheim;Ber
+60690;A7;Brühl-Ost;BruO
+60691;A7;Brühl-West;BruW
+12260;A7;Dettingen an der Iller;DetI
+12261;A7;Illertal;Ill
+12262;A7;Altenstadt an der Iller;AltI
+60692;A7;Badhauser Wald-West;BadW
+60693;A7;Badhauser Wald-Ost;BadO
+12263;A7;Illertissen;Ill1
+60694;A7;Tannengarten;Tan
+60697;A7;Reutelsberger Forst;ReuF
+12264;A7;Vöhringen;Voe
+60698;A7;Winterhalde;Win
+60699;A7;Buchenberg;Buc1
+12265;A7;Hittistetten;Hit
+60701;A7;Buchwald;Buc
+60703;A7;Hahnenberg;Hah
+12266;A7;Nersingen;Ner
+60705;A7;Leibisee;Lei
+12267;A7;Ulm/Elchingen;UlmE
+12268;A7;Langenau;Lan
+57882;A7;Sankt Jakob;SanJ
+57883;A7;Vor dem Donauried;VorD
+12269;A7;Niederstotzingen;Nie
+30500;A7;Lonetal;Lon
+12270;A7;Giengen/Herbrechtingen;GieH
+12271;A7;Heidenheim;Hei1
+57880;A7;Heidenheimer Kohlplatten;HeiK
+57881;A7;Härtsfeld;Hae
+12272;A7;Aalen/Oberkochen;AalO
+41412;A7;Agnesburgtunnel;Agn
+12273;A7;Aalen/Westhausen;AalW
+12274;A7;Ellwangen;Ell
+12275;A7;Ellwanger Berge;EllB
+41414;A7;Virngrundtunnel;Vir
+12276;A7;Dinkelsbühl/Fichtenau;DinF
+12277;A7;Feuchtwangen-West;FeuW
+12278;A7;Feuchtwangen/Crailsheim;FeuC
+60707;A7;Kurzmandl;Kur
+12279;A7;Wörnitz;Woe
+60709;A7;Kreuzfeld;Kre
+12280;A7;Rothenburg ob der Tauber;RotT
+12281;A7;Bad Windsheim;Win1
+12282;A7;Ohrenbach;Ohr
+12283;A7;Uffenheim-Langensteinach;UffL
+12284;A7;Gollhofen;Gol
+60711;A7;Fuchsloch;Fuc1
+12285;A7;Marktbreit;Mar
+60712;A7;Wolfsgraben-Ost;WolO
+60713;A7;Wolfsgraben-West;WolW
+12286;A7;Kitzingen;Kit
+12287;A7;Biebelried;Bie
+60714;A7;Hasenäcker;Has
+60715;A7;Masuren;Mas
+60716;A7;Kapellenholz;Kap
+60717;A7;Huthstadt;Hut
+12288;A7;Würzburg/Estenfeld;WueE
+60718;A7;Hirtentannen;Hir
+60719;A7;Breitenellern;Bre
+60720;A7;Hohenroth;Hoh
+12289;A7;Gramschatzer Wald;GraW
+60721;A7;Jobsttaler Hof;JobH
+60722;A7;Lindig;Lin
+12290;A7;Riedener Wald;RieW
+60724;A7;Hühnerwäldchen;Hue
+60723;A7;Wernbrücke;Wer
+60725;A7;Schraudenbachbrücke;Sch1
+12291;A7;Schweinfurt/Werneck;SchW
+60726;A7;Eckartshausen;Eck
+60727;A7;Brebersdorf;Bre1
+12292;A7;Wasserlosen;Was
+60728;A7;Lerchenberg;Ler
+60729;A7;Schwemmelsbach;Sch
+60730;A7;Dollwiese;Dol
+60731;A7;Heinersberg;Hei
+60732;A7;Klöffelsberg;Klo
+12293;A7;Hammelburg;Ham
+60733;A7;Saalebrücke;Saa
+60734;A7;Elfershausen;Elf
+12294;A7;Bad Kissingen/Oberthulba;KisO
+60735;A7;Brodpfad;Bro
+60736;A7;Seifertsholz;Sei
+60737;A7;Bornhag;Bor
+60738;A7;Bildbuche;Bil
+60739;A7;Veitsbrunn;Vei
+12295;A7;Rhön;Rho2
+60740;A7;Schildeck;Sch2
+12296;A7;Bad Brückenau/Wildflecken;BruW1
+60741;A7;Riedenberg;Rie1
+60742;A7;Rehhecke;Reh
+60521;A7;Volkersberg;Vol
+12297;A7;Bad Brückenau-Volkers;BruV
+60522;A7;Rhönblick;Rho
+60523;A7;Speicherz;Spe
+59715;A7;Am Forsthaus;For
+59714;A7;Rhöneiche;Rho1
+12298;A7;Uttrichshausen;Utt
+59713;A7;Lohmühle;Loh
+59712;A7;Steinborntal;Ste
+59711;A7;Riederberg;Rie
+59710;A7;Steinhauk;Ste1
+12299;A7;Fuldaer Dreieck;FulD
+59709;A7;Pilgerzell;Pil
+59708;A7;Röther Tannen;RoeT
+53576;A7;Fulda-Mitte;FulM
+59707;A7;Petersberg;Pet
+59706;A7;Rauschenberg;Rau
+12301;A7;Fulda-Nord;FulN
+59705;A7;Geißhecke;Gei
+59704;A7;Hummelskopf;Hum
+59703;A7;Rotkopf;Rot
+59702;A7;Fuchsberg;Fuc
+12302;A7;Hünfeld/Schlitz;HueS
+59701;A7;Günterswald;Gue
+59700;A7;Mahlertshof;Mah
+12303;A7;Großenmoor;Gro
+12412;A70;Schweinfurt/Werneck;SchW
+12413;A70;Werneck;Wer
+36150;A70;Werntal;Wer1
+12414;A70;Schweinfurt/Bergrheinfeld;SchB
+20113;A70;Schweinfurt-Hafen;SchH
+12415;A70;Schweinfurt-Zentrum;SchZ
+12416;A70;Gochsheim;Goc
+12417;A70;Schonungen;Sch
+60525;A70;Steinsäcker;Ste
+12418;A70;Haßfurt;Has
+12419;A70;Knetzgau;Kne
+60526;A70;Spitzberg;Spi
+20114;A70;Schwarzer Berg;SchB1
+12420;A70;Eltmann;Elt
+12421;A70;Viereth-Trunstadt;VieT
+12422;A70;Bamberg-Hafen;BamH
+12423;A70;Hallstadt;Hal
+12424;A70;Bamberg;Bam1
+12425;A70;Bamberg;Bam
+60528;A70;Giechburgblick;Gie
+12426;A70;Scheßlitz;Sch2
+12427;A70;Roßdorf am Berg;RosB
+7615;A70;Paradiestal;Par
+12428;A70;Stadelhofen;Sta
+12429;A70;Schirradorf;Sch1
+12430;A70;Thurnau-West;ThuW
+12431;A70;Thurnau-Ost;ThuO
+60530;A70;Rotmaintal;Rot
+12432;A70;Kulmbach/Neudrossenfeld;KulN
+12433;A70;Bayreuth/Kulmbach;BayK
+36151;A71;Werntal;Wer
+36152;A71;Schweinfurt-West;SchW
+36153;A71;Poppenhausen;Pop
+60533;A71;Maibacher Höhe;MaiH
+36154;A71;Bad Kissingen/Oerlenbach;KisO
+36155;A71;Maßbach;Mas
+60535;A71;Lauertal;Lau
+36156;A71;Münnerstadt;Mue
+36157;A71;Bad Neustadt a.d.Saale;NeuS
+36158;A71;Mellrichstadt;Mel
+36159;A71;Mellrichstädter Höhe;MelH
+45530;A71;Rentwertshausen;Ren
+45529;A71;Thüringer Tor;ThuT
+45631;A71;Eichelberg;Eic
+45506;A71;Meiningen-Süd;MeiS
+45505;A71;Meiningen-Nord;MeiN
+45636;A71;Dolmar;Dol
+45504;A71;Dreieck Suhl;DreS
+45632;A71;Berg Bock;BerB
+16297;A71;Suhl/Zella-Mehlis;SuhM
+45633;A71;Hochwald;Hoc
+12696;A71;Oberhof;Obe
+45634;A71;Rennsteig;Ren1
+45977;A71;Alte Burg;AltB
+12695;A71;Gräfenroda;Gra
+45637;A71;Thüringer Wald;ThuW
+45635;A71;Reichenbach;Rei
+12694;A71;Ilmenau-West;IlmW
+12693;A71;Ilmenau-Ost;IlmO
+12434;A72;Bayerisches Vogtland;BayV
+12435;A72;Hof-Nord;HofN
+12436;A72;Hof/Töpen;HofT
+12437;A72;Hochfranken;Hoc
+51522;A72;Landesgrenze;Lan
+20116;A72;Großzöbern;Gro
+12438;A72;Pirk;Pir
+42632;A72;Vogtland Süd;VogS
+12439;A72;Plauen-Süd;PlaS
+42633;A72;Vogtland Nord;VogN
+12440;A72;Plauen-Ost;PlaO
+20117;A72;Neuensalz;Neu
+12441;A72;Treuen;Tre
+12442;A72;Reichenbach;Rei
+20118;A72;Waldkirchen;Wal
+12443;A72;Zwickau-West;ZwiW
+20119;A72;Niedercrinitz;Nie
+12444;A72;Zwickau-Ost;ZwiO
+12446;A72;Hartenstein;Har
+52370;A72;Beuthenbach;Beu
+12447;A72;Stollberg-West;StoW
+12450;A73;Nürnberg/Feucht;NueF
+12451;A73;Feucht;Feu
+12452;A73;Röthenbach bei Sankt Wolfgang;RoeW
+31801;A73;Wendelstein;Wen
+12453;A73;Nürnberg-Süd;NueS
+12454;A73;Nürnberg-Zollhaus;NueZ
+12455;A73;Nürnberg-Königshof;NueK
+12456;A73;Nürnberg-Hafen-Ost;NueO
+12460;A73;Fürth-Poppenreuth;FueP
+12461;A73;Fürth-Ronhof;FueR
+20120;A73;Nürnberg-Hafen;NueH
+20121;A73;Nürnberg/Fürth;NueF1
+8144;A73;Fürth-Steinach;FueS
+60536;A73;Gründlach;Gru
+60537;A73;Fuchswald;Fuc
+12462;A73;Erlangen-Eltersdorf;ErlE
+12463;A73;Fürth/Erlangen;FueE
+12464;A73;Erlangen-Bruck;ErlB
+12465;A73;Erlangen-Zentrum;ErlZ
+12466;A73;Erlangen-Nord;ErlN
+60538;A73;Möhrendorf;Moe1
+12467;A73;Möhrendorf;Moe
+12468;A73;Baiersdorf-Nord;BaiN
+12469;A73;Forchheim-Süd;ForS
+12470;A73;Forchheim-Nord;ForN
+60539;A73;Regnitztal;Reg
+12471;A73;Buttenheim;But
+12472;A73;Hirschaid;Hir
+12473;A73;Bamberg-Süd;BamS
+12474;A73;Bamberg-Ost;BamO
+12475;A73;Memmelsdorf;Mem
+12476;A73;Bamberg;Bam
+60541;A73;Zückshuter Forst;ZueF
+43063;A73;Breitengüßbach-Süd;BreS
+43064;A73;Breitengüßbach-Mitte;BreM
+43065;A73;Breitengüßbach-Nord;BreN
+43066;A73;Zapfendorf;Zap1
+60543;A73;Zapfendorf;Zap
+43067;A73;Ebensfeld;Ebe
+43068;A73;Bad Staffelstein;Sta
+43069;A73;Bad Staffelstein-Kurzentrum;StaK
+42494;A73;Lichtenfels;Lic
+42493;A73;Lichtenfels-Nord;LicN
+42492;A73;Untersiemau;Unt
+42491;A73;Ebersdorf b.Coburg;EbeC
+60548;A73;Coburger Forst;CobF
+42490;A73;Rödental;Roe
+42489;A73;Neustadt b.Coburg;NeuC
+31424;A73;Coburg;Cob
+35070;A73;Eisfeld-Süd;EisS
+45538;A73;Werratal;Wer
+45537;A73;Eisfeld-Nord;EisN
+45536;A73;Schleusingen;Sch
+19393;A73;Adlersberg;Adl
+45535;A73;Suhl-Friedberg;SuhF
+45534;A73;Suhl-Zentrum;SuhZ
+45533;A73;Dreieck Suhl;DreS
+12517;A8;Pforzheim-Ost;PfoO
+12518;A8;Pforzheim;Pfo
+12571;A8;Taufkirchen-Ost;TauO
+12572;A8;München-Süd;MueS
+12574;A8;Hofoldinger Forst;HofF1
+12575;A8;Holzkirchen-Süd;HolS
+12576;A8;Holzkirchen;Hol
+12577;A8;Holzkirchen-Nord;HolN
+12578;A8;Weyarn;Wey
+12579;A8;Irschenberg;Irs
+12580;A8;Irschenberg;Irs1
+12581;A8;Bad Aibling;Aib
+12582;A8;Inntal;Inn
+12583;A8;Rosenheim;Ros
+12584;A8;Rohrdorf;Roh
+12585;A8;Samerberg;Sam
+12586;A8;Achenmühle;Ach
+12587;A8;Frasdorf;Fra
+12588;A8;Bernau am Chiemsee;BerC
+12589;A8;Felden;Fel
+12590;A8;Chiemsee;Chi
+12591;A8;Übersee;Ueb
+12592;A8;Grabenstätt;Gra
+12594;A8;Bergen;Ber
+12595;A8;Siegsdorf-West;SieW
+12596;A8;Traunstein/Siegsdorf-Ost;TraO
+12598;A8;Anger;Ang
+12599;A8;Bad Reichenhall;Rei2
+15418;A8;Scharenstetten;Sch1
+42487;A8;Hofoldinger Forst;HofF
+7474;A8;Rosenheim - West;RosW
+12593;A8;Hochfelln;Hoc
+12597;A8;Neukirchen;Neu1
+12600;A8;Bad Reichenhall;Rei1
+12602;A8;Bad Reichenhall;Rei
+54977;A8;Pforzheim-Süd;PfoS
+12519;A8;Heimsheim;Hei
+57888;A8;Höllberg;Hoe
+57889;A8;Heckengäu;Hec
+54978;A8;Rutesheim;Rut
+54979;A8;Leonberg-West;LeoW
+12522;A8;Leonberg;Leo
+12523;A8;Leonberg-Ost;LeoO
+30504;A8;Sindelfinger Wald;SinW
+17430;A8;Sommerhofen;Som
+12524;A8;Stuttgart;Stu
+12525;A8;Stuttgart-Möhringen;StuM1
+12527;A8;Stuttgart-Degerloch;StuD
+12528;A8;Stuttgart-Flughafen/Messe;StuM
+41422;A8;Stuttgart-Plieningen;StuP
+57919;A8;Esslingen / Ab- und Zufahrt Neuhausen;EssN
+12529;A8;Esslingen;Ess
+12530;A8;Denkendorf;Den
+12531;A8;Wendlingen;Wen
+57890;A8;Im Rübholz;Rue
+12532;A8;Kirchheim (Teck)-West;KirW
+12533;A8;Kirchheim (Teck)-Ost;KirO
+57891;A8;Vor dem Aichelberg;VorA
+57892;A8;Urweltfunde;Urw
+12534;A8;Aichelberg;Aic1
+12535;A8;Gruibingen;Gru
+17432;A8;Am Kornberg;Kor
+14224;A8;Gruibingen;Gru1
+12536;A8;Mühlhausen;Mue
+41426;A8;Lämmerbuckeltunnel;Lae
+12537;A8;Hohenstadt;Hoh
+57893;A8;Albhöhe;Alb
+57894;A8;Widderstall;Wid
+12538;A8;Merklingen;Mer
+12539;A8;Aichen;Aic
+15348;A8;Kemmental;Kem
+12540;A8;Ulm-West;UlmW
+1356;A8;Ulm-Nord;UlmN
+12541;A8;Ulm-Ost;UlmO
+12542;A8;Oberelchingen;Obe
+12543;A8;Ulm/Elchingen;UlmE
+12544;A8;Leipheim;Lei
+12545;A8;Leipheim;Lei1
+12546;A8;Günzburg;Gue
+12548;A8;Burgauer See;BurS
+12549;A8;Burgau;Bur
+12550;A8;Zusmarshausen;Zus
+15676;A8;Streitheimer Forst-Nord;StrN
+12552;A8;Adelsried;Ade
+12553;A8;Edenbergen;Ede
+12554;A8;Augsburg-West;AugW
+12555;A8;Augsburg;Aug
+12556;A8;Augsburg-Ost;AugO
+12557;A8;Dasing;Das
+12558;A8;Adelzhausen;Ade1
+12559;A8;Odelzhausen;Ode
+12560;A8;Sulzemoos;Sul
+12561;A8;Dachau/Fürstenfeldbruck;DacF
+12562;A8;München-Eschenried;MueE
+12563;A8;München-Langwied;MueL
+31689;A8;München-West;MueW
+12565;A8;München-Obermenzing;MueO
+12566;A8;München-Ramersdorf;MueR
+12568;A8;München-Perlach;MueP
+35163;A8;Neubiberg;Neu
+12569;A8;Unterhaching-Ost;UntO
+60551;A8;Limbach;Lim
+60552;A8;Knöringen;Kno
+60553;A8;Burgauer Berg;BurB
+60554;A8;Scheppacher Forst;SchF
+60556;A8;Vallried;Val
+60559;A8;Streitheimer Forst-Süd;StrS
+36030;A8;Neusäß;Neu2
+60564;A8;Friedberg (Bayern);FriB
+60565;A8;Kirchholz;Kir
+60566;A8;Ramersdorf (West);RamW
+60567;A8;Ramersdorf (Ost);RamO
+60568;A8;Brunnthal;Bru
+60569;A8;Aying;Ayi
+60570;A8;Otterfing;Ott
+60571;A8;Seehamer See (Ost);SeeO
+60572;A8;Seehamer See (West);SeeW
+60573;A8;Wilparting;Wil
+60574;A8;Wöllkam;Woe
+60575;A8;Eulenauer Filz;EulF
+60576;A8;Im Moos;Moo
+60577;A8;Hochstraßer See;HocS
+60578;A8;Winkelbach;Win
+60579;A8;Apfelkam;Apf
+60581;A8;Achenmühle;Ach1
+60583;A8;Frasdorf;Fra1
+60584;A8;Prien;Pri
+60585;A8;Am Chiemsee;Chi1
+60586;A8;Hubbauer;Hub
+60587;A8;Bernbichl;Ber1
+60588;A8;Fuchssteig;Fuc
+60590;A8;Teisenberg;Tei
+60591;A8;Loital;Loi
+60593;A8;Kerschal;Ker
+60594;A8;Schwarzbach;Sch
+60763;A8;Adelzhauser Berg;AdeB
+8066;A8;Fuchsberg;Fuc1
+12631;A81;Hilzingen;Hil
+12632;A81;Singen;Sin
+12633;A81;Hegau;Heg
+12634;A81;Engen;Eng
+14225;A81;Neckartalbrücke Weitingen;NecW
+57899;A81;Hirtenhaus;Hir
+57900;A81;Neckarblick;Nec
+12645;A81;Rottenburg;Rot
+57897;A81;Ziegler;Zie
+57898;A81;Geyern;Gey
+12646;A81;Herrenberg;Her
+20122;A81;Schönbuchtunnel;Sch1
+12647;A81;Schönbuch;Sch
+12648;A81;Gärtringen;Gae
+12649;A81;Hildrizhausen;Hil1
+12650;A81;Ehningen;Ehn
+12651;A81;Böblingen-Hulb;BoeH
+12652;A81;Böblingen/Sindelfingen;BoeS
+12653;A81;Böblingen-Ost;BoeO
+12654;A81;Sindelfingen-Ost;SinO
+12655;A81;Stuttgart;Stu
+17431;A81;Sommerhofen;Som
+30505;A81;Sindelfinger Wald;SinW
+12657;A81;Leonberg-Ost;LeoO
+12658;A81;Leonberg;Leo
+20123;A81;Engelbergtunnel;Eng1
+57895;A81;Gerlinger Höhe;GerH
+57896;A81;Engelberg;Eng2
+12659;A81;Stuttgart-Feuerbach;StuF
+12660;A81;Stuttgart-Zuffenhausen;StuZ
+12661;A81;Ludwigsburg-Süd;LudS
+12662;A81;Ludwigsburg-Nord;LudN
+12663;A81;Pleidelsheim;Ple
+14234;A81;Kälbling;Kae
+12664;A81;Mundelsheim;Mun
+12665;A81;Wunnenstein;Wun
+12666;A81;Ilsfeld;Ils
+12667;A81;Heilbronn/Untergruppenbach;HeiU
+12668;A81;Weinsberg/Ellhofen;WeiE
+12669;A81;Weinsberg;Wei
+20124;A81;Hölzern;Hoe
+12670;A81;Neuenstadt (Kocher);NeuK
+12671;A81;Möckmühl;Moe
+12672;A81;Jagsttal;Jag
+12673;A81;Osterburken;Ost
+14233;A81;Holzspitze;Hol
+12674;A81;Boxberg;Box
+12675;A81;Ahorn;Aho
+12676;A81;Tauberbischofsheim;Tau
+12677;A81;Ob der Tauber;Ob T
+12678;A81;Gerchsheim;Ger
+12679;A81;Würzburg-West;WueW
+15333;A81;Böblingen Panzerstraße/Mineraltherme;BoeM
+15334;A81;Böblingen-Ost;BoeO1
+41430;A81;Hohentwieltunnel;Hoh
+18767;A81;Bruckried;Bru
+30510;A81;Im Hegau;Heg1
+12722;A9;München-Schwabing;MueS1
+12723;A9;München-Frankfurter Ring;MueR
+12724;A9;München-Freimann;MueF
+12725;A9;München-Fröttmaning Süd;MueS
+12726;A9;München-Nord;MueN
+12727;A9;Garching-Süd;GarS
+12728;A9;Garching-Nord;GarN
+60596;A9;Echinger Gfild;EchG
+60597;A9;Brunngras;Bru1
+12729;A9;Eching;Ech
+12730;A9;Neufahrn;Neu
+12731;A9;Fürholzen (Ost);FueO
+60598;A9;Fürholzen (West);FueW
+60599;A9;Aster Moos;AstM
+12732;A9;Allershausen;All
+60600;A9;Eichfeld;Eic
+60601;A9;Paunzhauser Feld;PauF
+12733;A9;Pfaffenhofen a.d.Ilm;PfaI
+12734;A9;In der Holledau;Hol1
+12735;A9;Holledau;Hol
+60602;A9;Rohrbach (Ost);RohO
+60603;A9;Rohrbach (West);RohW
+12736;A9;Langenbruck;Lan
+60605;A9;Baarer Weiher;BaaW
+12737;A9;Manching;Man
+7577;A9;Neuburg a.d.Donau;NeuD
+12738;A9;Ingolstadt-Süd;IngS
+7578;A9;Ingolstadt-Ost;IngO
+12739;A9;Ingolstadt-Nord;IngN
+12740;A9;Lenting;Len
+12741;A9;Köschinger Forst;KoeF
+12742;A9;Denkendorf;Den
+60607;A9;Gelbelsee;Gel
+12743;A9;Altmühltal;Alt
+60608;A9;Hirschbrunn;Hir
+12744;A9;Greding;Gre1
+12745;A9;Greding;Gre2
+12746;A9;Greding;Gre
+60610;A9;Offenbau;Off
+12747;A9;Hilpoltstein;Hil
+60612;A9;Göggelsbuch;Goe
+12748;A9;Allersberg;All1
+60613;A9;Räubersried;Rae
+12749;A9;Nürnberg/Feucht;NueF2
+12750;A9;Nürnberg/Feucht;NueF1
+12751;A9;Nürnberg-Ost;NueO
+12752;A9;Nürnberg-Fischbach;NueF
+60615;A9;Brunn;Bru
+12753;A9;Nürnberg;Nue
+12754;A9;Lauf;Lau
+12755;A9;Lauf-Hersbruck;LauH
+60616;A9;Wolfshöhe;Wol
+12756;A9;Schnaittach;Sch1
+12758;A9;Hormersdorf;Hor
+60619;A9;Sperbes (Ost);SpeO
+17737;A9;Sperbes (West);SpeW
+12759;A9;Plech;Ple
+12760;A9;Weidensees;Wei
+12761;A9;Pegnitz;Peg
+31752;A9;Fränkische Schweiz;FraS
+12763;A9;Trockau;Tro
+60620;A9;Sophienberg;Sop
+12765;A9;Bayreuth-Süd;BayS
+42424;A9;Einhausung Bayreuth;EinB
+12766;A9;Bayreuth-Nord;BayN
+31750;A9;Bindlacher Berg;BinB
+12767;A9;Bayreuth/Kulmbach;BayK
+12768;A9;Bad Berneck/Himmelkron;BerH
+12769;A9;Marktschorgast;Mar
+12770;A9;Gefrees;Gef
+60623;A9;Streitau;Str
+12771;A9;Münchberg-Süd;MueS2
+4741;A9;Münchberg-Mitte;MueM
+12772;A9;Münchberg-Nord;MueN1
+12773;A9;Hof-West;HofW
+60625;A9;Lipperts;Lip
+12774;A9;Bayerisches Vogtland;BayV
+12775;A9;Naila/Selbitz;NaiS
+12776;A9;Berg/Bad Steben;BerS
+12777;A9;Frankenwald;Fra
+12778;A9;Rudolphstein;Rud
+19391;A9;Hirschberg;Hir1
+12779;A9;Bad Lobenstein;Lob
+12780;A9;Schleiz;Sch
+19392;A9;Himmelsteiche;Him
+12781;A9;Dittersdorf;Dit
+12816;A92;München-Feldmoching;MueF
+12817;A92;Oberschleißheim;Obe
+12818;A92;Unterschleißheim;Unt
+12819;A92;Neufahrn;Neu
+31769;A92;Eching-Ost;EchO
+12820;A92;Freising-Süd;FreS
+12821;A92;Flughafen München;FluM1
+60765;A92;Isarau;Isa
+12822;A92;Freising-Mitte;FreM
+12823;A92;Freising-Ost;FreO
+12824;A92;Erding;Erd
+60767;A92;Moosburger Au;MooA
+12825;A92;Moosburg-Süd;MooS
+12826;A92;Moosburg-Nord;MooN
+12827;A92;Landshut-West;LanW
+12828;A92;Altdorf;Alt
+12829;A92;Landshut-Nord;LanN
+12830;A92;Landshut/Essenbach;LanE
+19185;A92;Landshut;Lan
+12831;A92;Wörth a.d.Isar;WoeI
+12833;A92;Dingolfing-Mitte;DinM
+31653;A92;Flughafen München;FluM
+31654;A92;Hallbergmoos;Hal
+7548;A92;Mettenbacher Moos;MetM
+60769;A92;Wattenbacher Au;WatA
+8067;A92;Dingolfing-West;DinW
+60770;A92;Teisbacher Moos;TeiM
+31768;A92;Dingolfing-Ost;DinO
+12834;A92;Pilsting/Großköllnbach;PilG
+60772;A92;Pilsting;Pil
+12835;A92;Landau a.d.Isar;LanI
+12836;A92;Wallersdorf-West;WalW
+12837;A92;Wallersdorf-Nord;WalN
+60774;A92;Wallersdorf;Wal
+12838;A92;Plattling-West;PlaW
+60776;A92;Michaelsbuch;Mic
+12839;A92;Plattling-Nord;PlaN
+12840;A92;Deggendorf;Deg
+12841;A92;Deggendorf-Mitte;DegM
+12842;A93;Kiefersfelden;Kie1
+12846;A93;Inntal;Inn
+12844;A93;Kiefersfelden;Kie
+12845;A93;Oberaudorf;Obe
+12847;A93;Brannenburg;Bra
+12848;A93;Reischenhart;Rei
+12849;A93;Inntal;Inn1
+12850;A93;Holledau;Hol
+12851;A93;Wolnzach;Wol
+12852;A93;Mainburg;Mai
+12853;A93;Aiglsbach;Aig
+12854;A93;Elsendorf;Els
+12855;A93;Siegenburg;Sie
+12856;A93;Abensberg;Abe
+12857;A93;Hausen;Hau
+60790;A93;Saalhaupt;Saa
+12858;A93;Bad Abbach;Abb
+12859;A93;Pentling;Pen
+12860;A93;Regensburg-Süd;RegS
+12861;A93;Regensburg;Reg2
+12862;A93;Regensburg-Kumpfmühl;RegK
+12863;A93;Regensburg-Königswiesen;RegK1
+12864;A93;Regensburg-Prüfening;RegP2
+31795;A93;Regensburg Prüfening;RegP
+12865;A93;Regensburg-West;RegW
+12866;A93;Regensburg-Pfaffenstein;RegP1
+20125;A93;Regensburg Pfaffenstein;RegP3
+12867;A93;Regensburg-Nord;RegN
+60791;A93;Benhof;Ben
+60792;A93;Regendorf;Reg3
+12868;A93;Regenstauf;Reg1
+12869;A93;Ponholz;Pon
+60793;A93;Harberhof Ost;HarO
+60794;A93;Harberhof West;HarW
+12870;A93;Teublitz;Teu
+12871;A93;Schwandorf-Süd;SchS
+60796;A93;Hirtlohe;Hir
+12872;A93;Schwandorf-Mitte;SchM
+60797;A93;Kronstetten;Kro
+12873;A93;Schwandorf-Nord;SchN
+60798;A93;Freihöls;Fre
+60799;A93;Lindenlohe;Lin
+12874;A93;Schwarzenfeld;Sch2
+12875;A93;Nabburg;Nab
+7509;A93;Schloßberg;Sch1
+12876;A93;Pfreimd;Pfr
+36073;A93;Oberpfälzer Wald;ObeW
+12878;A93;Wernberg-Köblitz;WerK
+60801;A93;Grünau;Gru
+12879;A93;Luhe-Wildenau;LuhW
+12880;A93;Weiden-Süd;WeiS
+12881;A93;Weiden-Frauenricht;WeiF
+12882;A93;Weiden-West;WeiW
+31501;A93;Weiden-Nord;WeiN
+12883;A93;Altenstadt an der Waldnaab;AltW
+60802;A93;Hopfengarten;Hop
+36210;A93;Neustadt an der Waldnaab;NeuW
+12884;A93;Windischeschenbach;Win
+12885;A93;Falkenberg;Fal
+12886;A93;Wiesau;Wie
+12887;A93;Mitterteich-Süd;MitS
+12888;A93;Mitterteich-Nord;MitN
+12890;A93;Pechbrunn;Pec
+12891;A93;Marktredwitz-Süd;MarS
+12892;A93;Marktredwitz-Nord;MarN
+12893;A93;Wunsiedel;Wun
+12894;A93;Thiersheim;Thi
+12895;A93;Höchstädt;Hoe
+60778;A93;Kranzhorn;Kra
+60777;A93;Wildbarren;Wil
+60779;A93;Kirnstein;Kir
+60780;A93;Gletschergarten;Gle
+60782;A93;Heuberg;Heu
+60781;A93;Petersberg;Pet
+60783;A93;Nicklheim;Nic
+60785;A93;Oberempfenbach;Obe1
+60787;A93;Deutschmeister;Deu
+60789;A93;Großmuß;Gro
+60803;A93;Angerholz;Ang
+60804;A93;Scherreuth;Sch3
+7510;A93;Waldnaabtal;Wal
+60806;A93;Peuntbach;Peu
+7616;A93;Einhausung Oberweißenbach;EinO
+12896;A93;Selb-West;SelW
+31502;A93;Selb-Nord;SelN
+31503;A93;Schönwald;Sch
+31504;A93;Rehau-Süd;RehS
+31505;A93;Rehau-Nord;RehN
+31506;A93;Hof-Süd;HofS
+31507;A93;Regnitzlosau;Reg
+60807;A93;Bärenholz;Bae
+31508;A93;Hof-Ost;HofO
+31509;A93;Hochfranken;Hoc
+12897;A94;München-Steinhausen;MueS
+12898;A94;München-Zamdorf;MueZ
+12899;A94;München-Daglfing;MueD
+31510;A94;München-Am Moosfeld;MueM
+12900;A94;München-Riem;MueR
+12901;A94;Feldkirchen-West;FelW
+12902;A94;Feldkirchen-Ost;FelO
+12903;A94;München-Ost;MueO
+12904;A94;Parsdorf;Par
+13450;A94;Markt Schwaben;MarS
+12905;A94;Anzing;Anz
+12906;A94;Forstinning;For
+15665;A94;Anschluss B12-Malching-Süd;AnsS
+15666;A94;Malching;Mal
+15667;A94;Anschluss B12-Malching-Nord;AnsN
+8051;A94;Hohenlinden;Hoh
+7617;A94;Holzfeld;Hol
+7618;A94;Auwiesen;Auw
+7619;A94;Pastetten;Pas
+19187;A94;Lengdorf;Len
+19188;A94;Dorfen;Dor
+19210;A94;Fürthholz;Fue
+19189;A94;Schwindegg;Sch
+8104;A94;Heldenstein;Hel
+8105;A94;Einhausung Wimpasing;EinW
+8106;A94;Waldkraiburg/Ampfing;WalA
+42378;A94;Mühldorf a.Inn-West;MueW
+42377;A94;Mühldorf a.Inn-Nord;MueN
+42376;A94;Töging a.Inn;ToeI
+31806;A94;Altötting;Alt
+31807;A94;Neuötting;Neu
+31808;A94;Neuötting-Ost;NeuO
+31809;A94;Burghausen;Bur
+61260;A94;Anschluss B12-Bergham;AnsB
+12907;A95;Anschluss B2;AnsB
+12908;A95;Eschenlohe;Esc
+17733;A95;Ostermoos;Ost
+17734;A95;Mühlweiher;Mue
+12909;A95;Murnau/Kochel;MurK
+12910;A95;Sindelsdorf;Sin
+12911;A95;Penzberg/Iffeldorf;PenI
+12912;A95;Seeshaupt;See
+12913;A95;Wolfratshausen;Wol
+12914;A95;Höhenrain;Hoe
+12915;A95;Schäftlarn;Sch
+12916;A95;Starnberg;Sta
+60809;A95;Unterdill;Unt
+12917;A95;München-Fürstenried;MueF
+12918;A95;München-Kreuzhof;MueK
+12919;A95;München-Sendling-Süd;MueS
+12920;A952;Anschluss B2;AnsB
+12921;A952;Percha;Per
+12922;A952;Starnberg;Sta
+12923;A96;Lindau-Autobahn;LinA
+12924;A96;Lindau;Lin
+12925;A96;Sigmarszell;Sig
+31693;A96;Weißensberg;Wei
+12926;A96;Neuravensburg;Neu
+57906;A96;Humbrechts;Hum
+57907;A96;Ettensweiler;Ett1
+12927;A96;Wangen-West;WanW
+41432;A96;Herfatz;Her
+12928;A96;Wangen-Nord;WanN
+56750;A96;Kißlegg;Kis
+57908;A96;Winterberg;Win1
+12930;A96;Leutkirch-Süd;LeuS
+12931;A96;Leutkirch-West;LeuW
+12932;A96;Aichstetten;Aic
+12933;A96;Aitrach;Ait
+8134;A96;Buxheimer Wald;BuxW
+12934;A96;Memmingen;Mem
+12935;A96;Memmingen-Nord;MemN
+12936;A96;Memmingen-Ost;MemO
+60811;A96;Burgacker;Bur
+42495;A96;Holzgünz;Hol
+8055;A96;Erkheim;Erk
+42390;A96;Kohlbergtunnel;Koh
+60813;A96;Kammlachtal;Kam
+12940;A96;Stetten;Ste
+12941;A96;Mindelheim;Min
+12942;A96;Bad Wörishofen;Woe1
+13451;A96;Wertachtal;Wer
+12943;A96;Buchloe-West;BucW
+12944;A96;Jengen/Kaufbeuren;JenK
+12945;A96;Buchloe-Ost;BucO
+12946;A96;Landsberg am Lech-West;LanW
+31511;A96;Lechwiesen;Lec
+12947;A96;Landsberg am Lech-Nord;LanN
+12948;A96;Landsberg am Lech-Ost;LanO
+12949;A96;Schöffelding;Sch
+12950;A96;Windach;Win
+12951;A96;Greifenberg;Gre
+32245;A96;Eching;Ech
+12952;A96;Inning a. Ammersee;InnA
+60814;A96;Martinsberg;Mar
+32246;A96;Etterschlag;Ett
+12953;A96;Wörthsee;Woe
+12955;A96;Oberpfaffenhofen;Obe
+12956;A96;Gilching;Gil
+60817;A96;Germering (Süd);GerS1
+60816;A96;Germering (Nord);GerN
+12957;A96;Germering-Süd;GerS
+36236;A96;München Süd-West;MueW
+36237;A96;München Freiham-Süd;MueS1
+7523;A96;Gräfelfing;Gra
+12959;A96;Gräfelfing;Gra1
+12960;A96;München-Blumenau;MueB
+12961;A96;München-Laim;MueL
+12962;A96;München-Sendling;MueS
+20133;A980;Anschluss B12;AnsB
+12973;A980;Waltenhofen;Wal
+12974;A980;Durach;Dur
+12975;A980;Allgäu;All
+31678;A99;München-Eschenried;MueE
+31679;A99;München-Allach;MueA1
+36240;A99;München Süd-West;MueW1
+36239;A99;München-Freiham Mitte;MueM
+36238;A99;Germering-Nord;GerN
+42385;A99;Aubing;Aub
+31954;A99;München-Lochhausen;MueL
+31512;A99;München-West;MueW
+31513;A99;München-Allach;MueA
+31620;A99;Allach;All
+12976;A99;München-Ludwigsfeld;MueL1
+12977;A99;München-Feldmoching;MueF
+60818;A99;Neuherberg;Neu
+12978;A99;München-Neuherberg;MueN2
+35121;A99;München-Fröttmaning Nord;MueN
+12979;A99;München-Nord;MueN1
+12980;A99;Aschheim/Ismaning;AscI
+60819;A99;Aschheim;Asc
+12981;A99;Kirchheim bei München;KirM
+12983;A99;München-Ost;MueO
+12984;A99;Vaterstetten;Vat
+12985;A99;Haar;Haa
+8137;A99;Putzbrunn;Put
+12986;A99;Hohenbrunn;Hoh
+12987;A99;Ottobrunn;Ott
+12988;A99;München-Süd;MueS
+12989;A995;München-Süd;MueS
+12990;A995;Sauerlach;Sau
+60821;A995;Potzham;Pot
+12991;A995;Oberhaching;Obe
+12992;A995;Taufkirchen-West;TauW
+12993;A995;Unterhaching;Unt
+12994;A995;München-Giesing;MueG
+17735;B13;Holzkirchen-Mitte;HolM
+33318;B13;Südliche Ringstraße;SueR
+33319;B13;Schillerbrücke;Sch
+33320;B13;Westliche Ringstraße;WesR
+33321;B13;Friedrichshofen West;FriW
+33322;B13;Gabel;Gab
+33323;B13;Industriegebiet;Ind
+17768;B13;Schernfelder Kreisel;SchK
+17769;B13;Rothenstein;Rot
+17794;B13;Bad Tölz-Ost;ToeO
+17793;B13;Holzkirchen;Hol
+20708;B13;Kraftwerk Sylvensteinsee;KraS
+20709;B13;Lenggries;Len
+20710;B13;Bad Tölz-West;ToeW
+20713;B13;Sachsenkam;Sac
+20714;B13;Großhartpenning;Gro
+20719;B13;Schenkendorfstraße;Sch1
+20720;B13;Frankfurter Ring;FraR
+31644;B13;Unterasbach;Unt
+20751;B13;Ansbach;Ans1
+20752;B13;Ansbach;Ans
+20753;B13;Lehrberg;Leh
+20754;B13;Oberdachstetten;Obe1
+20755;B13;Marktbergel;Mar
+20756;B13;B 470 bei Illesheim;B 4I
+20757;B13;Neuherberg;Neu1
+20758;B13;Uffenheim;Uff
+20760;B13;Gollhofen;Gol
+20763;B13;Ochsenfurt;Och
+20764;B13;Sommerhausen;Som
+20765;B13;Würzburg/Randersacker;WueR
+35340;B13;Maria-Probst-Straße;MarS
+20721;B13;Heidemannstraße;Hei
+29709;B13;Neuherbergstraße;Neu
+20722;B13;München-Neuherberg;MueN
+20723;B13;Hochbrück;Hoc
+20724;B13;Kreuzhof;Kre
+20725;B13;Unterschleißheim;Unt1
+20727;B13;Fahrenzhausen;Fah
+20728;B13;Hohenkammer;Hoh
+20729;B13;Reichertshausen;Rei
+20730;B13;Pfaffenhofen a.d.Ilm;PfaI
+20731;B13;B 300 bei Pörnbach;B 3P
+20734;B13;B 300 bei Starkertshofen;B 3S
+20735;B13;B 16 bei Oberstimm;B 1O
+29710;B13;Manchinger Straße;Man
+20736;B13;Goethestraße;Goe
+29711;B13;Ettinger Straße;Ett
+29712;B13;Audi-Ring beim Westpark;AudW
+29713;B13;Friedrichshofen;Fri
+20738;B13;Eitensheim;Eit
+20739;B13;Pietenfeld;Pie
+20740;B13;Westenkreuzung;Wes
+20742;B13;Laubenthal;Lau1
+20743;B13;Weißenburg;Wei
+20744;B13;Ellingen;Ell
+20745;B13;Gunzenhausen;Gun
+20747;B13;Merkendorf;Mer
+29714;B13;Claffheim;Cla
+35043;B13;Abzweigung Günzenhausen;AbzG
+35030;B13;Lauterbach;Lau
+35031;B13;Pelka;Pel
+35032;B13;Niernsdorf;Nie
+35034;B13;Ilmmünster;Ilm
+43089;B13;Theilenhofen;The
+43090;B13;Oberickelsheim;Obe
+61261;B13;Weißenburg-Schleifer a.Berg;WeiB
+61262;B13;Triesdorf;Tri
+61263;B13;Nehdorf;Neh
+61264;B13;Gräfenbuch;Gra
+61265;B13;Gollhofen;Gol1
+21035;B17;Füssen;Fue1
+21036;B17;Füssen;Fue
+21037;B17;Schwangau;Sch
+21038;B17;Halblech;Hal
+21039;B17;Steingaden;Ste
+21040;B17;Ilgen;Ilg
+21041;B17;Peiting-West;PeiW
+32146;B17;Schongau-West;SchW
+32147;B17;Altenstadt-Nord;AltN
+32148;B17;Hohenfurch;Hoh
+32149;B17;Kinsau;Kin
+32247;B17;Denklingen;Den
+21046;B17;Seestall;See
+35206;B17;Unterdießen;Unt
+13454;B17;Ellighofen;Ell
+8069;B17;Landsberg a.Lech-Süd;LanS
+13455;B17;Landsberg a.Lech-West;LanW
+13456;B17;Igling/Kaufering;IglK
+35204;B17;Hurlach;Hur
+21051;B17;Klosterlechfeld;Klo
+31850;B17;Lagerlechfeld;Lag
+31851;B17;Kleinaitingen;Kle
+31852;B17;Oberottmarshausen;Obe1
+21053;B17;Königsbrunn-Süd;KoeS
+21054;B17;Königsbrunn-Nord;KoeN
+21055;B17;Haunstetten-Süd/Inningen;HauI
+21056;B17;Haunstetten-Nord/Göggingen;HauG
+17909;B17;Augsburg-Göggingen/Arena;AugA
+21057;B17;Messe/Uni;MesU
+21058;B17;Göggingen-Ost/Ausfahrt Eichleitner Straße;GoeE
+21059;B17;Göggingen/Ausfahrt Gabelsberger Straße;GoeG
+31853;B17;Leitershofen/Pfersee-Süd;LeiS
+31854;B17;Stadtbergen/Pfersee;StaP
+21062;B17;Zentrum/Kriegshaber-Süd;ZenS
+31855;B17;Uniklinikum/Kriegshaber;UniK
+31856;B17;Bärenkeller/Oberhausen-Süd;BaeS
+31857;B17;Gersthofen-Süd/Postzentren;GerP
+31528;B17;Oberhausen;Obe
+31861;B17;Augsburg-West;AugW
+13460;B2;Germering-Nord;GerN2
+21366;B2;Mittenwald-Scharnitz;MitS
+21367;B2;Mittenwald-Nord;MitN
+21368;B2;B 11 bei Krün;B 1K
+21369;B2;S2542 bei Klais;S25K
+21370;B2;Garmisch-Partenkirchen;GarP
+21371;B2;Farchant;Far
+21372;B2;Oberau;Obe
+21373;B2;Anschluss A95;AnsA1
+21374;B2;Eschenlohe;Esc
+21375;B2;S2562 Abzweigung Ohlstadt;S25O
+21376;B2;Murnau;Mur
+21379;B2;B 472 bei Huglfing;B 4H
+21381;B2;Weilheim;Wei
+21382;B2;S2056 bei Pähl;S20P
+21383;B2;Traubing;Tra
+21384;B2;Pöcking-Nord;PoeN
+21385;B2;Starnberg;Sta
+21386;B2;Anschluss A952;AnsA
+21389;B2;Donnersbergerbrücke;Don
+21390;B2;Wotanstraße;Wot
+21393;B2;Lortzingstraße;Lor
+21394;B2;Aubinger Straße;Aub
+21395;B2;Limesstraße;Lim
+21396;B2;Germering;Ger
+21397;B2;Puchheim;Puc
+21398;B2;Alling;All
+21399;B2;Fürstenfeldbruck;Fue
+21420;B2;Langweid;Lan
+21421;B2;Meitingen-West;MeiW
+21422;B2;Nordendorf;Nor
+21423;B2;Mertingen;Mer1
+21424;B2;Asbach-Bäumenheim/Ausfahrt zur B16;AsbB
+21425;B2;Donauwörth-Süd/Nordheim;DonN
+21426;B2;Donauwörth-Nord/Berger Kreuz;DonK
+21427;B2;Kaisheim Süd;KaiS
+21428;B2;Buchdorf;Buc
+21429;B2;Monheim Mitte;MonM
+21430;B2;S2217 bei Langenaltheim;S22L
+21431;B2;Treuchtlingen;Tre
+21432;B2;Weißenburg;Wei1
+21433;B2;Ellingen;Ell
+21434;B2;Pleinfeld-Süd;PleS
+21435;B2;Roth/Hilpoltsteiner Straße;RotH
+21436;B2;Roth;Rot
+21437;B2;Schwabach-Süd;SchS
+21438;B2;Schwabach;Sch1
+21439;B2;Waldstromerstraße;Wal
+32041;B2;Zedtwitz;Zed
+33279;B2;Mering-Süd;MerS
+33280;B2;Mering-Mitte;MerM
+33281;B2;Mering;Mer
+33282;B2;Amagasaki Allee;AmaA
+29775;B2;Hans-Böckler-Straße;HanS
+31845;B2;Gersthofen-Mitte/Hirblingen;GerH
+31846;B2;Gersthofen-Nord;GerN1
+31847;B2;Gersthofen-Bergstraße/Industriegebiet Nord;GerN
+32068;B2;Mittenwald-Süd;MitS1
+35136;B2;Kaltenbrunn;Kal
+32064;B2;Garmisch-Partenkirchen Nord;GarN
+13842;B2;Spatzenhausen;Spa
+19193;B2;Marienstraße;Mar
+21400;B2;Fürstenfeldbruck-Neulindach;FueN
+21401;B2;Mammendorf;Mam
+21402;B2;Hattenhofen;Hat
+21403;B2;Althegnenberg;Alt
+21404;B2;Merching;Mer2
+21405;B2;Mering-Nord;MerN
+21406;B2;Chippenham-Ring;ChiR
+21407;B2;Friedberger Straße;Fri
+21408;B2;Zugspitzstraße;Zug
+21409;B2;Berliner Allee;BerA
+21410;B2;Neuburger Straße;Neu1
+21411;B2;Neuburger Straße;Neu
+21412;B2;Augsburg-Ost;AugO
+21417;B2;Augsburg-West;AugW
+21419;B2;Stettenhofen;Ste
+21440;B2;Weltenburger Straße;Wel
+21441;B2;Hafenstraße;Haf
+21442;B2;Rednitzstraße;Red1
+21443;B2;Ansbacher Straße;Ans
+21444;B2;Nürnberg-Schweinau;NueS
+21445;B2;Hansastraße;Han
+21446;B2;Nopitschstraße;Nop
+21447;B2;Welserstraße;Wel1
+21448;B2;Leipziger Platz;LeiP
+21449;B2;Kilianstraße;Kil
+21450;B2;Ziegelsteinstraße;Zie
+21451;B2;Schafhofstraße;Sch4
+21452;B2;Bierweg;Bie
+21453;B2;Nürnberg-Nord;NueN
+21454;B2;Heroldsberg;Her
+21455;B2;Eschenau;Esc1
+21456;B2;Forth;For
+21457;B2;Igensdorf;Ige
+21458;B2;Gräfenberg;Gra
+21459;B2;Hiltpoltstein;Hil
+19196;B2;S2260 bei Obertrubach;S22O
+21460;B2;Leupoldstein;Leu
+21461;B2;Weidensees;Wei2
+21462;B2;B 470 bei Bronn;B 4B
+21464;B2;B 85 bei Neudorf;B 8N
+21466;B2;Pegnitz;Peg
+21467;B2;Schnabelwaid;Sch3
+21468;B2;Creußen;Cre
+21470;B2;Bayreuth-Süd;BayS
+21471;B2;Doktor-Konrad-Pöhner-Straße;DokS
+21474;B2;Albrecht-Dürer-Straße;AlbS
+21476;B2;Grünewaldstraße;Gru
+21477;B2;Bernecker Straße;Ber
+21480;B2;Bayreuth-Nord;BayN
+21487;B2;Berliner Platz;BerP
+21488;B2;Plauener Straße;Pla
+21490;B2;Hof/Töpen;HofT
+21491;B2;Töpen;Toe
+21492;B2;Gefell;Gef
+21496;B2;Schleiz;Sch2
+33283;B2;Schillstraße;Sch
+33284;B2;Bürgermeister-Wegele-Straße;BueS
+42412;B2;Asbach-Bäumenheim Süd;AsbS
+43119;B2;München-Freiham Mitte;MueM
+45546;B2;Oettersdorf/L1077;OetL
+45547;B2;Tegau;Teg
+45548;B2;Krölpa;Kro
+45549;B2;Auma;Aum
+46561;B2;Friedenheimer Brücke;FriB
+46562;B2;Willibaldstraße;Wil
+35335;B2;Am Knie;Kni
+36074;B2;Langweid-Nord;LanN
+36075;B2;Biberbach/Herbertshofen;BibH
+36076;B2;Meitingen-Nord;MeiN
+31848;B2;Westendorf;Wes
+7637;B2;Asbach-Bäumenheim Nord;AsbN
+42413;B2;Donauwörth Parkstadt;DonP
+36129;B2;Kaisheim-Nord/Industriegebiet;KaiI
+36132;B2;Monheim Nord;MonN
+15568;B2;Pleinfeld-Nord;PleN
+15569;B2;Heideck;Hei
+15570;B2;Röttenbach-Süd;RoeS
+15571;B2;Röttenbach-Nord;RoeN
+35216;B2;Roth-Kiliansdorf;RotK
+15572;B2;Roth-Belmbrach;RotB
+35217;B2;Roth/Allersberger Straße;RotA
+35218;B2;Rednitzhembach;Red
+35219;B2;Schwabach-Penzendorf;SchP
+42425;B2;Bronn;Bro
+8107;B2;Pegnitz-Buchauer Berg;PegB
+8108;B2;Buchau;Buc1
+36207;B2;S2120 bei Creußen;S21C
+8109;B2;Wolfsbach;Wol
+42496;B2;B 22 bei Bayreuth;B 2B
+36203;B2;Cosima-Wagner-Straße;CosS
+42426;B2;Friedrich-Ebert-Straße;FriS
+17743;B2;Großer Kreisel;GroK
+36242;B2;Pöcking-Süd;PoeS
+61105;B2;Monheim Süd;MonS
+61271;B2;Dietfurt i.Mfr.;DieM
+4752;B2;Dettenheim;Det
+61272;B2;Mauk;Mau
+4755;B2;Wernsbach;Wer
+7468;B2;Offenbachstraße;Off
+7467;B2;Josef-Felder-Straße;JosS
+17077;B22;Kitzingen/Schwarzach;KitS
+21791;B22;Schwarzach am Main;SchM
+21793;B22;Neuses am Sand;NeuS
+21794;B22;Ebrach;Ebr
+21795;B22;Burgebrach;Bur
+21796;B22;Berliner Ring;BerR
+21797;B22;Bamberg-Süd;BamS
+21798;B22;Scheßlitz;Sch2
+42357;B22;Würgau;Wue
+21800;B22;Hollfeld;Hol
+21801;B22;Eckersdorf;Eck
+17745;B22;Matzenberg;Mat
+29793;B22;S2163 bei Bayreuth;S21B
+29794;B22;Justus-Liebig-Straße;JusS
+29795;B22;Erlanger Straße;Erl
+29796;B22;Hindenburgstraße;Hin
+21802;B22;Albrecht-Dürer-Straße;AlbS
+43001;B22;B 2 bei Bayreuth;B 2B
+17746;B22;Bayreuth-Aichig;BayA
+21804;B22;Seybothenreuth;Sey
+21805;B22;Speichersdorf;Spe
+21806;B22;Kemnath;Kem
+21807;B22;Sassenhof;Sas
+21809;B22;Altenstadt an der Waldnaab;AltW
+21811;B22;Weiden in der Oberpfalz;WeiO
+36214;B22;Bechtsrieth;Bec
+36215;B22;Michldorf;Mic
+21812;B22;Leuchtenberg;Leu1
+21813;B22;Tännesberg;Tae
+21814;B22;Teunz;Teu
+21815;B22;Oberviechtach;Obe
+21816;B22;Winklarn;Win
+21817;B22;Rötz;Roe
+21818;B22;Grafenkirchen;Gra
+21820;B22;Knoten Cham-Mitte;KnoM
+46767;B22;Reupelsdorf;Reu
+7644;B22;Untersteinach;Unt
+36084;B22;Burgwindheim;Bur1
+7645;B22;Mönchherrnsdorf;Moe1
+7646;B22;Mönchsambach;Moe
+7647;B22;Dürrhof;Due
+7648;B22;Unterneuses;Unt1
+7649;B22;Birkach;Bir
+7650;B22;Debring;Deb1
+7651;B22;Debring;Deb
+35173;B22;Wildensorger Hauptstraße;WilH
+35174;B22;Waizendorfer Straße;Wai
+35175;B22;Bugerstraße;Bug
+35176;B22;Schellenbergerstraße;Sch
+35177;B22;Rhein-Main-Donau-Damm;RheD
+35178;B22;Forchheimer Straße;For1
+35179;B22;Nürnberger Straße;Nue
+35180;B22;Forchheimer Straße;For
+7652;B22;zur AS Roßdorf a.Berg;ZurB
+21799;B22;Steinfeld;Ste
+7653;B22;Treunitz;Tre
+8110;B22;Wiesentfels;Wie
+7654;B22;Freienfels;Fre
+7655;B22;Schönfeld;Sch1
+7656;B22;Busbach;Bus
+7657;B22;Eschen;Esc
+7658;B22;S2186 bei Tröbersdorf;S21T
+42427;B22;Rheinstraße;Rhe
+7659;B22;Spitzwegstraße;Spi
+7660;B22;Wittelsbacherring;Wit
+7661;B22;Bahnhofstraße;Bah
+42468;B22;Neunkirchen am Main;NeuM
+46581;B22;Waldeck;Wal
+46582;B22;Erbendorf-Straßenschacht;ErbS
+35298;B22;Wildenreuth;Wil
+35297;B22;Kirchendemenreuth;Kir
+46583;B22;Irchenrieth;Irc
+46584;B22;Leuchtenberg;Leu
+22862;B304;Dachau-Mitte;DacM
+22863;B304;München-Ludwigsfeld;MueL
+22867;B304;Leuchtenbergring;Leu
+22868;B304;Baumkirchner Straße;Bau
+22869;B304;Schatzbogen;Sch2
+29845;B304;Karlsfeld;Kar
+29846;B304;Max-Born-Straße;MaxS
+29847;B304;Bajuwarenstraße;Baj
+22871;B304;Haar;Haa
+22872;B304;Haar;Haa1
+43131;B304;Zorneding-West;ZorW
+22874;B304;Zorneding-Süd;ZorS
+43132;B304;Zorneding-Ost;ZorO
+22875;B304;Kirchseeon;Kir
+22876;B304;Reitgesing;Rei
+22878;B304;Ebersberg;Ebe
+22879;B304;Steinhöring;Ste
+43133;B304;Forsting;For
+22881;B304;Wasserburg am Inn;WasI
+4766;B304;Roitham;Roi
+4764;B304;Bernhaiming;Ber
+22884;B304;Hochbruck;Hoc
+22885;B304;Altenmarkt;Alt
+29848;B304;Stein an der Traun;SteT
+29849;B304;Matzing;Mat
+35359;B304;Schroppenwiesenstraße;Sch1
+35409;B304;Schlüsselbergstraße;Sch
+42382;B304;Edling;Edl
+43005;B304;Babensham/Penzing;BabP
+43006;B304;Wimpasing;Wim
+43007;B304;Stephanskirchen;Ste1
+36057;B304;Frabertsham;Fra
+36058;B304;Sankt Georgen/Traunreut;SanT
+7478;B304;Traunstein-Weiderting;TraW
+7479;B304;Traunstein-Etzfeld;TraE
+7480;B304;Ettendorfer Tunnel;EttT
+7481;B304;Traunstein-Sparz;TraS
+36059;B304;Surberg;Sur
+36060;B304;Oberteisendorf;Obe
+22887;B304;Teisendorf-West;TeiW
+36061;B304;Teisendorf-Ost;TeiO
+22889;B304;Freilassing;Fre
+46564;B304;Feldmochinger Straße;Fel
+46565;B304;Hanauer Straße;Han
+46566;B304;Landshuter Allee;LanA
+46567;B304;Georg-Brauchle-Ring;GeoR
+26434;B310;Oberjoch;Obe
+31466;B310;Jungholz;Jun
+26435;B310;Wertach;Wer
+26436;B310;Oy-Mittelberg;Oy-M1
+17951;B310;Oy-Mittelberg;Oy-M
+31787;B310;Füssen;Fue
+26439;B310;Füssen;Fue1
+23817;B471;Inning a. Ammersee;InnA
+32249;B471;Grafrath;Gra
+23818;B471;Schöngeising;Sch
+35208;B471;Fürstenfeldbruck, Schöngeisinger Straße;FueS
+35209;B471;Fürstenfeldbruck-Industriegebiet;FueI
+32250;B471;Fürstenfeldbruck-West;FueW
+42386;B471;Fürstenfeldbruck-Neulindach;FueN
+32251;B471;Fürstenfeldbruck-Mitte;FueM
+32252;B471;Fürstenfeldbruck-Ost/Emmering;FueE
+23820;B471;Esting/Maisach;EstM
+35210;B471;Geiselbullach/Olching;GeiO
+23821;B471;Dachau/Fürstenfeldbruck;DacF
+23822;B471;Dachau-West;DacW
+23823;B471;Dachau-Süd;DacS
+23824;B471;Dachau-Mitte;DacM
+23825;B471;Karlsfeld;Kar
+23826;B471;Oberschleißheim;Obe
+23827;B471;Oberschleißheim;Obe1
+23828;B471;Lustheim;Lus
+23829;B471;Hochbrück;Hoc
+23830;B471;Garching-Süd;GarS
+23831;B471;Garching;Gar
+23832;B471;Ismaning;Ism
+23833;B471;Aschheim/Ismaning;AscI
+23834;B471;Aschheim;Asc
+23835;B471;Feldkirchen;Fel
+23836;B471;Haar;Haa
+23837;B471;Putzbrunn;Put
+23838;B471;Hohenbrunn;Hoh
+23839;B471;Ottobrunn;Ott
+23840;B471;Taufkirchen-Ost;TauO
+24140;B505;Pommersfelden;Pom
+61284;B505;Zentpechhofen;Zen
+24142;B505;Hirschaid;Hir
+31719;B505;Pettstadt;Pet
+24143;B505;Bamberg-Süd;BamS

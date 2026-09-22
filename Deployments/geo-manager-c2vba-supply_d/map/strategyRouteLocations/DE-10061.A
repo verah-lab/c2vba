@@ -1,0 +1,174 @@
+{
+  "id" : "DE-10061.A",
+  "name" : "DE-10061.A",
+  "elements" : [ {
+    "id" : "DE1085151078_2",
+    "length" : 133.94369246770881,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921104995_2",
+    "length" : 127.62662454492516,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE554339169_2",
+    "length" : 14.85674817159755,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1101687933_2",
+    "length" : 282.8542188746888,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52806649_2",
+    "length" : 613.0638523831002,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE562774122_1",
+    "length" : 267.2107469868813,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783389828_2",
+    "length" : 38.03211901295302,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783389827_2",
+    "length" : 57.2871699229748,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921104998_2",
+    "length" : 25.193911271594743,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921104997_2",
+    "length" : 41.721176009337206,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1296669626_2",
+    "length" : 153.49170143766992,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE554339299_2",
+    "length" : 153.74261545150378,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52916425_2",
+    "length" : 82.95844923346205,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE770378652_2",
+    "length" : 512.1300009359712,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1286481135_2",
+    "length" : 30.108853593105902,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1286481134_2",
+    "length" : 26.268894208139056,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52807143_2",
+    "length" : 557.7881349529368,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194632154_2",
+    "length" : 39.597915552446416,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1194632153_2",
+    "length" : 11.222348371727595,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52908425_2",
+    "length" : 9.002635931259272,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE783389810_2",
+    "length" : 47.112387819727026,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921105000_2",
+    "length" : 35.06505251221147,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1225252413_2",
+    "length" : 28.387617677379307,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1235887233_2",
+    "length" : 123.09263850311243,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1235887232_2",
+    "length" : 279.5789270347879,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921105002_2",
+    "length" : 15.673596807693773,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921105001_2",
+    "length" : 153.41152659439783,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE554340155_2",
+    "length" : 50.637010716381326,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE835727430_2",
+    "length" : 105.72620413102347,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE770378662_1",
+    "length" : 236.74572704115204,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE52807253_1",
+    "length" : 405.11942496304573,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE921105003_1",
+    "length" : 133.31487730319705,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  }, {
+    "id" : "DE1104942412_1",
+    "length" : 100.5610489753357,
+    "direction" : "POSITIVE",
+    "inverseOrder" : false
+  } ],
+  "direction" : "POSITIVE",
+  "firstOffset" : 47.0,
+  "lastOffset" : 86.0,
+  "length" : 4830.966800418093
+}
