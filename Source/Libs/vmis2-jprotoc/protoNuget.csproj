@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>4.2.1</Version>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>VMIS2.Transfer.Interface</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>VMIS2.Transfer.Interface</AssemblyName>
+    <PackageVersion>$(Version)</PackageVersion>
+    <Title>VMIS2 Kernsystem Transfer Interface</Title>
+    <Authors>vmis-ehe</Authors>
+    <Description>C# Proto-Files für den Transfer-Interface-Service</Description>
+    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <IsTool>false</IsTool>
+    <RepositoryUrl>https://vmis-ehe.visualstudio.com/vmis2/_git/Kern_vmis2-configservice-interface</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+</Project>

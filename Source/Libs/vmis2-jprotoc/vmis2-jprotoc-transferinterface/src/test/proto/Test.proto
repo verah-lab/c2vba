@@ -1,0 +1,29 @@
+syntax = "proto3";
+package de.heuboe.vmis2.jprotoc.test;
+
+option java_multiple_files = true;
+option java_outer_classname = "TestProto";
+
+/*
+ * An example message.
+ */
+message TestMessage {
+	string value = 1;
+	
+	/*
+	 * An example inner message.
+	 */
+	message InnerMessage {
+		string value = 1;
+	}
+}
+
+/*
+ * An example enum.
+ */
+enum TestEnum {
+	A = 0;
+	B = 1;
+	C = 2;
+	D = 3;
+}

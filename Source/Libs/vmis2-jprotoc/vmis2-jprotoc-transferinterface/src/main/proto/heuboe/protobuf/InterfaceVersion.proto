@@ -1,0 +1,18 @@
+syntax = "proto3";
+package heuboe.protobuf;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FileOptions {
+
+	// The version that describes the current data structure.
+	string interface_version = 50001;
+
+}
+
+option java_multiple_files = true;
+option java_package = "de.heuboe.protobuf";
+option java_outer_classname = "InterfaceVersionProto";
+option csharp_namespace = "de.heuboe.protobuf";
+
+option (interface_version) = "4.6.2";

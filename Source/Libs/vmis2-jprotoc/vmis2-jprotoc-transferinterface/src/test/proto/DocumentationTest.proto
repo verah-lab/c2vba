@@ -1,0 +1,73 @@
+syntax = "proto3";
+package de.heuboe.vmis2.jprotoc.test;
+
+import "heuboe/protobuf/Documentation.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "DocumentationTestProto";
+
+// External Reference
+
+/*
+ * An example message.
+ */
+message RefMessage {
+
+	string value = 1;
+
+	string ref = 2 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.RefMessage", field: "value"}];
+	Ref compositeRef = 3;
+
+	message Ref {
+
+		option (.heuboe.protobuf.compositeTypeRef) = "de.heuboe.vmis2.jprotoc.test.RefMessage";
+
+		string ref = 1 [(.heuboe.protobuf.extRef) = { field: "value"}];
+
+	}
+
+}
+
+// MessageType
+
+// A message that is a container for entities
+message ContainerMessage {
+
+	option (.heuboe.protobuf.stereotype) = CONTAINER;
+
+	string iid = 1;
+	repeated EntityMessage entities = 2;
+
+}
+
+// An entity message with a unique identity
+message EntityMessage {
+
+	option (.heuboe.protobuf.stereotype) = ENTITY;
+
+	string iid = 1;
+	string name = 2; // Unique
+	repeated DataTypeMessage childrenWeights = 3;
+
+}
+
+// A message that represents a datatype message without a unique identity
+message DataTypeMessage {
+
+	option (.heuboe.protobuf.stereotype) = DATATYPE;
+
+	string childName = 1;
+	uint32 weight = 2; 
+
+}
+
+// Required
+
+// A message that demonstrates cardinalities
+message CardinalityMessage {
+
+	string childName = 1 [(.heuboe.protobuf.required) = true];
+	uint32 weight = 2 [(.heuboe.protobuf.required) = false];
+	string hint = 3;
+
+}

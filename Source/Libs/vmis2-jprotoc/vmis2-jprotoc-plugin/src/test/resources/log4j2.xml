@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" monitorInterval="15" packages="de.heuboe.logging.log4j2.appender">
+
+    <Properties>
+        <!-- global layout pattern; designed to show log patterns in fixed sized columns -->
+        <!-- see: https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout -->
+        <Property name="layoutPattern">%date{DEFAULT} | %5.5level | %20.20thread | %25.25logger{1.} | %30.30class{1.}(%line) | %-35.-35X{context} |&gt; %message%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- console appender -->
+        <Appender type="Console" name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${layoutPattern}" />
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="de.heuboe" level="debug" />
+
+        <Root level="info">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package de.heuboe.vmis2.jprotoc.test;
+
+import "heuboe/protobuf/Documentation.proto";
+
+option java_multiple_files = true;
+
+message PresentStereotype {
+
+	option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+	string a = 1;
+	
+	message Nested {
+
+		option (.heuboe.protobuf.stereotype) = SERVICE_MESSAGE;
+
+		string b = 1;
+
+	}
+
+}

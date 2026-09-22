@@ -1,0 +1,60 @@
+syntax = "proto3";
+package heuboe.protobuf;
+
+import "google/protobuf/descriptor.proto";
+import "heuboe/protobuf/InterfaceVersion.proto";
+
+option java_multiple_files = true;
+option java_package = "de.heuboe.protobuf";
+option java_outer_classname = "DocumentationProto";
+option csharp_namespace = "de.heuboe.protobuf";
+
+option (interface_version) = "4.6.2";
+
+extend google.protobuf.MessageOptions {
+
+	// Hint for a message that it is a reference to different message
+	// (This is usually used if the target type uses a composite key/ref)
+	string compositeTypeRef = 50000 [(extRef) = { type: "google.protobuf.DescriptorProto", field: "~fullName"}];
+	// The type of message. Declares whether this message has a logical identity.
+	Stereotype stereotype = 50001 [(required) = true];
+
+}
+
+extend google.protobuf.FieldOptions {
+
+	// Describes of the reference target.
+	ExternalReference extRef = 50000;
+	// Whether the given field is required/always present. Default: true/required.
+	bool required = 50001;
+
+}
+
+// A type that describes which target a field points to.
+message ExternalReference {
+
+	option (stereotype) = DATATYPE;
+
+	// Hint for a field that it is a reference to different message
+	// (For composite keys/ref use the MessageOptions.compositeTypeRef)
+	string type = 1 [(extRef) = { type: "google.protobuf.DescriptorProto", field: "~fullName"}];
+	// Hint for a field which attribute/field in the referenced message it refers to.
+	string field = 2 [(extRef) = { type: "google.protobuf.FieldDescriptorProto", field: "name"}];
+
+}
+
+// The type of message (has the message an identity)
+enum Stereotype {
+
+	// The type of the proto message is unknown.
+	UNKNOWN = 0;
+	// The message is a datatype without identity. It will only be used in compositions.
+	DATATYPE = 1;
+	// The message is an entity with an identity. It might be wrapped in a container.
+	ENTITY = 2;
+	// A container message for entities.
+	CONTAINER = 3;
+	// A message that is primarily used in grpc service requests and responses.
+	SERVICE_MESSAGE = 4;
+
+}

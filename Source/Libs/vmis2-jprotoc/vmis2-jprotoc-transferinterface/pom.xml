@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.asfinag</groupId>
+        <artifactId>vmis2-jprotoc</artifactId>
+        <version>4.6.2</version>
+    </parent>
+
+    <artifactId>vmis2-jprotoc-transferinterface</artifactId>
+
+    <name>VMIS2 Kern ${project.artifactId}</name>
+    <description>The API-library project for the protopojo extension of the protobuf compiler.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.atteo.classindex</groupId>
+            <artifactId>classindex</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.6.2</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <!--
+                compile *.proto files
+            -->
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <!-- common configuration for all executions -->
+                <configuration>
+                    <clearOutputDirectory>false</clearOutputDirectory>
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
+                </configuration>
+                <executions>
+                    <!-- execution to compile the proto files without grpc plugin; also attach '*.proto' files
+                        and generate DescriptorSet file ('*.protobin') (must be done only once because otherwise it will
+                        be attached twice to the build and the double 'deploy' of the same protobin artifact fails) -->
+                    <execution>
+                        <id>protobuf-compile</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <attachProtoSources>true</attachProtoSources>
+                            <writeDescriptorSet>true</writeDescriptorSet>
+                            <includeSourceInfoInDescriptorSet>true</includeSourceInfoInDescriptorSet>
+                            <includeDependenciesInDescriptorSet>true</includeDependenciesInDescriptorSet>
+                            <attachDescriptorSet>true</attachDescriptorSet>
+                            <descriptorSetClassifier>descriptorSet</descriptorSetClassifier>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>protobuf-test-compile</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                        <configuration>
+                            <attachProtoSources>false</attachProtoSources>
+                            <writeDescriptorSet>false</writeDescriptorSet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--
+                place the generated FileDescriptor file (*.protobin) in the main artifact
+            -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-protobin-resource</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>add-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/generated-resources/protobuf/descriptor-sets</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- needed for proto version test -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>templating-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-test-sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>filter-test-sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

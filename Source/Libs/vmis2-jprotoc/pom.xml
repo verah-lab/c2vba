@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- parent pom for modules concerning protoc plugin for vmis2 -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.heuboe.asfinag</groupId>
+        <artifactId>vmis2-base-parent</artifactId>
+        <version>2.25.0</version>
+    </parent>
+
+    <artifactId>vmis2-jprotoc</artifactId>
+    <version>4.6.2</version>
+    <packaging>pom</packaging>
+
+    <name>VMIS2 Kern ${project.artifactId}</name>
+    <description>This project's modules contain the protopojo generator logic.</description>
+    <url>http://pdb.heuboe.hbintern/pdb/#product;id=5712</url>
+    <inceptionYear>2018</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>DTh</id>
+            <name>Daniel Theuke</name>
+            <email>daniel.theuke@heuboe.de</email>
+        </developer>
+        <developer>
+            <name>Ronald Nikel</name>
+            <email>ronald.nikel@heuboe.de</email>
+        </developer>
+        <developer>
+            <name>Jürgen Bockhorn</name>
+            <email>juergen.bockhorn@heuboe.de</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>vmis2-jprotoc-plugin</module>
+        <module>vmis2-jprotoc-transferinterface</module>
+    </modules>
+
+    <scm>
+        <url>https://gitlab.heuboe.hbintern/VMIS2/base/vmis2-jprotoc</url>
+        <connection>scm:git:git@gitlab.heuboe.hbintern:VMIS2/base/vmis2-jprotoc.git</connection>
+        <developerConnection>scm:git:git@gitlab.heuboe.hbintern:VMIS2/base/vmis2-jprotoc.git</developerConnection>
+    </scm>
+
+    <properties>
+        <java.version>8</java.version>
+        <heuboe.pdb.changelogfile>${maven.multiModuleProjectDirectory}/CHANGELOG.md</heuboe.pdb.changelogfile>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

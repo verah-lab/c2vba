@@ -1,0 +1,125 @@
+syntax = "proto3";
+package de.heuboe.vmis2.jprotoc.test;
+
+import "heuboe/protobuf/Documentation.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "DocumentationTestProto";
+
+/*
+ * An example message.
+ */
+message RefMessage {
+
+	string value = 1;
+
+	string ref = 2 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.RefMessage", field: "value"}];
+	Ref compositeRef = 3;
+
+	message Ref {
+		option (.heuboe.protobuf.compositeTypeRef) = "de.heuboe.vmis2.jprotoc.test.RefMessage";
+		string ref = 1 [(.heuboe.protobuf.extRef) = { field: "value"}];
+	}
+
+}
+
+message MessgeWithEnumConstantAssistance {
+
+	string type = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.TypeConstants"}];
+	string typeName = 2 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.TypeConstants", field: "name"}];
+	uint32 typeNumber = 3 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.TypeConstants", field: "number"}];
+
+}
+
+enum TypeConstants {
+	UNKNOWN = 0;
+}
+
+// Broken ones
+
+message BrokenCompositeReference {
+
+	option (.heuboe.protobuf.compositeTypeRef) = "de.heuboe.vmis2.jprotoc.test.DoesNotExist";
+
+}
+
+message BrokenExtRefEmpty {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {}];
+
+}
+
+message BrokenExtRefType {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.DoesNotExist", field: "value"}];
+
+}
+
+message BrokenExtRefTypeEmpty {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "", field: "value"}];
+
+}
+
+message BrokenExtRefTypeAbsent {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {field: "value"}];
+
+}
+
+message BrokenExtRefField {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.RefMessage", field: "doesNotExist"}];
+
+}
+
+message BrokenExtRefFieldEmpty {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.RefMessage", field: ""}];
+
+}
+
+message BrokenExtRefFieldAbsent {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.RefMessage"}];
+
+}
+
+// Ignored broken
+
+message IgnoredBrokenCompositeReference {
+
+	option (.heuboe.protobuf.compositeTypeRef) = "~de.heuboe.vmis2.jprotoc.test.DoesNotExist";
+
+}
+
+message IgnoredBrokenExtRefType {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "~de.heuboe.vmis2.jprotoc.test.DoesNotExist", field: "value"}];
+
+}
+
+message IgnoredBrokenExtRefTypeEmpty {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "~", field: "value"}];
+
+}
+
+message IgnoredBrokenExtRefField {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.RefMessage", field: "~doesNotExist"}];
+
+}
+
+message IgnoredBrokenExtRefFieldEmpty {
+
+	string ref = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.RefMessage", field: "~"}];
+
+}
+
+message MessgeWithBrokenEnumConstantAssistance {
+
+	string typeName = 1 [(.heuboe.protobuf.extRef) = {type: "de.heuboe.vmis2.jprotoc.test.TypeConstants", field: "doesNotExist"}];
+
+}
+
